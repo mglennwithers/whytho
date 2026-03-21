@@ -99,6 +99,10 @@ tests/
 - [src/core/resolution/pipeline.ts](src/core/resolution/pipeline.ts) — resolution orchestrator
 - [src/core/push/index.ts](src/core/push/index.ts) — agent push API
 
+## Committing changes
+
+After the user approves any changes you have made, commit them immediately using `git commit`. Stage only the relevant source files — do not stage `dist/` unless it was already tracked. The post-commit hook will automatically run resolution and commit any `.why/` updates as a follow-up `[whytho] resolve annotations` commit.
+
 ## Conventions
 
 - Atomic writes: always use `writeFile` from `src/core/fs/writer.ts` (write-to-tmp-then-rename)

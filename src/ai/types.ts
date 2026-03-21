@@ -11,6 +11,8 @@ export interface AnnotationRequest {
     existingAnnotations?: string[]
     changedFiles?: string[]
     gitLog?: string
+    /** If set, overrides the built-in prompt entirely and passes this string directly to the model. */
+    customPrompt?: string
   }
 }
 

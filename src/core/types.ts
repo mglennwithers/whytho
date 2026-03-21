@@ -85,6 +85,8 @@ export const FolderFrontmatterSchema = BaseAnnotationSchema.extend({
   parent_folder: z.string().optional(),
   contained_files: z.array(z.string()).optional(),
   sessions: z.array(z.string()).optional(),
+  inferred: z.boolean().optional(),
+  inference_confidence: z.number().min(0).max(1).optional(),
 })
 
 export const FileFrontmatterSchema = BaseAnnotationSchema.extend({
@@ -95,6 +97,8 @@ export const FileFrontmatterSchema = BaseAnnotationSchema.extend({
   sessions: z.array(z.string()).optional(),
   blocks: z.array(z.string()).optional(),
   language: z.string().optional(),
+  inferred: z.boolean().optional(),
+  inference_confidence: z.number().min(0).max(1).optional(),
 })
 
 export const BlockFrontmatterSchema = BaseAnnotationSchema.extend({
@@ -112,6 +116,8 @@ export const BlockFrontmatterSchema = BaseAnnotationSchema.extend({
   archived_reason: z.enum(ARCHIVE_REASONS).optional(),
   archived_by_session: z.string().optional(),
   archived_at_commit: z.string().optional(),
+  inferred: z.boolean().optional(),
+  inference_confidence: z.number().min(0).max(1).optional(),
 })
 
 // ─── TypeScript Types ─────────────────────────────────────────────────────────

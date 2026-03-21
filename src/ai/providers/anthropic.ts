@@ -44,6 +44,11 @@ export function createAnthropicProvider(options: AnthropicProviderOptions = {}):
       let body = ''
       const extraFrontmatter: Record<string, unknown> = {}
 
+      if (request.context.customPrompt) {
+        body = await callClaude(request.context.customPrompt)
+        return { frontmatter: { whytho: WHYTHO_VERSION, type: request.type, created: now, updated: now }, body }
+      }
+
       switch (request.type) {
         case 'block': {
           const prompt = buildBlockAnnotationPrompt(request)
