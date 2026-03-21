@@ -18,7 +18,8 @@ export const DEFAULT_SUPERSEDED_THRESHOLD = 0.3
 export const SEMANTIC_MATCH_MIN_CONFIDENCE = 0.7
 export const DEFAULT_SEMANTIC_TIMEOUT_MS = 10_000
 
-export const DEFAULT_AI_MODEL = 'claude-opus-4-6'
+export const DEFAULT_AI_MODEL = 'claude-sonnet-4-6'
+export const DEFAULT_INFER_MODEL = 'claude-haiku-4-5-20251001'
 export const DEFAULT_AI_PROVIDER = 'anthropic'
 
 export const HOOK_SENTINEL = '# whytho-hook-v1'

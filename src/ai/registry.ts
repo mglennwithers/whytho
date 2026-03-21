@@ -15,6 +15,20 @@ export function getProvider(name: string): AIProvider | undefined {
   return registry.get(name)
 }
 
+export function getInferProvider(config: WhythoConfig): AIProvider {
+  const name = config.aiProvider ?? 'anthropic'
+  if (name === 'anthropic') {
+    const apiKeyEnv = config.anthropic?.apiKeyEnv ?? 'ANTHROPIC_API_KEY'
+    const apiKey = process.env[apiKeyEnv]
+    if (!apiKey) return nullProvider
+    return createAnthropicProvider({
+      model: config.anthropic?.inferModel,
+      apiKey,
+    })
+  }
+  return getDefaultProvider(config)
+}
+
 export function getDefaultProvider(config: WhythoConfig): AIProvider {
   const name = config.aiProvider ?? 'anthropic'
 
@@ -29,7 +43,7 @@ export function getDefaultProvider(config: WhythoConfig): AIProvider {
       return nullProvider
     }
     return createAnthropicProvider({
-      model: config.anthropic?.model,
+      model: config.anthropic?.annotationModel,
       apiKey,
     })
   }

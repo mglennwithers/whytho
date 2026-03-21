@@ -201,7 +201,7 @@ export function registerAnnotate(program: Command): void {
             id: sessionId,
             created: now,
             updated: now,
-            model: config.anthropic?.model ?? 'unknown',
+            model: config.anthropic?.annotationModel ?? 'unknown',
             model_provider: config.aiProvider,
             user,
             commits: commitSha ? [{ sha: commitSha, message: '', timestamp: now }] : [],

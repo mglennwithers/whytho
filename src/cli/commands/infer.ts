@@ -18,7 +18,7 @@ import { parseFile } from '../../core/parser/registry.js'
 import { detectLanguage } from '../../core/parser/detect-language.js'
 import { computeContentHash } from '../../core/identity/content-hash.js'
 import { loadConfig } from '../../config/loader.js'
-import { getDefaultProvider } from '../../ai/registry.js'
+import { getInferProvider } from '../../ai/registry.js'
 import {
   buildInferredBlockPrompt,
   buildInferredFilePrompt,
@@ -83,7 +83,7 @@ export function registerInfer(program: Command): void {
           process.exit(1)
         }
 
-        const ai = getDefaultProvider(config)
+        const ai = getInferProvider(config)
         const commitSha = await getHeadCommitSha(repoRoot).catch(() => 'unknown')
         const now = new Date().toISOString()
         const limit = parseInt(options.limit, 10)

@@ -2,7 +2,8 @@ export interface WhythoConfig {
   specVersion: '1.0'
   aiProvider: string
   anthropic?: {
-    model?: string
+    annotationModel?: string
+    inferModel?: string
     apiKeyEnv?: string
   }
   resolution: {
