@@ -19,7 +19,9 @@ import { detectLanguage } from '../../core/parser/detect-language.js'
 import { computeContentHash } from '../../core/identity/content-hash.js'
 import { loadConfig } from '../../config/loader.js'
 import { isTrackedFile, isSkippedDir } from '../../config/tracking.js'
-import { getInferProvider } from '../../ai/registry.js'
+import { getInferProvider, getAnthropicBatchRunner } from '../../ai/registry.js'
+import type { BatchRequest } from '../../ai/registry.js'
+import type { ParsedBlock } from '../../core/parser/types.js'
 import {
   buildInferredBlockPrompt,
   buildInferredFilePrompt,
@@ -28,7 +30,7 @@ import {
 } from '../../ai/prompts/infer.js'
 import { WHYTHO_VERSION } from '../../core/constants.js'
 import type { BlockFrontmatter, FileFrontmatter, FolderFrontmatter } from '../../core/types.js'
-import type { WhythoConfig } from '../../config/types.js'
+import type { WhythoConfig, VerbosityCoverage } from '../../config/types.js'
 import { readAnnotationFile } from '../../core/fs/reader.js'
 
 const INFERRED_SESSION = 'inferred'
@@ -59,6 +61,49 @@ async function collectSourceFiles(dir: string, repoRoot: string, config: WhythoC
     }
   }
   return results
+}
+
+async function countPendingAnnotations(
+  sourceFiles: string[],
+  parsedFileCache: Map<string, { source: string; blocks: ReturnType<typeof parseFile> }>,
+  whyRoot: string,
+  limit: number,
+  skipBlocks: boolean,
+  skipFiles: boolean,
+  skipFolders: boolean,
+  coverage: VerbosityCoverage,
+): Promise<number> {
+  const minimalKinds = new Set(['function', 'method', 'class', 'interface'])
+  let count = 0
+
+  for (const filePath of sourceFiles) {
+    if (count >= limit) break
+    const cached = parsedFileCache.get(filePath)
+    if (!cached) continue
+
+    if (!skipBlocks) {
+      const blocks = coverage === 'minimal'
+        ? cached.blocks.filter((b) => minimalKinds.has(b.kind))
+        : cached.blocks
+      for (const block of blocks) {
+        if (count >= limit) break
+        const ref = buildSymbolicRef(filePath, block.name)
+        if (!(await fileExists(blockAnnotationPath(whyRoot, ref)))) count++
+      }
+    }
+
+    if (!skipFiles && !(await fileExists(fileAnnotationPath(whyRoot, filePath)))) count++
+  }
+
+  if (!skipFolders) {
+    const allFolders = new Set(sourceFiles.map((f) => parentFolder(f)))
+    for (const folder of allFolders) {
+      if (count >= limit) break
+      if (!(await fileExists(folderAnnotationPath(whyRoot, folder)))) count++
+    }
+  }
+
+  return count
 }
 
 export function registerInfer(program: Command): void {
@@ -118,12 +163,44 @@ export function registerInfer(program: Command): void {
           } catch { /* deleted or unreadable */ }
         }
 
+        // Determine whether to use the Anthropic Batches API for this run
+        let batchRunner: ((requests: BatchRequest[]) => Promise<Map<string, string>>) | null = null
+        if (!options.dryRun) {
+          const mode = config.anthropic?.batchInfer?.mode ?? 'auto'
+          if (mode !== 'never') {
+            const runner = getAnthropicBatchRunner(config)
+            if (runner) {
+              if (mode === 'always') {
+                batchRunner = runner
+              } else {
+                // auto: count pending items first, then decide
+                const threshold = config.anthropic?.batchInfer?.threshold ?? 50
+                const totalPending = await countPendingAnnotations(
+                  sourceFiles, parsedFileCache, whyRoot, limit,
+                  options.blocks === false, options.files === false, options.folders === false,
+                  coverage,
+                )
+                if (totalPending > threshold) {
+                  batchRunner = runner
+                  console.log(chalk.gray(`${totalPending} pending annotations (threshold: ${threshold}) — using batch mode`))
+                }
+              }
+            }
+          }
+        }
+
         // ── Pass 1: Blocks ───────────────────────────────────────────────────
         if (options.blocks !== false) {
           const minimalKinds = new Set(['function', 'method', 'class', 'interface'])
 
+          type BlockPending = {
+            id: string; ref: string; annPath: string; filePath: string
+            block: ParsedBlock; prompt: string; maxTokens: number
+          }
+          const pending: BlockPending[] = []
+
           for (const filePath of sourceFiles) {
-            if (generated >= limit) break
+            if (generated + pending.length >= limit) break
             const cached = parsedFileCache.get(filePath)
             if (!cached) continue
 
@@ -132,34 +209,50 @@ export function registerInfer(program: Command): void {
               : cached.blocks
 
             for (const block of coverageFilteredBlocks) {
-              if (generated >= limit) break
+              if (generated + pending.length >= limit) break
               const ref = buildSymbolicRef(filePath, block.name)
               const annPath = blockAnnotationPath(whyRoot, ref)
               if (await fileExists(annPath)) continue
 
-              process.stdout.write(chalk.cyan(`  infer block: ${ref}... `))
-
               if (options.dryRun) {
-                console.log(chalk.yellow('(dry run)'))
+                console.log(chalk.cyan(`  infer block: ${ref}`) + chalk.yellow(' (dry run)'))
                 generated++
                 continue
               }
 
-              try {
-                const blockVerbosity = { detail, maxTokens: verbosity.block.maxTokens }
-                const prompt = buildInferredBlockPrompt({
-                  type: 'block',
-                  context: { filePath, blockSource: block.content, parsedBlock: block },
-                  verbosity: blockVerbosity,
-                })
-                const raw = await callViaProvider(ai, 'block', prompt, verbosity.block.maxTokens)
-                const { semanticFingerprint, confidence, body } = parseInferredResponse(raw)
+              const prompt = buildInferredBlockPrompt({
+                type: 'block',
+                context: { filePath, blockSource: block.content, parsedBlock: block },
+                verbosity: { detail, maxTokens: verbosity.block.maxTokens },
+              })
+              pending.push({ id: `block-${pending.length}`, ref, annPath, filePath, block, prompt, maxTokens: verbosity.block.maxTokens })
+            }
+          }
 
+          if (pending.length > 0) {
+            let rawResults: Map<string, string>
+            if (batchRunner) {
+              console.log(chalk.cyan(`  Submitting batch: ${pending.length} block annotation(s)...`))
+              rawResults = await batchRunner(pending.map((p) => ({ id: p.id, prompt: p.prompt, maxTokens: p.maxTokens })))
+              console.log(chalk.gray(`  Batch complete. Writing results...`))
+            } else {
+              rawResults = new Map()
+              for (const item of pending) {
+                process.stdout.write(chalk.cyan(`  infer block: ${item.ref}... `))
+                const raw = await callViaProvider(ai, 'block', item.prompt, item.maxTokens)
+                rawResults.set(item.id, raw)
+              }
+            }
+
+            for (const item of pending) {
+              const raw = rawResults.get(item.id) ?? ''
+              try {
+                const { semanticFingerprint, confidence, body } = parseInferredResponse(raw)
                 const fm: BlockFrontmatter = {
                   whytho: WHYTHO_VERSION,
                   type: 'block',
-                  symbolic_ref: ref,
-                  file: filePath,
+                  symbolic_ref: item.ref,
+                  file: item.filePath,
                   created: now,
                   updated: now,
                   created_by_session: INFERRED_SESSION,
@@ -168,28 +261,32 @@ export function registerInfer(program: Command): void {
                   inference_confidence: confidence,
                   generation_settings: { coverage, detail, max_tokens: verbosity.block.maxTokens },
                   identity: {
-                    symbolic: ref,
-                    line_range: { start: block.startLine, end: block.endLine, commit: commitSha },
-                    content_hash: computeContentHash(block.content),
+                    symbolic: item.ref,
+                    line_range: { start: item.block.startLine, end: item.block.endLine, commit: commitSha },
+                    content_hash: computeContentHash(item.block.content),
                     structural: {
-                      kind: block.kind,
-                      parent_scope: block.parentScope,
-                      name: block.name,
-                      parameters: block.parameters,
-                      index_in_parent: block.indexInParent,
+                      kind: item.block.kind,
+                      parent_scope: item.block.parentScope,
+                      name: item.block.name,
+                      parameters: item.block.parameters,
+                      index_in_parent: item.block.indexInParent,
                     },
-                    semantic_fingerprint: semanticFingerprint ?? `${block.kind} ${block.name} in ${filePath}`,
+                    semantic_fingerprint: semanticFingerprint ?? `${item.block.kind} ${item.block.name} in ${item.filePath}`,
                     canonical_metric: 'symbolic',
                     confidence: 0.95,
                     last_resolved: commitSha,
                   },
                 }
-                const fullBody = `# ${block.name}\n\n${inferredDisclaimer(confidence)}\n${body}`
-                await writeFile(annPath, serializeAnnotation(fm, fullBody))
-                console.log(chalk.green(`done (${Math.round(confidence * 100)}%)`))
+                const fullBody = `# ${item.block.name}\n\n${inferredDisclaimer(confidence)}\n${body}`
+                await writeFile(item.annPath, serializeAnnotation(fm, fullBody))
+                if (batchRunner) {
+                  console.log(chalk.green(`  ✓ block: ${item.ref} (${Math.round(confidence * 100)}%)`))
+                } else {
+                  console.log(chalk.green(`done (${Math.round(confidence * 100)}%)`))
+                }
                 generated++
               } catch (err) {
-                console.log(chalk.red(`failed: ${String(err)}`))
+                console.log(chalk.red(`  failed block ${item.ref}: ${String(err)}`))
               }
             }
           }
@@ -197,138 +294,184 @@ export function registerInfer(program: Command): void {
 
         // ── Pass 2: Files ────────────────────────────────────────────────────
         if (options.files !== false) {
+          type FilePending = {
+            id: string; filePath: string; annPath: string; lang: string; folder: string
+            blockAnnotations: Array<{ name: string; body: string }>; blocks: ParsedBlock[]
+            prompt: string; maxTokens: number
+          }
+          const pending: FilePending[] = []
+
           for (const filePath of sourceFiles) {
-            if (generated >= limit) break
+            if (generated + pending.length >= limit) break
             const cached = parsedFileCache.get(filePath)
             if (!cached) continue
 
-            const fileAnnPath = fileAnnotationPath(whyRoot, filePath)
-            if (await fileExists(fileAnnPath)) continue
-
-            process.stdout.write(chalk.cyan(`  infer file:  ${filePath}... `))
+            const annPath = fileAnnotationPath(whyRoot, filePath)
+            if (await fileExists(annPath)) continue
 
             if (options.dryRun) {
-              console.log(chalk.yellow('(dry run)'))
+              console.log(chalk.cyan(`  infer file:  ${filePath}`) + chalk.yellow(' (dry run)'))
               generated++
               continue
             }
 
-            try {
-              const lang = detectLanguage(filePath)
-              const folder = parentFolder(filePath)
+            const lang = detectLanguage(filePath)
+            const folder = parentFolder(filePath)
 
-              // Read existing block annotations for context
-              const blockAnnotations: Array<{ name: string; body: string }> = []
-              for (const block of cached.blocks) {
-                const ref = buildSymbolicRef(filePath, block.name)
-                const blockAnnPath = blockAnnotationPath(whyRoot, ref)
-                if (await fileExists(blockAnnPath)) {
-                  try {
-                    const ann = await readAnnotationFile<BlockFrontmatter>(blockAnnPath)
-                    blockAnnotations.push({ name: block.name, body: ann.body })
-                  } catch { /* skip */ }
+            const blockAnnotations: Array<{ name: string; body: string }> = []
+            for (const block of cached.blocks) {
+              const ref = buildSymbolicRef(filePath, block.name)
+              const blockAnnPath = blockAnnotationPath(whyRoot, ref)
+              if (await fileExists(blockAnnPath)) {
+                try {
+                  const ann = await readAnnotationFile<BlockFrontmatter>(blockAnnPath)
+                  blockAnnotations.push({ name: block.name, body: ann.body })
+                } catch { /* skip */ }
+              }
+            }
+
+            const prompt = buildInferredFilePrompt({
+              type: 'file',
+              context: { filePath, blockAnnotations },
+              verbosity: { detail, maxTokens: verbosity.file.maxTokens, contextChars: verbosity.file.contextChars },
+            })
+            pending.push({ id: `file-${pending.length}`, filePath, annPath, lang, folder, blockAnnotations, blocks: cached.blocks, prompt, maxTokens: verbosity.file.maxTokens })
+          }
+
+          if (pending.length > 0) {
+            let rawResults: Map<string, string>
+            if (batchRunner) {
+              console.log(chalk.cyan(`  Submitting batch: ${pending.length} file annotation(s)...`))
+              rawResults = await batchRunner(pending.map((p) => ({ id: p.id, prompt: p.prompt, maxTokens: p.maxTokens })))
+              console.log(chalk.gray(`  Batch complete. Writing results...`))
+            } else {
+              rawResults = new Map()
+              for (const item of pending) {
+                process.stdout.write(chalk.cyan(`  infer file:  ${item.filePath}... `))
+                const raw = await callViaProvider(ai, 'file', item.prompt, item.maxTokens)
+                rawResults.set(item.id, raw)
+              }
+            }
+
+            for (const item of pending) {
+              const raw = rawResults.get(item.id) ?? ''
+              try {
+                const { confidence, body } = parseInferredResponse(raw)
+                const fm: FileFrontmatter = {
+                  whytho: WHYTHO_VERSION,
+                  type: 'file',
+                  path: item.filePath,
+                  created: now,
+                  updated: now,
+                  updated_by_session: INFERRED_SESSION,
+                  parent_folder: item.folder,
+                  sessions: [],
+                  blocks: item.blocks.map((b) => buildSymbolicRef(item.filePath, b.name)),
+                  language: item.lang,
+                  inferred: true,
+                  inference_confidence: confidence,
+                  generation_settings: { coverage, detail, max_tokens: verbosity.file.maxTokens },
                 }
+                const fullBody = inferredDisclaimer(confidence) + '\n' + body
+                await writeFile(item.annPath, serializeAnnotation(fm, fullBody))
+                if (batchRunner) {
+                  console.log(chalk.green(`  ✓ file: ${item.filePath} (${Math.round(confidence * 100)}%)`))
+                } else {
+                  console.log(chalk.green(`done (${Math.round(confidence * 100)}%)`))
+                }
+                generated++
+              } catch (err) {
+                console.log(chalk.red(`  failed file ${item.filePath}: ${String(err)}`))
               }
-
-              const fileVerbosity = { detail, maxTokens: verbosity.file.maxTokens, contextChars: verbosity.file.contextChars }
-              const prompt = buildInferredFilePrompt({
-                type: 'file',
-                context: { filePath, blockAnnotations },
-                verbosity: fileVerbosity,
-              })
-              const raw = await callViaProvider(ai, 'file', prompt, verbosity.file.maxTokens)
-              const { confidence, body } = parseInferredResponse(raw)
-
-              const fm: FileFrontmatter = {
-                whytho: WHYTHO_VERSION,
-                type: 'file',
-                path: filePath,
-                created: now,
-                updated: now,
-                updated_by_session: INFERRED_SESSION,
-                parent_folder: folder,
-                sessions: [],
-                blocks: cached.blocks.map((b) => buildSymbolicRef(filePath, b.name)),
-                language: lang,
-                inferred: true,
-                inference_confidence: confidence,
-                generation_settings: { coverage, detail, max_tokens: verbosity.file.maxTokens },
-              }
-              const fullBody = inferredDisclaimer(confidence) + '\n' + body
-              await writeFile(fileAnnPath, serializeAnnotation(fm, fullBody))
-              console.log(chalk.green(`done (${Math.round(confidence * 100)}%)`))
-              generated++
-            } catch (err) {
-              console.log(chalk.red(`failed: ${String(err)}`))
             }
           }
         }
 
         // ── Pass 3: Folders ──────────────────────────────────────────────────
         if (options.folders !== false) {
-          // Collect all unique folders that contain trackable files
           const allFolders = new Set(sourceFiles.map((f) => parentFolder(f)))
 
-          for (const folder of allFolders) {
-            if (generated >= limit) break
-            const folderAnnPath = folderAnnotationPath(whyRoot, folder)
-            if (await fileExists(folderAnnPath)) continue
+          type FolderPending = {
+            id: string; folder: string; annPath: string; filesInFolder: string[]
+            fileAnnotations: Array<{ path: string; body: string }>; prompt: string; maxTokens: number
+          }
+          const pending: FolderPending[] = []
 
-            process.stdout.write(chalk.cyan(`  infer folder: ${folder}... `))
+          for (const folder of allFolders) {
+            if (generated + pending.length >= limit) break
+            const annPath = folderAnnotationPath(whyRoot, folder)
+            if (await fileExists(annPath)) continue
 
             if (options.dryRun) {
-              console.log(chalk.yellow('(dry run)'))
+              console.log(chalk.cyan(`  infer folder: ${folder}`) + chalk.yellow(' (dry run)'))
               generated++
               continue
             }
 
-            try {
-              const filesInFolder = sourceFiles.filter((f) => parentFolder(f) === folder)
+            const filesInFolder = sourceFiles.filter((f) => parentFolder(f) === folder)
 
-              // Read existing file annotations for context
-              const fileAnnotations: Array<{ path: string; body: string }> = []
-              for (const filePath of filesInFolder) {
-                const fileAnnPath = fileAnnotationPath(whyRoot, filePath)
-                if (await fileExists(fileAnnPath)) {
-                  try {
-                    const ann = await readAnnotationFile<FileFrontmatter>(fileAnnPath)
-                    fileAnnotations.push({ path: filePath, body: ann.body })
-                  } catch { /* skip */ }
+            const fileAnnotations: Array<{ path: string; body: string }> = []
+            for (const filePath of filesInFolder) {
+              const fileAnnPath = fileAnnotationPath(whyRoot, filePath)
+              if (await fileExists(fileAnnPath)) {
+                try {
+                  const ann = await readAnnotationFile<FileFrontmatter>(fileAnnPath)
+                  fileAnnotations.push({ path: filePath, body: ann.body })
+                } catch { /* skip */ }
+              }
+            }
+
+            const prompt = buildInferredFolderPrompt({
+              type: 'folder',
+              context: { filePath: folder, existingAnnotations: filesInFolder, fileAnnotations },
+              verbosity: { detail, maxTokens: verbosity.folder.maxTokens, contextChars: verbosity.folder.contextChars },
+            })
+            pending.push({ id: `folder-${pending.length}`, folder, annPath, filesInFolder, fileAnnotations, prompt, maxTokens: verbosity.folder.maxTokens })
+          }
+
+          if (pending.length > 0) {
+            let rawResults: Map<string, string>
+            if (batchRunner) {
+              console.log(chalk.cyan(`  Submitting batch: ${pending.length} folder annotation(s)...`))
+              rawResults = await batchRunner(pending.map((p) => ({ id: p.id, prompt: p.prompt, maxTokens: p.maxTokens })))
+              console.log(chalk.gray(`  Batch complete. Writing results...`))
+            } else {
+              rawResults = new Map()
+              for (const item of pending) {
+                process.stdout.write(chalk.cyan(`  infer folder: ${item.folder}... `))
+                const raw = await callViaProvider(ai, 'folder', item.prompt, item.maxTokens)
+                rawResults.set(item.id, raw)
+              }
+            }
+
+            for (const item of pending) {
+              const raw = rawResults.get(item.id) ?? ''
+              try {
+                const { confidence, body } = parseInferredResponse(raw)
+                const fm: FolderFrontmatter = {
+                  whytho: WHYTHO_VERSION,
+                  type: 'folder',
+                  path: item.folder,
+                  created: now,
+                  updated: now,
+                  updated_by_session: INFERRED_SESSION,
+                  contained_files: item.filesInFolder,
+                  sessions: [],
+                  inferred: true,
+                  inference_confidence: confidence,
+                  generation_settings: { coverage, detail, max_tokens: verbosity.folder.maxTokens },
                 }
+                const fullBody = inferredDisclaimer(confidence) + '\n' + body
+                await writeFile(item.annPath, serializeAnnotation(fm, fullBody))
+                if (batchRunner) {
+                  console.log(chalk.green(`  ✓ folder: ${item.folder} (${Math.round(confidence * 100)}%)`))
+                } else {
+                  console.log(chalk.green(`done (${Math.round(confidence * 100)}%)`))
+                }
+                generated++
+              } catch (err) {
+                console.log(chalk.red(`  failed folder ${item.folder}: ${String(err)}`))
               }
-
-              const folderVerbosity = { detail, maxTokens: verbosity.folder.maxTokens, contextChars: verbosity.folder.contextChars }
-              const prompt = buildInferredFolderPrompt({
-                type: 'folder',
-                context: {
-                  filePath: folder,
-                  existingAnnotations: filesInFolder,
-                  fileAnnotations,
-                },
-                verbosity: folderVerbosity,
-              })
-              const raw = await callViaProvider(ai, 'folder', prompt, verbosity.folder.maxTokens)
-              const { confidence, body } = parseInferredResponse(raw)
-
-              const fm: FolderFrontmatter = {
-                whytho: WHYTHO_VERSION,
-                type: 'folder',
-                path: folder,
-                created: now,
-                updated: now,
-                updated_by_session: INFERRED_SESSION,
-                contained_files: filesInFolder,
-                sessions: [],
-                inferred: true,
-                inference_confidence: confidence,
-                generation_settings: { coverage, detail, max_tokens: verbosity.folder.maxTokens },
-              }
-              const fullBody = inferredDisclaimer(confidence) + '\n' + body
-              await writeFile(folderAnnPath, serializeAnnotation(fm, fullBody))
-              console.log(chalk.green(`done (${Math.round(confidence * 100)}%)`))
-              generated++
-            } catch (err) {
-              console.log(chalk.red(`failed: ${String(err)}`))
             }
           }
         }

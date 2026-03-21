@@ -1,4 +1,56 @@
 import type { AIProvider, AnnotationRequest, AnnotationResult, SemanticMatchRequest, SemanticMatchResult } from '../types.js'
+
+export interface BatchRequest {
+  id: string
+  prompt: string
+  maxTokens: number
+}
+
+export async function callAnthropicBatch(
+  apiKey: string,
+  model: string,
+  requests: BatchRequest[],
+  onProgress?: (message: string) => void,
+): Promise<Map<string, string>> {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { Anthropic } = require('@anthropic-ai/sdk') as typeof import('@anthropic-ai/sdk')
+  const anthropic = new Anthropic({ apiKey })
+
+  onProgress?.(`Submitting batch of ${requests.length} requests to Anthropic...`)
+  const batch = await anthropic.messages.batches.create({
+    requests: requests.map((r) => ({
+      custom_id: r.id,
+      params: {
+        model,
+        max_tokens: r.maxTokens,
+        messages: [{ role: 'user' as const, content: r.prompt }],
+      },
+    })),
+  })
+
+  // Poll until complete
+  let status = await anthropic.messages.batches.retrieve(batch.id)
+  while (status.processing_status === 'in_progress') {
+    await new Promise((resolve) => setTimeout(resolve, 5000))
+    status = await anthropic.messages.batches.retrieve(batch.id)
+    const { processing, succeeded, errored } = status.request_counts
+    onProgress?.(
+      `Batch ${batch.id.slice(-8)}: ${succeeded} done, ${processing} processing${errored ? `, ${errored} errored` : ''}`,
+    )
+  }
+
+  // Collect results
+  const results = new Map<string, string>()
+  for await (const result of await anthropic.messages.batches.results(batch.id)) {
+    if (result.result.type === 'succeeded') {
+      const content = result.result.message.content[0]
+      if (content.type === 'text') {
+        results.set(result.custom_id, content.text)
+      }
+    }
+  }
+  return results
+}
 import { buildBlockAnnotationPrompt, parseBlockAnnotationResponse } from '../prompts/annotate-block.js'
 import { buildFileAnnotationPrompt } from '../prompts/annotate-file.js'
 import { buildFolderAnnotationPrompt } from '../prompts/annotate-folder.js'

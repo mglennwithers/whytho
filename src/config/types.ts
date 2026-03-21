@@ -8,6 +8,12 @@ export interface WhythoConfig {
     annotationModel?: string
     inferModel?: string
     apiKeyEnv?: string
+    batchInfer?: {
+      /** 'auto' enables batching when total pending annotations exceeds threshold, 'always' forces it, 'never' disables it. Default: 'auto' */
+      mode?: 'auto' | 'always' | 'never'
+      /** For 'auto' mode: total pending annotation count above which batch mode activates. Default: 50 */
+      threshold?: number
+    }
   }
   verbosity: {
     /** Which blocks to annotate. minimal=functions/classes only, standard=all named blocks, full=everything */

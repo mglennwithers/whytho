@@ -14,6 +14,10 @@ export const DEFAULT_CONFIG: WhythoConfig = {
     annotationModel: DEFAULT_AI_MODEL,
     inferModel: DEFAULT_INFER_MODEL,
     apiKeyEnv: 'ANTHROPIC_API_KEY',
+    batchInfer: {
+      mode: 'auto',
+      threshold: 50,
+    },
   },
   verbosity: {
     coverage: 'standard',
