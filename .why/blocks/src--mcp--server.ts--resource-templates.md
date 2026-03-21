@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::RESOURCE_TEMPLATES
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-21T11:11:33.515Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::RESOURCE_TEMPLATES
   line_range:
-    start: 167
-    end: 192
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    start: 168
+    end: 193
+    commit: f22cfd6ce9e160d144e02906168ae1f90de7028c
   content_hash: sha256:98edd7963fa82471003fc812a274841f69bbc1712eb023d07a58ffdfbcc470fa
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     folders, sessions) through a custom URI scheme, each mapping to markdown documentation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: f22cfd6ce9e160d144e02906168ae1f90de7028c
 ---
 
 # RESOURCE_TEMPLATES

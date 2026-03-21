@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::refLower
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-21T11:11:33.437Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::refLower
   line_range:
-    start: 382
-    end: 382
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    start: 396
+    end: 396
+    commit: f22cfd6ce9e160d144e02906168ae1f90de7028c
   content_hash: sha256:0dd5d75d1b55a54a8893373fac61104355ef3378e0ab24672bb1b6ed508dddc8
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     comparison or storage purposes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: f22cfd6ce9e160d144e02906168ae1f90de7028c
 ---
 
 # refLower

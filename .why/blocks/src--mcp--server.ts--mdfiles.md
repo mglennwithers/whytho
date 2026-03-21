@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::mdFiles
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-21T11:11:33.277Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::mdFiles
   line_range:
-    start: 210
-    end: 210
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    start: 211
+    end: 211
+    commit: f22cfd6ce9e160d144e02906168ae1f90de7028c
   content_hash: sha256:11df72fb09382a65496b4d1db3050b2daa544f995c808396d213b815dfbe0df1
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     reverse-alphabetical sequence.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: f22cfd6ce9e160d144e02906168ae1f90de7028c
 ---
 
 # mdFiles

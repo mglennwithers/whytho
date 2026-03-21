@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::slashIdx
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-21T11:11:33.738Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::slashIdx
   line_range:
-    start: 523
-    end: 523
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    start: 537
+    end: 537
+    commit: f22cfd6ce9e160d144e02906168ae1f90de7028c
   content_hash: sha256:52599535c83ae1fff98a93cd5124a23f22ac7c795ed31a34e17cbb97821badd1
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     component, likely to identify where the path portion begins.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: f22cfd6ce9e160d144e02906168ae1f90de7028c
 ---
 
 # slashIdx

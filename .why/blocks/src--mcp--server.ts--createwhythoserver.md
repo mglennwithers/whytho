@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::createWhythoServer
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-21T11:11:32.956Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::createWhythoServer
   line_range:
-    start: 219
-    end: 560
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
-  content_hash: sha256:effc40fd64e7e0664df6fea14b6fcd8fee49ebcb9dc8211bffc5034a58c2c9e5
+    start: 220
+    end: 574
+    commit: f22cfd6ce9e160d144e02906168ae1f90de7028c
+  content_hash: sha256:ee362c0c65d08b86d8fb46fc892ed228c967de79126fd2021eca631191d23910
   structural:
     kind: function
     parent_scope: module
@@ -27,12 +27,11 @@ identity:
     parameters: (0 params)
     index_in_parent: 2
   semantic_fingerprint: >-
-    Initializes an MCP server that exposes a "whytho" annotation system through tools (get_block, search, push_note,
-    etc.) and resources, enabling clients to query and manage code documentation indexed by sessions, files, blocks, and
-    relationships.
+    get_file_context previously concatenated all block annotations with no limit, which caused token overflow on
+    densely-annotated files (e.g. pipeline.ts at 121k chars). Fixed by adding max_blocks parame
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: f22cfd6ce9e160d144e02906168ae1f90de7028c
 ---
 
 # createWhythoServer
@@ -76,3 +75,5 @@ This function creates and configures a Model Context Protocol (MCP) server that 
 - **[Persistence mechanism]:** Whether pushed notes (push_note tool) go to disk, git, or another backing store. The pushReasoning function is called but not defined here.
 
 - **[Annotation file format]:** The exact structure of .md files stored in whyRoot. The code assumes frontmatter + body but does not show how it's parsed or what metadata is expected.
+
+get_file_context previously concatenated all block annotations with no limit, which caused token overflow on densely-annotated files (e.g. pipeline.ts at 121k chars). Fixed by adding max_blocks parameter (default: 10). Overflow blocks are listed as refs with a pointer to get_block — this preserves discoverability without blowing up the response. Default of 10 chosen as a conservative ceiling: 10 verbose inferred annotations is ~40-50KB, well under MCP result limits, while still covering most files (which have fewer than 10 significant blocks).

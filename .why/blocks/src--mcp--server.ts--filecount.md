@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::fileCount
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-21T11:11:33.042Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::fileCount
   line_range:
-    start: 439
-    end: 439
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    start: 453
+    end: 453
+    commit: f22cfd6ce9e160d144e02906168ae1f90de7028c
   content_hash: sha256:82c4d2e801fddc09f539967458b5ee23138ddc83b225a7b16bf9a97c6f974a8c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     fallback to an empty object if files is undefined or null.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: f22cfd6ce9e160d144e02906168ae1f90de7028c
 ---
 
 # fileCount
