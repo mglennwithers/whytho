@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::searchAnnotations
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:34:24.974Z"
+updated: "2026-03-21T11:35:37.121Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 419
     end: 434
-    commit: 92a446a1d8878aa1e160bf0695c0105e67f4fabd
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:8e45c01dbfd1d2ded55989765b71d711feb4f3ec3402ee42e33ba6d01fbd6d57
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     both body content and reference fields, then formats matching results with preview text.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 92a446a1d8878aa1e160bf0695c0105e67f4fabd
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # searchAnnotations

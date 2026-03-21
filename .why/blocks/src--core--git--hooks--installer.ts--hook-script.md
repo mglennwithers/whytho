@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/hooks/installer.ts::HOOK_SCRIPT
 file: src/core/git/hooks/installer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:34.139Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 6
     end: 17
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:452f3cdc89841d57c21af95d7aeac01cecb46ffaacd3f1fa1ac46aefcd56ef64
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     environment variable, and auto-commits changes to a `.why/` directory if detected.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # HOOK_SCRIPT

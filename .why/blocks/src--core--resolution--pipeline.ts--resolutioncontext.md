@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::ResolutionContext
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:35.856Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 16
     end: 24
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:79a35bf0baa3ccd38b601455add753b969b1e00cee7b46a5ad5db23c6a95090c
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     resolution operations, serving as the primary data carrier throughout a resolution pipeline.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # ResolutionContext

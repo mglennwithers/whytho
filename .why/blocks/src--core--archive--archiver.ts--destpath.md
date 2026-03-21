@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/archive/archiver.ts::destPath
 file: src/core/archive/archiver.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:33.293Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 44
     end: 44
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:700257780de0b4840e24aedd7781798ea99a753e652010d3c0a1eac730db5b48
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     existence, storing the result in a variable for subsequent use.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # destPath

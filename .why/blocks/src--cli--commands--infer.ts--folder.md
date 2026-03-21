@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::folder
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T10:32:02.820Z"
+updated: "2026-03-21T11:35:32.115Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 100
     end: 100
-    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:e4e5321788c72867dc302f4825dca08f753e75e52d0ce9a28895a2af24ca166c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     for subsequent use in directory-based operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # folder

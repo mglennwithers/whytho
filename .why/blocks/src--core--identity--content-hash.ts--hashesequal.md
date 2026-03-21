@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/identity/content-hash.ts::hashesEqual
 file: src/core/identity/content-hash.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:34.319Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 13
     end: 15
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:32a8d95c0a25ff6ac061e768130551812cce4b51737569699020a147667730b6
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     without any normalization or cryptographic verification.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # hashesEqual

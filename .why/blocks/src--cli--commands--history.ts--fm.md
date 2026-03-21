@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/history.ts::fm
 file: src/cli/commands/history.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:31.594Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 55
     end: 55
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:654369e6c3a069019c5e89e25dbdc30448782e09ba56b73510b4cc57ad628e19
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     frontmatter key-value pairs.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # fm

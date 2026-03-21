@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/tracking.ts::isSkippedDir
 file: src/config/tracking.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:33.216Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 47
     end: 49
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:6233a6f5deaf271140de93a0e05a19f23a24a1b88f3c2ebcc70260a82efd8a92
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # isSkippedDir

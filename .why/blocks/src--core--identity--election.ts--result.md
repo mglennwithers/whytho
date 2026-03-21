@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/identity/election.ts::result
 file: src/core/identity/election.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:34.431Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 128
     end: 136
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:bd46ae229af6814c3b411e1b75c92eb17481b03e5d8624b593171f020457ccb1
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     either match results or null if the operation exceeds a configured time limit.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # result

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/slugify.test.ts::describe(pathFromSlug)
 file: tests/unit/slugify.test.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-21T11:35:37.535Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 44
     end: 50
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:fe2d9f2d48cbeee5dea89dc7d4b8028a70f52da1e114fe552685e58293543324
   structural:
     kind: describe
@@ -30,7 +30,7 @@ identity:
     conversion between file paths and slug formats.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # describe(pathFromSlug)

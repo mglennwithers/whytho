@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/layout.ts::indexPath
 file: src/core/fs/layout.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:33.792Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 43
     end: 45
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:76ccf610278d22c5e11159e1b25aa9cc4069d88c4932fc2616b9cc77084c5aa4
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     path to an index file.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # indexPath

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/init.ts::EMPTY_ARCHIVE_INDEX
 file: src/core/fs/init.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:33.591Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 28
     end: 35
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:0487b826b9dd9f8e368530dc29ac02ba2bb1bf8b485245f98bdd5f9a3a171c95
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     folders, files, and blocks.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # EMPTY_ARCHIVE_INDEX

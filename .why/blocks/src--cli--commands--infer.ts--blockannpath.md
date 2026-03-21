@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::blockAnnPath
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T10:32:02.408Z"
+updated: "2026-03-21T11:35:31.782Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 324
     end: 324
-    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:b7e7a6d96107e3786709c38d3e1a56a088b09f2b19995d5d4aafdd86eeeec564
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     storing the result in a const variable for subsequent use.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # blockAnnPath

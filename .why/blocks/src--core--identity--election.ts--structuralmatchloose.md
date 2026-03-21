@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/identity/election.ts::structuralMatchLoose
 file: src/core/identity/election.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:34.456Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 31
     end: 34
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:4cd252a1175f3ab3a4beff928367c22d611df1d35079df497fff2ccbd42e94eb
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     only kind and name, ignoring scope context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # structuralMatchLoose

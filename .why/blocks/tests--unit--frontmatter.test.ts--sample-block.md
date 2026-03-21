@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/frontmatter.test.ts::SAMPLE_BLOCK
 file: tests/unit/frontmatter.test.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-21T11:35:37.503Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 6
     end: 31
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:effb8905827edb95c623724d5d9d23dadfee4bfc4c5dfe0bb0202bf4a0825e38
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     properties, content hash, and tracking information across development sessions.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # SAMPLE_BLOCK

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::FolderFrontmatter
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-21T11:35:36.112Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 141
     end: 141
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:2772e15961e03df9ccc62ad2dbfd081667ecfe13fec6e8f6adeebfc35fbd6a42
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     creates a type-safe representation of validated folder metadata.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # FolderFrontmatter

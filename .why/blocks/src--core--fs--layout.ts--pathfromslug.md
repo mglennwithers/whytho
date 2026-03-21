@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/layout.ts::pathFromSlug
 file: src/core/fs/layout.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:33.824Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 90
     end: 92
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:10cecd44c1e7eb07a62ca9fd2c6d9efd6b526e539a027e2b772b71031d7e0af5
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     representation to standard filesystem paths.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # pathFromSlug

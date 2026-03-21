@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/related.ts::other
 file: src/cli/commands/related.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:32.772Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 43
     end: 43
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:b149fd3ec7044851e488839e7c4f0c2456ad8c217e74e644d623d926967b5659
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     outbound or source when going inbound.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # other

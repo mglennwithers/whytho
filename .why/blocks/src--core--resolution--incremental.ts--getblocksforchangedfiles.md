@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/incremental.ts::getBlocksForChangedFiles
 file: src/core/resolution/incremental.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:35.623Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 8
     end: 16
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:2cda71469d1d7595635c3c47c52893a113de60487f26466fbe20500a160877be
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     changed files, with cross-platform path normalization.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # getBlocksForChangedFiles

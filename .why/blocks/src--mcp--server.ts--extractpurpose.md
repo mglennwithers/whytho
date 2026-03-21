@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::extractPurpose
 file: src/mcp/server.ts
 created: "2026-03-21T11:28:48.932Z"
-updated: "2026-03-21T11:34:24.279Z"
+updated: "2026-03-21T11:35:36.594Z"
 created_by_session: agent-push
 updated_by_session: agent-push
 identity:
@@ -12,7 +12,7 @@ identity:
   line_range:
     start: 223
     end: 226
-    commit: 92a446a1d8878aa1e160bf0695c0105e67f4fabd
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:015c121e3e959c24ca93fa5745c6def2317c38822c8a852292e9a2b52ff39caf
   structural:
     kind: function
@@ -25,7 +25,7 @@ identity:
     to give agents a lightweight 'what does this file do?' answer without loading block d
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 92a446a1d8878aa1e160bf0695c0105e67f4fabd
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # extractPurpose

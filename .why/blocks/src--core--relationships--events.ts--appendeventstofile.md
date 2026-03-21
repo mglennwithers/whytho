@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/events.ts::appendEventsToFile
 file: src/core/relationships/events.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:35.444Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 113
     end: 116
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:3049058596d00a6bcd6ced73264dd066412bfaf736bdb88ac03d0feb5d482956
   structural:
     kind: function
@@ -29,7 +29,7 @@ identity:
   semantic_fingerprint: Converts an array of hook events to newline-delimited JSON strings and appends them to a file in UTF-8 encoding.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # appendEventsToFile

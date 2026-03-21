@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/parser-typescript.test.ts::SAMPLE_SOURCE
 file: tests/unit/parser-typescript.test.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-21T11:35:37.530Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 7
     end: 7
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:3b58a2ce9635471ba7df71742fbfb61cc5db89e13e073cbfc9da4cd1da45ab12
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     fixture data in TypeScript parser unit tests.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # SAMPLE_SOURCE

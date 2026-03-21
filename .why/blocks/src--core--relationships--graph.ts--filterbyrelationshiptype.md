@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/graph.ts::filterByRelationshipType
 file: src/core/relationships/graph.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:35.559Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 26
     end: 31
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:514ed6e8b7993eb818b74e700cf3761b4def7e084e156d013948052522dd9d49
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     the specified relationship type parameter.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # filterByRelationshipType

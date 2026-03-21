@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/archive/archiver.ts::archiveBasePath
 file: src/core/archive/archiver.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:33.268Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 39
     end: 42
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:45e270d0f0746535046de29be5d977be24b7919810788be7c9481c615c270110
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     and markdown extension.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # archiveBasePath

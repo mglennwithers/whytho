@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::ArchiveReason
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-21T11:35:35.981Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 20
     end: 20
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:18cc0ceaedf7fd8b953f8f2b5af61be88bf658a5a5194260011cfde7f65bde49
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     strings through indexed access pattern.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # ArchiveReason

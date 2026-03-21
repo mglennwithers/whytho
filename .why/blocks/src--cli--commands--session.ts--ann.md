@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/session.ts::ann
 file: src/cli/commands/session.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:33.033Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 39
     end: 39
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:91e6490eb15612c3f21750d2513c41433d000f1afe03d339f3f2fd79f4385fab
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     storing the result in a variable for subsequent use.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # ann

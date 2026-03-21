@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/tracking.ts::isTrackedFile
 file: src/config/tracking.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:33.222Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 15
     end: 41
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:a0a1c2f01d90dd8eec2f42ece45861ae85d02f13542c6e59b074aaa20897e45c
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     fallback language detection when no extension filter is specified.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # isTrackedFile

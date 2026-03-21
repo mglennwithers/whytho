@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/types.ts::ParserPlugin
 file: src/core/parser/types.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:35.260Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 14
     end: 18
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:5f0c5cd451f31527e5751c76729709b81f945a5bc572088430473c2e444c2c78
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     parsing logic to pluggable implementations, each responsible for a set of file extensions.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # ParserPlugin

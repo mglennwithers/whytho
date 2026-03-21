@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/mcp.ts::registerMcp
 file: src/cli/commands/mcp.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:32.615Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 3
     end: 16
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:0fa763a3875213400abd299b7c06a5c77f7bda3eb2ddc60082cb9f326925a92f
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     handling that writes to stderr and exits on failure.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # registerMcp

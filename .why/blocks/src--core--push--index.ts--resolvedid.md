@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::resolvedId
 file: src/core/push/index.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:35.419Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 54
     end: 54
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:0ef310c9fd2a14d7de0f71d2cf4d0b7d5ab3eef38d4df480732c566b73be3b06
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     provided reference as-is, storing the result in a reactive variable.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # resolvedId

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/infer.ts::bodyStart
 file: src/ai/prompts/infer.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-21T08:44:40.280Z"
+updated: "2026-03-21T11:35:30.279Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 128
     end: 128
-    commit: 495c504fd929f1f73d7948095c27fb85273039c7
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:56e920b0aece43a2e07d46dbfc7646ca0f15f32d2490abcf47ce9731701be128
   structural:
     kind: const
@@ -26,7 +26,7 @@ identity:
     content begins within a larger string or buffer during prompt/text parsing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 495c504fd929f1f73d7948095c27fb85273039c7
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # bodyStart

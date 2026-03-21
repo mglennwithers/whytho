@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::BLOCK_KINDS
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:33.357Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 61
     end: 72
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:5dacfdb98a1f38e2bb0cb8e8f8a8df35a1f3f727a6293cad6bd7db83d06decdd
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     testing constructs, likely used throughout the application for classification, filtering, or validation purposes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # BLOCK_KINDS

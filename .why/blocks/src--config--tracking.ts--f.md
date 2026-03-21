@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/tracking.ts::f
 file: src/config/tracking.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:33.204Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 28
     end: 28
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:deaf37c650635651c493cadcc48ceb62fcc4ed5f99b51045ea9176dda7e5838c
   structural:
     kind: const
@@ -28,7 +28,7 @@ identity:
   semantic_fingerprint: Iterates through a collection of folder names to be excluded, processing each one individually in sequence.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # f

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::searchRoot
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T10:32:03.284Z"
+updated: "2026-03-21T11:35:32.475Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 146
     end: 148
-    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:eff5393a937941707bcd30f95d7ae4ed4de0e92a271f5c4c8710626872b0caa2
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     or defaulting to the repository root itself.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # searchRoot

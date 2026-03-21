@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::BLOCKS_DIR
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:33.364Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 8
     end: 8
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:d99116b26ce9d9280b889a6bd8bc87b7135387ad3b56c1e72b239ba8ba3174d6
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     constant likely serves as a centralized reference point for file system operations involving block resources.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # BLOCKS_DIR

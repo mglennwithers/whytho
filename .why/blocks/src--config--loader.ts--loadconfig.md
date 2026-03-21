@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/loader.ts::loadConfig
 file: src/config/loader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:33.137Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 30
     end: 59
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:b42f6dde3c30a7651b74a6e9b7072a75a61d1ab4d041e940bf536a978d1c1c9e
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     package.json) in priority order, merging each with defaults and returning the result.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # loadConfig

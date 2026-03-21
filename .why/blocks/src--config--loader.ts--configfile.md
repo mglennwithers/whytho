@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/loader.ts::configFile
 file: src/config/loader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:33.121Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 32
     end: 32
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:9853b8dcd3f1f51ea3127a03a5e0daf84709d4abe0b1fb13f848c88a0b077956
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     by joining the repo root directory with the filename.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # configFile

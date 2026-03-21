@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/annotate-block.ts::body
 file: src/ai/prompts/annotate-block.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-21T05:21:52.955Z"
+updated: "2026-03-21T11:35:30.139Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 72
     end: 72
-    commit: 69bc3c31301d47e94a15deac142597488611a64a
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:ef06f925151259c830b84e7c556a7a232165ab5ec325aff5b0cd22fec272870b
   structural:
     kind: const
@@ -26,7 +26,7 @@ identity:
     string, and trimming whitespace.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 69bc3c31301d47e94a15deac142597488611a64a
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # body

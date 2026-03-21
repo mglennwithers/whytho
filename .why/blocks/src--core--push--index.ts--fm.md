@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::fm
 file: src/core/push/index.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:35.326Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 69
     end: 80
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:09ef9ec8ca4bd7163682c3250c83a6d5e1575ab1f00a0e427be257b02bca1373
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     model identifier, and empty collections for tracking changes to commits, files, folders, and code blocks.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # fm

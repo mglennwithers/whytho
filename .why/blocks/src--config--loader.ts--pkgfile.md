@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/loader.ts::pkgFile
 file: src/config/loader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:33.171Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 44
     end: 44
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:c37172dccb660cd855edc0373f4289f4298c055f6ca2d3cd45b61a6a3a2eed97
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     path with the filename string.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # pkgFile

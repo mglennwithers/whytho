@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/diff.ts::getFileDiff
 file: src/core/git/diff.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:34.067Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 53
     end: 65
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:6c1f89cc3c7cb9f6d759f8b864e9bb63dc91fafd2f68a0f9a96e3d6d80dce475
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     string or an empty string on failure.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # getFileDiff

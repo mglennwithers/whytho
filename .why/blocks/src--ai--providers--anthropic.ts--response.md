@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/anthropic.ts::response
 file: src/ai/providers/anthropic.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T10:32:02.134Z"
+updated: "2026-03-21T11:35:30.663Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 109
     end: 109
-    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:5a4d8b1547b732234f3bd50db7d1f2ca04d0009d21f76cab27dfbdcebd054924
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     result for subsequent processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # response

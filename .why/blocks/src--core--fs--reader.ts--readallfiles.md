@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/reader.ts::readAllFiles
 file: src/core/fs/reader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:33.960Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 48
     end: 50
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:6b60f4129e62a9edf2f79c9b444bcce49fd2c1f818fa2a8b87cdb34bf34156f9
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     delegating to a generic annotation reader with type safety.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # readAllFiles

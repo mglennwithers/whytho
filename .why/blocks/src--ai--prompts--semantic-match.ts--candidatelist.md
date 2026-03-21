@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/semantic-match.ts::candidateList
 file: src/ai/prompts/semantic-match.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-21T05:21:52.955Z"
+updated: "2026-03-21T11:35:30.440Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 5
     end: 10
-    commit: 69bc3c31301d47e94a15deac142597488611a64a
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:b15b5ccc9bde11f3f5b31e8eefe55d66842422b71eca600b255b22078d000b78
   structural:
     kind: const
@@ -26,7 +26,7 @@ identity:
     scope, and a truncated source preview (max 500 chars) wrapped in markdown code fences.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 69bc3c31301d47e94a15deac142597488611a64a
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # candidateList

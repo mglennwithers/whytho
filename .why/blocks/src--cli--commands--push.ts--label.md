@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/push.ts::label
 file: src/cli/commands/push.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:32.641Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 65
     end: 65
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:559dd85627ba7dfaa76c98bd1c3cb05f76d09e88f9c306084a398ebc45882cf2
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     suggesting either incomplete implementation or a no-op condition.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # label

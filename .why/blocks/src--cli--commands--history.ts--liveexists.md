@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/history.ts::liveExists
 file: src/cli/commands/history.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:31.601Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 24
     end: 31
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:c3e98e8b33ed8c0f61fb2efe0fe7ae1416cf3a1cbb9fb62f8f6d30b8df23cc7f
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     utility and safely handling any import failures by returning false.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # liveExists

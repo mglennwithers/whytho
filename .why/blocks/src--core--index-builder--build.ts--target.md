@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/build.ts::target
 file: src/core/index-builder/build.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:34.644Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 92
     end: 92
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:8e263f67937bcf12a1b3a2d782a08f6b4ad7c533004b135e3e3906851d5621a1
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     lookup operation in what appears to be a graph or dependency structure traversal.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # target

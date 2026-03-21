@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::cached
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T10:32:02.464Z"
+updated: "2026-03-21T11:35:31.802Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 81
     end: 81
-    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:f1f842b5dc868e9bbaecef8ef1f9bf9af5e96162ec2ece12e87699e1d1c14e84
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     either the cached value or undefined.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # cached

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/election.test.ts::makeIdentity
 file: tests/unit/election.test.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-21T11:35:37.484Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 9
     end: 26
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:506439a2c2ae60ca6a2c812d1918024d28b827d1b5d40727fbecce9866f5974e
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     generate consistent mock data for unit tests involving code block identification and tracking.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # makeIdentity

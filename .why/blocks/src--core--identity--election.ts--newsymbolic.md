@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/identity/election.ts::newSymbolic
 file: src/core/identity/election.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:34.421Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 82
     end: 82
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:902adb9a2cd8ad066d56d3989c16efa5caaf06bab1b5fb271d92debf8b963031
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     likely used for generating deterministic, globally-unique references to code blocks.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # newSymbolic

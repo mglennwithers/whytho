@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::FileFrontmatterSchema
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-21T11:35:36.090Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 101
     end: 112
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:568246b6650eeca6ca919780e1249450464a44d23aa82d3da9421aea7437b69a
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     language detection, and optional inference metrics with confidence scoring.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # FileFrontmatterSchema

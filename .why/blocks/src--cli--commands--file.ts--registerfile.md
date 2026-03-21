@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/file.ts::registerFile
 file: src/cli/commands/file.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:31.517Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 9
     end: 47
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:8d526044f251cc09851ecdc9c63a2fdaf8d6ac20b93641e3e02120b1dcc75f4f
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     both formatted console display and structured data export.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # registerFile

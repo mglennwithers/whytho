@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::minimalKinds
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T10:32:03.037Z"
+updated: "2026-03-21T11:35:32.260Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 76
     end: 76
-    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:a06e0ab4d009a4c0b7430ce5c1640604b8a62908f32cffb04dded106def67909
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     'interface') that likely serve as a filter or category classifier for inference operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # minimalKinds

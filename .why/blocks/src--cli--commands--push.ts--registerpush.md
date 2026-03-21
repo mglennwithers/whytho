@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/push.ts::registerPush
 file: src/cli/commands/push.ts
 created: "2026-03-21T04:34:20.326Z"
-updated: "2026-03-21T05:00:04.143Z"
+updated: "2026-03-21T11:35:32.662Z"
 created_by_session: agent-push
 updated_by_session: agent-push
 identity:
@@ -12,7 +12,7 @@ identity:
   line_range:
     start: 17
     end: 73
-    commit: 4f8cbf3e8acf0284aab80d58ed8129e1489f083a
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:d0f75d81b977b5c32b9a98ed6415e421fabb6c35136e55ad833e249e59e71cd2
   structural:
     kind: function
@@ -25,7 +25,7 @@ identity:
     with a type argument is more ergonomic for agents — one command to remember, one --b
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 4f8cbf3e8acf0284aab80d58ed8129e1489f083a
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # registerPush

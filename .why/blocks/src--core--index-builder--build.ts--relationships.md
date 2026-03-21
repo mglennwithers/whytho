@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/build.ts::relationships
 file: src/core/index-builder/build.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:34.612Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 59
     end: 59
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:733193ad9de26171454896e172af9e4dfe9ba2b11769410a30e1198ad522eb7c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     used to construct a graph or relational model of connected entities.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # relationships

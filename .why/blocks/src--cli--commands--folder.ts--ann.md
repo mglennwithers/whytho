@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/folder.ts::ann
 file: src/cli/commands/folder.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:31.536Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 25
     end: 25
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:613d11c57712b94f393ac4f7d8c09d8767b3b28117f06743197d56186f663567
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     stored in the `ann` variable.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # ann

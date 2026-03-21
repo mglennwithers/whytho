@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/related.ts::registerRelated
 file: src/cli/commands/related.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:32.803Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 9
     end: 51
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:00be86988b71955a8e20da20b6ff5c5e7a332e1ebb8dbf21550fed0d7fa9064b
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     supporting both human-readable and JSON output formats.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # registerRelated

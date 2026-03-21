@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/build.ts::unresolved
 file: src/core/index-builder/build.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:34.653Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 60
     end: 60
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:8822233331ca68458d80122d57c19be8f47877780a97db997faf12279b421af6
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     identifiers, dependencies, or references) during an index-building process.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # unresolved

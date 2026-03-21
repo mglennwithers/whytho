@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/loader.ts::overrideVal
 file: src/config/loader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:33.150Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 10
     end: 10
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:df3e2cb774f2bfb7624508263bb4f992e29549b51c02dccdd6363719ca793004
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     merging or fallback pattern where override values take precedence.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # overrideVal

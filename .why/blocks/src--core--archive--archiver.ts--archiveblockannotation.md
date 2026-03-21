@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/archive/archiver.ts::archiveBlockAnnotation
 file: src/core/archive/archiver.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:33.274Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 16
     end: 53
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:9d93dcdf71c2b601f202e888f79f9696b0c84f113d07486cf9f2726a6ee644e7
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     archival metadata (timestamp, reason, session info), then deletes the original.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # archiveBlockAnnotation

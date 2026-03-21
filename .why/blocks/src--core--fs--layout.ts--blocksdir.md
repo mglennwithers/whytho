@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/layout.ts::blocksDir
 file: src/core/fs/layout.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T11:35:33.682Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 34
     end: 36
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:d10f33130954f1ba33fea40f0633390f7bcf5e70c5cc49b2375721c5d28aeb7a
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     constant, serving as a utility for locating the blocks directory within a project structure.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # blocksDir

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/null.ts::now
 file: src/ai/providers/null.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T07:48:55.962Z"
+updated: "2026-03-21T11:35:30.675Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 8
     end: 8
-    commit: 5c05f7b6d5331ff540aa69c696691dbccfd4087f
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:c2b2d0823a4b34d2a215bb8336df11bec41ebee0b0e86f87b9453d5205258ed7
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     records or events.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 5c05f7b6d5331ff540aa69c696691dbccfd4087f
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # now

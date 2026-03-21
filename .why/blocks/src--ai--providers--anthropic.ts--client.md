@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/anthropic.ts::client
 file: src/ai/providers/anthropic.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-21T10:32:01.995Z"
+updated: "2026-03-21T11:35:30.554Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 68
     end: 68
-    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
+    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
   content_hash: sha256:f4d568e0efdd9edb5e9b95977276bd990104382e57f26ae0a57e110ccd37517e
   structural:
     kind: const
@@ -24,7 +24,7 @@ identity:
   semantic_fingerprint: Module-level mutable variable holding a lazily-initialized Anthropic SDK client instance, defaulting to null.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
+  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
 ---
 
 # client
