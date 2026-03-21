@@ -160,9 +160,9 @@ For codebases with existing code that has no annotations, `git why infer` genera
 
 ```bash
 git why infer --dry-run        # preview what's missing
-git why infer                  # generate up to 50 annotations
+git why infer                  # generate up to 500 annotations
 git why infer src/auth/        # limit to a subtree
-git why infer --limit 200      # larger batch
+git why infer --limit 50       # smaller batch
 ```
 
 Inferred annotations include:
@@ -216,6 +216,7 @@ git why diff main..feature-branch
 | `git why related <ref>` | Show the relationship graph for a block |
 | `git why history <ref>` | Show live and archived versions of a block annotation |
 | `git why diff <range>` | Show a git diff annotated with decision context |
+| `git why mcp` | Start the MCP server (stdio transport) for use with Claude Code and other MCP clients |
 
 ---
 
