@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "whytho": {
+      "command": "node",
+      "args": ["./dist/cli/index.js", "mcp"]
+    }
+  }
+}

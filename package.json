@@ -2,7 +2,13 @@
   "name": "whytho",
   "version": "1.0.0",
   "description": "The open standard for persisting AI reasoning alongside your code",
-  "keywords": ["ai", "git", "annotations", "reasoning", "documentation"],
+  "keywords": [
+    "ai",
+    "git",
+    "annotations",
+    "reasoning",
+    "documentation"
+  ],
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -17,7 +23,9 @@
   "bin": {
     "git-why": "./dist/cli/index.js"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -28,6 +36,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",
+    "@modelcontextprotocol/sdk": "^1.27.1",
     "@typescript-eslint/typescript-estree": "^7.0.0",
     "chalk": "^4.1.2",
     "commander": "^12.0.0",
