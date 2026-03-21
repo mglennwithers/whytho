@@ -1,7 +1,7 @@
 {
   "whytho_version": "1.0",
-  "generated_at": "2026-03-21T10:46:29.012Z",
-  "generated_at_commit": "bac00b7dbb120aee69b458272f74bfe4c93a64d1",
+  "generated_at": "2026-03-21T11:06:14.553Z",
+  "generated_at_commit": "ea685916b389ef59fdbfe9bad909fd721c587972",
   "sessions": {
     "2026-03-21-session-mmzsxrsv": {
       "id": "2026-03-21-session-mmzsxrsv",
@@ -4551,12 +4551,24 @@
       "relationships_out": [],
       "relationships_in": []
     },
+    "src/cli/commands/status.ts::registerStatus": {
+      "symbolic_ref": "src/cli/commands/status.ts::registerStatus",
+      "file": "src/cli/commands/status.ts",
+      "canonical_metric": "symbolic",
+      "confidence": 0.95,
+      "last_resolved": "ea685916b389ef59fdbfe9bad909fd721c587972",
+      "content_hash": "sha256:2cb59204d17b7696ba2232936414276f01581930df7fa0118881f199b7cf74f3",
+      "created_by_session": "agent-push",
+      "updated_by_session": "agent-push",
+      "relationships_out": [],
+      "relationships_in": []
+    },
     "src/cli/index.ts::program": {
       "symbolic_ref": "src/cli/index.ts::program",
       "file": "src/cli/index.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "42ba5ba7aabeafd009cac271d721146a84bc7e74",
+      "last_resolved": "ea685916b389ef59fdbfe9bad909fd721c587972",
       "content_hash": "sha256:da72d29af154dee28b5a586a2d129cad39cf5005d1f1670399a4cf3df61fb7d8",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
