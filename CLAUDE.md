@@ -4,6 +4,21 @@
 
 `whytho` is an npm package that implements the Whytho v1.0 spec: persisting AI reasoning alongside git repositories via a `.why/` folder. It exposes a `git-why` CLI binary (enabling `git why <cmd>` as a git subcommand) and a programmatic TypeScript library.
 
+## Read annotations before planning
+
+**Before exploring or modifying any file in this repo, read its whytho annotations first.** The `.why/` folder contains captured reasoning that isn't visible in source code — design decisions, rejected alternatives, tradeoffs, and constraints that shaped the current implementation.
+
+Use the MCP tools directly:
+
+- `mcp__whytho__get_file_context("src/path/to/file.ts")` — file annotation + all block annotations in one call
+- `mcp__whytho__get_block("src/path/to/file.ts::functionName")` — single block reasoning
+- `mcp__whytho__search("query")` — find annotations by topic
+- `mcp__whytho__get_summary()` — overview of what's annotated
+
+Or run `/whytho` to load context for the current task interactively.
+
+Skipping this step means planning against incomplete information — design choices that look arbitrary in the source may have explicit reasoning in `.why/` that rules out the approach you're about to take.
+
 ## Build & test
 
 ```bash
