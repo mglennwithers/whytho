@@ -51,6 +51,14 @@ export const RelationshipSchema = z.object({
   bidirectional: z.boolean().optional(),
 })
 
+export const GenerationSettingsSchema = z.object({
+  coverage: z.enum(['minimal', 'standard', 'full']),
+  detail: z.enum(['brief', 'standard', 'full']),
+  max_tokens: z.number().int().positive(),
+})
+
+export type GenerationSettings = z.infer<typeof GenerationSettingsSchema>
+
 export const BaseAnnotationSchema = z.object({
   whytho: z.literal('1.0'),
   type: z.enum(ANNOTATION_TYPES),
@@ -87,6 +95,7 @@ export const FolderFrontmatterSchema = BaseAnnotationSchema.extend({
   sessions: z.array(z.string()).optional(),
   inferred: z.boolean().optional(),
   inference_confidence: z.number().min(0).max(1).optional(),
+  generation_settings: GenerationSettingsSchema.optional(),
 })
 
 export const FileFrontmatterSchema = BaseAnnotationSchema.extend({
@@ -99,6 +108,7 @@ export const FileFrontmatterSchema = BaseAnnotationSchema.extend({
   language: z.string().optional(),
   inferred: z.boolean().optional(),
   inference_confidence: z.number().min(0).max(1).optional(),
+  generation_settings: GenerationSettingsSchema.optional(),
 })
 
 export const BlockFrontmatterSchema = BaseAnnotationSchema.extend({
@@ -118,6 +128,7 @@ export const BlockFrontmatterSchema = BaseAnnotationSchema.extend({
   archived_at_commit: z.string().optional(),
   inferred: z.boolean().optional(),
   inference_confidence: z.number().min(0).max(1).optional(),
+  generation_settings: GenerationSettingsSchema.optional(),
 })
 
 // ─── TypeScript Types ─────────────────────────────────────────────────────────

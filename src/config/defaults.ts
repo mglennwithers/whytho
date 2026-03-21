@@ -15,6 +15,16 @@ export const DEFAULT_CONFIG: WhythoConfig = {
     inferModel: DEFAULT_INFER_MODEL,
     apiKeyEnv: 'ANTHROPIC_API_KEY',
   },
+  verbosity: {
+    coverage: 'standard',
+    detail: 'standard',
+    maxTokens: { block: 4096, file: 8192, folder: 16384 },
+  },
+  tracking: {
+    includeFolders: [],
+    excludeFolders: [],
+    includeExtensions: [],
+  },
   resolution: {
     confidenceThreshold: DEFAULT_CONFIDENCE_THRESHOLD,
     supersededThreshold: DEFAULT_SUPERSEDED_THRESHOLD,

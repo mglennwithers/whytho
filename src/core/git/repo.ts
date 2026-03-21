@@ -41,6 +41,18 @@ export async function getRecentGitLog(repoRoot: string, n = 10): Promise<string>
   }
 }
 
+export async function getTrackedFiles(repoRoot: string): Promise<Set<string>> {
+  const git = simpleGit(repoRoot)
+  try {
+    const output = await git.raw(['ls-files'])
+    return new Set(
+      output.split('\n').map((f) => f.trim().replace(/\\/g, '/')).filter(Boolean)
+    )
+  } catch {
+    return new Set()
+  }
+}
+
 export async function isGitRepo(dir: string): Promise<boolean> {
   try {
     await findRepoRoot(dir)

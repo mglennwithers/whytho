@@ -1,5 +1,11 @@
 import type { AnnotationType } from '../core/types.js'
 import type { ParsedBlock } from '../core/parser/types.js'
+import type { VerbosityDetail } from '../config/types.js'
+
+export interface AnnotationVerbosity {
+  detail: VerbosityDetail
+  maxTokens: number
+}
 
 export interface AnnotationRequest {
   type: AnnotationType
@@ -14,6 +20,7 @@ export interface AnnotationRequest {
     /** If set, overrides the built-in prompt entirely and passes this string directly to the model. */
     customPrompt?: string
   }
+  verbosity?: AnnotationVerbosity
 }
 
 export interface AnnotationResult {

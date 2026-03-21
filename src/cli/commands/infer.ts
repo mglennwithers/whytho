@@ -2,7 +2,7 @@ import { Command } from 'commander'
 import chalk from 'chalk'
 import * as fs from 'fs/promises'
 import * as path from 'path'
-import { findRepoRoot, getHeadCommitSha } from '../../core/git/repo.js'
+import { findRepoRoot, getHeadCommitSha, getTrackedFiles } from '../../core/git/repo.js'
 import { isWhyDirInitialized } from '../../core/fs/init.js'
 import {
   getWhyRoot,
@@ -18,6 +18,7 @@ import { parseFile } from '../../core/parser/registry.js'
 import { detectLanguage } from '../../core/parser/detect-language.js'
 import { computeContentHash } from '../../core/identity/content-hash.js'
 import { loadConfig } from '../../config/loader.js'
+import { isTrackedFile, isSkippedDir } from '../../config/tracking.js'
 import { getInferProvider } from '../../ai/registry.js'
 import {
   buildInferredBlockPrompt,
@@ -27,11 +28,7 @@ import {
 } from '../../ai/prompts/infer.js'
 import { WHYTHO_VERSION } from '../../core/constants.js'
 import type { BlockFrontmatter, FileFrontmatter, FolderFrontmatter } from '../../core/types.js'
-
-const SKIP_DIRS = new Set([
-  'node_modules', '.git', 'dist', '.why', '.next', '.nuxt',
-  'coverage', '.cache', 'build', 'out', '__pycache__',
-])
+import type { WhythoConfig } from '../../config/types.js'
 
 const INFERRED_SESSION = 'inferred'
 
@@ -40,7 +37,7 @@ function inferredDisclaimer(confidence: number): string {
   return `> **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **${pct}%**\n`
 }
 
-async function collectSourceFiles(dir: string, repoRoot: string): Promise<string[]> {
+async function collectSourceFiles(dir: string, repoRoot: string, config: WhythoConfig): Promise<string[]> {
   const results: string[] = []
   let entries: Awaited<ReturnType<typeof fs.readdir>>
   try {
@@ -50,13 +47,13 @@ async function collectSourceFiles(dir: string, repoRoot: string): Promise<string
   }
 
   for (const entry of entries) {
-    if (SKIP_DIRS.has(entry.name)) continue
+    if (isSkippedDir(entry.name)) continue
     const fullPath = path.join(dir, entry.name)
     const relPath = path.relative(repoRoot, fullPath).replace(/\\/g, '/')
 
     if (entry.isDirectory()) {
-      results.push(...await collectSourceFiles(fullPath, repoRoot))
-    } else if (entry.isFile() && detectLanguage(relPath) !== 'unknown') {
+      results.push(...await collectSourceFiles(fullPath, repoRoot, config))
+    } else if (entry.isFile() && isTrackedFile(relPath, config)) {
       results.push(relPath)
     }
   }
@@ -72,6 +69,8 @@ export function registerInfer(program: Command): void {
     .option('--no-folders', 'Skip folder annotations')
     .option('--limit <n>', 'Max annotations to generate', '50')
     .option('--dry-run', 'Show what would be annotated without writing files')
+    .option('--coverage <level>', 'Block coverage: minimal, standard, full')
+    .option('--detail <level>', 'Annotation detail: brief, standard, full')
     .action(async (targetPath: string | undefined, options) => {
       try {
         const repoRoot = await findRepoRoot()
@@ -81,6 +80,15 @@ export function registerInfer(program: Command): void {
         if (!(await isWhyDirInitialized(repoRoot))) {
           console.error(chalk.red('Error: .why/ not initialized. Run: git why init'))
           process.exit(1)
+        }
+
+        const coverage = (options.coverage ?? config.verbosity.coverage) as import('../../config/types.js').VerbosityCoverage
+        const detail = (options.detail ?? config.verbosity.detail) as import('../../config/types.js').VerbosityDetail
+        const verbosity = {
+          detail,
+          block: { maxTokens: config.verbosity.maxTokens.block },
+          file: { maxTokens: config.verbosity.maxTokens.file },
+          folder: { maxTokens: config.verbosity.maxTokens.folder },
         }
 
         const ai = getInferProvider(config)
@@ -93,8 +101,11 @@ export function registerInfer(program: Command): void {
           ? path.resolve(repoRoot, targetPath)
           : repoRoot
 
+        const trackedFiles = await getTrackedFiles(repoRoot)
+
         console.log(chalk.bold('Scanning for unannotated items...'))
-        const sourceFiles = await collectSourceFiles(searchRoot, repoRoot)
+        const sourceFiles = (await collectSourceFiles(searchRoot, repoRoot, config))
+          .filter((f) => trackedFiles.size === 0 || trackedFiles.has(f))
         console.log(chalk.gray(`Found ${sourceFiles.length} parseable source files`))
 
         const touchedFolders = new Set<string>()
@@ -116,7 +127,12 @@ export function registerInfer(program: Command): void {
 
           // ── blocks ──────────────────────────────────────────────────────────
           if (options.blocks !== false) {
-            for (const block of parsedBlocks) {
+            const minimalKinds = new Set(['function', 'method', 'class', 'interface'])
+            const coverageFilteredBlocks = coverage === 'minimal'
+              ? parsedBlocks.filter((b) => minimalKinds.has(b.kind))
+              : parsedBlocks
+
+            for (const block of coverageFilteredBlocks) {
               if (generated >= limit) break
               const ref = buildSymbolicRef(filePath, block.name)
               const annPath = blockAnnotationPath(whyRoot, ref)
@@ -131,11 +147,13 @@ export function registerInfer(program: Command): void {
               }
 
               try {
+                const blockVerbosity = { detail, maxTokens: verbosity.block.maxTokens }
                 const prompt = buildInferredBlockPrompt({
                   type: 'block',
                   context: { filePath, blockSource: block.content, parsedBlock: block },
+                  verbosity: blockVerbosity,
                 })
-                const raw = await callViaProvider(ai, 'block', prompt)
+                const raw = await callViaProvider(ai, 'block', prompt, verbosity.block.maxTokens)
                 const { semanticFingerprint, confidence, body } = parseInferredResponse(raw)
 
                 const fm: BlockFrontmatter = {
@@ -149,6 +167,7 @@ export function registerInfer(program: Command): void {
                   updated_by_session: INFERRED_SESSION,
                   inferred: true,
                   inference_confidence: confidence,
+                  generation_settings: { coverage, detail, max_tokens: verbosity.block.maxTokens },
                   identity: {
                     symbolic: ref,
                     line_range: { start: block.startLine, end: block.endLine, commit: commitSha },
@@ -187,11 +206,13 @@ export function registerInfer(program: Command): void {
                 generated++
               } else {
                 try {
+                  const fileVerbosity = { detail, maxTokens: verbosity.file.maxTokens }
                   const prompt = buildInferredFilePrompt({
                     type: 'file',
                     context: { filePath },
+                    verbosity: fileVerbosity,
                   })
-                  const raw = await callViaProvider(ai, 'file', prompt)
+                  const raw = await callViaProvider(ai, 'file', prompt, verbosity.file.maxTokens)
                   const { confidence, body } = parseInferredResponse(raw)
 
                   const fm: FileFrontmatter = {
@@ -207,6 +228,7 @@ export function registerInfer(program: Command): void {
                     language: lang,
                     inferred: true,
                     inference_confidence: confidence,
+                    generation_settings: { coverage, detail, max_tokens: verbosity.file.maxTokens },
                   }
                   const fullBody = inferredDisclaimer(confidence) + '\n' + body
                   await writeFile(fileAnnPath, serializeAnnotation(fm, fullBody))
@@ -237,11 +259,13 @@ export function registerInfer(program: Command): void {
 
             try {
               const filesInFolder = sourceFiles.filter((f) => parentFolder(f) === folder)
+              const folderVerbosity = { detail, maxTokens: verbosity.folder.maxTokens }
               const prompt = buildInferredFolderPrompt({
                 type: 'folder',
                 context: { filePath: folder, existingAnnotations: filesInFolder },
+                verbosity: folderVerbosity,
               })
-              const raw = await callViaProvider(ai, 'folder', prompt)
+              const raw = await callViaProvider(ai, 'folder', prompt, verbosity.folder.maxTokens)
               const { confidence, body } = parseInferredResponse(raw)
 
               const fm: FolderFrontmatter = {
@@ -255,6 +279,7 @@ export function registerInfer(program: Command): void {
                 sessions: [],
                 inferred: true,
                 inference_confidence: confidence,
+                generation_settings: { coverage, detail, max_tokens: verbosity.folder.maxTokens },
               }
               const fullBody = inferredDisclaimer(confidence) + '\n' + body
               await writeFile(folderAnnPath, serializeAnnotation(fm, fullBody))
@@ -286,7 +311,12 @@ async function callViaProvider(
   ai: import('../../ai/types.js').AIProvider,
   type: 'block' | 'file' | 'folder',
   prompt: string,
+  maxTokens?: number,
 ): Promise<string> {
-  const result = await ai.generateAnnotation({ type, context: { customPrompt: prompt } })
+  const result = await ai.generateAnnotation({
+    type,
+    context: { customPrompt: prompt },
+    verbosity: maxTokens !== undefined ? { detail: 'standard', maxTokens } : undefined,
+  })
   return result.body
 }

@@ -24,11 +24,11 @@ export function createAnthropicProvider(options: AnthropicProviderOptions = {}):
     return client
   }
 
-  async function callClaude(prompt: string): Promise<string> {
+  async function callClaude(prompt: string, maxTokens = 2048): Promise<string> {
     const anthropic = getClient()
     const message = await anthropic.messages.create({
       model,
-      max_tokens: 2048,
+      max_tokens: maxTokens,
       messages: [{ role: 'user', content: prompt }],
     })
     const block = message.content[0]
@@ -44,15 +44,17 @@ export function createAnthropicProvider(options: AnthropicProviderOptions = {}):
       let body = ''
       const extraFrontmatter: Record<string, unknown> = {}
 
+      const maxTokens = request.verbosity?.maxTokens
+
       if (request.context.customPrompt) {
-        body = await callClaude(request.context.customPrompt)
+        body = await callClaude(request.context.customPrompt, maxTokens)
         return { frontmatter: { whytho: WHYTHO_VERSION, type: request.type, created: now, updated: now }, body }
       }
 
       switch (request.type) {
         case 'block': {
           const prompt = buildBlockAnnotationPrompt(request)
-          const response = await callClaude(prompt)
+          const response = await callClaude(prompt, maxTokens)
           const parsed = parseBlockAnnotationResponse(response)
           body = parsed.body
           extraFrontmatter['_semantic_fingerprint'] = parsed.semanticFingerprint
@@ -60,17 +62,17 @@ export function createAnthropicProvider(options: AnthropicProviderOptions = {}):
         }
         case 'file': {
           const prompt = buildFileAnnotationPrompt(request)
-          body = await callClaude(prompt)
+          body = await callClaude(prompt, maxTokens)
           break
         }
         case 'folder': {
           const prompt = buildFolderAnnotationPrompt(request)
-          body = await callClaude(prompt)
+          body = await callClaude(prompt, maxTokens)
           break
         }
         case 'session': {
           const prompt = buildSessionAnnotationPrompt(request)
-          body = await callClaude(prompt)
+          body = await callClaude(prompt, maxTokens)
           break
         }
       }

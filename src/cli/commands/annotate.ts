@@ -11,6 +11,7 @@ import { parseFile } from '../../core/parser/registry.js'
 import { computeContentHash } from '../../core/identity/content-hash.js'
 import { detectLanguage } from '../../core/parser/detect-language.js'
 import { loadConfig } from '../../config/loader.js'
+import { isTrackedFile } from '../../config/tracking.js'
 import { getDefaultProvider } from '../../ai/registry.js'
 import { WHYTHO_VERSION } from '../../core/constants.js'
 import type { BlockFrontmatter, FileFrontmatter, FolderFrontmatter, SessionFrontmatter } from '../../core/types.js'
@@ -23,6 +24,8 @@ export function registerAnnotate(program: Command): void {
     .option('--session-id <id>', 'Session identifier (default: date-based)')
     .option('--model <model>', 'AI model to use')
     .option('--dry-run', 'Print annotations without writing files')
+    .option('--coverage <level>', 'Block coverage: minimal, standard, full')
+    .option('--detail <level>', 'Annotation detail: brief, standard, full')
     .action(async (options) => {
       try {
         const repoRoot = await findRepoRoot()
@@ -34,9 +37,12 @@ export function registerAnnotate(program: Command): void {
           process.exit(1)
         }
 
+        const coverage = (options.coverage ?? config.verbosity.coverage) as import('../../config/types.js').VerbosityCoverage
+        const detail = (options.detail ?? config.verbosity.detail) as import('../../config/types.js').VerbosityDetail
+
         const ai = getDefaultProvider(config)
         const commitSha = await getHeadCommitSha(repoRoot)
-        const changedFiles = await getChangedFiles(repoRoot)
+        const changedFiles = (await getChangedFiles(repoRoot)).filter((f) => isTrackedFile(f, config))
         const now = new Date().toISOString()
         const dateStr = now.slice(0, 10)
 
@@ -66,7 +72,12 @@ export function registerAnnotate(program: Command): void {
           const folder = parentFolder(filePath)
           touchedFolders.add(folder)
 
-          for (const block of parsedBlocks) {
+          const minimalKinds = new Set(['function', 'method', 'class', 'interface'])
+          const coverageFilteredBlocks = coverage === 'minimal'
+            ? parsedBlocks.filter((b) => minimalKinds.has(b.kind))
+            : parsedBlocks
+
+          for (const block of coverageFilteredBlocks) {
             const symbolicRef = buildSymbolicRef(filePath, block.name)
             const annPath = blockAnnotationPath(whyRoot, symbolicRef)
 
@@ -78,6 +89,7 @@ export function registerAnnotate(program: Command): void {
 
             process.stdout.write(chalk.cyan(`  annotating block: ${symbolicRef}... `))
 
+            const blockMaxTokens = config.verbosity.maxTokens.block
             const result = await ai.generateAnnotation({
               type: 'block',
               context: {
@@ -86,6 +98,7 @@ export function registerAnnotate(program: Command): void {
                 parsedBlock: block,
                 sessionContext: gitLog,
               },
+              verbosity: { detail, maxTokens: blockMaxTokens },
             })
 
             const semanticFingerprint =
@@ -101,6 +114,7 @@ export function registerAnnotate(program: Command): void {
               updated: now,
               created_by_session: sessionId,
               updated_by_session: sessionId,
+              generation_settings: { coverage, detail, max_tokens: blockMaxTokens },
               identity: {
                 symbolic: symbolicRef,
                 line_range: { start: block.startLine, end: block.endLine, commit: commitSha },
@@ -133,9 +147,11 @@ export function registerAnnotate(program: Command): void {
           const fileAnnPath = fileAnnotationPath(whyRoot, filePath)
           if (!(await fileExists(fileAnnPath))) {
             process.stdout.write(chalk.cyan(`  annotating file: ${filePath}... `))
+            const fileMaxTokens = config.verbosity.maxTokens.file
             const fileResult = await ai.generateAnnotation({
               type: 'file',
               context: { filePath, sessionContext: gitLog },
+              verbosity: { detail, maxTokens: fileMaxTokens },
             })
             const fileFm: FileFrontmatter = {
               whytho: WHYTHO_VERSION,
@@ -148,6 +164,7 @@ export function registerAnnotate(program: Command): void {
               sessions: [sessionId],
               blocks: parsedBlocks.map((b) => buildSymbolicRef(filePath, b.name)),
               language: lang,
+              generation_settings: { coverage, detail, max_tokens: fileMaxTokens },
             }
             if (!options.dryRun) {
               await writeFile(fileAnnPath, serializeAnnotation(fileFm, fileResult.body))
@@ -162,9 +179,11 @@ export function registerAnnotate(program: Command): void {
           const folderAnnPath = folderAnnotationPath(whyRoot, folder)
           if (!(await fileExists(folderAnnPath))) {
             process.stdout.write(chalk.cyan(`  annotating folder: ${folder}... `))
+            const folderMaxTokens = config.verbosity.maxTokens.folder
             const folderResult = await ai.generateAnnotation({
               type: 'folder',
               context: { filePath: folder, sessionContext: gitLog },
+              verbosity: { detail, maxTokens: folderMaxTokens },
             })
             const folderFm: FolderFrontmatter = {
               whytho: WHYTHO_VERSION,
@@ -175,6 +194,7 @@ export function registerAnnotate(program: Command): void {
               updated_by_session: sessionId,
               contained_files: filesAnnotated.filter((f) => parentFolder(f) === folder),
               sessions: [sessionId],
+              generation_settings: { coverage, detail, max_tokens: folderMaxTokens },
             }
             if (!options.dryRun) {
               await writeFile(folderAnnPath, serializeAnnotation(folderFm, folderResult.body))
