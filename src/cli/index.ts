@@ -12,6 +12,7 @@ import { registerResolve } from './commands/resolve.js'
 import { registerPush } from './commands/push.js'
 import { registerInfer } from './commands/infer.js'
 import { registerMcp } from './commands/mcp.js'
+import { registerStatus } from './commands/status.js'
 
 const program = new Command()
   .name('git why')
@@ -31,5 +32,6 @@ registerResolve(program)
 registerPush(program)
 registerInfer(program)
 registerMcp(program)
+registerStatus(program)
 
 program.parse(process.argv)

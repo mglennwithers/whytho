@@ -205,6 +205,7 @@ git why diff main..feature-branch
 | Command | Description |
 |---|---|
 | `git why init` | Initialize `.why/` and install the git hook |
+| `git why status` | Show annotation counts, health, and optionally coverage |
 | `git why annotate` | Generate AI annotations for the current session's changed files |
 | `git why push <type> <ref> --body "..."` | Push reasoning directly into an annotation (no AI needed) |
 | `git why infer [path]` | Generate inferred annotations for unannotated blocks/files/folders |
