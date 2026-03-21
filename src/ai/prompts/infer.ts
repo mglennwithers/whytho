@@ -56,15 +56,20 @@ ${detail !== 'brief' ? `
 }
 
 export function buildInferredFilePrompt(request: AnnotationRequest): string {
-  const { filePath } = request.context
+  const { filePath, blockAnnotations } = request.context
   const detail = request.verbosity?.detail ?? 'standard'
   const instructions = detailInstructions(detail)
+  const blockChars = request.verbosity?.contextChars ?? 800
+
+  const blockContext = blockAnnotations && blockAnnotations.length > 0
+    ? `\nBlock annotations from this file:\n${blockAnnotations.map((b) => `### ${b.name}\n${b.body.slice(0, blockChars)}`).join('\n\n')}\n`
+    : ''
 
   return `You are a technical documentation assistant performing post-hoc code analysis. Infer the purpose of this file WITHOUT any original developer context.
 ${instructions ? `\n${instructions}\n` : ''}
 File: ${filePath ?? 'unknown'}
-
-Analyze the file path, naming conventions, and any context clues to infer its role in the project.
+${blockContext}
+Analyze the file path, naming conventions, block annotations (if provided), and any other context clues to infer its role in the project.
 
 Respond in this exact format:
 
@@ -74,23 +79,29 @@ CONFIDENCE: <0.0–1.0>
 
 ## Purpose
 
-<What this file likely does and its role in the project>
+<What this file does and its role in the project>
 ${detail !== 'brief' ? `
 ## What Cannot Be Determined
 
-<What cannot be inferred from the file path and name alone>` : ''}`
+<What cannot be inferred from static analysis alone>` : ''}`
 }
 
 export function buildInferredFolderPrompt(request: AnnotationRequest): string {
-  const { filePath, existingAnnotations } = request.context
+  const { filePath, existingAnnotations, fileAnnotations } = request.context
   const detail = request.verbosity?.detail ?? 'standard'
   const instructions = detailInstructions(detail)
+  const fileChars = request.verbosity?.contextChars ?? 800
+
+  const fileContext = fileAnnotations && fileAnnotations.length > 0
+    ? `\nFile annotations:\n${fileAnnotations.map((f) => `### ${f.path}\n${f.body.slice(0, fileChars)}`).join('\n\n')}\n`
+    : existingAnnotations && existingAnnotations.length > 0
+      ? `\nContains: ${existingAnnotations.join(', ')}`
+      : ''
 
   return `You are a technical documentation assistant performing post-hoc code analysis. Infer the purpose of this folder WITHOUT any original developer context.
 ${instructions ? `\n${instructions}\n` : ''}
 Folder: ${filePath ?? 'unknown'}
-${existingAnnotations && existingAnnotations.length > 0 ? `\nContains: ${existingAnnotations.join(', ')}` : ''}
-
+${fileContext}
 Respond in this exact format:
 
 CONFIDENCE: <0.0–1.0>
@@ -99,7 +110,7 @@ CONFIDENCE: <0.0–1.0>
 
 ## Purpose
 
-<What this folder likely contains and its architectural role>
+<What this folder contains and its architectural role>
 ${detail !== 'brief' ? `
 ## What Cannot Be Determined
 

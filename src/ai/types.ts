@@ -5,6 +5,8 @@ import type { VerbosityDetail } from '../config/types.js'
 export interface AnnotationVerbosity {
   detail: VerbosityDetail
   maxTokens: number
+  /** Max chars of prior-pass annotation body included as context in this prompt. */
+  contextChars?: number
 }
 
 export interface AnnotationRequest {
@@ -15,6 +17,8 @@ export interface AnnotationRequest {
     parsedBlock?: ParsedBlock
     sessionContext?: string
     existingAnnotations?: string[]
+    blockAnnotations?: Array<{ name: string; body: string }>
+    fileAnnotations?: Array<{ path: string; body: string }>
     changedFiles?: string[]
     gitLog?: string
     /** If set, overrides the built-in prompt entirely and passes this string directly to the model. */

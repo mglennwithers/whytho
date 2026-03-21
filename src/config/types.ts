@@ -20,6 +20,13 @@ export interface WhythoConfig {
       file: number
       folder: number
     }
+    /** Max chars of annotation body included as context in downstream prompts. */
+    contextChars: {
+      /** Block annotation body chars included when building a file prompt. */
+      blockInFile: number
+      /** File annotation body chars included when building a folder prompt. */
+      fileInFolder: number
+    }
   }
   tracking: {
     /** If non-empty, only files under these paths (relative to repo root) are tracked. e.g. ["src/", "lib/"] */

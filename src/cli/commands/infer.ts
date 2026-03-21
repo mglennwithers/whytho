@@ -29,6 +29,7 @@ import {
 import { WHYTHO_VERSION } from '../../core/constants.js'
 import type { BlockFrontmatter, FileFrontmatter, FolderFrontmatter } from '../../core/types.js'
 import type { WhythoConfig } from '../../config/types.js'
+import { readAnnotationFile } from '../../core/fs/reader.js'
 
 const INFERRED_SESSION = 'inferred'
 
@@ -87,8 +88,8 @@ export function registerInfer(program: Command): void {
         const verbosity = {
           detail,
           block: { maxTokens: config.verbosity.maxTokens.block },
-          file: { maxTokens: config.verbosity.maxTokens.file },
-          folder: { maxTokens: config.verbosity.maxTokens.folder },
+          file: { maxTokens: config.verbosity.maxTokens.file, contextChars: config.verbosity.contextChars.blockInFile },
+          folder: { maxTokens: config.verbosity.maxTokens.folder, contextChars: config.verbosity.contextChars.fileInFolder },
         }
 
         const ai = getInferProvider(config)
@@ -108,29 +109,27 @@ export function registerInfer(program: Command): void {
           .filter((f) => trackedFiles.size === 0 || trackedFiles.has(f))
         console.log(chalk.gray(`Found ${sourceFiles.length} parseable source files`))
 
-        const touchedFolders = new Set<string>()
-
+        // Pre-parse all files once so we can reuse parsed blocks across passes
+        const parsedFileCache = new Map<string, { source: string; blocks: ReturnType<typeof parseFile> }>()
         for (const filePath of sourceFiles) {
-          if (generated >= limit) break
-
-          let source: string
           try {
-            source = await fs.readFile(path.join(repoRoot, filePath), 'utf8')
-          } catch {
-            continue
-          }
+            const source = await fs.readFile(path.join(repoRoot, filePath), 'utf8')
+            parsedFileCache.set(filePath, { source, blocks: parseFile(source, filePath) })
+          } catch { /* deleted or unreadable */ }
+        }
 
-          const parsedBlocks = parseFile(source, filePath)
-          const lang = detectLanguage(filePath)
-          const folder = parentFolder(filePath)
-          touchedFolders.add(folder)
+        // ── Pass 1: Blocks ───────────────────────────────────────────────────
+        if (options.blocks !== false) {
+          const minimalKinds = new Set(['function', 'method', 'class', 'interface'])
 
-          // ── blocks ──────────────────────────────────────────────────────────
-          if (options.blocks !== false) {
-            const minimalKinds = new Set(['function', 'method', 'class', 'interface'])
+          for (const filePath of sourceFiles) {
+            if (generated >= limit) break
+            const cached = parsedFileCache.get(filePath)
+            if (!cached) continue
+
             const coverageFilteredBlocks = coverage === 'minimal'
-              ? parsedBlocks.filter((b) => minimalKinds.has(b.kind))
-              : parsedBlocks
+              ? cached.blocks.filter((b) => minimalKinds.has(b.kind))
+              : cached.blocks
 
             for (const block of coverageFilteredBlocks) {
               if (generated >= limit) break
@@ -194,57 +193,83 @@ export function registerInfer(program: Command): void {
               }
             }
           }
+        }
 
-          // ── file ────────────────────────────────────────────────────────────
-          if (options.files !== false && generated < limit) {
+        // ── Pass 2: Files ────────────────────────────────────────────────────
+        if (options.files !== false) {
+          for (const filePath of sourceFiles) {
+            if (generated >= limit) break
+            const cached = parsedFileCache.get(filePath)
+            if (!cached) continue
+
             const fileAnnPath = fileAnnotationPath(whyRoot, filePath)
-            if (!(await fileExists(fileAnnPath))) {
-              process.stdout.write(chalk.cyan(`  infer file:  ${filePath}... `))
+            if (await fileExists(fileAnnPath)) continue
 
-              if (options.dryRun) {
-                console.log(chalk.yellow('(dry run)'))
-                generated++
-              } else {
-                try {
-                  const fileVerbosity = { detail, maxTokens: verbosity.file.maxTokens }
-                  const prompt = buildInferredFilePrompt({
-                    type: 'file',
-                    context: { filePath },
-                    verbosity: fileVerbosity,
-                  })
-                  const raw = await callViaProvider(ai, 'file', prompt, verbosity.file.maxTokens)
-                  const { confidence, body } = parseInferredResponse(raw)
+            process.stdout.write(chalk.cyan(`  infer file:  ${filePath}... `))
 
-                  const fm: FileFrontmatter = {
-                    whytho: WHYTHO_VERSION,
-                    type: 'file',
-                    path: filePath,
-                    created: now,
-                    updated: now,
-                    updated_by_session: INFERRED_SESSION,
-                    parent_folder: folder,
-                    sessions: [],
-                    blocks: parsedBlocks.map((b) => buildSymbolicRef(filePath, b.name)),
-                    language: lang,
-                    inferred: true,
-                    inference_confidence: confidence,
-                    generation_settings: { coverage, detail, max_tokens: verbosity.file.maxTokens },
-                  }
-                  const fullBody = inferredDisclaimer(confidence) + '\n' + body
-                  await writeFile(fileAnnPath, serializeAnnotation(fm, fullBody))
-                  console.log(chalk.green(`done (${Math.round(confidence * 100)}%)`))
-                  generated++
-                } catch (err) {
-                  console.log(chalk.red(`failed: ${String(err)}`))
+            if (options.dryRun) {
+              console.log(chalk.yellow('(dry run)'))
+              generated++
+              continue
+            }
+
+            try {
+              const lang = detectLanguage(filePath)
+              const folder = parentFolder(filePath)
+
+              // Read existing block annotations for context
+              const blockAnnotations: Array<{ name: string; body: string }> = []
+              for (const block of cached.blocks) {
+                const ref = buildSymbolicRef(filePath, block.name)
+                const blockAnnPath = blockAnnotationPath(whyRoot, ref)
+                if (await fileExists(blockAnnPath)) {
+                  try {
+                    const ann = await readAnnotationFile<BlockFrontmatter>(blockAnnPath)
+                    blockAnnotations.push({ name: block.name, body: ann.body })
+                  } catch { /* skip */ }
                 }
               }
+
+              const fileVerbosity = { detail, maxTokens: verbosity.file.maxTokens, contextChars: verbosity.file.contextChars }
+              const prompt = buildInferredFilePrompt({
+                type: 'file',
+                context: { filePath, blockAnnotations },
+                verbosity: fileVerbosity,
+              })
+              const raw = await callViaProvider(ai, 'file', prompt, verbosity.file.maxTokens)
+              const { confidence, body } = parseInferredResponse(raw)
+
+              const fm: FileFrontmatter = {
+                whytho: WHYTHO_VERSION,
+                type: 'file',
+                path: filePath,
+                created: now,
+                updated: now,
+                updated_by_session: INFERRED_SESSION,
+                parent_folder: folder,
+                sessions: [],
+                blocks: cached.blocks.map((b) => buildSymbolicRef(filePath, b.name)),
+                language: lang,
+                inferred: true,
+                inference_confidence: confidence,
+                generation_settings: { coverage, detail, max_tokens: verbosity.file.maxTokens },
+              }
+              const fullBody = inferredDisclaimer(confidence) + '\n' + body
+              await writeFile(fileAnnPath, serializeAnnotation(fm, fullBody))
+              console.log(chalk.green(`done (${Math.round(confidence * 100)}%)`))
+              generated++
+            } catch (err) {
+              console.log(chalk.red(`failed: ${String(err)}`))
             }
           }
         }
 
-        // ── folders ───────────────────────────────────────────────────────────
+        // ── Pass 3: Folders ──────────────────────────────────────────────────
         if (options.folders !== false) {
-          for (const folder of touchedFolders) {
+          // Collect all unique folders that contain trackable files
+          const allFolders = new Set(sourceFiles.map((f) => parentFolder(f)))
+
+          for (const folder of allFolders) {
             if (generated >= limit) break
             const folderAnnPath = folderAnnotationPath(whyRoot, folder)
             if (await fileExists(folderAnnPath)) continue
@@ -259,10 +284,27 @@ export function registerInfer(program: Command): void {
 
             try {
               const filesInFolder = sourceFiles.filter((f) => parentFolder(f) === folder)
-              const folderVerbosity = { detail, maxTokens: verbosity.folder.maxTokens }
+
+              // Read existing file annotations for context
+              const fileAnnotations: Array<{ path: string; body: string }> = []
+              for (const filePath of filesInFolder) {
+                const fileAnnPath = fileAnnotationPath(whyRoot, filePath)
+                if (await fileExists(fileAnnPath)) {
+                  try {
+                    const ann = await readAnnotationFile<FileFrontmatter>(fileAnnPath)
+                    fileAnnotations.push({ path: filePath, body: ann.body })
+                  } catch { /* skip */ }
+                }
+              }
+
+              const folderVerbosity = { detail, maxTokens: verbosity.folder.maxTokens, contextChars: verbosity.folder.contextChars }
               const prompt = buildInferredFolderPrompt({
                 type: 'folder',
-                context: { filePath: folder, existingAnnotations: filesInFolder },
+                context: {
+                  filePath: folder,
+                  existingAnnotations: filesInFolder,
+                  fileAnnotations,
+                },
                 verbosity: folderVerbosity,
               })
               const raw = await callViaProvider(ai, 'folder', prompt, verbosity.folder.maxTokens)

@@ -19,6 +19,7 @@ export const DEFAULT_CONFIG: WhythoConfig = {
     coverage: 'standard',
     detail: 'standard',
     maxTokens: { block: 4096, file: 8192, folder: 16384 },
+    contextChars: { blockInFile: 800, fileInFolder: 800 },
   },
   tracking: {
     includeFolders: [],
