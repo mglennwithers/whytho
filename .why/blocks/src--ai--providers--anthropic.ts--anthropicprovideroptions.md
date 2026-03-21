@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/anthropic.ts::AnthropicProviderOptions
 file: src/ai/providers/anthropic.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-21T05:21:52.955Z"
+updated: "2026-03-21T06:50:40.086Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 9
     end: 12
-    commit: 69bc3c31301d47e94a15deac142597488611a64a
+    commit: c608e953b110bd2b03c65d17e69206a130b571f9
   content_hash: sha256:04ff5a4778030f2e09e1cb870a158b9324e7a1e8fb64a3331b9651e35cb2df3a
   structural:
     kind: interface
@@ -24,7 +24,7 @@ identity:
   semantic_fingerprint: Configuration interface for an Anthropic AI provider, defining optional model selection and API key parameters.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 69bc3c31301d47e94a15deac142597488611a64a
+  last_resolved: c608e953b110bd2b03c65d17e69206a130b571f9
 ---
 
 # AnthropicProviderOptions

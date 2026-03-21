@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/infer.ts::confidence
 file: src/ai/prompts/infer.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-21T05:21:52.955Z"
+updated: "2026-03-21T06:50:40.005Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -12,9 +12,9 @@ inference_confidence: 0.3
 identity:
   symbolic: src/ai/prompts/infer.ts::confidence
   line_range:
-    start: 98
-    end: 98
-    commit: 69bc3c31301d47e94a15deac142597488611a64a
+    start: 116
+    end: 116
+    commit: c608e953b110bd2b03c65d17e69206a130b571f9
   content_hash: sha256:5d76b65258791fcae657f632a9c50c02cbfa358cc07f4beec33e107810a8a938
   structural:
     kind: const
@@ -26,7 +26,7 @@ identity:
     confidence score that gets adjusted later in the same scope.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 69bc3c31301d47e94a15deac142597488611a64a
+  last_resolved: c608e953b110bd2b03c65d17e69206a130b571f9
 ---
 
 # confidence

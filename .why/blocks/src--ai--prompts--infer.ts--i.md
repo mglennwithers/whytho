@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/infer.ts::i
 file: src/ai/prompts/infer.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-21T05:21:52.955Z"
+updated: "2026-03-21T06:50:40.016Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -12,9 +12,9 @@ inference_confidence: 0.3
 identity:
   symbolic: src/ai/prompts/infer.ts::i
   line_range:
-    start: 101
-    end: 101
-    commit: 69bc3c31301d47e94a15deac142597488611a64a
+    start: 119
+    end: 119
+    commit: c608e953b110bd2b03c65d17e69206a130b571f9
   content_hash: sha256:888df20915c2195ad1d95eaf456b28b7df3bd7f68d5c3f59265277a968af8d0f
   structural:
     kind: const
@@ -24,7 +24,7 @@ identity:
   semantic_fingerprint: A standard index-based for-loop iterating over all elements of a `lines` array using a numeric counter variable `i`.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 69bc3c31301d47e94a15deac142597488611a64a
+  last_resolved: c608e953b110bd2b03c65d17e69206a130b571f9
 ---
 
 # i
