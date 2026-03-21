@@ -8,12 +8,16 @@
 
 **Before exploring or modifying any file in this repo, read its whytho annotations first.** The `.why/` folder contains captured reasoning that isn't visible in source code — design decisions, rejected alternatives, tradeoffs, and constraints that shaped the current implementation.
 
-Use the MCP tools directly:
+Match annotation depth to task depth:
 
-- `mcp__whytho__get_file_context("src/path/to/file.ts")` — file annotation + all block annotations in one call
-- `mcp__whytho__get_block("src/path/to/file.ts::functionName")` — single block reasoning
-- `mcp__whytho__search("query")` — find annotations by topic
-- `mcp__whytho__get_summary()` — overview of what's annotated
+| Scenario | Tool to use |
+|---|---|
+| Starting a new task — understand what's annotated | `mcp__whytho__get_summary()` |
+| Exploring multiple files to find the right one | `mcp__whytho__get_file_context(path, { purpose_only: true })` |
+| About to modify a file — need full context | `mcp__whytho__get_file_context(path)` (default, includes blocks) |
+| About to change a specific function | `mcp__whytho__get_block("file.ts::functionName")` |
+| Looking for reasoning on a topic across the codebase | `mcp__whytho__search("query")` |
+| Need to know what depends on a block | `mcp__whytho__get_related("file.ts::blockName")` |
 
 Or run `/whytho` to load context for the current task interactively.
 

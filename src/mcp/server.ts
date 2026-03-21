@@ -37,7 +37,7 @@ import type { WhythoIndex, BlockFrontmatter, FileFrontmatter, FolderFrontmatter,
 const TOOLS = [
   {
     name: 'get_block',
-    description: 'Get the annotation (reasoning and context) for a specific code block by its symbolic reference (file::blockName).',
+    description: 'Get the annotation for a specific code block (design rationale, tradeoffs, rejected alternatives). Use when you are about to read or modify a specific function and need its detailed "why".',
     inputSchema: {
       type: 'object',
       properties: {
@@ -51,7 +51,7 @@ const TOOLS = [
   },
   {
     name: 'get_file',
-    description: 'Get the annotation for a source file by its path.',
+    description: 'Get the raw annotation file for a source file (includes YAML frontmatter and full body). Prefer get_file_context for most agent use.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -83,19 +83,28 @@ const TOOLS = [
   },
   {
     name: 'get_file_context',
-    description: 'Get the full annotation context for a file: its file-level annotation plus block annotations within it. Use max_blocks to control how many full block annotations are included (default: 10). Any remaining blocks are listed by ref so you can fetch them individually with get_block.',
+    description: [
+      'Get annotation context for a source file.',
+      '',
+      'Choose the right mode for your task:',
+      '- purpose_only: true — "What does this file do?" One-paragraph summary, no blocks. Use when scanning multiple files to find the right one.',
+      '- max_blocks: 0 — File-level annotation only (purpose + design notes). Use when you need full file context but not block detail.',
+      '- default (max_blocks: 10) — File annotation + top 10 block annotations. Use before modifying a file to get full reasoning.',
+      '- max_blocks: N — Increase if you need more blocks; remaining blocks are listed by ref for get_block.',
+    ].join('\n'),
     inputSchema: {
       type: 'object',
       properties: {
         path: { type: 'string', description: 'Relative file path, e.g. "src/auth/middleware.ts"' },
         max_blocks: { type: 'number', description: 'Max number of full block annotations to include (default: 10). Set to 0 for file annotation only.' },
+        purpose_only: { type: 'boolean', description: 'Return only the Purpose section of the file annotation — no blocks, no design notes. Fast scan for "what does this file do?"' },
       },
       required: ['path'],
     },
   },
   {
     name: 'get_related',
-    description: 'Get all blocks related to a given block via the relationship graph (extends, depends_on, implements, etc.).',
+    description: 'Get all blocks related to a given block via the relationship graph (extends, depends_on, implements, etc.). Use before modifying a block to understand what depends on it.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -119,7 +128,7 @@ const TOOLS = [
   },
   {
     name: 'search',
-    description: 'Search annotation bodies and metadata for a query string.',
+    description: 'Search annotation bodies and metadata for a query string. Use when you know the topic or concept but not which file or block it lives in.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -155,7 +164,7 @@ const TOOLS = [
   },
   {
     name: 'get_summary',
-    description: 'Get a high-level summary of what whytho knows about this repository.',
+    description: 'Get a high-level summary of annotation coverage: block/file/session counts and recent sessions. Use this as your first call when starting a new task to understand what reasoning is captured.',
     inputSchema: {
       type: 'object',
       properties: {},
@@ -207,6 +216,13 @@ async function readRaw(filePath: string): Promise<string | null> {
 function stripFrontmatter(content: string): string {
   const match = content.match(/^---\n[\s\S]*?\n---\n([\s\S]*)$/)
   return match ? match[1].trim() : content
+}
+
+// ─── Helper: extract only the ## Purpose section from an annotation body ──────
+
+function extractPurpose(body: string): string {
+  const match = body.match(/##\s+Purpose\n+([\s\S]*?)(?=\n##\s|\n---\s*\n|$)/)
+  return match ? match[1].trim() : body.trim()
 }
 
 // ─── Helper: find latest session ──────────────────────────────────────────────
@@ -283,11 +299,19 @@ export async function createWhythoServer(): Promise<Server> {
         case 'get_file_context': {
           const filePath = a.path as string
           const maxBlocks = typeof a.max_blocks === 'number' ? a.max_blocks : 10
+          const purposeOnly = Boolean(a.purpose_only)
           const parts: string[] = []
 
           // File annotation
           const fileAnnPath = fileAnnotationPath(whyRoot, filePath)
           const fileContent = await readRaw(fileAnnPath)
+
+          if (purposeOnly) {
+            if (!fileContent) return text(`No annotation found for file: ${filePath}`)
+            const purpose = extractPurpose(stripFrontmatter(fileContent))
+            return text(`# ${filePath}\n\n${purpose}`)
+          }
+
           if (fileContent) {
             parts.push(`# File: ${filePath}\n`)
             parts.push(fileContent)
