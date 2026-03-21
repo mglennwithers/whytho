@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/infer.ts::parseInferredResponse
 file: src/ai/prompts/infer.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-21T06:50:40.053Z"
+updated: "2026-03-21T08:44:40.412Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -12,9 +12,9 @@ inference_confidence: 0.92
 identity:
   symbolic: src/ai/prompts/infer.ts::parseInferredResponse
   line_range:
-    start: 109
-    end: 135
-    commit: c608e953b110bd2b03c65d17e69206a130b571f9
+    start: 120
+    end: 146
+    commit: 495c504fd929f1f73d7948095c27fb85273039c7
   content_hash: sha256:344e183ec7061415bac1d219ce1d9d802ae846795a3663ad96632d695075a50d
   structural:
     kind: function
@@ -27,7 +27,7 @@ identity:
     from a body by a `---` delimiter, returning the extracted metadata and body content.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: c608e953b110bd2b03c65d17e69206a130b571f9
+  last_resolved: 495c504fd929f1f73d7948095c27fb85273039c7
 ---
 
 # parseInferredResponse

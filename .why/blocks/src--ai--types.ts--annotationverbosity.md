@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/types.ts::AnnotationVerbosity
 file: src/ai/types.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T07:48:55.962Z"
+updated: "2026-03-21T08:44:40.459Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -17,9 +17,9 @@ identity:
   symbolic: src/ai/types.ts::AnnotationVerbosity
   line_range:
     start: 5
-    end: 8
-    commit: 5c05f7b6d5331ff540aa69c696691dbccfd4087f
-  content_hash: sha256:b8728d47dd3525e188d09423053ed06796049f591ec5aa76ffbf13ca739ce9fb
+    end: 10
+    commit: 495c504fd929f1f73d7948095c27fb85273039c7
+  content_hash: sha256:c0638e5fbb497377707eca3d50619c068cc7d84c8994b04104dc56281db62544
   structural:
     kind: interface
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     depth and size of AI annotation outputs.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 5c05f7b6d5331ff540aa69c696691dbccfd4087f
+  last_resolved: 495c504fd929f1f73d7948095c27fb85273039c7
 ---
 
 # AnnotationVerbosity

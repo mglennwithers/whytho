@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/infer.ts::buildInferredBlockPrompt
 file: src/ai/prompts/infer.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-21T06:50:39.969Z"
+updated: "2026-03-21T08:44:40.294Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 19
     end: 56
-    commit: c608e953b110bd2b03c65d17e69206a130b571f9
+    commit: 495c504fd929f1f73d7948095c27fb85273039c7
   content_hash: sha256:7d429a92bba7c93568fe1b37819120a9b496cf35f475efefd965e8e9b0a51199
   structural:
     kind: function
@@ -28,7 +28,7 @@ identity:
     unknowns. This is the core prompt template for the "inferred" annotation pathway.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: c608e953b110bd2b03c65d17e69206a130b571f9
+  last_resolved: 495c504fd929f1f73d7948095c27fb85273039c7
 ---
 
 # buildInferredBlockPrompt
