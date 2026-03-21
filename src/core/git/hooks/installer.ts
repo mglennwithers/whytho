@@ -5,14 +5,28 @@ import { HOOK_SENTINEL, POST_COMMIT_HOOK_NAME, PRE_COMMIT_HOOK_NAME } from '../.
 
 const HOOK_SCRIPT = `
 # ${HOOK_SENTINEL}
+if [ -n "$WHYTHO_RESOLVING" ]; then exit 0; fi
 if command -v git-why >/dev/null 2>&1; then
+  export WHYTHO_RESOLVING=1
   git-why resolve --incremental --commit "$(git rev-parse HEAD)" || true
+  if ! git diff --quiet HEAD -- .why/ 2>/dev/null; then
+    git add .why/
+    git commit -m "[whytho] resolve annotations"
+  fi
 fi
 `
 
 const HOOK_SCRIPT_CMD = `@echo off
 rem ${HOOK_SENTINEL}
-where git-why >nul 2>&1 && git-why resolve --incremental --commit %1 || exit 0
+if defined WHYTHO_RESOLVING exit /b 0
+where git-why >nul 2>&1 || exit /b 0
+set WHYTHO_RESOLVING=1
+git-why resolve --incremental --commit %1 || exit /b 0
+git diff --quiet HEAD -- .why/ >nul 2>&1
+if errorlevel 1 (
+  git add .why/
+  git commit -m "[whytho] resolve annotations"
+)
 `
 
 async function getHooksDir(repoRoot: string): Promise<string> {
