@@ -67,7 +67,7 @@ export function registerInfer(program: Command): void {
     .option('--no-blocks', 'Skip block annotations')
     .option('--no-files', 'Skip file annotations')
     .option('--no-folders', 'Skip folder annotations')
-    .option('--limit <n>', 'Max annotations to generate', '50')
+    .option('--limit <n>', 'Max annotations to generate', '500')
     .option('--dry-run', 'Show what would be annotated without writing files')
     .option('--coverage <level>', 'Block coverage: minimal, standard, full')
     .option('--detail <level>', 'Annotation detail: brief, standard, full')
