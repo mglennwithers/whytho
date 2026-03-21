@@ -1,11 +1,71 @@
 {
   "whytho_version": "1.0",
-  "generated_at": "2026-03-21T04:01:20.664Z",
-  "generated_at_commit": "",
-  "sessions": {},
+  "generated_at": "2026-03-21T05:06:49.934Z",
+  "generated_at_commit": "1075b5912e2a7c7dc7d01f7d2cdebb2b75a6aaa6",
+  "sessions": {
+    "2026-03-21-session-mmzsxrsv": {
+      "id": "2026-03-21-session-mmzsxrsv",
+      "created": "2026-03-21T04:02:22.591Z",
+      "folders_touched": [],
+      "files_touched": [],
+      "blocks_touched": [],
+      "commits": [
+        "24ef87da76def5b695fd4765becd2e92a48db007"
+      ]
+    }
+  },
   "folders": {},
   "files": {},
-  "blocks": {},
+  "blocks": {
+    "src/cli/commands/push.ts::readStdin": {
+      "symbolic_ref": "src/cli/commands/push.ts::readStdin",
+      "file": "src/cli/commands/push.ts",
+      "canonical_metric": "symbolic",
+      "confidence": 0.95,
+      "last_resolved": "4f8cbf3e8acf0284aab80d58ed8129e1489f083a",
+      "content_hash": "sha256:40fd3ac70afd3d0cfb80b77bb3ff916316ff3a091b1e0bc09882451e1479a785",
+      "created_by_session": "agent-push",
+      "updated_by_session": "agent-push",
+      "relationships_out": [],
+      "relationships_in": []
+    },
+    "src/cli/commands/push.ts::registerPush": {
+      "symbolic_ref": "src/cli/commands/push.ts::registerPush",
+      "file": "src/cli/commands/push.ts",
+      "canonical_metric": "symbolic",
+      "confidence": 0.95,
+      "last_resolved": "4f8cbf3e8acf0284aab80d58ed8129e1489f083a",
+      "content_hash": "sha256:d0f75d81b977b5c32b9a98ed6415e421fabb6c35136e55ad833e249e59e71cd2",
+      "created_by_session": "agent-push",
+      "updated_by_session": "agent-push",
+      "relationships_out": [],
+      "relationships_in": []
+    },
+    "src/core/push/index.ts::findLatestSession": {
+      "symbolic_ref": "src/core/push/index.ts::findLatestSession",
+      "file": "src/core/push/index.ts",
+      "canonical_metric": "symbolic",
+      "confidence": 0.95,
+      "last_resolved": "4f8cbf3e8acf0284aab80d58ed8129e1489f083a",
+      "content_hash": "sha256:f523ef78b67a160f295b759b4d280f75ccc695578fd57a257ef909fa77c04569",
+      "created_by_session": "agent-push",
+      "updated_by_session": "agent-push",
+      "relationships_out": [],
+      "relationships_in": []
+    },
+    "src/core/push/index.ts::pushReasoning": {
+      "symbolic_ref": "src/core/push/index.ts::pushReasoning",
+      "file": "src/core/push/index.ts",
+      "canonical_metric": "symbolic",
+      "confidence": 0.95,
+      "last_resolved": "4f8cbf3e8acf0284aab80d58ed8129e1489f083a",
+      "content_hash": "sha256:b8a7cc6ee1c8319bbec6b9454f43b55985e4e0b7a81330717d9699c4a69a21a8",
+      "created_by_session": "agent-push",
+      "updated_by_session": "agent-push",
+      "relationships_out": [],
+      "relationships_in": []
+    }
+  },
   "relationships": [],
   "unresolved": []
 }
