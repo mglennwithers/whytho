@@ -89,7 +89,7 @@ Annotations must stay linked to code through renames, refactors, and rewrites. N
 
 ### Commit-Time Resolution
 
-A git hook runs resolution on every commit. This guarantees the index is always authoritative. Resolution detects when blocks have been renamed, relocated, split, merged, deleted, or rewritten, and updates or archives annotations accordingly. Annotations that can't be resolved are frozen and flagged for human review.
+A git hook runs resolution on every commit. This guarantees the index is always authoritative. Resolution detects when blocks have been renamed, relocated, split, merged, deleted, or rewritten, and updates or archives annotations accordingly. Annotations that can't be resolved are frozen and flagged for human review. Any changes the hook makes are automatically committed as a follow-up `[whytho] resolve annotations` commit.
 
 ### Relationships
 
@@ -101,39 +101,85 @@ Nothing is permanently deleted. When code is removed or thoroughly rewritten, it
 
 ---
 
+## Installation
+
+```bash
+npm install -g whytho
+```
+
+Requires Node.js 18+. Set your `ANTHROPIC_API_KEY` environment variable to enable AI-powered annotation generation.
+
+---
+
 ## Getting Started
 
 ### 1. Initialize
-
-Create the `.why/` folder structure in your repository:
 
 ```bash
 git why init
 ```
 
-This creates the folder structure, an empty `index.json`, and installs the commit-time resolution hook.
+Creates the `.why/` folder structure, an empty `index.json`, and installs the commit-time resolution hook.
 
-### 2. Annotate
+### 2. Capture reasoning during a session
 
-After an AI coding session, generate annotations:
+The best annotations come from the AI recording its reasoning *as it works*, before context is lost or compacted. Use `git why push` to write reasoning directly — no AI inference required:
+
+```bash
+# Annotate a specific block
+git why push block src/auth/middleware.ts::rotateTokenIfNeeded \
+  --body "Rotates the token on every request rather than on expiry because
+the threat model assumes token theft, not expiry. Stateless rotation
+means no DB lookup per request — the tradeoff is a 5-minute window
+where a stolen token remains valid after rotation."
+
+# Add a note to the current session
+git why push session --body "Decided against Redis for session state — adds
+operational complexity and the throughput requirements don't justify it."
+
+# Pipe multi-line reasoning from stdin
+cat <<'EOF' | git why push file src/auth/middleware.ts
+Central auth layer. All requests pass through here. Changes here
+affect the entire API surface — treat as high-risk.
+EOF
+```
+
+### 3. Generate AI annotations after a session
+
+After an AI coding session, generate structured annotations for all changed files:
 
 ```bash
 git why annotate
 ```
 
-This prompts the AI resolver to examine the current session's changes and produce session, folder, file, and block annotations. Annotations are written as Markdown files in the appropriate `.why/` subdirectories.
+This uses the AI to produce session, folder, file, and block annotations for everything touched in the current commit.
 
-### 3. Commit
+### 4. Backfill unannotated code
 
-Commit normally. The resolution hook runs automatically, updating identity metrics, re-electing canonical metrics, resolving relocations and renames, archiving deleted annotations, and rebuilding the index.
+For codebases with existing code that has no annotations, `git why infer` generates post-hoc reasoning from static analysis. Each inferred annotation is clearly marked with a confidence score so readers know it wasn't captured from the original session:
+
+```bash
+git why infer --dry-run        # preview what's missing
+git why infer                  # generate up to 50 annotations
+git why infer src/auth/        # limit to a subtree
+git why infer --limit 200      # larger batch
+```
+
+Inferred annotations include:
+- `inferred: true` in the frontmatter
+- `inference_confidence: 0.82` (model's self-assessed confidence)
+- A disclaimer blockquote at the top of the body
+- A "What Cannot Be Determined" section listing what the model couldn't infer from code alone
+
+### 5. Commit
+
+Commit normally. The resolution hook runs automatically, updating identity metrics, re-electing canonical metrics, resolving relocations and renames, archiving deleted annotations, and rebuilding the index. Any annotation updates are committed automatically as `[whytho] resolve annotations`.
 
 ```bash
 git commit -m "feat: add token rotation to auth middleware"
 ```
 
-### 4. Query
-
-Ask questions about your codebase:
+### 6. Query
 
 ```bash
 git why block src/auth/middleware.ts::rotateTokenIfNeeded
@@ -144,7 +190,7 @@ git why related src/auth/middleware.ts::rotateTokenIfNeeded
 git why history src/auth/middleware.ts::rotateTokenIfNeeded
 ```
 
-### 5. Review
+### 7. Review
 
 During code review, annotations are available alongside the diff:
 
@@ -152,7 +198,24 @@ During code review, annotations are available alongside the diff:
 git why diff main..feature-branch
 ```
 
-This shows the standard diff annotated with decision context, tradeoff documentation, and uncertainty flags from the `.why/` folder.
+---
+
+## CLI Reference
+
+| Command | Description |
+|---|---|
+| `git why init` | Initialize `.why/` and install the git hook |
+| `git why annotate` | Generate AI annotations for the current session's changed files |
+| `git why push <type> <ref> --body "..."` | Push reasoning directly into an annotation (no AI needed) |
+| `git why infer [path]` | Generate inferred annotations for unannotated blocks/files/folders |
+| `git why resolve` | Run resolution manually |
+| `git why block <ref>` | Show a block annotation |
+| `git why file <path>` | Show a file annotation |
+| `git why folder <path>` | Show a folder annotation |
+| `git why session <id>` | Show a session annotation |
+| `git why related <ref>` | Show the relationship graph for a block |
+| `git why history <ref>` | Show live and archived versions of a block annotation |
+| `git why diff <range>` | Show a git diff annotated with decision context |
 
 ---
 
@@ -172,6 +235,8 @@ For the full technical specification — including complete schemas, the resolut
 
 **Multiple identity metrics, not one.** No single identifier survives all change types. Whytho tracks five simultaneously and elects a canonical metric based on which agree.
 
+**First-hand reasoning beats inference.** `git why push` lets agents write reasoning at the moment of decision. Inferred annotations are always marked as such. The system is honest about the difference.
+
 **The standard defines contracts, not implementations.** Whytho specifies file formats, schemas, resolution outcomes, and hook events. It does not mandate a specific AI model, editor integration, or CI pipeline.
 
 ---
@@ -185,10 +250,16 @@ Annotations are small Markdown files. A typical block annotation is 30–80 line
 No. Annotations are generated during AI-assisted coding sessions. Commits made without AI assistance don't produce new annotations, though the resolution hook still runs to detect whether existing annotations need updating.
 
 **Can I use this with any AI assistant?**
-Whytho is model-agnostic. Any AI assistant that can read and write Markdown with YAML frontmatter can produce Whytho-compliant annotations. The specification defines the format, not the producer.
+Whytho is model-agnostic. The default implementation uses Claude via the Anthropic API, but any AI assistant that can read and write Markdown with YAML frontmatter can produce Whytho-compliant annotations. The specification defines the format, not the producer.
 
 **What if resolution gets it wrong?**
 The resolution protocol includes confidence scores on every metric. When confidence drops below a configurable threshold, the annotation is flagged as `UNRESOLVABLE` and frozen for human review rather than silently degrading.
+
+**What's the difference between `git why annotate` and `git why push`?**
+`git why annotate` uses AI to *infer* reasoning by analyzing the code diff after the fact. `git why push` lets an AI agent write reasoning *directly* at the moment of decision — no inference, no compaction loss. Push annotations are more accurate; annotate is a useful fallback when push wasn't used during the session.
+
+**What's the difference between `git why annotate` and `git why infer`?**
+`git why annotate` generates annotations for files changed in the current commit. `git why infer` walks the entire source tree and generates annotations for anything that has none — useful for backfilling existing codebases.
 
 **Can I `.gitignore` the `.why/` folder?**
 You can, but you'd be defeating the purpose. The value of Whytho is that reasoning is versioned alongside code. If your team doesn't want annotations in the main repo, consider keeping `.why/` on a dedicated branch.
@@ -197,4 +268,4 @@ You can, but you'd be defeating the purpose. The value of Whytho is that reasoni
 
 ## License
 
-Whytho is an open standard. The specification is released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Implementations may use any license.
+MIT
