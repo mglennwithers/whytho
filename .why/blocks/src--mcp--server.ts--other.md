@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::other
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:21:17.269Z"
+updated: "2026-03-21T11:34:24.635Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::other
   line_range:
-    start: 350
-    end: 350
-    commit: 270ed30d64c38805804b8288adaa0d8674f40841
+    start: 374
+    end: 374
+    commit: 92a446a1d8878aa1e160bf0695c0105e67f4fabd
   content_hash: sha256:b149fd3ec7044851e488839e7c4f0c2456ad8c217e74e644d623d926967b5659
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     implementing a direction-aware edge traversal pattern.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 270ed30d64c38805804b8288adaa0d8674f40841
+  last_resolved: 92a446a1d8878aa1e160bf0695c0105e67f4fabd
 ---
 
 # other

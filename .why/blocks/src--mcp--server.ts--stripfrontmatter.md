@@ -4,15 +4,15 @@ type: block
 symbolic_ref: src/mcp/server.ts::stripFrontmatter
 file: src/mcp/server.ts
 created: "2026-03-21T11:21:01.673Z"
-updated: "2026-03-21T11:21:17.977Z"
+updated: "2026-03-21T11:34:25.168Z"
 created_by_session: agent-push
 updated_by_session: agent-push
 identity:
   symbolic: src/mcp/server.ts::stripFrontmatter
   line_range:
-    start: 207
-    end: 210
-    commit: 270ed30d64c38805804b8288adaa0d8674f40841
+    start: 216
+    end: 219
+    commit: 92a446a1d8878aa1e160bf0695c0105e67f4fabd
   content_hash: sha256:4516a45560d07674897537bd958320d8e2537bce2c7a112f480ae438c871e454
   structural:
     kind: function
@@ -25,7 +25,7 @@ identity:
     and structural fields in frontmatter are resolution-engine metadata — not useful for A
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 270ed30d64c38805804b8288adaa0d8674f40841
+  last_resolved: 92a446a1d8878aa1e160bf0695c0105e67f4fabd
 ---
 
 # stripFrontmatter

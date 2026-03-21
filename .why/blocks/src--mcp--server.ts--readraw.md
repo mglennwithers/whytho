@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::readRaw
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:21:17.554Z"
+updated: "2026-03-21T11:34:24.737Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::readRaw
   line_range:
-    start: 197
-    end: 203
-    commit: 270ed30d64c38805804b8288adaa0d8674f40841
+    start: 206
+    end: 212
+    commit: 92a446a1d8878aa1e160bf0695c0105e67f4fabd
   content_hash: sha256:40ce86fc1c78ddd8054c34569f9b3c1f0aeb78923c87c66bda43e9725da46223
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     distinguishing failure types.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 270ed30d64c38805804b8288adaa0d8674f40841
+  last_resolved: 92a446a1d8878aa1e160bf0695c0105e67f4fabd
 ---
 
 # readRaw

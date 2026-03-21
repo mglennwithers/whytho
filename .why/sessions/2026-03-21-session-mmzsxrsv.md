@@ -3,7 +3,7 @@ whytho: "1.0"
 type: session
 id: 2026-03-21-session-mmzsxrsv
 created: "2026-03-21T04:02:22.591Z"
-updated: "2026-03-21T10:31:46.370Z"
+updated: "2026-03-21T11:28:55.847Z"
 model: claude-opus-4-6
 model_provider: anthropic
 user: Michael Withers
@@ -48,3 +48,9 @@ Added 'git why push' command — agents can now annotate their reasoning directl
 _2026-03-21T10:31:46.370Z_
 
 Added Anthropic Batches API support to git why infer. Three separate batches per run (one per pass) rather than one combined batch because pass 2 needs block annotations on disk before building file prompts, and pass 3 needs file annotations. Batch mode is decided once before all passes based on total pending count, not per-pass, to avoid mixed behavior within a run. Pre-count uses file existence checks only (no API calls), adds negligible overhead. Sequential mode is unchanged — same UX, same code path. For auto mode the threshold is 50 annotations (matches the old default limit) so small runs stay sequential with per-item progress logging. Config is under anthropic.batchInfer.mode/threshold to keep it provider-scoped.
+
+## Agent Note
+
+_2026-03-21T11:28:55.847Z_
+
+Added purpose_only param to get_file_context. When true, strips frontmatter and returns only the ## Purpose section of the file annotation — no blocks, no design notes. Designed for the 'scanning multiple files to find the right one' scenario where loading full context would be wasteful. Also updated all tool descriptions with explicit scenario guidance (get_summary for orientation, purpose_only for file scanning, default get_file_context for pre-modification deep read, get_block for specific function reasoning). Updated CLAUDE.md with a scenario/tool mapping table.

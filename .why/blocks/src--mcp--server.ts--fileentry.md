@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::fileEntry
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:21:16.945Z"
+updated: "2026-03-21T11:34:24.371Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::fileEntry
   line_range:
-    start: 310
-    end: 310
-    commit: 270ed30d64c38805804b8288adaa0d8674f40841
+    start: 334
+    end: 334
+    commit: 92a446a1d8878aa1e160bf0695c0105e67f4fabd
   content_hash: sha256:9aaf1e85a888d21d98d4d6d069bf51211f37175d8b6d1c4987657acc19dddf26
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     returning undefined if the index, files property, or specific file does not exist.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 270ed30d64c38805804b8288adaa0d8674f40841
+  last_resolved: 92a446a1d8878aa1e160bf0695c0105e67f4fabd
 ---
 
 # fileEntry
