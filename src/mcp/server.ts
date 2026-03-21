@@ -202,6 +202,13 @@ async function readRaw(filePath: string): Promise<string | null> {
   }
 }
 
+// ─── Helper: strip YAML frontmatter, return body only ─────────────────────────
+
+function stripFrontmatter(content: string): string {
+  const match = content.match(/^---\n[\s\S]*?\n---\n([\s\S]*)$/)
+  return match ? match[1].trim() : content
+}
+
 // ─── Helper: find latest session ──────────────────────────────────────────────
 
 async function findLatestSessionId(whyRoot: string): Promise<string | undefined> {
@@ -313,7 +320,7 @@ export async function createWhythoServer(): Promise<Server> {
             if (blockContent) {
               const blockName = ref.split('::')[1] ?? ref
               parts.push(`\n---\n\n## Block: ${blockName}\n`)
-              parts.push(blockContent)
+              parts.push(stripFrontmatter(blockContent))
             }
           }
 
