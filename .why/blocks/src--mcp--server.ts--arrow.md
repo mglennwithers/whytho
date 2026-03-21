@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::arrow
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:11:32.793Z"
+updated: "2026-03-21T11:21:16.639Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::arrow
   line_range:
-    start: 344
-    end: 344
-    commit: f22cfd6ce9e160d144e02906168ae1f90de7028c
+    start: 351
+    end: 351
+    commit: 270ed30d64c38805804b8288adaa0d8674f40841
   content_hash: sha256:d10ae3c65c42e50473df5fbd43f0c4c56021343cb8fafc2753aed2a4a9ed955e
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     between outbound and inbound representations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f22cfd6ce9e160d144e02906168ae1f90de7028c
+  last_resolved: 270ed30d64c38805804b8288adaa0d8674f40841
 ---
 
 # arrow

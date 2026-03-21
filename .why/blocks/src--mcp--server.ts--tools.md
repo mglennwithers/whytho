@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::TOOLS
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:11:33.827Z"
+updated: "2026-03-21T11:21:18.017Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 37
     end: 164
-    commit: f22cfd6ce9e160d144e02906168ae1f90de7028c
+    commit: 270ed30d64c38805804b8288adaa0d8674f40841
   content_hash: sha256:919034449b4720821c3f4ec36b532a4b120c54facc420447e0851a82d442fde9
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     code annotations across files, blocks, sessions, and relationships via a standardized interface.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f22cfd6ce9e160d144e02906168ae1f90de7028c
+  last_resolved: 270ed30d64c38805804b8288adaa0d8674f40841
 ---
 
 # TOOLS

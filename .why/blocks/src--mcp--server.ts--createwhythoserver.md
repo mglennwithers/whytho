@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::createWhythoServer
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:11:32.956Z"
+updated: "2026-03-21T11:21:16.822Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::createWhythoServer
   line_range:
-    start: 220
-    end: 574
-    commit: f22cfd6ce9e160d144e02906168ae1f90de7028c
-  content_hash: sha256:ee362c0c65d08b86d8fb46fc892ed228c967de79126fd2021eca631191d23910
+    start: 227
+    end: 581
+    commit: 270ed30d64c38805804b8288adaa0d8674f40841
+  content_hash: sha256:5e8b4baee396ed4001d826d58403b639b42f77639cf3e059bbae84434ed58d43
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     densely-annotated files (e.g. pipeline.ts at 121k chars). Fixed by adding max_blocks parame
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f22cfd6ce9e160d144e02906168ae1f90de7028c
+  last_resolved: 270ed30d64c38805804b8288adaa0d8674f40841
 ---
 
 # createWhythoServer

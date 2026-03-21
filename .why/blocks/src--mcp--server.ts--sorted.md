@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::sorted
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:11:33.757Z"
+updated: "2026-03-21T11:21:17.940Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::sorted
   line_range:
-    start: 358
-    end: 360
-    commit: f22cfd6ce9e160d144e02906168ae1f90de7028c
+    start: 365
+    end: 367
+    commit: 270ed30d64c38805804b8288adaa0d8674f40841
   content_hash: sha256:876a626ea8a45a30b465c3a7d105fe65f9860afe689d92405e932c5287024306
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     based on a limit parameter.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f22cfd6ce9e160d144e02906168ae1f90de7028c
+  last_resolved: 270ed30d64c38805804b8288adaa0d8674f40841
 ---
 
 # sorted

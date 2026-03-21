@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::sessionCount
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:11:33.684Z"
+updated: "2026-03-21T11:21:17.865Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::sessionCount
   line_range:
-    start: 455
-    end: 455
-    commit: f22cfd6ce9e160d144e02906168ae1f90de7028c
+    start: 462
+    end: 462
+    commit: 270ed30d64c38805804b8288adaa0d8674f40841
   content_hash: sha256:9683d8560d049daf134927cc644b2ba57ea8a14cdc1e0b310a0ae0115941a7fd
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     fallback to an empty object if sessions is undefined.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f22cfd6ce9e160d144e02906168ae1f90de7028c
+  last_resolved: 270ed30d64c38805804b8288adaa0d8674f40841
 ---
 
 # sessionCount
