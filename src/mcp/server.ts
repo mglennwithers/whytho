@@ -83,11 +83,12 @@ const TOOLS = [
   },
   {
     name: 'get_file_context',
-    description: 'Get the full annotation context for a file: its file-level annotation plus all block annotations within it. Most useful for code review.',
+    description: 'Get the full annotation context for a file: its file-level annotation plus block annotations within it. Use max_blocks to control how many full block annotations are included (default: 10). Any remaining blocks are listed by ref so you can fetch them individually with get_block.',
     inputSchema: {
       type: 'object',
       properties: {
         path: { type: 'string', description: 'Relative file path, e.g. "src/auth/middleware.ts"' },
+        max_blocks: { type: 'number', description: 'Max number of full block annotations to include (default: 10). Set to 0 for file annotation only.' },
       },
       required: ['path'],
     },
@@ -274,6 +275,7 @@ export async function createWhythoServer(): Promise<Server> {
 
         case 'get_file_context': {
           const filePath = a.path as string
+          const maxBlocks = typeof a.max_blocks === 'number' ? a.max_blocks : 10
           const parts: string[] = []
 
           // File annotation
@@ -302,7 +304,10 @@ export async function createWhythoServer(): Promise<Server> {
             blockRefs = fileEntry?.blocks ?? []
           }
 
-          for (const ref of blockRefs) {
+          const included = blockRefs.slice(0, maxBlocks)
+          const overflow = blockRefs.slice(maxBlocks)
+
+          for (const ref of included) {
             const blockPath = blockAnnotationPath(whyRoot, ref)
             const blockContent = await readRaw(blockPath)
             if (blockContent) {
@@ -310,6 +315,15 @@ export async function createWhythoServer(): Promise<Server> {
               parts.push(`\n---\n\n## Block: ${blockName}\n`)
               parts.push(blockContent)
             }
+          }
+
+          if (overflow.length > 0) {
+            parts.push(`\n---\n\n## ${overflow.length} more block(s) not shown (max_blocks: ${maxBlocks})\n`)
+            parts.push('Use `get_block` to fetch any of these individually:\n')
+            for (const ref of overflow) {
+              parts.push(`- \`${ref}\``)
+            }
+            parts.push('\nOr call `get_file_context` with a higher `max_blocks` value.')
           }
 
           if (parts.length === 0) return text(`No annotations found for file: ${filePath}`)
