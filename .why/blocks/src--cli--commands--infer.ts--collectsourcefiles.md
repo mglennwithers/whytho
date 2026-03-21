@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::collectSourceFiles
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T10:32:02.516Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::collectSourceFiles
   line_range:
-    start: 41
-    end: 62
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    start: 43
+    end: 64
+    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
   content_hash: sha256:baa0b7e49a15ed14ed32393f728124cec64880ce28ba468fb9e062084bbe7632
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     designated directories and returning normalized relative paths from repository root.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
 ---
 
 # collectSourceFiles

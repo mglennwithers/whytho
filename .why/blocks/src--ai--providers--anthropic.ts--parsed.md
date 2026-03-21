@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/anthropic.ts::parsed
 file: src/ai/providers/anthropic.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T07:48:55.962Z"
+updated: "2026-03-21T10:32:02.111Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/anthropic.ts::parsed
   line_range:
-    start: 58
-    end: 58
-    commit: 5c05f7b6d5331ff540aa69c696691dbccfd4087f
+    start: 110
+    end: 110
+    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
   content_hash: sha256:1b12dc4d80a1598d0482725bbb54f251ef7cd31b8c9b6a2328a8b2bcd9a91875
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     typed object for downstream processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 5c05f7b6d5331ff540aa69c696691dbccfd4087f
+  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
 ---
 
 # parsed

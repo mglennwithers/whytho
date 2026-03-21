@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::result
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T10:32:03.245Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::result
   line_range:
-    start: 358
-    end: 362
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    start: 501
+    end: 505
+    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
   content_hash: sha256:818dde9a276c3860c7657b60a82add51769f6fb508433ba2743344900925f3de
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     limits, conditionally constructing a verbosity object based on whether maxTokens is defined.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
 ---
 
 # result

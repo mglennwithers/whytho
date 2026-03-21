@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::generated
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T10:32:02.921Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::generated
   line_range:
-    start: 99
-    end: 99
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    start: 144
+    end: 144
+    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
   content_hash: sha256:b23095f63502e50094bcdfa74d4e57ede71714363eaef479aec697789637ff9e
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     This is a simple numeric accumulator that will probably be incremented throughout the function's lifecycle.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
 ---
 
 # generated

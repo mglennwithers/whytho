@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/registry.ts::apiKeyEnv
 file: src/ai/registry.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T07:48:55.962Z"
+updated: "2026-03-21T10:32:02.154Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/registry.ts::apiKeyEnv
   line_range:
-    start: 21
-    end: 21
-    commit: 5c05f7b6d5331ff540aa69c696691dbccfd4087f
+    start: 15
+    end: 15
+    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
   content_hash: sha256:10546f2bc357e4caaef7148161706ff59cb6f614e53feb5858e3ca83aae0bc4a
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     not explicitly specified.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 5c05f7b6d5331ff540aa69c696691dbccfd4087f
+  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
 ---
 
 # apiKeyEnv

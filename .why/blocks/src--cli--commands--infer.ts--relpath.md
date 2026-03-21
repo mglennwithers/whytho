@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::relPath
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T10:32:03.207Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::relPath
   line_range:
-    start: 53
-    end: 53
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    start: 55
+    end: 55
+    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
   content_hash: sha256:54f985516d218f20c0658bf2466a40e16bb1a99f85152d455c5b092380eb0147
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     for cross-platform consistency.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
 ---
 
 # relPath

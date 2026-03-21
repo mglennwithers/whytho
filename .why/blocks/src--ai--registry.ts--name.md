@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/registry.ts::name
 file: src/ai/registry.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T07:48:55.962Z"
+updated: "2026-03-21T10:32:02.187Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/registry.ts::name
   line_range:
-    start: 19
-    end: 19
-    commit: 5c05f7b6d5331ff540aa69c696691dbccfd4087f
+    start: 35
+    end: 35
+    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
   content_hash: sha256:bbbfcb460bf502d59640ae7535d583c314bb4a6a309140f143e4c72a04e6ccce
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     nullable-coalescing pattern for selecting an AI service provider.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 5c05f7b6d5331ff540aa69c696691dbccfd4087f
+  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
 ---
 
 # name

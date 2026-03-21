@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::inferredDisclaimer
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T10:32:02.967Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::inferredDisclaimer
   line_range:
-    start: 36
-    end: 39
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    start: 38
+    end: 41
+    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
   content_hash: sha256:4782b9ff01803f2f73b946ba4c3f15326f2351d28d604044b98fa685a3daa38d
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     percentage, suitable for appending to AI-generated or auto-inferred content.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
 ---
 
 # inferredDisclaimer

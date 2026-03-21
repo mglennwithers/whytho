@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::registerInfer
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T10:32:03.185Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::registerInfer
   line_range:
-    start: 64
-    end: 350
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
-  content_hash: sha256:4404418b67fe28ead11964f54c670f4e9f5c518f37390551b7c83b81974dc7b6
+    start: 109
+    end: 493
+    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
+  content_hash: sha256:7ae04993ec8971f6062d700c6492fd0acf7ff4795e5b726199c8c116fdc76ca1
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     in a repository, with configurable coverage levels and limits.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
 ---
 
 # registerInfer

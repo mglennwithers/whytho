@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::entry
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T10:32:02.683Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::entry
   line_range:
-    start: 50
-    end: 50
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    start: 52
+    end: 52
+    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
   content_hash: sha256:f9fe72faf1c4e9e1f40c05167504451e9104982c51036273e86923ffffbe91f4
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     pattern typical of batch processing or enumeration operations in a CLI command handler.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
 ---
 
 # entry

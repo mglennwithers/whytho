@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::filesInFolder
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T10:32:02.762Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::filesInFolder
   line_range:
-    start: 286
-    end: 286
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    start: 411
+    end: 411
+    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
   content_hash: sha256:431a3e96e7862423c83774cf02b08782ca823703b6a54a11625f9558809d6013
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     file's parent directory against a target folder identifier.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
 ---
 
 # filesInFolder

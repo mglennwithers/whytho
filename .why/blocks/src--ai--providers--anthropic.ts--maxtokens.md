@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/anthropic.ts::maxTokens
 file: src/ai/providers/anthropic.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T07:48:55.962Z"
+updated: "2026-03-21T10:32:02.055Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/anthropic.ts::maxTokens
   line_range:
-    start: 47
-    end: 47
-    commit: 5c05f7b6d5331ff540aa69c696691dbccfd4087f
+    start: 99
+    end: 99
+    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
   content_hash: sha256:251937481e43056a0066bf2e6e804bf65906a7db4ae59f950b794facd570d8ab
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     safely access nested properties.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 5c05f7b6d5331ff540aa69c696691dbccfd4087f
+  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
 ---
 
 # maxTokens

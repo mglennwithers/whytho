@@ -28,9 +28,10 @@ identity:
   semantic_fingerprint: >-
     Creates a configuration object for folder-level verbosity settings by combining a detail flag with token and
     character limit parameters from a verbosity configuration object.
-  canonical_metric: symbolic
-  confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  canonical_metric: none
+  confidence: 0
+  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
+resolution_status: unresolvable
 ---
 
 # folderVerbosity

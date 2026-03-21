@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::parsedFileCache
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T10:32:03.079Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::parsedFileCache
   line_range:
-    start: 113
-    end: 113
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    start: 158
+    end: 158
+    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
   content_hash: sha256:3e8e0a4f23e879052485917d224ebb7c08bc2866d4ef18b0990e0b7c72ef7b1c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     reuse of expensive parsing operations within a single execution context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
 ---
 
 # parsedFileCache

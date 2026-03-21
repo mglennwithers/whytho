@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::now
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T10:32:03.060Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::now
   line_range:
-    start: 97
-    end: 97
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    start: 142
+    end: 142
+    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
   content_hash: sha256:c2b2d0823a4b34d2a215bb8336df11bec41ebee0b0e86f87b9453d5205258ed7
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     timestamping log entries or output.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
 ---
 
 # now

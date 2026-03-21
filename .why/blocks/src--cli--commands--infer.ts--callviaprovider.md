@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::callViaProvider
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T08:50:18.530Z"
+updated: "2026-03-21T10:32:02.489Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::callViaProvider
   line_range:
-    start: 352
-    end: 364
-    commit: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+    start: 495
+    end: 507
+    commit: 53a6d9954242f799fc497193fed20a75510ba5b5
   content_hash: sha256:29cd5cad999bf71153c206efe18f49cfb53602bcadd5467450997eeabadf54f3
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     returning the response body as a string.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 42ba5ba7aabeafd009cac271d721146a84bc7e74
+  last_resolved: 53a6d9954242f799fc497193fed20a75510ba5b5
 ---
 
 # callViaProvider
