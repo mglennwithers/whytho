@@ -123,6 +123,10 @@ export { registerProvider, getProvider, getDefaultProvider } from './ai/registry
 export { nullProvider } from './ai/providers/null.js'
 export { createAnthropicProvider } from './ai/providers/anthropic.js'
 
+// ─── Push ─────────────────────────────────────────────────────────────────────
+export { pushReasoning } from './core/push/index.js'
+export type { PushInput, PushResult, PushType } from './core/push/index.js'
+
 // ─── Config ───────────────────────────────────────────────────────────────────
 export type { WhythoConfig } from './config/types.js'
 export { loadConfig } from './config/loader.js'

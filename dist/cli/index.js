@@ -2411,6 +2411,219 @@ function registerResolve(program2) {
   });
 }
 
+// src/cli/commands/push.ts
+var import_chalk11 = __toESM(require("chalk"));
+
+// src/core/push/index.ts
+var fs11 = __toESM(require("fs/promises"));
+var path11 = __toESM(require("path"));
+init_layout();
+init_parse();
+init_writer();
+init_constants();
+async function findLatestSession(whyRoot) {
+  const dir = sessionsDir(whyRoot);
+  try {
+    const files = await fs11.readdir(dir);
+    const mdFiles = files.filter((f) => f.endsWith(".md")).sort().reverse();
+    return mdFiles.length > 0 ? mdFiles[0].replace(/\.md$/, "") : void 0;
+  } catch {
+    return void 0;
+  }
+}
+async function pushReasoning(input) {
+  const { repoRoot, type, ref, body, sessionId } = input;
+  const whyRoot = getWhyRoot(repoRoot);
+  const now = (/* @__PURE__ */ new Date()).toISOString();
+  if (type === "session") {
+    const resolvedId = ref === "latest" ? await findLatestSession(whyRoot) : ref;
+    if (!resolvedId) throw new Error("No session found. Run: git why init");
+    const annPath = sessionAnnotationPath(whyRoot, resolvedId);
+    if (await fileExists2(annPath)) {
+      const raw = await fs11.readFile(annPath, "utf8");
+      const { frontmatter, body: existingBody } = parseAnnotation(raw);
+      frontmatter.updated = now;
+      const note = `
+
+## Agent Note
+
+_${now}_
+
+${body}`;
+      await writeFile4(annPath, serializeAnnotation(frontmatter, existingBody + note));
+      return { action: "updated", path: annPath };
+    }
+    const fm = {
+      whytho: WHYTHO_VERSION,
+      type: "session",
+      id: resolvedId,
+      created: now,
+      updated: now,
+      model: "agent-push",
+      commits: [],
+      files_touched: [],
+      folders_touched: [],
+      blocks_touched: []
+    };
+    await writeFile4(annPath, serializeAnnotation(fm, body));
+    return { action: "created", path: annPath };
+  }
+  if (type === "block") {
+    const annPath = blockAnnotationPath(whyRoot, ref);
+    const commitSha = await getHeadCommitSha(repoRoot).catch(() => "unknown");
+    const [filePath, blockName] = ref.split("::");
+    const fingerprint = body.slice(0, 200).replace(/\n+/g, " ").trim();
+    let parsedBlock;
+    try {
+      const source = await fs11.readFile(path11.join(repoRoot, filePath), "utf8");
+      parsedBlock = parseFile(source, filePath).find((b) => b.name === blockName);
+    } catch {
+    }
+    if (await fileExists2(annPath)) {
+      const raw = await fs11.readFile(annPath, "utf8");
+      const { frontmatter, body: existingBody } = parseAnnotation(raw);
+      frontmatter.updated = now;
+      if (frontmatter.identity) {
+        frontmatter.identity.semantic_fingerprint = fingerprint;
+        if (parsedBlock) {
+          frontmatter.identity.line_range = { start: parsedBlock.startLine, end: parsedBlock.endLine, commit: commitSha };
+          frontmatter.identity.content_hash = computeContentHash(parsedBlock.content);
+        }
+      }
+      if (sessionId) frontmatter.updated_by_session = sessionId;
+      await writeFile4(annPath, serializeAnnotation(frontmatter, existingBody + `
+
+${body}`));
+      return { action: "updated", path: annPath };
+    }
+    const fm = {
+      whytho: WHYTHO_VERSION,
+      type: "block",
+      symbolic_ref: ref,
+      file: filePath,
+      created: now,
+      updated: now,
+      created_by_session: sessionId ?? "agent-push",
+      updated_by_session: sessionId ?? "agent-push",
+      identity: parsedBlock ? {
+        symbolic: ref,
+        line_range: { start: parsedBlock.startLine, end: parsedBlock.endLine, commit: commitSha },
+        content_hash: computeContentHash(parsedBlock.content),
+        structural: {
+          kind: parsedBlock.kind,
+          parent_scope: parsedBlock.parentScope,
+          name: parsedBlock.name,
+          parameters: parsedBlock.parameters,
+          index_in_parent: parsedBlock.indexInParent
+        },
+        semantic_fingerprint: fingerprint,
+        canonical_metric: "symbolic",
+        confidence: 0.95,
+        last_resolved: commitSha
+      } : {
+        symbolic: ref,
+        line_range: { start: 0, end: 0, commit: commitSha },
+        content_hash: "sha256:" + "0".repeat(64),
+        structural: { kind: "function", parent_scope: "module", name: blockName, index_in_parent: 0 },
+        semantic_fingerprint: fingerprint,
+        canonical_metric: "symbolic",
+        confidence: 0.7,
+        last_resolved: commitSha
+      }
+    };
+    await writeFile4(annPath, serializeAnnotation(fm, `# ${blockName}
+
+${body}`));
+    return { action: "created", path: annPath };
+  }
+  if (type === "file") {
+    const annPath = fileAnnotationPath(whyRoot, ref);
+    if (await fileExists2(annPath)) {
+      const raw = await fs11.readFile(annPath, "utf8");
+      const { frontmatter, body: existingBody } = parseAnnotation(raw);
+      frontmatter.updated = now;
+      if (sessionId && !frontmatter.sessions?.includes(sessionId)) {
+        frontmatter.sessions = [...frontmatter.sessions ?? [], sessionId];
+      }
+      await writeFile4(annPath, serializeAnnotation(frontmatter, existingBody + `
+
+${body}`));
+      return { action: "updated", path: annPath };
+    }
+    const fm = {
+      whytho: WHYTHO_VERSION,
+      type: "file",
+      path: ref,
+      created: now,
+      updated: now,
+      updated_by_session: sessionId ?? "agent-push",
+      parent_folder: ref.includes("/") ? ref.substring(0, ref.lastIndexOf("/") + 1) : "/",
+      sessions: sessionId ? [sessionId] : [],
+      blocks: []
+    };
+    await writeFile4(annPath, serializeAnnotation(fm, body));
+    return { action: "created", path: annPath };
+  }
+  throw new Error(`Unknown push type: ${type}`);
+}
+
+// src/cli/commands/push.ts
+async function readStdin() {
+  if (process.stdin.isTTY) return "";
+  return new Promise((resolve3) => {
+    let data = "";
+    process.stdin.setEncoding("utf8");
+    process.stdin.on("data", (chunk) => {
+      data += chunk;
+    });
+    process.stdin.on("end", () => resolve3(data.trim()));
+  });
+}
+function registerPush(program2) {
+  program2.command("push <type> [ref]").description(
+    'Push agent reasoning directly into an annotation\n  Types: session [id]  block <file::name>  file <path>\n  Example: git why push block src/foo.ts::myFn --body "I chose X because..."'
+  ).option("--body <text>", "Reasoning text (reads from stdin if omitted)").option("--session-id <id>", "Associate this note with a session ID").action(async (type, ref, options) => {
+    try {
+      const validTypes = ["session", "block", "file"];
+      if (!validTypes.includes(type)) {
+        console.error(import_chalk11.default.red(`Error: type must be one of: ${validTypes.join(", ")}`));
+        process.exit(1);
+      }
+      if (type === "session" && !ref) ref = "latest";
+      if (!ref) {
+        console.error(import_chalk11.default.red(`Error: ref is required for type '${type}'`));
+        process.exit(1);
+      }
+      let body = options.body;
+      if (!body) {
+        body = await readStdin();
+      }
+      if (!body) {
+        console.error(import_chalk11.default.red("Error: provide --body <text> or pipe reasoning to stdin"));
+        process.exit(1);
+      }
+      const repoRoot = await findRepoRoot();
+      if (!await isWhyDirInitialized(repoRoot)) {
+        console.error(import_chalk11.default.red("Error: .why/ not initialized. Run: git why init"));
+        process.exit(1);
+      }
+      const result = await pushReasoning({
+        repoRoot,
+        type,
+        ref,
+        body,
+        sessionId: options.sessionId
+      });
+      const label = type === "session" ? ref : ref;
+      console.log(import_chalk11.default.green(`\u2713 ${result.action} ${type} annotation: ${label}`));
+      console.log(import_chalk11.default.gray(`  ${result.path}`));
+    } catch (err) {
+      console.error(import_chalk11.default.red("Error:"), String(err));
+      process.exit(1);
+    }
+  });
+}
+
 // src/cli/index.ts
 var program = new import_commander.Command().name("git why").description("The open standard for persisting AI reasoning alongside your code").version("1.0.0");
 registerInit(program);
@@ -2423,5 +2636,6 @@ registerRelated(program);
 registerHistory(program);
 registerDiff(program);
 registerResolve(program);
+registerPush(program);
 program.parse(process.argv);
 //# sourceMappingURL=index.js.map

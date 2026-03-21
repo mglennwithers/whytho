@@ -349,6 +349,7 @@ __export(src_exports, {
   parseFile: () => parseFile,
   parseSymbolicRef: () => parseSymbolicRef,
   pathFromSlug: () => pathFromSlug,
+  pushReasoning: () => pushReasoning,
   readAllArchivedBlocks: () => readAllArchivedBlocks,
   readAllBlocks: () => readAllBlocks,
   readAllFiles: () => readAllFiles,
@@ -2072,9 +2073,161 @@ function getDefaultProvider(config) {
   return provider;
 }
 
-// src/config/loader.ts
+// src/core/push/index.ts
 var fs7 = __toESM(require("fs/promises"));
 var path10 = __toESM(require("path"));
+init_layout();
+init_parse();
+init_constants();
+async function findLatestSession(whyRoot) {
+  const dir = sessionsDir(whyRoot);
+  try {
+    const files = await fs7.readdir(dir);
+    const mdFiles = files.filter((f) => f.endsWith(".md")).sort().reverse();
+    return mdFiles.length > 0 ? mdFiles[0].replace(/\.md$/, "") : void 0;
+  } catch {
+    return void 0;
+  }
+}
+async function pushReasoning(input) {
+  const { repoRoot, type, ref, body, sessionId } = input;
+  const whyRoot = getWhyRoot(repoRoot);
+  const now = (/* @__PURE__ */ new Date()).toISOString();
+  if (type === "session") {
+    const resolvedId = ref === "latest" ? await findLatestSession(whyRoot) : ref;
+    if (!resolvedId) throw new Error("No session found. Run: git why init");
+    const annPath = sessionAnnotationPath(whyRoot, resolvedId);
+    if (await fileExists2(annPath)) {
+      const raw = await fs7.readFile(annPath, "utf8");
+      const { frontmatter, body: existingBody } = parseAnnotation(raw);
+      frontmatter.updated = now;
+      const note = `
+
+## Agent Note
+
+_${now}_
+
+${body}`;
+      await writeFile3(annPath, serializeAnnotation(frontmatter, existingBody + note));
+      return { action: "updated", path: annPath };
+    }
+    const fm = {
+      whytho: WHYTHO_VERSION,
+      type: "session",
+      id: resolvedId,
+      created: now,
+      updated: now,
+      model: "agent-push",
+      commits: [],
+      files_touched: [],
+      folders_touched: [],
+      blocks_touched: []
+    };
+    await writeFile3(annPath, serializeAnnotation(fm, body));
+    return { action: "created", path: annPath };
+  }
+  if (type === "block") {
+    const annPath = blockAnnotationPath(whyRoot, ref);
+    const commitSha = await getHeadCommitSha(repoRoot).catch(() => "unknown");
+    const [filePath, blockName] = ref.split("::");
+    const fingerprint = body.slice(0, 200).replace(/\n+/g, " ").trim();
+    let parsedBlock;
+    try {
+      const source = await fs7.readFile(path10.join(repoRoot, filePath), "utf8");
+      parsedBlock = parseFile(source, filePath).find((b) => b.name === blockName);
+    } catch {
+    }
+    if (await fileExists2(annPath)) {
+      const raw = await fs7.readFile(annPath, "utf8");
+      const { frontmatter, body: existingBody } = parseAnnotation(raw);
+      frontmatter.updated = now;
+      if (frontmatter.identity) {
+        frontmatter.identity.semantic_fingerprint = fingerprint;
+        if (parsedBlock) {
+          frontmatter.identity.line_range = { start: parsedBlock.startLine, end: parsedBlock.endLine, commit: commitSha };
+          frontmatter.identity.content_hash = computeContentHash(parsedBlock.content);
+        }
+      }
+      if (sessionId) frontmatter.updated_by_session = sessionId;
+      await writeFile3(annPath, serializeAnnotation(frontmatter, existingBody + `
+
+${body}`));
+      return { action: "updated", path: annPath };
+    }
+    const fm = {
+      whytho: WHYTHO_VERSION,
+      type: "block",
+      symbolic_ref: ref,
+      file: filePath,
+      created: now,
+      updated: now,
+      created_by_session: sessionId ?? "agent-push",
+      updated_by_session: sessionId ?? "agent-push",
+      identity: parsedBlock ? {
+        symbolic: ref,
+        line_range: { start: parsedBlock.startLine, end: parsedBlock.endLine, commit: commitSha },
+        content_hash: computeContentHash(parsedBlock.content),
+        structural: {
+          kind: parsedBlock.kind,
+          parent_scope: parsedBlock.parentScope,
+          name: parsedBlock.name,
+          parameters: parsedBlock.parameters,
+          index_in_parent: parsedBlock.indexInParent
+        },
+        semantic_fingerprint: fingerprint,
+        canonical_metric: "symbolic",
+        confidence: 0.95,
+        last_resolved: commitSha
+      } : {
+        symbolic: ref,
+        line_range: { start: 0, end: 0, commit: commitSha },
+        content_hash: "sha256:" + "0".repeat(64),
+        structural: { kind: "function", parent_scope: "module", name: blockName, index_in_parent: 0 },
+        semantic_fingerprint: fingerprint,
+        canonical_metric: "symbolic",
+        confidence: 0.7,
+        last_resolved: commitSha
+      }
+    };
+    await writeFile3(annPath, serializeAnnotation(fm, `# ${blockName}
+
+${body}`));
+    return { action: "created", path: annPath };
+  }
+  if (type === "file") {
+    const annPath = fileAnnotationPath(whyRoot, ref);
+    if (await fileExists2(annPath)) {
+      const raw = await fs7.readFile(annPath, "utf8");
+      const { frontmatter, body: existingBody } = parseAnnotation(raw);
+      frontmatter.updated = now;
+      if (sessionId && !frontmatter.sessions?.includes(sessionId)) {
+        frontmatter.sessions = [...frontmatter.sessions ?? [], sessionId];
+      }
+      await writeFile3(annPath, serializeAnnotation(frontmatter, existingBody + `
+
+${body}`));
+      return { action: "updated", path: annPath };
+    }
+    const fm = {
+      whytho: WHYTHO_VERSION,
+      type: "file",
+      path: ref,
+      created: now,
+      updated: now,
+      updated_by_session: sessionId ?? "agent-push",
+      parent_folder: ref.includes("/") ? ref.substring(0, ref.lastIndexOf("/") + 1) : "/",
+      sessions: sessionId ? [sessionId] : [],
+      blocks: []
+    };
+    await writeFile3(annPath, serializeAnnotation(fm, body));
+    return { action: "created", path: annPath };
+  }
+  throw new Error(`Unknown push type: ${type}`);
+}
+
+// src/config/loader.ts
+var fs8 = __toESM(require("fs/promises"));
+var path11 = __toESM(require("path"));
 
 // src/config/defaults.ts
 init_constants();
@@ -2118,9 +2271,9 @@ function mergeDeep(base, override) {
   return result;
 }
 async function loadConfig(repoRoot) {
-  const configFile = path10.join(repoRoot, "whytho.config.json");
+  const configFile = path11.join(repoRoot, "whytho.config.json");
   try {
-    const raw = await fs7.readFile(configFile, "utf8");
+    const raw = await fs8.readFile(configFile, "utf8");
     const parsed = JSON.parse(raw);
     return mergeDeep(
       DEFAULT_CONFIG,
@@ -2128,9 +2281,9 @@ async function loadConfig(repoRoot) {
     );
   } catch {
   }
-  const pkgFile = path10.join(repoRoot, "package.json");
+  const pkgFile = path11.join(repoRoot, "package.json");
   try {
-    const raw = await fs7.readFile(pkgFile, "utf8");
+    const raw = await fs8.readFile(pkgFile, "utf8");
     const pkg = JSON.parse(raw);
     if (pkg.whytho && typeof pkg.whytho === "object") {
       return mergeDeep(
@@ -2203,6 +2356,7 @@ async function loadConfig(repoRoot) {
   parseFile,
   parseSymbolicRef,
   pathFromSlug,
+  pushReasoning,
   readAllArchivedBlocks,
   readAllBlocks,
   readAllFiles,

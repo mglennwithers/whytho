@@ -9,6 +9,7 @@ import { registerRelated } from './commands/related.js'
 import { registerHistory } from './commands/history.js'
 import { registerDiff } from './commands/diff.js'
 import { registerResolve } from './commands/resolve.js'
+import { registerPush } from './commands/push.js'
 
 const program = new Command()
   .name('git why')
@@ -25,5 +26,6 @@ registerRelated(program)
 registerHistory(program)
 registerDiff(program)
 registerResolve(program)
+registerPush(program)
 
 program.parse(process.argv)
