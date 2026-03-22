@@ -2,10 +2,9 @@ import * as path from 'path'
 import type { RelationshipScanner, BlockRegistry, ScannedRelationship } from '../scanner.js'
 import type { RelationshipType } from '../../types.js'
 
-const TEST_FILE_RE = /(?:^|[\\/])test_[^/\\]+\.py$|(?:^|[\\/])[^/\\]+_test\.py$/
-
 function isTestFile(filePath: string): boolean {
-  return TEST_FILE_RE.test(filePath)
+  const basename = filePath.split(/[\\/]/).pop() ?? ''
+  return basename.startsWith('test_') || basename.endsWith('_test.py')
 }
 
 /**

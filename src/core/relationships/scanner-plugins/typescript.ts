@@ -75,7 +75,7 @@ type ASTNode = {
 }
 
 export const typescriptScannerPlugin: RelationshipScanner = {
-  extensions: ['.ts', '.tsx', '.mts', '.cts'],
+  extensions: ['.ts', '.tsx', '.mts', '.cts', '.js', '.jsx', '.mjs', '.cjs'],
 
   scan(filePath: string, fileContent: string, registry: BlockRegistry): ScannedRelationship[] {
     const estree = getEstree()

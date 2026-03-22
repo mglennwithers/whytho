@@ -58,11 +58,6 @@ const USE_CRATE_MULTI_RE = /\buse\s+((?:crate|super)(?:::\w+)*)::\{([^}]+)\}\s*;
 // Matches: impl TraitName for TypeName
 const IMPL_TRAIT_RE = /\bimpl\s+(\w+)\s+for\s+(\w+)\b/g
 
-// Matches cfg(test) mod
-const CFG_TEST_MOD_RE = /#\[cfg\(test\)\]\s*(?:(?:#\[[^\]]*\]\s*)*)mod\s+\w+\s*\{([\s\S]*?)^}/gm
-
-// Within a tests mod: use super::Name
-const SUPER_USE_RE = /\buse\s+super::(\w+)\s*;/g
 
 export const rustScannerPlugin: RelationshipScanner = {
   extensions: ['.rs'],
@@ -102,39 +97,65 @@ export const rustScannerPlugin: RelationshipScanner = {
     }
 
     // 3. impl Trait for Type → implements
+    // Build usedNames from use crate:: imports for precise trait resolution
+    const usedNames = new Map<string, string>()
+    USE_CRATE_RE.lastIndex = 0
+    while ((m = USE_CRATE_RE.exec(fileContent)) !== null) {
+      const fullPath = m[1]
+      const parts = fullPath.split('::')
+      const symbolName = parts[parts.length - 1]
+      const modulePath = parts.slice(0, -1).join('::')
+      if (!symbolName || symbolName === 'crate' || symbolName === 'super' || symbolName === 'self') continue
+      const entry = findRegistryEntry(symbolName, modulePath, filePath, registry)
+      if (entry) usedNames.set(symbolName, entry)
+    }
+    USE_CRATE_MULTI_RE.lastIndex = 0
+    while ((m = USE_CRATE_MULTI_RE.exec(fileContent)) !== null) {
+      const modulePath = m[1]
+      const names = m[2].split(',').map((s) => s.trim()).filter(Boolean)
+      for (const rawName of names) {
+        const name = rawName.split(' as ')[0].trim()
+        const entry = findRegistryEntry(name, modulePath, filePath, registry)
+        if (entry) usedNames.set(name, entry)
+      }
+    }
+
     IMPL_TRAIT_RE.lastIndex = 0
     while ((m = IMPL_TRAIT_RE.exec(fileContent)) !== null) {
       const traitName = m[1]
       const typeName = m[2]
       const typeRef = `${filePath}::${typeName}`
+      const sourceBlock = registry.has(typeRef) ? typeRef : srcBlock
 
-      // Look up the trait in the registry (any file)
+      // Prefer use-import-resolved target (precise)
+      const knownRef = usedNames.get(traitName)
+      if (knownRef && registry.has(knownRef)) {
+        edges.push({ sourceBlock, type: 'implements', target: knownRef, source: 'static' })
+        continue
+      }
+      // Fall back to first registry match by name suffix
       for (const key of registry.keys()) {
-        const blockName = key.split('::')[1]
-        if (blockName === traitName) {
-          const sourceBlock = registry.has(typeRef) ? typeRef : srcBlock
+        if (key.split('::')[1] === traitName) {
           edges.push({ sourceBlock, type: 'implements', target: key, source: 'static' })
-          break  // take first match
+          break
         }
       }
     }
 
-    // 4. #[cfg(test)] mod tests { use super::Name; } → tests edges
-    CFG_TEST_MOD_RE.lastIndex = 0
-    while ((m = CFG_TEST_MOD_RE.exec(fileContent)) !== null) {
-      const modBody = m[1]
-      // Find the mod name to use as sourceBlock if it's in the registry
-      const modNameMatch = fileContent.slice(m.index).match(/mod\s+(\w+)/)
-      const modName = modNameMatch?.[1]
-      const modRef = modName && registry.has(`${filePath}::${modName}`) ? `${filePath}::${modName}` : srcBlock
-
-      SUPER_USE_RE.lastIndex = 0
+    // 4. #[cfg(test)] → scan entire file for `use super::Name` patterns
+    if (fileContent.includes('#[cfg(test)]')) {
+      const superUseRe = /\buse\s+super::(\w+)/g
       let sm: RegExpExecArray | null
-      while ((sm = SUPER_USE_RE.exec(modBody)) !== null) {
-        const symbolName = sm[1]
-        const target = `${filePath}::${symbolName}`
-        if (registry.has(target)) {
-          edges.push({ sourceBlock: modRef, type: 'tests', target, source: 'static' })
+      while ((sm = superUseRe.exec(fileContent)) !== null) {
+        const name = sm[1]
+        const targetRef = `${filePath}::${name}`
+        if (registry.has(targetRef)) {
+          edges.push({
+            sourceBlock: `${filePath}::tests`,
+            type: 'tests',
+            target: targetRef,
+            source: 'static',
+          })
         }
       }
     }

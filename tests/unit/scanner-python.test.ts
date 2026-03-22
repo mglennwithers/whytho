@@ -30,27 +30,16 @@ describe('pythonScannerPlugin', () => {
   })
 
   it('tags test files imports as tests', () => {
-    const registry = makeRegistry(['src/core.py::run'])
+    // test_core.py (test file) imports from sibling utils/utils.py
+    // from ..utils.utils import run → 2 dots go up to project root, then utils/utils.py
+    const registry = makeRegistry(['utils/utils.py::run'])
     const edges = pythonScannerPlugin.scan(
       'tests/test_core.py',
-      'from src.core import run\n',
+      'from ..utils.utils import run\n',
       registry,
     )
-    // Absolute import from non-relative path — scanner may not resolve this
-    // Test with a relative import that will resolve:
-    const registry2 = makeRegistry(['src/core.py::run'])
-    const edges2 = pythonScannerPlugin.scan(
-      'tests/test_core.py',
-      'from ..src.core import run\n',
-      registry2,
+    expect(edges).toContainEqual(
+      expect.objectContaining({ type: 'tests', target: 'utils/utils.py::run' }),
     )
-    // Either edges or edges2 should have a 'tests' edge — check both
-    const allEdges = [...edges, ...edges2]
-    // At minimum, assert no crash and correct type returned
-    expect(Array.isArray(allEdges)).toBe(true)
-    // If any edge resolves, it should be 'tests'
-    for (const e of allEdges) {
-      expect(e.type).toBe('tests')
-    }
   })
 })
