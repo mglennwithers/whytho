@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, beforeEach } from 'vitest'
 import * as path from 'path'
 import * as fs from 'fs/promises'
 import * as os from 'os'
@@ -8,7 +8,7 @@ import { writeFile } from '../../src/core/fs/writer.js'
 import { blockAnnotationPath, getWhyRoot } from '../../src/core/fs/layout.js'
 import { serializeAnnotation } from '../../src/core/frontmatter/serialize.js'
 import type { BlockFrontmatter } from '../../src/core/types.js'
-import { buildBlockRegistry, runStaticScan, registerScannerPlugin } from '../../src/core/relationships/scanner.js'
+import { buildBlockRegistry, runStaticScan, registerScannerPlugin, resetScannerPlugins } from '../../src/core/relationships/scanner.js'
 import type { RelationshipScanner, BlockRegistry } from '../../src/core/relationships/scanner.js'
 
 describe('relationships config defaults', () => {
@@ -90,6 +90,10 @@ describe('buildBlockRegistry', () => {
 })
 
 describe('runStaticScan write-back', () => {
+  beforeEach(() => {
+    resetScannerPlugins()
+  })
+
   // Helper to build a minimal BlockFrontmatter for tests
   function makeBlockFm(symbolicRef: string): BlockFrontmatter {
     const file = symbolicRef.split('::')[0]
@@ -159,7 +163,8 @@ describe('runStaticScan write-back', () => {
 
     const result = await runStaticScan(tmpDir, whyRoot, ['src/a.ts'], ['src/a.ts', 'src/b.ts'])
     expect(result.filesScanned).toBe(1)
-    expect(result.relationshipsFound).toBeGreaterThan(0)
-    expect(result.relationshipsWritten).toBeGreaterThan(0)
+    expect(result.relationshipsFound).toBe(1)
+    expect(result.relationshipsWritten).toBe(1)
+    expect(result.relationshipsSkipped).toBe(0)
   })
 })

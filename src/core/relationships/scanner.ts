@@ -43,6 +43,11 @@ export function registerScannerPlugin(plugin: RelationshipScanner): void {
   scannerPlugins.unshift(plugin)
 }
 
+/** For testing only. Removes all registered scanner plugins. */
+export function resetScannerPlugins(): void {
+  scannerPlugins.length = 0
+}
+
 function getScannerPlugin(filePath: string): RelationshipScanner | undefined {
   const ext = path.extname(filePath).toLowerCase()
   return scannerPlugins.find((p) => p.extensions.includes(ext))
