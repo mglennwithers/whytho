@@ -24,6 +24,7 @@ export interface RelationshipInput {
   type: string
   description?: string
   bidirectional?: boolean
+  source?: 'static' | 'ai'  // defaults to 'ai' when absent
 }
 
 export interface PushInput {
@@ -132,6 +133,7 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
               target: rel.target,
               description: rel.description,
               bidirectional: rel.bidirectional,
+              source: rel.source ?? 'ai',
             })
           }
         }
@@ -186,6 +188,7 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
         target: rel.target,
         description: rel.description,
         bidirectional: rel.bidirectional,
+        source: rel.source ?? 'ai',
       }))
     }
     await writeFile(annPath, serializeAnnotation(fm, `# ${blockName}\n\n${body}`))

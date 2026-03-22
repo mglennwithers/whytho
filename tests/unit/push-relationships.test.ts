@@ -243,6 +243,61 @@ describe('pushReasoning - block update with relationships', () => {
   })
 })
 
+describe('pushReasoning - relationship source tagging', () => {
+  it('pushReasoning tags relationships with source: ai by default', async () => {
+    const repoRoot = await makeTempRepo()
+    try {
+      const result = await pushReasoning({
+        repoRoot,
+        type: 'block',
+        ref: 'src/foo.ts::myFunction',
+        body: 'This function returns the answer.',
+        relationships: [
+          {
+            target: 'src/bar.ts::helper',
+            type: 'calls',
+            description: 'Calls helper for computation',
+          },
+        ],
+      })
+
+      const raw = await fs.readFile(result.path, 'utf8')
+      const { frontmatter } = parseAnnotation<BlockFrontmatter>(raw)
+
+      expect(frontmatter.relationships).toBeDefined()
+      expect(frontmatter.relationships![0].source).toBe('ai')
+    } finally {
+      await cleanup(repoRoot)
+    }
+  })
+
+  it('pushReasoning preserves explicit source: static when provided', async () => {
+    const repoRoot = await makeTempRepo()
+    try {
+      const result = await pushReasoning({
+        repoRoot,
+        type: 'block',
+        ref: 'src/foo.ts::myFunction',
+        body: 'Scanner-detected relationship.',
+        relationships: [
+          {
+            target: 'src/bar.ts::helper',
+            type: 'calls',
+            source: 'static',
+          },
+        ],
+      })
+
+      const raw = await fs.readFile(result.path, 'utf8')
+      const { frontmatter } = parseAnnotation<BlockFrontmatter>(raw)
+
+      expect(frontmatter.relationships![0].source).toBe('static')
+    } finally {
+      await cleanup(repoRoot)
+    }
+  })
+})
+
 describe('pushReasoning - file annotations', () => {
   it('creates a file annotation', async () => {
     const repoRoot = await makeTempRepo()
