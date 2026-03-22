@@ -48,14 +48,9 @@ export const RESOLUTION_OUTCOMES = [
 
 export const RELATIONSHIP_TYPES = [
   'extends',
-  'overrides',
-  'derived_from',
   'depends_on',
-  'configures',
   'implements',
   'tests',
-  'validates',
-  'documents',
 ] as const
 
 export const BLOCK_KINDS = [

@@ -55,7 +55,7 @@ describe('buildIndex propagates pipeline field', () => {
       },
       relationships: [
         { type: 'depends_on', target: 'src/bar.ts::otherFn', source: 'static' },
-        { type: 'validates', target: 'src/baz.ts::thing', source: 'ai' },
+        { type: 'depends_on', target: 'src/baz.ts::thing', source: 'ai' },
       ],
     }
     await writeFile(
@@ -121,7 +121,7 @@ describe('runStaticScan write-back', () => {
     const fm = makeBlockFm('src/a.ts::main')
     fm.relationships = [
       { type: 'depends_on', target: 'src/stale.ts::old', source: 'static' },
-      { type: 'validates', target: 'src/types.ts::Schema', source: 'ai' },
+      { type: 'depends_on', target: 'src/types.ts::Schema', source: 'ai' },
     ]
     await writeFile(blockAnnotationPath(whyRoot, 'src/a.ts::main'), serializeAnnotation(fm, 'body'))
 
