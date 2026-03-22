@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/build.ts::edge
 file: src/core/index-builder/build.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.550Z"
+updated: "2026-03-22T09:40:39.680Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 91
     end: 91
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 2882c015e657357bcf2750548d38f3c58059de46
   content_hash: sha256:c0c73015b784102bd68a97b6903eb1c53fbc870bfcf7ab7a569b7bec9480fd14
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     index-building context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 2882c015e657357bcf2750548d38f3c58059de46
 ---
 
 # edge

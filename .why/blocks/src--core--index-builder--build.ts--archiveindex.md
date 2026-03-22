@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/build.ts::archiveIndex
 file: src/core/index-builder/build.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.521Z"
+updated: "2026-03-22T09:40:39.642Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 142
     end: 149
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 2882c015e657357bcf2750548d38f3c58059de46
   content_hash: sha256:859ddc347fd08175e0591e0fd4027a358ed31cf5baa9b33efcde403363441cd2
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     code blocks for a Whytho archive system.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 2882c015e657357bcf2750548d38f3c58059de46
 ---
 
 # archiveIndex

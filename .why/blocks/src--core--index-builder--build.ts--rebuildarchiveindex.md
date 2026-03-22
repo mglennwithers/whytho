@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/build.ts::rebuildArchiveIndex
 file: src/core/index-builder/build.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.593Z"
+updated: "2026-03-22T09:40:39.740Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,8 +18,8 @@ identity:
   line_range:
     start: 114
     end: 153
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:0e461a8b4471f412369bcba3d50fc44204a19d9d99665b908e9a733f80cd98ea
+    commit: 2882c015e657357bcf2750548d38f3c58059de46
+  content_hash: sha256:df6a5073a6d244349f8d81397ade024dada58c8d186f6626c1280f8e1e9e1f14
   structural:
     kind: function
     parent_scope: module
@@ -32,7 +32,7 @@ identity:
     converts raw archived data into queryable index form.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 2882c015e657357bcf2750548d38f3c58059de46
 ---
 
 # rebuildArchiveIndex
