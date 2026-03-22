@@ -10,8 +10,10 @@
 set -uo pipefail
 
 INPUT=$(cat)
-FILE_PATH=$(echo "$INPUT" | jq -r '.tool_input.file_path // empty')
-CWD=$(echo "$INPUT" | jq -r '.cwd // empty')
+FILE_PATH=$(printf '%s' "$INPUT" | node -e "let d='';process.stdin.on('data',c=>d+=c);process.stdin.on('end',()=>{try{const o=JSON.parse(d);process.stdout.write(o.tool_input?.file_path??'')}catch{}})")
+CWD_RAW=$(printf '%s' "$INPUT" | node -e "let d='';process.stdin.on('data',c=>d+=c);process.stdin.on('end',()=>{try{const o=JSON.parse(d);process.stdout.write(o.cwd??'')}catch{}})")
+# Normalize Windows paths to Git Bash Unix paths (C:\foo\bar → /c/foo/bar)
+CWD=$(cygpath -u "$CWD_RAW" 2>/dev/null || printf '%s' "$CWD_RAW")
 
 # Bail if we can't determine paths
 [[ -z "$FILE_PATH" || -z "$CWD" ]] && exit 0
@@ -38,7 +40,7 @@ trap 'rm -f "$CTX"' EXIT
 FILE_ANN="$WHY_DIR/files/$FILE_SLUG.md"
 if [[ -f "$FILE_ANN" ]]; then
   printf '[whytho] File annotation for %s:\n\n' "$REL_PATH" >> "$CTX"
-  cat "$FILE_ANN" >> "$CTX"
+  awk '/^---/{c++;next} c>=2{print}' "$FILE_ANN" >> "$CTX"
   printf '\n' >> "$CTX"
 else
   printf '[whytho] No file annotation exists for %s.\n' "$REL_PATH" >> "$CTX"
@@ -73,9 +75,13 @@ done
 printf '[whytho] %d folder annotation(s) above this file in the hierarchy.\n' "$FOLDER_COUNT" >> "$CTX"
 
 # ── Emit PostToolUse context ─────────────────────────────────────────────────
-jq -n --rawfile ctx "$CTX" '{
+node -e "
+const fs = require('fs');
+const ctx = fs.readFileSync(process.argv[1], 'utf8');
+process.stdout.write(JSON.stringify({
   hookSpecificOutput: {
-    hookEventName: "PostToolUse",
-    additionalContext: $ctx
+    hookEventName: 'PostToolUse',
+    additionalContext: ctx
   }
-}'
+}));
+" "$CTX"
