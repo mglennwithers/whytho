@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { parseAnnotation } from '../../src/core/frontmatter/parse.js'
 import { serializeAnnotation } from '../../src/core/frontmatter/serialize.js'
 import type { BlockFrontmatter } from '../../src/core/types.js'
+import { RelationshipSchema } from '../../src/core/types.js'
 
 const SAMPLE_BLOCK: BlockFrontmatter = {
   whytho: '1.0',
@@ -49,6 +50,34 @@ Rotates tokens.`
     expect(parsed.frontmatter.whytho).toBe('1.0')
     expect(parsed.frontmatter.type).toBe('block')
     expect(parsed.body).toContain('Rotates tokens.')
+  })
+})
+
+describe('RelationshipSchema', () => {
+  it('RelationshipSchema accepts source field', () => {
+    const result = RelationshipSchema.safeParse({
+      type: 'depends_on',
+      target: 'src/foo.ts::bar',
+      source: 'static',
+    })
+    expect(result.success).toBe(true)
+  })
+
+  it('RelationshipSchema accepts absent source (backward compat)', () => {
+    const result = RelationshipSchema.safeParse({
+      type: 'depends_on',
+      target: 'src/foo.ts::bar',
+    })
+    expect(result.success).toBe(true)
+  })
+
+  it('RelationshipSchema rejects unknown source values', () => {
+    const result = RelationshipSchema.safeParse({
+      type: 'depends_on',
+      target: 'src/foo.ts::bar',
+      source: 'manual',
+    })
+    expect(result.success).toBe(false)
   })
 })
 

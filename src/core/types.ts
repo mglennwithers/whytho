@@ -49,6 +49,7 @@ export const RelationshipSchema = z.object({
   target: z.string(),
   description: z.string().optional(),
   bidirectional: z.boolean().optional(),
+  source: z.enum(['static', 'ai']).optional(),
 })
 
 export const GenerationSettingsSchema = z.object({
@@ -183,14 +184,15 @@ export interface BlockIndexEntry {
   content_hash: string
   created_by_session: string
   updated_by_session: string
-  relationships_out: Array<{ type: RelationshipType; target: string }>
+  relationships_out: Array<{ type: RelationshipType; target: string; pipeline?: 'static' | 'ai' }>
   relationships_in: Array<{ type: RelationshipType; source: string }>
 }
 
 export interface RelationshipEdge {
   type: RelationshipType
-  source: string
+  source: string              // symbolic ref of the declaring block
   target: string
+  pipeline?: 'static' | 'ai' // which pipeline produced this edge
 }
 
 export interface WhythoIndex {
