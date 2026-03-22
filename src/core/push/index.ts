@@ -206,6 +206,24 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
       if (sessionId && !frontmatter.sessions?.includes(sessionId)) {
         frontmatter.sessions = [...(frontmatter.sessions ?? []), sessionId]
       }
+      // Merge relationships (deduplicated by target+type — mirrors block branch)
+      if (input.relationships && input.relationships.length > 0) {
+        const existing = frontmatter.relationships ?? []
+        const merged = [...existing]
+        for (const rel of input.relationships) {
+          const duplicate = merged.find((r) => r.target === rel.target && r.type === rel.type)
+          if (!duplicate) {
+            merged.push({
+              type: rel.type as import('../types.js').RelationshipType,
+              target: rel.target,
+              description: rel.description,
+              bidirectional: rel.bidirectional,
+              source: rel.source ?? 'ai',
+            })
+          }
+        }
+        if (merged.length > 0) frontmatter.relationships = merged
+      }
       await writeFile(annPath, serializeAnnotation(frontmatter, existingBody + `\n\n${body}`))
       return { action: 'updated', path: annPath }
     }
@@ -220,6 +238,16 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
       parent_folder: ref.includes('/') ? ref.substring(0, ref.lastIndexOf('/') + 1) : '/',
       sessions: sessionId ? [sessionId] : [],
       blocks: [],
+    }
+    // Add initial relationships if provided
+    if (input.relationships && input.relationships.length > 0) {
+      fm.relationships = input.relationships.map((rel) => ({
+        type: rel.type as import('../types.js').RelationshipType,
+        target: rel.target,
+        description: rel.description,
+        bidirectional: rel.bidirectional,
+        source: rel.source ?? 'ai',
+      }))
     }
     await writeFile(annPath, serializeAnnotation(fm, body))
     return { action: 'created', path: annPath }
