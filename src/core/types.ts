@@ -110,6 +110,7 @@ export const FileFrontmatterSchema = BaseAnnotationSchema.extend({
   inferred: z.boolean().optional(),
   inference_confidence: z.number().min(0).max(1).optional(),
   generation_settings: GenerationSettingsSchema.optional(),
+  relationships: z.array(RelationshipSchema).optional(),
 })
 
 export const BlockFrontmatterSchema = BaseAnnotationSchema.extend({
@@ -173,6 +174,7 @@ export interface FileIndexEntry {
   parent_folder: string
   blocks: string[]
   sessions: string[]
+  relationships_out?: Array<{ type: RelationshipType; target: string; pipeline?: 'static' | 'ai' }>
 }
 
 export interface BlockIndexEntry {

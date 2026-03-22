@@ -12,14 +12,30 @@ import { pythonScannerPlugin } from './scanner-plugins/python.js'
 import { goScannerPlugin } from './scanner-plugins/go.js'
 import { rustScannerPlugin } from './scanner-plugins/rust.js'
 
-export interface ScannedRelationship {
-  /** Symbolic ref of the block that owns this relationship (e.g. "src/foo.ts::myFn") */
-  sourceBlock: string
+/**
+ * A file-level edge: the scanner knows the file imports/tests a target,
+ * but not which specific block within the file is responsible.
+ * Used for depends_on and tests edges.
+ */
+export interface FileLevelEdge {
+  sourceFile: string  // repo-relative file path, e.g. "src/foo.ts"
+  type: 'depends_on' | 'tests'
+  target: string      // symbolic ref of the target block
+  source: 'static'
+}
+
+/**
+ * A block-level edge: the scanner can attribute the relationship to a
+ * specific block (used for extends and implements, where the class ref is known).
+ */
+export interface BlockLevelEdge {
+  sourceBlock: string  // symbolic ref, e.g. "src/foo.ts::MyClass"
   type: RelationshipType
-  /** Symbolic ref of the target block. Must exist in the BlockRegistry. */
   target: string
   source: 'static'
 }
+
+export type ScannedRelationship = FileLevelEdge | BlockLevelEdge
 
 /**
  * Maps symbolicRef → repo-relative file path.
@@ -125,9 +141,10 @@ export async function runStaticScan(
         result.relationshipsSkipped++
         continue
       }
-      const existing = edgesByBlock.get(edge.sourceBlock) ?? []
+      const sourceBlock = 'sourceBlock' in edge ? edge.sourceBlock : edge.sourceFile
+      const existing = edgesByBlock.get(sourceBlock) ?? []
       existing.push(edge)
-      edgesByBlock.set(edge.sourceBlock, existing)
+      edgesByBlock.set(sourceBlock, existing)
     }
   }
 
