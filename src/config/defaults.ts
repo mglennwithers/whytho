@@ -35,6 +35,7 @@ export const DEFAULT_CONFIG: WhythoConfig = {
     supersededThreshold: DEFAULT_SUPERSEDED_THRESHOLD,
     runOnCommit: true,
     hookMode: 'post-commit',
+    unresolvableMaxAttempts: 3,
   },
   parser: {
     additionalPlugins: [],

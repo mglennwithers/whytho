@@ -1,6 +1,6 @@
 import * as fs from 'fs/promises'
 import { readAnnotationFile } from '../fs/reader.js'
-import { writeFile } from '../fs/writer.js'
+import { writeFile, fileExists } from '../fs/writer.js'
 import { serializeAnnotation } from '../frontmatter/serialize.js'
 import { blockAnnotationPath, buildSymbolicRef } from '../fs/layout.js'
 import { parseFile } from '../parser/registry.js'
@@ -102,10 +102,23 @@ export async function runResolutionPipeline(ctx: ResolutionContext): Promise<Res
             atCommit: commitSha,
           })
         } else {
-          // UNRESOLVABLE: freeze the annotation
+          // UNRESOLVABLE: escalate to archive after too many consecutive failures
+          const attempts = (fm.resolution_attempts ?? 0) + 1
+          const maxAttempts = config.resolution.unresolvableMaxAttempts
+          if (attempts >= maxAttempts) {
+            await archiveBlockAnnotation(whyRoot, symbolicRef, {
+              reason: 'deleted',
+              bySession: sessionId ?? 'unknown',
+              atCommit: commitSha,
+            })
+            outcomes[symbolicRef] = 'DELETED'
+            continue
+          }
+          // Freeze with incremented attempt counter
           const frozenFm: BlockFrontmatter = {
             ...fm,
             resolution_status: 'unresolvable',
+            resolution_attempts: attempts,
             identity: {
               ...fm.identity,
               confidence: 0.0,
@@ -163,10 +176,14 @@ export async function runResolutionPipeline(ctx: ResolutionContext): Promise<Res
       if (updatedIdentity?.symbolic && updatedIdentity.symbolic !== symbolicRef) {
         newFm.symbolic_ref = updatedIdentity.symbolic
         newFm.file = filePath
-        // Rename the annotation file
         const newPath = blockAnnotationPath(whyRoot, updatedIdentity.symbolic)
+        // Guard: don't overwrite an existing annotation at the target path —
+        // that would silently destroy a different block's annotation.
+        if (newPath !== ann.filePath && await fileExists(newPath)) {
+          outcomes[symbolicRef] = 'UNRESOLVABLE'
+          continue
+        }
         await writeFile(newPath, serializeAnnotation(newFm, ann.body))
-        // Remove old file if different
         if (newPath !== ann.filePath) {
           try { await fs.unlink(ann.filePath) } catch { /* ignore */ }
         }

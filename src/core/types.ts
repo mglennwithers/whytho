@@ -122,6 +122,7 @@ export const BlockFrontmatterSchema = BaseAnnotationSchema.extend({
   derived_from: z.string().optional(),
   parents: z.array(z.string()).optional(),
   resolution_status: z.string().optional(),
+  resolution_attempts: z.number().int().nonnegative().optional(),
   archived_at: z.string().optional(),
   archived_reason: z.enum(ARCHIVE_REASONS).optional(),
   archived_by_session: z.string().optional(),

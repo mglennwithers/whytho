@@ -47,6 +47,8 @@ export interface WhythoConfig {
     supersededThreshold: number
     runOnCommit: boolean
     hookMode: 'post-commit' | 'pre-commit'
+    /** Archive an unresolvable block after this many consecutive failed resolution attempts. Default: 3 */
+    unresolvableMaxAttempts: number
   }
   parser: {
     additionalPlugins: string[]

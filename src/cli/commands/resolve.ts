@@ -5,7 +5,7 @@ import { getChangedFiles } from '../../core/git/diff.js'
 import { getWhyRoot } from '../../core/fs/layout.js'
 import { isWhyDirInitialized } from '../../core/fs/init.js'
 import { runResolutionPipeline } from '../../core/resolution/pipeline.js'
-import { buildIndex } from '../../core/index-builder/build.js'
+import { buildIndex, rebuildArchiveIndex } from '../../core/index-builder/build.js'
 import { emitHookEvents } from '../../core/relationships/events.js'
 import { loadConfig } from '../../config/loader.js'
 import { getDefaultProvider } from '../../ai/registry.js'
@@ -55,8 +55,11 @@ export function registerResolve(program: Command): void {
           ai,
         })
 
-        // Rebuild index
-        await buildIndex(whyRoot, commitSha)
+        // Rebuild index and archive index
+        await Promise.all([
+          buildIndex(whyRoot, commitSha),
+          rebuildArchiveIndex(whyRoot),
+        ])
 
         // Emit hook events
         if (report.hookEvents.length > 0) {

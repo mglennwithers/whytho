@@ -166,11 +166,14 @@ export async function electCanonicalMetric(
     }
   }
 
-  // ─── Rule 5: No metrics match — UNRESOLVABLE ──────────────────────────────
-  // Note: DELETED is determined by the pipeline (file not found). Here we
-  // return UNRESOLVABLE if we have candidates but nothing matched, or DELETED
-  // if there are literally no parseable blocks left in the file.
-  if (candidates.length === 0) {
+  // ─── Rule 5: No metrics match ────────────────────────────────────────────────
+  // DELETED if the file has no parseable blocks at all, or the block's own name
+  // has completely disappeared from the file — a strong signal the block was
+  // removed rather than just heavily modified. UNRESOLVABLE only if the name
+  // still appears somewhere (block exists but changed beyond recognition).
+  const blockName = stored.symbolic.split('::')[1]
+  const nameInFile = blockName ? candidates.some((c) => c.name === blockName) : false
+  if (candidates.length === 0 || !nameInFile) {
     return {
       outcome: 'DELETED',
       canonical_metric: 'none',

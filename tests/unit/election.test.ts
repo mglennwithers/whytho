@@ -93,7 +93,7 @@ describe('electCanonicalMetric', () => {
     expect(result.outcome).toBe('DELETED')
   })
 
-  it('Rule 5: no match → UNRESOLVABLE when candidates exist but none match', async () => {
+  it('Rule 5: DELETED when block name is absent from file (name-level deletion)', async () => {
     const identity = makeIdentity({
       structural: {
         kind: 'function',
@@ -103,7 +103,7 @@ describe('electCanonicalMetric', () => {
       },
     })
 
-    // Candidate exists but has totally different name/kind
+    // File still has blocks, but myFunction is gone entirely
     const candidates = [makeBlock({ name: 'completelyDifferent', kind: 'class' })]
 
     const result = await electCanonicalMetric({
@@ -112,6 +112,30 @@ describe('electCanonicalMetric', () => {
       filePath: 'src/foo.ts',
       commitSha: 'newcommit',
       source: 'class completelyDifferent {}',
+    })
+
+    expect(result.outcome).toBe('DELETED')
+  })
+
+  it('Rule 5: UNRESOLVABLE when block name exists but nothing matches', async () => {
+    const identity = makeIdentity({
+      structural: {
+        kind: 'function',
+        parent_scope: 'module',
+        name: 'myFunction',
+        index_in_parent: 0,
+      },
+    })
+
+    // myFunction still exists but is a class now — name present, structural mismatch
+    const candidates = [makeBlock({ name: 'myFunction', kind: 'class' })]
+
+    const result = await electCanonicalMetric({
+      stored: identity,
+      candidates,
+      filePath: 'src/foo.ts',
+      commitSha: 'newcommit',
+      source: 'class myFunction {}',
     })
 
     expect(result.outcome).toBe('UNRESOLVABLE')
