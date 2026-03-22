@@ -111,6 +111,18 @@ export { getBlockHistory, findArchivedBlocks } from './core/archive/query.js'
 // ─── Relationships ────────────────────────────────────────────────────────────
 export { getRelationshipsFrom, getRelationshipsTo, getAllRelated } from './core/relationships/graph.js'
 export { buildHookEvent, emitHookEvents } from './core/relationships/events.js'
+export {
+  runStaticScan,
+  buildBlockRegistry,
+  registerScannerPlugin,
+  resetScannerPlugins,
+} from './core/relationships/scanner.js'
+export type {
+  RelationshipScanner,
+  ScannedRelationship,
+  BlockRegistry,
+  ScanResult,
+} from './core/relationships/scanner.js'
 
 // ─── Git ──────────────────────────────────────────────────────────────────────
 export { findRepoRoot, getHeadCommitSha, getCurrentUser } from './core/git/repo.js'
