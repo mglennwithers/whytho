@@ -8,6 +8,8 @@ import { runResolutionPipeline } from '../../core/resolution/pipeline.js'
 import { buildIndex, rebuildArchiveIndex } from '../../core/index-builder/build.js'
 import { emitHookEvents } from '../../core/relationships/events.js'
 import { loadConfig } from '../../config/loader.js'
+import { runStaticScan } from '../../core/relationships/scanner.js'
+import { collectAllSourceFiles } from './scan.js'
 import { getDefaultProvider } from '../../ai/registry.js'
 import { readAllBlocks } from '../../core/fs/reader.js'
 
@@ -42,6 +44,12 @@ export function registerResolve(program: Command): void {
           // Full resolution: get all annotated files
           const allBlocks = await readAllBlocks(whyRoot)
           changedFiles = [...new Set(allBlocks.map((b) => b.frontmatter.file))]
+        }
+
+        // Run static relationship scanner (gated on config)
+        if (config.relationships?.static_scan !== false) {
+          const allSourceFiles = await collectAllSourceFiles(repoRoot)
+          await runStaticScan(repoRoot, whyRoot, changedFiles, allSourceFiles)
         }
 
         const ai = options.ai !== false ? getDefaultProvider(config) : undefined

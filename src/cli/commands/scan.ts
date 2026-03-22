@@ -12,14 +12,14 @@ import { runStaticScan } from '../../core/relationships/scanner.js'
 export async function collectAllSourceFiles(repoRoot: string): Promise<string[]> {
   const files: string[] = []
   async function walk(dir: string): Promise<void> {
-    let entries: Awaited<ReturnType<typeof fs.readdir>>
+    let entries: import('fs').Dirent[]
     try {
       entries = await fs.readdir(dir, { withFileTypes: true })
     } catch {
       return
     }
     for (const entry of entries) {
-      const fullPath = path.join(dir, entry.name)
+      const fullPath = path.join(dir, String(entry.name))
       const relPath = path.relative(repoRoot, fullPath).replace(/\\/g, '/')
       if (entry.isDirectory()) {
         if (['.git', '.why', 'node_modules', 'dist', 'dist-test', '.next', 'coverage', '.worktrees'].includes(entry.name)) continue
