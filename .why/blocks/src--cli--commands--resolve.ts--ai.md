@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/resolve.ts::ai
 file: src/cli/commands/resolve.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T02:19:55.380Z"
+updated: "2026-03-22T10:12:27.591Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/resolve.ts::ai
   line_range:
-    start: 47
-    end: 47
-    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+    start: 55
+    end: 55
+    commit: dbdf3218572cb3980a58c6ef326ecef25f7b14ba
   content_hash: sha256:dea7428f7316f209bcae370a0a36068e8abc2ee349edf2d0095582f3dbc0a1bc
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     enabled or returning undefined when disabled.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+  last_resolved: dbdf3218572cb3980a58c6ef326ecef25f7b14ba
 ---
 
 # ai
