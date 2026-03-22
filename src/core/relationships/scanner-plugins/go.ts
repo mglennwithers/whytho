@@ -8,17 +8,6 @@ function isTestFile(filePath: string): boolean {
   return TEST_FILE_RE.test(filePath)
 }
 
-/**
- * Returns the first symbolic ref in the registry matching the given file path,
- * or a fallback `filePath::module` ref.
- */
-function defaultSourceBlock(filePath: string, registry: BlockRegistry): string {
-  for (const key of registry.keys()) {
-    if (key.startsWith(filePath + '::')) return key
-  }
-  return `${filePath}::module`
-}
-
 // Matches single-import: import "pkg/path" or import alias "pkg/path"
 const SINGLE_IMPORT_RE = /^\s*import\s+(?:(\w+)\s+)?"([^"]+)"/gm
 
@@ -98,7 +87,6 @@ export const goScannerPlugin: RelationshipScanner = {
 
   scan(filePath: string, fileContent: string, registry: BlockRegistry): ScannedRelationship[] {
     const edges: ScannedRelationship[] = []
-    const srcBlock = defaultSourceBlock(filePath, registry)
     const isTest = isTestFile(filePath)
 
     const imports = parseImports(fileContent)
@@ -133,7 +121,7 @@ export const goScannerPlugin: RelationshipScanner = {
         seenTargets.add(candidate)
 
         const type: RelationshipType = isTest ? 'tests' : 'depends_on'
-        edges.push({ sourceBlock: srcBlock, type, target: candidate, source: 'static' })
+        edges.push({ sourceFile: filePath, type, target: candidate, source: 'static' })
       }
     }
 

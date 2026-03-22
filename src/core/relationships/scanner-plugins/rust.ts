@@ -7,17 +7,6 @@ function isTestFile(filePath: string): boolean {
 }
 
 /**
- * Returns the first symbolic ref in the registry matching the given file path,
- * or a fallback `filePath::module` ref.
- */
-function defaultSourceBlock(filePath: string, registry: BlockRegistry): string {
-  for (const key of registry.keys()) {
-    if (key.startsWith(filePath + '::')) return key
-  }
-  return `${filePath}::module`
-}
-
-/**
  * Searches the registry for a block named `symbolName` within a file path that
  * contains `moduleSegment` (derived from the `crate::path::Name` hierarchy).
  */
@@ -64,7 +53,6 @@ export const rustScannerPlugin: RelationshipScanner = {
 
   scan(filePath: string, fileContent: string, registry: BlockRegistry): ScannedRelationship[] {
     const edges: ScannedRelationship[] = []
-    const srcBlock = defaultSourceBlock(filePath, registry)
     const isTest = isTestFile(filePath)
 
     // 1. use crate::path::{Name1, Name2} (multi-import)
@@ -77,7 +65,7 @@ export const rustScannerPlugin: RelationshipScanner = {
         const name = rawName.split(' as ')[0].trim()
         const entry = findRegistryEntry(name, modulePath, filePath, registry)
         if (entry) {
-          edges.push({ sourceBlock: srcBlock, type: isTest ? 'tests' : 'depends_on', target: entry, source: 'static' })
+          edges.push({ sourceFile: filePath, type: isTest ? 'tests' : 'depends_on', target: entry, source: 'static' })
         }
       }
     }
@@ -92,7 +80,7 @@ export const rustScannerPlugin: RelationshipScanner = {
       if (!symbolName || symbolName === 'crate' || symbolName === 'super' || symbolName === 'self') continue
       const entry = findRegistryEntry(symbolName, modulePath, filePath, registry)
       if (entry) {
-        edges.push({ sourceBlock: srcBlock, type: isTest ? 'tests' : 'depends_on', target: entry, source: 'static' })
+        edges.push({ sourceFile: filePath, type: isTest ? 'tests' : 'depends_on', target: entry, source: 'static' })
       }
     }
 
@@ -125,18 +113,18 @@ export const rustScannerPlugin: RelationshipScanner = {
       const traitName = m[1]
       const typeName = m[2]
       const typeRef = `${filePath}::${typeName}`
-      const sourceBlock = registry.has(typeRef) ? typeRef : srcBlock
+      if (!registry.has(typeRef)) continue  // spec: skip if type not in registry
 
       // Prefer use-import-resolved target (precise)
       const knownRef = usedNames.get(traitName)
       if (knownRef && registry.has(knownRef)) {
-        edges.push({ sourceBlock, type: 'implements', target: knownRef, source: 'static' })
+        edges.push({ sourceBlock: typeRef, type: 'implements', target: knownRef, source: 'static' })
         continue
       }
       // Fall back to first registry match by name suffix
       for (const key of registry.keys()) {
         if (key.split('::')[1] === traitName) {
-          edges.push({ sourceBlock, type: 'implements', target: key, source: 'static' })
+          edges.push({ sourceBlock: typeRef, type: 'implements', target: key, source: 'static' })
           break
         }
       }
@@ -151,7 +139,7 @@ export const rustScannerPlugin: RelationshipScanner = {
         const targetRef = `${filePath}::${name}`
         if (registry.has(targetRef)) {
           edges.push({
-            sourceBlock: `${filePath}::tests`,
+            sourceFile: filePath,
             type: 'tests',
             target: targetRef,
             source: 'static',

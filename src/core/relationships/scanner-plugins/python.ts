@@ -37,17 +37,6 @@ function resolveRelativeImport(
   return undefined
 }
 
-/**
- * Returns the first symbolic ref in the registry matching the given file path,
- * or a fallback `filePath::module` ref.
- */
-function defaultSourceBlock(filePath: string, registry: BlockRegistry): string {
-  for (const key of registry.keys()) {
-    if (key.startsWith(filePath + '::')) return key
-  }
-  return `${filePath}::module`
-}
-
 // Matches: from .module import Name1, Name2
 // Group 1: leading dots, Group 2: module path (may be empty), Group 3: names
 const RELATIVE_FROM_IMPORT_RE = /^from\s+(\.+)(\S*)\s+import\s+(.+)$/gm
@@ -60,7 +49,6 @@ export const pythonScannerPlugin: RelationshipScanner = {
 
   scan(filePath: string, fileContent: string, registry: BlockRegistry): ScannedRelationship[] {
     const edges: ScannedRelationship[] = []
-    const srcBlock = defaultSourceBlock(filePath, registry)
     const isTest = isTestFile(filePath)
 
     // importMap: localName → resolvedFilePath
@@ -89,7 +77,7 @@ export const pythonScannerPlugin: RelationshipScanner = {
         const target = `${resolvedFilePath}::${exportedName}`
         if (registry.has(target)) {
           const type: RelationshipType = isTest ? 'tests' : 'depends_on'
-          edges.push({ sourceBlock: srcBlock, type, target, source: 'static' })
+          edges.push({ sourceFile: filePath, type, target, source: 'static' })
         }
       }
     }

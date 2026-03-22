@@ -48,17 +48,6 @@ function resolveImport(
   return undefined
 }
 
-/**
- * Returns the first symbolic ref in the registry matching the given file path,
- * or a fallback `filePath::module` ref.
- */
-function defaultSourceBlock(filePath: string, registry: BlockRegistry): string {
-  for (const key of registry.keys()) {
-    if (key.startsWith(filePath + '::')) return key
-  }
-  return `${filePath}::module`
-}
-
 type ASTNode = {
   type: string
   source?: { value?: unknown }
@@ -96,7 +85,6 @@ export const typescriptScannerPlugin: RelationshipScanner = {
     }
 
     const edges: ScannedRelationship[] = []
-    const srcBlock = defaultSourceBlock(filePath, registry)
     const isTest = isTestFile(filePath)
 
     // importMap: localName → { filePath, exportedName }
@@ -122,7 +110,7 @@ export const typescriptScannerPlugin: RelationshipScanner = {
             const target = `${resolvedFilePath}::${exportedName}`
             if (registry.has(target)) {
               const type: RelationshipType = isTest ? 'tests' : 'depends_on'
-              edges.push({ sourceBlock: srcBlock, type, target, source: 'static' })
+              edges.push({ sourceFile: filePath, type, target, source: 'static' })
             }
           } else if (spec.type === 'ImportDefaultSpecifier') {
             const localName = spec.local?.name
