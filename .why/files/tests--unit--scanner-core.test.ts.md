@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: tests/unit/scanner-core.test.ts
 created: "2026-03-22T13:19:02.206Z"
-updated: "2026-03-22T13:19:02.206Z"
+updated: "2026-03-22T23:14:23.641Z"
 updated_by_session: static-scan
 parent_folder: tests/unit/
 sessions: []

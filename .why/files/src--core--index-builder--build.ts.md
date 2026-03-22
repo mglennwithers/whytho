@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/core/index-builder/build.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-22T23:14:23.641Z"
 updated_by_session: inferred
 parent_folder: src/core/index-builder/
 sessions: []
@@ -42,6 +42,52 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships:
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllBlocks
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllFiles
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllFolders
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllSessions
+    source: static
+  - type: depends_on
+    target: src/core/fs/writer.ts::writeJson
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::indexPath
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::archiveIndexPath
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::WHYTHO_VERSION
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::WhythoIndex
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::WhythoArchiveIndex
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::SessionIndexEntry
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::FolderIndexEntry
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::FileIndexEntry
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::BlockIndexEntry
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::RelationshipEdge
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **88%**

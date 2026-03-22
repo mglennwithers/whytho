@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/build.ts::buildIndex
 file: src/core/index-builder/build.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T09:40:39.667Z"
+updated: "2026-03-22T23:14:23.987Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -17,9 +17,9 @@ identity:
   symbolic: src/core/index-builder/build.ts::buildIndex
   line_range:
     start: 15
-    end: 112
-    commit: 2882c015e657357bcf2750548d38f3c58059de46
-  content_hash: sha256:2442ac128adca6a51d31826c2e6d834e8f14961cd786e0afc72d9e894a74c6a9
+    end: 118
+    commit: f084e91a8edf80319d4505304ebae9a7c5607f12
+  content_hash: sha256:a8751840d2e86db69a0ce83e365e8c37eb9d8cf405a8898e11405b6d218492b5
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     resolves bidirectional relationships, and persists the result to disk.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 2882c015e657357bcf2750548d38f3c58059de46
+  last_resolved: f084e91a8edf80319d4505304ebae9a7c5607f12
 ---
 
 # buildIndex

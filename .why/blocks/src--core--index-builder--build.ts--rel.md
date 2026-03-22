@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/build.ts::rel
 file: src/core/index-builder/build.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T09:40:39.751Z"
+updated: "2026-03-22T23:14:24.078Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/index-builder/build.ts::rel
   line_range:
-    start: 81
-    end: 81
-    commit: 2882c015e657357bcf2750548d38f3c58059de46
+    start: 87
+    end: 87
+    commit: f084e91a8edf80319d4505304ebae9a7c5607f12
   content_hash: sha256:432c07941fda77486047256eaa59d32a712aeefdaaf246a9ff8f0abe1826fd7d
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     likely as part of building or indexing relationships in a data structure.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 2882c015e657357bcf2750548d38f3c58059de46
+  last_resolved: f084e91a8edf80319d4505304ebae9a7c5607f12
 ---
 
 # rel

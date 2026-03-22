@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/build.ts::sessions
 file: src/core/index-builder/build.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T09:40:39.794Z"
+updated: "2026-03-22T23:14:24.120Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 23
     end: 23
-    commit: 2882c015e657357bcf2750548d38f3c58059de46
+    commit: f084e91a8edf80319d4505304ebae9a7c5607f12
   content_hash: sha256:a4c88c8e1d80c527e5f62d98458aa34d0b9102438f34f2afd88b3b3040a09330
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     string identifiers.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 2882c015e657357bcf2750548d38f3c58059de46
+  last_resolved: f084e91a8edf80319d4505304ebae9a7c5607f12
 ---
 
 # sessions
