@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/frontmatter.test.ts::describe(serializeAnnotation)
 file: tests/unit/frontmatter.test.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:37.497Z"
+updated: "2026-03-22T09:33:35.631Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: tests/unit/frontmatter.test.ts::describe(serializeAnnotation)
   line_range:
-    start: 55
-    end: 73
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:ecc31c233b824bf2a0822b433d3266d6efc25f51c69b35f758eca1bbff7ca020
+    start: 84
+    end: 102
+    commit: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
+  content_hash: sha256:4ebdaac94783494ebf2a2ab7c2373d9b3f5cc6875775c00f2d74894b0377d5de
   structural:
     kind: describe
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     parser without data loss.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
 ---
 
 # describe(serializeAnnotation)

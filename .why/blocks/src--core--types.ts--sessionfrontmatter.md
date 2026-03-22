@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::SessionFrontmatter
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-22T02:19:56.454Z"
+updated: "2026-03-22T09:33:35.484Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/types.ts::SessionFrontmatter
   line_range:
-    start: 141
-    end: 141
-    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+    start: 142
+    end: 142
+    commit: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
   content_hash: sha256:ebe003e048f17953cdde4a59227e6dc6d7ec83ccb28d9149615ee49d0ca53b2d
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     data that mirrors the schema's structure and validation rules.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+  last_resolved: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
 ---
 
 # SessionFrontmatter

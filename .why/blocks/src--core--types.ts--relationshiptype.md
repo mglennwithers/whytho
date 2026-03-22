@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::RelationshipType
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-22T02:19:56.404Z"
+updated: "2026-03-22T09:33:35.426Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 17
     end: 17
-    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+    commit: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
   content_hash: sha256:63d161b9a5671560eb212b32d334426316d9b9039ec7ffb525787cc91b62066c
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     pattern, enabling type-safe reference to predefined relationship categories.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+  last_resolved: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
 ---
 
 # RelationshipType

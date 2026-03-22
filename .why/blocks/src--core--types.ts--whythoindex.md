@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::WhythoIndex
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-22T02:19:56.523Z"
+updated: "2026-03-22T09:33:35.583Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/types.ts::WhythoIndex
   line_range:
-    start: 196
-    end: 206
-    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+    start: 198
+    end: 208
+    commit: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
   content_hash: sha256:835f258f41df3f96a32e68fd56bdca035c3021c1070ed6b6447a41b6adf6e86c
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     metadata, serving as a comprehensive cross-reference or navigation map for a codebase analysis system.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+  last_resolved: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
 ---
 
 # WhythoIndex
