@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::note
 file: src/core/push/index.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.344Z"
+updated: "2026-03-22T09:38:08.106Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/push/index.ts::note
   line_range:
-    start: 63
-    end: 63
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 73
+    end: 73
+    commit: 1e27f0b292da50781577cdb94eeea6d19c1dd93e
   content_hash: sha256:0688c1b9758802e516334eebf7bee4ecdd3a62162849c0816bb4dc07b8a5dbe3
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     "## Agent Note" header and markdown formatting.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 1e27f0b292da50781577cdb94eeea6d19c1dd93e
 ---
 
 # note

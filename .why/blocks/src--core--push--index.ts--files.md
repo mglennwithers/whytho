@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::files
 file: src/core/push/index.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.297Z"
+updated: "2026-03-22T09:38:08.028Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/push/index.ts::files
   line_range:
-    start: 39
-    end: 39
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 49
+    end: 49
+    commit: 1e27f0b292da50781577cdb94eeea6d19c1dd93e
   content_hash: sha256:92580798df07fdc60a88b9bea747271caf0aa8607485d82cc0ad2ca3c9f16b75
   structural:
     kind: const
@@ -28,7 +28,7 @@ identity:
   semantic_fingerprint: Asynchronously retrieves a list of file and directory names from a specified directory using the filesystem module.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 1e27f0b292da50781577cdb94eeea6d19c1dd93e
 ---
 
 # files

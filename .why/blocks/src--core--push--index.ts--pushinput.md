@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::PushInput
 file: src/core/push/index.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.372Z"
+updated: "2026-03-22T09:38:08.149Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/push/index.ts::PushInput
   line_range:
-    start: 22
-    end: 29
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:a43b57c65cfca9ec1e810f01eea4e2c7b8e13c3e2980b821dc7a30a3d48863b0
+    start: 30
+    end: 39
+    commit: 1e27f0b292da50781577cdb94eeea6d19c1dd93e
+  content_hash: sha256:4a5ffe5493c6b338fada159c7c38c8e364ccb1dd2cf367632f64cecba28acd30
   structural:
     kind: interface
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     identifier, message body, and optional session tracking.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 1e27f0b292da50781577cdb94eeea6d19c1dd93e
 ---
 
 # PushInput
