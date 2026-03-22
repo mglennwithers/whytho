@@ -29,10 +29,15 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "test": "vitest run",
+    "build:test": "tsc -p tsconfig.test.json --noEmitOnError false; cp tests/fixtures/* dist-test/tests/fixtures/ 2>/dev/null; exit 0",
+    "test": "npm run build:test && node scripts/run-tests.js",
+    "test:vitest": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit && node scripts/lint.js",
+    "lint:style": "node scripts/lint.js",
+    "format": "prettier --write 'src/**/*.ts' 'tests/**/*.ts'",
+    "install-hooks": "node scripts/install-hooks.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",
@@ -48,6 +53,11 @@
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.0",
     "tsup": "^8.0.0",
     "typescript": "^5.4.0",
     "vitest": "^1.6.0"

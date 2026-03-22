@@ -42,9 +42,9 @@ function inferredDisclaimer(confidence: number): string {
 
 async function collectSourceFiles(dir: string, repoRoot: string, config: WhythoConfig): Promise<string[]> {
   const results: string[] = []
-  let entries: Awaited<ReturnType<typeof fs.readdir>>
+  let entries: { name: string; isDirectory(): boolean; isFile(): boolean }[]
   try {
-    entries = await fs.readdir(dir, { withFileTypes: true })
+    entries = await fs.readdir(dir, { withFileTypes: true }) as typeof entries
   } catch {
     return results
   }

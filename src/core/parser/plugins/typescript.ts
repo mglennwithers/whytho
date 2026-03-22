@@ -22,6 +22,7 @@ function getEstree(): TSEstree | null {
 type ASTNode = {
   type: string
   loc?: { start: { line: number }; end: { line: number } }
+  name?: string
   id?: { name?: string }
   key?: { name?: string; type?: string; value?: string }
   kind?: string

@@ -1,9 +1,12 @@
 import * as path from 'path'
 import type { ParserPlugin, ParsedBlock } from './types.js'
 import { typescriptPlugin } from './plugins/typescript.js'
+import { pythonPlugin } from './plugins/python.js'
+import { goPlugin } from './plugins/go.js'
+import { rustPlugin } from './plugins/rust.js'
 import { genericPlugin } from './plugins/generic.js'
 
-const plugins: ParserPlugin[] = [typescriptPlugin]
+const plugins: ParserPlugin[] = [typescriptPlugin, pythonPlugin, goPlugin, rustPlugin]
 
 export function registerPlugin(plugin: ParserPlugin): void {
   plugins.unshift(plugin) // Higher priority than defaults

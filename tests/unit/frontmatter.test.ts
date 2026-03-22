@@ -65,7 +65,7 @@ describe('serializeAnnotation', () => {
   it('roundtrips through parse', () => {
     const body = '## Purpose\n\nTest body.\n'
     const serialized = serializeAnnotation(SAMPLE_BLOCK, body)
-    const parsed = parseAnnotation(serialized)
+    const parsed = parseAnnotation<BlockFrontmatter>(serialized)
     expect(parsed.frontmatter.type).toBe('block')
     expect(parsed.frontmatter.symbolic_ref).toBe(SAMPLE_BLOCK.symbolic_ref)
     expect(parsed.body).toContain('Test body.')

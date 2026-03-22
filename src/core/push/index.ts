@@ -19,6 +19,13 @@ import type { BlockFrontmatter, FileFrontmatter, SessionFrontmatter } from '../t
 
 export type PushType = 'session' | 'block' | 'file'
 
+export interface RelationshipInput {
+  target: string
+  type: string
+  description?: string
+  bidirectional?: boolean
+}
+
 export interface PushInput {
   repoRoot: string
   type: PushType
@@ -26,6 +33,8 @@ export interface PushInput {
   ref: string
   body: string
   sessionId?: string
+  /** Relationships to add/update on a block annotation */
+  relationships?: RelationshipInput[]
 }
 
 export interface PushResult {
@@ -110,6 +119,25 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
         }
       }
       if (sessionId) frontmatter.updated_by_session = sessionId
+
+      // Merge new relationships (deduplicated by target+type)
+      if (input.relationships && input.relationships.length > 0) {
+        const existing = frontmatter.relationships ?? []
+        const merged = [...existing]
+        for (const rel of input.relationships) {
+          const duplicate = merged.find((r) => r.target === rel.target && r.type === rel.type)
+          if (!duplicate) {
+            merged.push({
+              type: rel.type as import('../types.js').RelationshipType,
+              target: rel.target,
+              description: rel.description,
+              bidirectional: rel.bidirectional,
+            })
+          }
+        }
+        if (merged.length > 0) frontmatter.relationships = merged
+      }
+
       await writeFile(annPath, serializeAnnotation(frontmatter, existingBody + `\n\n${body}`))
       return { action: 'updated', path: annPath }
     }
@@ -150,6 +178,15 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
             confidence: 0.7,
             last_resolved: commitSha,
           },
+    }
+    // Add initial relationships if provided
+    if (input.relationships && input.relationships.length > 0) {
+      fm.relationships = input.relationships.map((rel) => ({
+        type: rel.type as import('../types.js').RelationshipType,
+        target: rel.target,
+        description: rel.description,
+        bidirectional: rel.bidirectional,
+      }))
     }
     await writeFile(annPath, serializeAnnotation(fm, `# ${blockName}\n\n${body}`))
     return { action: 'created', path: annPath }

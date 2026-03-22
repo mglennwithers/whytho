@@ -4,7 +4,8 @@ import { findRepoRoot } from '../../core/git/repo.js'
 import { getWhyRoot } from '../../core/fs/layout.js'
 import { getBlockHistory } from '../../core/archive/query.js'
 import { readAnnotationFile, readAllBlocks } from '../../core/fs/reader.js'
-import { blockAnnotationPath, fileExists } from '../../core/fs/layout.js'
+import { blockAnnotationPath } from '../../core/fs/layout.js'
+import { fileExists } from '../../core/fs/writer.js'
 
 export function registerHistory(program: Command): void {
   program
