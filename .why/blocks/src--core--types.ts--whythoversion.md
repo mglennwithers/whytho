@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::WhythoVersion
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-22T09:33:35.604Z"
+updated: "2026-03-22T13:01:12.111Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 14
     end: 14
-    commit: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
+    commit: 59a1f118d4181759c9a3dc0ab90c3520c9d180ed
   content_hash: sha256:a658f7581250575aec73be69696b23ff03903dce8c3d669e25f3d0aa0293fd91
   structural:
     kind: type
@@ -30,7 +30,29 @@ identity:
     that version constant rather than a broader string type.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
+  last_resolved: 59a1f118d4181759c9a3dc0ab90c3520c9d180ed
+relationships:
+  - type: depends_on
+    target: src/core/constants.ts::WHYTHO_VERSION
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::CANONICAL_METRICS
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::RESOLUTION_OUTCOMES
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::RELATIONSHIP_TYPES
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::BLOCK_KINDS
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::ANNOTATION_TYPES
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::ARCHIVE_REASONS
+    source: static
 ---
 
 # WhythoVersion

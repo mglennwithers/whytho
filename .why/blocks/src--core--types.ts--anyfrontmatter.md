@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::AnyFrontmatter
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-22T09:33:35.047Z"
+updated: "2026-03-22T13:01:11.690Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/types.ts::AnyFrontmatter
   line_range:
-    start: 147
-    end: 151
-    commit: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
+    start: 148
+    end: 152
+    commit: 59a1f118d4181759c9a3dc0ab90c3520c9d180ed
   content_hash: sha256:cbede35f6805658a505851ea2e79c91db625f52894a2a5f5f11b07ecad03b6b3
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     polymorphic handling of metadata across different structural levels in the codebase.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
+  last_resolved: 59a1f118d4181759c9a3dc0ab90c3520c9d180ed
 ---
 
 # AnyFrontmatter

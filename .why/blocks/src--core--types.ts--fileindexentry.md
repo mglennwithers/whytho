@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::FileIndexEntry
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-22T09:33:35.257Z"
+updated: "2026-03-22T13:01:11.849Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/types.ts::FileIndexEntry
   line_range:
-    start: 171
-    end: 176
-    commit: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
-  content_hash: sha256:645d5af6aa2f9f04dd1ba39d87af34c073f12d7d921850a145b27893035467b6
+    start: 172
+    end: 178
+    commit: 59a1f118d4181759c9a3dc0ab90c3520c9d180ed
+  content_hash: sha256:8791fe2381bc081d081588a7391d114fecc704a5ab0c63c933c012ed8eaabd79
   structural:
     kind: interface
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     relationship, and associated content blocks and sessions.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
+  last_resolved: 59a1f118d4181759c9a3dc0ab90c3520c9d180ed
 ---
 
 # FileIndexEntry

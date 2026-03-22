@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::HookEvent
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-22T09:33:35.365Z"
+updated: "2026-03-22T13:01:11.919Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/types.ts::HookEvent
   line_range:
-    start: 239
-    end: 257
-    commit: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
+    start: 241
+    end: 259
+    commit: 59a1f118d4181759c9a3dc0ab90c3520c9d180ed
   content_hash: sha256:981919400ccb06423b38df9f771c5b8be7baa557a504b84f93967691e0cd05ea
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     relationship details, and resolution outcomes with hash tracking for audit purposes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
+  last_resolved: 59a1f118d4181759c9a3dc0ab90c3520c9d180ed
 ---
 
 # HookEvent
