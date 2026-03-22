@@ -242,3 +242,74 @@ describe('runStaticScan write-back', () => {
     expect(raw).toContain('src/keeper.ts::kept')       // ai edge preserved
   })
 })
+
+describe('buildIndex', () => {
+  it('populates FileIndexEntry.relationships_out from file annotation relationships', async () => {
+    // Setup: create a real .why directory structure
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'whytho-buildindex-'))
+    const whyRoot = path.join(tmp, '.why')
+    await fs.mkdir(path.join(whyRoot, 'files'), { recursive: true })
+    await fs.mkdir(path.join(whyRoot, 'blocks'), { recursive: true })
+    await fs.mkdir(path.join(whyRoot, 'sessions'), { recursive: true })
+    await fs.mkdir(path.join(whyRoot, 'folders'), { recursive: true })
+
+    const fileFm = {
+      whytho: '1.0',
+      type: 'file' as const,
+      path: 'src/foo.ts',
+      parent_folder: 'src',
+      updated_by_session: 'sess-1',
+      created: '2026-01-01T00:00:00.000Z',
+      updated: '2026-01-01T00:00:00.000Z',
+      blocks: [],
+      sessions: [],
+      relationships: [
+        { type: 'depends_on' as const, target: 'src/bar.ts::myFn', source: 'static' as const },
+        { type: 'tests' as const, target: 'src/baz.ts::doWork', source: 'ai' as const },
+      ],
+    }
+
+    // Write file annotation using serializeAnnotation
+    const annPath = path.join(whyRoot, 'files', 'src--foo.ts.md')
+    await fs.writeFile(annPath, serializeAnnotation(fileFm, ''))
+
+    const index = await buildIndex(whyRoot, 'abc123')
+
+    expect(index.files['src/foo.ts'].relationships_out).toEqual([
+      { type: 'depends_on', target: 'src/bar.ts::myFn', pipeline: 'static' },
+      { type: 'tests', target: 'src/baz.ts::doWork', pipeline: 'ai' },
+    ])
+
+    await fs.rm(tmp, { recursive: true, force: true })
+  })
+
+  it('omits relationships_out when file annotation has no relationships', async () => {
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'whytho-buildindex2-'))
+    const whyRoot = path.join(tmp, '.why')
+    await fs.mkdir(path.join(whyRoot, 'files'), { recursive: true })
+    await fs.mkdir(path.join(whyRoot, 'blocks'), { recursive: true })
+    await fs.mkdir(path.join(whyRoot, 'sessions'), { recursive: true })
+    await fs.mkdir(path.join(whyRoot, 'folders'), { recursive: true })
+
+    const fileFm = {
+      whytho: '1.0',
+      type: 'file' as const,
+      path: 'src/empty.ts',
+      parent_folder: 'src',
+      updated_by_session: 'sess-1',
+      created: '2026-01-01T00:00:00.000Z',
+      updated: '2026-01-01T00:00:00.000Z',
+      blocks: [],
+      sessions: [],
+    }
+
+    const annPath = path.join(whyRoot, 'files', 'src--empty.ts.md')
+    await fs.writeFile(annPath, serializeAnnotation(fileFm, ''))
+
+    const index = await buildIndex(whyRoot, 'abc123')
+
+    expect(index.files['src/empty.ts'].relationships_out).toBeUndefined()
+
+    await fs.rm(tmp, { recursive: true, force: true })
+  })
+})

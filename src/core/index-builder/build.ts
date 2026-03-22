@@ -47,11 +47,17 @@ export async function buildIndex(whyRoot: string, commitSha: string): Promise<Wh
   const files: Record<string, FileIndexEntry> = {}
   for (const ann of fileAnns) {
     const fm = ann.frontmatter
+    const fileRels = (fm.relationships ?? []).map((r) => ({
+      type: r.type,
+      target: r.target,
+      pipeline: r.source,
+    }))
     files[fm.path] = {
       path: fm.path,
       parent_folder: fm.parent_folder,
       blocks: fm.blocks ?? [],
       sessions: fm.sessions ?? [],
+      relationships_out: fileRels.length > 0 ? fileRels : undefined,
     }
   }
 
