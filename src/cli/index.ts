@@ -9,6 +9,7 @@ import { registerRelated } from './commands/related.js'
 import { registerHistory } from './commands/history.js'
 import { registerDiff } from './commands/diff.js'
 import { registerResolve } from './commands/resolve.js'
+import { registerScan } from './commands/scan.js'
 import { registerPush } from './commands/push.js'
 import { registerInfer } from './commands/infer.js'
 import { registerMcp } from './commands/mcp.js'
@@ -29,6 +30,7 @@ registerRelated(program)
 registerHistory(program)
 registerDiff(program)
 registerResolve(program)
+registerScan(program)
 registerPush(program)
 registerInfer(program)
 registerMcp(program)
