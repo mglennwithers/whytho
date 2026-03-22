@@ -7,6 +7,10 @@ import { parseAnnotation } from '../frontmatter/parse.js'
 import { serializeAnnotation } from '../frontmatter/serialize.js'
 import { writeFile, fileExists } from '../fs/writer.js'
 import type { BlockFrontmatter } from '../types.js'
+import { typescriptScannerPlugin } from './scanner-plugins/typescript.js'
+import { pythonScannerPlugin } from './scanner-plugins/python.js'
+import { goScannerPlugin } from './scanner-plugins/go.js'
+import { rustScannerPlugin } from './scanner-plugins/rust.js'
 
 export interface ScannedRelationship {
   /** Symbolic ref of the block that owns this relationship (e.g. "src/foo.ts::myFn") */
@@ -37,7 +41,12 @@ export interface ScanResult {
 
 // ── Plugin registry ───────────────────────────────────────────────────────────
 
-const scannerPlugins: RelationshipScanner[] = []
+const scannerPlugins: RelationshipScanner[] = [
+  typescriptScannerPlugin,
+  pythonScannerPlugin,
+  goScannerPlugin,
+  rustScannerPlugin,
+]
 
 export function registerScannerPlugin(plugin: RelationshipScanner): void {
   scannerPlugins.unshift(plugin)
