@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/defaults.ts::DEFAULT_CONFIG
 file: src/config/defaults.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T02:19:55.527Z"
+updated: "2026-03-22T09:37:09.369Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -17,9 +17,9 @@ identity:
   symbolic: src/config/defaults.ts::DEFAULT_CONFIG
   line_range:
     start: 10
-    end: 47
-    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
-  content_hash: sha256:02ccf1bf99c7b925f0fe1da77ae7f738deae1432a745c1807eecd6ff331d7088
+    end: 51
+    commit: bdf7b0124b6b46c80318b2f36dcabc45f92599bd
+  content_hash: sha256:8ae4fa72a3b0d64e15d8ecf6a02865eb53244fb1a6e82e9d36a9fcb842382b8e
   structural:
     kind: const
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     privacy controls.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+  last_resolved: bdf7b0124b6b46c80318b2f36dcabc45f92599bd
 ---
 
 # DEFAULT_CONFIG
