@@ -44,4 +44,8 @@ export const DEFAULT_CONFIG: WhythoConfig = {
   privacy: {
     omitUser: false,
   },
+  relationships: {
+    static_scan: true,
+    ai_scan: 'off',
+  },
 }

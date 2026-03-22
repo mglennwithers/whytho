@@ -60,4 +60,10 @@ export interface WhythoConfig {
   privacy: {
     omitUser: boolean
   }
+  relationships?: {
+    /** Run static relationship scanner on every commit. Default: true */
+    static_scan?: boolean
+    /** When to run AI-based relationship generation. Default: 'off' */
+    ai_scan?: 'off' | 'manual' | 'on_commit'
+  }
 }
