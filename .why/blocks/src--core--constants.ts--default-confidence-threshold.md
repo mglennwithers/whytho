@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::DEFAULT_CONFIDENCE_THRESHOLD
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.390Z"
+updated: "2026-03-22T12:58:50.906Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 16
     end: 16
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: dcbdce849eae1c3944290d0215318e5ecfbfecdb
   content_hash: sha256:9d57f98080c71e05ea86e252dda56b7d52fc34792a98af640dc945fe2cc96380
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     filtering model predictions, classifications, or confidence-based decisions throughout the application.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: dcbdce849eae1c3944290d0215318e5ecfbfecdb
 ---
 
 # DEFAULT_CONFIDENCE_THRESHOLD

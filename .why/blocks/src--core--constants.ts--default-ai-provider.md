@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::DEFAULT_AI_PROVIDER
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.382Z"
+updated: "2026-03-22T12:58:50.899Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 23
     end: 23
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: dcbdce849eae1c3944290d0215318e5ecfbfecdb
   content_hash: sha256:91dad430be85ada573dc1a661633c16702888efe93a05b8240e9797d2bf2059b
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     selection when no explicit provider is specified.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: dcbdce849eae1c3944290d0215318e5ecfbfecdb
 ---
 
 # DEFAULT_AI_PROVIDER

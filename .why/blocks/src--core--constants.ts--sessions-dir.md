@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::SESSIONS_DIR
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.480Z"
+updated: "2026-03-22T12:58:51.009Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 5
     end: 5
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: dcbdce849eae1c3944290d0215318e5ecfbfecdb
   content_hash: sha256:298edd5332a79273bae5358b9c57420cb3b1321a40f97f51d123d2bfaaa43b87
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     application's core modules.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: dcbdce849eae1c3944290d0215318e5ecfbfecdb
 ---
 
 # SESSIONS_DIR

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::ANNOTATION_TYPES
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.333Z"
+updated: "2026-03-22T12:58:50.843Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/constants.ts::ANNOTATION_TYPES
   line_range:
-    start: 74
-    end: 74
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 69
+    end: 69
+    commit: dcbdce849eae1c3944290d0215318e5ecfbfecdb
   content_hash: sha256:b006ee300bc7931d3ebecd9543d1d888ff3e759c9c268272f6d2e243b0a0e542
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the application to categorize or classify annotations at different structural levels.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: dcbdce849eae1c3944290d0215318e5ecfbfecdb
 ---
 
 # ANNOTATION_TYPES

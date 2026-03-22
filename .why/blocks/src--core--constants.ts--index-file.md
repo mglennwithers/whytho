@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::INDEX_FILE
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.432Z"
+updated: "2026-03-22T12:58:50.956Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 10
     end: 10
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: dcbdce849eae1c3944290d0215318e5ecfbfecdb
   content_hash: sha256:4aa068ae83638599e4da21a73237955685870011b71ed1cba4f54da637b2da03
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     throughout the codebase for locating or naming an index file artifact.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: dcbdce849eae1c3944290d0215318e5ecfbfecdb
 ---
 
 # INDEX_FILE

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::POST_COMMIT_HOOK_NAME
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.444Z"
+updated: "2026-03-22T12:58:50.969Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 26
     end: 26
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: dcbdce849eae1c3944290d0215318e5ecfbfecdb
   content_hash: sha256:6459e63d0c09c8d73cd087f348de06eb1646efbcdd13da359bef645c8d56c745
   structural:
     kind: const
@@ -31,7 +31,7 @@ identity:
     lifecycle event.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: dcbdce849eae1c3944290d0215318e5ecfbfecdb
 ---
 
 # POST_COMMIT_HOOK_NAME
