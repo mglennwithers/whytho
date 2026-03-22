@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::PushType
 file: src/core/push/index.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T09:38:08.188Z"
+updated: "2026-03-22T13:21:26.475Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 20
     end: 20
-    commit: 1e27f0b292da50781577cdb94eeea6d19c1dd93e
+    commit: 20f5c556c38fb20a4f639a36d846bde0352f5117
   content_hash: sha256:3cce01f941ce9783da27deb4098c325e5c29c9fe879f89d7b62ab83fee326c59
   structural:
     kind: type
@@ -31,7 +31,7 @@ identity:
     management system.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 1e27f0b292da50781577cdb94eeea6d19c1dd93e
+  last_resolved: 20f5c556c38fb20a4f639a36d846bde0352f5117
 ---
 
 # PushType
