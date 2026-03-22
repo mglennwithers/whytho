@@ -48,8 +48,98 @@ relationships:
 - When the static scanner runs, it deletes all `source: static` edges for files it processes and writes fresh ones.
 - When AI generation runs, it deletes all `source: ai` edges for files it processes and writes fresh ones.
 - Neither pipeline touches the other's edges.
-- Existing relationships without a `source` field are treated as `ai` on first migration.
+- The deletion predicate for `ai` edges matches both `source: 'ai'` AND absent `source` (for pre-migration annotations).
 - `git why push --relate-to` always writes `source: ai`, whether called by a human agent or an API-backed pipeline. This preserves functionality for users who use a coding agent without a configured API key.
+
+**Accepted incremental limitation:** The post-commit scanner only processes files touched in the commit. If block A (in an unchanged file) has a static edge pointing to a function in a changed file that was deleted or renamed, that stale edge will not be cleaned up until block A's file is itself changed. `git why scan` (full repo scan) is the recovery mechanism for stale edges.
+
+---
+
+## Required Type Changes
+
+### `src/core/types.ts` — `RelationshipSchema`
+
+Add an optional `source` field:
+
+```typescript
+export const RelationshipSchema = z.object({
+  type: z.enum(RELATIONSHIP_TYPES),
+  target: z.string(),
+  description: z.string().optional(),
+  bidirectional: z.boolean().optional(),
+  source: z.enum(['static', 'ai']).optional(), // absent = treat as 'ai'
+})
+```
+
+`source` is optional for backward compatibility. Callers that read relationships and need to distinguish pipelines should treat absent `source` as `'ai'`.
+
+### `src/core/types.ts` — `BlockIndexEntry`
+
+Add `pipeline` to the inline relationship shapes so it is queryable from the index. Note: `RelationshipEdge` already has a field named `source` meaning the source-block symbolic ref — a different field name is required to avoid collision:
+
+```typescript
+relationships_out: Array<{ type: RelationshipType; target: string; pipeline?: 'static' | 'ai' }>
+```
+
+`relationships_in` does not carry `pipeline` — it is a derived reverse view built by the index builder, where the direction information is sufficient.
+
+### `src/core/types.ts` — `RelationshipEdge`
+
+Add `pipeline` to the flat edge list on `WhythoIndex` so graph queries can filter by pipeline source:
+
+```typescript
+export interface RelationshipEdge {
+  type: RelationshipType
+  source: string              // symbolic ref of the declaring block (unchanged)
+  target: string
+  pipeline?: 'static' | 'ai' // which pipeline produced this edge
+}
+```
+
+### `src/config/types.ts` — `WhythoConfig`
+
+Add a `relationships` namespace:
+
+```typescript
+relationships?: {
+  static_scan?: boolean                          // default: true
+  ai_scan?: 'off' | 'manual' | 'on_commit'      // default: 'off'
+}
+```
+
+### `src/core/push/index.ts` — `RelationshipInput` and `pushReasoning`
+
+Add an optional `source` field to `RelationshipInput`:
+
+```typescript
+export interface RelationshipInput {
+  target: string
+  type: string
+  description?: string
+  bidirectional?: boolean
+  source?: 'static' | 'ai'   // defaults to 'ai' when absent
+}
+```
+
+In `pushReasoning`, when constructing `Relationship` objects from `RelationshipInput`, inject `source: rel.source ?? 'ai'` so all relationships written via `git why push --relate-to` carry an explicit `source: 'ai'` tag.
+
+### `src/core/index-builder/build.ts` — relationship field mapping
+
+The index builder at line 66 constructs `relsOut` without a `pipeline` field. Update to propagate `source` from annotation frontmatter to the `pipeline` field in the index:
+
+```typescript
+// In the relsOut map:
+const relsOut = rels.map((r) => ({ type: r.type, target: r.target, pipeline: r.source }))
+
+// In the RelationshipEdge push:
+relationships.push({ type: rel.type, source: fm.symbolic_ref, target: rel.target, pipeline: rel.source })
+```
+
+This mapping (`annotation.source` → `index.pipeline`) is required for the `pipeline` field to be populated in the index.
+
+### `src/config/defaults.ts` — `DEFAULT_CONFIG`
+
+`ai_scan` always defaults to `'off'` in `DEFAULT_CONFIG`. The config loader is a pure file-merge operation and cannot inspect environment variables at load time. API key detection is advisory, not a default-value mechanism: when a command that uses AI generation runs and `ai_scan` is `'off'` with an API key present, it should print a one-time hint suggesting the user set `ai_scan: "manual"` in their config. No runtime default switching occurs.
 
 ---
 
@@ -57,20 +147,48 @@ relationships:
 
 ### New module: `src/core/relationships/scanner.ts`
 
-A `RelationshipScanner` interface that each language plugin implements:
+Exports a `RelationshipScanner` interface that each language plugin implements, and a `runScanner()` orchestrator:
 
 ```typescript
-interface RelationshipScanner {
-  language: string
-  scan(filePath: string, source: string, allBlocks: BlockRegistry): RelationshipInput[]
+/** Minimal relationship descriptor produced by a scanner plugin. */
+export interface ScannedRelationship {
+  /** Symbolic ref of the block that declares this relationship. */
+  sourceBlock: string
+  type: RelationshipType
+  /** Symbolic ref of the target block. Must exist in the BlockRegistry. */
+  target: string
+  source: 'static'   // always 'static' for scanner output
+}
+
+/**
+ * Map from symbolic ref → file path, used to resolve named imports to blocks.
+ * Built by the orchestrator before scanner plugins run.
+ * Key: symbolic ref (e.g. "src/core/fs/writer.ts::writeFile")
+ * Value: the file path component (e.g. "src/core/fs/writer.ts")
+ */
+export type BlockRegistry = Map<string, string>
+
+export interface RelationshipScanner {
+  /** File extensions handled by this scanner, e.g. ['.ts', '.tsx']. Mirrors ParserPlugin.extensions. */
+  extensions: string[]
+  scan(
+    filePath: string,
+    fileContent: string,
+    registry: BlockRegistry,
+  ): ScannedRelationship[]
 }
 ```
 
-`BlockRegistry` is a map of `symbolicRef → ParsedBlock` built from all files in the repo before cross-file edges are resolved. This enables the two-pass approach required to resolve named imports to specific blocks.
+`BlockRegistry` maps `symbolicRef → filePath`. This lets scanner plugins check whether a named import (`import { writeFile } from './writer'`) resolves to a known block (`src/core/fs/writer.ts::writeFile`) by looking up `filePath::importedName` in the registry. Imports that don't match any registry entry are skipped silently.
 
 **Two-pass execution:**
-1. Parse all files → build `BlockRegistry`
-2. For each file, run its language scanner → produce `RelationshipInput[]` with `source: 'static'`
+1. Walk all relevant files → parse blocks via existing parser registry → build `BlockRegistry`
+2. For each file, select the matching `RelationshipScanner` plugin → call `scan()` → collect `ScannedRelationship[]`
+3. Write results to block annotation frontmatter:
+   - If the block annotation has existing `source: static` edges, replace them with the new set.
+   - If the block annotation has no `relationships` field at all, create it with the discovered static edges.
+   - Non-static edges (`source: ai` or absent `source`) are left untouched.
+4. Call `buildIndex()` to rebuild `index.json`
 
 ### Language support
 
@@ -83,26 +201,34 @@ interface RelationshipScanner {
 
 TypeScript/JS uses the existing `@typescript-eslint/typescript-estree` AST for precise derivation. Other languages use regex against the existing parser plugin output — reliable for import syntax and filename conventions, less precise for structural relationships.
 
-**Edge cases skipped silently:** dynamic imports, re-exports, barrel index files, external (node_modules) imports. The scanner does not guess; it only writes relationships it can derive with confidence.
+**Edge cases skipped silently:** dynamic imports, re-exports, barrel index files, external (`node_modules`) imports. The scanner does not guess; it only writes relationships it can derive with confidence.
 
 ### Integration points
 
-**Post-commit hook (incremental):** The static scanner runs as the first step of the existing resolution pipeline, operating only on files touched in the commit. The incremental filter already used by `runResolutionPipeline` is reused here.
+**Post-commit hook — `src/cli/commands/resolve.ts`:** `buildIndex` is called by `resolve.ts` after `runResolutionPipeline` completes — it is not called from within the pipeline itself. The scanner runs in `resolve.ts` before `runResolutionPipeline`, gated on `config.relationships?.static_scan !== false`. It receives the `changedFiles` list (already available in `resolve.ts`) for the incremental filter. The existing `buildIndex` call in `resolve.ts` then picks up the scanner's written edges along with all other annotation changes.
 
-**`git why scan` command (on-demand):** Runs the static scanner across all files in the repo, replaces all `source: static` edges, rebuilds the index. Useful for initial setup, recovery, or after changing scanner logic.
+**`git why scan` command — on-demand:** A new CLI command that builds the full `BlockRegistry` from all repo files, runs the scanner on every file, and calls `buildIndex()`. Useful for initial setup, recovery from stale edges, or after scanner logic changes.
 
 ```bash
-git why scan                          # full repo scan
-git why scan --file src/core/push/index.ts  # single file, for debugging
+git why scan                               # full repo scan
+git why scan --file src/core/push/index.ts # single file (debugging only — see note)
 ```
 
-Output: count of files scanned, relationships found, relationships replaced.
+**Note on `--file`:** Single-file mode still performs the full repo `BlockRegistry` pass (all files are parsed to populate the registry so imports can resolve). Only the scan phase is scoped to the target file. This means `--file` reads all source files but only writes relationship changes for the one specified file. It is marginally faster than a full scan only in the write phase. Index consistency requires a full `buildIndex()` after any scan, which `git why scan --file` still calls. This mode is intended for debugging scanner output, not production use.
+
+**Output (both modes):**
+```
+Scanned 42 files
+  Relationships found:   187
+  Relationships written: 143  (replaced 112 prior static edges)
+  Relationships skipped:  44  (unresolved targets — external or unknown)
+```
 
 ---
 
 ## Configuration
 
-In `.why/config.json` (or the existing whytho config loader):
+In the existing whytho config file:
 
 ```json
 {
@@ -116,7 +242,7 @@ In `.why/config.json` (or the existing whytho config loader):
 | Option | Values | Default |
 |---|---|---|
 | `static_scan` | `true \| false` | `true` |
-| `ai_scan` | `"off" \| "manual" \| "on_commit"` | `"off"` if no API key; `"manual"` otherwise |
+| `ai_scan` | `"off" \| "manual" \| "on_commit"` | `"off"` |
 
 `ai_scan: "manual"` means AI generation only runs when explicitly invoked (command TBD). `ai_scan: "on_commit"` adds it to the post-commit pipeline alongside static scanning.
 
@@ -124,10 +250,10 @@ In `.why/config.json` (or the existing whytho config loader):
 
 ## Index rebuild
 
-After the scanner writes updated relationships to block annotation frontmatter, the existing `buildIndex()` is called to rebuild `index.json`. No changes to the index builder are required — it already reads `relationships` from block frontmatter and builds the bidirectional graph.
+After the scanner writes updated relationships to block annotation frontmatter, the existing `buildIndex()` is called to rebuild `index.json`. The index builder already reads `relationships` from block frontmatter and builds the bidirectional graph; the only required change is propagating the `source` field into `relationships_out` entries (per the type change above).
 
 ---
 
 ## Migration
 
-On first run after this change, existing block annotations without `source` on their relationships are treated as `source: ai`. No automated migration script is needed; the scanner will write `source: static` edges on the next commit or `git why scan` invocation.
+On first run after this change, existing block annotations without `source` on their relationships are treated as `source: ai` by convention — no rewrite of annotation files is performed. The `ai` deletion predicate explicitly matches both `source: 'ai'` and absent `source`, so AI generation will correctly replace old un-sourced edges when it runs.
