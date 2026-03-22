@@ -8,6 +8,8 @@ import { writeFile } from '../../src/core/fs/writer.js'
 import { blockAnnotationPath, getWhyRoot } from '../../src/core/fs/layout.js'
 import { serializeAnnotation } from '../../src/core/frontmatter/serialize.js'
 import type { BlockFrontmatter } from '../../src/core/types.js'
+import { buildBlockRegistry, runStaticScan, registerScannerPlugin } from '../../src/core/relationships/scanner.js'
+import type { RelationshipScanner, BlockRegistry } from '../../src/core/relationships/scanner.js'
 
 describe('relationships config defaults', () => {
   it('has static_scan enabled by default', () => {
@@ -69,5 +71,95 @@ describe('buildIndex propagates pipeline field', () => {
 
     const staticEdge = index.relationships.find(e => e.target === 'src/bar.ts::otherFn')
     expect(staticEdge?.pipeline).toBe('static')
+  })
+})
+
+describe('buildBlockRegistry', () => {
+  it('maps symbolicRef to filePath for all parsed blocks', async () => {
+    const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'whytho-reg-'))
+    await fs.mkdir(path.join(tmpDir, 'src'), { recursive: true })
+    await fs.writeFile(
+      path.join(tmpDir, 'src/foo.ts'),
+      'export function myFn() {}\nexport class MyClass {}\n',
+    )
+    const registry = await buildBlockRegistry(tmpDir, ['src/foo.ts'])
+    expect(registry.has('src/foo.ts::myFn')).toBe(true)
+    expect(registry.get('src/foo.ts::myFn')).toBe('src/foo.ts')
+    expect(registry.has('src/foo.ts::MyClass')).toBe(true)
+  })
+})
+
+describe('runStaticScan write-back', () => {
+  // Helper to build a minimal BlockFrontmatter for tests
+  function makeBlockFm(symbolicRef: string): BlockFrontmatter {
+    const file = symbolicRef.split('::')[0]
+    return {
+      whytho: '1.0', type: 'block', symbolic_ref: symbolicRef, file,
+      created: new Date().toISOString(), updated: new Date().toISOString(),
+      created_by_session: 'test', updated_by_session: 'test',
+      identity: {
+        symbolic: symbolicRef,
+        line_range: { start: 1, end: 5, commit: 'abc' },
+        content_hash: 'sha256:' + '0'.repeat(64),
+        structural: { kind: 'function', parent_scope: 'module', name: symbolicRef.split('::')[1], index_in_parent: 0 },
+        semantic_fingerprint: 'test', canonical_metric: 'symbolic', confidence: 0.9, last_resolved: 'abc',
+      },
+    }
+  }
+
+  it('replaces existing static relationships, leaves ai edges untouched', async () => {
+    const { tmpDir, whyRoot } = await makeTempWhyDir()
+    await fs.mkdir(path.join(tmpDir, 'src'), { recursive: true })
+    // Source file with no imports (scanner will produce no static edges)
+    await fs.writeFile(path.join(tmpDir, 'src/a.ts'), 'export function main() {}\n')
+
+    // Block annotation with one static edge (stale) and one ai edge
+    const fm = makeBlockFm('src/a.ts::main')
+    fm.relationships = [
+      { type: 'depends_on', target: 'src/stale.ts::old', source: 'static' },
+      { type: 'validates', target: 'src/types.ts::Schema', source: 'ai' },
+    ]
+    await writeFile(blockAnnotationPath(whyRoot, 'src/a.ts::main'), serializeAnnotation(fm, 'body'))
+
+    // Register a no-op scanner plugin so the file is "scanned" but produces no edges
+    const noopPlugin: RelationshipScanner = {
+      extensions: ['.ts'],
+      scan: () => [],
+    }
+    registerScannerPlugin(noopPlugin)
+
+    await runStaticScan(tmpDir, whyRoot, ['src/a.ts'], ['src/a.ts'])
+
+    const raw = await fs.readFile(blockAnnotationPath(whyRoot, 'src/a.ts::main'), 'utf8')
+    expect(raw).not.toContain('src/stale.ts::old')  // static edge removed
+    expect(raw).toContain('src/types.ts::Schema')    // ai edge preserved
+  })
+
+  it('returns correct ScanResult counts', async () => {
+    const { tmpDir, whyRoot } = await makeTempWhyDir()
+    await fs.mkdir(path.join(tmpDir, 'src'), { recursive: true })
+    await fs.writeFile(path.join(tmpDir, 'src/b.ts'), 'export function helper() {}\n')
+    await fs.writeFile(path.join(tmpDir, 'src/a.ts'), "import { helper } from './b.js'\nexport function main() {}\n")
+
+    // Create block annotations for both blocks
+    await writeFile(blockAnnotationPath(whyRoot, 'src/a.ts::main'), serializeAnnotation(makeBlockFm('src/a.ts::main'), 'body'))
+    await writeFile(blockAnnotationPath(whyRoot, 'src/b.ts::helper'), serializeAnnotation(makeBlockFm('src/b.ts::helper'), 'body'))
+
+    // Register a plugin that produces one edge
+    const testPlugin: RelationshipScanner = {
+      extensions: ['.ts'],
+      scan(filePath, _content, registry) {
+        if (filePath !== 'src/a.ts') return []
+        const target = 'src/b.ts::helper'
+        if (!registry.has(target)) return []
+        return [{ sourceBlock: 'src/a.ts::main', type: 'depends_on', target, source: 'static' as const }]
+      },
+    }
+    registerScannerPlugin(testPlugin)
+
+    const result = await runStaticScan(tmpDir, whyRoot, ['src/a.ts'], ['src/a.ts', 'src/b.ts'])
+    expect(result.filesScanned).toBe(1)
+    expect(result.relationshipsFound).toBeGreaterThan(0)
+    expect(result.relationshipsWritten).toBeGreaterThan(0)
   })
 })
