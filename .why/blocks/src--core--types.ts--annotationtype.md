@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::AnnotationType
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:35.949Z"
+updated: "2026-03-22T02:19:56.113Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 19
     end: 19
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
   content_hash: sha256:d2da5a54ddb5e7bf5f24f8260d499a77853d587374c5123e559793bef435b0d1
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     enumeration of annotation categories.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
 ---
 
 # AnnotationType

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::BlockKind
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:36.058Z"
+updated: "2026-03-22T02:19:56.239Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 18
     end: 18
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
   content_hash: sha256:1d1192ef74f9c00ed384c8b1fe44b7ba1595471d1dbdbdd803d18fbedb067ec6
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     codebase.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
 ---
 
 # BlockKind

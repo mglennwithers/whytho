@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::frozenFm
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:35.757Z"
+updated: "2026-03-22T02:19:55.877Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/resolution/pipeline.ts::frozenFm
   line_range:
-    start: 106
-    end: 115
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:1dca847eb2858bbeaaaeccc1210c9f29b17f221fbfc76771adf691fb25ffe588
+    start: 118
+    end: 128
+    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+  content_hash: sha256:a1b75dfd9e4c1331cd3a39c67dc55c3974dbc7e7f68192fc02e1093467aee2f6
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     confidence, resetting identity metrics, and recording the current commit SHA.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
 ---
 
 # frozenFm

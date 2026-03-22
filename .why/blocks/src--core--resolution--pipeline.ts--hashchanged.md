@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::hashChanged
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:35.766Z"
+updated: "2026-03-22T02:19:55.889Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/resolution/pipeline.ts::hashChanged
   line_range:
-    start: 195
-    end: 195
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 212
+    end: 212
+    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
   content_hash: sha256:06e6a9ccdd5263ba626ba4f173ee9c990568b1124f4b61c1653706e0b5e06a32
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     other, used to detect hash state changes in a resolution pipeline.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
 ---
 
 # hashChanged

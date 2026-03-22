@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/identity/election.ts::newHash
 file: src/core/identity/election.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.410Z"
+updated: "2026-03-22T02:19:55.659Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 59
     end: 59
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
   content_hash: sha256:883c314d8298fb909adb088bde60e885d45e50802e9ea6f5a122161eb7c1f7a1
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     identity/election purposes within the core system.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
 ---
 
 # newHash

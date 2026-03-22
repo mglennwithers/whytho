@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::WhythoArchiveIndex
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:36.301Z"
+updated: "2026-03-22T02:19:56.511Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/types.ts::WhythoArchiveIndex
   line_range:
-    start: 217
-    end: 224
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 218
+    end: 225
+    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
   content_hash: sha256:858dd48ee537ee42591cd909e06f8fb17316a6d31ee71a6ff23e6081687af715
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     collections of sessions, folders, files, and code blocks through Record-based mappings.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
 ---
 
 # WhythoArchiveIndex

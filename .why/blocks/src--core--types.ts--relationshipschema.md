@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::RelationshipSchema
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:36.195Z"
+updated: "2026-03-22T02:19:56.393Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 47
     end: 52
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
   content_hash: sha256:434dc8fa2f334153f51469e2a49d4b4d0b5e4c00eebd72c1d4a5f77b232e710a
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     predefined enum), target identifier, and optional description and bidirectionality flag.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
 ---
 
 # RelationshipSchema

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/election.test.ts::describe(electCanonicalMetric)
 file: tests/unit/election.test.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:37.469Z"
+updated: "2026-03-22T02:19:56.550Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -17,9 +17,9 @@ identity:
   symbolic: tests/unit/election.test.ts::describe(electCanonicalMetric)
   line_range:
     start: 41
-    end: 119
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:c6a92c0f17b8b24fa1f1e1e952609ec4dc3431c8da4ea335b97745fa55fbbd3f
+    end: 143
+    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+  content_hash: sha256:4fab7a2a09cd1cc281999c4678d4ec56aa7670d8a99f446c8cf40653254b50e8
   structural:
     kind: describe
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     unresolvable cases.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
 ---
 
 # describe(electCanonicalMetric)

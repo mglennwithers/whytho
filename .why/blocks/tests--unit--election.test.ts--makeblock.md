@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/election.test.ts::makeBlock
 file: tests/unit/election.test.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:37.475Z"
+updated: "2026-03-22T02:19:56.557Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 28
     end: 39
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
   content_hash: sha256:bdcc46b3b269cfbeaaa55e4e83b45690824b4db5b34fa969ba7c55be50ce8457
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     code block and support for partial overrides to customize test cases.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
 ---
 
 # makeBlock

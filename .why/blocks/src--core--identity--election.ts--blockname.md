@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/identity/election.ts::blockName
 file: src/core/identity/election.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.339Z"
+updated: "2026-03-22T02:19:55.564Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 37
     end: 37
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
   content_hash: sha256:0118199fa71d03657f4b611da4750f7a70a3e3bc9da54a61d2ce3fb53d343692
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     `blockName`. This appears to parse a namespaced or qualified identifier to isolate a specific component.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
 ---
 
 # blockName

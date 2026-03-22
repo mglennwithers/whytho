@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/resolve.ts::color
 file: src/cli/commands/resolve.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:32.920Z"
+updated: "2026-03-22T02:19:55.429Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/resolve.ts::color
   line_range:
-    start: 77
-    end: 80
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 80
+    end: 83
+    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
   content_hash: sha256:b8a4f1fd41053a55f6991e80fee96f120aa45e86030151d094f13c317dadfb39
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     functions based on outcome status.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
 ---
 
 # color

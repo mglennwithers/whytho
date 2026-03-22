@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::BlockFrontmatterSchema
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:36.017Z"
+updated: "2026-03-22T02:19:56.191Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -17,9 +17,9 @@ identity:
   symbolic: src/core/types.ts::BlockFrontmatterSchema
   line_range:
     start: 114
-    end: 132
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:dbd2dfe5be65e30a113d89c2688bc414efb92f4b1d341cd67ea14ea64959189f
+    end: 133
+    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+  content_hash: sha256:03f1af9308b6d6538257d014982ad27d9612ed7a954b2e5fdb0aca55af13035c
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     identity, relationships, archival state, and inference metadata.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
 ---
 
 # BlockFrontmatterSchema

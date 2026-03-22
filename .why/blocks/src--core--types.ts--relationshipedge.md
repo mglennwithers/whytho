@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::RelationshipEdge
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:36.185Z"
+updated: "2026-03-22T02:19:56.382Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/types.ts::RelationshipEdge
   line_range:
-    start: 189
-    end: 193
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 190
+    end: 194
+    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
   content_hash: sha256:d7a742d2addd918d45aeb121674bb1658129b9c14f495b5e8e653e0004b16fc9
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     This interface models connections in a relationship graph system.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
 ---
 
 # RelationshipEdge
