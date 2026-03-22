@@ -1408,6 +1408,12 @@ import { describe, it, expect } from 'vitest'
 import { rustScannerPlugin } from '../../src/core/relationships/scanner-plugins/rust.js'
 import type { BlockRegistry } from '../../src/core/relationships/scanner.js'
 
+function makeRegistry(entries: string[]): BlockRegistry {
+  const m = new Map<string, string>()
+  for (const e of entries) { m.set(e, e.split('::')[0]) }
+  return m
+}
+
 describe('rustScannerPlugin', () => {
   it('derives implements from impl Trait for Type', () => {
     const registry = makeRegistry(['src/traits.rs::Writer', 'src/impl.rs::FileWriter'])
