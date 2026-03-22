@@ -1,7 +1,7 @@
 {
   "whytho_version": "1.0",
-  "generated_at": "2026-03-22T23:14:24.483Z",
-  "generated_at_commit": "f084e91a8edf80319d4505304ebae9a7c5607f12",
+  "generated_at": "2026-03-22T23:44:05.178Z",
+  "generated_at_commit": "c85750295a27984fe81206a63e52b013c6de8477",
   "sessions": {
     "2026-03-21-session-mmzsxrsv": {
       "id": "2026-03-21-session-mmzsxrsv",
@@ -284,6 +284,24 @@
         "src/ai/prompts/infer.ts::body"
       ],
       "sessions": []
+    },
+    "src/ai/prompts/relationship-attribution.ts": {
+      "path": "src/ai/prompts/relationship-attribution.ts",
+      "parent_folder": "src/ai/prompts/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "src/core/parser/types.ts::ParsedBlock",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/types.ts::RelationshipType",
+          "pipeline": "static"
+        }
+      ]
     },
     "src/ai/prompts/semantic-match.ts": {
       "path": "src/ai/prompts/semantic-match.ts",

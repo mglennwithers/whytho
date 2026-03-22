@@ -3,7 +3,7 @@ whytho: "1.0"
 type: session
 id: 2026-03-21-session-mmzsxrsv
 created: "2026-03-21T04:02:22.591Z"
-updated: "2026-03-21T11:28:55.847Z"
+updated: "2026-03-22T23:16:30.240Z"
 model: claude-opus-4-6
 model_provider: anthropic
 user: Michael Withers
@@ -54,3 +54,9 @@ Added Anthropic Batches API support to git why infer. Three separate batches per
 _2026-03-21T11:28:55.847Z_
 
 Added purpose_only param to get_file_context. When true, strips frontmatter and returns only the ## Purpose section of the file annotation — no blocks, no design notes. Designed for the 'scanning multiple files to find the right one' scenario where loading full context would be wasteful. Also updated all tool descriptions with explicit scenario guidance (get_summary for orientation, purpose_only for file scanning, default get_file_context for pre-modification deep read, get_block for specific function reasoning). Updated CLAUDE.md with a scenario/tool mapping table.
+
+## Agent Note
+
+_2026-03-22T23:16:30.240Z_
+
+Code review finding: The different assignment patterns in src/core/index-builder/build.ts are intentional. FileIndexEntry.relationships_out is optional (type has '?'), so empty arrays are assigned as 'undefined'. BlockIndexEntry.relationships_out is required, so arrays are always assigned. This matches the type definitions exactly and is not an inconsistency.
