@@ -1,7 +1,7 @@
 {
   "whytho_version": "1.0",
-  "generated_at": "2026-03-22T10:09:32.417Z",
-  "generated_at_commit": "8043a01f04aebb456b424a3c07c0bd8bafc66ca7",
+  "generated_at": "2026-03-22T10:10:52.455Z",
+  "generated_at_commit": "dd56fdaf33a4fb2179f0027700ca6cff0eb0f1d0",
   "sessions": {
     "2026-03-21-session-mmzsxrsv": {
       "id": "2026-03-21-session-mmzsxrsv",
@@ -5362,7 +5362,7 @@
       "file": "src/cli/index.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "68d77b7d434de7f6057faaf602f56a74907e8770",
+      "last_resolved": "dd56fdaf33a4fb2179f0027700ca6cff0eb0f1d0",
       "content_hash": "sha256:da72d29af154dee28b5a586a2d129cad39cf5005d1f1670399a4cf3df61fb7d8",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
