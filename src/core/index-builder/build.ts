@@ -63,7 +63,7 @@ export async function buildIndex(whyRoot: string, commitSha: string): Promise<Wh
     const fm = ann.frontmatter
     const rels = fm.relationships ?? []
 
-    const relsOut = rels.map((r) => ({ type: r.type, target: r.target }))
+    const relsOut = rels.map((r) => ({ type: r.type, target: r.target, pipeline: r.source }))
 
     blocks[fm.symbolic_ref] = {
       symbolic_ref: fm.symbolic_ref,
@@ -79,7 +79,7 @@ export async function buildIndex(whyRoot: string, commitSha: string): Promise<Wh
     }
 
     for (const rel of rels) {
-      relationships.push({ type: rel.type, source: fm.symbolic_ref, target: rel.target })
+      relationships.push({ type: rel.type, source: fm.symbolic_ref, target: rel.target, pipeline: rel.source })
     }
 
     if (fm.resolution_status === 'unresolvable') {
@@ -128,7 +128,7 @@ export async function rebuildArchiveIndex(whyRoot: string): Promise<WhythoArchiv
       content_hash: fm.identity.content_hash,
       created_by_session: fm.created_by_session,
       updated_by_session: fm.updated_by_session,
-      relationships_out: (fm.relationships ?? []).map((r) => ({ type: r.type, target: r.target })),
+      relationships_out: (fm.relationships ?? []).map((r) => ({ type: r.type, target: r.target, pipeline: r.source })),
       relationships_in: [],
       archived_at: fm.archived_at ?? new Date().toISOString(),
       archived_reason: fm.archived_reason ?? 'deleted',
