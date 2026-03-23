@@ -8,35 +8,7 @@ import { parseAnnotation } from '../frontmatter/parse.js'
 import { serializeAnnotation } from '../frontmatter/serialize.js'
 import { writeFile, fileExists } from '../fs/writer.js'
 import type { BlockFrontmatter } from '../types.js'
-import { buildAttributionPrompt, parseAttributionResponse } from '../../ai/prompts/relationship-attribution.js'
-
-/**
- * Count the number of well-formed triples in a raw AI response body,
- * before applying hallucination-guard or block-validity filters.
- * Used to populate `relationshipsFound` accurately.
- */
-function countRawTriples(responseBody: string): number {
-  const start = responseBody.indexOf('[')
-  const end = responseBody.lastIndexOf(']')
-  if (start === -1 || end === -1 || end <= start) return 0
-  let parsed: unknown
-  try {
-    parsed = JSON.parse(responseBody.slice(start, end + 1))
-  } catch {
-    return 0
-  }
-  if (!Array.isArray(parsed)) return 0
-  return parsed.filter(
-    (item) =>
-      typeof item === 'object' &&
-      item !== null &&
-      typeof (item as Record<string, unknown>).block === 'string' &&
-      typeof (item as Record<string, unknown>).type === 'string' &&
-      typeof (item as Record<string, unknown>).target === 'string' &&
-      ((item as Record<string, unknown>).type === 'depends_on' ||
-        (item as Record<string, unknown>).type === 'tests'),
-  ).length
-}
+import { buildAttributionPrompt, parseAttributionResponse, countRawTriples } from '../../ai/prompts/relationship-attribution.js'
 
 export interface AIScanResult {
   /** Files for which an AI call was made (had static edges AND parseable blocks). Files that
@@ -44,7 +16,7 @@ export interface AIScanResult {
   filesProcessed: number
   relationshipsFound: number    // triples returned by AI across all files
   relationshipsWritten: number  // triples successfully written to block annotations
-  relationshipsSkipped: number  // triples discarded (target not in static set, or block annotation absent)
+  relationshipsSkipped: number  // triples discarded (target not in static set, block annotation absent, or already present)
 }
 
 export async function runAIScan(
@@ -139,6 +111,8 @@ export async function runAIScan(
         const updatedFrontmatter: BlockFrontmatter = { ...frontmatter, relationships: existing }
         await writeFile(annPath, serializeAnnotation(updatedFrontmatter, body))
         result.relationshipsWritten++
+      } else {
+        result.relationshipsSkipped++
       }
     }
   }

@@ -1,6 +1,37 @@
 import type { ParsedBlock } from '../../core/parser/types.js'
 import type { RelationshipType } from '../../core/types.js'
 
+/**
+ * Count the number of well-formed triples in a raw AI response body,
+ * before applying hallucination-guard or block-validity filters.
+ * Used to populate `relationshipsFound` accurately.
+ *
+ * Lives here (alongside parseAttributionResponse) so the JSON extraction
+ * and field-type validation logic stays in one place and cannot diverge.
+ */
+export function countRawTriples(responseBody: string): number {
+  const start = responseBody.indexOf('[')
+  const end = responseBody.lastIndexOf(']')
+  if (start === -1 || end === -1 || end <= start) return 0
+  let parsed: unknown
+  try {
+    parsed = JSON.parse(responseBody.slice(start, end + 1))
+  } catch {
+    return 0
+  }
+  if (!Array.isArray(parsed)) return 0
+  return parsed.filter(
+    (item) =>
+      typeof item === 'object' &&
+      item !== null &&
+      typeof (item as Record<string, unknown>).block === 'string' &&
+      typeof (item as Record<string, unknown>).type === 'string' &&
+      typeof (item as Record<string, unknown>).target === 'string' &&
+      ((item as Record<string, unknown>).type === 'depends_on' ||
+        (item as Record<string, unknown>).type === 'tests'),
+  ).length
+}
+
 export interface AttributionTriple {
   block: string          // symbolic ref of the block doing the depending
   type: 'depends_on' | 'tests'
