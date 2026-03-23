@@ -10,9 +10,8 @@ import { emitHookEvents } from '../../core/relationships/events.js'
 import { loadConfig } from '../../config/loader.js'
 import { runStaticScan } from '../../core/relationships/scanner.js'
 import { collectAllSourceFiles } from './scan.js'
-import { getDefaultProvider } from '../../ai/registry.js'
+import { getDefaultProvider, getInferProvider } from '../../ai/registry.js'
 import { runAIScan } from '../../core/relationships/ai-attribution.js'
-import { getInferProvider } from '../../ai/registry.js'
 import { readAllBlocks } from '../../core/fs/reader.js'
 
 export function registerResolve(program: Command): void {
