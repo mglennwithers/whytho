@@ -3,6 +3,7 @@ import * as path from 'path'
 import type { AIProvider } from '../../ai/types.js'
 import { readAllFiles } from '../fs/reader.js'
 import { parseFile } from '../parser/registry.js'
+import type { ParsedBlock } from '../parser/types.js'
 import { blockAnnotationPath } from '../fs/layout.js'
 import { parseAnnotation } from '../frontmatter/parse.js'
 import { serializeAnnotation } from '../frontmatter/serialize.js'
@@ -52,7 +53,7 @@ export async function runAIScan(
     }
 
     // Parse blocks to get name + kind list
-    let blocks: { name: string; kind: string }[]
+    let blocks: ParsedBlock[]
     try {
       blocks = parseFile(source, filePath)
     } catch {
