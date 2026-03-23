@@ -12,12 +12,12 @@ import { buildBlockRegistry, runStaticScan, registerScannerPlugin, resetScannerP
 import type { RelationshipScanner, BlockRegistry } from '../../src/core/relationships/scanner.js'
 
 describe('relationships config defaults', () => {
-  it('has static_scan enabled by default', () => {
-    expect(DEFAULT_CONFIG.relationships?.static_scan).toBe(true)
+  it('has staticScan enabled by default', () => {
+    expect(DEFAULT_CONFIG.relationships?.staticScan).toBe(true)
   })
 
-  it('has ai_scan off by default', () => {
-    expect(DEFAULT_CONFIG.relationships?.ai_scan).toBe('off')
+  it('has aiScan off by default', () => {
+    expect(DEFAULT_CONFIG.relationships?.aiScan).toBe('off')
   })
 })
 

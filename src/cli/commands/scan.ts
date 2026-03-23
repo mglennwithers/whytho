@@ -9,7 +9,7 @@ import { buildIndex, rebuildArchiveIndex } from '../../core/index-builder/build.
 import { loadConfig } from '../../config/loader.js'
 import { runStaticScan } from '../../core/relationships/scanner.js'
 import { runAIScan } from '../../core/relationships/ai-attribution.js'
-import { getInferProvider } from '../../ai/registry.js'
+import { getScanProvider } from '../../ai/registry.js'
 
 export async function collectAllSourceFiles(repoRoot: string): Promise<string[]> {
   const files: string[] = []
@@ -40,7 +40,7 @@ export function registerScan(program: Command): void {
     .command('scan')
     .description('Run static relationship scanner across the repo (or a single file)')
     .option('--file <path>', 'Scope static scan to a single file (AI scan always processes all qualifying files)')
-    .option('--ai', 'Run AI attribution scan (regardless of ai_scan config value)')
+    .option('--ai', 'Run AI attribution scan (regardless of aiScan config value)')
     .option('--static-only', 'Run static scan only, skip AI scan even if config enables it')
     .action(async (options) => {
       try {
@@ -54,10 +54,10 @@ export function registerScan(program: Command): void {
 
         const config = await loadConfig(repoRoot)
 
-        const staticScanEnabled = config.relationships?.static_scan !== false
+        const staticScanEnabled = config.relationships?.staticScan !== false
         const aiScanEnabled =
           !options.staticOnly &&
-          (options.ai === true || config.relationships?.ai_scan === 'manual')
+          (options.ai === true || config.relationships?.aiScan === 'manual')
 
         if (!staticScanEnabled && !aiScanEnabled) {
           console.log(chalk.yellow('Static scan is disabled in config and no --ai flag. Nothing to do.'))
@@ -86,7 +86,7 @@ export function registerScan(program: Command): void {
             console.log(chalk.yellow('\nNote: --file scopes static scan only. AI scan processes all qualifying files.'))
           }
           console.log(chalk.bold('\nRunning AI relationship attribution...'))
-          const provider = getInferProvider(config)
+          const provider = getScanProvider(config)
           const aiResult = await runAIScan(repoRoot, whyRoot, provider)
 
           console.log(chalk.bold(`\n  AI files processed:       ${aiResult.filesProcessed}`))

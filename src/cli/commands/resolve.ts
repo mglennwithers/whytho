@@ -10,7 +10,7 @@ import { emitHookEvents } from '../../core/relationships/events.js'
 import { loadConfig } from '../../config/loader.js'
 import { runStaticScan } from '../../core/relationships/scanner.js'
 import { collectAllSourceFiles } from './scan.js'
-import { getDefaultProvider, getInferProvider } from '../../ai/registry.js'
+import { getDefaultProvider, getScanProvider } from '../../ai/registry.js'
 import { runAIScan } from '../../core/relationships/ai-attribution.js'
 import { readAllBlocks } from '../../core/fs/reader.js'
 
@@ -48,14 +48,14 @@ export function registerResolve(program: Command): void {
         }
 
         // Run static relationship scanner (gated on config)
-        if (config.relationships?.static_scan !== false) {
+        if (config.relationships?.staticScan !== false) {
           const allSourceFiles = await collectAllSourceFiles(repoRoot)
           await runStaticScan(repoRoot, whyRoot, changedFiles, allSourceFiles)
         }
 
         // Run AI attribution scan when on_commit mode is configured
-        if (config.relationships?.ai_scan === 'on_commit') {
-          const provider = getInferProvider(config)
+        if (config.relationships?.aiScan === 'on_commit') {
+          const provider = getScanProvider(config)
           await runAIScan(repoRoot, whyRoot, provider)
         }
 

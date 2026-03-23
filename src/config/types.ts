@@ -7,6 +7,8 @@ export interface WhythoConfig {
   anthropic?: {
     annotationModel?: string
     inferModel?: string
+    /** Model used for AI relationship scanning. Defaults to inferModel. */
+    scanModel?: string
     apiKeyEnv?: string
     batchInfer?: {
       /** 'auto' enables batching when total pending annotations exceeds threshold, 'always' forces it, 'never' disables it. Default: 'auto' */
@@ -62,8 +64,8 @@ export interface WhythoConfig {
   }
   relationships?: {
     /** Run static relationship scanner on every commit. Default: true */
-    static_scan?: boolean
+    staticScan?: boolean
     /** When to run AI-based relationship generation. Default: 'off' */
-    ai_scan?: 'off' | 'manual' | 'on_commit'
+    aiScan?: 'off' | 'manual' | 'on_commit'
   }
 }
