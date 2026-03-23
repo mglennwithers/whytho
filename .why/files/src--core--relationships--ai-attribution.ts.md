@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/core/relationships/ai-attribution.ts
 created: "2026-03-23T03:12:09.113Z"
-updated: "2026-03-23T03:12:09.113Z"
+updated: "2026-03-23T03:19:24.451Z"
 updated_by_session: static-scan
 parent_folder: src/core/relationships/
 sessions: []
@@ -41,6 +41,9 @@ relationships:
     source: static
   - type: depends_on
     target: src/ai/prompts/relationship-attribution.ts::parseAttributionResponse
+    source: static
+  - type: depends_on
+    target: src/ai/prompts/relationship-attribution.ts::countRawTriples
     source: static
 ---
 

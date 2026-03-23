@@ -1,7 +1,7 @@
 {
   "whytho_version": "1.0",
-  "generated_at": "2026-03-23T03:12:09.798Z",
-  "generated_at_commit": "ab14db7a08ebbb670d440f7fd3ae61c0ca93da54",
+  "generated_at": "2026-03-23T03:19:25.242Z",
+  "generated_at_commit": "7e1b4e80a8ebb8b6a9a1189261acedffe51a123c",
   "sessions": {
     "2026-03-21-session-mmzsxrsv": {
       "id": "2026-03-21-session-mmzsxrsv",
@@ -1502,6 +1502,11 @@
         {
           "type": "depends_on",
           "target": "src/ai/prompts/relationship-attribution.ts::parseAttributionResponse",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/prompts/relationship-attribution.ts::countRawTriples",
           "pipeline": "static"
         }
       ]
@@ -9501,6 +9506,18 @@
       "content_hash": "sha256:e481246d2df3357642a60f995603c42b66b743d54e33032f1bcd5d20c0aa4593",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
+      "relationships_out": [],
+      "relationships_in": []
+    },
+    "src/core/relationships/ai-attribution.ts::runAIScan": {
+      "symbolic_ref": "src/core/relationships/ai-attribution.ts::runAIScan",
+      "file": "src/core/relationships/ai-attribution.ts",
+      "canonical_metric": "symbolic",
+      "confidence": 0.95,
+      "last_resolved": "7e1b4e80a8ebb8b6a9a1189261acedffe51a123c",
+      "content_hash": "sha256:617b94c6662f09051ed814bce88878350ef69ad39e102f97d46a73dc6bb77f02",
+      "created_by_session": "agent-push",
+      "updated_by_session": "agent-push",
       "relationships_out": [],
       "relationships_in": []
     },
