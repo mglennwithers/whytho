@@ -8,6 +8,8 @@ import { isWhyDirInitialized } from '../../core/fs/init.js'
 import { buildIndex, rebuildArchiveIndex } from '../../core/index-builder/build.js'
 import { loadConfig } from '../../config/loader.js'
 import { runStaticScan } from '../../core/relationships/scanner.js'
+import { runAIScan } from '../../core/relationships/ai-attribution.js'
+import { getInferProvider } from '../../ai/registry.js'
 
 export async function collectAllSourceFiles(repoRoot: string): Promise<string[]> {
   const files: string[] = []
@@ -37,7 +39,9 @@ export function registerScan(program: Command): void {
   program
     .command('scan')
     .description('Run static relationship scanner across the repo (or a single file)')
-    .option('--file <path>', 'Scan a single file only (debugging — still reads all files for registry)')
+    .option('--file <path>', 'Scope static scan to a single file (AI scan always processes all qualifying files)')
+    .option('--ai', 'Run AI attribution scan (regardless of ai_scan config value)')
+    .option('--static-only', 'Run static scan only, skip AI scan even if config enables it')
     .action(async (options) => {
       try {
         const repoRoot = await findRepoRoot()
@@ -50,27 +54,52 @@ export function registerScan(program: Command): void {
 
         const config = await loadConfig(repoRoot)
 
-        if (config.relationships?.static_scan === false) {
-          console.log(chalk.yellow('Static scan is disabled in config (relationships.static_scan: false).'))
+        const staticScanEnabled = config.relationships?.static_scan !== false
+        const aiScanEnabled =
+          !options.staticOnly &&
+          (options.ai === true || config.relationships?.ai_scan === 'manual')
+
+        if (!staticScanEnabled && !aiScanEnabled) {
+          console.log(chalk.yellow('Static scan is disabled in config and no --ai flag. Nothing to do.'))
           process.exit(0)
         }
 
         const allFiles = await collectAllSourceFiles(repoRoot)
-        const filesToScan = options.file ? [options.file] : allFiles
 
-        console.log(chalk.bold('Running static relationship scan...'))
+        // ── Static scan ────────────────────────────────────────────────────
+        if (staticScanEnabled) {
+          const filesToScan = options.file ? [options.file] : allFiles
+          console.log(chalk.bold('Running static relationship scan...'))
+          const result = await runStaticScan(repoRoot, whyRoot, filesToScan, allFiles)
 
-        const result = await runStaticScan(repoRoot, whyRoot, filesToScan, allFiles)
+          console.log(chalk.bold(`\nScanned ${result.filesScanned} file(s)`))
+          console.log(`  ${chalk.green('Relationships found:  ')} ${result.relationshipsFound}`)
+          console.log(`  ${chalk.green('Relationships written:')} ${result.relationshipsWritten}`)
+          if (result.relationshipsSkipped > 0) {
+            console.log(`  ${chalk.gray('Relationships skipped:')} ${result.relationshipsSkipped} (unresolved targets)`)
+          }
+        }
 
+        // ── AI scan ────────────────────────────────────────────────────────
+        if (aiScanEnabled) {
+          if (options.file && options.ai) {
+            console.log(chalk.yellow('\nNote: --file scopes static scan only. AI scan processes all qualifying files.'))
+          }
+          console.log(chalk.bold('\nRunning AI relationship attribution...'))
+          const provider = getInferProvider(config)
+          const aiResult = await runAIScan(repoRoot, whyRoot, provider)
+
+          console.log(chalk.bold(`\n  AI files processed:       ${aiResult.filesProcessed}`))
+          console.log(`  ${chalk.green('AI relationships found:  ')} ${aiResult.relationshipsFound}`)
+          console.log(`  ${chalk.green('AI relationships written:')} ${aiResult.relationshipsWritten}`)
+          if (aiResult.relationshipsSkipped > 0) {
+            console.log(`  ${chalk.gray('AI relationships skipped:')} ${aiResult.relationshipsSkipped} (target not in block registry)`)
+          }
+        }
+
+        // ── Rebuild index ──────────────────────────────────────────────────
         const commitSha = await getHeadCommitSha(repoRoot)
         await Promise.all([buildIndex(whyRoot, commitSha), rebuildArchiveIndex(whyRoot)])
-
-        console.log(chalk.bold(`\nScanned ${result.filesScanned} file(s)`))
-        console.log(`  ${chalk.green('Relationships found:  ')} ${result.relationshipsFound}`)
-        console.log(`  ${chalk.green('Relationships written:')} ${result.relationshipsWritten}`)
-        if (result.relationshipsSkipped > 0) {
-          console.log(`  ${chalk.gray('Relationships skipped:')} ${result.relationshipsSkipped} (unresolved targets)`)
-        }
       } catch (err) {
         console.error(chalk.red('Error:'), String(err))
         process.exit(1)
