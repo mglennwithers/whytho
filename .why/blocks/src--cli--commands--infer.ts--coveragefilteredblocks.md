@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::coverageFilteredBlocks
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:50:58.187Z"
+updated: "2026-03-23T10:25:27.435Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::coverageFilteredBlocks
   line_range:
-    start: 207
-    end: 209
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    start: 210
+    end: 212
+    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
   content_hash: sha256:e8abb3e1f1b5ad8bfaf384431ca083ffc5e488a9feb098b6037bccc607f169f0
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     coverage kinds or the complete array.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
 ---
 
 # coverageFilteredBlocks

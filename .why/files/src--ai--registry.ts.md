@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/ai/registry.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-23T04:51:52.342Z"
+updated: "2026-03-23T10:25:26.257Z"
 updated_by_session: inferred
 parent_folder: src/ai/
 sessions: []

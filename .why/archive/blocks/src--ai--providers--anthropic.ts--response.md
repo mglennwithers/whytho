@@ -31,6 +31,10 @@ identity:
   canonical_metric: symbolic
   confidence: 0.95
   last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+archived_at: "2026-03-23T10:25:26.766Z"
+archived_reason: deleted
+archived_by_session: unknown
+archived_at_commit: f61d6427131e7269ed8174ee40599a39ea4f203c
 ---
 
 # response

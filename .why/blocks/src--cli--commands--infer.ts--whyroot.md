@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::whyRoot
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:50:59.107Z"
+updated: "2026-03-23T10:25:28.391Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::whyRoot
   line_range:
-    start: 124
-    end: 124
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    start: 126
+    end: 126
+    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
   content_hash: sha256:e481246d2df3357642a60f995603c42b66b743d54e33032f1bcd5d20c0aa4593
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     result in a const variable for subsequent use in CLI command processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
 ---
 
 # whyRoot

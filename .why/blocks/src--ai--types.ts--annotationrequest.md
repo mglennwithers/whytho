@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/types.ts::AnnotationRequest
 file: src/ai/types.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-23T04:50:56.528Z"
+updated: "2026-03-23T10:25:26.918Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 12
     end: 28
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
   content_hash: sha256:60a54a798e05260790117e79dfc95a8cb2c262a9772f1565aab2e16d0b6accd9
   structural:
     kind: interface
@@ -31,7 +31,7 @@ identity:
     prompts.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
 relationships:
   - type: depends_on
     target: src/core/types.ts::AnnotationType

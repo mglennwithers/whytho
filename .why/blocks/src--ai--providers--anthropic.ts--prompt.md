@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/anthropic.ts::prompt
 file: src/ai/providers/anthropic.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-23T04:50:56.263Z"
+updated: "2026-03-23T10:25:26.754Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -12,9 +12,9 @@ inference_confidence: 0.45
 identity:
   symbolic: src/ai/providers/anthropic.ts::prompt
   line_range:
-    start: 108
-    end: 108
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    start: 122
+    end: 122
+    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
   content_hash: sha256:7c3ace824a44989e572152557f5cf883d1308b784130ceee5eb683ede5a35958
   structural:
     kind: const
@@ -27,7 +27,7 @@ identity:
     provider module.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
 ---
 
 # prompt

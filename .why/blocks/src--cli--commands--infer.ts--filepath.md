@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::filePath
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:50:58.304Z"
+updated: "2026-03-23T10:25:27.602Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::filePath
   line_range:
-    start: 79
-    end: 79
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    start: 81
+    end: 81
+    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
   content_hash: sha256:72eec605399ce661f715ad92a92e11d81898e37308a683210c0374cab004596b
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     multi-file handling logic within a CLI inference command.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
 ---
 
 # filePath

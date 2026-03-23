@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/resolve.ts::counts
 file: src/cli/commands/resolve.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:52.817Z"
+updated: "2026-03-23T10:25:28.447Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/resolve.ts::counts
   line_range:
-    start: 85
-    end: 85
-    commit: 7f4e393ad3ad97418bd42717c027ffe8c7891ace
+    start: 89
+    end: 89
+    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
   content_hash: sha256:67374597397b2b988e708568b845bbaff75cece210e3933342d512ecd0eed728
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     counts of categorical items encountered during resolve operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 7f4e393ad3ad97418bd42717c027ffe8c7891ace
+  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
 ---
 
 # counts

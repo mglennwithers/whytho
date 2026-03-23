@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/registry.ts::registerProvider
 file: src/ai/registry.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-23T04:51:52.749Z"
+updated: "2026-03-23T10:25:26.897Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/registry.ts::registerProvider
   line_range:
-    start: 26
-    end: 28
-    commit: 7f4e393ad3ad97418bd42717c027ffe8c7891ace
+    start: 31
+    end: 33
+    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
   content_hash: sha256:da1bd27803f14477c519e4dbd9c9f0a05eec3f604a897fb4056024501bc6adab
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     lookup.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 7f4e393ad3ad97418bd42717c027ffe8c7891ace
+  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
 ---
 
 # registerProvider

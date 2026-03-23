@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/cli/commands/scan.ts
 created: "2026-03-23T03:22:23.309Z"
-updated: "2026-03-23T04:51:52.342Z"
+updated: "2026-03-23T10:25:26.257Z"
 updated_by_session: static-scan
 parent_folder: src/cli/commands/
 sessions: []
@@ -38,6 +38,15 @@ relationships:
     source: static
   - type: depends_on
     target: src/ai/registry.ts::getScanProvider
+    source: static
+  - type: depends_on
+    target: src/ai/token-counter.ts::withTokenCounting
+    source: static
+  - type: depends_on
+    target: src/ai/token-counter.ts::formatTokens
+    source: static
+  - type: depends_on
+    target: src/ai/token-counter.ts::TokenTally
     source: static
 ---
 

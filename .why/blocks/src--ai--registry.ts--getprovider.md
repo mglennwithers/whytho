@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/registry.ts::getProvider
 file: src/ai/registry.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-23T04:51:52.708Z"
+updated: "2026-03-23T10:25:26.856Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/registry.ts::getProvider
   line_range:
-    start: 30
-    end: 32
-    commit: 7f4e393ad3ad97418bd42717c027ffe8c7891ace
+    start: 35
+    end: 37
+    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
   content_hash: sha256:706f1dad2c7838dcde7d73ba1954bbb7d51a1c70f37f04c65da6b45953feb8b4
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     simple accessor for a cached or pre-populated provider collection.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 7f4e393ad3ad97418bd42717c027ffe8c7891ace
+  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
 ---
 
 # getProvider

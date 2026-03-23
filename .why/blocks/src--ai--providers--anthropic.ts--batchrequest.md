@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/anthropic.ts::BatchRequest
 file: src/ai/providers/anthropic.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-23T04:50:56.074Z"
+updated: "2026-03-23T10:25:26.592Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 3
     end: 7
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
   content_hash: sha256:f669f5183f7550123aff83e284dc861b153c34ff044fef35192cf1298a6c61e7
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     a unique identifier, text input, and output length constraint.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
 ---
 
 # BatchRequest

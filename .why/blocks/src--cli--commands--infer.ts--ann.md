@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::ann
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:50:57.711Z"
+updated: "2026-03-23T10:25:27.014Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::ann
   line_range:
-    start: 327
-    end: 327
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    start: 333
+    end: 333
+    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
   content_hash: sha256:8a9ab9f8a3e87fda662bb8571767b26a0eac3ff3b60e01a8f9396f01e1b0d5fb
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     structure.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
 ---
 
 # ann

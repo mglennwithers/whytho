@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/resolve.ts::allBlocks
 file: src/cli/commands/resolve.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:52.774Z"
+updated: "2026-03-23T10:25:28.407Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/resolve.ts::allBlocks
   line_range:
-    start: 46
-    end: 46
-    commit: 7f4e393ad3ad97418bd42717c027ffe8c7891ace
+    start: 48
+    end: 48
+    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
   content_hash: sha256:56ba9c42a52c0d049888ca0f25b7d75582c859280867eb31133cb607e9f3c8de
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the result in a variable for subsequent processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 7f4e393ad3ad97418bd42717c027ffe8c7891ace
+  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
 ---
 
 # allBlocks

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/registry.ts::getDefaultProvider
 file: src/ai/registry.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-23T04:51:52.693Z"
+updated: "2026-03-23T10:25:26.838Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/registry.ts::getDefaultProvider
   line_range:
-    start: 62
-    end: 88
-    commit: 7f4e393ad3ad97418bd42717c027ffe8c7891ace
+    start: 67
+    end: 93
+    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
   content_hash: sha256:3447c45306f4c44d14063f19c720321d32992afb231d2234cb23fb1fc910e032
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     for Anthropic or looking up custom providers in a registry, returning a null provider on failure.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 7f4e393ad3ad97418bd42717c027ffe8c7891ace
+  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
 ---
 
 # getDefaultProvider

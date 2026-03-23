@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/registry.ts::mode
 file: src/ai/registry.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-23T04:51:52.716Z"
+updated: "2026-03-23T10:25:26.864Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/registry.ts::mode
   line_range:
-    start: 13
-    end: 13
-    commit: 7f4e393ad3ad97418bd42717c027ffe8c7891ace
+    start: 18
+    end: 18
+    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
   content_hash: sha256:d6a8bdf54c22b8256db198e7e8f2aed80717a810a570fce22aad9aa573d34e89
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     flexible runtime mode selection for batch operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 7f4e393ad3ad97418bd42717c027ffe8c7891ace
+  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
 ---
 
 # mode

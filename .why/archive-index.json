@@ -1,8 +1,27 @@
 {
   "whytho_version": "1.0",
-  "generated_at": "2026-03-23T05:07:30.406Z",
+  "generated_at": "2026-03-23T10:25:28.672Z",
   "sessions": {},
   "folders": {},
   "files": {},
-  "blocks": {}
+  "blocks": {
+    "src/ai/providers/anthropic.ts::response": {
+      "symbolic_ref": "src/ai/providers/anthropic.ts::response",
+      "file": "src/ai/providers/anthropic.ts",
+      "canonical_metric": "symbolic",
+      "confidence": 0.95,
+      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
+      "content_hash": "sha256:5a4d8b1547b732234f3bd50db7d1f2ca04d0009d21f76cab27dfbdcebd054924",
+      "created_by_session": "inferred",
+      "updated_by_session": "inferred",
+      "relationships_out": [],
+      "relationships_in": [],
+      "archived_at": "2026-03-23T10:25:26.766Z",
+      "archived_reason": "deleted",
+      "archived_by_session": "unknown",
+      "archived_at_commit": "f61d6427131e7269ed8174ee40599a39ea4f203c",
+      "last_known_confidence": 0.95,
+      "last_known_content_hash": "sha256:5a4d8b1547b732234f3bd50db7d1f2ca04d0009d21f76cab27dfbdcebd054924"
+    }
+  }
 }
