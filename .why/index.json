@@ -1,7 +1,7 @@
 {
   "whytho_version": "1.0",
-  "generated_at": "2026-03-23T03:32:25.043Z",
-  "generated_at_commit": "a5abbf5b0720d3d57a645535a39c47cbcc79aa0a",
+  "generated_at": "2026-03-23T03:38:00.803Z",
+  "generated_at_commit": "02df1b8259bdb98bb13413abb24ffa59e0b688f2",
   "sessions": {
     "2026-03-21-session-mmzsxrsv": {
       "id": "2026-03-21-session-mmzsxrsv",
@@ -1602,6 +1602,11 @@
         {
           "type": "depends_on",
           "target": "src/core/parser/registry.ts::parseFile",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/parser/types.ts::ParsedBlock",
           "pipeline": "static"
         },
         {
@@ -9654,8 +9659,8 @@
       "file": "src/core/relationships/ai-attribution.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "7e1b4e80a8ebb8b6a9a1189261acedffe51a123c",
-      "content_hash": "sha256:617b94c6662f09051ed814bce88878350ef69ad39e102f97d46a73dc6bb77f02",
+      "last_resolved": "02df1b8259bdb98bb13413abb24ffa59e0b688f2",
+      "content_hash": "sha256:4a2393e04b5d6888ac2ecdf1019e3fb983071b7f07a33b56d35b645e36927203",
       "created_by_session": "agent-push",
       "updated_by_session": "agent-push",
       "relationships_out": [],
