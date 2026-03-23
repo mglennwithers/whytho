@@ -93,6 +93,16 @@ export async function buildIndex(whyRoot: string, commitSha: string): Promise<Wh
     }
   }
 
+  // Collect file-level edges (depends_on / tests from import scanning) into the
+  // global relationships array. Source is the file path since these edges are not
+  // attributed to a specific block.
+  for (const ann of fileAnns) {
+    const fm = ann.frontmatter
+    for (const rel of (fm.relationships ?? [])) {
+      relationships.push({ type: rel.type, source: fm.path, target: rel.target, pipeline: rel.source })
+    }
+  }
+
   // Populate relationships_in
   for (const edge of relationships) {
     const target = blocks[edge.target]

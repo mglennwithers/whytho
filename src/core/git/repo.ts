@@ -53,6 +53,20 @@ export async function getTrackedFiles(repoRoot: string): Promise<Set<string>> {
   }
 }
 
+/**
+ * Count commits reachable from HEAD but not from `sha` (i.e. how many commits
+ * have landed since `sha`). Returns Infinity if `sha` is not in history.
+ */
+export async function getCommitsSince(repoRoot: string, sha: string): Promise<number> {
+  const git = simpleGit(repoRoot)
+  try {
+    const count = await git.raw(['rev-list', '--count', `${sha}..HEAD`])
+    return parseInt(count.trim(), 10) || 0
+  } catch {
+    return Infinity
+  }
+}
+
 export async function isGitRepo(dir: string): Promise<boolean> {
   try {
     await findRepoRoot(dir)

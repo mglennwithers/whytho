@@ -2,7 +2,7 @@ import { Command } from 'commander'
 import chalk from 'chalk'
 import * as fs from 'fs/promises'
 import * as path from 'path'
-import { findRepoRoot } from '../../core/git/repo.js'
+import { findRepoRoot, getCommitsSince } from '../../core/git/repo.js'
 import { getWhyRoot, parentFolder } from '../../core/fs/layout.js'
 import { isWhyDirInitialized } from '../../core/fs/init.js'
 import { readIndex, readArchiveIndex } from '../../core/fs/reader.js'
@@ -12,6 +12,7 @@ import { parseFile } from '../../core/parser/registry.js'
 import type { WhythoIndex, WhythoArchiveIndex } from '../../core/types.js'
 
 const LOW_CONFIDENCE_THRESHOLD = 0.7
+const STALE_COMMITS_THRESHOLD = 10
 
 function bar(fraction: number, width = 20): string {
   const filled = Math.round(fraction * width)
@@ -74,6 +75,17 @@ export function registerStatus(program: Command): void {
         const unresolvable = (index.unresolved ?? []).length
         const lowConfidence = blocks.filter((b) => b.confidence < LOW_CONFIDENCE_THRESHOLD).length
 
+        // Stale block detection: count commits since each unique last_resolved SHA
+        let staleCount = 0
+        if (totalBlocks > 0) {
+          const uniqueShas = [...new Set(blocks.map((b) => b.last_resolved).filter(Boolean))]
+          const commitsSinceMap = new Map<string, number>()
+          await Promise.all(uniqueShas.map(async (sha) => {
+            commitsSinceMap.set(sha, await getCommitsSince(repoRoot, sha))
+          }))
+          staleCount = blocks.filter((b) => (commitsSinceMap.get(b.last_resolved) ?? 0) > STALE_COMMITS_THRESHOLD).length
+        }
+
         const totalFiles = Object.keys(index.files ?? {}).length
         const totalFolders = Object.keys(index.folders ?? {}).length
         const totalSessions = Object.keys(index.sessions ?? {}).length
@@ -112,7 +124,7 @@ export function registerStatus(program: Command): void {
               folders: totalFolders,
               sessions: totalSessions,
             },
-            health: { unresolvable, lowConfidence },
+            health: { unresolvable, lowConfidence, stale: staleCount },
             relationships: totalRelationships,
             archive: { blocks: archivedBlocks },
           }
@@ -163,7 +175,7 @@ export function registerStatus(program: Command): void {
 
         // Health section
         console.log(chalk.bold('Health'))
-        if (unresolvable === 0 && lowConfidence === 0) {
+        if (unresolvable === 0 && lowConfidence === 0 && staleCount === 0) {
           console.log(`  ${chalk.green('✓')} All annotations healthy`)
         } else {
           if (unresolvable > 0) {
@@ -171,6 +183,9 @@ export function registerStatus(program: Command): void {
           }
           if (lowConfidence > 0) {
             console.log(`  ${chalk.yellow('!')} ${chalk.yellow(`${lowConfidence} low-confidence`)} block(s)  ${chalk.gray(`(confidence < ${LOW_CONFIDENCE_THRESHOLD})`)}`)
+          }
+          if (staleCount > 0) {
+            console.log(`  ${chalk.yellow('!')} ${chalk.yellow(`${staleCount} stale`)} block(s)  ${chalk.gray(`(not resolved in ${STALE_COMMITS_THRESHOLD}+ commits)  →  git why resolve`)}`)
           }
         }
         console.log()
