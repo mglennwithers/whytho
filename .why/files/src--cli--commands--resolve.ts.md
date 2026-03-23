@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/cli/commands/resolve.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-23T03:22:40.390Z"
+updated: "2026-03-23T03:32:24.302Z"
 updated_by_session: inferred
 parent_folder: src/cli/commands/
 sessions: []
@@ -68,10 +68,10 @@ relationships:
     target: src/ai/registry.ts::getDefaultProvider
     source: static
   - type: depends_on
-    target: src/core/relationships/ai-attribution.ts::runAIScan
+    target: src/ai/registry.ts::getInferProvider
     source: static
   - type: depends_on
-    target: src/ai/registry.ts::getInferProvider
+    target: src/core/relationships/ai-attribution.ts::runAIScan
     source: static
   - type: depends_on
     target: src/core/fs/reader.ts::readAllBlocks

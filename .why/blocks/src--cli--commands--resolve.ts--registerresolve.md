@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/resolve.ts::registerResolve
 file: src/cli/commands/resolve.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T03:22:40.746Z"
+updated: "2026-03-23T03:32:24.655Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/resolve.ts::registerResolve
   line_range:
-    start: 18
-    end: 118
-    commit: 6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5
+    start: 17
+    end: 117
+    commit: a5abbf5b0720d3d57a645535a39c47cbcc79aa0a
   content_hash: sha256:a6d1ad7e3bfe61adb9443f62df927acf8e3a62e494888f89a6c31aece0fc101a
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     resolution modes with optional AI assistance, then reports outcomes and emits hook events.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5
+  last_resolved: a5abbf5b0720d3d57a645535a39c47cbcc79aa0a
 ---
 
 # registerResolve
