@@ -2,7 +2,7 @@
 
 ## Testing
 - [ ] Build benchmarking tests to measure AI coding tool effectiveness with and without whytho annotations
-- [ ] Investigate transient "No test suite found" failures on Windows when running the full test suite in parallel (passes on re-run; likely a worker startup race with vitest)
+- [x] Investigate transient "No test suite found" failures on Windows when running the full test suite in parallel (passes on re-run; likely a worker startup race with vitest)
 
 ## Bugs / Polish
 - [x] Fix naming inconsistency in config: `relationships.ai_scan` and `relationships.static_scan` are snake_case inside an otherwise camelCase config object
