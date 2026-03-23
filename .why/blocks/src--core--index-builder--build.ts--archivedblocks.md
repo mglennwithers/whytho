@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/build.ts::archivedBlocks
 file: src/core/index-builder/build.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:01.807Z"
+updated: "2026-03-23T04:53:52.973Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 132
     end: 132
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: 482601fd86d0652678e22f2316e333a17a91b764
   content_hash: sha256:8bc6438c316570b09a4a807252a02b6ea2506248d6fb83d0340d03fceeeda15f
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     subsequent processing in an index-building workflow.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: 482601fd86d0652678e22f2316e333a17a91b764
 ---
 
 # archivedBlocks

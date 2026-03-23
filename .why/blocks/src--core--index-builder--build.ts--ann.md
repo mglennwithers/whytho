@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/build.ts::ann
 file: src/core/index-builder/build.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:01.794Z"
+updated: "2026-03-23T04:53:52.961Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 24
     end: 24
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: 482601fd86d0652678e22f2316e333a17a91b764
   content_hash: sha256:6c99a51c5b2b24ac0ab2ad278488ab4c5b6eec997fad2fd33ae202eb067875b9
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     sequentially, likely performing some transformation, validation, or aggregation operation on them.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: 482601fd86d0652678e22f2316e333a17a91b764
 ---
 
 # ann

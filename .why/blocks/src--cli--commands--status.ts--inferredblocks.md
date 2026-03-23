@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::inferredBlocks
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-23T04:50:59.725Z"
+updated: "2026-03-23T04:53:52.560Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 73
     end: 73
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: 482601fd86d0652678e22f2316e333a17a91b764
   content_hash: sha256:349d400a7b0db9d7c5e5a8fa9cc1856a8727d9ecfb14d7bea8f2f4eba2a3e68f
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     measuring the resulting length.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: 482601fd86d0652678e22f2316e333a17a91b764
 ---
 
 # inferredBlocks

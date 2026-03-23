@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/repo.ts::isGitRepo
 file: src/core/git/repo.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:01.482Z"
+updated: "2026-03-23T04:53:52.923Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 70
     end: 77
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: 482601fd86d0652678e22f2316e333a17a91b764
   content_hash: sha256:b4bb5f20867e757a64e209f5a8d123e04d8e4d4b82e86217089ba4c5c909da3e
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     successful and false if an exception is thrown.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: 482601fd86d0652678e22f2316e333a17a91b764
 ---
 
 # isGitRepo

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::entries
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-23T04:50:59.616Z"
+updated: "2026-03-23T04:53:52.430Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 33
     end: 33
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: 482601fd86d0652678e22f2316e333a17a91b764
   content_hash: sha256:c28e34d789e544f59914099624df22c1e4a10930abc4f0b26469ed09a0afb4e8
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     type inference to capture the resolved return type of `fs.readdir`.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: 482601fd86d0652678e22f2316e333a17a91b764
 ---
 
 # entries
