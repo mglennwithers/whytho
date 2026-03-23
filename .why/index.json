@@ -1,7 +1,7 @@
 {
   "whytho_version": "1.0",
-  "generated_at": "2026-03-23T03:19:25.242Z",
-  "generated_at_commit": "7e1b4e80a8ebb8b6a9a1189261acedffe51a123c",
+  "generated_at": "2026-03-23T03:22:23.978Z",
+  "generated_at_commit": "9a6fcda3cd4373a5a257bc9557a281430e74b52a",
   "sessions": {
     "2026-03-21-session-mmzsxrsv": {
       "id": "2026-03-21-session-mmzsxrsv",
@@ -666,6 +666,64 @@
         "src/cli/commands/resolve.ts::color"
       ],
       "sessions": []
+    },
+    "src/cli/commands/scan.ts": {
+      "path": "src/cli/commands/scan.ts",
+      "parent_folder": "src/cli/commands/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "src/core/git/repo.ts::findRepoRoot",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/git/repo.ts::getHeadCommitSha",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/layout.ts::getWhyRoot",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/init.ts::isWhyDirInitialized",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/index-builder/build.ts::buildIndex",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/index-builder/build.ts::rebuildArchiveIndex",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/config/loader.ts::loadConfig",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/relationships/scanner.ts::runStaticScan",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/relationships/ai-attribution.ts::runAIScan",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/registry.ts::getInferProvider",
+          "pipeline": "static"
+        }
+      ]
     },
     "src/cli/commands/session.ts": {
       "path": "src/cli/commands/session.ts",
