@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/resolve.ts::report
 file: src/cli/commands/resolve.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T10:12:27.718Z"
+updated: "2026-03-23T03:22:40.765Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/resolve.ts::report
   line_range:
-    start: 57
-    end: 64
-    commit: dbdf3218572cb3980a58c6ef326ecef25f7b14ba
+    start: 65
+    end: 72
+    commit: 6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5
   content_hash: sha256:d9d2324a1c9e53cf4a94d0627e337b0f047b9734e90064d012af5b3db42aa7f2
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     report variable for subsequent processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: dbdf3218572cb3980a58c6ef326ecef25f7b14ba
+  last_resolved: 6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5
 ---
 
 # report

@@ -1,7 +1,7 @@
 {
   "whytho_version": "1.0",
-  "generated_at": "2026-03-23T03:22:23.978Z",
-  "generated_at_commit": "9a6fcda3cd4373a5a257bc9557a281430e74b52a",
+  "generated_at": "2026-03-23T03:22:41.141Z",
+  "generated_at_commit": "6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5",
   "sessions": {
     "2026-03-21-session-mmzsxrsv": {
       "id": "2026-03-21-session-mmzsxrsv",
@@ -665,7 +665,89 @@
         "src/cli/commands/resolve.ts::outcome",
         "src/cli/commands/resolve.ts::color"
       ],
-      "sessions": []
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "src/core/git/repo.ts::findRepoRoot",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/git/repo.ts::getHeadCommitSha",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/git/diff.ts::getChangedFiles",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/layout.ts::getWhyRoot",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/init.ts::isWhyDirInitialized",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/resolution/pipeline.ts::runResolutionPipeline",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/index-builder/build.ts::buildIndex",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/index-builder/build.ts::rebuildArchiveIndex",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/relationships/events.ts::emitHookEvents",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/config/loader.ts::loadConfig",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/relationships/scanner.ts::runStaticScan",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/cli/commands/scan.ts::collectAllSourceFiles",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/registry.ts::getDefaultProvider",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/relationships/ai-attribution.ts::runAIScan",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/registry.ts::getInferProvider",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/reader.ts::readAllBlocks",
+          "pipeline": "static"
+        }
+      ]
     },
     "src/cli/commands/scan.ts": {
       "path": "src/cli/commands/scan.ts",
@@ -5181,7 +5263,7 @@
       "file": "src/cli/commands/resolve.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "dbdf3218572cb3980a58c6ef326ecef25f7b14ba",
+      "last_resolved": "6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5",
       "content_hash": "sha256:dea7428f7316f209bcae370a0a36068e8abc2ee349edf2d0095582f3dbc0a1bc",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -5193,7 +5275,7 @@
       "file": "src/cli/commands/resolve.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "dbdf3218572cb3980a58c6ef326ecef25f7b14ba",
+      "last_resolved": "6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5",
       "content_hash": "sha256:56ba9c42a52c0d049888ca0f25b7d75582c859280867eb31133cb607e9f3c8de",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -5205,7 +5287,7 @@
       "file": "src/cli/commands/resolve.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "dbdf3218572cb3980a58c6ef326ecef25f7b14ba",
+      "last_resolved": "6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5",
       "content_hash": "sha256:bc5effdb72c6f7a5ada8607b5d15c4536cd4bcf478830b91971032202869af99",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -5217,7 +5299,7 @@
       "file": "src/cli/commands/resolve.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "dbdf3218572cb3980a58c6ef326ecef25f7b14ba",
+      "last_resolved": "6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5",
       "content_hash": "sha256:b8a4f1fd41053a55f6991e80fee96f120aa45e86030151d094f13c317dadfb39",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -5229,7 +5311,7 @@
       "file": "src/cli/commands/resolve.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "dbdf3218572cb3980a58c6ef326ecef25f7b14ba",
+      "last_resolved": "6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5",
       "content_hash": "sha256:9437ffbbe31d1f7efe8b11cb16e5d99e84d771970a299ab133c449d9b34ad1de",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -5241,7 +5323,7 @@
       "file": "src/cli/commands/resolve.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "dbdf3218572cb3980a58c6ef326ecef25f7b14ba",
+      "last_resolved": "6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5",
       "content_hash": "sha256:9333c162d3f78ccbec2727d495e4b834a459c288080881b89b7f0c028aca7328",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -5253,7 +5335,7 @@
       "file": "src/cli/commands/resolve.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "dbdf3218572cb3980a58c6ef326ecef25f7b14ba",
+      "last_resolved": "6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5",
       "content_hash": "sha256:67374597397b2b988e708568b845bbaff75cece210e3933342d512ecd0eed728",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -5265,7 +5347,7 @@
       "file": "src/cli/commands/resolve.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "dbdf3218572cb3980a58c6ef326ecef25f7b14ba",
+      "last_resolved": "6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5",
       "content_hash": "sha256:f23d101afd7e321ac7839d29dd3df08d1762501beaf518efdb6f049946f6f1cf",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -5277,8 +5359,8 @@
       "file": "src/cli/commands/resolve.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "dbdf3218572cb3980a58c6ef326ecef25f7b14ba",
-      "content_hash": "sha256:b2eabbdef24a0a25a46e649165d11d3070c8e5945b5ffd0914c810b21f5e82cd",
+      "last_resolved": "6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5",
+      "content_hash": "sha256:a6d1ad7e3bfe61adb9443f62df927acf8e3a62e494888f89a6c31aece0fc101a",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
       "relationships_out": [],
@@ -5289,7 +5371,7 @@
       "file": "src/cli/commands/resolve.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "dbdf3218572cb3980a58c6ef326ecef25f7b14ba",
+      "last_resolved": "6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5",
       "content_hash": "sha256:a3e3be7155d7b789ade4b2b796c5ca38cf1a81273fec3b710ce19b7899d98e9d",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -5301,7 +5383,7 @@
       "file": "src/cli/commands/resolve.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "dbdf3218572cb3980a58c6ef326ecef25f7b14ba",
+      "last_resolved": "6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5",
       "content_hash": "sha256:d9d2324a1c9e53cf4a94d0627e337b0f047b9734e90064d012af5b3db42aa7f2",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -5313,7 +5395,7 @@
       "file": "src/cli/commands/resolve.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "dbdf3218572cb3980a58c6ef326ecef25f7b14ba",
+      "last_resolved": "6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5",
       "content_hash": "sha256:e481246d2df3357642a60f995603c42b66b743d54e33032f1bcd5d20c0aa4593",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",

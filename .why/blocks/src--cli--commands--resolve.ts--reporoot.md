@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/resolve.ts::repoRoot
 file: src/cli/commands/resolve.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T10:12:27.708Z"
+updated: "2026-03-23T03:22:40.756Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/resolve.ts::repoRoot
   line_range:
-    start: 25
-    end: 25
-    commit: dbdf3218572cb3980a58c6ef326ecef25f7b14ba
+    start: 27
+    end: 27
+    commit: 6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5
   content_hash: sha256:a3e3be7155d7b789ade4b2b796c5ca38cf1a81273fec3b710ce19b7899d98e9d
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     variable for subsequent use in the resolve command workflow.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: dbdf3218572cb3980a58c6ef326ecef25f7b14ba
+  last_resolved: 6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5
 ---
 
 # repoRoot

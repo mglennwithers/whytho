@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/resolve.ts::config
 file: src/cli/commands/resolve.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T10:12:27.664Z"
+updated: "2026-03-23T03:22:40.711Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/resolve.ts::config
   line_range:
-    start: 26
-    end: 26
-    commit: dbdf3218572cb3980a58c6ef326ecef25f7b14ba
+    start: 28
+    end: 28
+    commit: 6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5
   content_hash: sha256:9333c162d3f78ccbec2727d495e4b834a459c288080881b89b7f0c028aca7328
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     subsequent use in the resolve command logic.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: dbdf3218572cb3980a58c6ef326ecef25f7b14ba
+  last_resolved: 6f792316e106fc1e2f6f8dc3a7fb9cb51184c8f5
 ---
 
 # config
