@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/writer.ts::ensureDir
 file: src/core/fs/writer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.014Z"
+updated: "2026-03-23T04:51:01.188Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 19
     end: 21
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:3d9582ae86b29ec14b79482ac35af990390ac2aee626da9f1642bcd023d23b8e
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     using Node.js filesystem operations with recursive mode enabled.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # ensureDir

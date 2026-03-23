@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/ai/prompts/annotate-block.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-21T05:21:52.955Z"
+updated: "2026-03-23T04:50:55.138Z"
 updated_by_session: inferred
 parent_folder: src/ai/prompts/
 sessions: []
@@ -19,6 +19,10 @@ blocks:
 language: typescript
 inferred: true
 inference_confidence: 0.72
+relationships:
+  - type: depends_on
+    target: src/ai/types.ts::AnnotationRequest
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **72%**

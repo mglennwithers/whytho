@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/init.ts::hookMode
 file: src/cli/commands/init.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:32.596Z"
+updated: "2026-03-23T04:50:59.139Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 28
     end: 28
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:96ec9eeabfcbb8f60ac7b775d5f92c5a393969300e9cee80be5edcf62de59796
   structural:
     kind: const
@@ -30,7 +30,11 @@ identity:
     subsequent use in initialization logic.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/config/loader.ts::loadConfig
+    source: ai
 ---
 
 # hookMode

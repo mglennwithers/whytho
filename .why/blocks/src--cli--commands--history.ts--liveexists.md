@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/history.ts::liveExists
 file: src/cli/commands/history.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.601Z"
+updated: "2026-03-23T04:50:57.583Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/history.ts::liveExists
   line_range:
-    start: 24
-    end: 31
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 25
+    end: 32
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:c3e98e8b33ed8c0f61fb2efe0fe7ae1416cf3a1cbb9fb62f8f6d30b8df23cc7f
   structural:
     kind: const
@@ -30,7 +30,11 @@ identity:
     utility and safely handling any import failures by returning false.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/fs/writer.ts::fileExists
+    source: ai
 ---
 
 # liveExists

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/frontmatter/validate.ts::validateBlockAnnotation
 file: src/core/frontmatter/validate.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.553Z"
+updated: "2026-03-23T04:51:00.604Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 45
     end: 47
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:5031d25557b71cabae46fa0d6f7e3e9a3f33ceaffb504c9d41eec8f1a316b69a
   structural:
     kind: function
@@ -31,7 +31,11 @@ identity:
     checking and transformation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/types.ts::BlockFrontmatterSchema
+    source: ai
 ---
 
 # validateBlockAnnotation

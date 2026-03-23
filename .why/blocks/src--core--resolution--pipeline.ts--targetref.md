@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::targetRef
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-22T02:19:56.070Z"
+updated: "2026-03-23T04:51:03.618Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 206
     end: 206
-    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:66af0f918ab2a94bd3448c747d5680411ad44b20b92e43b8fbce4c5bd91b177e
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     pipeline processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # targetRef

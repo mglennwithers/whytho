@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/hooks/installer.ts::HOOK_SCRIPT_CMD
 file: src/core/git/hooks/installer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.131Z"
+updated: "2026-03-23T04:51:01.326Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 19
     end: 30
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:1f31edcc2f832f6aa71e0ccfead04059ffc31d615957f8b2033dd3cf6a904868
   structural:
     kind: const
@@ -30,7 +30,11 @@ identity:
     changes if differences are detected, with recursion prevention via environment variable.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/constants.ts::HOOK_SENTINEL
+    source: ai
 ---
 
 # HOOK_SCRIPT_CMD

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/null.ts::baseFrontmatter
 file: src/ai/providers/null.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T11:35:30.669Z"
+updated: "2026-03-23T04:50:56.345Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 11
     end: 16
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:48b8e7394c10038f9a990088181032054cf3bed1cd1f0648021c658ba4383b9e
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     creation/update timestamps.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # baseFrontmatter

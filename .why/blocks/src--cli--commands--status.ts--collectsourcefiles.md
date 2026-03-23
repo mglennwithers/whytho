@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::collectSourceFiles
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-23T04:50:59.554Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::collectSourceFiles
   line_range:
-    start: 26
-    end: 49
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:0a3a2802a786725074565016755700cbeb1cef0907038ca2e2cd30c8ee589034
+    start: 27
+    end: 50
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  content_hash: sha256:e45bd69c412d87a8cac413817ffe08d2f2312ac526e85bfc8c5fa3ebfe5714ce
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,14 @@ identity:
     configuration, and returns a flat list of relative paths to tracked source files.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/config/tracking.ts::isSkippedDir
+    source: ai
+  - type: depends_on
+    target: src/config/tracking.ts::isTrackedFile
+    source: ai
 ---
 
 # collectSourceFiles

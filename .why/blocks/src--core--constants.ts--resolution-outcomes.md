@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::RESOLUTION_OUTCOMES
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T12:58:50.989Z"
+updated: "2026-03-23T04:51:00.498Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 38
     end: 47
-    commit: dcbdce849eae1c3944290d0215318e5ecfbfecdb
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:3262b3a565ecc6d26b15f8d4f76ed69dbfb1b846c77ba33db38ad412ac8f4a2d
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     entity or process, ranging from successful outcomes to exceptional states.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: dcbdce849eae1c3944290d0215318e5ecfbfecdb
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # RESOLUTION_OUTCOMES

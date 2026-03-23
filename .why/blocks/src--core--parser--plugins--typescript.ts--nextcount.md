@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::nextCount
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.070Z"
+updated: "2026-03-23T04:51:02.501Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::nextCount
   line_range:
-    start: 48
-    end: 52
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 49
+    end: 53
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:8cbcf37b0e1a6a718e1dacbae4e6fa1ab7a5d0ee6cfb298b035cd36fc46bab07
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     occurrence counts of different block types during parsing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # nextCount

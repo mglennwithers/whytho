@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::testName
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.147Z"
+updated: "2026-03-23T04:51:02.589Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::testName
   line_range:
-    start: 204
-    end: 209
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 205
+    end: 210
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:fe843580e597778ed089f97e3b612a6a7c3cd95a8459e9398a4319632a53925c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     literal, or undefined, with special handling for each AST node type.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # testName

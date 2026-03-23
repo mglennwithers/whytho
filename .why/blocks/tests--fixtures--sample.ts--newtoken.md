@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/fixtures/sample.ts::newToken
 file: tests/fixtures/sample.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:37.404Z"
+updated: "2026-03-23T04:51:05.616Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 35
     end: 35
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:7cd397c13211f8547c38fe2368c42b23573da625cd776abccf8be7749e0532b5
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     TTL (time-to-live) value from an existing token object.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # newToken

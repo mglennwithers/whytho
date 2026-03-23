@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/tracking.ts::prefix
 file: src/config/tracking.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.235Z"
+updated: "2026-03-23T04:51:00.229Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 29
     end: 29
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:9f7095762ec333779f2edf33bdb7064b045ee21aa1c3b4f12c5d4120defc43a7
   structural:
     kind: const
@@ -28,7 +28,7 @@ identity:
   semantic_fingerprint: Normalizes a file path string by ensuring it ends with a forward slash, appending one if absent.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # prefix

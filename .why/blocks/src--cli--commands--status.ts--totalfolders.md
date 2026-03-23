@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::totalFolders
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-23T04:50:59.968Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::totalFolders
   line_range:
-    start: 78
-    end: 78
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 90
+    end: 90
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:e458accaedc7559f01d3e652d270510543532edbc4e242c65f4ce584b616403b
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     null-coalescing fallback to an empty object.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # totalFolders

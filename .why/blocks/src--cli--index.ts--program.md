@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/index.ts::program
 file: src/cli/index.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T10:10:52.010Z"
+updated: "2026-03-23T04:51:00.044Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 18
     end: 21
-    commit: dd56fdaf33a4fb2179f0027700ca6cff0eb0f1d0
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:da72d29af154dee28b5a586a2d129cad39cf5005d1f1670399a4cf3df61fb7d8
   structural:
     kind: const
@@ -30,7 +30,53 @@ identity:
     versioned at 1.0.0.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: dd56fdaf33a4fb2179f0027700ca6cff0eb0f1d0
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/cli/commands/init.ts::registerInit
+    source: ai
+  - type: depends_on
+    target: src/cli/commands/annotate.ts::registerAnnotate
+    source: ai
+  - type: depends_on
+    target: src/cli/commands/block.ts::registerBlock
+    source: ai
+  - type: depends_on
+    target: src/cli/commands/file.ts::registerFile
+    source: ai
+  - type: depends_on
+    target: src/cli/commands/folder.ts::registerFolder
+    source: ai
+  - type: depends_on
+    target: src/cli/commands/session.ts::registerSession
+    source: ai
+  - type: depends_on
+    target: src/cli/commands/related.ts::registerRelated
+    source: ai
+  - type: depends_on
+    target: src/cli/commands/history.ts::registerHistory
+    source: ai
+  - type: depends_on
+    target: src/cli/commands/diff.ts::registerDiff
+    source: ai
+  - type: depends_on
+    target: src/cli/commands/resolve.ts::registerResolve
+    source: ai
+  - type: depends_on
+    target: src/cli/commands/scan.ts::registerScan
+    source: ai
+  - type: depends_on
+    target: src/cli/commands/push.ts::registerPush
+    source: ai
+  - type: depends_on
+    target: src/cli/commands/infer.ts::registerInfer
+    source: ai
+  - type: depends_on
+    target: src/cli/commands/mcp.ts::registerMcp
+    source: ai
+  - type: depends_on
+    target: src/cli/commands/status.ts::registerStatus
+    source: ai
 ---
 
 # program

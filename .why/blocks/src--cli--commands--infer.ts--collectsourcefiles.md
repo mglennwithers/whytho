@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::collectSourceFiles
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.840Z"
+updated: "2026-03-23T04:50:58.011Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,8 +18,8 @@ identity:
   line_range:
     start: 43
     end: 64
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:baa0b7e49a15ed14ed32393f728124cec64880ce28ba468fb9e062084bbe7632
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  content_hash: sha256:a5c6cff97a507f889c12c83246d7f9667332e3dafcf503343b6b4d59164d4975
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,14 @@ identity:
     designated directories and returning normalized relative paths from repository root.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/config/tracking.ts::isSkippedDir
+    source: ai
+  - type: depends_on
+    target: src/config/tracking.ts::isTrackedFile
+    source: ai
 ---
 
 # collectSourceFiles

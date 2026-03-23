@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::BlockIndexEntry
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-22T13:01:11.791Z"
+updated: "2026-03-23T04:51:03.758Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 180
     end: 191
-    commit: 59a1f118d4181759c9a3dc0ab90c3520c9d180ed
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:13af7aab7114269d88cb31ac4f4e2f0dce7dd85eecdbcfbf67cc2724cdbb309d
   structural:
     kind: interface
@@ -30,7 +30,14 @@ identity:
     provenance, and inter-block dependencies through typed relationships.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 59a1f118d4181759c9a3dc0ab90c3520c9d180ed
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/constants.ts::CANONICAL_METRICS
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::RELATIONSHIP_TYPES
+    source: ai
 ---
 
 # BlockIndexEntry

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::threshold
 file: src/cli/commands/infer.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-23T04:50:59.026Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 177
     end: 177
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:ce112dc570abee5cd04ffa07daa6b407e759f36ce716881bc24cffb473f510ad
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     optional chaining and nullish coalescing for safe property access.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # threshold

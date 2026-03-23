@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/incremental.ts::getAffectedBlocks
 file: src/core/resolution/incremental.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.616Z"
+updated: "2026-03-23T04:51:03.237Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 21
     end: 39
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:77979e89f036ae6ade8cc89055235bba8fcb63f39d1420e4eca06cae4c4f98cb
   structural:
     kind: function
@@ -31,7 +31,17 @@ identity:
     direct file membership and relationship dependencies.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllBlocks
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::AnnotationFile
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::BlockFrontmatter
+    source: ai
 ---
 
 # getAffectedBlocks

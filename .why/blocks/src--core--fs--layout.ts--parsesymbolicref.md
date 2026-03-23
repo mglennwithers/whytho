@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/layout.ts::parseSymbolicRef
 file: src/core/fs/layout.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.816Z"
+updated: "2026-03-23T04:51:00.958Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 138
     end: 142
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:873a2de69dda0e6d34fa3c8f8aad526d794d54fb4c6c7079415d9fc733aa8fa5
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     separator is absent.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # parseSymbolicRef

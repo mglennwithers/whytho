@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::DEFAULT_SUPERSEDED_THRESHOLD
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T12:58:50.931Z"
+updated: "2026-03-23T04:51:00.426Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 17
     end: 17
-    commit: dcbdce849eae1c3944290d0215318e5ecfbfecdb
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:4823780b366f4c70b50c441920216fa76432ebe953cc59ecf15e783d81b3e52a
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     ratio or percentage threshold for determining when an item or state becomes superseded or obsolete.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: dcbdce849eae1c3944290d0215318e5ecfbfecdb
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # DEFAULT_SUPERSEDED_THRESHOLD

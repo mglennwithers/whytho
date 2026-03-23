@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::DEFAULT_SEMANTIC_TIMEOUT_MS
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T12:58:50.924Z"
+updated: "2026-03-23T04:51:00.419Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 19
     end: 19
-    commit: dcbdce849eae1c3944290d0215318e5ecfbfecdb
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:1cb463cecf82e6626d0d5d3b6e59ac555f7b0d320797da8658c18038a5a8d04e
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     deadline for timeout-sensitive functionality throughout the codebase.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: dcbdce849eae1c3944290d0215318e5ecfbfecdb
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # DEFAULT_SEMANTIC_TIMEOUT_MS

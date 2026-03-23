@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/reader.ts::parsed
 file: src/core/fs/reader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.925Z"
+updated: "2026-03-23T04:51:01.092Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 17
     end: 17
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:d493bc72faa9748aa7abe314feaae7bf581dc2a9ae00cc4f4f26ef1b5e63faaa
   structural:
     kind: const
@@ -30,7 +30,11 @@ identity:
     into a strongly-typed format for downstream processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/frontmatter/parse.ts::parseAnnotation
+    source: ai
 ---
 
 # parsed

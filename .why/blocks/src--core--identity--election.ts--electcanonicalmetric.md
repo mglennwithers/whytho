@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/identity/election.ts::electCanonicalMetric
 file: src/core/identity/election.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T02:19:55.588Z"
+updated: "2026-03-23T04:51:01.580Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 46
     end: 189
-    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:b7abf7b6dbd0b72bd2253cf6b02f31842a3e835f2da90dffd3bcd2fa8f04c630
   structural:
     kind: function
@@ -33,7 +33,29 @@ identity:
     unresolvable/deleted outcome.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/identity/content-hash.ts::computeContentHash
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::BlockIdentity
+    source: ai
+  - type: depends_on
+    target: src/core/parser/types.ts::ParsedBlock
+    source: ai
+  - type: depends_on
+    target: src/ai/types.ts::AIProvider
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::DEFAULT_SEMANTIC_TIMEOUT_MS
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::SEMANTIC_MATCH_MIN_CONFIDENCE
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::StructuralPosition
+    source: ai
 ---
 
 # electCanonicalMetric

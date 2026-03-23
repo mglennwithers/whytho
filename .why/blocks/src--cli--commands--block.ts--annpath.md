@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/block.ts::annPath
 file: src/cli/commands/block.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.368Z"
+updated: "2026-03-23T04:50:57.290Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 18
     end: 18
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:63ec3868b2ba5453b55341b01ce2db5968cf6b13b3cfdaa71b535574c76a9da2
   structural:
     kind: const
@@ -30,7 +30,11 @@ identity:
     identifier, likely generating a standardized location for storing or retrieving annotation metadata.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/fs/layout.ts::blockAnnotationPath
+    source: ai
 ---
 
 # annPath

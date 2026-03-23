@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/history.ts::archived
 file: src/cli/commands/history.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.587Z"
+updated: "2026-03-23T04:50:57.565Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/history.ts::archived
   line_range:
-    start: 20
-    end: 20
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 21
+    end: 21
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:0f2814e240b9323225935b7849ef3c897a40a3e76e263acf984973fdd7ba2665
   structural:
     kind: const
@@ -30,7 +30,11 @@ identity:
     and stores the result in an `archived` variable.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/archive/query.ts::getBlockHistory
+    source: ai
 ---
 
 # archived

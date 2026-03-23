@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/archive/archiver.ts::ann
 file: src/core/archive/archiver.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.261Z"
+updated: "2026-03-23T04:51:00.257Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 27
     end: 27
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:d95f43ce61332c991af4b65b7e3a8f620a630976adc932020f2eee4a22283635
   structural:
     kind: const
@@ -30,7 +30,11 @@ identity:
     storing the result in the `ann` variable.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAnnotationFile
+    source: ai
 ---
 
 # ann

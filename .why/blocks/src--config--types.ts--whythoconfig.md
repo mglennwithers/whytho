@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/types.ts::WhythoConfig
 file: src/config/types.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T09:37:09.408Z"
+updated: "2026-03-23T04:51:52.887Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -17,9 +17,9 @@ identity:
   symbolic: src/config/types.ts::WhythoConfig
   line_range:
     start: 4
-    end: 69
-    commit: bdf7b0124b6b46c80318b2f36dcabc45f92599bd
-  content_hash: sha256:f40eced3d993d0817c9f62df2c36d636202798d9221bfb793588b119f3c169d1
+    end: 71
+    commit: 7f4e393ad3ad97418bd42717c027ffe8c7891ace
+  content_hash: sha256:b14278447d0689e5d9998ed8a49025cdcd8e1b0914c5dff8bf8c1a6d0e2d812e
   structural:
     kind: interface
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     file tracking, resolution thresholds, and integration hooks.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: bdf7b0124b6b46c80318b2f36dcabc45f92599bd
+  last_resolved: 7f4e393ad3ad97418bd42717c027ffe8c7891ace
 ---
 
 # WhythoConfig

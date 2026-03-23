@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::ROOT_FOLDER_ANNOTATION
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T12:58:50.996Z"
+updated: "2026-03-23T04:51:00.505Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 13
     end: 13
-    commit: dcbdce849eae1c3944290d0215318e5ecfbfecdb
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:800b3ac0cd46332fb0f73256041fccd4eee5e21d705bd189c33ad48dc9e2c53a
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     marking the root folder in a hierarchical structure.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: dcbdce849eae1c3944290d0215318e5ecfbfecdb
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # ROOT_FOLDER_ANNOTATION

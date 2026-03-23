@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-23T04:50:55.138Z"
 updated_by_session: inferred
 parent_folder: src/mcp/
 sessions: []
@@ -102,6 +102,73 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::getWhyRoot
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::blockAnnotationPath
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::fileAnnotationPath
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::folderAnnotationPath
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::sessionAnnotationPath
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::sessionsDir
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAnnotationFile
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllBlocks
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllFiles
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllFolders
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllSessions
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readIndex
+    source: static
+  - type: depends_on
+    target: src/core/fs/writer.ts::fileExists
+    source: static
+  - type: depends_on
+    target: src/core/relationships/graph.ts::getAllRelated
+    source: static
+  - type: depends_on
+    target: src/core/push/index.ts::pushReasoning
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::WHYTHO_VERSION
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::WhythoIndex
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::BlockFrontmatter
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::FileFrontmatter
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::FolderFrontmatter
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::SessionFrontmatter
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **88%**

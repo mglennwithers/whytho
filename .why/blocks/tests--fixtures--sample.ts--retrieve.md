@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/fixtures/sample.ts::retrieve
 file: tests/fixtures/sample.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:37.417Z"
+updated: "2026-03-23T04:51:05.630Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 46
     end: 48
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:a9f8c45e974c82806e96a8f8533697ddd1428a45018aa774522893c18debb243
   structural:
     kind: method
@@ -31,7 +31,7 @@ identity:
     returning the token if found or undefined if absent.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # retrieve

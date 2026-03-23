@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::sourceFolders
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-23T04:50:59.925Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::sourceFolders
   line_range:
-    start: 98
-    end: 98
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 110
+    end: 110
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:651c02cfa57b79160992f9d21d40494b32a55165e85b351ba3d8d93aea020397
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     and measuring set cardinality.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # sourceFolders

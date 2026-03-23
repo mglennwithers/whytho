@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/events.ts::eventsFile
 file: src/core/relationships/events.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.475Z"
+updated: "2026-03-23T04:51:03.046Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 62
     end: 62
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:49144099058b745bea4557ad16a6f1fc3f56851f793c7999a280c657365079f5
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     recording relationship tracking or dependency analysis events.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # eventsFile

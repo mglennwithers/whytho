@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::purpose
 file: src/mcp/server.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-23T04:51:05.002Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 311
     end: 311
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:0c340890409866197e20ff5f45e16f4727bfa4cd1427e66a1cfaede8b8cbf7a4
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     remaining content to identify its intended function or goal.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # purpose

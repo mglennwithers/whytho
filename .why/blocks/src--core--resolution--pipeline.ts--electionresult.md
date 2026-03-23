@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::electionResult
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-22T02:19:55.826Z"
+updated: "2026-03-23T04:51:03.368Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 89
     end: 92
-    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:b88c8ac061aa4f1177a49f5bf37aea280cbde654c2dda2c2208e563a085f155c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     file path, commit context, and source information along with an AI service instance.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # electionResult

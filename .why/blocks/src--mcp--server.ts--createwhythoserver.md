@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::createWhythoServer
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:36.564Z"
+updated: "2026-03-23T04:51:04.444Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 243
     end: 605
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:2ef1258e26c7ea26391da85c4d61f58462f57805ff29c0a4e2388e037b0828b9
   structural:
     kind: function
@@ -31,7 +31,68 @@ identity:
     densely-annotated files (e.g. pipeline.ts at 121k chars). Fixed by adding max_blocks parame
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::getWhyRoot
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::WHYTHO_VERSION
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::blockAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::fileAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::folderAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::sessionAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAnnotationFile
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readIndex
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllBlocks
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllFiles
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllFolders
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllSessions
+    source: ai
+  - type: depends_on
+    target: src/core/relationships/graph.ts::getAllRelated
+    source: ai
+  - type: depends_on
+    target: src/core/push/index.ts::pushReasoning
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::WhythoIndex
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::BlockFrontmatter
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::FileFrontmatter
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::FolderFrontmatter
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::SessionFrontmatter
+    source: ai
 ---
 
 # createWhythoServer

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/layout.ts::slugFromPath
 file: src/core/fs/layout.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.873Z"
+updated: "2026-03-23T04:51:01.032Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 57
     end: 60
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:148aab8ef28d8b1e6081f04aa519593823046bde8b28ad54dcee050a5b03d754
   structural:
     kind: function
@@ -31,7 +31,11 @@ identity:
     leading/trailing slashes, then replacing internal slashes with a configurable separator token.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/constants.ts::PATH_SEPARATOR
+    source: ai
 ---
 
 # slugFromPath

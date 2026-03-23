@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/build.ts::files
 file: src/core/index-builder/build.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T23:14:24.024Z"
+updated: "2026-03-23T04:51:01.864Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 47
     end: 47
-    commit: f084e91a8edf80319d4505304ebae9a7c5607f12
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:0f638ee5c88d777644530b7b8eb3a79508ccc144815c0d207ee19621c3c4e889
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     to structured file metadata objects.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f084e91a8edf80319d4505304ebae9a7c5607f12
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # files

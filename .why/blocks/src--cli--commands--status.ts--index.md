@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::index
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-23T04:50:59.710Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::index
   line_range:
-    start: 67
-    end: 67
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 68
+    end: 68
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:8c90da50e1daae87494ac4cb9bafcb65c697840f34379a85a7cc77ac4e5f4b76
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     type, establishing access to the project's index data structure.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # index

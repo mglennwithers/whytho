@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/diff.ts::blockEntry
 file: src/cli/commands/diff.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.402Z"
+updated: "2026-03-23T04:50:57.334Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 50
     end: 50
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:195ac85e9e6275471f5dfbd28b4cce97cf9f2a8bf3a550bec385da4dd7fa9429
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     variable for subsequent use.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # blockEntry

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::fileCount
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-23T04:50:59.651Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::fileCount
   line_range:
-    start: 199
-    end: 199
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 214
+    end: 214
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:468373115ba8de2efe91f47ebd447205324981b9275d9607b5977cc04e0ad97d
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     were modified in a previous session.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # fileCount

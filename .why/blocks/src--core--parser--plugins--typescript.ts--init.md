@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::init
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.003Z"
+updated: "2026-03-23T04:51:02.422Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::init
   line_range:
-    start: 88
-    end: 88
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 89
+    end: 89
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:eda4f575361029d063d2150ec0a0e90bcbf5bc9608a6378632dcbf7a793df7be
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     safely handles cases where a declaration may or may not have an initializer.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # init

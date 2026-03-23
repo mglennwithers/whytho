@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/defaults.ts::DEFAULT_CONFIG
 file: src/config/defaults.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T09:37:09.369Z"
+updated: "2026-03-23T04:51:52.864Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,8 +18,8 @@ identity:
   line_range:
     start: 10
     end: 51
-    commit: bdf7b0124b6b46c80318b2f36dcabc45f92599bd
-  content_hash: sha256:8ae4fa72a3b0d64e15d8ecf6a02865eb53244fb1a6e82e9d36a9fcb842382b8e
+    commit: 7f4e393ad3ad97418bd42717c027ffe8c7891ace
+  content_hash: sha256:3ab089a11e1e2d483b93b73af4566b316a29716f382cf31dd8df66f905e00a44
   structural:
     kind: const
     parent_scope: module
@@ -31,7 +31,26 @@ identity:
     privacy controls.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: bdf7b0124b6b46c80318b2f36dcabc45f92599bd
+  last_resolved: 7f4e393ad3ad97418bd42717c027ffe8c7891ace
+relationships:
+  - type: depends_on
+    target: src/core/constants.ts::DEFAULT_AI_PROVIDER
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::DEFAULT_AI_MODEL
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::DEFAULT_INFER_MODEL
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::DEFAULT_CONFIDENCE_THRESHOLD
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::DEFAULT_SUPERSEDED_THRESHOLD
+    source: ai
+  - type: depends_on
+    target: src/config/types.ts::WhythoConfig
+    source: ai
 ---
 
 # DEFAULT_CONFIG

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/content-hash.test.ts::describe(computeContentHash)
 file: tests/unit/content-hash.test.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:37.455Z"
+updated: "2026-03-23T04:51:05.672Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 4
     end: 33
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:f1f14cee2e31a207c1b2561b0471ebff459d95324986a8a05dade1d635bb33d0
   structural:
     kind: describe
@@ -30,7 +30,11 @@ identity:
     leading/trailing whitespace, but preserves internal whitespace and produces unique hashes for different content.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: tests
+    target: src/core/identity/content-hash.ts::computeContentHash
+    source: ai
 ---
 
 # describe(computeContentHash)

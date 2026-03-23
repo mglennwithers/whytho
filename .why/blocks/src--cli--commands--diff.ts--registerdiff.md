@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/diff.ts::registerDiff
 file: src/cli/commands/diff.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.472Z"
+updated: "2026-03-23T04:50:57.430Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 9
     end: 79
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:dcd152a1510b754dc094083e10c010d2af882cf692443ccc0a9d41cb9558bb6d
   structural:
     kind: function
@@ -31,7 +31,23 @@ identity:
     index, colorizing additions/deletions while overlaying documentation context for modified files.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::getWhyRoot
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::indexPath
+    source: ai
+  - type: depends_on
+    target: src/core/git/diff.ts::getDiffString
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::WhythoIndex
+    source: ai
 ---
 
 # registerDiff

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::sourceFiles
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-23T04:50:59.905Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::sourceFiles
   line_range:
-    start: 90
-    end: 90
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 102
+    end: 102
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:2ddef5fd8a4d454294326029eefee06e9489c366a02c022f74880347fa20c26b
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the result in a variable for subsequent processing in a status command context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # sourceFiles

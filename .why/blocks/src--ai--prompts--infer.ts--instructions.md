@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/infer.ts::instructions
 file: src/ai/prompts/infer.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T11:35:30.378Z"
+updated: "2026-03-23T04:50:55.925Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 22
     end: 22
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:f20df8a755e230b0f14c46409ee58a4422acd120144f929109c7f750b0a14acc
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     constant, likely transforming or expanding detail-level configuration into formatted instruction text.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # instructions

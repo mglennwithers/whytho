@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/annotate-block.ts::lines
 file: src/ai/prompts/annotate-block.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-21T11:35:30.195Z"
+updated: "2026-03-23T04:50:55.765Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 54
     end: 54
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:14b7bafb34347552919af5eed3b96047dbb86c6df28cb2cfb8cc1e30266b14d3
   structural:
     kind: const
@@ -24,7 +24,7 @@ identity:
   semantic_fingerprint: Splits a response string into an array of lines using newline as the delimiter.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # lines

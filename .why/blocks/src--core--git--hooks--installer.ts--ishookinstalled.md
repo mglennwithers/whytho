@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/hooks/installer.ts::isHookInstalled
 file: src/core/git/hooks/installer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.189Z"
+updated: "2026-03-23T04:51:01.395Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 137
     end: 151
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:6d95df6a993959c970eba10e38db8d0e43e3b6d03c8ce62882e9e3cde4f6d248
   structural:
     kind: function
@@ -31,7 +31,17 @@ identity:
     searching for a sentinel marker string.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/constants.ts::POST_COMMIT_HOOK_NAME
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::PRE_COMMIT_HOOK_NAME
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::HOOK_SENTINEL
+    source: ai
 ---
 
 # isHookInstalled

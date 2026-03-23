@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/build.ts::buildIndex
 file: src/core/index-builder/build.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T23:14:23.987Z"
+updated: "2026-03-23T04:51:01.842Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -17,9 +17,9 @@ identity:
   symbolic: src/core/index-builder/build.ts::buildIndex
   line_range:
     start: 15
-    end: 118
-    commit: f084e91a8edf80319d4505304ebae9a7c5607f12
-  content_hash: sha256:a8751840d2e86db69a0ce83e365e8c37eb9d8cf405a8898e11405b6d218492b5
+    end: 128
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  content_hash: sha256:db65a92e814efa43d00e176a5773d4aed51660ffb5eea828c2cbf88b8c8c8e23
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,47 @@ identity:
     resolves bidirectional relationships, and persists the result to disk.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f084e91a8edf80319d4505304ebae9a7c5607f12
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllBlocks
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllFiles
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllFolders
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllSessions
+    source: ai
+  - type: depends_on
+    target: src/core/fs/writer.ts::writeJson
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::indexPath
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::WHYTHO_VERSION
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::WhythoIndex
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::SessionIndexEntry
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::FolderIndexEntry
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::FileIndexEntry
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::BlockIndexEntry
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::RelationshipEdge
+    source: ai
 ---
 
 # buildIndex

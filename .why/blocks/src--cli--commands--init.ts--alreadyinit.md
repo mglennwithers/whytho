@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/init.ts::alreadyInit
 file: src/cli/commands/init.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:32.574Z"
+updated: "2026-03-23T04:50:59.117Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 19
     end: 19
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:1c77ed6168bcc775b7cb1cca5a6ed1bae19595748ecdea7154247265d97aa652
   structural:
     kind: const
@@ -30,7 +30,11 @@ identity:
     function and storing the result in a boolean-like variable.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/fs/init.ts::isWhyDirInitialized
+    source: ai
 ---
 
 # alreadyInit

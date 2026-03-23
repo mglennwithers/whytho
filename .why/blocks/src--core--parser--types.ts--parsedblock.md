@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/types.ts::ParsedBlock
 file: src/core/parser/types.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.255Z"
+updated: "2026-03-23T04:51:02.723Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 3
     end: 12
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:5342447628442bf790df1e527a6ff2824a035880358f9a0426fb6936e2642fda
   structural:
     kind: interface
@@ -30,7 +30,11 @@ identity:
     source file, enabling tracking of block positions and relationships.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/types.ts::BlockKind
+    source: ai
 ---
 
 # ParsedBlock

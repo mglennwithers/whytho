@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::maxBlocks
 file: src/mcp/server.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-23T04:51:04.882Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 301
     end: 301
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:b2e4f121bbc82322c9500625a6604046ecb967ddd278de485d20542aae59cdd9
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     operator to handle type validation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # maxBlocks

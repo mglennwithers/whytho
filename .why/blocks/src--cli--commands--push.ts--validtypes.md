@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/push.ts::validTypes
 file: src/cli/commands/push.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:32.715Z"
+updated: "2026-03-23T04:50:59.232Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/push.ts::validTypes
   line_range:
-    start: 29
-    end: 29
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 36
+    end: 36
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:c097fbe74625eb80b60b7bee761d6d08f94df4491930a0443c83ef588a71ec45
   structural:
     kind: const
@@ -30,7 +30,11 @@ identity:
     use in push command validation or routing logic.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/push/index.ts::PushType
+    source: ai
 ---
 
 # validTypes

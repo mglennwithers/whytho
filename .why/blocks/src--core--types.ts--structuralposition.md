@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::StructuralPosition
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-22T13:01:12.053Z"
+updated: "2026-03-23T04:51:04.068Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 139
     end: 139
-    commit: 59a1f118d4181759c9a3dc0ab90c3520c9d180ed
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:fb8ab7157520e29178442d5a5ea1ed4d4256881aa920f0f33390967beb16a6f5
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     `StructuralPositionSchema`, enabling type-safe validation and type definitions from a single source of truth.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 59a1f118d4181759c9a3dc0ab90c3520c9d180ed
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # StructuralPosition

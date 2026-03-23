@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/frontmatter/parse.ts::ParsedAnnotation
 file: src/core/frontmatter/parse.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.511Z"
+updated: "2026-03-23T04:51:00.554Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 4
     end: 7
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:c33ea5b7da7954e92992310d483881c8b8cea6eae5a8f1ae1452e9b360f5ee87
   structural:
     kind: interface
@@ -30,7 +30,11 @@ identity:
     (frontmatter) from the remaining content (body).
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/types.ts::AnyFrontmatter
+    source: ai
 ---
 
 # ParsedAnnotation

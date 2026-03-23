@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/reader.ts::entry
 file: src/core/fs/reader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.903Z"
+updated: "2026-03-23T04:51:01.064Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 31
     end: 31
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:f9fe72faf1c4e9e1f40c05167504451e9104982c51036273e86923ffffbe91f4
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     enumeration pattern commonly found in file system or data structure traversal operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # entry

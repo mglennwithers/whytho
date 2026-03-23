@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::blockDetail
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-23T04:50:59.530Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::blockDetail
   line_range:
-    start: 143
-    end: 145
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 155
+    end: 157
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:eb8c3b8431c2744c0318c7ce75af4ca9ebe3f71c3e667215feefc31351f06ba9
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     only inferred blocks when no pushed blocks exist.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # blockDetail

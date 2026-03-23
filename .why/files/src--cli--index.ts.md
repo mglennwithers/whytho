@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/cli/index.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-23T04:50:55.138Z"
 updated_by_session: inferred
 parent_folder: src/cli/
 sessions: []
@@ -16,6 +16,52 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships:
+  - type: depends_on
+    target: src/cli/commands/init.ts::registerInit
+    source: static
+  - type: depends_on
+    target: src/cli/commands/annotate.ts::registerAnnotate
+    source: static
+  - type: depends_on
+    target: src/cli/commands/block.ts::registerBlock
+    source: static
+  - type: depends_on
+    target: src/cli/commands/file.ts::registerFile
+    source: static
+  - type: depends_on
+    target: src/cli/commands/folder.ts::registerFolder
+    source: static
+  - type: depends_on
+    target: src/cli/commands/session.ts::registerSession
+    source: static
+  - type: depends_on
+    target: src/cli/commands/related.ts::registerRelated
+    source: static
+  - type: depends_on
+    target: src/cli/commands/history.ts::registerHistory
+    source: static
+  - type: depends_on
+    target: src/cli/commands/diff.ts::registerDiff
+    source: static
+  - type: depends_on
+    target: src/cli/commands/resolve.ts::registerResolve
+    source: static
+  - type: depends_on
+    target: src/cli/commands/scan.ts::registerScan
+    source: static
+  - type: depends_on
+    target: src/cli/commands/push.ts::registerPush
+    source: static
+  - type: depends_on
+    target: src/cli/commands/infer.ts::registerInfer
+    source: static
+  - type: depends_on
+    target: src/cli/commands/mcp.ts::registerMcp
+    source: static
+  - type: depends_on
+    target: src/cli/commands/status.ts::registerStatus
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **92%**

@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/core/resolution/pipeline.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-23T04:50:55.138Z"
 updated_by_session: inferred
 parent_folder: src/core/resolution/
 sessions: []
@@ -47,6 +47,61 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships:
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAnnotationFile
+    source: static
+  - type: depends_on
+    target: src/core/fs/writer.ts::writeFile
+    source: static
+  - type: depends_on
+    target: src/core/fs/writer.ts::fileExists
+    source: static
+  - type: depends_on
+    target: src/core/frontmatter/serialize.ts::serializeAnnotation
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::blockAnnotationPath
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::buildSymbolicRef
+    source: static
+  - type: depends_on
+    target: src/core/parser/registry.ts::parseFile
+    source: static
+  - type: depends_on
+    target: src/core/identity/election.ts::electCanonicalMetric
+    source: static
+  - type: depends_on
+    target: src/core/identity/content-hash.ts::computeContentHash
+    source: static
+  - type: depends_on
+    target: src/core/archive/archiver.ts::archiveBlockAnnotation
+    source: static
+  - type: depends_on
+    target: src/core/relationships/events.ts::buildHookEvent
+    source: static
+  - type: depends_on
+    target: src/core/resolution/incremental.ts::getBlocksForChangedFiles
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::BlockFrontmatter
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::HookEvent
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::ResolutionOutcome
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::RelationshipEdge
+    source: static
+  - type: depends_on
+    target: src/ai/types.ts::AIProvider
+    source: static
+  - type: depends_on
+    target: src/config/types.ts::WhythoConfig
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **81%**

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::fullPath
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-23T04:50:59.686Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::fullPath
   line_range:
-    start: 40
-    end: 40
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 41
+    end: 41
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:fe0601df15bfc87614d1cdaca58f67ab6c7d8ce75b0b84ea8c59983831719042
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     for filesystem operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # fullPath

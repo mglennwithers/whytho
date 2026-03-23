@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/file.ts::repoRoot
 file: src/cli/commands/file.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.523Z"
+updated: "2026-03-23T04:50:57.487Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 16
     end: 16
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:a3e3be7155d7b789ade4b2b796c5ca38cf1a81273fec3b710ce19b7899d98e9d
   structural:
     kind: const
@@ -30,7 +30,11 @@ identity:
     for subsequent use in file command operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: ai
 ---
 
 # repoRoot

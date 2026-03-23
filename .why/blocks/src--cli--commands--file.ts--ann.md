@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/file.ts::ann
 file: src/cli/commands/file.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.492Z"
+updated: "2026-03-23T04:50:57.457Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 25
     end: 25
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:ead3ffa425c60dc024ff425f3e214ecb07cee49e046ed40b2430dd0b2aeb4804
   structural:
     kind: const
@@ -30,7 +30,11 @@ identity:
     result in a const variable.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAnnotationFile
+    source: ai
 ---
 
 # ann

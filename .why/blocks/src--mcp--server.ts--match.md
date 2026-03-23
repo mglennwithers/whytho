@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::match
 file: src/mcp/server.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-23T04:51:04.867Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::match
   line_range:
-    start: 224
-    end: 224
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:cbae9f8006df16e85598314d2b32ccaafe4f4af44ce40261c2d7c4c83f9c2fdf
+    start: 217
+    end: 217
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  content_hash: sha256:87b0a5f55937117be1152121a37aed0227ef127aff201c7e8c8cb9633361cccc
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     a "## Purpose" header and the next section delimiter or end of string.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # match

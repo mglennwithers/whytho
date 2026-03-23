@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/init.ts::registerInit
 file: src/cli/commands/init.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:32.603Z"
+updated: "2026-03-23T04:50:59.146Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 8
     end: 48
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:9e66d6c8c9a71dd1c934732f147eb54c6fc1a28bdd6fe08eaf9404d480518ba2
   structural:
     kind: function
@@ -31,7 +31,26 @@ identity:
     idempotency controls via `--force` flag and user-friendly status messaging.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: ai
+  - type: depends_on
+    target: src/config/loader.ts::loadConfig
+    source: ai
+  - type: depends_on
+    target: src/core/fs/init.ts::isWhyDirInitialized
+    source: ai
+  - type: depends_on
+    target: src/core/fs/init.ts::initWhyDir
+    source: ai
+  - type: depends_on
+    target: src/core/git/hooks/installer.ts::isHookInstalled
+    source: ai
+  - type: depends_on
+    target: src/core/git/hooks/installer.ts::installHook
+    source: ai
 ---
 
 # registerInit

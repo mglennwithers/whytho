@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/build.ts::relsOut
 file: src/core/index-builder/build.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T23:14:24.108Z"
+updated: "2026-03-23T04:51:01.956Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 72
     end: 72
-    commit: f084e91a8edf80319d4505304ebae9a7c5607f12
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:a928dd669dc55ec19b70ae8ed8f16ac3ae40b53bc7f32d6fcf349478b92bcdba
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     other fields.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f084e91a8edf80319d4505304ebae9a7c5607f12
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # relsOut

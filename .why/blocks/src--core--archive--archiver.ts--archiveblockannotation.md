@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/archive/archiver.ts::archiveBlockAnnotation
 file: src/core/archive/archiver.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.274Z"
+updated: "2026-03-23T04:51:00.271Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 16
     end: 53
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:9d93dcdf71c2b601f202e888f79f9696b0c84f113d07486cf9f2726a6ee644e7
   structural:
     kind: function
@@ -31,7 +31,38 @@ identity:
     archival metadata (timestamp, reason, session info), then deletes the original.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/fs/layout.ts::blockAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/writer.ts::fileExists
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAnnotationFile
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::BlockFrontmatter
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::archiveDir
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::slugFromBlockRef
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::safeArchivePath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/writer.ts::writeFile
+    source: ai
+  - type: depends_on
+    target: src/core/frontmatter/serialize.ts::serializeAnnotation
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::ArchiveReason
+    source: ai
 ---
 
 # archiveBlockAnnotation

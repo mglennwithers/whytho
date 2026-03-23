@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: tests/fixtures/sample.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-23T04:50:55.138Z"
 updated_by_session: inferred
 parent_folder: tests/fixtures/
 sessions: []
@@ -26,6 +26,7 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships: []
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **88%**

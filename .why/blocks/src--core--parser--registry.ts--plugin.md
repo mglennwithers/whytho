@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/registry.ts::plugin
 file: src/core/parser/registry.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.237Z"
+updated: "2026-03-23T04:51:02.704Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/registry.ts::plugin
   line_range:
-    start: 14
-    end: 14
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 17
+    end: 17
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:c0cf7300cb4b18b8ae9ef376c01588a63e4b429ca937fd263ea04efdbfac0ace
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     operations on each plugin in sequence.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # plugin

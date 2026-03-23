@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/reader.ts::readAllArchivedBlocks
 file: src/core/fs/reader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.946Z"
+updated: "2026-03-23T04:51:01.117Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 64
     end: 68
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:e47f5dd0f1315ba997c46a672423bcf95c57715b1bfae21c9ac90a86b71afa99
   structural:
     kind: function
@@ -31,7 +31,11 @@ identity:
     to a generic annotation reader, returning them as an array of typed annotation files.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/fs/layout.ts::archiveDir
+    source: ai
 ---
 
 # readAllArchivedBlocks

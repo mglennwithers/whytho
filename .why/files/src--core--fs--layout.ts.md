@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/core/fs/layout.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-23T04:50:55.138Z"
 updated_by_session: inferred
 parent_folder: src/core/fs/
 sessions: []
@@ -45,6 +45,40 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships:
+  - type: depends_on
+    target: src/core/constants.ts::WHY_DIR
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::SESSIONS_DIR
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::FOLDERS_DIR
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::FILES_DIR
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::BLOCKS_DIR
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::ARCHIVE_DIR
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::INDEX_FILE
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::ARCHIVE_INDEX_FILE
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::PATH_SEPARATOR
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::ROOT_FOLDER_ANNOTATION
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::AnnotationType
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **94%**

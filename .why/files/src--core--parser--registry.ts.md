@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/core/parser/registry.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-23T04:50:55.138Z"
 updated_by_session: inferred
 parent_folder: src/core/parser/
 sessions: []
@@ -22,6 +22,28 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships:
+  - type: depends_on
+    target: src/core/parser/types.ts::ParserPlugin
+    source: static
+  - type: depends_on
+    target: src/core/parser/types.ts::ParsedBlock
+    source: static
+  - type: depends_on
+    target: src/core/parser/plugins/typescript.ts::typescriptPlugin
+    source: static
+  - type: depends_on
+    target: src/core/parser/plugins/python.ts::pythonPlugin
+    source: static
+  - type: depends_on
+    target: src/core/parser/plugins/go.ts::goPlugin
+    source: static
+  - type: depends_on
+    target: src/core/parser/plugins/rust.ts::rustPlugin
+    source: static
+  - type: depends_on
+    target: src/core/parser/plugins/generic.ts::genericPlugin
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **88%**

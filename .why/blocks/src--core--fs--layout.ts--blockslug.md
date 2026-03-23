@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/layout.ts::blockSlug
 file: src/core/fs/layout.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.690Z"
+updated: "2026-03-23T04:51:00.773Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 70
     end: 70
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:cbd2789fc5d92568d5a086e3374ee6c68e467eccb39124ef174c766e89ef8025
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     identifiers for use in filesystem paths or URLs.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # blockSlug

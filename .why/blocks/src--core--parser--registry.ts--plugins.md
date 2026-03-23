@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/registry.ts::plugins
 file: src/core/parser/registry.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.244Z"
+updated: "2026-03-23T04:51:02.711Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/parser/registry.ts::plugins
   line_range:
-    start: 6
-    end: 6
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:615534d77ef4e67d29eb7f3ce45d8d5bf669030c14faee62376d80148c1b5980
+    start: 9
+    end: 9
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  content_hash: sha256:6605fd7da5ba05b2f4af3f986342a244c3fbaa3ad8462b934d57540225dd2a0e
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,20 @@ identity:
     foundational parser extension mechanism for the application.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/parser/plugins/typescript.ts::typescriptPlugin
+    source: ai
+  - type: depends_on
+    target: src/core/parser/plugins/python.ts::pythonPlugin
+    source: ai
+  - type: depends_on
+    target: src/core/parser/plugins/go.ts::goPlugin
+    source: ai
+  - type: depends_on
+    target: src/core/parser/types.ts::ParserPlugin
+    source: ai
 ---
 
 # plugins

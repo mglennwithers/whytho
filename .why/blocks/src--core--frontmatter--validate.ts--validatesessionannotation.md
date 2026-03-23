@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/frontmatter/validate.ts::validateSessionAnnotation
 file: src/core/frontmatter/validate.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.559Z"
+updated: "2026-03-23T04:51:00.614Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 49
     end: 51
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:dc1326c7ff764502b315866831a22e57ad0000adfd382b79ae8cb4ee8cccc174
   structural:
     kind: function
@@ -31,7 +31,11 @@ identity:
     integrity for session-related frontmatter content.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/types.ts::SessionFrontmatterSchema
+    source: ai
 ---
 
 # validateSessionAnnotation

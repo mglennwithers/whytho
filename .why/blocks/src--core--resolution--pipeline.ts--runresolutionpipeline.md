@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::runResolutionPipeline
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T02:19:56.014Z"
+updated: "2026-03-23T04:51:03.567Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 42
     end: 238
-    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:f0aff944d5a410d2e26991b752fef0306546363f3cf624b812e71af1ee39fc46
   structural:
     kind: function
@@ -31,7 +31,56 @@ identity:
     updating metadata, handling deletions/relocations, and emitting relationship-change events for downstream hooks.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/resolution/incremental.ts::getBlocksForChangedFiles
+    source: ai
+  - type: depends_on
+    target: src/core/parser/registry.ts::parseFile
+    source: ai
+  - type: depends_on
+    target: src/core/identity/election.ts::electCanonicalMetric
+    source: ai
+  - type: depends_on
+    target: src/core/identity/content-hash.ts::computeContentHash
+    source: ai
+  - type: depends_on
+    target: src/core/archive/archiver.ts::archiveBlockAnnotation
+    source: ai
+  - type: depends_on
+    target: src/core/fs/writer.ts::writeFile
+    source: ai
+  - type: depends_on
+    target: src/core/frontmatter/serialize.ts::serializeAnnotation
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::blockAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/writer.ts::fileExists
+    source: ai
+  - type: depends_on
+    target: src/core/relationships/events.ts::buildHookEvent
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::BlockFrontmatter
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::HookEvent
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::ResolutionOutcome
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::RelationshipEdge
+    source: ai
+  - type: depends_on
+    target: src/ai/types.ts::AIProvider
+    source: ai
+  - type: depends_on
+    target: src/config/types.ts::WhythoConfig
+    source: ai
 ---
 
 # runResolutionPipeline

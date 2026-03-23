@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::folderMaxTokens
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.104Z"
+updated: "2026-03-23T04:50:56.990Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 182
     end: 182
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:5f9b69f4490ee5f424f75c4ce9a1cf1a9153f9f912fa0d8ea73f9a45b35d0a1a
   structural:
     kind: const
@@ -28,7 +28,7 @@ identity:
   semantic_fingerprint: Retrieves a folder-level token limit from a nested configuration object containing verbosity settings.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # folderMaxTokens

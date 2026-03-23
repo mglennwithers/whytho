@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-23T04:50:55.138Z"
 updated_by_session: inferred
 parent_folder: src/cli/commands/
 sessions: []
@@ -58,6 +58,46 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: static
+  - type: depends_on
+    target: src/core/git/repo.ts::getCommitsSince
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::getWhyRoot
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::parentFolder
+    source: static
+  - type: depends_on
+    target: src/core/fs/init.ts::isWhyDirInitialized
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readIndex
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readArchiveIndex
+    source: static
+  - type: depends_on
+    target: src/config/loader.ts::loadConfig
+    source: static
+  - type: depends_on
+    target: src/config/tracking.ts::isTrackedFile
+    source: static
+  - type: depends_on
+    target: src/config/tracking.ts::isSkippedDir
+    source: static
+  - type: depends_on
+    target: src/core/parser/registry.ts::parseFile
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::WhythoIndex
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::WhythoArchiveIndex
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **88%**

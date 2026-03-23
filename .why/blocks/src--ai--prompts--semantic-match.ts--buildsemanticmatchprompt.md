@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/semantic-match.ts::buildSemanticMatchPrompt
 file: src/ai/prompts/semantic-match.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-21T11:35:30.433Z"
+updated: "2026-03-23T04:50:55.977Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 4
     end: 26
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:8e6f0b311dd017b08d6cc8843857bffdb52c12b6e0f33e34957754a67e105baa
   structural:
     kind: function
@@ -27,7 +27,11 @@ identity:
     code blocks, returning the best match index and confidence score, or NO_MATCH if confidence is below 0.7.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/ai/types.ts::SemanticMatchRequest
+    source: ai
 ---
 
 # buildSemanticMatchPrompt

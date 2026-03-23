@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::countPendingAnnotations
 file: src/cli/commands/infer.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-23T04:50:58.126Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 66
     end: 107
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:62b138b533607777b42ac289813103d5a5af512c1590d2af86aaf08385d653b6
   structural:
     kind: function
@@ -32,7 +32,26 @@ identity:
     designated directory structure.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/fs/layout.ts::blockAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::buildSymbolicRef
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::fileAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::folderAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::parentFolder
+    source: ai
+  - type: depends_on
+    target: src/core/fs/writer.ts::fileExists
+    source: ai
 ---
 
 # countPendingAnnotations

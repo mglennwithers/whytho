@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::extractParams
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.960Z"
+updated: "2026-03-23T04:51:02.374Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::extractParams
   line_range:
-    start: 259
-    end: 262
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 260
+    end: 263
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:5079872528f6574eb62693266d1ee4395b1d2a39be83a415294cfadc3153d7b9
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     or a count-based format like "(N params)".
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
 ---
 
 # extractParams

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/election.test.ts::COMMIT
 file: tests/unit/election.test.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-22T02:19:56.542Z"
+updated: "2026-03-23T04:51:05.680Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 7
     end: 7
-    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
   content_hash: sha256:1dd1db54bd5cf48c3c130553cee5a359d88183f18511445da211ad4a89e5bf83
   structural:
     kind: const
@@ -30,7 +30,11 @@ identity:
     fixture or mock value for commit-related test scenarios.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+relationships:
+  - type: depends_on
+    target: src/core/types.ts::BlockIdentity
+    source: ai
 ---
 
 # COMMIT
