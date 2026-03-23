@@ -1,0 +1,16 @@
+annotations:
+  - eventbus-annotations.md
+
+scenarios:
+  - file: dq-1-error-handling-fix.md
+    annotations: eventbus-annotations.md
+  - file: dq-2-wildcard-rejection.md
+    annotations: eventbus-annotations.md
+  - file: sr-2-once.md
+    annotations: eventbus-annotations.md
+  - file: cs-1-error-handling-intent.md
+    annotations: eventbus-annotations.md
+  - file: cs-2-history-replay.md
+    annotations: eventbus-annotations.md
+  - file: cs-3-token-design.md
+    annotations: eventbus-annotations.md

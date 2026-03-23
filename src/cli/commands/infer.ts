@@ -21,6 +21,8 @@ import { loadConfig } from '../../config/loader.js'
 import { isTrackedFile, isSkippedDir } from '../../config/tracking.js'
 import { getInferProvider, getAnthropicBatchRunner } from '../../ai/registry.js'
 import type { BatchRequest } from '../../ai/registry.js'
+import { withTokenCounting, formatTokens } from '../../ai/token-counter.js'
+import type { TokenTally } from '../../ai/token-counter.js'
 import type { ParsedBlock } from '../../core/parser/types.js'
 import {
   buildInferredBlockPrompt,
@@ -137,7 +139,8 @@ export function registerInfer(program: Command): void {
           folder: { maxTokens: config.verbosity.maxTokens.folder, contextChars: config.verbosity.contextChars.fileInFolder },
         }
 
-        const ai = getInferProvider(config)
+        const tally: TokenTally = { input: 0, output: 0 }
+        const ai = withTokenCounting(getInferProvider(config), tally)
         const commitSha = await getHeadCommitSha(repoRoot).catch(() => 'unknown')
         const now = new Date().toISOString()
         const limit = parseInt(options.limit, 10)
@@ -233,7 +236,10 @@ export function registerInfer(program: Command): void {
             let rawResults: Map<string, string>
             if (batchRunner) {
               console.log(chalk.cyan(`  Submitting batch: ${pending.length} block annotation(s)...`))
-              rawResults = await batchRunner(pending.map((p) => ({ id: p.id, prompt: p.prompt, maxTokens: p.maxTokens })))
+              const batchResult = await batchRunner(pending.map((p) => ({ id: p.id, prompt: p.prompt, maxTokens: p.maxTokens })))
+              rawResults = batchResult.results
+              tally.input += batchResult.tokensUsed.input
+              tally.output += batchResult.tokensUsed.output
               console.log(chalk.gray(`  Batch complete. Writing results...`))
             } else {
               rawResults = new Map()
@@ -342,7 +348,10 @@ export function registerInfer(program: Command): void {
             let rawResults: Map<string, string>
             if (batchRunner) {
               console.log(chalk.cyan(`  Submitting batch: ${pending.length} file annotation(s)...`))
-              rawResults = await batchRunner(pending.map((p) => ({ id: p.id, prompt: p.prompt, maxTokens: p.maxTokens })))
+              const batchResult = await batchRunner(pending.map((p) => ({ id: p.id, prompt: p.prompt, maxTokens: p.maxTokens })))
+              rawResults = batchResult.results
+              tally.input += batchResult.tokensUsed.input
+              tally.output += batchResult.tokensUsed.output
               console.log(chalk.gray(`  Batch complete. Writing results...`))
             } else {
               rawResults = new Map()
@@ -433,7 +442,10 @@ export function registerInfer(program: Command): void {
             let rawResults: Map<string, string>
             if (batchRunner) {
               console.log(chalk.cyan(`  Submitting batch: ${pending.length} folder annotation(s)...`))
-              rawResults = await batchRunner(pending.map((p) => ({ id: p.id, prompt: p.prompt, maxTokens: p.maxTokens })))
+              const batchResult = await batchRunner(pending.map((p) => ({ id: p.id, prompt: p.prompt, maxTokens: p.maxTokens })))
+              rawResults = batchResult.results
+              tally.input += batchResult.tokensUsed.input
+              tally.output += batchResult.tokensUsed.output
               console.log(chalk.gray(`  Batch complete. Writing results...`))
             } else {
               rawResults = new Map()
@@ -484,6 +496,9 @@ export function registerInfer(program: Command): void {
           if (generated === limit) {
             console.log(chalk.gray(`  (limit of ${limit} reached — run again to continue)`))
           }
+        }
+        if (tally.input > 0 || tally.output > 0) {
+          console.log(chalk.gray(`Tokens: ${formatTokens(tally)}`))
         }
       } catch (err) {
         console.error(chalk.red('Error:'), String(err))

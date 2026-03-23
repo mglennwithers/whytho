@@ -5,10 +5,15 @@ import type { WhythoConfig } from '../config/types.js'
 
 export type { BatchRequest } from './providers/anthropic.js'
 
+export interface BatchRunResult {
+  results: Map<string, string>
+  tokensUsed: { input: number; output: number }
+}
+
 /** Returns a batch runner for infer if the config and API key allow it, otherwise null. */
 export function getAnthropicBatchRunner(
   config: WhythoConfig,
-): ((requests: import('./providers/anthropic.js').BatchRequest[]) => Promise<Map<string, string>>) | null {
+): ((requests: import('./providers/anthropic.js').BatchRequest[]) => Promise<BatchRunResult>) | null {
   if (config.aiProvider !== 'anthropic' && config.aiProvider !== undefined) return null
   const mode = config.anthropic?.batchInfer?.mode ?? 'auto'
   if (mode === 'never') return null

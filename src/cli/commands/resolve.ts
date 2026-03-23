@@ -12,6 +12,8 @@ import { runStaticScan } from '../../core/relationships/scanner.js'
 import { collectAllSourceFiles } from './scan.js'
 import { getDefaultProvider, getScanProvider } from '../../ai/registry.js'
 import { runAIScan } from '../../core/relationships/ai-attribution.js'
+import { withTokenCounting, formatTokens } from '../../ai/token-counter.js'
+import type { TokenTally } from '../../ai/token-counter.js'
 import { readAllBlocks } from '../../core/fs/reader.js'
 
 export function registerResolve(program: Command): void {
@@ -53,13 +55,15 @@ export function registerResolve(program: Command): void {
           await runStaticScan(repoRoot, whyRoot, changedFiles, allSourceFiles)
         }
 
+        const tally: TokenTally = { input: 0, output: 0 }
+
         // Run AI attribution scan when on_commit mode is configured
         if (config.relationships?.aiScan === 'on_commit') {
-          const provider = getScanProvider(config)
+          const provider = withTokenCounting(getScanProvider(config), tally)
           await runAIScan(repoRoot, whyRoot, provider)
         }
 
-        const ai = options.ai !== false ? getDefaultProvider(config) : undefined
+        const ai = options.ai !== false ? withTokenCounting(getDefaultProvider(config), tally) : undefined
 
         const report = await runResolutionPipeline({
           whyRoot,
@@ -108,6 +112,10 @@ export function registerResolve(program: Command): void {
           for (const [ref, err] of Object.entries(report.errors)) {
             console.error(`  ${ref}: ${err}`)
           }
+        }
+
+        if (tally.input > 0 || tally.output > 0) {
+          console.log(chalk.gray(`Tokens: ${formatTokens(tally)}`))
         }
       } catch (err) {
         console.error(chalk.red('Error:'), String(err))

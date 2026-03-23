@@ -30,6 +30,7 @@ export interface AnnotationRequest {
 export interface AnnotationResult {
   frontmatter: Record<string, unknown>
   body: string
+  tokensUsed?: { input: number; output: number }
 }
 
 export interface SemanticMatchRequest {
@@ -43,6 +44,7 @@ export interface SemanticMatchRequest {
 export interface SemanticMatchResult {
   matchedIndex: number | null
   confidence: number
+  tokensUsed?: { input: number; output: number }
 }
 
 export interface AIProvider {

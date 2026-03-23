@@ -10,6 +10,8 @@ import { loadConfig } from '../../config/loader.js'
 import { runStaticScan } from '../../core/relationships/scanner.js'
 import { runAIScan } from '../../core/relationships/ai-attribution.js'
 import { getScanProvider } from '../../ai/registry.js'
+import { withTokenCounting, formatTokens } from '../../ai/token-counter.js'
+import type { TokenTally } from '../../ai/token-counter.js'
 
 export async function collectAllSourceFiles(repoRoot: string): Promise<string[]> {
   const files: string[] = []
@@ -86,7 +88,8 @@ export function registerScan(program: Command): void {
             console.log(chalk.yellow('\nNote: --file scopes static scan only. AI scan processes all qualifying files.'))
           }
           console.log(chalk.bold('\nRunning AI relationship attribution...'))
-          const provider = getScanProvider(config)
+          const tally: TokenTally = { input: 0, output: 0 }
+          const provider = withTokenCounting(getScanProvider(config), tally)
           const aiResult = await runAIScan(repoRoot, whyRoot, provider)
 
           console.log(chalk.bold(`\n  AI files processed:       ${aiResult.filesProcessed}`))
@@ -94,6 +97,9 @@ export function registerScan(program: Command): void {
           console.log(`  ${chalk.green('AI relationships written:')} ${aiResult.relationshipsWritten}`)
           if (aiResult.relationshipsSkipped > 0) {
             console.log(`  ${chalk.gray('AI relationships skipped:')} ${aiResult.relationshipsSkipped} (target not in block registry)`)
+          }
+          if (tally.input > 0 || tally.output > 0) {
+            console.log(chalk.gray(`  Tokens: ${formatTokens(tally)}`))
           }
         }
 

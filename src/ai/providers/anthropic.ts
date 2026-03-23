@@ -11,7 +11,7 @@ export async function callAnthropicBatch(
   model: string,
   requests: BatchRequest[],
   onProgress?: (message: string) => void,
-): Promise<Map<string, string>> {
+): Promise<{ results: Map<string, string>; tokensUsed: { input: number; output: number } }> {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { Anthropic } = require('@anthropic-ai/sdk') as typeof import('@anthropic-ai/sdk')
   const anthropic = new Anthropic({ apiKey })
@@ -41,15 +41,19 @@ export async function callAnthropicBatch(
 
   // Collect results
   const results = new Map<string, string>()
+  let totalInput = 0
+  let totalOutput = 0
   for await (const result of await anthropic.messages.batches.results(batch.id)) {
     if (result.result.type === 'succeeded') {
       const content = result.result.message.content[0]
       if (content.type === 'text') {
         results.set(result.custom_id, content.text)
       }
+      totalInput += result.result.message.usage.input_tokens
+      totalOutput += result.result.message.usage.output_tokens
     }
   }
-  return results
+  return { results, tokensUsed: { input: totalInput, output: totalOutput } }
 }
 import { buildBlockAnnotationPrompt, parseBlockAnnotationResponse } from '../prompts/annotate-block.js'
 import { buildFileAnnotationPrompt } from '../prompts/annotate-file.js'
@@ -76,7 +80,7 @@ export function createAnthropicProvider(options: AnthropicProviderOptions = {}):
     return client
   }
 
-  async function callClaude(prompt: string, maxTokens = 2048): Promise<string> {
+  async function callClaude(prompt: string, maxTokens = 2048): Promise<{ text: string; input: number; output: number }> {
     const anthropic = getClient()
     const message = await anthropic.messages.create({
       model,
@@ -84,8 +88,11 @@ export function createAnthropicProvider(options: AnthropicProviderOptions = {}):
       messages: [{ role: 'user', content: prompt }],
     })
     const block = message.content[0]
-    if (block.type !== 'text') return ''
-    return block.text
+    return {
+      text: block.type === 'text' ? block.text : '',
+      input: message.usage.input_tokens,
+      output: message.usage.output_tokens,
+    }
   }
 
   return {
@@ -99,32 +106,46 @@ export function createAnthropicProvider(options: AnthropicProviderOptions = {}):
       const maxTokens = request.verbosity?.maxTokens
 
       if (request.context.customPrompt) {
-        body = await callClaude(request.context.customPrompt, maxTokens)
-        return { frontmatter: { whytho: WHYTHO_VERSION, type: request.type, created: now, updated: now }, body }
+        const { text, input, output } = await callClaude(request.context.customPrompt, maxTokens)
+        return {
+          frontmatter: { whytho: WHYTHO_VERSION, type: request.type, created: now, updated: now },
+          body: text,
+          tokensUsed: { input, output },
+        }
       }
+
+      let totalInput = 0
+      let totalOutput = 0
 
       switch (request.type) {
         case 'block': {
           const prompt = buildBlockAnnotationPrompt(request)
-          const response = await callClaude(prompt, maxTokens)
-          const parsed = parseBlockAnnotationResponse(response)
+          const { text, input, output } = await callClaude(prompt, maxTokens)
+          const parsed = parseBlockAnnotationResponse(text)
           body = parsed.body
           extraFrontmatter['_semantic_fingerprint'] = parsed.semanticFingerprint
+          totalInput += input; totalOutput += output
           break
         }
         case 'file': {
           const prompt = buildFileAnnotationPrompt(request)
-          body = await callClaude(prompt, maxTokens)
+          const { text, input, output } = await callClaude(prompt, maxTokens)
+          body = text
+          totalInput += input; totalOutput += output
           break
         }
         case 'folder': {
           const prompt = buildFolderAnnotationPrompt(request)
-          body = await callClaude(prompt, maxTokens)
+          const { text, input, output } = await callClaude(prompt, maxTokens)
+          body = text
+          totalInput += input; totalOutput += output
           break
         }
         case 'session': {
           const prompt = buildSessionAnnotationPrompt(request)
-          body = await callClaude(prompt, maxTokens)
+          const { text, input, output } = await callClaude(prompt, maxTokens)
+          body = text
+          totalInput += input; totalOutput += output
           break
         }
       }
@@ -138,13 +159,14 @@ export function createAnthropicProvider(options: AnthropicProviderOptions = {}):
           ...extraFrontmatter,
         },
         body,
+        tokensUsed: { input: totalInput, output: totalOutput },
       }
     },
 
     async matchSemanticFingerprint(request: SemanticMatchRequest): Promise<SemanticMatchResult> {
       const prompt = buildSemanticMatchPrompt(request)
-      const response = await callClaude(prompt)
-      return parseSemanticMatchResponse(response)
+      const { text, input, output } = await callClaude(prompt)
+      return { ...parseSemanticMatchResponse(text), tokensUsed: { input, output } }
     },
   }
 }
