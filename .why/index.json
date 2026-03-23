@@ -1,7 +1,7 @@
 {
   "whytho_version": "1.0",
-  "generated_at": "2026-03-22T23:44:05.178Z",
-  "generated_at_commit": "c85750295a27984fe81206a63e52b013c6de8477",
+  "generated_at": "2026-03-23T03:12:09.798Z",
+  "generated_at_commit": "ab14db7a08ebbb670d440f7fd3ae61c0ca93da54",
   "sessions": {
     "2026-03-21-session-mmzsxrsv": {
       "id": "2026-03-21-session-mmzsxrsv",
@@ -1443,6 +1443,69 @@
         }
       ]
     },
+    "src/core/relationships/ai-attribution.ts": {
+      "path": "src/core/relationships/ai-attribution.ts",
+      "parent_folder": "src/core/relationships/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "src/ai/types.ts::AIProvider",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/reader.ts::readAllFiles",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/parser/registry.ts::parseFile",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/layout.ts::blockAnnotationPath",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/frontmatter/parse.ts::parseAnnotation",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/frontmatter/serialize.ts::serializeAnnotation",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/writer.ts::writeFile",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/writer.ts::fileExists",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/types.ts::BlockFrontmatter",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/prompts/relationship-attribution.ts::buildAttributionPrompt",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/prompts/relationship-attribution.ts::parseAttributionResponse",
+          "pipeline": "static"
+        }
+      ]
+    },
     "src/core/relationships/events.ts": {
       "path": "src/core/relationships/events.ts",
       "parent_folder": "src/core/relationships/",
@@ -1781,6 +1844,74 @@
         "tests/fixtures/sample.ts::retrieve"
       ],
       "sessions": []
+    },
+    "tests/unit/ai-attribution.test.ts": {
+      "path": "tests/unit/ai-attribution.test.ts",
+      "parent_folder": "tests/unit/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "tests",
+          "target": "src/core/relationships/ai-attribution.ts::runAIScan",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "src/core/fs/writer.ts::writeFile",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "src/core/fs/layout.ts::blockAnnotationPath",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "src/core/fs/layout.ts::fileAnnotationPath",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "src/core/fs/layout.ts::getWhyRoot",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "src/core/frontmatter/serialize.ts::serializeAnnotation",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "src/core/frontmatter/parse.ts::parseAnnotation",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "src/core/types.ts::BlockFrontmatter",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "src/core/types.ts::FileFrontmatter",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "src/ai/types.ts::AIProvider",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "src/ai/types.ts::AnnotationRequest",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "src/ai/types.ts::AnnotationResult",
+          "pipeline": "static"
+        }
+      ]
     },
     "tests/unit/content-hash.test.ts": {
       "path": "tests/unit/content-hash.test.ts",
