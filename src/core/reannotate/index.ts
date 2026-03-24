@@ -66,13 +66,16 @@ function isBlockStale(
 
 /**
  * Determine whether a file annotation is stale.
- * A file annotation is stale if its file is in the changedFiles list.
+ * A file annotation is stale if its content hash has changed, or if its path
+ * appears in the changedFiles list (for annotations that predate hash tracking).
  */
 function isFileStale(
   ann: AnnotationFile<FileFrontmatter>,
+  currentHash: string | null,
   changedFiles?: string[],
 ): boolean {
   if (changedFiles && changedFiles.includes(ann.frontmatter.path)) return true
+  if (currentHash && ann.frontmatter.content_hash && ann.frontmatter.content_hash !== currentHash) return true
   return false
 }
 
@@ -117,14 +120,19 @@ export async function checkStaleAnnotations(opts: {
     }
   }
 
-  if (changedFiles) {
-    const allFiles = await readAllFiles(whyRoot)
-    for (const ann of allFiles) {
-      if (isFileStale(ann, changedFiles)) {
-        stale.push({ type: 'file', ref: ann.frontmatter.path })
-      }
+  const allFiles = await readAllFiles(whyRoot)
+  for (const ann of allFiles) {
+    let currentHash: string | null = null
+    try {
+      const source = await fs.readFile(path.join(repoRoot, ann.frontmatter.path), 'utf8')
+      currentHash = computeContentHash(source)
+    } catch { /* file deleted */ }
+    if (isFileStale(ann, currentHash, changedFiles)) {
+      stale.push({ type: 'file', ref: ann.frontmatter.path })
     }
+  }
 
+  if (changedFiles) {
     const allFolders = await readAllFolders(whyRoot)
     for (const ann of allFolders) {
       if (isFolderStale(ann, changedFiles)) {
@@ -137,8 +145,7 @@ export async function checkStaleAnnotations(opts: {
 }
 
 export async function runReannotation(opts: ReannotateOptions): Promise<ReannotateResult> {
-  const { whyRoot, repoRoot, commitSha, config, ai, targets, changedFiles, dryRun } = opts
-  const detail = opts.verbosity?.detail ?? config.verbosity.detail
+  const { whyRoot, repoRoot, targets, changedFiles } = opts
   const result: ReannotateResult = { reannotated: [], skipped: [], errors: [] }
 
   if (targets) {
@@ -180,18 +187,23 @@ export async function runReannotation(opts: ReannotateOptions): Promise<Reannota
     }
   }
 
-  if (changedFiles) {
-    const allFiles = await readAllFiles(whyRoot)
-    for (const ann of allFiles) {
-      if (isFileStale(ann, changedFiles)) {
-        try {
-          await reannotateFile(ann.frontmatter.path, opts, result)
-        } catch (err) {
-          result.errors.push({ type: 'file', ref: ann.frontmatter.path, error: String(err) })
-        }
+  const allFiles = await readAllFiles(whyRoot)
+  for (const ann of allFiles) {
+    let currentHash: string | null = null
+    try {
+      const source = await fs.readFile(path.join(repoRoot, ann.frontmatter.path), 'utf8')
+      currentHash = computeContentHash(source)
+    } catch { /* file deleted */ }
+    if (isFileStale(ann, currentHash, changedFiles)) {
+      try {
+        await reannotateFile(ann.frontmatter.path, opts, result)
+      } catch (err) {
+        result.errors.push({ type: 'file', ref: ann.frontmatter.path, error: String(err) })
       }
     }
+  }
 
+  if (changedFiles) {
     const allFolders = await readAllFolders(whyRoot)
     for (const ann of allFolders) {
       if (isFolderStale(ann, changedFiles)) {
@@ -332,6 +344,7 @@ async function reannotateFile(
     updated: new Date().toISOString(),
     blocks: blocks.map((b) => buildSymbolicRef(filePath, b.name)),
     language: detectLanguage(filePath),
+    content_hash: computeContentHash(source),
   }
 
   if (!dryRun) {
@@ -345,7 +358,7 @@ async function reannotateFolder(
   opts: ReannotateOptions,
   result: ReannotateResult,
 ): Promise<void> {
-  const { whyRoot, repoRoot, config, ai, dryRun } = opts
+  const { whyRoot, config, ai, dryRun } = opts
   const detail = opts.verbosity?.detail ?? config.verbosity.detail
   const annPath = folderAnnotationPath(whyRoot, folderPath)
 

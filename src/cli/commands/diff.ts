@@ -1,4 +1,4 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
 import * as fs from 'fs/promises'
 import { findRepoRoot } from '../../core/git/repo.js'
@@ -6,12 +6,16 @@ import { getWhyRoot, indexPath } from '../../core/fs/layout.js'
 import { getDiffString } from '../../core/git/diff.js'
 import type { WhythoIndex } from '../../core/types.js'
 
+interface DiffOpts {
+  color?: boolean
+}
+
 export function registerDiff(program: Command): void {
   program
     .command('diff [range]')
     .description('Show git diff annotated with block reasoning context')
     .option('--no-color', 'Disable color output')
-    .action(async (range: string = 'HEAD~1..HEAD', options) => {
+    .action(async (range: string = 'HEAD~1..HEAD', options: DiffOpts) => {
       try {
         const repoRoot = await findRepoRoot()
         const whyRoot = getWhyRoot(repoRoot)

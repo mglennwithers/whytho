@@ -1,4 +1,4 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
 import { findRepoRoot, getHeadCommitSha } from '../../core/git/repo.js'
 import { getChangedFiles } from '../../core/git/diff.js'
@@ -10,6 +10,7 @@ import { withTokenCounting, formatTokens } from '../../ai/token-counter.js'
 import type { TokenTally } from '../../ai/token-counter.js'
 import { runReannotation, checkStaleAnnotations } from '../../core/reannotate/index.js'
 import type { ReannotateTarget } from '../../core/reannotate/index.js'
+import type { VerbosityDetail } from '../../config/types.js'
 
 export function registerReannotate(program: Command): void {
   program
@@ -23,7 +24,16 @@ export function registerReannotate(program: Command): void {
     .option('--dry-run', 'Show what would be reannotated without writing')
     .option('--check', 'Check for stale annotations without calling AI (exit code 0=clean, 1=stale)')
     .option('--detail <level>', 'Annotation detail: brief, standard, full')
-    .action(async (options) => {
+    .action(async (options: {
+      check?: boolean
+      incremental?: boolean
+      commit?: string
+      detail?: VerbosityDetail
+      block: string[]
+      file: string[]
+      folder: string[]
+      dryRun?: boolean
+    }) => {
       try {
         const repoRoot = await findRepoRoot()
         const config = await loadConfig(repoRoot)

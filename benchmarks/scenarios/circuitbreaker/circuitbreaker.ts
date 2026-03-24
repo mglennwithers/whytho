@@ -51,7 +51,7 @@ export class CircuitBreaker {
     return this.state
   }
 
-  async callWithFallback<T>(fn: () => Promise<T>, fallback: T): Promise<T> {
+  callWithFallback<T>(_fn: () => Promise<T>, _fallback: T): Promise<T> {
     // TODO: not yet implemented
     throw new Error('Not implemented')
   }

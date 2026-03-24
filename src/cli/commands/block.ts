@@ -1,4 +1,4 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
 import { findRepoRoot } from '../../core/git/repo.js'
 import { getWhyRoot, blockAnnotationPath } from '../../core/fs/layout.js'
@@ -6,12 +6,16 @@ import { readAnnotationFile } from '../../core/fs/reader.js'
 import { fileExists } from '../../core/fs/writer.js'
 import type { BlockFrontmatter } from '../../core/types.js'
 
+interface BlockOpts {
+  json?: boolean
+}
+
 export function registerBlock(program: Command): void {
   program
     .command('block <ref>')
     .description('Show annotation for a block (e.g., src/auth/middleware.ts::rotateTokenIfNeeded)')
     .option('--json', 'Output as JSON')
-    .action(async (ref: string, options) => {
+    .action(async (ref: string, options: BlockOpts) => {
       try {
         const repoRoot = await findRepoRoot()
         const whyRoot = getWhyRoot(repoRoot)

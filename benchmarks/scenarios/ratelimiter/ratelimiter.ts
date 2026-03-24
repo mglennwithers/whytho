@@ -47,7 +47,7 @@ export class RateLimiter {
    * Returns the number of milliseconds until at least `cost` tokens
    * will be available. Returns 0 if tokens are already sufficient.
    */
-  retryAfterMs(cost = 1): number {
+  retryAfterMs(_cost = 1): number {
     // TODO: not yet implemented
     throw new Error('Not implemented')
   }
@@ -57,7 +57,7 @@ export class RateLimiter {
    * if tokens are currently insufficient. Returns true if tokens were consumed,
    * false if the required wait would exceed `timeoutMs`.
    */
-  async acquire(cost = 1, timeoutMs = 0): Promise<boolean> {
+  acquire(_cost = 1, _timeoutMs = 0): Promise<boolean> {
     // TODO: not yet implemented
     throw new Error('Not implemented')
   }

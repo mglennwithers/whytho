@@ -1,4 +1,4 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
 import * as fs from 'fs/promises'
 import * as path from 'path'
@@ -49,13 +49,18 @@ async function collectSourceFiles(
   return results
 }
 
+interface StatusOpts {
+  coverage?: boolean
+  json?: boolean
+}
+
 export function registerStatus(program: Command): void {
   program
     .command('status')
     .description('Show annotation coverage and health for this repository')
     .option('--coverage', 'Scan source files to compute annotation coverage percentages')
     .option('--json', 'Output machine-readable JSON')
-    .action(async (options) => {
+    .action(async (options: StatusOpts) => {
       try {
         const repoRoot = await findRepoRoot()
         const whyRoot = getWhyRoot(repoRoot)

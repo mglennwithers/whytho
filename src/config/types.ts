@@ -17,6 +17,22 @@ export interface WhythoConfig {
       threshold?: number
     }
   }
+  openai?: {
+    annotationModel?: string
+    inferModel?: string
+    /** Model used for AI relationship scanning. Defaults to inferModel. */
+    scanModel?: string
+    /** Environment variable name for the OpenAI API key. Default: 'OPENAI_API_KEY' */
+    apiKeyEnv?: string
+  }
+  gemini?: {
+    annotationModel?: string
+    inferModel?: string
+    /** Model used for AI relationship scanning. Defaults to inferModel. */
+    scanModel?: string
+    /** Environment variable name for the Gemini API key. Default: 'GEMINI_API_KEY' */
+    apiKeyEnv?: string
+  }
   verbosity: {
     /** Which blocks to annotate. minimal=functions/classes only, standard=all named blocks, full=everything */
     coverage: VerbosityCoverage

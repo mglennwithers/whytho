@@ -1,5 +1,4 @@
 import type { ParsedBlock } from '../../core/parser/types.js'
-import type { RelationshipType } from '../../core/types.js'
 
 /**
  * Count the number of well-formed triples in a raw AI response body,
@@ -125,7 +124,7 @@ export function parseAttributionResponse(
 
     triples.push({
       block: triple.block,
-      type: triple.type as 'depends_on' | 'tests',
+      type: triple.type,
       target: triple.target,
     })
   }

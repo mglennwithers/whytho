@@ -1,4 +1,5 @@
 import type { AIProvider, AnnotationRequest, AnnotationResult, SemanticMatchRequest, SemanticMatchResult } from '../types.js'
+import type { Anthropic as AnthropicClient } from '@anthropic-ai/sdk'
 
 export interface BatchRequest {
   id: string
@@ -12,8 +13,7 @@ export async function callAnthropicBatch(
   requests: BatchRequest[],
   onProgress?: (message: string) => void,
 ): Promise<{ results: Map<string, string>; tokensUsed: { input: number; output: number } }> {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const { Anthropic } = require('@anthropic-ai/sdk') as typeof import('@anthropic-ai/sdk')
+  const { Anthropic } = await import('@anthropic-ai/sdk')
   const anthropic = new Anthropic({ apiKey })
 
   onProgress?.(`Submitting batch of ${requests.length} requests to Anthropic...`)
@@ -69,12 +69,12 @@ interface AnthropicProviderOptions {
 
 export function createAnthropicProvider(options: AnthropicProviderOptions = {}): AIProvider {
   const model = options.model ?? DEFAULT_AI_MODEL
-  let client: import('@anthropic-ai/sdk').Anthropic | null = null
+  let client: AnthropicClient | null = null
 
-  function getClient(): import('@anthropic-ai/sdk').Anthropic {
+  function getClient(): AnthropicClient {
     if (!client) {
-      // eslint-disable-next-line @typescript-eslint/no-require-imports
-      const { Anthropic } = require('@anthropic-ai/sdk') as typeof import('@anthropic-ai/sdk')
+      // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
+      const { Anthropic } = require('@anthropic-ai/sdk') as { Anthropic: new (opts: { apiKey?: string }) => AnthropicClient }
       client = new Anthropic({ apiKey: options.apiKey })
     }
     return client

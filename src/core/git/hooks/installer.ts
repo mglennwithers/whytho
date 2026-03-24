@@ -65,7 +65,7 @@ export async function installHook(
 
   if (existingContent) {
     // Append to existing hook
-    await fs.writeFile(hookPath, existingContent + '\n' + HOOK_SCRIPT.trim() + '\n', 'utf8')
+    await fs.writeFile(hookPath, `${existingContent  }\n${  HOOK_SCRIPT.trim()  }\n`, 'utf8')
   } else {
     // Create new hook with shebang
     await fs.writeFile(hookPath, `#!/usr/bin/env sh\n${HOOK_SCRIPT.trim()}\n`, 'utf8')
@@ -80,8 +80,8 @@ export async function installHook(
 
   // On Windows, also write a .cmd shim
   if (process.platform === 'win32') {
-    const cmdPath = hookPath + '.cmd'
-    await fs.writeFile(cmdPath, HOOK_SCRIPT_CMD.trim() + '\r\n', 'utf8')
+    const cmdPath = `${hookPath  }.cmd`
+    await fs.writeFile(cmdPath, `${HOOK_SCRIPT_CMD.trim()  }\r\n`, 'utf8')
   }
 }
 
@@ -125,12 +125,12 @@ export async function uninstallHook(
   if (!newContent || newContent === '#!/usr/bin/env sh') {
     await fs.unlink(hookPath).catch(() => undefined)
   } else {
-    await fs.writeFile(hookPath, newContent + '\n', 'utf8')
+    await fs.writeFile(hookPath, `${newContent  }\n`, 'utf8')
   }
 
   // Remove .cmd shim if present
   try {
-    await fs.unlink(hookPath + '.cmd')
+    await fs.unlink(`${hookPath  }.cmd`)
   } catch {
     // Ignore
   }

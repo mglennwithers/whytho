@@ -1,4 +1,4 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
 import { findRepoRoot } from '../../core/git/repo.js'
 import { getWhyRoot, fileAnnotationPath } from '../../core/fs/layout.js'
@@ -6,12 +6,16 @@ import { readAnnotationFile } from '../../core/fs/reader.js'
 import { fileExists } from '../../core/fs/writer.js'
 import type { FileFrontmatter } from '../../core/types.js'
 
+interface FileOpts {
+  json?: boolean
+}
+
 export function registerFile(program: Command): void {
   program
     .command('file <path>')
     .description('Show annotation for a source file')
     .option('--json', 'Output as JSON')
-    .action(async (filePath: string, options) => {
+    .action(async (filePath: string, options: FileOpts) => {
       try {
         const repoRoot = await findRepoRoot()
         const whyRoot = getWhyRoot(repoRoot)

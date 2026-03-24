@@ -1,4 +1,4 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
 import { findRepoRoot } from '../../core/git/repo.js'
 import { getWhyRoot, folderAnnotationPath } from '../../core/fs/layout.js'
@@ -6,12 +6,16 @@ import { readAnnotationFile } from '../../core/fs/reader.js'
 import { fileExists } from '../../core/fs/writer.js'
 import type { FolderFrontmatter } from '../../core/types.js'
 
+interface FolderOpts {
+  json?: boolean
+}
+
 export function registerFolder(program: Command): void {
   program
     .command('folder <path>')
     .description('Show annotation for a folder (use "/" for root)')
     .option('--json', 'Output as JSON')
-    .action(async (folderPath: string, options) => {
+    .action(async (folderPath: string, options: FolderOpts) => {
       try {
         const repoRoot = await findRepoRoot()
         const whyRoot = getWhyRoot(repoRoot)

@@ -1,4 +1,4 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
 import * as fs from 'fs/promises'
 import * as path from 'path'
@@ -32,8 +32,20 @@ import {
 } from '../../ai/prompts/infer.js'
 import { WHYTHO_VERSION } from '../../core/constants.js'
 import type { BlockFrontmatter, FileFrontmatter, FolderFrontmatter } from '../../core/types.js'
-import type { WhythoConfig, VerbosityCoverage } from '../../config/types.js'
+import type { WhythoConfig, VerbosityCoverage, VerbosityDetail } from '../../config/types.js'
+import type { AIProvider } from '../../ai/types.js'
+import type { BatchRunResult } from '../../ai/registry.js'
 import { readAnnotationFile } from '../../core/fs/reader.js'
+
+interface InferOpts {
+  blocks?: boolean
+  files?: boolean
+  folders?: boolean
+  limit: string
+  dryRun?: boolean
+  coverage?: string
+  detail?: string
+}
 
 const INFERRED_SESSION = 'inferred'
 
@@ -119,7 +131,8 @@ export function registerInfer(program: Command): void {
     .option('--dry-run', 'Show what would be annotated without writing files')
     .option('--coverage <level>', 'Block coverage: minimal, standard, full')
     .option('--detail <level>', 'Annotation detail: brief, standard, full')
-    .action(async (targetPath: string | undefined, options) => {
+    .action(async (targetPath: string | undefined, _options: unknown) => {
+      const options = _options as InferOpts
       try {
         const repoRoot = await findRepoRoot()
         const config = await loadConfig(repoRoot)
@@ -130,8 +143,8 @@ export function registerInfer(program: Command): void {
           process.exit(1)
         }
 
-        const coverage = (options.coverage ?? config.verbosity.coverage) as import('../../config/types.js').VerbosityCoverage
-        const detail = (options.detail ?? config.verbosity.detail) as import('../../config/types.js').VerbosityDetail
+        const coverage = (options.coverage ?? config.verbosity.coverage) as VerbosityCoverage
+        const detail = (options.detail ?? config.verbosity.detail) as VerbosityDetail
         const verbosity = {
           detail,
           block: { maxTokens: config.verbosity.maxTokens.block },
@@ -167,7 +180,7 @@ export function registerInfer(program: Command): void {
         }
 
         // Determine whether to use the Anthropic Batches API for this run
-        let batchRunner: ((requests: BatchRequest[]) => Promise<Map<string, string>>) | null = null
+        let batchRunner: ((requests: BatchRequest[]) => Promise<BatchRunResult>) | null = null
         if (!options.dryRun) {
           const mode = config.anthropic?.batchInfer?.mode ?? 'auto'
           if (mode !== 'never') {
@@ -303,6 +316,7 @@ export function registerInfer(program: Command): void {
           type FilePending = {
             id: string; filePath: string; annPath: string; lang: string; folder: string
             blockAnnotations: Array<{ name: string; body: string }>; blocks: ParsedBlock[]
+            source: string
             prompt: string; maxTokens: number
           }
           const pending: FilePending[] = []
@@ -341,7 +355,7 @@ export function registerInfer(program: Command): void {
               context: { filePath, blockAnnotations },
               verbosity: { detail, maxTokens: verbosity.file.maxTokens, contextChars: verbosity.file.contextChars },
             })
-            pending.push({ id: `file-${pending.length}`, filePath, annPath, lang, folder, blockAnnotations, blocks: cached.blocks, prompt, maxTokens: verbosity.file.maxTokens })
+            pending.push({ id: `file-${pending.length}`, filePath, annPath, lang, folder, blockAnnotations, blocks: cached.blocks, source: cached.source, prompt, maxTokens: verbosity.file.maxTokens })
           }
 
           if (pending.length > 0) {
@@ -377,11 +391,12 @@ export function registerInfer(program: Command): void {
                   sessions: [],
                   blocks: item.blocks.map((b) => buildSymbolicRef(item.filePath, b.name)),
                   language: item.lang,
+                  content_hash: computeContentHash(item.source),
                   inferred: true,
                   inference_confidence: confidence,
                   generation_settings: { coverage, detail, max_tokens: verbosity.file.maxTokens },
                 }
-                const fullBody = inferredDisclaimer(confidence) + '\n' + body
+                const fullBody = `${inferredDisclaimer(confidence)  }\n${  body}`
                 await writeFile(item.annPath, serializeAnnotation(fm, fullBody))
                 if (batchRunner) {
                   console.log(chalk.green(`  ✓ file: ${item.filePath} (${Math.round(confidence * 100)}%)`))
@@ -473,7 +488,7 @@ export function registerInfer(program: Command): void {
                   inference_confidence: confidence,
                   generation_settings: { coverage, detail, max_tokens: verbosity.folder.maxTokens },
                 }
-                const fullBody = inferredDisclaimer(confidence) + '\n' + body
+                const fullBody = `${inferredDisclaimer(confidence)  }\n${  body}`
                 await writeFile(item.annPath, serializeAnnotation(fm, fullBody))
                 if (batchRunner) {
                   console.log(chalk.green(`  ✓ folder: ${item.folder} (${Math.round(confidence * 100)}%)`))
@@ -508,7 +523,7 @@ export function registerInfer(program: Command): void {
 }
 
 async function callViaProvider(
-  ai: import('../../ai/types.js').AIProvider,
+  ai: AIProvider,
   type: 'block' | 'file' | 'folder',
   prompt: string,
   maxTokens?: number,

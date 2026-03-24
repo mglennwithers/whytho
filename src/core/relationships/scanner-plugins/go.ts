@@ -75,7 +75,7 @@ function findRegistryEntriesForPackage(
     // Match by last segment of package path against the file's directory name
     const fileDir = path.dirname(filePart).replace(/\\/g, '/')
     const fileDirLastSegment = fileDir.split('/').pop() ?? fileDir
-    if (fileDirLastSegment === pkgSegment || filePart.includes('/' + pkgSegment + '/') || filePart.startsWith(pkgSegment + '/')) {
+    if (fileDirLastSegment === pkgSegment || filePart.includes(`/${  pkgSegment  }/`) || filePart.startsWith(`${pkgSegment  }/`)) {
       results.push(key)
     }
   }

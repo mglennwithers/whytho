@@ -13,7 +13,7 @@ export async function writeFile(filePath: string, content: string): Promise<void
 }
 
 export async function writeJson(filePath: string, data: unknown): Promise<void> {
-  await writeFile(filePath, JSON.stringify(data, null, 2) + '\n')
+  await writeFile(filePath, `${JSON.stringify(data, null, 2)  }\n`)
 }
 
 export async function ensureDir(dirPath: string): Promise<void> {

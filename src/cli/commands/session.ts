@@ -1,4 +1,4 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
 import { findRepoRoot } from '../../core/git/repo.js'
 import { getWhyRoot, sessionAnnotationPath } from '../../core/fs/layout.js'
@@ -11,7 +11,7 @@ export function registerSession(program: Command): void {
     .command('session [id]')
     .description('Show annotation for a session, or list all sessions')
     .option('--json', 'Output as JSON')
-    .action(async (id: string | undefined, options) => {
+    .action(async (id: string | undefined, options: { json?: boolean }) => {
       try {
         const repoRoot = await findRepoRoot()
         const whyRoot = getWhyRoot(repoRoot)

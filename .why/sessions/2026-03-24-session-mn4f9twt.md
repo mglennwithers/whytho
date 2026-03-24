@@ -3,7 +3,7 @@ whytho: "1.0"
 type: session
 id: 2026-03-24-session-mn4f9twt
 created: "2026-03-24T09:38:41.453Z"
-updated: "2026-03-24T09:38:41.453Z"
+updated: "2026-03-24T18:26:15.035Z"
 model: claude-haiku-4-5-20251001
 model_provider: anthropic
 user: Mike
@@ -64,3 +64,9 @@ blocks_touched: []
 - **Reannotate command scope:** Uncertain whether command updates all annotations, specific files, or uses filtering criteria. Error handling and conflict resolution strategies unknown. Confidence: low.
 
 - **Session outcome assessment:** Without explicit success criteria or completion checklist, cannot definitively assess whether session objectives were fully achieved. Confidence: low.
+
+## Agent Note
+
+_2026-03-24T18:26:15.035Z_
+
+Added OpenAI and Gemini provider support. Both providers mirror the Anthropic provider pattern: factory function (createOpenAIProvider / createGeminiProvider), dynamic require() for the SDK so the packages are optional at runtime, and inline minimal interfaces instead of importing types from the SDKs (avoids requiring them as devDependencies). Config types gained openai/gemini blocks parallel to the existing anthropic block. Registry updated with explicit if-branches for each provider name in getDefaultProvider, getInferProvider, getScanProvider — consistent with existing Anthropic handling rather than abstracting into a helper (keeping the pattern uniform). OpenAI uses openai@>=4 chat completions; Gemini uses @google/genai@>=1 models.generateContent. Both declared as optional peer deps. Default models: OpenAI gpt-4o/gpt-4o-mini, Gemini gemini-2.0-flash for both annotation and infer.

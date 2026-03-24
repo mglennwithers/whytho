@@ -1,8 +1,9 @@
 import { z } from 'zod'
-import {
+import type {
   WHYTHO_VERSION,
+  RESOLUTION_OUTCOMES} from './constants.js';
+import {
   CANONICAL_METRICS,
-  RESOLUTION_OUTCOMES,
   RELATIONSHIP_TYPES,
   BLOCK_KINDS,
   ANNOTATION_TYPES,
@@ -107,6 +108,7 @@ export const FileFrontmatterSchema = BaseAnnotationSchema.extend({
   sessions: z.array(z.string()).optional(),
   blocks: z.array(z.string()).optional(),
   language: z.string().optional(),
+  content_hash: z.string().optional(),
   inferred: z.boolean().optional(),
   inference_confidence: z.number().min(0).max(1).optional(),
   generation_settings: GenerationSettingsSchema.optional(),

@@ -1,4 +1,4 @@
-export const WHYTHO_VERSION = '1.0' as const
+export const WHYTHO_VERSION = '1.0'
 export const SPEC_VERSION = '1.0.0'
 
 export const WHY_DIR = '.why'
@@ -21,6 +21,12 @@ export const DEFAULT_SEMANTIC_TIMEOUT_MS = 10_000
 export const DEFAULT_AI_MODEL = 'claude-sonnet-4-6'
 export const DEFAULT_INFER_MODEL = 'claude-haiku-4-5-20251001'
 export const DEFAULT_AI_PROVIDER = 'anthropic'
+
+export const DEFAULT_OPENAI_MODEL = 'gpt-4o'
+export const DEFAULT_OPENAI_INFER_MODEL = 'gpt-4o-mini'
+
+export const DEFAULT_GEMINI_MODEL = 'gemini-2.0-flash'
+export const DEFAULT_GEMINI_INFER_MODEL = 'gemini-2.0-flash'
 
 export const HOOK_SENTINEL = '# whytho-hook-v1'
 export const POST_COMMIT_HOOK_NAME = 'post-commit'

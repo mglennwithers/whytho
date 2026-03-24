@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/core/reannotate/index.ts
 created: "2026-03-24T07:41:37.503Z"
-updated: "2026-03-24T07:41:37.503Z"
+updated: "2026-03-24T18:19:40.873Z"
 updated_by_session: static-scan
 parent_folder: src/core/reannotate/
 sessions: []
@@ -78,3 +78,5 @@ relationships:
 ---
 
 
+
+File staleness detection now mirrors block staleness: isFileStale accepts a currentHash and compares against frontmatter.content_hash. The if (changedFiles) guard on file iteration was removed so hash comparison works even when changedFiles is absent (e.g. git why reannotate run manually after missed commits). Old annotations without content_hash fall back to changedFiles-based detection only. Folder detection still requires changedFiles since folders have no content_hash.

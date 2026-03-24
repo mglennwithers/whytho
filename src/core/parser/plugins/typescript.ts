@@ -4,14 +4,15 @@ import { genericPlugin } from './generic.js'
 
 // Lazy-require typescript-estree to keep install size manageable.
 // Falls back to generic plugin if not available.
-type TSEstree = typeof import('@typescript-eslint/typescript-estree')
+import type * as TSEstreeModule from '@typescript-eslint/typescript-estree'
+type TSEstree = typeof TSEstreeModule
 
 let cachedEstree: TSEstree | null | undefined = undefined
 
 function getEstree(): TSEstree | null {
   if (cachedEstree !== undefined) return cachedEstree
   try {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
     cachedEstree = require('@typescript-eslint/typescript-estree') as TSEstree
   } catch {
     cachedEstree = null
@@ -86,7 +87,7 @@ function visitNode(node: ASTNode, ctx: ParseContext): void {
       if (!node.declarations) break
       for (const decl of node.declarations) {
         const id = decl.id as ASTNode | undefined
-        const init = decl.init as ASTNode | undefined
+        const init = decl.init
         if (!id || id.type !== 'Identifier') continue
         const varName = (id as unknown as { name: string }).name
         if (!varName) continue
@@ -194,13 +195,13 @@ function visitNode(node: ASTNode, ctx: ParseContext): void {
 
     case 'ExpressionStatement': {
       // describe/it/test call expressions
-      const expr = node.expression as ASTNode | undefined
+      const expr = node.expression
       if (!expr || expr.type !== 'CallExpression') break
       const callee = expr.callee as ASTNode | undefined
       const calleeName = callee?.name ?? (callee?.type === 'Identifier' ? (callee as unknown as { name: string }).name : undefined)
       if (!calleeName) break
 
-      const args = expr.arguments as ASTNode[] | undefined
+      const args = expr.arguments
       const firstArg = args?.[0]
       const testName =
         firstArg?.type === 'Literal'
@@ -259,7 +260,7 @@ function visitChildren(node: ASTNode, ctx: ParseContext): void {
 
 function extractParams(node: ASTNode | undefined): string {
   if (!node || !node.params) return '()'
-  return `(${(node.params as unknown[]).length} params)`
+  return `(${(node.params).length} params)`
 }
 
 export const typescriptPlugin: ParserPlugin = {

@@ -20,7 +20,7 @@ export class EventBus {
    * Unsubscribe using a token returned by subscribe().
    * Returns true if the token was found and removed, false otherwise.
    */
-  unsubscribe(token: symbol): boolean {
+  unsubscribe(_token: symbol): boolean {
     // TODO: not yet implemented
     throw new Error('Not implemented')
   }
@@ -40,7 +40,7 @@ export class EventBus {
    * Subscribe for exactly one emission of an event, then auto-unsubscribe.
    * Returns a token that can be passed to unsubscribe() to cancel early.
    */
-  once<T = unknown>(event: string, handler: EventHandler<T>): symbol {
+  once<T = unknown>(_event: string, _handler: EventHandler<T>): symbol {
     // TODO: not yet implemented
     throw new Error('Not implemented')
   }

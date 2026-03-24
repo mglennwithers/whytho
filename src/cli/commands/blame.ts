@@ -1,4 +1,4 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
 import { findRepoRoot } from '../../core/git/repo.js'
 import { getWhyRoot } from '../../core/fs/layout.js'
@@ -50,13 +50,18 @@ export interface BlameHit {
   body: string
 }
 
+interface BlameOpts {
+  type?: string
+  json?: boolean
+}
+
 export function registerBlame(program: Command): void {
   program
     .command('blame <query>')
     .description('Find annotations that explain a described bug or behavior')
     .option('--type <type>', 'Filter by annotation type (block, file, folder, session)')
     .option('--json', 'Output as JSON')
-    .action(async (query: string, options) => {
+    .action(async (query: string, options: BlameOpts) => {
       try {
         const repoRoot = await findRepoRoot()
         const whyRoot = getWhyRoot(repoRoot)
@@ -66,7 +71,7 @@ export function registerBlame(program: Command): void {
           process.exit(1)
         }
 
-        const typeFilter = options.type as string | undefined
+        const typeFilter = options.type
         const blocks = (!typeFilter || typeFilter === 'block') ? await readAllBlocks(whyRoot) : []
         const files = (!typeFilter || typeFilter === 'file') ? await readAllFiles(whyRoot) : []
         const folders = (!typeFilter || typeFilter === 'folder') ? await readAllFolders(whyRoot) : []

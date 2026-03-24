@@ -1,15 +1,14 @@
 import * as fs from 'fs/promises'
-import { readAnnotationFile } from '../fs/reader.js'
 import { writeFile, fileExists } from '../fs/writer.js'
 import { serializeAnnotation } from '../frontmatter/serialize.js'
-import { blockAnnotationPath, buildSymbolicRef } from '../fs/layout.js'
+import { blockAnnotationPath } from '../fs/layout.js'
 import { parseFile } from '../parser/registry.js'
 import { electCanonicalMetric } from '../identity/election.js'
 import { computeContentHash } from '../identity/content-hash.js'
 import { archiveBlockAnnotation } from '../archive/archiver.js'
 import { buildHookEvent } from '../relationships/events.js'
 import { getBlocksForChangedFiles } from './incremental.js'
-import type { BlockFrontmatter, HookEvent, ResolutionOutcome, RelationshipEdge } from '../types.js'
+import type { BlockFrontmatter, HookEvent, ResolutionOutcome } from '../types.js'
 import type { AIProvider } from '../../ai/types.js'
 import type { WhythoConfig } from '../../config/types.js'
 
@@ -41,7 +40,6 @@ export interface ResolutionReport {
 
 export async function runResolutionPipeline(ctx: ResolutionContext): Promise<ResolutionReport> {
   const { whyRoot, repoRoot, commitSha, changedFiles, sessionId, config, ai } = ctx
-  const threshold = config.resolution.confidenceThreshold
 
   // Get blocks whose files changed
   const blocksToProcess = await getBlocksForChangedFiles(whyRoot, changedFiles)
@@ -146,7 +144,7 @@ export async function runResolutionPipeline(ctx: ResolutionContext): Promise<Res
           identity: {
             ...fm.identity,
             ...updatedIdentity,
-            canonical_metric: canonical_metric,
+            canonical_metric,
             confidence,
             last_resolved: commitSha,
           },
@@ -166,7 +164,7 @@ export async function runResolutionPipeline(ctx: ResolutionContext): Promise<Res
         identity: {
           ...fm.identity,
           ...updatedIdentity,
-          canonical_metric: canonical_metric,
+          canonical_metric,
           confidence,
           last_resolved: commitSha,
         },

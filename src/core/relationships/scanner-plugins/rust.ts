@@ -30,7 +30,7 @@ function findRegistryEntry(
     // Check if any module segment appears in the file path
     for (const seg of segments) {
       if (seg === 'crate' || seg === 'super' || seg === 'self') continue
-      if (keyFilePath.includes('/' + seg + '/') || keyFilePath.includes('/' + seg + '.') || keyFilePath.endsWith('/' + seg + '.rs') || keyFilePath === seg + '.rs') {
+      if (keyFilePath.includes(`/${  seg  }/`) || keyFilePath.includes(`/${  seg  }.`) || keyFilePath.endsWith(`/${  seg  }.rs`) || keyFilePath === `${seg  }.rs`) {
         return key
       }
     }

@@ -1,6 +1,5 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
-import * as os from 'os'
 import { findRepoRoot, getHeadCommitSha, getCurrentUser, getRecentGitLog } from '../../core/git/repo.js'
 import { getChangedFiles } from '../../core/git/diff.js'
 import { getWhyRoot, blockAnnotationPath, fileAnnotationPath, folderAnnotationPath, sessionAnnotationPath, buildSymbolicRef, parentFolder } from '../../core/fs/layout.js'
@@ -15,7 +14,16 @@ import { isTrackedFile } from '../../config/tracking.js'
 import { getDefaultProvider } from '../../ai/registry.js'
 import { WHYTHO_VERSION } from '../../core/constants.js'
 import type { BlockFrontmatter, FileFrontmatter, FolderFrontmatter, SessionFrontmatter } from '../../core/types.js'
+import type { VerbosityCoverage, VerbosityDetail } from '../../config/types.js'
 import * as fs from 'fs/promises'
+
+interface AnnotateOpts {
+  sessionId?: string
+  model?: string
+  dryRun?: boolean
+  coverage?: string
+  detail?: string
+}
 
 export function registerAnnotate(program: Command): void {
   program
@@ -26,7 +34,8 @@ export function registerAnnotate(program: Command): void {
     .option('--dry-run', 'Print annotations without writing files')
     .option('--coverage <level>', 'Block coverage: minimal, standard, full')
     .option('--detail <level>', 'Annotation detail: brief, standard, full')
-    .action(async (options) => {
+    .action(async (_options: unknown) => {
+      const options = _options as AnnotateOpts
       try {
         const repoRoot = await findRepoRoot()
         const config = await loadConfig(repoRoot)
@@ -37,8 +46,8 @@ export function registerAnnotate(program: Command): void {
           process.exit(1)
         }
 
-        const coverage = (options.coverage ?? config.verbosity.coverage) as import('../../config/types.js').VerbosityCoverage
-        const detail = (options.detail ?? config.verbosity.detail) as import('../../config/types.js').VerbosityDetail
+        const coverage = (options.coverage ?? config.verbosity.coverage) as VerbosityCoverage
+        const detail = (options.detail ?? config.verbosity.detail) as VerbosityDetail
 
         const ai = getDefaultProvider(config)
         const commitSha = await getHeadCommitSha(repoRoot)
@@ -164,6 +173,7 @@ export function registerAnnotate(program: Command): void {
               sessions: [sessionId],
               blocks: parsedBlocks.map((b) => buildSymbolicRef(filePath, b.name)),
               language: lang,
+              content_hash: computeContentHash(source),
               generation_settings: { coverage, detail, max_tokens: fileMaxTokens },
             }
             if (!options.dryRun) {

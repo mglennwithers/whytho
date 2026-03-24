@@ -1,5 +1,4 @@
 import type { SemanticMatchRequest } from '../types.js'
-import type { ParsedBlock } from '../../core/parser/types.js'
 
 export function buildSemanticMatchPrompt(request: SemanticMatchRequest): string {
   const candidateList = request.candidates

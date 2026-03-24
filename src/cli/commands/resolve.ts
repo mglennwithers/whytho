@@ -1,4 +1,4 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
 import { findRepoRoot, getHeadCommitSha } from '../../core/git/repo.js'
 import { getChangedFiles } from '../../core/git/diff.js'
@@ -16,6 +16,12 @@ import { withTokenCounting, formatTokens } from '../../ai/token-counter.js'
 import type { TokenTally } from '../../ai/token-counter.js'
 import { readAllBlocks } from '../../core/fs/reader.js'
 
+interface ResolveOpts {
+  incremental?: boolean
+  commit?: string
+  ai?: boolean
+}
+
 export function registerResolve(program: Command): void {
   program
     .command('resolve')
@@ -23,7 +29,7 @@ export function registerResolve(program: Command): void {
     .option('--incremental', 'Only process files changed in the specified commit')
     .option('--commit <sha>', 'Commit SHA to resolve against (default: HEAD)')
     .option('--no-ai', 'Skip AI-assisted semantic matching')
-    .action(async (options) => {
+    .action(async (options: ResolveOpts) => {
       try {
         const repoRoot = await findRepoRoot()
         const config = await loadConfig(repoRoot)

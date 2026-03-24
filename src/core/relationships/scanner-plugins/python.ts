@@ -25,14 +25,14 @@ function resolveRelativeImport(
     dir = path.dirname(dir).replace(/\\/g, '/')
   }
   const modulePath = modulePart ? path.join(dir, modulePart.replace(/\./g, '/')).replace(/\\/g, '/') : dir
-  const candidate = modulePath + '.py'
+  const candidate = `${modulePath  }.py`
   for (const key of registry.keys()) {
-    if (key.startsWith(candidate + '::')) return candidate
+    if (key.startsWith(`${candidate  }::`)) return candidate
   }
   // Also check package __init__.py
-  const initCandidate = modulePath + '/__init__.py'
+  const initCandidate = `${modulePath  }/__init__.py`
   for (const key of registry.keys()) {
-    if (key.startsWith(initCandidate + '::')) return initCandidate
+    if (key.startsWith(`${initCandidate  }::`)) return initCandidate
   }
   return undefined
 }

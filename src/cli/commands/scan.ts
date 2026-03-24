@@ -1,4 +1,4 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
 import * as fs from 'fs/promises'
 import * as path from 'path'
@@ -12,11 +12,12 @@ import { runAIScan } from '../../core/relationships/ai-attribution.js'
 import { getScanProvider } from '../../ai/registry.js'
 import { withTokenCounting, formatTokens } from '../../ai/token-counter.js'
 import type { TokenTally } from '../../ai/token-counter.js'
+import type { Dirent } from 'fs'
 
 export async function collectAllSourceFiles(repoRoot: string): Promise<string[]> {
   const files: string[] = []
   async function walk(dir: string): Promise<void> {
-    let entries: import('fs').Dirent[]
+    let entries: Dirent[]
     try {
       entries = await fs.readdir(dir, { withFileTypes: true })
     } catch {
@@ -44,7 +45,7 @@ export function registerScan(program: Command): void {
     .option('--file <path>', 'Scope static scan to a single file (AI scan always processes all qualifying files)')
     .option('--ai', 'Run AI attribution scan (regardless of aiScan config value)')
     .option('--static-only', 'Run static scan only, skip AI scan even if config enables it')
-    .action(async (options) => {
+    .action(async (options: { file?: string; ai?: boolean; staticOnly?: boolean }) => {
       try {
         const repoRoot = await findRepoRoot()
         const whyRoot = getWhyRoot(repoRoot)

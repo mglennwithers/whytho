@@ -1,4 +1,4 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
 import { findRepoRoot } from '../../core/git/repo.js'
 import { getWhyRoot } from '../../core/fs/layout.js'
@@ -80,6 +80,12 @@ function printHits(hits: SearchHit[]): void {
   }
 }
 
+interface SearchOpts {
+  semantic?: boolean
+  type?: string
+  json?: boolean
+}
+
 export function registerSearch(program: Command): void {
   program
     .command('search <query>')
@@ -87,7 +93,7 @@ export function registerSearch(program: Command): void {
     .option('--semantic', 'Use AI to find semantically relevant annotations')
     .option('--type <type>', 'Filter by annotation type (block, file, folder, session)')
     .option('--json', 'Output as JSON')
-    .action(async (query: string, options) => {
+    .action(async (query: string, options: SearchOpts) => {
       try {
         const repoRoot = await findRepoRoot()
         const whyRoot = getWhyRoot(repoRoot)
@@ -97,7 +103,7 @@ export function registerSearch(program: Command): void {
           process.exit(1)
         }
 
-        const typeFilter = options.type as string | undefined
+        const typeFilter = options.type
         const blocks = (!typeFilter || typeFilter === 'block') ? await readAllBlocks(whyRoot) : []
         const files = (!typeFilter || typeFilter === 'file') ? await readAllFiles(whyRoot) : []
         const folders = (!typeFilter || typeFilter === 'folder') ? await readAllFolders(whyRoot) : []

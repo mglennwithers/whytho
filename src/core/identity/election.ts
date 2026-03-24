@@ -28,12 +28,7 @@ function structuralMatch(stored: StructuralPosition, candidate: ParsedBlock): bo
   )
 }
 
-function structuralMatchLoose(stored: StructuralPosition, candidate: ParsedBlock): boolean {
-  // Loose: kind and name must match exactly; parent_scope may differ
-  return stored.kind === candidate.kind && stored.name === candidate.name
-}
-
-function symbolicResolves(storedSymbolic: string, candidates: ParsedBlock[], filePath: string): ParsedBlock | undefined {
+function symbolicResolves(storedSymbolic: string, candidates: ParsedBlock[]): ParsedBlock | undefined {
   const blockName = storedSymbolic.split('::')[1]
   if (!blockName) return undefined
   // First: exact name match in expected file
@@ -47,13 +42,13 @@ export async function electCanonicalMetric(
   input: ElectionInput,
   ai?: AIProvider,
 ): Promise<ElectionResult> {
-  const { stored, candidates, filePath, commitSha, source } = input
+  const { stored, candidates, filePath, commitSha } = input
 
   // Precompute hashes for all candidates
   const candidateHashes = candidates.map((c) => computeContentHash(c.content))
 
   // ─── Rule 1: Symbolic + Structural agree ─────────────────────────────────
-  const symbolicBlock = symbolicResolves(stored.symbolic, candidates, filePath)
+  const symbolicBlock = symbolicResolves(stored.symbolic, candidates)
   if (symbolicBlock) {
     if (structuralMatch(stored.structural, symbolicBlock)) {
       const newHash = computeContentHash(symbolicBlock.content)

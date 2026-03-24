@@ -1,6 +1,4 @@
 import { simpleGit } from 'simple-git'
-import * as path from 'path'
-import * as fs from 'fs/promises'
 
 export async function findRepoRoot(startDir: string = process.cwd()): Promise<string> {
   const git = simpleGit(startDir)

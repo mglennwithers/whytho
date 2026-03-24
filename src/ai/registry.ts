@@ -1,6 +1,9 @@
 import type { AIProvider } from './types.js'
 import { nullProvider } from './providers/null.js'
 import { createAnthropicProvider, callAnthropicBatch } from './providers/anthropic.js'
+import { createOpenAIProvider } from './providers/openai.js'
+import { createGeminiProvider } from './providers/gemini.js'
+import type { BatchRequest } from './providers/anthropic.js'
 import type { WhythoConfig } from '../config/types.js'
 
 export type { BatchRequest } from './providers/anthropic.js'
@@ -13,7 +16,7 @@ export interface BatchRunResult {
 /** Returns a batch runner for infer if the config and API key allow it, otherwise null. */
 export function getAnthropicBatchRunner(
   config: WhythoConfig,
-): ((requests: import('./providers/anthropic.js').BatchRequest[]) => Promise<BatchRunResult>) | null {
+): ((requests: BatchRequest[]) => Promise<BatchRunResult>) | null {
   if (config.aiProvider !== 'anthropic' && config.aiProvider !== undefined) return null
   const mode = config.anthropic?.batchInfer?.mode ?? 'auto'
   if (mode === 'never') return null
@@ -47,6 +50,18 @@ export function getInferProvider(config: WhythoConfig): AIProvider {
       apiKey,
     })
   }
+  if (name === 'openai') {
+    const apiKeyEnv = config.openai?.apiKeyEnv ?? 'OPENAI_API_KEY'
+    const apiKey = process.env[apiKeyEnv]
+    if (!apiKey) return nullProvider
+    return createOpenAIProvider({ model: config.openai?.inferModel, apiKey })
+  }
+  if (name === 'gemini') {
+    const apiKeyEnv = config.gemini?.apiKeyEnv ?? 'GEMINI_API_KEY'
+    const apiKey = process.env[apiKeyEnv]
+    if (!apiKey) return nullProvider
+    return createGeminiProvider({ model: config.gemini?.inferModel, apiKey })
+  }
   return getDefaultProvider(config)
 }
 
@@ -60,6 +75,18 @@ export function getScanProvider(config: WhythoConfig): AIProvider {
       model: config.anthropic?.scanModel ?? config.anthropic?.inferModel,
       apiKey,
     })
+  }
+  if (name === 'openai') {
+    const apiKeyEnv = config.openai?.apiKeyEnv ?? 'OPENAI_API_KEY'
+    const apiKey = process.env[apiKeyEnv]
+    if (!apiKey) return nullProvider
+    return createOpenAIProvider({ model: config.openai?.scanModel ?? config.openai?.inferModel, apiKey })
+  }
+  if (name === 'gemini') {
+    const apiKeyEnv = config.gemini?.apiKeyEnv ?? 'GEMINI_API_KEY'
+    const apiKey = process.env[apiKeyEnv]
+    if (!apiKey) return nullProvider
+    return createGeminiProvider({ model: config.gemini?.scanModel ?? config.gemini?.inferModel, apiKey })
   }
   return getDefaultProvider(config)
 }
@@ -81,6 +108,32 @@ export function getDefaultProvider(config: WhythoConfig): AIProvider {
       model: config.anthropic?.annotationModel,
       apiKey,
     })
+  }
+
+  if (name === 'openai') {
+    const apiKeyEnv = config.openai?.apiKeyEnv ?? 'OPENAI_API_KEY'
+    const apiKey = process.env[apiKeyEnv]
+    if (!apiKey) {
+      console.warn(
+        `[whytho] Warning: ${apiKeyEnv} not set. Using null AI provider. ` +
+          `Set ${apiKeyEnv} to enable AI-powered annotations.`,
+      )
+      return nullProvider
+    }
+    return createOpenAIProvider({ model: config.openai?.annotationModel, apiKey })
+  }
+
+  if (name === 'gemini') {
+    const apiKeyEnv = config.gemini?.apiKeyEnv ?? 'GEMINI_API_KEY'
+    const apiKey = process.env[apiKeyEnv]
+    if (!apiKey) {
+      console.warn(
+        `[whytho] Warning: ${apiKeyEnv} not set. Using null AI provider. ` +
+          `Set ${apiKeyEnv} to enable AI-powered annotations.`,
+      )
+      return nullProvider
+    }
+    return createGeminiProvider({ model: config.gemini?.annotationModel, apiKey })
   }
 
   const provider = registry.get(name)

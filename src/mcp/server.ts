@@ -26,7 +26,6 @@ import {
   readAllSessions,
   readIndex,
 } from '../core/fs/reader.js'
-import { fileExists } from '../core/fs/writer.js'
 import { getAllRelated } from '../core/relationships/graph.js'
 import { pushReasoning } from '../core/push/index.js'
 import { WHYTHO_VERSION } from '../core/constants.js'
@@ -380,6 +379,7 @@ export async function createWhythoServer(): Promise<Server> {
 
   // ── List Tools ────────────────────────────────────────────────────────────
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: TOOLS,
   }))
@@ -388,7 +388,7 @@ export async function createWhythoServer(): Promise<Server> {
 
   server.setRequestHandler(CallToolRequestSchema, async (request) => {
     const { name, arguments: args } = request.params
-    const a = (args ?? {}) as Record<string, unknown>
+    const a = (args ?? {})
 
     try {
       switch (name) {
@@ -572,6 +572,7 @@ export async function createWhythoServer(): Promise<Server> {
           const typeFilter = a.type as string | undefined
           const results: string[] = []
 
+          // eslint-disable-next-line no-inner-declarations
           async function searchAnnotations<T>(
             reader: () => Promise<Array<{ frontmatter: T; body: string; filePath: string }>>,
             kind: string,
@@ -618,8 +619,8 @@ export async function createWhythoServer(): Promise<Server> {
             )
           }
 
-          if (results.length === 0) return text(`No annotations matching: "${a.query}"`)
-          return text(`# Search results for "${a.query}"\n\n${results.join('\n---\n\n')}`)
+          if (results.length === 0) return text(`No annotations matching: "${query}"`)
+          return text(`# Search results for "${query}"\n\n${results.join('\n---\n\n')}`)
         }
 
         case 'push_note': {
@@ -689,22 +690,22 @@ export async function createWhythoServer(): Promise<Server> {
           const entries: BlameEntry[] = []
           for (const ann of blocks) {
             if (ann.body.trim().length > 0) {
-              entries.push({ type: 'block', ref: (ann.frontmatter as BlockFrontmatter).symbolic_ref, body: ann.body.slice(0, BODY_LENGTH).trim() })
+              entries.push({ type: 'block', ref: (ann.frontmatter).symbolic_ref, body: ann.body.slice(0, BODY_LENGTH).trim() })
             }
           }
           for (const ann of files) {
             if (ann.body.trim().length > 0) {
-              entries.push({ type: 'file', ref: (ann.frontmatter as FileFrontmatter).path, body: ann.body.slice(0, BODY_LENGTH).trim() })
+              entries.push({ type: 'file', ref: (ann.frontmatter).path, body: ann.body.slice(0, BODY_LENGTH).trim() })
             }
           }
           for (const ann of folders) {
             if (ann.body.trim().length > 0) {
-              entries.push({ type: 'folder', ref: (ann.frontmatter as FolderFrontmatter).path, body: ann.body.slice(0, BODY_LENGTH).trim() })
+              entries.push({ type: 'folder', ref: (ann.frontmatter).path, body: ann.body.slice(0, BODY_LENGTH).trim() })
             }
           }
           for (const ann of sessions) {
             if (ann.body.trim().length > 0) {
-              entries.push({ type: 'session', ref: (ann.frontmatter as SessionFrontmatter).id, body: ann.body.slice(0, BODY_LENGTH).trim() })
+              entries.push({ type: 'session', ref: (ann.frontmatter).id, body: ann.body.slice(0, BODY_LENGTH).trim() })
             }
           }
 
@@ -753,6 +754,7 @@ export async function createWhythoServer(): Promise<Server> {
 
   // ── List Resources ────────────────────────────────────────────────────────
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   server.setRequestHandler(ListResourcesRequestSchema, async () => ({
     resources: [
       {
@@ -766,6 +768,7 @@ export async function createWhythoServer(): Promise<Server> {
 
   // ── List Resource Templates ────────────────────────────────────────────────
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   server.setRequestHandler(ListResourceTemplatesRequestSchema, async () => ({
     resourceTemplates: RESOURCE_TEMPLATES,
   }))
