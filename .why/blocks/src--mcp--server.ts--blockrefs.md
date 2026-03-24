@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::blockRefs
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-23T04:51:04.379Z"
+updated: "2026-03-24T03:26:16.283Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::blockRefs
   line_range:
-    start: 323
-    end: 323
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    start: 452
+    end: 452
+    commit: 467ba4108145807227f8be46b18a65a487a0065d
   content_hash: sha256:ee21221a87d7469a94a0fdbb8f6205f6f7595c43617e5d51c43bd32c91afe274
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     an MCP server context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: 467ba4108145807227f8be46b18a65a487a0065d
 ---
 
 # blockRefs

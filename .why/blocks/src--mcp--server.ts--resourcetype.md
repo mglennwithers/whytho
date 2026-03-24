@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::resourceType
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-23T04:51:05.221Z"
+updated: "2026-03-24T03:26:17.188Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::resourceType
   line_range:
-    start: 571
-    end: 571
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    start: 700
+    end: 700
+    commit: 467ba4108145807227f8be46b18a65a487a0065d
   content_hash: sha256:521e1ed3476bd390b0103c3d2328c5b90aaaab4bf643fc36ed4fad6d2f59e5a4
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     delimiter.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: 467ba4108145807227f8be46b18a65a487a0065d
 ---
 
 # resourceType

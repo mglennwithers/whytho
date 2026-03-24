@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T03:04:19.797Z"
+updated: "2026-03-24T03:26:15.726Z"
 updated_by_session: inferred
 parent_folder: src/mcp/
 sessions: []

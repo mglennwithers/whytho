@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::sess
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-23T04:51:05.326Z"
+updated: "2026-03-24T03:26:17.295Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::sess
   line_range:
-    start: 516
-    end: 516
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    start: 645
+    end: 645
+    commit: 467ba4108145807227f8be46b18a65a487a0065d
   content_hash: sha256:e30b71ea5ecc571993e217b7ad988bbfae9914f198008d7e65990331998bc5db
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     files_touched), likely extracting session information from a loosely-typed source.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: 467ba4108145807227f8be46b18a65a487a0065d
 ---
 
 # sess

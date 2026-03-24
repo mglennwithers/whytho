@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::folderPath
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-23T04:51:04.749Z"
+updated: "2026-03-24T03:26:16.670Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::folderPath
   line_range:
-    start: 283
-    end: 283
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    start: 387
+    end: 387
+    commit: 467ba4108145807227f8be46b18a65a487a0065d
   content_hash: sha256:61e9083f7dd6934d354720c957ca89ddeea35fce67d9c203e022838131c6535a
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     straightforward property access with type assertion.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: 467ba4108145807227f8be46b18a65a487a0065d
 ---
 
 # folderPath
