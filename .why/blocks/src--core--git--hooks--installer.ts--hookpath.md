@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/hooks/installer.ts::hookPath
 file: src/core/git/hooks/installer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:01.357Z"
+updated: "2026-03-24T07:41:38.006Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/git/hooks/installer.ts::hookPath
   line_range:
-    start: 50
-    end: 50
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    start: 52
+    end: 52
+    commit: d09506d145381b6b28259f8554f35859288ccd59
   content_hash: sha256:211a65e7609ba600b3603b79c201e2df1b40a9eb7a135417c3d64d35a3f24767
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     for a git hook.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: d09506d145381b6b28259f8554f35859288ccd59
 ---
 
 # hookPath

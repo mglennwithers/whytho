@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/hooks/installer.ts::content
 file: src/core/git/hooks/installer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:01.281Z"
+updated: "2026-03-24T07:41:37.912Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/git/hooks/installer.ts::content
   line_range:
-    start: 94
-    end: 94
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    start: 96
+    end: 96
+    commit: d09506d145381b6b28259f8554f35859288ccd59
   content_hash: sha256:0a572eb31f72cf93e794aedff89c9720f835b79f5f969aa5591b3b8e493a3193
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     script text or configuration data that will be processed or written during installation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: d09506d145381b6b28259f8554f35859288ccd59
 ---
 
 # content

@@ -1,7 +1,7 @@
 {
   "whytho_version": "1.0",
-  "generated_at": "2026-03-24T03:26:17.970Z",
-  "generated_at_commit": "467ba4108145807227f8be46b18a65a487a0065d",
+  "generated_at": "2026-03-24T07:41:38.666Z",
+  "generated_at_commit": "d09506d145381b6b28259f8554f35859288ccd59",
   "sessions": {
     "2026-03-21-session-mmzsxrsv": {
       "id": "2026-03-21-session-mmzsxrsv",
@@ -1394,6 +1394,79 @@
         }
       ]
     },
+    "src/cli/commands/reannotate.ts": {
+      "path": "src/cli/commands/reannotate.ts",
+      "parent_folder": "src/cli/commands/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "src/core/git/repo.ts::findRepoRoot",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/git/repo.ts::getHeadCommitSha",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/git/diff.ts::getChangedFiles",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/layout.ts::getWhyRoot",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/init.ts::isWhyDirInitialized",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/config/loader.ts::loadConfig",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/registry.ts::getDefaultProvider",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/token-counter.ts::withTokenCounting",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/token-counter.ts::formatTokens",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/token-counter.ts::TokenTally",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/reannotate/index.ts::runReannotation",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/reannotate/index.ts::checkStaleAnnotations",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/reannotate/index.ts::ReannotateTarget",
+          "pipeline": "static"
+        }
+      ]
+    },
     "src/cli/commands/related.ts": {
       "path": "src/cli/commands/related.ts",
       "parent_folder": "src/cli/commands/",
@@ -1993,6 +2066,11 @@
         {
           "type": "depends_on",
           "target": "src/cli/commands/status.ts::registerStatus",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/cli/commands/reannotate.ts::registerReannotate",
           "pipeline": "static"
         }
       ]
@@ -3287,6 +3365,124 @@
         }
       ]
     },
+    "src/core/reannotate/index.ts": {
+      "path": "src/core/reannotate/index.ts",
+      "parent_folder": "src/core/reannotate/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/reader.ts::readAllBlocks",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/reader.ts::readAllFiles",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/reader.ts::readAllFolders",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/reader.ts::readAnnotationFile",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/writer.ts::writeFile",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/writer.ts::fileExists",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/frontmatter/serialize.ts::serializeAnnotation",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/layout.ts::blockAnnotationPath",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/layout.ts::fileAnnotationPath",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/layout.ts::folderAnnotationPath",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/layout.ts::buildSymbolicRef",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/layout.ts::parentFolder",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/parser/registry.ts::parseFile",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/identity/content-hash.ts::computeContentHash",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/parser/detect-language.ts::detectLanguage",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/types.ts::BlockFrontmatter",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/types.ts::FileFrontmatter",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/types.ts::FolderFrontmatter",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/types.ts::AnnotationFile",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/types.ts::AIProvider",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/types.ts::AnnotationVerbosity",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/config/types.ts::WhythoConfig",
+          "pipeline": "static"
+        }
+      ]
+    },
     "src/core/relationships/ai-attribution.ts": {
       "path": "src/core/relationships/ai-attribution.ts",
       "parent_folder": "src/core/relationships/",
@@ -4332,6 +4528,44 @@
         {
           "type": "tests",
           "target": "src/core/types.ts::BlockFrontmatter",
+          "pipeline": "static"
+        }
+      ]
+    },
+    "tests/unit/reannotate.test.ts": {
+      "path": "tests/unit/reannotate.test.ts",
+      "parent_folder": "tests/unit/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "tests",
+          "target": "src/core/reannotate/index.ts::checkStaleAnnotations",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "src/core/frontmatter/serialize.ts::serializeAnnotation",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "src/core/identity/content-hash.ts::computeContentHash",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "src/core/types.ts::BlockFrontmatter",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "src/core/types.ts::FileFrontmatter",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "src/core/types.ts::FolderFrontmatter",
           "pipeline": "static"
         }
       ]
@@ -5663,6 +5897,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/cli/commands/reannotate.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/cli/commands/resolve.ts"
         },
         {
@@ -5837,6 +6075,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/core/relationships/ai-attribution.ts"
         },
         {
@@ -5990,7 +6232,12 @@
           "pipeline": "ai"
         }
       ],
-      "relationships_in": []
+      "relationships_in": [
+        {
+          "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
+        }
+      ]
     },
     "src/ai/types.ts::SemanticMatchRequest": {
       "symbolic_ref": "src/ai/types.ts::SemanticMatchRequest",
@@ -9959,7 +10206,7 @@
       "file": "src/cli/index.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "e19733c7ef05ffa12c0b0b640daced83679aba6c",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
       "content_hash": "sha256:da72d29af154dee28b5a586a2d129cad39cf5005d1f1670399a4cf3df61fb7d8",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -10211,6 +10458,10 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/init.ts"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/cli/commands/reannotate.ts"
         },
         {
           "type": "depends_on",
@@ -10587,6 +10838,10 @@
         {
           "type": "depends_on",
           "source": "src/config/tracking.ts"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
         },
         {
           "type": "depends_on",
@@ -11827,6 +12082,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/core/relationships/ai-attribution.ts"
         },
         {
@@ -11844,6 +12103,10 @@
         {
           "type": "tests",
           "source": "tests/unit/frontmatter.test.ts"
+        },
+        {
+          "type": "tests",
+          "source": "tests/unit/reannotate.test.ts"
         },
         {
           "type": "tests",
@@ -12221,6 +12484,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/cli/commands/reannotate.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/cli/commands/resolve.ts"
         },
         {
@@ -12449,6 +12716,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/core/relationships/ai-attribution.ts"
         },
         {
@@ -12557,6 +12828,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/core/resolution/pipeline.ts"
         }
       ]
@@ -12651,6 +12926,10 @@
         {
           "type": "depends_on",
           "source": "src/core/push/index.ts"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
         },
         {
           "type": "depends_on",
@@ -12769,6 +13048,10 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/infer.ts"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
         },
         {
           "type": "depends_on",
@@ -12943,6 +13226,10 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/infer.ts"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/cli/commands/reannotate.ts"
         },
         {
           "type": "depends_on",
@@ -13123,6 +13410,10 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/status.ts"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
         },
         {
           "type": "depends_on",
@@ -13575,6 +13866,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/core/resolution/incremental.ts"
         },
         {
@@ -13622,6 +13917,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/core/relationships/ai-attribution.ts"
         },
         {
@@ -13662,6 +13961,10 @@
         {
           "type": "depends_on",
           "source": "src/core/index-builder/build.ts"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
         },
         {
           "type": "depends_on",
@@ -13816,6 +14119,10 @@
         {
           "type": "depends_on",
           "source": "src/core/archive/archiver.ts"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
         },
         {
           "type": "depends_on",
@@ -14010,6 +14317,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/core/relationships/ai-attribution.ts"
         },
         {
@@ -14112,6 +14423,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/core/relationships/ai-attribution.ts"
         },
         {
@@ -14194,6 +14509,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/cli/commands/reannotate.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/cli/commands/resolve.ts"
         }
       ]
@@ -14252,7 +14571,7 @@
       "file": "src/core/git/hooks/installer.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
       "content_hash": "sha256:1bec1fd5c0de358214e9ba576fdc7f3de96cae88eb6b9e253e4b29f7065ae872",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14264,7 +14583,7 @@
       "file": "src/core/git/hooks/installer.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
       "content_hash": "sha256:0a572eb31f72cf93e794aedff89c9720f835b79f5f969aa5591b3b8e493a3193",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14276,7 +14595,7 @@
       "file": "src/core/git/hooks/installer.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
       "content_hash": "sha256:6d937ffaa76ecb6ef2104d29eab83b056d6e99a229cfcdf857ca348cef3d1d2d",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14288,7 +14607,7 @@
       "file": "src/core/git/hooks/installer.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
       "content_hash": "sha256:490a78f9cd06360664a343b6e651adb40279555fc069ec08ae85631f8d7e69c3",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14300,7 +14619,7 @@
       "file": "src/core/git/hooks/installer.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
       "content_hash": "sha256:8b631f85919e9196cb5f18c9bf0d27e526f8ba21e755ec0244481a27bbe5b73a",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14312,7 +14631,7 @@
       "file": "src/core/git/hooks/installer.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
       "content_hash": "sha256:4c2c1ad3b5989e8d5848e3636dafc1aa051edf33573fce9c5b1d64ed5086865d",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14324,8 +14643,8 @@
       "file": "src/core/git/hooks/installer.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
-      "content_hash": "sha256:1f31edcc2f832f6aa71e0ccfead04059ffc31d615957f8b2033dd3cf6a904868",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
+      "content_hash": "sha256:6a3cde966fa26811ad4178ff8873df674d3610f6b83c49d2e398492d45b354ac",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
       "relationships_out": [
@@ -14342,8 +14661,8 @@
       "file": "src/core/git/hooks/installer.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
-      "content_hash": "sha256:452f3cdc89841d57c21af95d7aeac01cecb46ffaacd3f1fa1ac46aefcd56ef64",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
+      "content_hash": "sha256:20baf3b53bdc886a984f60d6ed94183615392bb323d6fc07d66bf2d2f24820c2",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
       "relationships_out": [
@@ -14360,7 +14679,7 @@
       "file": "src/core/git/hooks/installer.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
       "content_hash": "sha256:882a277567d7ce2f16cfc273ce3fe31643f124e35140d7a09b7db3612106237e",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14372,7 +14691,7 @@
       "file": "src/core/git/hooks/installer.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
       "content_hash": "sha256:211a65e7609ba600b3603b79c201e2df1b40a9eb7a135417c3d64d35a3f24767",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14384,7 +14703,7 @@
       "file": "src/core/git/hooks/installer.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
       "content_hash": "sha256:753008a9053b4de5fef88bd2a4ec14022c083c7ae108a2134768611bf9e294b5",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14396,7 +14715,7 @@
       "file": "src/core/git/hooks/installer.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
       "content_hash": "sha256:bb3f4b4bf6f3011a75a6d88266bac8a3ca61f0e5ba3f32ea1b80e50b069e0e40",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14433,7 +14752,7 @@
       "file": "src/core/git/hooks/installer.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
       "content_hash": "sha256:c7ef20debef50ac84815c466f7ce39bf8aac7b59fab53c0ec664c8b80492202c",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14445,7 +14764,7 @@
       "file": "src/core/git/hooks/installer.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
       "content_hash": "sha256:6d95df6a993959c970eba10e38db8d0e43e3b6d03c8ce62882e9e3cde4f6d248",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14486,7 +14805,7 @@
       "file": "src/core/git/hooks/installer.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
       "content_hash": "sha256:b43c6ef561549bc568cb7620fa01e49408c3d0d20a71b57e2e456f1d147eaffb",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14498,7 +14817,7 @@
       "file": "src/core/git/hooks/installer.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
       "content_hash": "sha256:6aad9c8d7911a477446e58e7df7e494ccc1542e91077cbfb9cc2b65d4d29b21f",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14510,7 +14829,7 @@
       "file": "src/core/git/hooks/installer.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
       "content_hash": "sha256:d3d3a7531d45f6da2fc7d3c2c0d79c6b525296a0e986fb8b6c682a6b5a80e190",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14522,7 +14841,7 @@
       "file": "src/core/git/hooks/installer.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
+      "last_resolved": "d09506d145381b6b28259f8554f35859288ccd59",
       "content_hash": "sha256:25859bdafa81eb1f8765c3b2cc1decb786e00f2e68bcf62d3548ec66a2bef58d",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14686,6 +15005,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/cli/commands/reannotate.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/cli/commands/related.ts"
         },
         {
@@ -14769,6 +15092,10 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/infer.ts"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/cli/commands/reannotate.ts"
         },
         {
           "type": "depends_on",
@@ -14959,6 +15286,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/core/resolution/pipeline.ts"
         },
         {
@@ -14968,6 +15299,10 @@
         {
           "type": "tests",
           "source": "tests/unit/election.test.ts"
+        },
+        {
+          "type": "tests",
+          "source": "tests/unit/reannotate.test.ts"
         }
       ]
     },
@@ -15793,6 +16128,10 @@
         {
           "type": "depends_on",
           "source": "src/config/tracking.ts"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
         }
       ]
     },
@@ -16639,6 +16978,10 @@
         {
           "type": "depends_on",
           "source": "src/core/push/index.ts"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
         },
         {
           "type": "depends_on",
@@ -18386,6 +18729,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/core/resolution/incremental.ts"
         }
       ]
@@ -18646,6 +18993,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/core/relationships/ai-attribution.ts"
         },
         {
@@ -18675,6 +19026,10 @@
         {
           "type": "tests",
           "source": "tests/unit/push-relationships.test.ts"
+        },
+        {
+          "type": "tests",
+          "source": "tests/unit/reannotate.test.ts"
         },
         {
           "type": "tests",
@@ -18947,6 +19302,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/core/relationships/scanner.ts"
         },
         {
@@ -18956,6 +19315,10 @@
         {
           "type": "tests",
           "source": "tests/unit/ai-attribution.test.ts"
+        },
+        {
+          "type": "tests",
+          "source": "tests/unit/reannotate.test.ts"
         },
         {
           "type": "tests",
@@ -19060,7 +19423,15 @@
         },
         {
           "type": "depends_on",
+          "source": "src/core/reannotate/index.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/mcp/server.ts"
+        },
+        {
+          "type": "tests",
+          "source": "tests/unit/reannotate.test.ts"
         }
       ]
     },
@@ -25131,6 +25502,84 @@
     },
     {
       "type": "depends_on",
+      "source": "src/cli/commands/reannotate.ts",
+      "target": "src/core/git/repo.ts::findRepoRoot",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/reannotate.ts",
+      "target": "src/core/git/repo.ts::getHeadCommitSha",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/reannotate.ts",
+      "target": "src/core/git/diff.ts::getChangedFiles",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/reannotate.ts",
+      "target": "src/core/fs/layout.ts::getWhyRoot",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/reannotate.ts",
+      "target": "src/core/fs/init.ts::isWhyDirInitialized",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/reannotate.ts",
+      "target": "src/config/loader.ts::loadConfig",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/reannotate.ts",
+      "target": "src/ai/registry.ts::getDefaultProvider",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/reannotate.ts",
+      "target": "src/ai/token-counter.ts::withTokenCounting",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/reannotate.ts",
+      "target": "src/ai/token-counter.ts::formatTokens",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/reannotate.ts",
+      "target": "src/ai/token-counter.ts::TokenTally",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/reannotate.ts",
+      "target": "src/core/reannotate/index.ts::runReannotation",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/reannotate.ts",
+      "target": "src/core/reannotate/index.ts::checkStaleAnnotations",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/reannotate.ts",
+      "target": "src/core/reannotate/index.ts::ReannotateTarget",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
       "source": "src/cli/commands/related.ts",
       "target": "src/core/git/repo.ts::findRepoRoot",
       "pipeline": "static"
@@ -25691,6 +26140,12 @@
       "type": "depends_on",
       "source": "src/cli/index.ts",
       "target": "src/cli/commands/status.ts::registerStatus",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/index.ts",
+      "target": "src/cli/commands/reannotate.ts::registerReannotate",
       "pipeline": "static"
     },
     {
@@ -26517,6 +26972,138 @@
     },
     {
       "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/fs/reader.ts::readAllBlocks",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/fs/reader.ts::readAllFiles",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/fs/reader.ts::readAllFolders",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/fs/reader.ts::readAnnotationFile",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/fs/writer.ts::writeFile",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/fs/writer.ts::fileExists",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/frontmatter/serialize.ts::serializeAnnotation",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/fs/layout.ts::blockAnnotationPath",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/fs/layout.ts::fileAnnotationPath",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/fs/layout.ts::folderAnnotationPath",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/fs/layout.ts::buildSymbolicRef",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/fs/layout.ts::parentFolder",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/parser/registry.ts::parseFile",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/identity/content-hash.ts::computeContentHash",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/parser/detect-language.ts::detectLanguage",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/types.ts::BlockFrontmatter",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/types.ts::FileFrontmatter",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/types.ts::FolderFrontmatter",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/core/types.ts::AnnotationFile",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/ai/types.ts::AIProvider",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/ai/types.ts::AnnotationVerbosity",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/core/reannotate/index.ts",
+      "target": "src/config/types.ts::WhythoConfig",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
       "source": "src/core/relationships/ai-attribution.ts",
       "target": "src/ai/types.ts::AIProvider",
       "pipeline": "static"
@@ -27293,6 +27880,42 @@
       "type": "tests",
       "source": "tests/unit/push-relationships.test.ts",
       "target": "src/core/types.ts::BlockFrontmatter",
+      "pipeline": "static"
+    },
+    {
+      "type": "tests",
+      "source": "tests/unit/reannotate.test.ts",
+      "target": "src/core/reannotate/index.ts::checkStaleAnnotations",
+      "pipeline": "static"
+    },
+    {
+      "type": "tests",
+      "source": "tests/unit/reannotate.test.ts",
+      "target": "src/core/frontmatter/serialize.ts::serializeAnnotation",
+      "pipeline": "static"
+    },
+    {
+      "type": "tests",
+      "source": "tests/unit/reannotate.test.ts",
+      "target": "src/core/identity/content-hash.ts::computeContentHash",
+      "pipeline": "static"
+    },
+    {
+      "type": "tests",
+      "source": "tests/unit/reannotate.test.ts",
+      "target": "src/core/types.ts::BlockFrontmatter",
+      "pipeline": "static"
+    },
+    {
+      "type": "tests",
+      "source": "tests/unit/reannotate.test.ts",
+      "target": "src/core/types.ts::FileFrontmatter",
+      "pipeline": "static"
+    },
+    {
+      "type": "tests",
+      "source": "tests/unit/reannotate.test.ts",
+      "target": "src/core/types.ts::FolderFrontmatter",
       "pipeline": "static"
     },
     {

@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/cli/index.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T02:45:55.526Z"
+updated: "2026-03-24T07:41:37.503Z"
 updated_by_session: inferred
 parent_folder: src/cli/
 sessions: []
@@ -64,6 +64,9 @@ relationships:
     source: static
   - type: depends_on
     target: src/cli/commands/status.ts::registerStatus
+    source: static
+  - type: depends_on
+    target: src/cli/commands/reannotate.ts::registerReannotate
     source: static
 ---
 

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/hooks/installer.ts::uninstallHook
 file: src/core/git/hooks/installer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:01.428Z"
+updated: "2026-03-24T07:41:38.111Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/git/hooks/installer.ts::uninstallHook
   line_range:
-    start: 86
-    end: 135
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    start: 88
+    end: 137
+    commit: d09506d145381b6b28259f8554f35859288ccd59
   content_hash: sha256:25859bdafa81eb1f8765c3b2cc1decb786e00f2e68bcf62d3548ec66a2bef58d
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     file if only the installation block remains.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: d09506d145381b6b28259f8554f35859288ccd59
 relationships:
   - type: depends_on
     target: src/core/constants.ts::POST_COMMIT_HOOK_NAME
