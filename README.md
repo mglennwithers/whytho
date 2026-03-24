@@ -93,7 +93,7 @@ A git hook runs resolution on every commit. This guarantees the index is always 
 
 ### Relationships
 
-Block annotations can declare relationships using a controlled vocabulary — `extends`, `overrides`, `depends_on`, `tests`, `configures`, and others. When a relationship target changes, Whytho emits a hook event. Hook consumers decide how to respond: running tests, notifying a human, triggering an agent, or blocking the commit.
+Block annotations can declare relationships using a controlled vocabulary — `extends`, `depends_on`, `implements`, and `tests`. When a relationship target changes, Whytho emits a hook event. Hook consumers decide how to respond: running tests, notifying a human, triggering an agent, or blocking the commit.
 
 ### Archival
 
@@ -217,6 +217,8 @@ git why diff main..feature-branch
 | `git why related <ref>` | Show the relationship graph for a block |
 | `git why history <ref>` | Show live and archived versions of a block annotation |
 | `git why diff <range>` | Show a git diff annotated with decision context |
+| `git why scan` | Run static relationship scanner across the repo (or a single file) |
+| `git why search <query>` | Search annotations by text or `--semantic` AI-powered meaning |
 | `git why mcp` | Start the MCP server (stdio transport) for use with Claude Code and other MCP clients |
 
 ---

@@ -1,7 +1,7 @@
 # Whytho Specification
 
-**Version:** 1.0.0-draft
-**Status:** Draft
+**Version:** 1.0.0
+**Status:** Released
 **Date:** 2026-03-19
 
 ---
@@ -860,31 +860,14 @@ Block annotations MAY declare relationships to other blocks. Relationships enabl
 
 ### 12.2 Vocabulary
 
-Relationships use a controlled vocabulary organized into three categories:
-
-#### Lineage
+Relationships use a controlled vocabulary:
 
 | Type | Meaning |
 |------|---------|
 | `extends` | This block extends or augments the target block's functionality. |
-| `overrides` | This block overrides or replaces the target block's behavior in a specific context. |
-| `derived_from` | This block was created by splitting, forking, or heavily adapting the target block. |
-
-#### Dependency
-
-| Type | Meaning |
-|------|---------|
 | `depends_on` | This block calls, imports, or requires the target block to function. |
-| `configures` | This block provides configuration consumed by the target block. |
 | `implements` | This block implements an interface, contract, or specification defined by the target block. |
-
-#### Verification
-
-| Type | Meaning |
-|------|---------|
 | `tests` | This block is a test for the target block. |
-| `validates` | This block performs runtime validation of the target block's output or state. |
-| `documents` | This block exists primarily to document or explain the target block (e.g., a docstring, README section, or example). |
 
 ### 12.3 Schema
 
@@ -1223,6 +1206,8 @@ Implementations SHOULD provide:
 - A `git why init` command that creates the `.why/` folder structure and installs the hook.
 - A `git why annotate` command that generates annotations for the current session.
 - A `git why` query interface for exploring annotations.
+- A `git why search` command for text and semantic search across annotations.
+- A `git why scan` command for running static relationship scanning across the repo.
 - A `git why diff` command that overlays annotation context onto standard diffs.
 - A `git why resolve` command for manually running resolution outside of the commit hook.
 

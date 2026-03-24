@@ -16,6 +16,8 @@ Match annotation depth to task depth:
 | Exploring multiple files to find the right one | `mcp__whytho__get_file_context(path, { purpose_only: true })` |
 | About to modify a file — need full context | `mcp__whytho__get_file_context(path)` (default, includes blocks) |
 | About to change a specific function | `mcp__whytho__get_block("file.ts::functionName")` |
+| Only need tradeoffs or uncertainty for a block | `mcp__whytho__get_block(ref, { include: ["Tradeoffs"] })` |
+| Need context for several blocks/files at once | `mcp__whytho__get_annotations({ refs: [{ type, ref }, ...] })` |
 | Looking for reasoning on a topic across the codebase | `mcp__whytho__search("query")` |
 | Need to know what depends on a block | `mcp__whytho__get_related("file.ts::blockName")` |
 
@@ -27,7 +29,7 @@ Skipping this step means planning against incomplete information — design choi
 
 ```bash
 npm run build      # tsup — dual CJS/ESM output + .d.ts
-npm test           # vitest — 26 unit tests
+npm test           # vitest — 126 unit tests
 npm run typecheck  # tsc --noEmit
 ```
 
@@ -106,7 +108,7 @@ src/
   config/           # WhythoConfig loader + defaults
 tests/
   fixtures/         # sample.ts for parser tests
-  unit/             # 26 unit tests
+  unit/             # 126 unit tests
 ```
 
 ## Key files

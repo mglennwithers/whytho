@@ -45,6 +45,11 @@ const TOOLS = [
           type: 'string',
           description: 'Symbolic reference in the form "path/to/file.ts::blockName"',
         },
+        include: {
+          type: 'array',
+          items: { type: 'string' },
+          description: 'Sections to return: "frontmatter", "body", or a heading like "Purpose", "Tradeoffs", "Uncertainty". Omit for full content.',
+        },
       },
       required: ['symbolic_ref'],
     },
@@ -56,6 +61,11 @@ const TOOLS = [
       type: 'object',
       properties: {
         path: { type: 'string', description: 'Relative file path, e.g. "src/auth/middleware.ts"' },
+        include: {
+          type: 'array',
+          items: { type: 'string' },
+          description: 'Sections to return: "frontmatter", "body", or a heading like "Purpose", "Tradeoffs", "Uncertainty". Omit for full content.',
+        },
       },
       required: ['path'],
     },
@@ -67,6 +77,11 @@ const TOOLS = [
       type: 'object',
       properties: {
         path: { type: 'string', description: 'Relative folder path, e.g. "src/auth/" or "/" for root' },
+        include: {
+          type: 'array',
+          items: { type: 'string' },
+          description: 'Sections to return: "frontmatter", "body", or a heading like "Purpose", "Tradeoffs", "Uncertainty". Omit for full content.',
+        },
       },
       required: ['path'],
     },
@@ -78,7 +93,50 @@ const TOOLS = [
       type: 'object',
       properties: {
         id: { type: 'string', description: 'Session ID (e.g. "2026-03-20-session-abc123"). Omit for most recent.' },
+        include: {
+          type: 'array',
+          items: { type: 'string' },
+          description: 'Sections to return: "frontmatter", "body", or a heading like "Purpose", "Objectives", "Decisions", "Uncertainty Log". Omit for full content.',
+        },
       },
+    },
+  },
+  {
+    name: 'get_annotations',
+    description: [
+      'Retrieve multiple annotations in a single call. Each item specifies a type and ref.',
+      'Supports section filtering via include — same values as the single-get tools.',
+      'Use this instead of multiple get_block/get_file calls when you need several annotations at once.',
+    ].join('\n'),
+    inputSchema: {
+      type: 'object',
+      properties: {
+        refs: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              type: {
+                type: 'string',
+                enum: ['block', 'file', 'folder', 'session'],
+                description: 'Annotation type',
+              },
+              ref: {
+                type: 'string',
+                description: 'Identifier: symbolic ref for block, path for file/folder, session ID or "latest" for session',
+              },
+              include: {
+                type: 'array',
+                items: { type: 'string' },
+                description: 'Sections to return: "frontmatter", "body", or a heading name. Omit for full content.',
+              },
+            },
+            required: ['type', 'ref'],
+          },
+          description: 'Array of annotation references to retrieve',
+        },
+      },
+      required: ['refs'],
     },
   },
   {
@@ -225,6 +283,50 @@ function extractPurpose(body: string): string {
   return match ? match[1].trim() : body.trim()
 }
 
+// ─── Helper: extract a named ## section from a markdown body ──────────────────
+
+function extractSection(body: string, heading: string): string | null {
+  const escaped = heading.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const re = new RegExp(`(##\\s+${escaped})\\n+([\\s\\S]*?)(?=\\n##\\s|\\n---\\s*\\n|$)`, 'i')
+  const match = body.match(re)
+  return match ? `${match[1]}\n\n${match[2].trim()}` : null
+}
+
+// ─── Helper: apply include filter to raw annotation content ───────────────────
+
+function applyIncludeFilter(raw: string, include?: string[]): string {
+  if (!include || include.length === 0) return raw
+
+  const body = stripFrontmatter(raw)
+  const parts: string[] = []
+
+  for (const section of include) {
+    if (section === 'frontmatter') {
+      const match = raw.match(/^---\n([\s\S]*?)\n---/)
+      if (match) parts.push(`---\n${match[1]}\n---`)
+    } else if (section === 'body') {
+      parts.push(body)
+    } else {
+      const extracted = extractSection(body, section)
+      if (extracted) parts.push(extracted)
+    }
+  }
+
+  return parts.join('\n\n')
+}
+
+// ─── Helper: resolve annotation path from type + ref ──────────────────────────
+
+function resolveAnnotationPath(whyRoot: string, type: string, ref: string): string {
+  switch (type) {
+    case 'block': return blockAnnotationPath(whyRoot, ref)
+    case 'file': return fileAnnotationPath(whyRoot, ref)
+    case 'folder': return folderAnnotationPath(whyRoot, ref)
+    case 'session': return sessionAnnotationPath(whyRoot, ref)
+    default: throw new Error(`Unknown annotation type: ${type}`)
+  }
+}
+
 // ─── Helper: find latest session ──────────────────────────────────────────────
 
 async function findLatestSessionId(whyRoot: string): Promise<string | undefined> {
@@ -265,35 +367,62 @@ export async function createWhythoServer(): Promise<Server> {
       switch (name) {
         case 'get_block': {
           const ref = a.symbolic_ref as string
+          const include = a.include as string[] | undefined
           const annPath = blockAnnotationPath(whyRoot, ref)
           const content = await readRaw(annPath)
           if (!content) return text(`No annotation found for block: ${ref}`)
-          return text(content)
+          return text(applyIncludeFilter(content, include))
         }
 
         case 'get_file': {
           const filePath = a.path as string
+          const include = a.include as string[] | undefined
           const annPath = fileAnnotationPath(whyRoot, filePath)
           const content = await readRaw(annPath)
           if (!content) return text(`No annotation found for file: ${filePath}`)
-          return text(content)
+          return text(applyIncludeFilter(content, include))
         }
 
         case 'get_folder': {
           const folderPath = a.path as string
+          const include = a.include as string[] | undefined
           const annPath = folderAnnotationPath(whyRoot, folderPath)
           const content = await readRaw(annPath)
           if (!content) return text(`No annotation found for folder: ${folderPath}`)
-          return text(content)
+          return text(applyIncludeFilter(content, include))
         }
 
         case 'get_session': {
           const id = (a.id as string | undefined) ?? await findLatestSessionId(whyRoot)
           if (!id) return text('No sessions found. Run: git why annotate')
+          const include = a.include as string[] | undefined
           const annPath = sessionAnnotationPath(whyRoot, id)
           const content = await readRaw(annPath)
           if (!content) return text(`No annotation found for session: ${id}`)
-          return text(content)
+          return text(applyIncludeFilter(content, include))
+        }
+
+        case 'get_annotations': {
+          const refs = a.refs as Array<{ type: string; ref: string; include?: string[] }>
+          if (!refs?.length) return text('No refs provided.')
+
+          const parts: string[] = []
+          for (const item of refs) {
+            let ref = item.ref
+            if (item.type === 'session' && ref === 'latest') {
+              ref = await findLatestSessionId(whyRoot) ?? ''
+              if (!ref) { parts.push(`# [session] latest\n\n_No sessions found._`); continue }
+            }
+            const annPath = resolveAnnotationPath(whyRoot, item.type, ref)
+            const content = await readRaw(annPath)
+            if (!content) {
+              parts.push(`# [${item.type}] ${ref}\n\n_No annotation found._`)
+            } else {
+              const filtered = applyIncludeFilter(content, item.include)
+              parts.push(`# [${item.type}] ${ref}\n\n${filtered}`)
+            }
+          }
+          return text(parts.join('\n\n---\n\n'))
         }
 
         case 'get_file_context': {

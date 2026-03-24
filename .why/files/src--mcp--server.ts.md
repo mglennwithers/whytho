@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-23T10:27:35.659Z"
+updated: "2026-03-24T03:04:19.797Z"
 updated_by_session: inferred
 parent_folder: src/mcp/
 sessions: []
@@ -212,3 +212,5 @@ This file (`src/mcp/server.ts`) implements a Model Context Protocol (MCP) server
 - **Complete Tool Schemas** — The full parameter and return type definitions for each tool beyond their names and inferred purposes
 - **Integration Points** — How "whytho" integrates with external systems or git operations beyond directory structure inference
 - **Business Logic for Reasoning** — The criteria and algorithms that determine which blocks/annotations are "related" or "inferred"
+
+Added include filter and get_annotations batch tool. The include filter uses the same section extraction pattern as extractPurpose but generalized to any ## heading. applyIncludeFilter returns raw content unchanged when include is omitted — zero-cost backward compatibility. The batch tool resolves "latest" for session refs inline rather than requiring a separate lookup. Tests duplicate the helper logic rather than exporting it from server.ts because these are private helpers for the MCP layer and exporting would leak implementation.

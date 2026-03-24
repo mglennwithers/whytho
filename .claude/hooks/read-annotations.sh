@@ -54,7 +54,7 @@ fi
 
 if [[ $BLOCK_COUNT -gt 0 ]]; then
   printf '[whytho] %d block annotation(s) for this file.' "$BLOCK_COUNT" >> "$CTX"
-  printf ' Call mcp__whytho__get_file_context('\''%s'\'') to read them.\n' "$REL_PATH" >> "$CTX"
+  printf ' Call mcp__whytho__get_file_context('\''%s'\'') to read them, or use get_block(ref, { include: ["Purpose"] }) for a specific section.\n' "$REL_PATH" >> "$CTX"
 else
   printf '[whytho] No block annotations for this file.\n' >> "$CTX"
 fi
