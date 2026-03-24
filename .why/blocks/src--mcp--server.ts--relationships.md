@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::relationships
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:28.155Z"
+updated: "2026-03-24T09:57:42.576Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::relationships
   line_range:
-    start: 617
-    end: 617
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 644
+    end: 644
+    commit: 879d75def2bc95123e8331993d4249411187c49f
   content_hash: sha256:daf9e4737e70ef54750b93aaa2485f2c8ce9b7a2d2e179ce592b3e8983537283
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     null, using the nullish coalescing operator for safe property access.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: 879d75def2bc95123e8331993d4249411187c49f
 ---
 
 # relationships

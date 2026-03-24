@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::text
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:28.496Z"
+updated: "2026-03-24T09:57:43.053Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::text
   line_range:
-    start: 746
-    end: 748
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 840
+    end: 842
+    commit: 879d75def2bc95123e8331993d4249411187c49f
   content_hash: sha256:d749c1c7c4a7e3edced7dc47df326c20c30722460cb053e7f59fbed0bfbbf6b9
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     primitive string type to the MCP protocol's content array format.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: 879d75def2bc95123e8331993d4249411187c49f
 ---
 
 # text

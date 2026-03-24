@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::item
 file: src/mcp/server.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-24T09:57:42.128Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::item
   line_range:
-    start: 410
-    end: 410
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 437
+    end: 437
+    commit: 879d75def2bc95123e8331993d4249411187c49f
   content_hash: sha256:6a3dbaa758060fcf79051c52009455c05d05d34bfd544060800dfbda08dc62e3
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     enumeration pattern that suggests `refs` contains multiple elements that require individual handling.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: 879d75def2bc95123e8331993d4249411187c49f
 ---
 
 # item

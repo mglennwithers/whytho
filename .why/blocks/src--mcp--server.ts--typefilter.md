@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::typeFilter
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:28.553Z"
+updated: "2026-03-24T09:57:43.120Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::typeFilter
   line_range:
-    start: 545
-    end: 545
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 572
+    end: 572
+    commit: 879d75def2bc95123e8331993d4249411187c49f
   content_hash: sha256:8c388faf523ffb3465385f5a67f1e08325fc13d7f289dd628043e67abe327c7e
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     filter variable for subsequent use.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: 879d75def2bc95123e8331993d4249411187c49f
 ---
 
 # typeFilter

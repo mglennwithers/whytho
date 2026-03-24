@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::inferredCount
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:27.801Z"
+updated: "2026-03-24T09:57:42.101Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::inferredCount
   line_range:
-    start: 621
-    end: 621
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 648
+    end: 648
+    commit: 879d75def2bc95123e8331993d4249411187c49f
   content_hash: sha256:6d826aef102512784e4cd543d41e52d6a32705422d1a0b004cc01f1f265fbf75
   structural:
     kind: const
@@ -28,7 +28,7 @@ identity:
   semantic_fingerprint: Counts the number of blocks in a collection that have an "inferred" flag set to true in their frontmatter metadata.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: 879d75def2bc95123e8331993d4249411187c49f
 ---
 
 # inferredCount

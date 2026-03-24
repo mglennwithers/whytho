@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::repoRoot
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:28.175Z"
+updated: "2026-03-24T09:57:42.602Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::repoRoot
   line_range:
-    start: 346
-    end: 346
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 373
+    end: 373
+    commit: 879d75def2bc95123e8331993d4249411187c49f
   content_hash: sha256:a3e3be7155d7b789ade4b2b796c5ca38cf1a81273fec3b710ce19b7899d98e9d
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     stores the result in a `repoRoot` constant.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: 879d75def2bc95123e8331993d4249411187c49f
 ---
 
 # repoRoot

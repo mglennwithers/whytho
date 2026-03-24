@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:19.406Z"
+updated: "2026-03-24T09:57:40.703Z"
 updated_by_session: inferred
 parent_folder: src/mcp/
 sessions: []
@@ -153,6 +153,21 @@ relationships:
     source: static
   - type: depends_on
     target: src/core/constants.ts::WHYTHO_VERSION
+    source: static
+  - type: depends_on
+    target: src/config/loader.ts::loadConfig
+    source: static
+  - type: depends_on
+    target: src/ai/registry.ts::getDefaultProvider
+    source: static
+  - type: depends_on
+    target: src/ai/prompts/blame.ts::buildBlamePrompt
+    source: static
+  - type: depends_on
+    target: src/ai/prompts/blame.ts::parseBlameResponse
+    source: static
+  - type: depends_on
+    target: src/ai/prompts/blame.ts::BlameEntry
     source: static
   - type: depends_on
     target: src/core/types.ts::WhythoIndex

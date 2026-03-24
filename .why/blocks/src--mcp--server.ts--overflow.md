@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::overflow
 file: src/mcp/server.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T09:38:27.948Z"
+updated: "2026-03-24T09:57:42.293Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::overflow
   line_range:
-    start: 468
-    end: 468
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 495
+    end: 495
+    commit: 879d75def2bc95123e8331993d4249411187c49f
   content_hash: sha256:58da745baa1231c77822564f28d323c835d93238ddba8891f2c44f99ff601ad4
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     excess items in an `overflow` variable.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: 879d75def2bc95123e8331993d4249411187c49f
 ---
 
 # overflow
