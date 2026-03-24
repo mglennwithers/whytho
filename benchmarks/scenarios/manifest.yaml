@@ -1,2 +1,5 @@
 suites:
   - eventbus
+  - circuitbreaker
+  - ratelimiter
+  - circuitbreaker-noise

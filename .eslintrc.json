@@ -27,5 +27,16 @@
     "object-shorthand": "error",
     "prefer-template": "error"
   },
-  "ignorePatterns": ["dist/", "dist-test/", "node_modules/", "scripts/"]
+  "ignorePatterns": ["dist/", "dist-test/", "node_modules/", "scripts/"],
+  "overrides": [
+    {
+      "files": ["benchmarks/**/*.ts"],
+      "parserOptions": {
+        "project": "./benchmarks/tsconfig.json"
+      },
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ]
 }

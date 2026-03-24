@@ -1,0 +1,11 @@
+source: ../circuitbreaker/circuitbreaker.ts
+annotations:
+  - ../ratelimiter/ratelimiter-annotations.md
+
+scenarios:
+  - file: noise-cb-dq-1.md
+    annotations: ../ratelimiter/ratelimiter-annotations.md
+  - file: noise-cb-dq-2.md
+    annotations: ../ratelimiter/ratelimiter-annotations.md
+  - file: noise-cb-cs-1.md
+    annotations: ../ratelimiter/ratelimiter-annotations.md

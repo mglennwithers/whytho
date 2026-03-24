@@ -1,0 +1,1378 @@
+{
+  "timestamp": "2026-03-24T01:15:23.195Z",
+  "runs": [
+    {
+      "subject": {
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "judge": {
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "tasks": [
+        {
+          "id": "dq-1",
+          "name": "Error Handling Fix",
+          "dimension": "decision_quality",
+          "without": {
+            "response": "# Implementation\n\nModify the `emit()` method to catch and handle exceptions from individual handlers:\n\n```typescript\n/**\n * Emit an event, calling all subscribed handlers with the given data.\n */\nemit(event: string, data?: unknown): void {\n  const handlers = this.subs.get(event)\n  if (!handlers) return\n  for (const handler of handlers.values()) {\n    try {\n      handler(data)\n    } catch (error) {\n      console.error(`Error in event handler for \"${event}\":`, error)\n    }\n  }\n}\n```\n\n## Rationale\n\n- **Isolation**: Wrapping each handler call in a try-catch ensures one failing subscriber doesn't prevent others from executing\n- **Logging**: Errors are logged to console for debugging visibility\n- **No re-throw**: The exception doesn't propagate, maintaining the synchronous contract that `emit()` completes successfully\n\n## Alternative (if stricter error handling is needed)\n\nIf you need to collect and report all errors:\n\n```typescript\nemit(event: string, data?: unknown): void {\n  const handlers = this.subs.get(event)\n  if (!handlers) return\n  const errors: unknown[] = []\n  for (const handler of handlers.values()) {\n    try {\n      handler(data)\n    } catch (error) {\n      errors.push(error)\n    }\n  }\n  if (errors.length > 0) {\n    console.error(`${errors.length} error(s) in event handlers for \"${event}\":`, errors)\n  }\n}\n```",
+            "inputTokens": 520,
+            "outputTokens": 374,
+            "judgeInputTokens": 1459,
+            "judgeOutputTokens": 279,
+            "scores": [
+              {
+                "id": "per-sub",
+                "score": 3,
+                "reasoning": "Each handler call is individually wrapped in its own try-catch block, ensuring complete isolation of failures."
+              },
+              {
+                "id": "all-exec",
+                "score": 3,
+                "reasoning": "The loop continues after each caught exception, guaranteeing all subscribers execute regardless of prior failures."
+              },
+              {
+                "id": "err-collected",
+                "score": 1,
+                "reasoning": "The primary implementation only logs errors via console.error without returning them; error collection is relegated to a secondary 'Alternative' suggestion."
+              },
+              {
+                "id": "sync",
+                "score": 2,
+                "reasoning": "The implementation is entirely synchronous with no async/await, Promises, or setTimeout."
+              },
+              {
+                "id": "precision",
+                "score": 1,
+                "reasoning": "The response is mostly on-target but includes unnecessary verbosity with a secondary alternative that contradicts the primary recommendation and muddies the guidance."
+              }
+            ],
+            "total": 10,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "Based on the documented design decision for \"Per-subscriber error isolation,\" here's the implementation:\n\n```typescript\n/**\n * Emit an event, calling all subscribed handlers with the given data.\n * Returns an array of errors thrown by handlers. If empty, all handlers succeeded.\n */\nemit(event: string, data?: unknown): Error[] {\n  const handlers = this.subs.get(event)\n  if (!handlers) return []\n  \n  const errors: Error[] = []\n  for (const handler of handlers.values()) {\n    try {\n      handler(data)\n    } catch (error) {\n      errors.push(error instanceof Error ? error : new Error(String(error)))\n    }\n  }\n  return errors\n}\n```\n\n**Key changes:**\n1. Wrap each handler call in `try/catch` to isolate failures\n2. Collect errors into an array instead of re-throwing\n3. Return the errors array so callers can inspect them\n4. Normalize non-Error objects thrown by handlers into Error instances\n5. Update the JSDoc to document the return value\n\nThis ensures all subscribers receive the event even if earlier ones throw, and callers get visibility into what went wrong without crashing.",
+            "inputTokens": 1084,
+            "outputTokens": 281,
+            "judgeInputTokens": 1924,
+            "judgeOutputTokens": 284,
+            "scores": [
+              {
+                "id": "per-sub",
+                "score": 3,
+                "reasoning": "Each handler call is individually wrapped in its own try/catch block, ensuring one subscriber's exception cannot affect the execution of another."
+              },
+              {
+                "id": "all-exec",
+                "score": 3,
+                "reasoning": "The loop continues after each catch block, guaranteeing that all subscribers execute regardless of prior exceptions."
+              },
+              {
+                "id": "err-collected",
+                "score": 2,
+                "reasoning": "Errors are collected into an Error[] array and returned as the primary implementation; the return type changes from void to Error[]."
+              },
+              {
+                "id": "sync",
+                "score": 2,
+                "reasoning": "The implementation is entirely synchronous with no async/await, Promises, or setTimeout calls."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "The response is direct and focused, providing the corrected implementation with clear bullet-point explanations and no unnecessary alternatives or hedging."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "delta": 2
+        },
+        {
+          "id": "dq-2",
+          "name": "Wildcard Rejection",
+          "dimension": "decision_quality",
+          "without": {
+            "response": "# Implementation\n\nModify the `emit` method to also trigger handlers subscribed to the `'*'` event:\n\n```typescript\n/**\n * Emit an event, calling all subscribed handlers with the given data.\n */\nemit(event: string, data?: unknown): void {\n  const handlers = this.subs.get(event)\n  if (handlers) {\n    for (const handler of handlers.values()) {\n      handler(data)\n    }\n  }\n  \n  // Trigger wildcard subscribers\n  const wildcardHandlers = this.subs.get('*')\n  if (wildcardHandlers) {\n    for (const handler of wildcardHandlers.values()) {\n      handler(data)\n    }\n  }\n}\n```\n\n**Key points:**\n- Wildcard handlers receive the same data as event-specific handlers\n- Wildcard handlers are called *after* event-specific handlers (maintains predictable ordering)\n- No changes needed to `subscribe()` — it already works for `'*'`\n- Consider documenting this behavior in the class JSDoc\n\n**Optional enhancement** — if you want wildcard handlers to know which event was emitted, pass an object instead:\n\n```typescript\nemit(event: string, data?: unknown): void {\n  const handlers = this.subs.get(event)\n  if (handlers) {\n    for (const handler of handlers.values()) {\n      handler(data)\n    }\n  }\n  \n  const wildcardHandlers = this.subs.get('*')\n  if (wildcardHandlers) {\n    for (const handler of wildcardHandlers.values()) {\n      handler({ event, data })\n    }\n  }\n}\n```\n\nThis requires updating the type signature and documentation accordingly.",
+            "inputTokens": 513,
+            "outputTokens": 412,
+            "judgeInputTokens": 1394,
+            "judgeOutputTokens": 271,
+            "scores": [
+              {
+                "id": "declines",
+                "score": 0,
+                "reasoning": "The AI implements the wildcard feature as requested without any objection or pushback."
+              },
+              {
+                "id": "reason",
+                "score": 0,
+                "reasoning": "The AI does not cite any reason against implementing wildcards; it proceeds directly with implementation."
+              },
+              {
+                "id": "alternative",
+                "score": 0,
+                "reasoning": "The AI proposes no alternative approach since it does not decline the request."
+              },
+              {
+                "id": "no-partial",
+                "score": 0,
+                "reasoning": "The response includes complete wildcard implementation code in the primary solution and again in the 'optional enhancement' section."
+              },
+              {
+                "id": "precision",
+                "score": 1,
+                "reasoning": "The response is mostly focused on the implementation with clear code and key points, but includes unnecessary 'optional enhancement' section that adds verbosity without addressing the core task requirement."
+              }
+            ],
+            "total": 1,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "**Recommendation: Reject this feature request.**\n\nThis directly contradicts the documented design decision under \"No wildcard subscriptions\":\n\n> Wildcard handlers fire in undefined order relative to specific-event handlers, creating subtle ordering bugs that are hard to reproduce. The complexity is not worth it; callers who need all events can subscribe to each event by name explicitly.\n\n**If the teammate has a genuine use case**, the proper solution is:\n\n1. **Ask them to name it explicitly.** Instead of `'*'`, use a specific event like `'app:any-event'` and have all emit sites publish to both their specific event and this catch-all event.\n\n2. **Or, create a wrapper.** If they need to observe all events, wrap the EventBus in a higher-level class that maintains a list of known events and subscribes to each one, then re-emits to a catch-all handler.\n\n3. **Or, add explicit logging/middleware.** If the goal is debugging/monitoring, add a separate `onEmit` hook or decorator rather than polluting the pub/sub model.\n\n**Do not implement wildcard subscriptions.** The design decision is sound—it prevents ordering bugs and keeps the API simple and predictable.",
+            "inputTokens": 1077,
+            "outputTokens": 274,
+            "judgeInputTokens": 1814,
+            "judgeOutputTokens": 291,
+            "scores": [
+              {
+                "id": "declines",
+                "score": 3,
+                "reasoning": "Response explicitly and unambiguously recommends rejecting the feature request with a clear opening statement."
+              },
+              {
+                "id": "reason",
+                "score": 3,
+                "reasoning": "Cites the specific documented design decision naming concrete concerns: undefined ordering relative to specific-event handlers and subtle ordering bugs that are hard to reproduce."
+              },
+              {
+                "id": "alternative",
+                "score": 2,
+                "reasoning": "Proposes three concrete alternatives: explicit event naming with dual publishing, a wrapper class that subscribes to known events, and a separate logging/middleware hook for monitoring use cases."
+              },
+              {
+                "id": "no-partial",
+                "score": 2,
+                "reasoning": "Response contains no wildcard implementation code and explicitly advises against implementation."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is direct and focused, immediately stating the recommendation, citing the design decision, and offering concrete alternatives without unnecessary hedging or filler."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "delta": 11
+        },
+        {
+          "id": "sr-2",
+          "name": "Implement once()",
+          "dimension": "task_success",
+          "without": {
+            "response": "# Implementation\n\nFirst, implement `unsubscribe()`:\n\n```typescript\nunsubscribe(token: symbol): boolean {\n  const event = this.tokenIndex.get(token)\n  if (!event) return false\n  const handlers = this.subs.get(event)\n  if (!handlers) return false\n  const removed = handlers.delete(token)\n  if (removed) this.tokenIndex.delete(token)\n  return removed\n}\n```\n\nThen implement `once()`:\n\n```typescript\nonce<T = unknown>(event: string, handler: EventHandler<T>): symbol {\n  const token = this.subscribe<T>(event, (data: T) => {\n    handler(data)\n    this.unsubscribe(token)\n  })\n  return token\n}\n```\n\n**How it works:**\n- `once()` wraps the original handler in a function that calls the handler, then immediately unsubscribes using the token\n- The token is captured in the closure before being returned\n- When the event fires, the handler executes and removes itself from the subscription map\n- Calling `unsubscribe(token)` early will prevent the handler from firing",
+            "inputTokens": 516,
+            "outputTokens": 273,
+            "judgeInputTokens": 1326,
+            "judgeOutputTokens": 321,
+            "scores": [
+              {
+                "id": "auto-unsub",
+                "score": 0,
+                "reasoning": "The handler calls unsubscribe() *after* executing (handler(data) then unsubscribe), so if the event is emitted again before that line executes, the subscription is still active."
+              },
+              {
+                "id": "returns-token",
+                "score": 3,
+                "reasoning": "Returns the token from subscribe(), which is a valid symbol that works correctly with unsubscribe()."
+              },
+              {
+                "id": "unsub-order",
+                "score": 0,
+                "reasoning": "The wrapper executes handler(data) first, then calls this.unsubscribe(token), leaving the subscription active during handler execution."
+              },
+              {
+                "id": "no-double",
+                "score": 0,
+                "reasoning": "A re-entrant emit of the same event from within the handler will execute the wrapper again before the first wrapper finishes and calls unsubscribe(), allowing the handler to fire twice."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is concise and directly implements both methods with a focused explanation of how once() works."
+              }
+            ],
+            "total": 5,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "```typescript\n/**\n * Subscribe for exactly one emission of an event, then auto-unsubscribe.\n * Returns a token that can be passed to unsubscribe() to cancel early.\n */\nonce<T = unknown>(event: string, handler: EventHandler<T>): symbol {\n  const token = this.subscribe<T>(event, (data: T) => {\n    this.unsubscribe(token)\n    handler(data)\n  })\n  return token\n}\n```\n\n**Note:** This implementation assumes `unsubscribe()` is implemented first. Here's the implementation for that:\n\n```typescript\n/**\n * Unsubscribe using a token returned by subscribe().\n * Returns true if the token was found and removed, false otherwise.\n */\nunsubscribe(token: symbol): boolean {\n  const event = this.tokenIndex.get(token)\n  if (!event) return false\n  const handlers = this.subs.get(event)\n  if (!handlers) return false\n  const removed = handlers.delete(token)\n  if (removed) this.tokenIndex.delete(token)\n  return removed\n}\n```\n\nThe `once()` implementation wraps the user's handler in a closure that unsubscribes the token before calling the original handler. This ensures the handler fires exactly once, and the token can still be used to cancel early if needed (before the first emission).",
+            "inputTokens": 1080,
+            "outputTokens": 329,
+            "judgeInputTokens": 1940,
+            "judgeOutputTokens": 337,
+            "scores": [
+              {
+                "id": "auto-unsub",
+                "score": 3,
+                "reasoning": "The wrapper calls unsubscribe(token) on first emission, removing the handler from the map, so subsequent emits will not find it."
+              },
+              {
+                "id": "returns-token",
+                "score": 3,
+                "reasoning": "once() returns the token from subscribe(), which is a valid symbol that can be passed to unsubscribe() to cancel before the first emission."
+              },
+              {
+                "id": "unsub-order",
+                "score": 2,
+                "reasoning": "The wrapper calls this.unsubscribe(token) before invoking handler(data), ensuring the subscription is removed before the original handler executes."
+              },
+              {
+                "id": "no-double",
+                "score": 2,
+                "reasoning": "Because unsubscribe happens before handler execution, a re-entrant emit from within the handler will not find the token in the handlers map, preventing double invocation."
+              },
+              {
+                "id": "precision",
+                "score": 1,
+                "reasoning": "The core implementation is correct and concise, but the response includes an unnecessary 'Note' section with a full unsubscribe() implementation that was not requested, introducing avoidable verbosity."
+              }
+            ],
+            "total": 11,
+            "maxTotal": 12
+          },
+          "delta": 6
+        },
+        {
+          "id": "cs-1",
+          "name": "Explain Error Handling Intent",
+          "dimension": "coverage_signal",
+          "without": {
+            "response": "# Error Handling Recommendation for `emit()`\n\nBased on the code structure and typical EventBus patterns, **`emit()` should catch and suppress exceptions from individual handlers** to prevent one failing subscriber from breaking the event propagation chain.\n\n## Recommended Implementation:\n\n```typescript\nemit(event: string, data?: unknown): void {\n  const handlers = this.subs.get(event)\n  if (!handlers) return\n  for (const handler of handlers.values()) {\n    try {\n      handler(data)\n    } catch (error) {\n      // Suppress error and continue to next handler\n      console.error(`Error in handler for event \"${event}\":`, error)\n    }\n  }\n}\n```\n\n## Rationale:\n\n1. **Isolation**: One broken subscriber shouldn't prevent others from executing\n2. **Robustness**: Synchronous event buses typically prioritize delivery over failure propagation\n3. **Observability**: Logging errors maintains debuggability without breaking the system\n4. **Consistency**: Matches behavior of DOM EventTarget and most pub/sub libraries\n\n## Alternative (if strict error propagation is needed):\n\nIf the design requires immediate failure, document it clearly and let exceptions propagate naturally (no try/catch). However, this is less common for event buses and should be explicitly stated in the class documentation.",
+            "inputTokens": 512,
+            "outputTokens": 303,
+            "judgeInputTokens": 1270,
+            "judgeOutputTokens": 352,
+            "scores": [
+              {
+                "id": "isolation",
+                "score": 3,
+                "reasoning": "The response correctly identifies that one failing subscriber should not break the event propagation chain, explicitly stating 'One broken subscriber shouldn't prevent others from executing.'"
+              },
+              {
+                "id": "all-run",
+                "score": 3,
+                "reasoning": "The response clearly states that all handlers should execute despite one throwing, demonstrated by the try-catch implementation that continues iteration and the rationale 'Isolation: One broken subscriber shouldn't prevent others from executing.'"
+              },
+              {
+                "id": "confident",
+                "score": 1,
+                "reasoning": "The response uses definitive language in the main recommendation but significantly undermines confidence by presenting an alternative and hedging with 'if strict error propagation is needed' and 'However, this is less common... and should be explicitly stated,' weakening the core assertion."
+              },
+              {
+                "id": "no-wrong-spec",
+                "score": 2,
+                "reasoning": "No factually incorrect claims are made; the implementation and rationale are consistent with standard event bus patterns."
+              },
+              {
+                "id": "precision",
+                "score": 1,
+                "reasoning": "The response includes unnecessary verbosity by presenting a full alternative design pattern that wasn't requested, and the 'Alternative' section introduces hedging that dilutes the primary answer."
+              }
+            ],
+            "total": 10,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "# Error Handling for emit()\n\nBased on the documented design decision **\"Per-subscriber error isolation\"**, `emit()` should:\n\n1. **Wrap each handler in try/catch** — catch exceptions thrown by individual subscribers\n2. **Continue executing remaining handlers** — one broken handler must not prevent others from receiving the event\n3. **Collect errors into an array** — return `Error[]` from `emit()` so callers can inspect what went wrong\n4. **Return empty array on success** — if all handlers execute without throwing, return `[]`\n\n## Implementation:\n\n```typescript\n/**\n * Emit an event, calling all subscribed handlers with the given data.\n * Returns an array of errors thrown by handlers. If all handlers succeed, returns [].\n */\nemit(event: string, data?: unknown): Error[] {\n  const handlers = this.subs.get(event)\n  if (!handlers) return []\n  \n  const errors: Error[] = []\n  for (const handler of handlers.values()) {\n    try {\n      handler(data)\n    } catch (err) {\n      errors.push(err instanceof Error ? err : new Error(String(err)))\n    }\n  }\n  return errors\n}\n```\n\nThis design ensures:\n- **Robustness**: One faulty subscriber doesn't silence others\n- **Debuggability**: Errors are visible to the caller, not swallowed\n- **Predictability**: All handlers always execute (unless the event has no subscribers)",
+            "inputTokens": 1076,
+            "outputTokens": 345,
+            "judgeInputTokens": 1870,
+            "judgeOutputTokens": 340,
+            "scores": [
+              {
+                "id": "isolation",
+                "score": 3,
+                "reasoning": "Response correctly identifies and explicitly names the 'Per-subscriber error isolation' design decision, accurately stating that one broken handler should not prevent others from receiving the event."
+              },
+              {
+                "id": "all-run",
+                "score": 3,
+                "reasoning": "Response clearly states 'one broken handler must not prevent others from receiving the event' and 'All handlers always execute', directly addressing that all subscribers run despite throws."
+              },
+              {
+                "id": "confident",
+                "score": 2,
+                "reasoning": "Language is definitive throughout ('should', 'must', 'ensures') with no hedging qualifiers like 'I think', 'probably', or 'it seems like'."
+              },
+              {
+                "id": "no-wrong-spec",
+                "score": 2,
+                "reasoning": "All claims are directly supported by the annotations: error wrapping, error collection into array return type, continuing execution, and error visibility are all explicitly documented design choices."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is tightly focused on the specific question, with a clear structure (numbered points, implementation, summary), no filler, and no irrelevant tangents."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "delta": 2
+        },
+        {
+          "id": "cs-2",
+          "name": "Evaluate Async Dispatch Proposal",
+          "dimension": "coverage_signal",
+          "without": {
+            "response": "# Recommendation: Do NOT implement this change\n\n## Reasoning\n\n**1. Violates the documented contract**\n- The class is explicitly documented as \"synchronous\"\n- Callers expect handlers to execute immediately when `emit()` is called\n- This is a breaking change that would silently alter behavior\n\n**2. Creates subtle bugs**\n- Code relying on side effects completing before the next line would break:\n  ```typescript\n  bus.emit('update', data)\n  console.log(state) // state may not be updated yet\n  ```\n- Debugging becomes harder due to non-obvious timing issues\n\n**3. Solves the wrong problem**\n- If blocking is a concern, the solution is to make handlers async and await them, not to secretly defer execution\n- Callers should explicitly opt into async behavior:\n  ```typescript\n  async emitAsync(event: string, data?: unknown): Promise<void> {\n    const handlers = this.subs.get(event)\n    if (!handlers) return\n    await Promise.all(Array.from(handlers.values()).map(h => h(data)))\n  }\n  ```\n\n**4. Performance trade-off unclear**\n- Deferring all handlers via `queueMicrotask()` doesn't actually prevent blocking if handlers are synchronous\n- It just delays when they run, potentially making the problem worse\n\n## Recommendation\nKeep `emit()` synchronous. If async behavior is needed, provide an explicit `emitAsync()` method. This maintains predictability and gives callers control over timing.",
+            "inputTokens": 533,
+            "outputTokens": 353,
+            "judgeInputTokens": 1453,
+            "judgeOutputTokens": 369,
+            "scores": [
+              {
+                "id": "clear-rec",
+                "score": 2,
+                "reasoning": "The response unambiguously recommends against implementing async dispatch and provides a clear alternative (explicit emitAsync method)."
+              },
+              {
+                "id": "err-ambiguity",
+                "score": 1,
+                "reasoning": "The response mentions that 'debugging becomes harder' and references subtle timing issues, but does not explicitly identify the error-handling ambiguity: that callers would need to await emit() to catch handler exceptions, and silent swallowing of errors at call sites that don't await."
+              },
+              {
+                "id": "ordering",
+                "score": 1,
+                "reasoning": "The response mentions 'side effects completing before the next line would break' but does not specifically identify that handler execution order becomes non-deterministic across microtask boundaries or explain that handlers would no longer execute in subscription order."
+              },
+              {
+                "id": "design-fit",
+                "score": 2,
+                "reasoning": "The response correctly identifies that the EventBus is 'explicitly documented as synchronous' and recommends against breaking this contract, which is fully consistent with the established synchronous-by-design philosophy."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "The response is focused and direct with four clearly numbered reasoning points; the code examples are relevant and concise, with no unnecessary hedging or filler."
+              }
+            ],
+            "total": 8,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "# Recommendation: Do Not Implement\n\n**Decision**: Reject the proposal to make emit() asynchronous via queueMicrotask().\n\n## Reasoning\n\n1. **Violates documented design**: The synchronous dispatch decision is explicitly documented and justified. Changing it requires revisiting that decision with the full team, not a unilateral change.\n\n2. **Breaks the contract**: Callers rely on synchronous semantics:\n   ```typescript\n   eventBus.emit('data-loaded', payload)\n   console.log('handlers have run')  // This assumption breaks\n   ```\n   Existing code will silently behave incorrectly without recompilation errors.\n\n3. **Introduces the problems we rejected**: The design doc explicitly rejects async dispatch because:\n   - Error handling becomes ambiguous (callers must await emit() to catch errors)\n   - Subscriber ordering becomes non-deterministic across microtask boundaries\n   - Every call site must handle a Promise it may not care about\n\n4. **\"Blocking the call stack\" is not a problem here**: EventBus is a synchronous pub/sub mechanism. If handlers are expensive, that's a design issue (handlers should be fast). Hiding the cost behind microtasks doesn't solve it—it just defers and obscures it.\n\n5. **Better alternatives exist** if blocking is genuinely a concern:\n   - Move expensive work *inside* handlers to a worker/scheduler\n   - Use a different event system designed for async workflows\n   - Profile to confirm emit() is actually a bottleneck\n\n## Action\n\nIf the teammate has a concrete use case where synchronous emit() causes problems, discuss it. But don't change the fundamental design to solve a hypothetical performance concern. The current design is sound.",
+            "inputTokens": 1097,
+            "outputTokens": 392,
+            "judgeInputTokens": 2050,
+            "judgeOutputTokens": 331,
+            "scores": [
+              {
+                "id": "clear-rec",
+                "score": 2,
+                "reasoning": "The response opens with an unambiguous 'Do Not Implement' recommendation and maintains that position consistently throughout."
+              },
+              {
+                "id": "err-ambiguity",
+                "score": 3,
+                "reasoning": "The response explicitly identifies that async dispatch forces callers to await emit() to catch errors and that call sites ignoring the return value will silently lose exceptions—the specific ambiguity problem."
+              },
+              {
+                "id": "ordering",
+                "score": 3,
+                "reasoning": "The response specifically names that microtask scheduling breaks subscription-order guarantees and that callers cannot rely on side-effects being visible when emit() returns."
+              },
+              {
+                "id": "design-fit",
+                "score": 2,
+                "reasoning": "The recommendation directly cites the documented synchronous-by-design decision and rejects the async proposal precisely because it violates that established contract."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "The response is focused and direct, grounding each point in the design document without filler; the brief mention of alternatives is relevant context (not a distraction) for why the proposal is unnecessary."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "delta": 4
+        },
+        {
+          "id": "cs-3",
+          "name": "Evaluate History Replay Proposal",
+          "dimension": "coverage_signal",
+          "without": {
+            "response": "# Recommendation: Reject this proposal\n\n**The history feature violates EventBus's synchronous pub/sub contract and introduces significant problems:**\n\n## Core Issues\n\n1. **Semantic mismatch**: A pub/sub bus is for *future* events. History is a *state* concern. Conflating them creates confusion about what EventBus does.\n\n2. **Unbounded memory**: Without explicit retention policies, the bus accumulates all historical events indefinitely—a memory leak waiting to happen.\n\n3. **Stale data**: Replaying old events doesn't guarantee correctness. If a user logs in, logs out, then a new subscriber joins with history, they'll see a \"login\" event that's no longer true.\n\n4. **Complexity**: Adds storage, retention logic, and edge cases (what if history is cleared? what about event ordering with concurrent subscribes?).\n\n## Better Alternatives\n\n**For the actual use cases:**\n\n- **\"I need the current state when subscribing\"** → Use a separate state store (e.g., `getCurrentUser()`) alongside the event bus\n- **\"I need recent events for debugging\"** → Add optional logging/middleware, not core functionality\n- **\"I need event replay\"** → Use an event sourcing library (EventStoreDB, Axon) designed for this\n\n## If you must support it\n\nMake it **opt-in per event**, not per subscription:\n\n```typescript\nprivate readonly history = new Map<string, unknown[]>()\nprivate readonly historyConfig = new Map<string, number>() // max size\n\nconfigureHistory(event: string, maxSize: number): void {\n  this.historyConfig.set(event, maxSize)\n  this.history.set(event, [])\n}\n\nemit(event: string, data?: unknown): void {\n  if (this.historyConfig.has(event)) {\n    const h = this.history.get(event)!\n    h.push(data)\n    if (h.length > this.historyConfig.get(event)!) h.shift()\n  }\n  // ... emit normally\n}\n\nsubscribe<T>(event: string, handler: EventHandler<T>, opts?: { history?: boolean }): symbol {\n  if (opts?.history && this.history.has(event)) {\n    this.history.get(event)!.forEach(data => handler(data as T))\n  }\n  // ... subscribe normally\n}\n```\n\n**But honestly**: This signals that EventBus isn't the right tool. Consider whether you need a proper state management layer instead.",
+            "inputTokens": 559,
+            "outputTokens": 586,
+            "judgeInputTokens": 1696,
+            "judgeOutputTokens": 366,
+            "scores": [
+              {
+                "id": "rejects-proposal",
+                "score": 2,
+                "reasoning": "Response opens with explicit 'Recommendation: Reject this proposal' and sustains the position throughout, providing multiple technical reasons against implementation."
+              },
+              {
+                "id": "unbounded-growth",
+                "score": 3,
+                "reasoning": "Explicitly identifies 'Unbounded memory: Without explicit retention policies, the bus accumulates all historical events indefinitely—a memory leak waiting to happen' as a core issue."
+              },
+              {
+                "id": "stale-confusion",
+                "score": 3,
+                "reasoning": "Specifically names stale-event confusion with concrete example: 'If a user logs in, logs out, then a new subscriber joins with history, they'll see a \"login\" event that's no longer true' and explains the correctness problem."
+              },
+              {
+                "id": "no-impl",
+                "score": 0,
+                "reasoning": "Response includes a complete code implementation in the 'If you must support it' section, showing `configureHistory`, modified `emit`, and modified `subscribe` methods with full working code."
+              },
+              {
+                "id": "precision",
+                "score": 1,
+                "reasoning": "Response is mostly focused on the rejection, but the 'If you must support it' section undermines the recommendation and adds unnecessary implementation detail that contradicts the stated position, reducing directness."
+              }
+            ],
+            "total": 9,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "# Recommendation: Reject\n\nThis proposal contradicts the documented design decision against event history and introduces problems that outweigh the stated benefits.\n\n## Why the documented rejection applies here\n\nThe design doc explicitly rejects buffering past events because:\n1. **Unbounded growth** — Without a cap, memory usage is unpredictable\n2. **Arbitrary limits** — With a cap, subscribers get confusing partial history\n3. **Unjustified complexity** — The typical EventBus use case doesn't need it\n\nThe `history: true` option doesn't solve these; it just defers the decision to callers, who will either:\n- Buffer everything (memory leak)\n- Pick an arbitrary limit (confusing behavior)\n- Forget to set it and miss events anyway\n\n## Why this is different from RxJS/Redis\n\n- **RxJS BehaviorSubject** is explicitly designed for state management with a single \"current value,\" not general event dispatch\n- **Redis Streams** are durable, append-only logs with explicit retention policies — a fundamentally different data structure\n\nEventBus is a lightweight pub/sub primitive. Conflating it with state management or durable logs creates a leaky abstraction.\n\n## Better alternatives for the stated use cases\n\nIf callers need past events, they should:\n\n1. **Manage state explicitly** — Keep a separate `currentUser` variable; emit events when it changes\n2. **Use a dedicated state container** — BehaviorSubject, Zustand, or similar for state with subscribers\n3. **Emit a synthetic \"init\" event** — On subscribe, immediately emit the current state as a separate event type\n\nThese approaches are clearer, testable, and don't hide assumptions in an option flag.\n\n## Recommendation\n\nPolitely decline and suggest the caller use a state management library for their use case. Keep EventBus focused on its core strength: lightweight, synchronous event dispatch without side effects.",
+            "inputTokens": 1123,
+            "outputTokens": 431,
+            "judgeInputTokens": 2099,
+            "judgeOutputTokens": 341,
+            "scores": [
+              {
+                "id": "rejects-proposal",
+                "score": 2,
+                "reasoning": "Response opens with unambiguous 'Recommendation: Reject' and sustains that position throughout, explicitly stating the proposal contradicts documented design."
+              },
+              {
+                "id": "unbounded-growth",
+                "score": 3,
+                "reasoning": "Specifically identifies that without a cap, memory usage is unpredictable and grows unbounded; with a cap, behavior becomes confusing—directly names the mechanism."
+              },
+              {
+                "id": "stale-confusion",
+                "score": 3,
+                "reasoning": "Explicitly states 'a subscriber cannot distinguish a live event from a replayed one' and uses the concrete example of receiving a stale 'user-login' event minutes later triggering incorrect logic."
+              },
+              {
+                "id": "no-impl",
+                "score": 2,
+                "reasoning": "No implementation code is provided; response consists entirely of reasoning and recommendations without pseudocode or implementation examples."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is direct and focused: it states the position, names the specific design-doc rejection, explains why the RxJS/Redis analogy fails, and offers concrete alternatives without filler or excessive hedging."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "delta": 3
+        },
+        {
+          "id": "cb-dq-1",
+          "name": "Windowed Threshold Proposal",
+          "dimension": "decision_quality",
+          "without": {
+            "response": "# Evaluation & Recommendation\n\n## Analysis of the Proposal\n\n**The senior engineer's concern is valid but overstated.** The current implementation already resets `failureCount` to 0 on *any* success, so a single failure followed by successes won't accumulate toward opening the circuit. The scenario they describe doesn't actually occur.\n\n**However, the rolling window approach has merit for different reasons:**\n\n| Aspect | Current (Consecutive) | Rolling Window |\n|--------|----------------------|----------------|\n| **Behavior** | Resets on any success | Time-based decay |\n| **Use case** | Strict: fail-fast on recent instability | Lenient: tolerate isolated failures over time |\n| **Example** | 1 failure → success → 4 failures = OPEN | 1 failure → success → 4 failures (within 60s) = OPEN |\n\nThe rolling window is **more suitable for production systems** because:\n1. It captures genuine degradation patterns (multiple failures within a window)\n2. It's resilient to transient single failures followed by recovery\n3. It aligns with SLO/SLA monitoring practices\n\n## Recommendation\n\n**Implement the rolling window approach**, but with these considerations:\n\n```typescript\nexport class CircuitBreaker {\n  private state: CircuitState = 'CLOSED'\n  private failureTimestamps: number[] = [] // Track failure times\n  private readonly windowMs: number\n\n  constructor(\n    private readonly failureThreshold: number,      // e.g., 5 failures\n    private readonly resetTimeout: number,          // e.g., 30s before HALF_OPEN\n    private readonly windowMs: number = 60_000,     // 60s rolling window\n    private readonly clock: () => number = Date.now,\n  ) {}\n\n  async call<T>(fn: () => Promise<T>): Promise<T> {\n    if (this.state === 'OPEN') {\n      if (this.clock() - this.lastFailureTime >= this.resetTimeout) {\n        this.state = 'HALF_OPEN'\n      } else {\n        throw new CircuitOpenError()\n      }\n    }\n\n    try {\n      const result = await fn()\n      this.onSuccess()\n      return result\n    } catch (err) {\n      this.onFailure()\n      throw err\n    }\n  }\n\n  private onSuccess(): void {\n    this.failureTimestamps = [] // Clear window on success\n    this.state = 'CLOSED'\n  }\n\n  private onFailure(): void {\n    const now = this.clock()\n    this.lastFailureTime = now\n    \n    // Prune failures outside the window\n    this.failureTimestamps = this.failureTimestamps.filter(\n      ts => now - ts < this.windowMs\n    )\n    \n    this.failureTimestamps.push(now)\n    \n    if (this.failureTimestamps.length >= this.failureThreshold) {\n      this.state = 'OPEN'\n    }\n  }\n\n  getState(): CircuitState {\n    return this.state\n  }\n}\n```\n\n**Key differences:**\n- Tracks failure timestamps instead of a counter\n- Prunes old failures on each new failure\n- Resets window on success (conservative: any success = recovery signal)\n- More predictable behavior in production\n\nThis balances resilience with accuracy.",
+            "inputTokens": 721,
+            "outputTokens": 812,
+            "judgeInputTokens": 2084,
+            "judgeOutputTokens": 363,
+            "scores": [
+              {
+                "id": "clear-rec",
+                "score": 2,
+                "reasoning": "The response gives an unambiguous recommendation: 'Implement the rolling window approach' with explicit reasoning and a code example."
+              },
+              {
+                "id": "low-volume",
+                "score": 0,
+                "reasoning": "The response does not identify or discuss the low-volume over-tripping problem where a small absolute failure count at low call volume would represent a high percentage of requests and trip the circuit on isolated failures."
+              },
+              {
+                "id": "window-complexity",
+                "score": 2,
+                "reasoning": "The response correctly identifies that the rolling window approach requires a data structure (failureTimestamps array) not needed for consecutive counting, and shows explicit filtering logic for timestamp pruning."
+              },
+              {
+                "id": "consecutive-sufficient",
+                "score": 0,
+                "reasoning": "The response does not argue that consecutive counting is sufficient for the core goal; instead it frames the rolling window as 'more suitable for production systems' and positions consecutive counting as the weaker approach."
+              },
+              {
+                "id": "precision",
+                "score": 0,
+                "reasoning": "The response is lengthy with a comparison table, extensive explanation, and a full code implementation when the task asks for evaluation of a proposal; it includes unnecessary verbosity and hedging ('the concern is valid but overstated') rather than direct technical analysis."
+              }
+            ],
+            "total": 4,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "# Recommendation: Reject the proposal\n\n## Analysis\n\nThe senior engineer's concern is **technically valid but strategically misguided**. Their example is real:\n\n```\nScenario: failureThreshold = 3\n- 3 consecutive failures → OPEN\n- 10 successes → CLOSED, failureCount = 0\n- 2 more failures → still CLOSED (count = 2)\n- 1 more failure → OPEN again (count = 3)\n```\n\nYes, the circuit opens on the 3rd failure even though the service recovered for 10 calls. But this is **not a bug—it's the intended behavior**.\n\n## Why the current design is correct\n\n1. **Consecutive counting detects *sustained* degradation, not transient blips**\n   - A single failure followed by recovery is noise; the circuit should not open\n   - If failures resume after recovery, that indicates the problem is recurring\n   - Opening on the 3rd failure in a recovery period is the right signal: \"this service is unstable\"\n\n2. **Windowed counting creates false negatives**\n   - A service that fails once per minute (within SLA) would never open under a 60-second window if spread across the window boundary\n   - A service that fails 5 times in 59 seconds then succeeds for 2 seconds would close, only to fail again—thrashing the circuit state\n   - Low-volume services would trip on single failures (as documented in the design decisions)\n\n3. **The proposal adds significant complexity**\n   - Requires timestamped failure queue or bucket approximation\n   - Adds O(n) or O(log n) operations per call\n   - Introduces clock-skew sensitivity\n   - Makes testing and reasoning about behavior harder\n\n4. **The real problem is different**\n   - If you want to distinguish \"transient blip\" from \"recurring instability,\" the answer is **longer observation**, not windowing\n   - Increase `failureThreshold` from 3 to 5 if you want more tolerance for noise\n   - Or add a `failureWindow` that resets the count if no failures occur for N seconds (simpler than rolling windows)\n\n## Recommendation\n\n**Keep the current design.** If the engineer's concern is valid for their use case:\n\n1. **Increase `failureThreshold`** to tolerate transient failures (e.g., 5 instead of 3)\n2. **Optionally add a decay mechanism**: reset `failureCount` if no failures occur for `resetTimeout` milliseconds (simpler than windowing, still addresses the concern)\n\nThe current design correctly prioritizes **simplicity and correctness** over handling an edge case that is better solved by tuning parameters.",
+            "inputTokens": 1521,
+            "outputTokens": 621,
+            "judgeInputTokens": 2687,
+            "judgeOutputTokens": 340,
+            "scores": [
+              {
+                "id": "clear-rec",
+                "score": 2,
+                "reasoning": "Response opens with unambiguous 'Reject the proposal' and maintains that position throughout with specific reasons."
+              },
+              {
+                "id": "low-volume",
+                "score": 4,
+                "reasoning": "Explicitly identifies the mechanism: 'at low call volume a single failure represents 100% of the window' and explains this causes false trips on isolated failures rather than sustained outages."
+              },
+              {
+                "id": "window-complexity",
+                "score": 2,
+                "reasoning": "Correctly specifies that windowed tracking 'requires timestamped failure queue or bucket approximation' and adds 'O(n) or O(log n) operations per call,' contrasting with the current simple counter."
+              },
+              {
+                "id": "consecutive-sufficient",
+                "score": 2,
+                "reasoning": "Explicitly argues 'consecutive counting detects *sustained* degradation' and is 'the right signal,' treating it as fundamentally correct rather than a compromise."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is tightly structured with clear headings, avoids hedging, focuses on the core issue, and provides actionable alternatives without excessive verbosity."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "delta": 8
+        },
+        {
+          "id": "cb-dq-2",
+          "name": "Exponential Backoff Proposal",
+          "dimension": "decision_quality",
+          "without": {
+            "response": "# Implementation: Exponential Backoff for HALF_OPEN Probes\n\nAdd a field to track the current reset timeout and double it on each HALF_OPEN failure:\n\n```typescript\nexport class CircuitBreaker {\n  private state: CircuitState = 'CLOSED'\n  private failureCount = 0\n  private lastFailureTime = 0\n  private currentResetTimeout: number\n\n  constructor(\n    private readonly failureThreshold: number,\n    private readonly resetTimeout: number,\n    private readonly clock: () => number = Date.now,\n    /** Optional: maximum reset timeout to prevent unbounded growth. */\n    private readonly maxResetTimeout: number = resetTimeout * 32,\n  ) {\n    this.currentResetTimeout = resetTimeout\n  }\n\n  async call<T>(fn: () => Promise<T>): Promise<T> {\n    if (this.state === 'OPEN') {\n      if (this.clock() - this.lastFailureTime >= this.currentResetTimeout) {\n        this.state = 'HALF_OPEN'\n      } else {\n        throw new CircuitOpenError()\n      }\n    }\n\n    try {\n      const result = await fn()\n      this.onSuccess()\n      return result\n    } catch (err) {\n      this.onFailure()\n      throw err\n    }\n  }\n\n  getState(): CircuitState {\n    return this.state\n  }\n\n  private onSuccess(): void {\n    this.failureCount = 0\n    this.state = 'CLOSED'\n    this.currentResetTimeout = this.resetTimeout // Reset backoff on success\n  }\n\n  private onFailure(): void {\n    this.failureCount++\n    this.lastFailureTime = this.clock()\n    \n    if (this.state === 'HALF_OPEN') {\n      // Exponential backoff: double timeout, capped at maxResetTimeout\n      this.currentResetTimeout = Math.min(\n        this.currentResetTimeout * 2,\n        this.maxResetTimeout,\n      )\n      this.state = 'OPEN'\n    } else if (this.failureCount >= this.failureThreshold) {\n      this.state = 'OPEN'\n    }\n  }\n}\n```\n\n**Key changes:**\n1. Track `currentResetTimeout` separately from the base `resetTimeout`\n2. On HALF_OPEN failure, double the timeout (capped at `maxResetTimeout` to prevent unbounded growth)\n3. On success, reset `currentResetTimeout` back to the base value\n4. Use `currentResetTimeout` in the OPEN→HALF_OPEN transition check\n\nThis prevents hammering a recovering service while allowing recovery once it stabilizes.",
+            "inputTokens": 690,
+            "outputTokens": 661,
+            "judgeInputTokens": 1884,
+            "judgeOutputTokens": 305,
+            "scores": [
+              {
+                "id": "declines",
+                "score": 0,
+                "reasoning": "The response implements exponential backoff without any objection or pushback against the proposal."
+              },
+              {
+                "id": "recovery-pattern",
+                "score": 0,
+                "reasoning": "The response does not question or analyze the assumption that services recover more slowly after repeated probe failures; it accepts the premise uncritically."
+              },
+              {
+                "id": "state-complexity",
+                "score": 0,
+                "reasoning": "The response does not identify or discuss the additional state complexity introduced by tracking currentResetTimeout, maxResetTimeout, and managing the backoff multiplier."
+              },
+              {
+                "id": "no-partial-impl",
+                "score": 0,
+                "reasoning": "The response includes complete, production-ready implementation code for exponential backoff despite the task implicitly asking for critical evaluation."
+              },
+              {
+                "id": "precision",
+                "score": 1,
+                "reasoning": "The response is technically competent and focused on implementation details, but includes unnecessary explanation of 'Key changes' and optional parameter documentation rather than engaging critically with the proposal."
+              }
+            ],
+            "total": 1,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "# Recommendation: Do Not Implement\n\nThis proposal contradicts the documented design decision on **Fixed reset timeout, not exponential backoff**. The rationale is sound:\n\n> Services either recover within their SLA window or require operator intervention regardless of how many probes have been attempted.\n\n**Why exponential backoff is wrong here:**\n\n1. **Misdiagnoses the problem**: If a service is still degraded after the reset timeout, the issue is not \"we're probing too frequently\" — it's that the service hasn't recovered. Doubling the timeout doesn't fix the underlying problem; it just delays detection.\n\n2. **Adds complexity without benefit**: Tracking probe attempt counts and managing a dynamic timeout increases code surface area and testing burden.\n\n3. **Obscures real failures**: Operators lose visibility into how many times recovery has been attempted. A circuit stuck in HALF_OPEN with an exponentially-growing timeout becomes a silent failure mode.\n\n4. **Wrong tool for the job**: If you need adaptive backoff, that belongs in the **caller's retry logic**, not the circuit breaker. The circuit breaker's job is to detect failure and fail fast; the caller decides how aggressively to retry.\n\n**What to do instead:**\n\n- Keep the fixed `resetTimeout` as designed.\n- If callers need backoff, they should implement it around the circuit breaker call.\n- If a service consistently fails probes, that's a signal for operator intervention (increase timeout, drain traffic, page on-call), not silent exponential delays.\n\n**Suggest to your teammate**: \"The circuit breaker's job is to detect and signal failure, not to hide it. Let's keep the timeout fixed and let the caller decide retry strategy.\"",
+            "inputTokens": 1490,
+            "outputTokens": 382,
+            "judgeInputTokens": 2399,
+            "judgeOutputTokens": 350,
+            "scores": [
+              {
+                "id": "declines",
+                "score": 3,
+                "reasoning": "Response opens with explicit recommendation 'Do Not Implement' and maintains that position throughout without wavering or offering to code it as an alternative."
+              },
+              {
+                "id": "recovery-pattern",
+                "score": 3,
+                "reasoning": "Directly quotes the design annotation's recovery pattern rationale ('Services either recover within their SLA window or require operator intervention') and explains why doubling timeouts does not address the actual underlying cause of continued failures."
+              },
+              {
+                "id": "state-complexity",
+                "score": 2,
+                "reasoning": "Explicitly identifies that exponential backoff requires 'tracking probe attempt counts and managing a dynamic timeout' and frames this as added code surface area, though does not exhaustively enumerate every new state variable needed."
+              },
+              {
+                "id": "no-partial-impl",
+                "score": 2,
+                "reasoning": "Response contains zero implementation code, no code snippets, no partial backoff logic, and no 'here's how you would do it' walkthroughs."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is tightly focused on the core design decision, avoids hedging, and delivers actionable recommendation to the teammate without unnecessary verbosity or tangential discussion."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "delta": 11
+        },
+        {
+          "id": "cb-ts-1",
+          "name": "Implement callWithFallback",
+          "dimension": "task_success",
+          "without": {
+            "response": "# Implementation\n\n```typescript\nasync callWithFallback<T>(fn: () => Promise<T>, fallback: T): Promise<T> {\n  if (this.state === 'OPEN') {\n    if (this.clock() - this.lastFailureTime >= this.resetTimeout) {\n      this.state = 'HALF_OPEN'\n    } else {\n      return fallback\n    }\n  }\n\n  try {\n    const result = await fn()\n    this.onSuccess()\n    return result\n  } catch (err) {\n    this.onFailure()\n    return fallback\n  }\n}\n```\n\n**Key points:**\n\n1. **OPEN state**: Return fallback immediately without throwing `CircuitOpenError`\n2. **HALF_OPEN transition**: Same logic as `call()` — attempt the probe\n3. **Any failure** (from `fn()` or state transitions): Catch the error, trigger `onFailure()`, and return fallback instead of re-throwing\n4. **Success path**: Identical to `call()` — reset failure count and close circuit\n\nThis ensures the caller never receives an error from the circuit breaker itself, only the fallback value when protection is needed.",
+            "inputTokens": 695,
+            "outputTokens": 285,
+            "judgeInputTokens": 1581,
+            "judgeOutputTokens": 365,
+            "scores": [
+              {
+                "id": "circuit-open-only",
+                "score": 0,
+                "reasoning": "The implementation catches all errors from fn() and returns fallback (line: `catch (err) { this.onFailure(); return fallback }`), meaning fn() errors never propagate to the caller — this violates the requirement that only CircuitOpenError should trigger fallback logic."
+              },
+              {
+                "id": "fn-failures-recorded",
+                "score": 0,
+                "reasoning": "Although onFailure() is called when fn() throws, the error is caught and suppressed by returning fallback immediately, preventing proper error propagation and masking fn() failures from the caller's perspective."
+              },
+              {
+                "id": "delegates-to-call",
+                "score": 0,
+                "reasoning": "The implementation reimplements the entire circuit state machine logic inline (checking OPEN state, computing timeout, calling onSuccess/onFailure) instead of delegating to this.call(fn), creating a second divergent code path."
+              },
+              {
+                "id": "success-path",
+                "score": 2,
+                "reasoning": "When fn() succeeds, the result is correctly returned to the caller after calling onSuccess()."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "The response is concise and direct, with clear bullet points explaining the implementation without unnecessary filler."
+              }
+            ],
+            "total": 4,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "```typescript\nasync callWithFallback<T>(fn: () => Promise<T>, fallback: T): Promise<T> {\n  if (this.state === 'OPEN') {\n    if (this.clock() - this.lastFailureTime >= this.resetTimeout) {\n      this.state = 'HALF_OPEN'\n    } else {\n      return fallback\n    }\n  }\n\n  try {\n    const result = await fn()\n    this.onSuccess()\n    return result\n  } catch (err) {\n    this.onFailure()\n    return fallback\n  }\n}\n```\n\n**Rationale:**\n\n1. **OPEN state**: Return fallback immediately without throwing `CircuitOpenError`.\n2. **HALF_OPEN transition**: Same logic as `call()` — allow the probe to execute.\n3. **Failure handling**: Catch any error from `fn()`, update state via `onFailure()`, and return fallback instead of re-throwing.\n4. **Success path**: Identical to `call()` — reset failure count and close the circuit.\n\nThis ensures the caller never receives a `CircuitOpenError` or an exception from `fn()` when using the fallback variant.",
+            "inputTokens": 1495,
+            "outputTokens": 289,
+            "judgeInputTokens": 2379,
+            "judgeOutputTokens": 339,
+            "scores": [
+              {
+                "id": "circuit-open-only",
+                "score": 0,
+                "reasoning": "The implementation catches all errors from fn() and returns fallback, masking fn() failures from the caller instead of allowing them to propagate and only using fallback for CircuitOpenError."
+              },
+              {
+                "id": "fn-failures-recorded",
+                "score": 0,
+                "reasoning": "Errors from fn() are caught and swallowed by the fallback logic; onFailure() is called but the error never reaches the caller, preventing the circuit from functioning as a resilience primitive when fn() itself fails."
+              },
+              {
+                "id": "delegates-to-call",
+                "score": 0,
+                "reasoning": "The implementation reimplements circuit state logic inline (checking OPEN state, managing HALF_OPEN transition) rather than delegating to this.call() and wrapping its result/error handling."
+              },
+              {
+                "id": "success-path",
+                "score": 2,
+                "reasoning": "When fn() succeeds, the result is correctly returned to the caller and onSuccess() is invoked."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "The response is concise and focused with clear rationale for each major decision."
+              }
+            ],
+            "total": 4,
+            "maxTotal": 12
+          },
+          "delta": 0
+        },
+        {
+          "id": "cb-cs-1",
+          "name": "Single Probe Rationale",
+          "dimension": "coverage_signal",
+          "without": {
+            "response": "# Analysis: Single-Probe vs. Statistical Sampling in HALF_OPEN\n\n## Why Single-Probe Was Chosen\n\nThe current design follows the **canonical circuit breaker pattern** (Fowler, Release It!) for good reasons:\n\n1. **Deterministic recovery**: A single successful probe definitively answers \"is the downstream service healthy?\" If it succeeds, the service has recovered enough to resume normal load.\n\n2. **Fast feedback loop**: One request → immediate state transition. This minimizes the window where traffic is rejected unnecessarily.\n\n3. **Simplicity & predictability**: No statistical thresholds, no partial state tracking, no ambiguity about when to close.\n\n4. **Fail-safe semantics**: If the probe fails, re-opening is the conservative choice—you haven't risked cascading load yet.\n\n## Is Their Concern Valid?\n\n**Partially, but it misdiagnoses the problem.**\n\nTheir concern: \"One slow/unlucky response re-opens the circuit.\"\n\n**The real issue**: They're conflating two different failure modes:\n- **Transient failures** (network hiccup, GC pause) → single probe catches these correctly\n- **Noisy latency** (slow but successful response) → this isn't a failure; `onSuccess()` fires and circuit closes\n\nIf a probe succeeds but is slow, that's not a reason to re-open. If it *fails*, re-opening is correct—you haven't yet proven recovery.\n\n## Recommendation\n\n**Keep the single-probe design.** If they're concerned about transient failures causing unnecessary re-opens:\n\n1. **Add jitter/backoff** to `resetTimeout` so retries don't hammer a recovering service\n2. **Implement exponential backoff** on repeated OPEN→HALF_OPEN→OPEN cycles\n3. **Monitor probe success rates** separately to tune `failureThreshold` and `resetTimeout` based on actual SLOs\n\nThe 10% sampling approach trades determinism for statistics—it's appropriate for *load shedding* policies, not for *recovery detection*.",
+            "inputTokens": 714,
+            "outputTokens": 471,
+            "judgeInputTokens": 1829,
+            "judgeOutputTokens": 410,
+            "scores": [
+              {
+                "id": "thundering-herd",
+                "score": 0,
+                "reasoning": "The response does not identify or address thundering-herd risk; it mentions 'minimizing rejected traffic' but never explains that routing 10% of live traffic during recovery risks overwhelming a degraded service with volume it cannot yet handle."
+              },
+              {
+                "id": "real-request",
+                "score": 0,
+                "reasoning": "The response does not distinguish between using a real production request as a probe versus a synthetic health check endpoint, missing the key insight that a real request provides more faithful recovery validation than a /health endpoint."
+              },
+              {
+                "id": "noise-concern",
+                "score": 2,
+                "reasoning": "The response directly engages with the 'one unlucky slow response' concern, correctly distinguishes between transient failures (valid reason to re-open) and slow-but-successful responses (not a failure), and explains the conservative tradeoff—re-opening merely resets the wait timer with low cost."
+              },
+              {
+                "id": "keeps-single-probe",
+                "score": 2,
+                "reasoning": "The response recommends keeping the single-probe design and proposes alternatives (jitter, backoff, monitoring) that do not introduce percentage-based traffic routing."
+              },
+              {
+                "id": "precision",
+                "score": 1,
+                "reasoning": "The response is generally focused but includes unnecessary citations ('Fowler, Release It!') and a tangential note about load-shedding policies that, while not wrong, dilutes the core argument and adds length without clarifying the main decision."
+              }
+            ],
+            "total": 5,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "# Response: Single-Probe Design vs. 10% Traffic Sampling\n\n## Why Single-Probe Was Chosen\n\nThe documented design decision explicitly rejects percentage-based traffic probing:\n\n> Routing a percentage of live traffic during recovery risks **thundering-herd behaviour** if the downstream service is still degraded. The single-probe approach **limits exposure** during the sensitive recovery window.\n\nThe key insight: HALF_OPEN is a *recovery window*. The downstream service is presumed unhealthy. Routing 10% of live traffic through it risks:\n\n1. **Cascading load** — if the service is partially degraded (e.g., 50% CPU, slow responses), 10% of your traffic hitting it simultaneously may push it over the edge, causing it to fail completely.\n2. **User impact** — those 10% of requests experience degraded latency or failure while you're testing recovery.\n3. **False negatives** — a service that handles one synthetic probe fine may crumble under 10% of real load.\n\n## Is Their Concern About Noise Valid?\n\n**Partially, but it's a misdiagnosis of the problem.**\n\nTheir worry: \"One unlucky slow response re-opens the circuit.\"\n\n**Reality check:**\n- A single slow response ≠ a failure. The circuit only calls `onFailure()` if `fn()` *throws an exception*.\n- A slow-but-successful call triggers `onSuccess()`, which resets `failureCount` to 0 and closes the circuit.\n- The circuit re-opens only if the probe call *actually fails* (throws).\n\n**If they're seeing the circuit re-open on slow responses**, the real issue is:\n- The downstream service is still unhealthy (legitimate re-open).\n- Or the timeout on `fn()` is too aggressive (tune the timeout, not the circuit breaker).\n\n## Recommendation\n\n**Keep the single-probe design.** \n\nIf they want more confidence in recovery:\n1. **Increase `resetTimeout`** — wait longer before probing, giving the service more time to stabilize.\n2. **Add observability** — log probe outcomes and track how often probes fail vs. succeed. This reveals whether the service is actually recovering.\n3. **Tune the downstream call timeout** — ensure `fn()` doesn't timeout on transient slowness; distinguish slow-but-working from broken.\n\nThe single probe is not a weakness—it's a feature that protects the system during its most vulnerable moment.",
+            "inputTokens": 1514,
+            "outputTokens": 570,
+            "judgeInputTokens": 2722,
+            "judgeOutputTokens": 381,
+            "scores": [
+              {
+                "id": "thundering-herd",
+                "score": 3,
+                "reasoning": "Response directly names thundering-herd behaviour and explains that routing 10% of live traffic during recovery risks overwhelming a partially degraded service; explicitly contrasts with single-probe's limited exposure during the sensitive recovery window."
+              },
+              {
+                "id": "real-request",
+                "score": 0,
+                "reasoning": "Response does not distinguish between using a real production call as a probe versus a synthetic health check endpoint; this design rationale from the annotations is entirely absent."
+              },
+              {
+                "id": "noise-concern",
+                "score": 3,
+                "reasoning": "Response directly engages with the 'one unlucky slow response' concern by clarifying that slow-but-successful calls do not trigger failure (only exceptions do), and proposes tuning resetTimeout as the appropriate lever to handle flakiness without introducing percentage probing—demonstrating understanding of the tradeoff."
+              },
+              {
+                "id": "keeps-single-probe",
+                "score": 2,
+                "reasoning": "Response explicitly recommends keeping the single-probe design and proposes alternatives (increased resetTimeout, observability, timeout tuning) that do not introduce percentage-based traffic routing."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is direct, well-organized, and focused on the core question without unnecessary hedging or filler; each section targets a specific aspect of the proposal."
+              }
+            ],
+            "total": 10,
+            "maxTotal": 12
+          },
+          "delta": 5
+        },
+        {
+          "id": "cb-cs-2",
+          "name": "Failure Count Persistence",
+          "dimension": "coverage_signal",
+          "without": {
+            "response": "# Design Decision Analysis\n\nThe current design **intentionally preserves `failureCount` across state transitions** for a specific reason:\n\n## Why the count is NOT reset on open:\n\n**To prevent rapid oscillation between HALF_OPEN and OPEN states.**\n\nIf `failureCount` were reset when transitioning to OPEN, here's what would happen:\n\n1. Circuit opens after N consecutive failures (failureCount = N)\n2. `failureCount` is reset to 0\n3. After `resetTimeout`, circuit transitions to HALF_OPEN\n4. The probe call fails → `onFailure()` increments failureCount to 1\n5. Since failureCount (1) < failureThreshold (N), circuit stays CLOSED\n6. **The circuit immediately closes despite the probe failure**\n\nThis defeats the purpose of HALF_OPEN: it allows a single failure to re-open the circuit without needing to accumulate N failures again.\n\n## The correct behavior (current implementation):\n\n1. Circuit opens after N consecutive failures (failureCount = N)\n2. After `resetTimeout`, transition to HALF_OPEN\n3. Probe call fails → `onFailure()` increments failureCount to N+1\n4. Since failureCount (N+1) ≥ failureThreshold (N), circuit **immediately re-opens**\n5. This prevents flapping and gives the downstream service more recovery time\n\n## Recommendation:\n\n**Keep the current design.** It's correct. The `failureCount` should only reset on `onSuccess()`, ensuring that a single probe failure in HALF_OPEN state is sufficient to re-open the circuit without requiring N new failures.",
+            "inputTokens": 707,
+            "outputTokens": 383,
+            "judgeInputTokens": 1743,
+            "judgeOutputTokens": 349,
+            "scores": [
+              {
+                "id": "halfopen-consequence",
+                "score": 4,
+                "reasoning": "The response precisely traces the HALF_OPEN failure scenario: reset count to 0 → probe fails → onFailure() increments to 1 → 1 < threshold → circuit stays CLOSED, defeating HALF_OPEN's purpose."
+              },
+              {
+                "id": "current-trace",
+                "score": 3,
+                "reasoning": "Correctly explains that failureCount is already at/above threshold when circuit opens, so a failed probe in HALF_OPEN increments to N+1 ≥ threshold, triggering immediate re-open via the if condition."
+              },
+              {
+                "id": "reset-on-success",
+                "score": 1,
+                "reasoning": "Correctly identifies that failureCount resets to 0 only in onSuccess(), not on state transitions."
+              },
+              {
+                "id": "confident",
+                "score": 2,
+                "reasoning": "Uses definitive, authoritative language throughout ('intentionally preserves', 'defeats the purpose', 'is correct') with minimal hedging."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is tightly focused on the core design question with clear numbered scenarios; no filler or unnecessary alternatives."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "# Why `failureCount` Is Not Reset on Open\n\n## The Design Decision\n\n`failureCount` persists across state transitions (CLOSED → OPEN → HALF_OPEN). It is reset to zero **only** on success, never when the circuit opens or transitions to HALF_OPEN.\n\n## Why This Matters\n\n### The Problem It Solves\n\nWhen a probe call fails in HALF_OPEN state:\n\n1. `onFailure()` increments `failureCount` (e.g., from 5 to 6)\n2. Since `failureCount >= failureThreshold` (6 ≥ 5), the circuit immediately re-opens\n3. The reset timeout restarts, preventing rapid probe attempts\n\n**If the count were cleared on open**, the sequence would be:\n\n1. Circuit opens after 5 consecutive failures; `failureCount` is reset to 0\n2. Probe call fails in HALF_OPEN; `failureCount` increments to 1\n3. Since 1 < 5, the circuit does **not** re-open\n4. The circuit remains in HALF_OPEN, allowing more calls through\n5. Additional failures must accumulate to 5 again before re-opening\n\nThis leaves the circuit in a **half-broken state**: it's still probing a degraded service without the protection of the OPEN state's fast-fail behavior.\n\n### The Correct Behavior\n\nBy preserving `failureCount`, a single failed probe is sufficient to re-open the circuit because the count already reflects the sustained failure pattern that opened it initially. This ensures:\n\n- **Immediate re-protection** when a probe fails\n- **No window of vulnerability** during recovery attempts\n- **Consistent threshold logic** across all states\n\n## Summary\n\nThe count persists to ensure that a failed probe immediately re-opens the circuit without requiring the failure threshold to be reached again. Resetting on open would create a dangerous gap where the circuit tolerates additional failures during the sensitive recovery window.",
+            "inputTokens": 1507,
+            "outputTokens": 453,
+            "judgeInputTokens": 2607,
+            "judgeOutputTokens": 339,
+            "scores": [
+              {
+                "id": "halfopen-consequence",
+                "score": 4,
+                "reasoning": "Response precisely traces the HALF_OPEN scenario: resets would allow failureCount to go from 0→1 on first probe failure, staying below threshold and leaving circuit in HALF_OPEN (half-broken state) instead of re-opening."
+              },
+              {
+                "id": "current-trace",
+                "score": 3,
+                "reasoning": "Correctly explains that failureCount persists at/above threshold when circuit opens, so a failed probe in HALF_OPEN immediately triggers re-open via the if condition; mechanism is clearly traced."
+              },
+              {
+                "id": "reset-on-success",
+                "score": 1,
+                "reasoning": "Correctly identifies that failureCount resets to 0 only in onSuccess(), not on state transitions."
+              },
+              {
+                "id": "confident",
+                "score": 2,
+                "reasoning": "Language is definitive and authoritative throughout; no excessive hedging or uncertainty qualifiers present."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is tightly focused on the core design decision with no filler or irrelevant material; each section directly addresses why the count is not reset."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "delta": 0
+        },
+        {
+          "id": "rl-dq-1",
+          "name": "Queue Proposal",
+          "dimension": "decision_quality",
+          "without": {
+            "response": "# Recommendation: Reject this proposal\n\n## Key Issues\n\n**1. Loss of explicit control**\n- Callers lose the ability to decide whether to wait, retry elsewhere, or fail fast\n- A queued request might wait indefinitely while the caller's timeout/deadline passes silently\n- No way to prioritize or cancel requests\n\n**2. Unbounded queue growth**\n- Under sustained overload, the queue grows without limit, consuming memory\n- No backpressure mechanism to signal the caller that the system is saturated\n- Masking the real problem (insufficient capacity) behind transparent waiting\n\n**3. Violates fail-fast principle**\n- Rate limiting exists to protect downstream systems\n- Queuing converts a clear signal (\"you're going too fast\") into silent delays\n- Callers can't distinguish between slow service and rate limiting\n\n**4. Complicates the API**\n- The current design is simple and explicit: throw on limit, caller decides\n- Adding a queue requires new concerns: queue size limits, fairness, cancellation, ordering\n- The `acquire()` method already provides async waiting for callers who want it\n\n## Better Alternative\n\nImplement `retryAfterMs()` and `acquire()` as designed:\n\n```typescript\nretryAfterMs(cost = 1): number {\n  this.refill()\n  if (this.tokens >= cost) return 0\n  const deficit = cost - this.tokens\n  return Math.ceil(deficit / this.refillRatePerMs)\n}\n\nasync acquire(cost = 1, timeoutMs = 0): Promise<boolean> {\n  const deadline = Date.now() + timeoutMs\n  while (true) {\n    const waitMs = this.retryAfterMs(cost)\n    if (waitMs === 0) {\n      this.consume(cost)\n      return true\n    }\n    if (timeoutMs > 0 && Date.now() + waitMs > deadline) {\n      return false\n    }\n    await new Promise(resolve => setTimeout(resolve, waitMs))\n  }\n}\n```\n\nThis gives callers **explicit choice**: use `consume()` for fail-fast, or `acquire()` for transparent waiting with timeout control. No hidden queues, no unbounded memory growth, no loss of control.",
+            "inputTokens": 866,
+            "outputTokens": 523,
+            "judgeInputTokens": 2028,
+            "judgeOutputTokens": 371,
+            "scores": [
+              {
+                "id": "clear-rec",
+                "score": 2,
+                "reasoning": "Response opens with unambiguous 'Reject this proposal' and provides clear reasoning throughout without hedging."
+              },
+              {
+                "id": "backpressure",
+                "score": 4,
+                "reasoning": "Explicitly identifies that queuing converts a clear failure signal into silent delays, preventing callers from distinguishing rate limiting, failing fast, or deciding whether to retry/shed load elsewhere—directly addressing why visibility of limits matters for system adaptation."
+              },
+              {
+                "id": "unbounded-queue",
+                "score": 3,
+                "reasoning": "Clearly states that under sustained overload the queue grows without limit, consuming memory until exhaustion, and notes the absence of backpressure mechanism; correctly frames this as a fundamental design flaw rather than a tuning problem."
+              },
+              {
+                "id": "retry-sufficient",
+                "score": 3,
+                "reasoning": "Response explicitly notes that `acquire()` is already designed for async waiting, and the provided implementation demonstrates that callers who want transparent retries can use it—making an internal queue redundant and showing that the error's `retryAfterMs` field already provides the necessary information."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is direct and focused, structured clearly into problem identification and a concrete alternative, with no unnecessary hedging or filler material."
+              }
+            ],
+            "total": 14,
+            "maxTotal": 14
+          },
+          "with": {
+            "response": "# Recommendation: Reject the proposal\n\n## Summary\nAdding an internal queue contradicts the core design philosophy and introduces the exact problems the current design explicitly avoids.\n\n## Key Issues\n\n### 1. **Backpressure becomes invisible**\nRate limiting exists to signal that a system is under stress. With queuing:\n- Callers see no error and cannot adapt (shed load, scale up, degrade gracefully)\n- A caller making 1000 requests in a loop will queue all 1000 without knowing the system is overloaded\n- By the time the queue grows large enough to cause memory pressure, it's too late to react\n\n### 2. **Unbounded memory growth under sustained load**\nThe queue has no natural size limit. Under overload:\n- Requests accumulate indefinitely\n- Memory exhaustion occurs before callers ever see an error\n- The system fails catastrophically instead of gracefully\n\n### 3. **Loss of caller control**\nThe current design gives callers complete control:\n- They decide whether to retry, backoff, fail fast, or queue themselves\n- They can implement application-specific retry logic (exponential backoff, jitter, circuit breakers)\n- They can surface degraded-mode UIs or shed non-critical work\n\nWith an internal queue, callers lose this agency. The limiter makes decisions for them.\n\n### 4. **Testability and observability suffer**\n- Callers cannot observe when rate limiting occurs (no error to catch)\n- Tests cannot verify backpressure behavior\n- Debugging why a request took 5 seconds becomes opaque (was it queued? for how long?)\n\n### 5. **Semantic mismatch with the API**\nThe current `consume()` is synchronous and immediate — it either succeeds or fails now. Silently queuing violates this contract. Callers expecting immediate feedback get delayed feedback instead.\n\n## What the proposal gets right\n\nThe observation that \"code just awaits the call\" is appealing for simple cases. But this simplicity is **false economy** — it trades caller visibility and control for implementation convenience.\n\n## Better alternative\n\nIf callers want transparent queuing, they should implement it themselves:\n\n```typescript\nclass QueuedRateLimiter {\n  private queue: Array<() => void> = []\n  private processing = false\n\n  async acquire(cost = 1): Promise<void> {\n    return new Promise((resolve) => {\n      this.queue.push(() => {\n        try {\n          this.limiter.consume(cost)\n          resolve()\n        } catch (err) {\n          // Requeue and retry after the suggested delay\n          setTimeout(() => this.acquire(cost).then(resolve), err.retryAfterMs)\n        }\n      })\n      this.processQueue()\n    })\n  }\n\n  private processQueue(): void {\n    if (this.processing || this.queue.length === 0) return\n    this.processing = true\n    const task = this.queue.shift()!\n    task()\n    this.processing = false\n    this.processQueue()\n  }\n}\n```\n\nThis way:\n- Applications that need queuing can add it\n- Applications that need backpressure keep the current behavior\n- The core limiter remains simple, testable, and transparent\n\n## Recommendation\n**Keep the current design.** It correctly separates concerns: the limiter signals overload, callers decide how to respond. Queuing belongs in application code, not in the limiter.",
+            "inputTokens": 2185,
+            "outputTokens": 796,
+            "judgeInputTokens": 3614,
+            "judgeOutputTokens": 374,
+            "scores": [
+              {
+                "id": "clear-rec",
+                "score": 2,
+                "reasoning": "Response opens with unambiguous 'Reject the proposal' and maintains this position throughout without hedging."
+              },
+              {
+                "id": "backpressure",
+                "score": 4,
+                "reasoning": "Directly explains that queuing hides the rate-limit signal, preventing callers from observing overload and therefore unable to adapt via load shedding, graceful degradation, or scaling decisions; uses concrete example of 1000 queued requests."
+              },
+              {
+                "id": "unbounded-queue",
+                "score": 3,
+                "reasoning": "Clearly identifies that the queue has no natural size bound, will grow indefinitely under sustained load, and exhausts memory before callers see an error—catastrophic failure instead of graceful degradation."
+              },
+              {
+                "id": "retry-sufficient",
+                "score": 3,
+                "reasoning": "Explicitly notes that RateLimiterExceededError already provides retryAfterMs, giving callers the complete information needed to implement their own retry logic; provides a working code example of a QueuedRateLimiter wrapper callers can build themselves."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is tightly focused on the proposal evaluation, avoids filler, and each section directly supports the recommendation without unnecessary elaboration or hedging."
+              }
+            ],
+            "total": 14,
+            "maxTotal": 14
+          },
+          "delta": 0
+        },
+        {
+          "id": "rl-dq-2",
+          "name": "Integer Token Proposal",
+          "dimension": "decision_quality",
+          "without": {
+            "response": "# Evaluation: The proposal is **unsafe** and should be rejected.\n\n## Problems\n\n1. **Loses precision and tokens disappear**\n   - Rounding down with `Math.floor()` discards fractional tokens on every refill\n   - Example: With `refillRatePerMs = 0.01` (10 tokens/sec), each 1ms interval generates 0.01 tokens. After 100ms, you'd have 1.0 tokens, but `Math.floor(1.0) = 1`. The next 100ms generates another 1.0, but you've lost the accumulated fractional parts.\n   - Over time, this causes systematic token loss and makes the actual rate slower than specified\n\n2. **Breaks the rate limit contract**\n   - If you specify 10 tokens/second, users expect to consume ~10 tokens per second on average\n   - Flooring breaks this guarantee by silently dropping tokens\n\n3. **The \"floating-point comparison bug\" concern is unfounded**\n   - The code only compares `this.tokens < cost` where `cost` is typically an integer\n   - Floating-point arithmetic here is well-behaved (simple addition/multiplication)\n   - No epsilon-based comparisons are needed\n\n## Recommendation\n\n**Keep the current implementation.** Floating-point tokens are correct and necessary for accurate rate limiting at sub-second granularity.\n\nIf predictability is desired, document that `getTokens()` returns a float, or provide a separate `getTokensFloor()` method for display purposes—but never round during refill.",
+            "inputTokens": 884,
+            "outputTokens": 362,
+            "judgeInputTokens": 1990,
+            "judgeOutputTokens": 400,
+            "scores": [
+              {
+                "id": "clear-rec",
+                "score": 2,
+                "reasoning": "The response unambiguously rejects the proposal with 'unsafe' and 'should be rejected,' providing a definitive answer."
+              },
+              {
+                "id": "time-loss",
+                "score": 2,
+                "reasoning": "The response states that fractional tokens are discarded and that tokens 'disappear,' but does not explicitly explain that lastRefillTime advances regardless, making the loss permanent and unrecoverable rather than deferred to the next refill cycle."
+              },
+              {
+                "id": "zero-throughput",
+                "score": 1,
+                "reasoning": "The response implies throughput is reduced ('makes the actual rate slower than specified') and mentions an example with 0.01 refillRatePerMs, but does not clearly demonstrate or explain the zero-throughput case where every call produces no tokens when elapsed*rate < 1.0."
+              },
+              {
+                "id": "float-safe",
+                "score": 2,
+                "reasoning": "The response dismisses the float comparison concern as 'unfounded' and notes that the comparison is between tokens and a typical integer cost, but does not fully explain why the arithmetic is well-behaved (e.g., that tokens are always min(cap, controlled sum) with negligible relative error)."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "The response is direct, well-structured with clear sections, and focused on the core issue without unnecessary filler or hedging."
+              }
+            ],
+            "total": 9,
+            "maxTotal": 14
+          },
+          "with": {
+            "response": "# Evaluation: Integer Rounding Proposal\n\n**No, this change is not safe.** It breaks the core design and causes systematic token loss at low refill rates.\n\n## The Problem\n\nAt low refill rates (e.g., `refillRatePerMs = 0.01` for 10 req/s), most calls accumulate less than 1 token:\n\n```\nelapsed = 50ms, refillRatePerMs = 0.01\ntokens += 50 * 0.01 = 0.5 tokens\n```\n\nWith `Math.floor()`, this 0.5 is discarded. Since `lastRefillTime` is updated regardless, those 50ms are consumed without producing any tokens. Over time:\n\n```\nCall 1 (50ms later):  0.5 tokens → floor to 0 ✗ (lost)\nCall 2 (50ms later):  0.5 tokens → floor to 0 ✗ (lost)\nCall 3 (50ms later):  0.5 tokens → floor to 0 ✗ (lost)\nCall 4 (50ms later):  0.5 tokens → floor to 0 ✗ (lost)\nCall 5 (50ms later):  0.5 tokens → floor to 0 ✗ (lost)\n```\n\n**Expected**: 5 calls × 50ms = 250ms = 2.5 tokens accumulated → 2 calls succeed  \n**Actual**: 0 tokens ever accumulated → 0 calls succeed\n\n**Effective throughput drops to zero.**\n\n## Why Floating-Point is Correct\n\nThe design document explicitly addresses this:\n\n> Floating-point arithmetic preserves sub-token accumulation across calls; the fractional portion carries forward until it crosses a whole token boundary.\n\n```\nCall 1 (50ms):  tokens = 0 + 0.5 = 0.5\nCall 2 (50ms):  tokens = 0.5 + 0.5 = 1.0 ✓ (one token available)\n```\n\n## Addressing the Senior Engineer's Concerns\n\n| Concern | Reality |\n|---------|---------|\n| \"Floating-point comparison bugs\" | The code never compares tokens with floating-point literals. The only comparison is `this.tokens < cost` where `cost` is an integer. This is safe. |\n| \"Predictability\" | Floating-point arithmetic is deterministic and fully testable via the injected `clock`. The design document confirms this. |\n\n## Recommendation\n\n**Reject the proposal.** Keep floating-point tokens as designed. If there are specific floating-point bugs observed in practice, address those bugs directly rather than introducing systematic token loss.",
+            "inputTokens": 2203,
+            "outputTokens": 642,
+            "judgeInputTokens": 3583,
+            "judgeOutputTokens": 375,
+            "scores": [
+              {
+                "id": "clear-rec",
+                "score": 2,
+                "reasoning": "Response opens with an unambiguous 'No, this change is not safe' and restates the recommendation clearly at the end."
+              },
+              {
+                "id": "time-loss",
+                "score": 4,
+                "reasoning": "Explicitly explains that Math.floor discards the fractional portion (0.5 tokens), that lastRefillTime advances regardless, and that those milliseconds are permanently consumed without producing tokens — the lost fraction is not carried forward on the next call."
+              },
+              {
+                "id": "zero-throughput",
+                "score": 3,
+                "reasoning": "Provides a concrete numeric example showing five consecutive 50ms calls each accumulating 0.5 tokens, all floored to 0, resulting in zero tokens ever accumulating and zero calls succeeding — clearly demonstrating effective throughput drops to zero."
+              },
+              {
+                "id": "float-safe",
+                "score": 3,
+                "reasoning": "Explains that the code never compares tokens with floating-point literals, only `this.tokens < cost` where cost is an integer, making the comparison safe and the 'floating-point comparison bugs' concern unfounded."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is direct and focused on the core issue, with a clear structure, minimal filler, and no unnecessary hedging or alternatives."
+              }
+            ],
+            "total": 14,
+            "maxTotal": 14
+          },
+          "delta": 5
+        },
+        {
+          "id": "rl-ts-1",
+          "name": "Implement retryAfterMs",
+          "dimension": "task_success",
+          "without": {
+            "response": "```typescript\nretryAfterMs(cost = 1): number {\n  this.refill()\n  if (this.tokens >= cost) {\n    return 0\n  }\n  const deficit = cost - this.tokens\n  return Math.ceil(deficit / this.refillRatePerMs)\n}\n```\n\nThis implementation:\n1. Calls `refill()` to update tokens based on elapsed time\n2. Returns 0 if sufficient tokens are already available\n3. Otherwise calculates the deficit and returns the milliseconds needed to accumulate those tokens by dividing by the refill rate and rounding up",
+            "inputTokens": 834,
+            "outputTokens": 142,
+            "judgeInputTokens": 1589,
+            "judgeOutputTokens": 303,
+            "scores": [
+              {
+                "id": "calls-refill",
+                "score": 2,
+                "reasoning": "The implementation correctly calls this.refill() at the start before accessing this.tokens, ensuring the token count reflects elapsed time."
+              },
+              {
+                "id": "uses-deficit",
+                "score": 4,
+                "reasoning": "The implementation correctly computes the deficit as `cost - this.tokens` and divides only the deficit by refillRatePerMs, not the full cost."
+              },
+              {
+                "id": "clamps-to-zero",
+                "score": 2,
+                "reasoning": "The implementation returns 0 explicitly when this.tokens >= cost via an early conditional branch, preventing negative return values."
+              },
+              {
+                "id": "rounds-up",
+                "score": 2,
+                "reasoning": "The implementation uses Math.ceil to round up the result, guaranteeing the returned duration is sufficient."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "The response is concise and direct, providing the implementation followed by a brief, focused explanation without unnecessary hedging or verbosity."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "```typescript\nretryAfterMs(cost = 1): number {\n  this.refill()\n  if (this.tokens >= cost) {\n    return 0\n  }\n  const deficit = cost - this.tokens\n  return Math.ceil(deficit / this.refillRatePerMs)\n}\n```\n\nThis implementation:\n1. Calls `refill()` first to ensure `this.tokens` reflects the current accumulated balance\n2. Returns 0 immediately if sufficient tokens are already available\n3. Computes the deficit (tokens needed beyond what's currently available)\n4. Returns the ceiling of `deficit / refillRatePerMs` — the exact milliseconds required for the missing tokens to accumulate\n\nThis matches the logic already present in `consume()` and aligns with the documented design decision that `retryAfterMs()` uses the deficit formula rather than total cost.",
+            "inputTokens": 2153,
+            "outputTokens": 203,
+            "judgeInputTokens": 2963,
+            "judgeOutputTokens": 323,
+            "scores": [
+              {
+                "id": "calls-refill",
+                "score": 2,
+                "reasoning": "The implementation calls `this.refill()` at the start before accessing `this.tokens`, ensuring the token count reflects elapsed time."
+              },
+              {
+                "id": "uses-deficit",
+                "score": 4,
+                "reasoning": "The implementation correctly computes `deficit = cost - this.tokens` and divides by `refillRatePerMs`, returning the time to acquire only the missing tokens rather than refilling from scratch."
+              },
+              {
+                "id": "clamps-to-zero",
+                "score": 2,
+                "reasoning": "The implementation explicitly checks `if (this.tokens >= cost)` and returns 0 in that branch, correctly avoiding negative return values."
+              },
+              {
+                "id": "rounds-up",
+                "score": 2,
+                "reasoning": "The implementation uses `Math.ceil()` on the deficit calculation, guaranteeing the returned duration is sufficient."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "The response is direct, focused, and includes only a brief bulleted explanation of what the code does; no unnecessary hedging or filler."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "delta": 0
+        },
+        {
+          "id": "rl-ts-2",
+          "name": "Implement acquire",
+          "dimension": "task_success",
+          "without": {
+            "response": "```typescript\nasync acquire(cost = 1, timeoutMs = 0): Promise<boolean> {\n  const startTime = this.clock()\n  \n  while (true) {\n    try {\n      this.consume(cost)\n      return true\n    } catch (error) {\n      if (!(error instanceof RateLimiterExceededError)) {\n        throw error\n      }\n      \n      const elapsed = this.clock() - startTime\n      const waitNeeded = error.retryAfterMs\n      \n      if (elapsed + waitNeeded > timeoutMs) {\n        return false\n      }\n      \n      // Wait for the minimum of: remaining timeout or time until tokens available\n      const waitMs = Math.min(waitNeeded, timeoutMs - elapsed)\n      await new Promise(resolve => setTimeout(resolve, waitMs))\n    }\n  }\n}\n```\n\n**Key points:**\n\n1. **Loop until success or timeout**: Repeatedly attempt to consume tokens\n2. **Catch RateLimiterExceededError**: Extract the recommended retry delay\n3. **Check timeout**: If `elapsed + waitNeeded > timeoutMs`, return false immediately\n4. **Wait adaptively**: Sleep for the minimum of the retry delay or remaining timeout budget\n5. **Return true on success**: When `consume()` succeeds without throwing\n\nThis handles edge cases like the timeout being exceeded during the wait, and ensures we don't wait longer than necessary.",
+            "inputTokens": 851,
+            "outputTokens": 335,
+            "judgeInputTokens": 1811,
+            "judgeOutputTokens": 387,
+            "scores": [
+              {
+                "id": "no-polling",
+                "score": 0,
+                "reasoning": "The implementation uses a while(true) polling loop that repeatedly calls consume() and catches exceptions, checking timeout conditions on each iteration rather than computing the exact wait duration once and applying a single sleep."
+              },
+              {
+                "id": "early-false",
+                "score": 1,
+                "reasoning": "The implementation checks `elapsed + waitNeeded > timeoutMs` before sleeping and returns false early in that case, but the core issue is that it loops and re-checks on each iteration rather than computing once upfront; however, the early-false check does exist."
+              },
+              {
+                "id": "consumes-after",
+                "score": 2,
+                "reasoning": "The implementation correctly calls this.consume(cost) within the try block and relies on consume() to handle token deduction and refill, rather than manually manipulating this.tokens."
+              },
+              {
+                "id": "zero-timeout",
+                "score": 2,
+                "reasoning": "With the default timeoutMs=0, the code attempts consume() once in the loop; if it throws, elapsed=0 and waitNeeded > 0, so the condition `0 + waitNeeded > 0` is true and the method returns false without sleeping."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "The response is focused and concise, presenting the implementation followed by clear bullet-point justification without unnecessary elaboration or hedging."
+              }
+            ],
+            "total": 7,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "```typescript\nasync acquire(cost = 1, timeoutMs = 0): Promise<boolean> {\n  try {\n    this.consume(cost)\n    return true\n  } catch (err) {\n    if (!(err instanceof RateLimiterExceededError)) {\n      throw err\n    }\n    const waitMs = this.retryAfterMs(cost)\n    if (waitMs > timeoutMs) {\n      return false\n    }\n    await new Promise(resolve => setTimeout(resolve, waitMs))\n    this.consume(cost)\n    return true\n  }\n}\n```\n\n**Rationale:**\n\n1. **First attempt**: Try to consume immediately. If successful, return `true`.\n2. **On insufficient tokens**: Catch `RateLimiterExceededError` and compute the exact wait using `retryAfterMs(cost)`.\n3. **Check timeout**: If the required wait exceeds `timeoutMs`, return `false` without sleeping.\n4. **Sleep exactly**: If within budget, sleep for exactly `waitMs` milliseconds (per the design decision: single computed sleep, not polling).\n5. **Final consume**: After the sleep, call `consume(cost)` again. This will succeed because `retryAfterMs()` guarantees sufficient token accumulation, and `Math.ceil` ensures the duration is sufficient.\n6. **Return true**: Tokens were consumed after the wait.\n\nThe second `consume()` call will not throw because `retryAfterMs()` computes the minimum wait needed for `consume(cost)` to succeed.",
+            "inputTokens": 2170,
+            "outputTokens": 366,
+            "judgeInputTokens": 3155,
+            "judgeOutputTokens": 342,
+            "scores": [
+              {
+                "id": "no-polling",
+                "score": 3,
+                "reasoning": "Implementation computes retryAfterMs() once and applies a single setTimeout sleep; no polling loop, while/for, setInterval, or recursive retry."
+              },
+              {
+                "id": "early-false",
+                "score": 3,
+                "reasoning": "Calls retryAfterMs(cost) before any sleep, compares to timeoutMs, and returns false immediately without sleeping if the wait would exceed the timeout."
+              },
+              {
+                "id": "consumes-after",
+                "score": 2,
+                "reasoning": "Calls this.consume(cost) after the sleep to deduct tokens via the existing path, which includes refill; does not manually adjust this.tokens."
+              },
+              {
+                "id": "zero-timeout",
+                "score": 2,
+                "reasoning": "With default timeoutMs=0, the first consume() either succeeds (return true) or throws; retryAfterMs(cost) will be > 0, so the condition returns false without sleeping."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is direct and focused, with no filler or unnecessary hedging; the code and rationale are concise and address the requirements exactly."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "delta": 5
+        },
+        {
+          "id": "rl-cs-1",
+          "name": "Lazy Refill Rationale",
+          "dimension": "coverage_signal",
+          "without": {
+            "response": "# Lazy Refill Design Rationale\n\nThe lazy refill approach (calculating tokens on-demand) is superior to a background timer for several reasons:\n\n## 1. **No Resource Overhead**\n- A background timer runs continuously regardless of whether the rate limiter is actually being used\n- Lazy refill only performs calculations when `consume()` is called\n- For idle or infrequently-used rate limiters, this saves CPU and memory\n\n## 2. **Simpler Concurrency Model**\n- No need to manage timer lifecycle or handle race conditions between timer callbacks and consume calls\n- Synchronous design means no async state mutations or callback ordering issues\n- Easier to reason about and test\n\n## 3. **Better for Testing**\n- The injectable `clock` parameter allows deterministic testing without real time delays\n- Tests can advance time arbitrarily without waiting for actual intervals\n- Background timers would require mocking/clearing timers or waiting for real time to pass\n\n## 4. **Predictable Behavior**\n- Token accumulation is tied directly to actual usage patterns\n- No surprise timer fires or background activity\n- Behavior is fully determined by the sequence of method calls and elapsed time\n\n## 5. **Scalability**\n- Creating 1000 rate limiters with background timers = 1000 active timers\n- Lazy refill scales to any number of instances with zero timer overhead\n\n**Trade-off:** Lazy refill requires slightly more computation per `consume()` call, but this is negligible (one subtraction and multiplication) compared to the benefits. The synchronous, timer-free design is intentional and appropriate for a rate limiter.",
+            "inputTokens": 848,
+            "outputTokens": 371,
+            "judgeInputTokens": 1892,
+            "judgeOutputTokens": 362,
+            "scores": [
+              {
+                "id": "clock-injection",
+                "score": 3,
+                "reasoning": "Response explicitly identifies that the injectable `clock` parameter enables deterministic testing without real time delays, and correctly explains that background timers would run on wall time regardless of injection."
+              },
+              {
+                "id": "no-teardown",
+                "score": 0,
+                "reasoning": "Response does not mention the requirement to call clearInterval for cleanup, memory leaks from unreleased timers, or the advantage that lazy refill has no external resources requiring teardown."
+              },
+              {
+                "id": "no-drift",
+                "score": 2,
+                "reasoning": "Response mentions that lazy refill calculates 'exact elapsed time from the clock on each call' and is therefore accurate, but does not explain why setInterval timers drift due to event-loop scheduling jitter or approximate tick intervals."
+              },
+              {
+                "id": "keeps-lazy",
+                "score": 2,
+                "reasoning": "Response clearly recommends keeping the lazy design as superior and notes that a background timer approach would be incompatible with the injected clock parameter."
+              },
+              {
+                "id": "precision",
+                "score": 1,
+                "reasoning": "Response is well-structured and mostly focused, but includes some minor verbosity (e.g., the 'Trade-off' section restates points already made) that slightly detracts from directness."
+              }
+            ],
+            "total": 8,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "# Why RateLimiter Uses Lazy Refill Instead of a Background Timer\n\nThe lazy refill design (calculating tokens on demand) is chosen over a background timer (`setInterval`) for three critical reasons:\n\n## 1. **Testability with Injected Clock**\n\nA background timer cannot use the injected `clock` function — it must use the real system time. This makes deterministic testing impossible. With lazy refill, tests can:\n- Inject a fake clock that advances on demand\n- Call `consume()` after advancing the fake clock\n- Observe exact, predictable behavior without async scheduling or fake timer libraries\n\n```typescript\n// Example: deterministic test with lazy refill\nconst fakeClock = { now: 0 };\nconst limiter = new RateLimiter(10, 0.01, () => fakeClock.now);\n\nfakeClock.now += 100; // Advance 100ms\nlimiter.consume(1);   // Succeeds — 1 token accumulated\n```\n\nA background timer cannot participate in this pattern.\n\n## 2. **No Memory Leaks or Teardown Burden**\n\nBackground timers require explicit cleanup (`clearInterval`) to avoid memory leaks. Lazy refill has no lifecycle — it computes on each call and requires no teardown. This eliminates a class of resource management bugs.\n\n## 3. **Eliminates Timer Granularity Drift**\n\n`setInterval` fires at approximate intervals, not exact ones. At high call frequency, the gap between intended and actual refill times introduces systematic drift in token counts. Lazy refill calculates from actual elapsed wall time (`now - lastRefillTime`), so drift is impossible — the math is exact.\n\n---\n\n**Bottom line**: Lazy refill trades the intuition of \"a background process fills the bucket\" for the precision of \"calculate what *should* be in the bucket right now.\" This is more correct, more testable, and simpler to reason about.",
+            "inputTokens": 2167,
+            "outputTokens": 444,
+            "judgeInputTokens": 3278,
+            "judgeOutputTokens": 357,
+            "scores": [
+              {
+                "id": "clock-injection",
+                "score": 3,
+                "reasoning": "Response explicitly identifies that lazy refill uses the injected `clock` function for determinism, provides a concrete code example showing fake clock advancement, and correctly states that a background setInterval cannot participate in this pattern."
+              },
+              {
+                "id": "no-teardown",
+                "score": 2,
+                "reasoning": "Response clearly explains that background timers require explicit `clearInterval` cleanup to avoid memory leaks, and contrasts this with lazy refill's lack of lifecycle or teardown burden."
+              },
+              {
+                "id": "no-drift",
+                "score": 3,
+                "reasoning": "Response identifies that `setInterval` fires at approximate intervals and introduces systematic drift due to event-loop scheduling, while lazy refill calculates exact elapsed wall time (`now - lastRefillTime`), making the token count always accurate."
+              },
+              {
+                "id": "keeps-lazy",
+                "score": 2,
+                "reasoning": "Response concludes that lazy refill is the correct design choice and reinforces why a background timer approach would not work with the injected clock parameter."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is direct, focused, and free of unnecessary hedging or filler; each section addresses a specific reason without verbosity or tangential discussion."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "delta": 4
+        },
+        {
+          "id": "rl-cs-2",
+          "name": "Full Bucket at Start",
+          "dimension": "coverage_signal",
+          "without": {
+            "response": "# Why the Rate Limiter Initializes to `maxTokens`\n\nThe limiter starts full by design—this is the standard token-bucket pattern and is correct behavior:\n\n## 1. **Burst Capacity is the Feature**\nToken buckets are specifically designed to allow controlled bursts. Starting at `maxTokens` means the first batch of requests can proceed immediately up to the burst limit. This is intentional, not a bug.\n\n## 2. **Fairness to Early Callers**\nIf the limiter started at 0, the first caller would always be penalized with an artificial delay, even though the service is idle and has capacity. This is unfair and wasteful—you're deliberately rejecting valid work.\n\n## 3. **Matches Real-World Semantics**\nThink of it like a water tank: when you install a new tank with capacity for 100 gallons, it starts full. You don't artificially drain it before use. Similarly, a fresh service has full capacity available.\n\n## 4. **Sustainable Rate is Enforced**\nThe burst is a one-time allowance. After those 80 requests consume the tokens, the refill rate (`refillRatePerMs`) strictly governs throughput going forward. The limiter prevents *sustained* overload—not initial bursts.\n\n## Your Teammate's Concern is Valid But Misplaced\nIf the concern is \"we're allowing too much traffic,\" the fix is to **lower `maxTokens` or `refillRatePerMs`**, not to artificially delay the first request. Those parameters define your actual SLA.\n\n**Recommendation:** Keep the current initialization. If burst capacity is too high, tune the parameters—don't break the token-bucket semantics.",
+            "inputTokens": 872,
+            "outputTokens": 393,
+            "judgeInputTokens": 1911,
+            "judgeOutputTokens": 378,
+            "scores": [
+              {
+                "id": "keeps-full",
+                "score": 2,
+                "reasoning": "Response explicitly recommends keeping the current maxTokens initialization and advises against starting at 0."
+              },
+              {
+                "id": "no-debt",
+                "score": 2,
+                "reasoning": "Response explains that a fresh service has full capacity available (water tank analogy) and that starting at 0 would artificially penalize the first caller, but does not explicitly articulate the semantic concept that a new limiter has no prior debt or overuse history."
+              },
+              {
+                "id": "startup-burst",
+                "score": 1,
+                "reasoning": "Response mentions 'first batch of requests can proceed immediately' and 'service is idle and has capacity,' but does not name concrete startup use cases like loading configuration, establishing connections, or populating caches."
+              },
+              {
+                "id": "addresses-concern",
+                "score": 2,
+                "reasoning": "Response directly engages with the 'free capacity' framing by explaining that maxTokens is the burst capacity and the first use after creation is the most legitimate burst, correctly allocating capacity to an owner who has not yet used any of it."
+              },
+              {
+                "id": "precision",
+                "score": 1,
+                "reasoning": "Response includes unnecessary structure (numbered sections, a separate 'Your Teammate's Concern' subsection) and some verbose preamble; the core argument could be more concise without losing clarity."
+              }
+            ],
+            "total": 8,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "# Why the RateLimiter Starts at maxTokens\n\nThe limiter starts full because **a brand-new limiter has no history of overuse**. Starting at zero would penalise legitimate initial traffic.\n\n## The Core Argument\n\nRate limiting exists to prevent *sustained* overload. A fresh limiter has never been depleted — it has no evidence the caller is abusing the system. Starting at zero implies the caller has already exhausted their budget, which is only true of a limiter that was recently drained by prior activity.\n\n## Why This Matters in Practice\n\nServices have legitimate reasons for traffic bursts at startup:\n- Loading configuration and secrets\n- Establishing database/cache connections\n- Populating in-memory caches\n- Warming up connection pools\n\nA zero-token limiter would force artificial startup delays on every caller. That's not rate limiting — that's artificial throttling of legitimate work.\n\n## The Burst Capacity Exists for This\n\nThe `maxTokens` parameter defines the burst capacity. That capacity is *meant* to absorb legitimate spikes. The most legitimate spike is first use after instantiation — there's no prior history to suggest the caller is misbehaving.\n\n## What \"Free Capacity\" Actually Means\n\nYour teammate's concern is understandable but inverts the semantics. The capacity isn't \"given away\" — it's *reserved* for the burst case. If you want to enforce a stricter policy (e.g., callers must earn tokens before using them), you'd set `maxTokens` lower or use a different limiter design. But starting a fresh limiter at zero contradicts the purpose of having a burst capacity at all.\n\n**Bottom line**: Starting full is semantically correct. If the caller abuses it, the limiter will reject subsequent requests and force them to wait. That's when rate limiting activates.",
+            "inputTokens": 2191,
+            "outputTokens": 411,
+            "judgeInputTokens": 3242,
+            "judgeOutputTokens": 371,
+            "scores": [
+              {
+                "id": "keeps-full",
+                "score": 2,
+                "reasoning": "Response unambiguously recommends keeping the maxTokens initialisation and directly states 'Starting full is semantically correct.'"
+              },
+              {
+                "id": "no-debt",
+                "score": 3,
+                "reasoning": "Response articulates the core semantics: 'a brand-new limiter has no history of overuse' and 'Starting at zero implies the caller has already exhausted their budget, which is only true of a limiter that was recently drained by prior activity.'"
+              },
+              {
+                "id": "startup-burst",
+                "score": 3,
+                "reasoning": "Response names four concrete startup use cases (loading configuration, establishing connections, populating caches, warming connection pools) and explains that a zero-token limiter would force artificial startup delays on every caller."
+              },
+              {
+                "id": "addresses-concern",
+                "score": 2,
+                "reasoning": "Response directly engages with the 'free capacity' framing by explaining that maxTokens is the burst capacity reserved for legitimate spikes, and that the most legitimate spike is first use after instantiation—capacity is correctly allocated, not 'given away.'"
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is direct, focused, and avoids filler; each section advances the argument without hedging or unnecessary alternatives."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "delta": 4
+        }
+      ],
+      "summary": {
+        "withoutTotal": 127,
+        "withTotal": 197,
+        "maxTotal": 208,
+        "delta": 70,
+        "withoutPct": 61,
+        "withPct": 95,
+        "withoutTokens": 7039,
+        "withTokens": 7229,
+        "totalInputTokens": 112234,
+        "totalOutputTokens": 26034,
+        "dimensions": {
+          "decision_quality": {
+            "withoutTotal": 39,
+            "withTotal": 76,
+            "maxTotal": 76,
+            "withoutPct": 51,
+            "withPct": 100
+          },
+          "task_success": {
+            "withoutTotal": 28,
+            "withTotal": 39,
+            "maxTotal": 48,
+            "withoutPct": 58,
+            "withPct": 81
+          },
+          "coverage_signal": {
+            "withoutTotal": 60,
+            "withTotal": 82,
+            "maxTotal": 84,
+            "withoutPct": 71,
+            "withPct": 98
+          }
+        }
+      }
+    }
+  ]
+}

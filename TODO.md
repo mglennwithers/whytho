@@ -1,7 +1,7 @@
 # whytho — Project TODO
 
 ## Testing
-- [ ] Build benchmarking tests to measure AI coding tool effectiveness with and without whytho annotations
+- [x] Build benchmarking tests to measure AI coding tool effectiveness with and without whytho annotations
 - [x] Investigate transient "No test suite found" failures on Windows when running the full test suite in parallel (passes on re-run; likely a worker startup race with vitest)
 
 ## Bugs / Polish

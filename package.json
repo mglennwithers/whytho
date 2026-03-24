@@ -32,10 +32,12 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
-    "lint": "tsc --noEmit && node scripts/lint.js",
+    "lint": "tsc --noEmit && node scripts/lint.js && eslint \"benchmarks/**/*.ts\"",
     "lint:style": "node scripts/lint.js",
+    "lint:eslint": "eslint \"benchmarks/**/*.ts\"",
     "format": "prettier --write 'src/**/*.ts' 'tests/**/*.ts'",
-    "install-hooks": "node scripts/install-hooks.js"
+    "install-hooks": "node scripts/install-hooks.js",
+    "benchmark": "tsx benchmarks/index.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",
@@ -57,6 +59,7 @@
     "eslint-config-prettier": "^9.1.0",
     "prettier": "^3.2.0",
     "tsup": "^8.0.0",
+    "tsx": "^4.21.0",
     "typescript": "^5.4.0",
     "vitest": "^1.6.0"
   },

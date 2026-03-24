@@ -65,6 +65,7 @@ interface SuiteManifestEntry {
 }
 
 interface SuiteManifest {
+  source?: string
   scenarios: SuiteManifestEntry[]
 }
 
@@ -72,7 +73,7 @@ interface TopManifest {
   suites: string[]
 }
 
-function parseScenario(suiteDir: string, entry: SuiteManifestEntry): Task {
+function parseScenario(suiteDir: string, entry: SuiteManifestEntry, suiteSource?: string): Task {
   const raw = readFileSync(join(suiteDir, entry.file), 'utf8')
   const { data, content } = matter(raw)
 
@@ -81,9 +82,14 @@ function parseScenario(suiteDir: string, entry: SuiteManifestEntry): Task {
     throw new Error(`Invalid dimension "${fm.dimension}" in ${entry.file}`)
   }
 
-  const codebaseRaw = extractSection(content, 'Codebase')
-  if (!codebaseRaw) throw new Error(`Missing ## Codebase in ${entry.file}`)
-  const source = codebaseRaw.startsWith('```') ? stripCodeFence(codebaseRaw) : codebaseRaw
+  let source: string
+  if (suiteSource !== undefined) {
+    source = suiteSource
+  } else {
+    const codebaseRaw = extractSection(content, 'Codebase')
+    if (!codebaseRaw) throw new Error(`Missing ## Codebase in ${entry.file}`)
+    source = codebaseRaw.startsWith('```') ? stripCodeFence(codebaseRaw) : codebaseRaw
+  }
 
   const annotations = readFileSync(join(suiteDir, entry.annotations), 'utf8')
 
@@ -119,7 +125,10 @@ export const TASKS: Task[] = topManifest.suites.flatMap((suite) => {
   const suiteManifest = yaml.load(
     readFileSync(join(suiteDir, 'manifest.yaml'), 'utf8'),
   ) as SuiteManifest
-  return suiteManifest.scenarios.map((entry) => parseScenario(suiteDir, entry))
+  const suiteSource = suiteManifest.source
+    ? readFileSync(join(suiteDir, suiteManifest.source), 'utf8').trimEnd()
+    : undefined
+  return suiteManifest.scenarios.map((entry) => parseScenario(suiteDir, entry, suiteSource))
 })
 
 export const MAX_TOTAL = TASKS.reduce(

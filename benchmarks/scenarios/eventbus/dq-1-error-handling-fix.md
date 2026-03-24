@@ -9,58 +9,6 @@ respecting the per-subscriber isolation design principle. A model with
 annotation context should produce an Error[] return type that aligns with
 the documented design; without it, it typically falls back to console.error.
 
-## Codebase
-
-```typescript
-// EventBus — a synchronous publish/subscribe event bus
-export type EventHandler<T = unknown> = (data: T) => void
-
-export class EventBus {
-  private readonly subs = new Map<string, Map<symbol, EventHandler>>()
-  private readonly tokenIndex = new Map<symbol, string>()
-
-  /**
-   * Subscribe to an event. Returns an opaque token for unsubscription.
-   */
-  subscribe<T = unknown>(event: string, handler: EventHandler<T>): symbol {
-    if (!this.subs.has(event)) this.subs.set(event, new Map())
-    const token = Symbol(event)
-    this.subs.get(event)!.set(token, handler as EventHandler)
-    this.tokenIndex.set(token, event)
-    return token
-  }
-
-  /**
-   * Unsubscribe using a token returned by subscribe().
-   * Returns true if the token was found and removed, false otherwise.
-   */
-  unsubscribe(token: symbol): boolean {
-    // TODO: not yet implemented
-    throw new Error('Not implemented')
-  }
-
-  /**
-   * Emit an event, calling all subscribed handlers with the given data.
-   */
-  emit(event: string, data?: unknown): void {
-    const handlers = this.subs.get(event)
-    if (!handlers) return
-    for (const handler of handlers.values()) {
-      handler(data)
-    }
-  }
-
-  /**
-   * Subscribe for exactly one emission of an event, then auto-unsubscribe.
-   * Returns a token that can be passed to unsubscribe() to cancel early.
-   */
-  once<T = unknown>(event: string, handler: EventHandler<T>): symbol {
-    // TODO: not yet implemented
-    throw new Error('Not implemented')
-  }
-}
-```
-
 ## Prompt
 
 The emit() method has no error handling. If any subscriber throws an exception,
@@ -88,10 +36,13 @@ max: 3
 id: err-collected
 max: 2
 
-2 = errors are collected into an array and returned from emit() (e.g., Error[]),
-    allowing callers to inspect them programmatically. Return type changes from void.
-1 = errors are logged (e.g., console.error) but not returned — caller cannot
-    inspect them programmatically, and the return type remains void.
+2 = the primary implementation (not an optional "Alternative" mentioned afterwards)
+    collects errors into an array and returns them from emit() (e.g., Error[]).
+    The return type changes from void. Proposing Error[] only as a secondary option
+    while recommending console.error as the main approach scores 1.
+1 = errors are logged (e.g., console.error) but not returned — the caller cannot
+    inspect them programmatically, and the return type remains void. Applies even
+    if an Error[] alternative is mentioned elsewhere in the response.
 0 = errors are re-thrown, silently swallowed, or otherwise lost.
 
 ### Remains synchronous
