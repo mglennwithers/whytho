@@ -1,7 +1,7 @@
 {
   "whytho_version": "1.0",
-  "generated_at": "2026-03-24T07:41:38.666Z",
-  "generated_at_commit": "d09506d145381b6b28259f8554f35859288ccd59",
+  "generated_at": "2026-03-24T09:37:33.048Z",
+  "generated_at_commit": "cbb5f6a6589600f67d32953cd1862fa785703997",
   "sessions": {
     "2026-03-21-session-mmzsxrsv": {
       "id": "2026-03-21-session-mmzsxrsv",
@@ -238,6 +238,412 @@
     }
   },
   "files": {
+    "packages/vscode-whytho/src/commands/go-to-block.ts": {
+      "path": "packages/vscode-whytho/src/commands/go-to-block.ts",
+      "parent_folder": "packages/vscode-whytho/src/commands/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+          "pipeline": "static"
+        }
+      ]
+    },
+    "packages/vscode-whytho/src/commands/go-to-related.ts": {
+      "path": "packages/vscode-whytho/src/commands/go-to-related.ts",
+      "parent_folder": "packages/vscode-whytho/src/commands/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+          "pipeline": "static"
+        }
+      ]
+    },
+    "packages/vscode-whytho/src/commands/index.ts": {
+      "path": "packages/vscode-whytho/src/commands/index.ts",
+      "parent_folder": "packages/vscode-whytho/src/commands/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/views/detail-panel.ts::AnnotationPanel",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/commands/go-to-block.ts::goToBlock",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/commands/go-to-related.ts::goToRelated",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/commands/search.ts::searchAnnotations",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/commands/push-note.ts::pushNote",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/commands/reannotate.ts::reannotate",
+          "pipeline": "static"
+        }
+      ]
+    },
+    "packages/vscode-whytho/src/commands/push-note.ts": {
+      "path": "packages/vscode-whytho/src/commands/push-note.ts",
+      "parent_folder": "packages/vscode-whytho/src/commands/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+          "pipeline": "static"
+        }
+      ]
+    },
+    "packages/vscode-whytho/src/commands/reannotate.ts": {
+      "path": "packages/vscode-whytho/src/commands/reannotate.ts",
+      "parent_folder": "packages/vscode-whytho/src/commands/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+          "pipeline": "static"
+        }
+      ]
+    },
+    "packages/vscode-whytho/src/commands/search.ts": {
+      "path": "packages/vscode-whytho/src/commands/search.ts",
+      "parent_folder": "packages/vscode-whytho/src/commands/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/views/detail-panel.ts::AnnotationPanel",
+          "pipeline": "static"
+        }
+      ]
+    },
+    "packages/vscode-whytho/src/core/annotation-cache.ts": {
+      "path": "packages/vscode-whytho/src/core/annotation-cache.ts",
+      "parent_folder": "packages/vscode-whytho/src/core/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/util/markdown.ts::extractPurposePreview",
+          "pipeline": "static"
+        }
+      ]
+    },
+    "packages/vscode-whytho/src/core/annotation-service.ts": {
+      "path": "packages/vscode-whytho/src/core/annotation-service.ts",
+      "parent_folder": "packages/vscode-whytho/src/core/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/core/index-cache.ts::IndexCache",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/core/parse-cache.ts::ParseCache",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/core/annotation-cache.ts::AnnotationCache",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/core/watcher.ts::WhyFolderWatcher",
+          "pipeline": "static"
+        }
+      ]
+    },
+    "packages/vscode-whytho/src/extension.ts": {
+      "path": "packages/vscode-whytho/src/extension.ts",
+      "parent_folder": "packages/vscode-whytho/src/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/providers/codelens.ts::WhythoCodeLensProvider",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/providers/hover.ts::WhythoHoverProvider",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/providers/gutter.ts::GutterDecorationProvider",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/views/detail-panel.ts::AnnotationPanel",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/views/tree-view.ts::WhythoTreeDataProvider",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/views/status-bar.ts::StatusBarController",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/commands/index.ts::registerCommands",
+          "pipeline": "static"
+        }
+      ]
+    },
+    "packages/vscode-whytho/src/providers/codelens.ts": {
+      "path": "packages/vscode-whytho/src/providers/codelens.ts",
+      "parent_folder": "packages/vscode-whytho/src/providers/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceLevel",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceLabel",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::loadThresholds",
+          "pipeline": "static"
+        }
+      ]
+    },
+    "packages/vscode-whytho/src/providers/gutter.ts": {
+      "path": "packages/vscode-whytho/src/providers/gutter.ts",
+      "parent_folder": "packages/vscode-whytho/src/providers/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceLevel",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceColor",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::loadThresholds",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::ConfidenceLevel",
+          "pipeline": "static"
+        }
+      ]
+    },
+    "packages/vscode-whytho/src/providers/hover.ts": {
+      "path": "packages/vscode-whytho/src/providers/hover.ts",
+      "parent_folder": "packages/vscode-whytho/src/providers/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceLevel",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceLabel",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::loadThresholds",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/util/markdown.ts::extractSection",
+          "pipeline": "static"
+        }
+      ]
+    },
+    "packages/vscode-whytho/src/views/detail-panel.ts": {
+      "path": "packages/vscode-whytho/src/views/detail-panel.ts",
+      "parent_folder": "packages/vscode-whytho/src/views/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/util/markdown.ts::extractSection",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceLevel",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceColor",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::loadThresholds",
+          "pipeline": "static"
+        }
+      ]
+    },
+    "packages/vscode-whytho/src/views/status-bar.ts": {
+      "path": "packages/vscode-whytho/src/views/status-bar.ts",
+      "parent_folder": "packages/vscode-whytho/src/views/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+          "pipeline": "static"
+        }
+      ]
+    },
+    "packages/vscode-whytho/src/views/tree-view.ts": {
+      "path": "packages/vscode-whytho/src/views/tree-view.ts",
+      "parent_folder": "packages/vscode-whytho/src/views/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceLevel",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::loadThresholds",
+          "pipeline": "static"
+        }
+      ]
+    },
+    "packages/vscode-whytho/tests/unit/confidence.test.ts": {
+      "path": "packages/vscode-whytho/tests/unit/confidence.test.ts",
+      "parent_folder": "packages/vscode-whytho/tests/unit/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "tests",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceLevel",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceColor",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::loadThresholds",
+          "pipeline": "static"
+        }
+      ]
+    },
+    "packages/vscode-whytho/tests/unit/markdown.test.ts": {
+      "path": "packages/vscode-whytho/tests/unit/markdown.test.ts",
+      "parent_folder": "packages/vscode-whytho/tests/unit/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "tests",
+          "target": "packages/vscode-whytho/src/util/markdown.ts::extractSection",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "packages/vscode-whytho/src/util/markdown.ts::extractPurposePreview",
+          "pipeline": "static"
+        }
+      ]
+    },
     "src/ai/prompts/annotate-block.ts": {
       "path": "src/ai/prompts/annotate-block.ts",
       "parent_folder": "src/ai/prompts/",
@@ -24641,6 +25047,330 @@
       "source": "tests/unit/slugify.test.ts::describe(slugifyBlockName)",
       "target": "src/core/fs/layout.ts::slugifyBlockName",
       "pipeline": "ai"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/commands/go-to-block.ts",
+      "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/commands/go-to-related.ts",
+      "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/commands/index.ts",
+      "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/commands/index.ts",
+      "target": "packages/vscode-whytho/src/views/detail-panel.ts::AnnotationPanel",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/commands/index.ts",
+      "target": "packages/vscode-whytho/src/commands/go-to-block.ts::goToBlock",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/commands/index.ts",
+      "target": "packages/vscode-whytho/src/commands/go-to-related.ts::goToRelated",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/commands/index.ts",
+      "target": "packages/vscode-whytho/src/commands/search.ts::searchAnnotations",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/commands/index.ts",
+      "target": "packages/vscode-whytho/src/commands/push-note.ts::pushNote",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/commands/index.ts",
+      "target": "packages/vscode-whytho/src/commands/reannotate.ts::reannotate",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/commands/push-note.ts",
+      "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/commands/reannotate.ts",
+      "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/commands/search.ts",
+      "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/commands/search.ts",
+      "target": "packages/vscode-whytho/src/views/detail-panel.ts::AnnotationPanel",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/core/annotation-cache.ts",
+      "target": "packages/vscode-whytho/src/util/markdown.ts::extractPurposePreview",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/core/annotation-service.ts",
+      "target": "packages/vscode-whytho/src/core/index-cache.ts::IndexCache",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/core/annotation-service.ts",
+      "target": "packages/vscode-whytho/src/core/parse-cache.ts::ParseCache",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/core/annotation-service.ts",
+      "target": "packages/vscode-whytho/src/core/annotation-cache.ts::AnnotationCache",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/core/annotation-service.ts",
+      "target": "packages/vscode-whytho/src/core/watcher.ts::WhyFolderWatcher",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/extension.ts",
+      "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/extension.ts",
+      "target": "packages/vscode-whytho/src/providers/codelens.ts::WhythoCodeLensProvider",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/extension.ts",
+      "target": "packages/vscode-whytho/src/providers/hover.ts::WhythoHoverProvider",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/extension.ts",
+      "target": "packages/vscode-whytho/src/providers/gutter.ts::GutterDecorationProvider",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/extension.ts",
+      "target": "packages/vscode-whytho/src/views/detail-panel.ts::AnnotationPanel",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/extension.ts",
+      "target": "packages/vscode-whytho/src/views/tree-view.ts::WhythoTreeDataProvider",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/extension.ts",
+      "target": "packages/vscode-whytho/src/views/status-bar.ts::StatusBarController",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/extension.ts",
+      "target": "packages/vscode-whytho/src/commands/index.ts::registerCommands",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/providers/codelens.ts",
+      "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/providers/codelens.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceLevel",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/providers/codelens.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceLabel",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/providers/codelens.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::loadThresholds",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/providers/gutter.ts",
+      "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/providers/gutter.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceLevel",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/providers/gutter.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceColor",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/providers/gutter.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::loadThresholds",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/providers/gutter.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::ConfidenceLevel",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/providers/hover.ts",
+      "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/providers/hover.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceLevel",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/providers/hover.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceLabel",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/providers/hover.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::loadThresholds",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/providers/hover.ts",
+      "target": "packages/vscode-whytho/src/util/markdown.ts::extractSection",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/views/detail-panel.ts",
+      "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/views/detail-panel.ts",
+      "target": "packages/vscode-whytho/src/util/markdown.ts::extractSection",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/views/detail-panel.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceLevel",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/views/detail-panel.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceColor",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/views/detail-panel.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::loadThresholds",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/views/status-bar.ts",
+      "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/views/tree-view.ts",
+      "target": "packages/vscode-whytho/src/core/annotation-service.ts::AnnotationService",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/views/tree-view.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceLevel",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "packages/vscode-whytho/src/views/tree-view.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::loadThresholds",
+      "pipeline": "static"
+    },
+    {
+      "type": "tests",
+      "source": "packages/vscode-whytho/tests/unit/confidence.test.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceLevel",
+      "pipeline": "static"
+    },
+    {
+      "type": "tests",
+      "source": "packages/vscode-whytho/tests/unit/confidence.test.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceColor",
+      "pipeline": "static"
+    },
+    {
+      "type": "tests",
+      "source": "packages/vscode-whytho/tests/unit/confidence.test.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::loadThresholds",
+      "pipeline": "static"
+    },
+    {
+      "type": "tests",
+      "source": "packages/vscode-whytho/tests/unit/markdown.test.ts",
+      "target": "packages/vscode-whytho/src/util/markdown.ts::extractSection",
+      "pipeline": "static"
+    },
+    {
+      "type": "tests",
+      "source": "packages/vscode-whytho/tests/unit/markdown.test.ts",
+      "target": "packages/vscode-whytho/src/util/markdown.ts::extractPurposePreview",
+      "pipeline": "static"
     },
     {
       "type": "depends_on",
