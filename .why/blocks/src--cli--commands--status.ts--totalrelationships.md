@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::totalRelationships
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-23T04:53:52.828Z"
+updated: "2026-03-24T09:38:23.538Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 92
     end: 92
-    commit: 482601fd86d0652678e22f2316e333a17a91b764
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:e2a0d358260e21ad0ba0b1b9fff57aa4499124e6516328f2487157a8ef6edce6
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     relationships property may be undefined, defaulting to an empty array for length calculation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 482601fd86d0652678e22f2316e333a17a91b764
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # totalRelationships

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/ai-attribution.ts::runAIScan
 file: src/core/relationships/ai-attribution.ts
 created: "2026-03-23T03:12:31.143Z"
-updated: "2026-03-23T04:51:02.994Z"
+updated: "2026-03-24T09:38:26.227Z"
 created_by_session: agent-push
 updated_by_session: agent-push
 identity:
@@ -12,7 +12,7 @@ identity:
   line_range:
     start: 23
     end: 122
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:4a2393e04b5d6888ac2ecdf1019e3fb983071b7f07a33b56d35b645e36927203
   structural:
     kind: function
@@ -25,7 +25,7 @@ identity:
     place, which corrupts the gray-matter cache: any subsequent parse of identical content re
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/ai/types.ts::AIProvider

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/incremental.ts::readCurrentIndex
 file: src/core/index-builder/incremental.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:02.004Z"
+updated: "2026-03-24T09:38:25.366Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 16
     end: 23
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:ea9c1b889d710eecc3dcfa82ad6849f0e5c4a0ec91ccd16e42b021ebde52b956
   structural:
     kind: function
@@ -32,7 +32,7 @@ identity:
     state.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/core/fs/layout.ts::indexPath

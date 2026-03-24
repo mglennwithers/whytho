@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/hooks/installer.ts::cmdPath
 file: src/core/git/hooks/installer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T07:41:37.900Z"
+updated: "2026-03-24T09:38:24.715Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 83
     end: 83
-    commit: d09506d145381b6b28259f8554f35859288ccd59
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:1bec1fd5c0de358214e9ba576fdc7f3de96cae88eb6b9e253e4b29f7065ae872
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     batch script wrappers on Windows platforms.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: d09506d145381b6b28259f8554f35859288ccd59
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # cmdPath

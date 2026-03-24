@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::fileAnnotations
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T10:25:27.552Z"
+updated: "2026-03-24T09:38:21.991Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 422
     end: 422
-    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:5709c67118c6b9873d84c4c255db905cee92c8d78de26cf978c97206cc558143
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     content, likely for batch processing or reporting purposes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # fileAnnotations

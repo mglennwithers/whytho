@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::blockAnnotations
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T10:25:27.095Z"
+updated: "2026-03-24T09:38:21.665Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 327
     end: 327
-    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:13151e2357bcbef15a5020a9dcdd6afc09223d7bf7b7af150ad7dd95025091b7
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     appears to be a collection point for metadata about code blocks being processed in an inference command.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # blockAnnotations

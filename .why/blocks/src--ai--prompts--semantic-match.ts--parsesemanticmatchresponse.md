@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/semantic-match.ts::parseSemanticMatchResponse
 file: src/ai/prompts/semantic-match.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-23T04:50:56.028Z"
+updated: "2026-03-24T09:38:20.330Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 28
     end: 50
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:6d766d9cfe1f3d25b2d9ae3d620101f35f95b1a0acbf0b12e389f215150227ec
   structural:
     kind: function
@@ -27,7 +27,7 @@ identity:
     confidence or a no-match indicator with confidence, using regex against the first line of the response.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # parseSemanticMatchResponse

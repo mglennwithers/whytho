@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::folderAnnPath
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:50:56.953Z"
+updated: "2026-03-24T09:38:20.983Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 179
     end: 179
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:e36ffbd19728c3c62b2334ca054b25c7be93840940060aebef9cfc98c69d2b46
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the result in a variable for subsequent use in the annotate command.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # folderAnnPath

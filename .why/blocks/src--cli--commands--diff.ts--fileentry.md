@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/diff.ts::fileEntry
 file: src/cli/commands/diff.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:50:57.378Z"
+updated: "2026-03-24T09:38:21.322Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 46
     end: 46
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:d1adb9ddd15983879d0828fe549d4736a0d57aa6b1608e93a1f6d761af6eaa08
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     metadata or content for subsequent diff operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # fileEntry

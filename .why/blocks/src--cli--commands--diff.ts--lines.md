@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/diff.ts::lines
 file: src/cli/commands/diff.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:50:57.406Z"
+updated: "2026-03-24T09:38:21.347Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 35
     end: 35
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:42806ef00973314f20eafc79a1655f5033b1a915d68c756047a5c2cfe5c8e9b1
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     line-by-line processing or display.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # lines

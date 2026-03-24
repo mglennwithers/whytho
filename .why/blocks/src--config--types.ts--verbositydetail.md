@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/types.ts::VerbosityDetail
 file: src/config/types.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:52.878Z"
+updated: "2026-03-24T09:38:23.749Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 2
     end: 2
-    commit: 7f4e393ad3ad97418bd42717c027ffe8c7891ace
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:c59eccf1f79f42b8c60587367e66597f359faaeab79beecf6ca001874188bd93
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     level of output or logging throughout the application.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 7f4e393ad3ad97418bd42717c027ffe8c7891ace
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # VerbosityDetail

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::annPath
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T03:26:16.107Z"
+updated: "2026-03-24T09:38:27.284Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 371
     end: 371
-    commit: 467ba4108145807227f8be46b18a65a487a0065d
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:63ec3868b2ba5453b55341b01ce2db5968cf6b13b3cfdaa71b535574c76a9da2
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     reference, storing the result in a constant for subsequent use.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 467ba4108145807227f8be46b18a65a487a0065d
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # annPath

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::LOW_CONFIDENCE_THRESHOLD
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-23T04:53:52.589Z"
+updated: "2026-03-24T09:38:23.341Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 14
     end: 14
-    commit: 482601fd86d0652678e22f2316e333a17a91b764
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:6aa39653eb4a0f96b063f54ff9cc2d0410aa457864ba08959eb8a51aefb318b6
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     likely for filtering or categorizing results based on confidence scores.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 482601fd86d0652678e22f2316e333a17a91b764
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # LOW_CONFIDENCE_THRESHOLD

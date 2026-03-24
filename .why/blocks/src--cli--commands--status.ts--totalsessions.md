@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::totalSessions
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-23T04:53:52.843Z"
+updated: "2026-03-24T09:38:23.548Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 91
     end: 91
-    commit: 482601fd86d0652678e22f2316e333a17a91b764
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:778edcb91a041624d6526de1ff64b9235c2e230126994f61a0d73455ee594f88
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     a null-coalescing fallback to an empty object.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 482601fd86d0652678e22f2316e333a17a91b764
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # totalSessions

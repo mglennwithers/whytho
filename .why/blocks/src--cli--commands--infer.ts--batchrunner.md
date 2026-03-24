@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::batchRunner
 file: src/cli/commands/infer.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-23T10:25:27.055Z"
+updated: "2026-03-24T09:38:21.628Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 170
     end: 170
-    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:e33a295b892255b3c83b7c2f4f1ca682c094ba745195e359e228ad059776550e
   structural:
     kind: const
@@ -31,7 +31,7 @@ identity:
     batch processing logic is assigned later based on runtime conditions.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # batchRunner

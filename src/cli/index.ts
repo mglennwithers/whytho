@@ -16,6 +16,7 @@ import { registerMcp } from './commands/mcp.js'
 import { registerSearch } from './commands/search.js'
 import { registerStatus } from './commands/status.js'
 import { registerReannotate } from './commands/reannotate.js'
+import { registerBlame } from './commands/blame.js'
 
 const program = new Command()
   .name('git why')
@@ -39,5 +40,6 @@ registerMcp(program)
 registerSearch(program)
 registerStatus(program)
 registerReannotate(program)
+registerBlame(program)
 
 program.parse(process.argv)

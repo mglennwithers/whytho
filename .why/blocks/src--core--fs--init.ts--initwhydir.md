@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/init.ts::initWhyDir
 file: src/core/fs/init.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:00.689Z"
+updated: "2026-03-24T09:38:24.176Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 37
     end: 68
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:92574c4f6ebc2b1baba101ddcb8d46276f8c31f6968dc2b38a376174162f68d5
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     creates index files if they don't already exist to track metadata.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/core/fs/layout.ts::getWhyRoot

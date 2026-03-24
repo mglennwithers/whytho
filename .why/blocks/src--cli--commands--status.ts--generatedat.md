@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::generatedAt
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-23T04:53:52.532Z"
+updated: "2026-03-24T09:38:23.295Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 146
     end: 148
-    commit: 482601fd86d0652678e22f2316e333a17a91b764
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:80f7f6a9adabfe5f74a36e896722dabfdf5551591082c30b1baab0b7e2b7928e
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     absent or falsy.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 482601fd86d0652678e22f2316e333a17a91b764
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # generatedAt

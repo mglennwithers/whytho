@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/reader.ts::readAllFolders
 file: src/core/fs/reader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:01.140Z"
+updated: "2026-03-24T09:38:24.583Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 52
     end: 56
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:5e1d68b11b1cb0f7d173990a29c0956dd5060ba5ba09fbb705faba6c913f3657
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     annotation objects with folder-specific frontmatter metadata.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/core/fs/layout.ts::foldersDir

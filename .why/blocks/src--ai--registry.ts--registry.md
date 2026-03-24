@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/registry.ts::registry
 file: src/ai/registry.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-23T10:25:26.904Z"
+updated: "2026-03-24T09:38:20.684Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 27
     end: 27
-    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:2a2108ed9a7f4e6d9e82b621b4cdca48d7802cab714f36e8a4821febbed0eb69
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     for managing multiple AI provider implementations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # registry

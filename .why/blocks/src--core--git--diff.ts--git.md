@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/diff.ts::git
 file: src/core/git/diff.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:01.261Z"
+updated: "2026-03-24T09:38:24.707Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 11
     end: 11
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:4c2c1ad3b5989e8d5848e3636dafc1aa051edf33573fce9c5b1d64ed5086865d
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     subsequent Git operations within that repository context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # git

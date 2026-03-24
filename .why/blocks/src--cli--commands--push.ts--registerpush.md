@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/push.ts::registerPush
 file: src/cli/commands/push.ts
 created: "2026-03-21T04:34:20.326Z"
-updated: "2026-03-23T04:50:59.204Z"
+updated: "2026-03-24T09:38:22.825Z"
 created_by_session: agent-push
 updated_by_session: agent-push
 identity:
@@ -12,7 +12,7 @@ identity:
   line_range:
     start: 18
     end: 101
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:2142aa9dc06b1b89b71a4dec1c7988786b28185ea92bc3fcf4e4a230cef82f96
   structural:
     kind: function
@@ -25,7 +25,7 @@ identity:
     with a type argument is more ergonomic for agents — one command to remember, one --b
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/core/git/repo.ts::findRepoRoot

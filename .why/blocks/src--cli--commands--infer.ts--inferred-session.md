@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::INFERRED_SESSION
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T10:25:27.851Z"
+updated: "2026-03-24T09:38:22.192Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 38
     end: 38
-    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:be04b1b134a367661c031f1714bb2eda208fb35eae6dde4370750c1108566f7e
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     CLI command system.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # INFERRED_SESSION

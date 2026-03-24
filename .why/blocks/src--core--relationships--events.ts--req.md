@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/events.ts::req
 file: src/core/relationships/events.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:03.095Z"
+updated: "2026-03-24T09:38:26.319Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 93
     end: 102
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:9971159ad9a80e380bf535bdf869e92b595c9056dea45138d0423b6f563684a2
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     establishment without waiting for response completion.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # req

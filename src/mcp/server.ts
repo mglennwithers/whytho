@@ -30,6 +30,10 @@ import { fileExists } from '../core/fs/writer.js'
 import { getAllRelated } from '../core/relationships/graph.js'
 import { pushReasoning } from '../core/push/index.js'
 import { WHYTHO_VERSION } from '../core/constants.js'
+import { loadConfig } from '../config/loader.js'
+import { getDefaultProvider } from '../ai/registry.js'
+import { buildBlamePrompt, parseBlameResponse } from '../ai/prompts/blame.js'
+import type { BlameEntry } from '../ai/prompts/blame.js'
 import type { WhythoIndex, BlockFrontmatter, FileFrontmatter, FolderFrontmatter, SessionFrontmatter } from '../core/types.js'
 
 // ─── Tool Definitions ─────────────────────────────────────────────────────────
@@ -226,6 +230,29 @@ const TOOLS = [
     inputSchema: {
       type: 'object',
       properties: {},
+    },
+  },
+  {
+    name: 'blame',
+    description: [
+      'Given a natural-language description of a bug or behavior, find annotations whose design reasoning causally explains why that behavior exists.',
+      'Returns matching annotations ranked by causal strength, or a summary explaining why no annotations match.',
+      'Use this when debugging unexpected behavior to check if prior design decisions explain it.',
+    ].join('\n'),
+    inputSchema: {
+      type: 'object',
+      properties: {
+        query: {
+          type: 'string',
+          description: 'Description of the bug, behavior, or observable outcome to investigate',
+        },
+        type: {
+          type: 'string',
+          enum: ['block', 'file', 'folder', 'session'],
+          description: 'Filter by annotation type. Omit to search all.',
+        },
+      },
+      required: ['query'],
     },
   },
 ]
@@ -647,6 +674,73 @@ export async function createWhythoServer(): Promise<Server> {
           }
 
           return text(lines.join('\n'))
+        }
+
+        case 'blame': {
+          const query = a.query as string
+          const typeFilter = a.type as string | undefined
+          const BODY_LENGTH = 500
+
+          const blocks = (!typeFilter || typeFilter === 'block') ? await readAllBlocks(whyRoot) : []
+          const files = (!typeFilter || typeFilter === 'file') ? await readAllFiles(whyRoot) : []
+          const folders = (!typeFilter || typeFilter === 'folder') ? await readAllFolders(whyRoot) : []
+          const sessions = (!typeFilter || typeFilter === 'session') ? await readAllSessions(whyRoot) : []
+
+          const entries: BlameEntry[] = []
+          for (const ann of blocks) {
+            if (ann.body.trim().length > 0) {
+              entries.push({ type: 'block', ref: (ann.frontmatter as BlockFrontmatter).symbolic_ref, body: ann.body.slice(0, BODY_LENGTH).trim() })
+            }
+          }
+          for (const ann of files) {
+            if (ann.body.trim().length > 0) {
+              entries.push({ type: 'file', ref: (ann.frontmatter as FileFrontmatter).path, body: ann.body.slice(0, BODY_LENGTH).trim() })
+            }
+          }
+          for (const ann of folders) {
+            if (ann.body.trim().length > 0) {
+              entries.push({ type: 'folder', ref: (ann.frontmatter as FolderFrontmatter).path, body: ann.body.slice(0, BODY_LENGTH).trim() })
+            }
+          }
+          for (const ann of sessions) {
+            if (ann.body.trim().length > 0) {
+              entries.push({ type: 'session', ref: (ann.frontmatter as SessionFrontmatter).id, body: ann.body.slice(0, BODY_LENGTH).trim() })
+            }
+          }
+
+          if (entries.length === 0) return text('No annotations found to search.')
+
+          const config = await loadConfig(repoRoot)
+          const provider = getDefaultProvider(config)
+          const prompt = buildBlamePrompt(query, entries)
+          const result = await provider.generateAnnotation({
+            type: 'block',
+            context: { customPrompt: prompt },
+          })
+
+          const blameResult = parseBlameResponse(result.body)
+          const hits = blameResult.matches
+            .filter((m) => m.index >= 0 && m.index < entries.length)
+            .map((m) => ({
+              type: entries[m.index].type,
+              ref: entries[m.index].ref,
+              explanation: m.explanation,
+              body: entries[m.index].body,
+            }))
+
+          if (hits.length === 0) {
+            const summary = blameResult.noMatchSummary ?? 'No annotations causally explain the described behavior.'
+            return text(`# No matches for: "${query}"\n\n${summary}`)
+          }
+
+          const parts = [`# ${hits.length} annotation(s) may explain: "${query}"\n`]
+          for (const hit of hits) {
+            parts.push(`## [${hit.type}] ${hit.ref}`)
+            parts.push(`**Why this matches:** ${hit.explanation}\n`)
+            parts.push(hit.body)
+            parts.push('')
+          }
+          return text(parts.join('\n'))
         }
 
         default:

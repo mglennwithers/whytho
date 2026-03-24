@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::ARCHIVE_DIR
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:00.348Z"
+updated: "2026-03-24T09:38:23.856Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 9
     end: 9
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:7966d5423c3ace49e8449b3d98252df8cfc6ab5e7b0d5429a7edcda9658eaead
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     path identifier used throughout the application for archive-related operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # ARCHIVE_DIR

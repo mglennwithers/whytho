@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/history.ts::livePath
 file: src/cli/commands/history.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:50:57.591Z"
+updated: "2026-03-24T09:38:21.505Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 24
     end: 24
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:5f35a1e8f8e48c827b727682285a79f2167b2009a52a6d3ffb3240137068f4b4
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     constructing a location where annotation data is persisted or retrieved.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/core/fs/layout.ts::blockAnnotationPath

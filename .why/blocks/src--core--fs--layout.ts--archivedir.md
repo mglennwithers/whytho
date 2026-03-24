@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/layout.ts::archiveDir
 file: src/core/fs/layout.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:00.727Z"
+updated: "2026-03-24T09:38:24.209Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 38
     end: 41
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:245d991b68ff934c8391155ab59a4b2ec3ca765d87b82fc94e2e8ce6d800b0ac
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     subdirectories.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/core/constants.ts::ARCHIVE_DIR

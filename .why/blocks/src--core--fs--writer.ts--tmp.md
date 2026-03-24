@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/writer.ts::tmp
 file: src/core/fs/writer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:01.210Z"
+updated: "2026-03-24T09:38:24.652Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 10
     end: 10
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:8407e3fc763166fc912bbf72e141845c905eb5616ca5b9c7c23a3e87704fd3f1
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     write-then-rename operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # tmp

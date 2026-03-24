@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/fixtures/sample.ts::AuthToken
 file: tests/fixtures/sample.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-23T04:51:05.592Z"
+updated: "2026-03-24T09:38:28.638Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 3
     end: 7
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:215f87db8ebd59df219aa640538cd4b8ff38f0e18908840a21ec2e3cae1caaf6
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     (expiration timestamp and time-to-live duration).
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # AuthToken

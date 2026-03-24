@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::preview
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T03:26:16.970Z"
+updated: "2026-03-24T09:38:28.004Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 559
     end: 559
-    commit: 467ba4108145807227f8be46b18a65a487a0065d
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:f1bea36f34acc3bf60761bf91989987162c56d17ff1fae1b398ba823ea4b45d0
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     collapsing newlines into single spaces.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 467ba4108145807227f8be46b18a65a487a0065d
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # preview

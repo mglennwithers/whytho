@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/identity/election.ts::ElectionInput
 file: src/core/identity/election.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:01.592Z"
+updated: "2026-03-24T09:38:25.031Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 7
     end: 13
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:09c30085b0bf2c9159f6051c37ed4b9fa515229bf365199bf9beb5d49a224b4c
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     information for the purpose of selecting or reconciling block identities across versions.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/core/types.ts::BlockIdentity

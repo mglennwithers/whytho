@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::index
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T03:26:16.737Z"
+updated: "2026-03-24T09:38:27.784Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 462
     end: 462
-    commit: 467ba4108145807227f8be46b18a65a487a0065d
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:8c90da50e1daae87494ac4cb9bafcb65c697840f34379a85a7cc77ac4e5f4b76
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     operation likely represents initialization or loading of a configuration/data index at startup.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 467ba4108145807227f8be46b18a65a487a0065d
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # index

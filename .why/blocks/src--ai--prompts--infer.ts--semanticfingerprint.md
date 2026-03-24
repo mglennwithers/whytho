@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/infer.ts::semanticFingerprint
 file: src/ai/prompts/infer.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-23T04:50:55.963Z"
+updated: "2026-03-24T09:38:20.261Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 126
     end: 126
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:589cf88515167faf4f6e35f568f98f22010443efe12f0d95f08dafc656751bb8
   structural:
     kind: const
@@ -26,7 +26,7 @@ identity:
     later in the scope to hold a computed or assigned fingerprint value.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # semanticFingerprint

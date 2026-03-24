@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/hooks/installer.ts::lines
 file: src/core/git/hooks/installer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T07:41:38.083Z"
+updated: "2026-03-24T09:38:24.853Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 106
     end: 106
-    commit: d09506d145381b6b28259f8554f35859288ccd59
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:6aad9c8d7911a477446e58e7df7e494ccc1542e91077cbfb9cc2b65d4d29b21f
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     step for parsing or analyzing file content in a Git hooks installation context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: d09506d145381b6b28259f8554f35859288ccd59
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # lines

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::ann
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T03:26:16.082Z"
+updated: "2026-03-24T09:38:27.267Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 554
     end: 554
-    commit: 467ba4108145807227f8be46b18a65a487a0065d
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:f5e9726ee015ff13a6a4e8afee71be99ec7cc3e33a53a28230a96894a4a22019
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     that likely handles multiple items of a single type in batch processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 467ba4108145807227f8be46b18a65a487a0065d
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # ann

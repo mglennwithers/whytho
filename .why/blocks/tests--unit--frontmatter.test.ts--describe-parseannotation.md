@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/frontmatter.test.ts::describe(parseAnnotation)
 file: tests/unit/frontmatter.test.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-23T04:51:05.713Z"
+updated: "2026-03-24T09:38:28.774Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 34
     end: 54
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:6b11e5181eb594ebdd353192b56f567f6018f177cb51e279afbc429ba33874cb
   structural:
     kind: describe
@@ -30,7 +30,7 @@ identity:
     that metadata fields and body text are correctly extracted and accessible.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: tests
     target: src/core/frontmatter/parse.ts::parseAnnotation

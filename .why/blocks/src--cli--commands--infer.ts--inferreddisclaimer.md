@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::inferredDisclaimer
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T10:25:27.877Z"
+updated: "2026-03-24T09:38:22.213Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 40
     end: 43
-    commit: f61d6427131e7269ed8174ee40599a39ea4f203c
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:4782b9ff01803f2f73b946ba4c3f15326f2351d28d604044b98fa685a3daa38d
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     percentage, suitable for appending to AI-generated or auto-inferred content.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f61d6427131e7269ed8174ee40599a39ea4f203c
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/core/constants.ts::WHYTHO_VERSION

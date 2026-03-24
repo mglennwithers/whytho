@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::pct
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-23T04:53:52.631Z"
+updated: "2026-03-24T09:38:23.377Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 22
     end: 25
-    commit: 482601fd86d0652678e22f2316e333a17a91b764
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:25f6de9c077a5ef900cb5863594dd0ca8aa0aacd38aaf48f8d64d0100f34d22f
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     and styled output formatting.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 482601fd86d0652678e22f2316e333a17a91b764
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # pct

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::typescriptPlugin
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:02.619Z"
+updated: "2026-03-24T09:38:25.909Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 265
     end: 304
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:1cbf548c803ecbd3268112a2a74606812b4996a7eb282c7ba1425cf53c8012ea
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     files, with graceful fallback to a generic parser on errors or when the specialized parser is unavailable.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/core/parser/types.ts::ParserPlugin

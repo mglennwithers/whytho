@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/layout.ts::buildSymbolicRef
 file: src/core/fs/layout.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:00.795Z"
+updated: "2026-03-24T09:38:24.265Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 144
     end: 146
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:64a56f160236bcecf6ceef25e25fa5e4f0f3099728d59fc1f5e259a8ebe5c9ab
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     creating a symbolic reference string suitable for cross-referencing code blocks within files.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # buildSymbolicRef

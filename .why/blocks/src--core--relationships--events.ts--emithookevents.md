@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/events.ts::emitHookEvents
 file: src/core/relationships/events.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:03.037Z"
+updated: "2026-03-24T09:38:26.260Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 41
     end: 67
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:daf31dd875e4a8a3d652a8bab02fa7ef6bb4a90cc663a679e9d4d9bc1285226a
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     default), using a fallback mechanism to ensure events are always persisted when no explicit output is configured.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/core/types.ts::HookEvent

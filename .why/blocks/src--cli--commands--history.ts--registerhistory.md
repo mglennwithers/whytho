@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/history.ts::registerHistory
 file: src/cli/commands/history.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:50:57.600Z"
+updated: "2026-03-24T09:38:21.512Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 10
     end: 73
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:cb906e2123c98e4c0f7d11b55bb5008c8922ac8e032ff50284339201ea8d8666
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     currently live versions and archived versions, with output formatting options for JSON or human-readable text.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/core/git/repo.ts::findRepoRoot

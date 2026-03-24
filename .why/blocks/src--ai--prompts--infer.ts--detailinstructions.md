@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/infer.ts::detailInstructions
 file: src/ai/prompts/infer.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-23T04:50:55.890Z"
+updated: "2026-03-24T09:38:20.185Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 4
     end: 13
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:6a2e113b414fb7110a7d0c5a6087055de1a4f0b0073c2bffb63e7ac424b1e08c
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     concise guidance for 'brief' mode, comprehensive guidance for 'full' mode, or an empty string as default.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/config/types.ts::VerbosityDetail

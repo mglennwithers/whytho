@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::ResolutionOutcome
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-23T04:51:03.977Z"
+updated: "2026-03-24T09:38:27.097Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 16
     end: 16
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:f95e62b74b12b5d0576b093980c2d9f54457eaddf6c35006da9e4d057d6de53c
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     array, enabling type-safe usage of predefined outcome values throughout the codebase.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/core/constants.ts::RESOLUTION_OUTCOMES

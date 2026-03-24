@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::pushedBlocks
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-23T04:53:52.643Z"
+updated: "2026-03-24T09:38:23.390Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 74
     end: 74
-    commit: 482601fd86d0652678e22f2316e333a17a91b764
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:bc6e5895bfef31e313bee0512c298537a4fa907576d1ea1974bbf577ecd73b03
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     derived metric for status reporting.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 482601fd86d0652678e22f2316e333a17a91b764
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # pushedBlocks

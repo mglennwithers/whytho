@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/loader.ts::pkg
 file: src/config/loader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:00.131Z"
+updated: "2026-03-24T09:38:23.656Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 47
     end: 47
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:0743bcf59f8fdbcba33a91e2b98b355056b8c3798376cd9dc279c7930c9fed0c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     unknown value types.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/config/defaults.ts::DEFAULT_CONFIG

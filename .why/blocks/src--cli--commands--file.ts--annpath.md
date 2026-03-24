@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/file.ts::annPath
 file: src/cli/commands/file.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:50:57.464Z"
+updated: "2026-03-24T09:38:21.397Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 18
     end: 18
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:f86103ec2eb380b1f4ed7e7b1f1f0f53b7e8a14c3d52b1833eea23b3dac4af22
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the result in a local variable for subsequent use.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/core/fs/layout.ts::fileAnnotationPath

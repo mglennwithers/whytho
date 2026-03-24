@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::query
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T03:26:17.023Z"
+updated: "2026-03-24T09:38:28.063Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 544
     end: 544
-    commit: 467ba4108145807227f8be46b18a65a487a0065d
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:b31b1dadae8e47f0934bd03856ad552473ad68bfcf4a2702d11385b7b9288116
   structural:
     kind: const
@@ -28,7 +28,7 @@ identity:
   semantic_fingerprint: Extracts and normalizes a query string parameter to lowercase for case-insensitive comparison or processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 467ba4108145807227f8be46b18a65a487a0065d
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # query

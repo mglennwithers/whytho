@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/repo.ts::output
 file: src/core/git/repo.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:53:52.938Z"
+updated: "2026-03-24T09:38:24.946Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 47
     end: 47
-    commit: 482601fd86d0652678e22f2316e333a17a91b764
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:00e672009c557f17d69b355791224625ff4062a79a735d959bd92135f4f83440
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     a string.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 482601fd86d0652678e22f2316e333a17a91b764
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # output

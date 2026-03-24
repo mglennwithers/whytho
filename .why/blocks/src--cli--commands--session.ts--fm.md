@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/session.ts::fm
 file: src/cli/commands/session.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:50:59.427Z"
+updated: "2026-03-24T09:38:23.037Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 46
     end: 46
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:02b709e9c182c1645fcd2023556005e0184e162103a301c295af2756ecd3b083
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the session command processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/core/types.ts::SessionFrontmatter

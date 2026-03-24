@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/fixtures/sample.ts::rotateTokenIfNeeded
 file: tests/fixtures/sample.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-23T04:51:05.638Z"
+updated: "2026-03-24T09:38:28.698Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 24
     end: 37
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:f850b80a8c797f73083487219c84c2908f4f037104fd034a96e0aefbe4dc4af7
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     percentage, and generates a replacement token if rotation is needed.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # rotateTokenIfNeeded

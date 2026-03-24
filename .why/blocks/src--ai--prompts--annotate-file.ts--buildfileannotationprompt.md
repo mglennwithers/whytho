@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/annotate-file.ts::buildFileAnnotationPrompt
 file: src/ai/prompts/annotate-file.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-23T04:50:55.786Z"
+updated: "2026-03-24T09:38:20.074Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 3
     end: 21
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:401bcea11f8a3de39b3b25a47c5c2ddfaaaad5e01fdb339f95d4aff674c5154c
   structural:
     kind: function
@@ -27,7 +27,7 @@ identity:
     and a Session section with change details, given a file path and optional session context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/ai/types.ts::AnnotationRequest

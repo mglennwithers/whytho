@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::BaseAnnotationSchema
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-23T04:51:03.697Z"
+updated: "2026-03-24T09:38:26.860Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 63
     end: 68
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:1e8288e74d59b93af606750512ecf2b026e7dd7a31d3acfbab02944d7d2bb2a4
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     a foundational schema likely used as a composable base for more specific annotation types.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 relationships:
   - type: depends_on
     target: src/core/constants.ts::ANNOTATION_TYPES

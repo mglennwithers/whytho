@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/writer.ts::fileExists
 file: src/core/fs/writer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-23T04:51:01.195Z"
+updated: "2026-03-24T09:38:24.639Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 23
     end: 30
-    commit: 112144917e470cb92d797d6d441b0f6c4ba266e6
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:6c697ad6ddf937fbaf2e1df1e3c7889d6e6efe77c24c7af91f9896d4805d19dc
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     suppressing any access errors.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 112144917e470cb92d797d6d441b0f6c4ba266e6
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # fileExists
