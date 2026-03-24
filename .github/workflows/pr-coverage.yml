@@ -1,0 +1,91 @@
+name: Annotation Coverage
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  annotate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Annotate changed files
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node dist/cli/index.js annotate
+
+      - name: Commit new annotations
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .why/
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: annotate PR changes [skip ci]"
+            git push
+          fi
+
+      - name: Get coverage stats
+        run: node dist/cli/index.js status --coverage --json > /tmp/coverage.json
+
+      - name: Post coverage comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const stats = JSON.parse(fs.readFileSync('/tmp/coverage.json', 'utf8'));
+            const { annotations, coverage } = stats;
+
+            let body = '## Whytho Annotation Coverage\n\n';
+
+            if (coverage) {
+              const pct = (a, t) => t > 0 ? `${Math.round((a / t) * 100)}%` : 'n/a';
+              body += '| Type | Annotated | Total | Coverage |\n';
+              body += '|------|-----------|-------|----------|\n';
+              body += `| Blocks | ${coverage.blocks.annotated} | ${coverage.blocks.total} | ${pct(coverage.blocks.annotated, coverage.blocks.total)} |\n`;
+              body += `| Files | ${coverage.files.annotated} | ${coverage.files.total} | ${pct(coverage.files.annotated, coverage.files.total)} |\n`;
+              body += `| Folders | ${coverage.folders.annotated} | ${coverage.folders.total} | ${pct(coverage.folders.annotated, coverage.folders.total)} |\n`;
+              body += '\n';
+            }
+
+            body += `**Sessions:** ${annotations.sessions} | **Blocks:** ${annotations.blocks} (${annotations.inferredBlocks} inferred, ${annotations.pushedBlocks} pushed)`;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existing = comments.find(c => c.user.login === 'github-actions[bot]' && c.body.includes('Whytho Annotation Coverage'));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }

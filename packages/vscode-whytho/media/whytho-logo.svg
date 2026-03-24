@@ -1,4 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="12" cy="12" r="10"/>
-  <text x="12" y="16" text-anchor="middle" font-size="12" font-weight="bold" stroke="none" fill="currentColor">?</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20" fill="none">
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker');</style>
+  </defs>
+  <text x="0" y="11" font-size="15" font-weight="bold" fill="currentColor" font-family="'Permanent Marker', 'Comic Sans MS', cursive">w</text>
+  <text x="9.5" y="14" transform="rotate(5)" transform-origin="center" font-size="15" font-weight="bold" fill="currentColor" font-family="'Permanent Marker', 'Comic Sans MS', cursive">h</text>
+  <text x="16" y="11" transform="rotate(-5)" transform-origin="center" font-size="15" font-weight="bold" fill="currentColor" font-family="'Permanent Marker', 'Comic Sans MS', cursive">y</text>
 </svg>
