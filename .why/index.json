@@ -1,7 +1,7 @@
 {
   "whytho_version": "1.0",
-  "generated_at": "2026-03-23T10:25:28.848Z",
-  "generated_at_commit": "f61d6427131e7269ed8174ee40599a39ea4f203c",
+  "generated_at": "2026-03-24T02:45:56.175Z",
+  "generated_at_commit": "e19733c7ef05ffa12c0b0b640daced83679aba6c",
   "sessions": {
     "2026-03-21-session-mmzsxrsv": {
       "id": "2026-03-21-session-mmzsxrsv",
@@ -1625,6 +1625,119 @@
         }
       ]
     },
+    "src/cli/commands/search.ts": {
+      "path": "src/cli/commands/search.ts",
+      "parent_folder": "src/cli/commands/",
+      "blocks": [],
+      "sessions": [],
+      "relationships_out": [
+        {
+          "type": "depends_on",
+          "target": "src/core/git/repo.ts::findRepoRoot",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/layout.ts::getWhyRoot",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/init.ts::isWhyDirInitialized",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/reader.ts::readAllBlocks",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/reader.ts::readAllFiles",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/reader.ts::readAllFolders",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/fs/reader.ts::readAllSessions",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/config/loader.ts::loadConfig",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/registry.ts::getDefaultProvider",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/token-counter.ts::withTokenCounting",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/token-counter.ts::formatTokens",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/token-counter.ts::TokenTally",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/types.ts::BlockFrontmatter",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/types.ts::FileFrontmatter",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/types.ts::FolderFrontmatter",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/types.ts::SessionFrontmatter",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/types.ts::AnnotationFile",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/core/types.ts::AnyFrontmatter",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/prompts/semantic-search.ts::buildSemanticSearchPrompt",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/prompts/semantic-search.ts::parseSemanticSearchResponse",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/ai/prompts/semantic-search.ts::AnnotationEntry",
+          "pipeline": "static"
+        }
+      ]
+    },
     "src/cli/commands/session.ts": {
       "path": "src/cli/commands/session.ts",
       "parent_folder": "src/cli/commands/",
@@ -1870,6 +1983,11 @@
         {
           "type": "depends_on",
           "target": "src/cli/commands/mcp.ts::registerMcp",
+          "pipeline": "static"
+        },
+        {
+          "type": "depends_on",
+          "target": "src/cli/commands/search.ts::registerSearch",
           "pipeline": "static"
         },
         {
@@ -5546,6 +5664,10 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/resolve.ts"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/cli/commands/search.ts"
         }
       ]
     },
@@ -9837,7 +9959,7 @@
       "file": "src/cli/index.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "112144917e470cb92d797d6d441b0f6c4ba266e6",
+      "last_resolved": "e19733c7ef05ffa12c0b0b640daced83679aba6c",
       "content_hash": "sha256:da72d29af154dee28b5a586a2d129cad39cf5005d1f1670399a4cf3df61fb7d8",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -10097,6 +10219,10 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/scan.ts"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/cli/commands/search.ts"
         },
         {
           "type": "depends_on",
@@ -12103,6 +12229,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/cli/commands/search.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/cli/commands/status.ts"
         }
       ]
@@ -12828,6 +12958,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/cli/commands/search.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/cli/commands/session.ts"
         },
         {
@@ -13433,6 +13567,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/cli/commands/search.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/core/index-builder/build.ts"
         },
         {
@@ -13476,6 +13614,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/cli/commands/search.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/core/index-builder/build.ts"
         },
         {
@@ -13512,6 +13654,10 @@
         {
           "type": "depends_on",
           "source": "src/mcp/server.ts::createWhythoServer"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/cli/commands/search.ts"
         },
         {
           "type": "depends_on",
@@ -13555,6 +13701,10 @@
         {
           "type": "depends_on",
           "source": "src/mcp/server.ts::createWhythoServer"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/cli/commands/search.ts"
         },
         {
           "type": "depends_on",
@@ -14545,6 +14695,10 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/scan.ts"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/cli/commands/search.ts"
         },
         {
           "type": "depends_on",
@@ -18220,6 +18374,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/cli/commands/search.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/core/archive/query.ts"
         },
         {
@@ -18293,6 +18451,10 @@
         {
           "type": "depends_on",
           "source": "src/core/frontmatter/validate.ts::validateAnnotation"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/cli/commands/search.ts"
         },
         {
           "type": "depends_on",
@@ -18461,6 +18623,10 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/infer.ts"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/cli/commands/search.ts"
         },
         {
           "type": "depends_on",
@@ -18769,6 +18935,10 @@
         },
         {
           "type": "depends_on",
+          "source": "src/cli/commands/search.ts"
+        },
+        {
+          "type": "depends_on",
           "source": "src/core/fs/reader.ts"
         },
         {
@@ -18879,6 +19049,10 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/infer.ts"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/cli/commands/search.ts"
         },
         {
           "type": "depends_on",
@@ -19275,6 +19449,10 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/annotate.ts"
+        },
+        {
+          "type": "depends_on",
+          "source": "src/cli/commands/search.ts"
         },
         {
           "type": "depends_on",
@@ -25175,6 +25353,132 @@
     },
     {
       "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/core/git/repo.ts::findRepoRoot",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/core/fs/layout.ts::getWhyRoot",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/core/fs/init.ts::isWhyDirInitialized",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/core/fs/reader.ts::readAllBlocks",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/core/fs/reader.ts::readAllFiles",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/core/fs/reader.ts::readAllFolders",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/core/fs/reader.ts::readAllSessions",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/config/loader.ts::loadConfig",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/ai/registry.ts::getDefaultProvider",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/ai/token-counter.ts::withTokenCounting",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/ai/token-counter.ts::formatTokens",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/ai/token-counter.ts::TokenTally",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/core/types.ts::BlockFrontmatter",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/core/types.ts::FileFrontmatter",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/core/types.ts::FolderFrontmatter",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/core/types.ts::SessionFrontmatter",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/core/types.ts::AnnotationFile",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/core/types.ts::AnyFrontmatter",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/ai/prompts/semantic-search.ts::buildSemanticSearchPrompt",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/ai/prompts/semantic-search.ts::parseSemanticSearchResponse",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/commands/search.ts",
+      "target": "src/ai/prompts/semantic-search.ts::AnnotationEntry",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
       "source": "src/cli/commands/session.ts",
       "target": "src/core/git/repo.ts::findRepoRoot",
       "pipeline": "static"
@@ -25375,6 +25679,12 @@
       "type": "depends_on",
       "source": "src/cli/index.ts",
       "target": "src/cli/commands/mcp.ts::registerMcp",
+      "pipeline": "static"
+    },
+    {
+      "type": "depends_on",
+      "source": "src/cli/index.ts",
+      "target": "src/cli/commands/search.ts::registerSearch",
       "pipeline": "static"
     },
     {

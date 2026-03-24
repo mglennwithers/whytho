@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/cli/commands/scan.ts
 created: "2026-03-23T03:22:23.309Z"
-updated: "2026-03-23T10:25:26.257Z"
+updated: "2026-03-23T10:27:35.659Z"
 updated_by_session: static-scan
 parent_folder: src/cli/commands/
 sessions: []

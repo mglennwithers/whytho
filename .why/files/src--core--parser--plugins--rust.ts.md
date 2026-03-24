@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/core/parser/plugins/rust.ts
 created: "2026-03-23T04:23:47.853Z"
-updated: "2026-03-23T04:40:35.806Z"
+updated: "2026-03-23T10:27:35.659Z"
 updated_by_session: static-scan
 parent_folder: src/core/parser/plugins/
 sessions: []

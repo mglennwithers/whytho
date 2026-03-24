@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/config/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-23T04:51:52.342Z"
+updated: "2026-03-23T10:27:35.659Z"
 updated_by_session: inferred
 parent_folder: src/config/
 sessions: []
