@@ -15,6 +15,7 @@ import { registerInfer } from './commands/infer.js'
 import { registerMcp } from './commands/mcp.js'
 import { registerSearch } from './commands/search.js'
 import { registerStatus } from './commands/status.js'
+import { registerReannotate } from './commands/reannotate.js'
 
 const program = new Command()
   .name('git why')
@@ -37,5 +38,6 @@ registerInfer(program)
 registerMcp(program)
 registerSearch(program)
 registerStatus(program)
+registerReannotate(program)
 
 program.parse(process.argv)

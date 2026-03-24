@@ -88,6 +88,40 @@ Push a note when you:
 
 You don't need to annotate every function — only decisions where the code itself doesn't explain the *why*.
 
+## Re-assess annotations after modifying code
+
+After modifying any block, file, or folder that has existing whytho annotations, re-assess whether those annotations are still accurate. The code change may have invalidated the purpose, tradeoffs, or design rationale described in the annotation body.
+
+**When to reannotate:**
+- You changed a function's behavior, signature, or logic — check if its block annotation still describes what the function does and why
+- You added, removed, or reordered parameters — the annotation's structural description may be wrong
+- You refactored a file significantly — the file-level annotation's purpose or "What Cannot Be Determined" sections may be stale
+- You moved code between files or folders — folder annotations listing contained files may be outdated
+
+**How to reannotate:**
+
+For a specific block you just modified:
+```bash
+git why reannotate --block "src/path/to/file.ts::functionName"
+```
+
+For a specific file:
+```bash
+git why reannotate --file src/path/to/file.ts
+```
+
+For all annotations affected by recent changes:
+```bash
+git why reannotate --incremental
+```
+
+If the annotation is only slightly wrong, prefer `git why push` to append a correction rather than fully regenerating. Use `reannotate` when the annotation body is substantially outdated.
+
+**You do not need to reannotate** when:
+- You only changed formatting, comments, or whitespace
+- The annotation was already written by you in this session (it reflects your current reasoning)
+- The block has no existing annotation
+
 ## Project structure
 
 ```
@@ -99,6 +133,7 @@ src/
     parser/         # AST + regex block parser, plugin registry
     identity/       # content-hash, election protocol
     resolution/     # pipeline, incremental filter, outcomes
+    reannotate/     # staleness detection, AI-powered body regeneration
     push/           # agent push API (no AI needed)
     index-builder/  # index.json builder
     archive/        # archiver + query
@@ -119,6 +154,7 @@ tests/
 - [src/core/identity/election.ts](src/core/identity/election.ts) — 5-rule canonical metric election protocol
 - [src/core/resolution/pipeline.ts](src/core/resolution/pipeline.ts) — resolution orchestrator
 - [src/core/push/index.ts](src/core/push/index.ts) — agent push API
+- [src/core/reannotate/index.ts](src/core/reannotate/index.ts) — staleness detection + reannotation engine
 
 ## Committing changes
 

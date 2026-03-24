@@ -13,6 +13,7 @@ if command -v git-why >/dev/null 2>&1; then
     git add .why/
     git commit -m "[whytho] resolve annotations"
   fi
+  git-why reannotate --incremental --check 2>/dev/null || true
 fi
 `
 
@@ -27,6 +28,7 @@ if errorlevel 1 (
   git add .why/
   git commit -m "[whytho] resolve annotations"
 )
+git-why reannotate --incremental --check 2>nul || exit /b 0
 `
 
 async function getHooksDir(repoRoot: string): Promise<string> {
