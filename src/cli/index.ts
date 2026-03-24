@@ -13,6 +13,7 @@ import { registerScan } from './commands/scan.js'
 import { registerPush } from './commands/push.js'
 import { registerInfer } from './commands/infer.js'
 import { registerMcp } from './commands/mcp.js'
+import { registerSearch } from './commands/search.js'
 import { registerStatus } from './commands/status.js'
 
 const program = new Command()
@@ -34,6 +35,7 @@ registerScan(program)
 registerPush(program)
 registerInfer(program)
 registerMcp(program)
+registerSearch(program)
 registerStatus(program)
 
 program.parse(process.argv)
