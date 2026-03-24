@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::stale
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:02.858Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/reannotate/index.ts::stale
   line_range:
-    start: 102
-    end: 102
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 105
+    end: 105
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:24747cbf9ef84d651d29a965c83c0c56741ae2bdd0905d8c89fc0dff672b6650
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     populated conditionally within the surrounding function scope.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # stale

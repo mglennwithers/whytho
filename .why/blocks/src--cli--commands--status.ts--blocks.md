@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::blocks
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T09:38:23.142Z"
+updated: "2026-03-24T18:48:00.218Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::blocks
   line_range:
-    start: 71
-    end: 71
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 76
+    end: 76
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:a1a3b42f5e2dac7b54dbb944669448b6019ee740770ce43f2b44508e5ace5e68
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     from an object map into an array of values.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # blocks

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/scan.ts::files
 file: src/cli/commands/scan.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:59.793Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/scan.ts::files
   line_range:
-    start: 17
-    end: 17
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 18
+    end: 18
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:195a08fae4fe66807d54d84e112fb56e24427ee89d49b914d71fb4596e93a37d
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     operation in a CLI command.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # files

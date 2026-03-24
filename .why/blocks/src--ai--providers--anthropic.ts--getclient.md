@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/anthropic.ts::getClient
 file: src/ai/providers/anthropic.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-24T09:38:20.464Z"
+updated: "2026-03-24T18:47:56.954Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,8 +14,8 @@ identity:
   line_range:
     start: 74
     end: 81
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:56ca8207a0b19c6ce25346e726ecd89d7c3a5532fb05b8b7cc4703f8eb302d8f
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:30e9139638e4e9596e0ae47bb192f20403b8339997f672bd407751650cc757ff
   structural:
     kind: function
     parent_scope: module
@@ -27,7 +27,7 @@ identity:
     closed-over `client` variable and configuring it with an API key from `options`.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # getClient

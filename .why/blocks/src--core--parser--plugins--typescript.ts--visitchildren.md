@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::visitChildren
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:25.944Z"
+updated: "2026-03-24T18:48:01.983Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::visitChildren
   line_range:
-    start: 244
-    end: 258
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 245
+    end: 259
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:323eb9caac8c93481166fc640b8215a2ed198d6cdecf2a211120e5a39a09858d
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     field, handling both direct object children and arrays of children.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # visitChildren

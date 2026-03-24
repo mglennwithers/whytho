@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/typescript.ts::className
 file: src/core/relationships/scanner-plugins/typescript.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:03.827Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner-plugins/typescript.ts::className
   line_range:
-    start: 134
-    end: 134
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 135
+    end: 135
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:0b6c1e238589d2c07a563b676e634be4e176ea166b1ed0638885badc358ce209
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     className variable for subsequent processing in a relationship scanning context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # className

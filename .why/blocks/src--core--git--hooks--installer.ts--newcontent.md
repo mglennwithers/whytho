@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/hooks/installer.ts::newContent
 file: src/core/git/hooks/installer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:24.862Z"
+updated: "2026-03-24T18:48:01.330Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 124
     end: 124
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:d3d3a7531d45f6da2fc7d3c2c0d79c6b525296a0e986fb8b6c682a6b5a80e190
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     sanitized content for writing back to a file in a git hooks installation context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # newContent

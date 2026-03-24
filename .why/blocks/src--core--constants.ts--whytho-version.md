@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::WHYTHO_VERSION
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:24.038Z"
+updated: "2026-03-24T18:48:01.007Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,8 +18,8 @@ identity:
   line_range:
     start: 1
     end: 1
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:f93aa382d38939992435f65da2157fcd8a9ebeffa259a99759ee865125a3b043
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:0158d848e0712ca06578c15715522b1a0d08c3f8b52bc55251c8e4e3c7e65efc
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     assertion to create a literal type rather than a generic string type.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # WHYTHO_VERSION

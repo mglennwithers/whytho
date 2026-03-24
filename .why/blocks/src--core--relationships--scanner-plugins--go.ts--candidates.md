@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/go.ts::candidates
 file: src/core/relationships/scanner-plugins/go.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:03.049Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 116
     end: 116
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:603b38c0ea60b5d3dededecd632581f3b2b5839163f7d08b6310387cd5f92739
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     data to find relevant dependency resolution candidates.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # candidates

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/search.ts::hit
 file: src/cli/commands/search.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:59.949Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 73
     end: 73
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:928e7007fe02e55e207766356604cafb9cca2ebba48f3047fad5c6fb1db51b4f
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     formatting, filtering, or displaying search output.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # hit

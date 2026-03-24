@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/anthropic.ts::callAnthropicBatch
 file: src/ai/providers/anthropic.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T09:38:20.402Z"
+updated: "2026-03-24T18:47:56.900Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/anthropic.ts::callAnthropicBatch
   line_range:
-    start: 9
+    start: 10
     end: 57
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:dec3b559ca3176e2bd4ced07bdda0b629093256c66339312bf7db3e860af1a5b
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:8842fd63e2873574daab4ae83e7c530af92e777107b0a8fca5b987d6f57f53a8
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     custom IDs to text responses.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 relationships:
   - type: depends_on
     target: src/ai/types.ts::AIProvider

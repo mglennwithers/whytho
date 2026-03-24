@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/python.ts::isTest
 file: src/core/relationships/scanner-plugins/python.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:03.394Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 52
     end: 52
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:1ef2fcb8846354d517a95575e3633ed2939c3d2b3181537bd0e43241bce03bc2
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the boolean result in a const variable for subsequent conditional logic.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # isTest

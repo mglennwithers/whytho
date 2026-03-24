@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/identity/election.ts::electCanonicalMetric
 file: src/core/identity/election.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:25.021Z"
+updated: "2026-03-24T18:48:01.434Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/identity/election.ts::electCanonicalMetric
   line_range:
-    start: 46
-    end: 189
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:b7abf7b6dbd0b72bd2253cf6b02f31842a3e835f2da90dffd3bcd2fa8f04c630
+    start: 41
+    end: 184
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:06fa0c847c3fb3706d7aadb1aee7168db4856b5bec4b59aaf87c66f79bda0a56
   structural:
     kind: function
     parent_scope: module
@@ -33,7 +33,7 @@ identity:
     unresolvable/deleted outcome.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 relationships:
   - type: depends_on
     target: src/core/identity/content-hash.ts::computeContentHash

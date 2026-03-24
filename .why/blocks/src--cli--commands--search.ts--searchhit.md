@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/search.ts::SearchHit
 file: src/cli/commands/search.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:00.060Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 32
     end: 37
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:f722e6e53d0d4371efa34b31fe4dfd2be02786ed259bb8746f4b2669ef74438d
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     text, and optional metadata about why the result matched the query.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # SearchHit

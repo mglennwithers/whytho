@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::PushResult
 file: src/core/push/index.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:26.161Z"
+updated: "2026-03-24T18:48:02.207Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/push/index.ts::PushResult
   line_range:
-    start: 41
-    end: 44
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 40
+    end: 43
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:318d13b951bd54b80396cc0bc33bde01989e7f1bd54f073e6722d08a671a3e11
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     location.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # PushResult

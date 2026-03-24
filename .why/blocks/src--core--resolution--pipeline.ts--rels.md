@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::rels
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:26.683Z"
+updated: "2026-03-24T18:48:04.312Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/resolution/pipeline.ts::rels
   line_range:
-    start: 204
-    end: 204
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 202
+    end: 202
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:52b96dd91f3bcb8e8a69f6989d2d0d34b96d131e47876e2f74ee645bd0a9b495
   structural:
     kind: const
@@ -28,7 +28,7 @@ identity:
   semantic_fingerprint: Extracts a relationships array from annotation frontmatter metadata, with a fallback to an empty array if undefined.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # rels

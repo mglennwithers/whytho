@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::gitLog
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-24T09:38:21.030Z"
+updated: "2026-03-24T18:47:57.480Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::gitLog
   line_range:
-    start: 52
-    end: 52
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 61
+    end: 61
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:939a3a8857257d188ec2e61b8f5a0c183d119ea5878082a61f317fec42e01b7f
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the annotate command workflow.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # gitLog

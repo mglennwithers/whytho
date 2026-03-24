@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::fFrac
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T09:38:23.240Z"
+updated: "2026-03-24T18:48:00.320Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::fFrac
   line_range:
-    start: 168
-    end: 168
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 173
+    end: 173
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:b1ee3520f253da4d0d8ee5cbb8ee43cbccd07cb7c8ef621656c9b24152ac3dec
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     count is zero to prevent division errors.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # fFrac

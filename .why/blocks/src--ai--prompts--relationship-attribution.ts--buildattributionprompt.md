@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/relationship-attribution.ts::buildAttributionPrompt
 file: src/ai/prompts/relationship-attribution.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:56.714Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/prompts/relationship-attribution.ts::buildAttributionPrompt
   line_range:
-    start: 49
-    end: 86
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 48
+    end: 85
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:13b43352c478abf28022dd60eb91c7710ffd97b56b5b8dfee631f612fd5f46d0
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     test specific known targets, returning results as structured JSON.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # buildAttributionPrompt

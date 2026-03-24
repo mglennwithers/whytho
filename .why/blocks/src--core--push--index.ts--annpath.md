@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::annPath
 file: src/core/push/index.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:26.015Z"
+updated: "2026-03-24T18:48:02.006Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/push/index.ts::annPath
   line_range:
-    start: 67
-    end: 67
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 66
+    end: 66
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:73645f66b472cf5f4c40129700b459015ab60c530169168747ba15a6409686ae
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     function, storing the result for subsequent use in a push operation context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # annPath

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::decl
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:25.632Z"
+updated: "2026-03-24T18:48:01.654Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::decl
   line_range:
-    start: 87
-    end: 87
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 88
+    end: 88
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:c19493f3851aa11e08386463ccc072347400fd01cf7e856de9769f072f673364
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     in a for-of loop.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # decl

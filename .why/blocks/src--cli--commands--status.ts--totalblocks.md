@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::totalBlocks
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T09:38:23.504Z"
+updated: "2026-03-24T18:48:00.641Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::totalBlocks
   line_range:
-    start: 72
-    end: 72
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 77
+    end: 77
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:5e8b28f1977b629e149a3616d48cc412e2507a5f6f4cc4fa4500234b6b038793
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     calculations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # totalBlocks

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/events.ts::proc
 file: src/core/relationships/events.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:26.311Z"
+updated: "2026-03-24T18:48:02.955Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 79
     end: 79
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:ba9491c183eaa0aee8a36f4d08a9b8827218a5dc99d850ad82104660d3815175
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     inter-process communication for relationship event handling.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # proc

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::newFm
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:26.621Z"
+updated: "2026-03-24T18:48:04.254Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/resolution/pipeline.ts::newFm
   line_range:
-    start: 162
-    end: 173
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:e2ab2edf7229ac674f85c9f5298e2e10bfc19d2384cab832de299516e68d13b1
+    start: 160
+    end: 171
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:4094a73f18c52b494edc56c9b3a837d3394eb6e45f7aed7031011a3dc6c33baf
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     timestamp, session tracking, and identity metrics with canonical measurement and confidence scores.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # newFm

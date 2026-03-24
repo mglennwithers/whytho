@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::title
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:21.202Z"
+updated: "2026-03-24T18:47:57.659Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::title
   line_range:
-    start: 136
-    end: 136
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 145
+    end: 145
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:b675f4fdaf315dfd0f6532db640c20088187d3584057b3091ad03df3d403355c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     newlines for spacing in formatted output.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # title

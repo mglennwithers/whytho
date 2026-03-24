@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/search.ts::blocks
 file: src/cli/commands/search.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:59.896Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/search.ts::blocks
   line_range:
-    start: 101
-    end: 101
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 107
+    end: 107
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:b7a340d71355e193b409a017f4991e2fa24695327c692cbfe0aa2ea0717ffc5c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     excludes blocks. This implements filtered data retrieval with a short-circuit optimization for non-matching filters.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # blocks

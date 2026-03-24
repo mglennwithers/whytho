@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::blockPath
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:57:41.479Z"
+updated: "2026-03-24T18:48:05.080Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 498
     end: 498
-    commit: 879d75def2bc95123e8331993d4249411187c49f
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:2097df8a343b502fc849d65d9f863abc5c8ff283eb5f8338e2a4354512eeeaf5
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the result in a constant variable for subsequent use.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 879d75def2bc95123e8331993d4249411187c49f
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # blockPath

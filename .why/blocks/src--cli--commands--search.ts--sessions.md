@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/search.ts::sessions
 file: src/cli/commands/search.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:00.067Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/search.ts::sessions
   line_range:
-    start: 104
-    end: 104
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 110
+    end: 110
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:decffcc3df0ae5d2734c24de78820061fd1a6a432b385c2653078e396266662e
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     session-type results, otherwise returns an empty array.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # sessions

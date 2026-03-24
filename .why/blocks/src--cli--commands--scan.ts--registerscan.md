@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/scan.ts::registerScan
 file: src/cli/commands/scan.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:59.823Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/scan.ts::registerScan
   line_range:
-    start: 40
-    end: 114
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:9306effad9595c7006e0c675a335e05bf3d26dfba2a9871553f5baa29582039b
+    start: 41
+    end: 115
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:9033f0facbc8c32c3b28d9ce26b5d78eb333855b466c4d082cdbbea699b9f3fd
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     configurable scope and mode selection, followed by index rebuilding.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # registerScan

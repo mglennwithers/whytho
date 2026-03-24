@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::coverage
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T09:38:23.190Z"
+updated: "2026-03-24T18:48:00.270Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::coverage
   line_range:
-    start: 99
-    end: 99
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 104
+    end: 104
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:b130fd05c47dd65cb93afc4e0bf27b4626a1077526678738ca1d413a9b931290
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     files, and folders), initialized to null for lazy evaluation or conditional population.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # coverage

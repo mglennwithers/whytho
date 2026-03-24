@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::filesAnnotated
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-24T09:38:20.959Z"
+updated: "2026-03-24T18:47:57.416Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::filesAnnotated
   line_range:
-    start: 58
-    end: 58
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 67
+    end: 67
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:929dd89bdc3e97b8b67c1602e42fbb256ee9e446ba5240442100e90ba2e89924
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     processed during an annotation operation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # filesAnnotated

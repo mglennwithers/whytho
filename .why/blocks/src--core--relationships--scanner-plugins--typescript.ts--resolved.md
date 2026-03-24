@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/typescript.ts::resolved
 file: src/core/relationships/scanner-plugins/typescript.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:04.005Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner-plugins/typescript.ts::resolved
   line_range:
-    start: 38
-    end: 38
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 39
+    end: 39
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:748138140b9e1067907dbdd64b60daf4efd52904abef651c0aba18d50cc78d32
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     backslashes to forward slashes for cross-platform consistency.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # resolved

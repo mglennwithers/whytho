@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/semantic-match.ts::line
 file: src/ai/prompts/semantic-match.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-24T09:38:20.297Z"
+updated: "2026-03-24T18:47:56.804Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -12,9 +12,9 @@ inference_confidence: 0.72
 identity:
   symbolic: src/ai/prompts/semantic-match.ts::line
   line_range:
-    start: 31
-    end: 31
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 30
+    end: 30
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:46f3645e41f1d43fccb526b28534f46e3f09b6139ae07484680ebc0d89f39ab9
   structural:
     kind: const
@@ -26,7 +26,7 @@ identity:
     potentially multi-line LLM/AI response.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # line

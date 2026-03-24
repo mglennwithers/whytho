@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/typescript.ts::isTestFile
 file: src/core/relationships/scanner-plugins/typescript.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:03.965Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner-plugins/typescript.ts::isTestFile
   line_range:
-    start: 22
-    end: 24
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 23
+    end: 25
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:bd3d63a00cf6d544a52afae30ff046165f7fecd9015041d80e81aaeda3f2c8b2
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     regex constant. Used to identify test files in TypeScript project scanning.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # isTestFile

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::fileFm
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:20.910Z"
+updated: "2026-03-24T18:47:57.374Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::fileFm
   line_range:
-    start: 156
-    end: 168
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:bde6d6032d7d45409e117ae465f48dfbb6143869a9ded5c5e70e3b93a2fd3e73
+    start: 165
+    end: 178
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:024e60b42f0d4fd58118e2382340c1a2d92920a29aff9e2856441ec75d1546a0
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     references, and generation configuration parameters for annotation purposes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # fileFm

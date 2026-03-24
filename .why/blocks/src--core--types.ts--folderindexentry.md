@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::FolderIndexEntry
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:27.010Z"
+updated: "2026-03-24T18:48:04.616Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/types.ts::FolderIndexEntry
   line_range:
-    start: 165
-    end: 170
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 167
+    end: 172
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:c3abeed19ada3a71e9378e0051afeea8749c51b798b0bd5d915e4a8750f87768
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     associated sessions.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # FolderIndexEntry

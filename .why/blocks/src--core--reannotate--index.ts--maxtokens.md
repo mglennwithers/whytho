@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::maxTokens
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:02.636Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/reannotate/index.ts::maxTokens
   line_range:
-    start: 371
-    end: 371
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:9c8fd6b1741e8549880630da569f2917d113f975bf6388d451aa47a550ed68f5
+    start: 254
+    end: 254
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:5960ef7dc2cbb99a523ecc8fecf76e3f6c503adf37829ceeaf1c88173cea4303
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     object.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # maxTokens

@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/cli/commands/blame.ts
 created: "2026-03-24T09:57:40.703Z"
-updated: "2026-03-24T09:57:40.703Z"
+updated: "2026-03-24T18:47:56.190Z"
 updated_by_session: static-scan
 parent_folder: src/cli/commands/
 sessions: []

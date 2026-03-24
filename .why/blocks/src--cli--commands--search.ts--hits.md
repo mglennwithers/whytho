@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/search.ts::hits
 file: src/cli/commands/search.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:59.958Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/search.ts::hits
   line_range:
-    start: 155
-    end: 160
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:12fc665a7535f35e382e2de751abc7248d5e4c79c6932b957d36a2ccdee73246
+    start: 58
+    end: 58
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:5192175795764895bb78b6662d17accd5c4bae3b9e83918124a11386cd85c905
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     unified text search function to each, combining all matches into a single flat array of SearchHit objects.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # hits

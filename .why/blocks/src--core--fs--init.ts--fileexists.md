@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/init.ts::fileExists
 file: src/core/fs/init.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:24.162Z"
+updated: "2026-03-24T18:48:01.042Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 81
     end: 88
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:ce69f35cc34175384c22415bab77cb7759af3a66c7503291a72dcf3f1ae70a31
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     converting access errors into false results.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # fileExists

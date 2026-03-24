@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/search.ts::result
 file: src/cli/commands/search.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:00.048Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/search.ts::result
   line_range:
-    start: 125
-    end: 128
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 131
+    end: 134
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:089dc8ca9d59671ec0087745b25c3e1015ba86c9e132ccee7d3a10dbcc9987ef
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     through context, storing the result for subsequent use in a search command flow.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # result

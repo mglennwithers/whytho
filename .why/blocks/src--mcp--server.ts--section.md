@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::section
 file: src/mcp/server.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:57:42.790Z"
+updated: "2026-03-24T18:48:06.356Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::section
   line_range:
-    start: 330
-    end: 330
-    commit: 879d75def2bc95123e8331993d4249411187c49f
+    start: 329
+    end: 329
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:0119d7211e69ff34a2c90e667849a4548d4fc54d74218beb3d98cf65a3087d73
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     conditional inclusion or processing of multiple sections based on a predefined list.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 879d75def2bc95123e8331993d4249411187c49f
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # section

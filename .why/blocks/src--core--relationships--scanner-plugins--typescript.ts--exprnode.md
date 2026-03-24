@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/typescript.ts::exprNode
 file: src/core/relationships/scanner-plugins/typescript.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:03.881Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner-plugins/typescript.ts::exprNode
   line_range:
-    start: 157
-    end: 157
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:4be27d803c15f19038077ae31265f094cb9821ccace7d2491eecc82029c2b77c
+    start: 158
+    end: 158
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:95938e9aa08fcdc0c5de83228d776b89f84b389869658adf05199ce7ebe5a5e5
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     ASTNode. This pattern handles optional nested expressions in TypeScript AST structures.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # exprNode

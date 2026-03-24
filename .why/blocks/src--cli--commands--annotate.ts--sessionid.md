@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::sessionId
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-24T09:38:21.145Z"
+updated: "2026-03-24T18:47:57.593Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::sessionId
   line_range:
-    start: 50
-    end: 50
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 59
+    end: 59
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:aeb1feb3e58d68adcd74a5fba2ea2215017c4470dbd862cb45a83325c1c639f0
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     timestamp when no explicit session ID is provided.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # sessionId

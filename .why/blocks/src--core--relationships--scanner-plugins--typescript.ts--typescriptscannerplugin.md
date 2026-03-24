@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/typescript.ts::typescriptScannerPlugin
 file: src/core/relationships/scanner-plugins/typescript.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:04.100Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner-plugins/typescript.ts::typescriptScannerPlugin
   line_range:
-    start: 66
-    end: 172
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:3eb33a43af1ea9877e01e307eb226d070134ded8a21022541436864b887afc6f
+    start: 67
+    end: 173
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:d3da76292f7a11835bec6f5de10afb9e422347a26eee9f43329aaf3ee2aa3812
   structural:
     kind: const
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     dependencies.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # typescriptScannerPlugin

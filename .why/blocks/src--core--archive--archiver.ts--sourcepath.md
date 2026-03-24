@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/archive/archiver.ts::sourcePath
 file: src/core/archive/archiver.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:23.811Z"
+updated: "2026-03-24T18:48:00.829Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 21
     end: 21
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:3f1ef390e97c5a4ae794a21b5549c661f3d04466a440e5ff18b84e41e689cbea
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     helper function to resolve the actual path location.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 relationships:
   - type: depends_on
     target: src/core/fs/layout.ts::blockAnnotationPath

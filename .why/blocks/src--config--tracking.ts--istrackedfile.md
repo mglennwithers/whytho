@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/tracking.ts::isTrackedFile
 file: src/config/tracking.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:23.724Z"
+updated: "2026-03-24T18:48:00.756Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,8 +18,8 @@ identity:
   line_range:
     start: 15
     end: 41
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:a0a1c2f01d90dd8eec2f42ece45861ae85d02f13542c6e59b074aaa20897e45c
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:4b6ef5ffb2a57507844000a79746abe6ce89053e8aff032c871bcd32ea531128
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     fallback language detection when no extension filter is specified.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 relationships:
   - type: depends_on
     target: src/core/parser/detect-language.ts::detectLanguage

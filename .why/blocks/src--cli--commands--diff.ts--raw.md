@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/diff.ts::raw
 file: src/cli/commands/diff.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:21.362Z"
+updated: "2026-03-24T18:47:57.818Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/diff.ts::raw
   line_range:
-    start: 28
-    end: 28
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 32
+    end: 32
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:e45b5efc47625effee3a1e4cd571497deed3904e2144552d5349d1c5473e63d0
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     a variable named `raw`.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # raw

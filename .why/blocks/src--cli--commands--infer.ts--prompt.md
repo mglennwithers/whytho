@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::prompt
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:22.403Z"
+updated: "2026-03-24T18:47:58.874Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::prompt
   line_range:
-    start: 226
-    end: 230
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 239
+    end: 243
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:bd66162b5582ef4d8ca4ed2df7d5127d39d8076aea80a2641db91414bf1191bc
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     delegates to a builder function with verbosity settings.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # prompt

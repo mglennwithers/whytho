@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::runResolutionPipeline
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:26.718Z"
+updated: "2026-03-24T18:48:04.342Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/resolution/pipeline.ts::runResolutionPipeline
   line_range:
-    start: 42
-    end: 238
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:f0aff944d5a410d2e26991b752fef0306546363f3cf624b812e71af1ee39fc46
+    start: 41
+    end: 236
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:dffd8aeb226e186ac87a34bfb869c2b2e7d33c2de77a899dcdb3db0fe6953675
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     updating metadata, handling deletions/relocations, and emitting relationship-change events for downstream hooks.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 relationships:
   - type: depends_on
     target: src/core/resolution/incremental.ts::getBlocksForChangedFiles

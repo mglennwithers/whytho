@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/go.ts::findRegistryEntriesForPackage
 file: src/core/relationships/scanner-plugins/go.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:03.106Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,8 +18,8 @@ identity:
   line_range:
     start: 66
     end: 83
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:8819b5d5b9024cd3a25f1e5bf839b400827e81def277172b6161d6cff55b5bc6
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:9a8a405163cdfd856c1a75fc727f15e110ce7a3179127cae2fc6d5fe0335750a
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     matching strategies (directory name, substring patterns) to locate files belonging to a specified import path.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # findRegistryEntriesForPackage

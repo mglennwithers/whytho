@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/typescript.ts::superNode
 file: src/core/relationships/scanner-plugins/typescript.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:04.052Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner-plugins/typescript.ts::superNode
   line_range:
-    start: 139
-    end: 139
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:06627ebb148a6c1932a0161081fedaaefc176db510d3a5f360431f86fc25d6c2
+    start: 140
+    end: 140
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:f1c1ed08db5540e13adfcca6d9400402e55e6e895236eadd472b9bab48768234
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     prepare it for downstream relationship analysis.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # superNode

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::blockAnn
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:02.388Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/reannotate/index.ts::blockAnn
   line_range:
-    start: 313
-    end: 313
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 325
+    end: 325
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:cf8466b94d50a05bc8a06644c70b5250c4ae9a2b1db48891975a82b1a6bb564d
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     schema and storing the result in a variable for downstream processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # blockAnn

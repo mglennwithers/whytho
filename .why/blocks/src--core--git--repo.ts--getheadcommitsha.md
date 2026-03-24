@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/repo.ts::getHeadCommitSha
 file: src/core/git/repo.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:24.895Z"
+updated: "2026-03-24T18:48:01.368Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/git/repo.ts::getHeadCommitSha
   line_range:
-    start: 15
-    end: 23
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 13
+    end: 21
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:9725065e29f07c90b47c424c82b08babcd3af032114aa197bbfbfd683bb30459
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     string on failure.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # getHeadCommitSha

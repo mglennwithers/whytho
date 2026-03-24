@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/init.ts::idxPath
 file: src/core/fs/init.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:24.169Z"
+updated: "2026-03-24T18:48:01.049Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 59
     end: 59
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:321d9906fe09e589ed424d12a335f5d0a9f503ae886a99523cd12762afd190d7
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the result in a constant for subsequent filesystem operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # idxPath

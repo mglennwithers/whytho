@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::extractContent
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:25.679Z"
+updated: "2026-03-24T18:48:01.701Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::extractContent
   line_range:
-    start: 55
-    end: 57
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 56
+    end: 58
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:018af6167a90c2363e79aaa9851baa002d8942317e8e44187704f8f964e3d238
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     newlines, using 1-indexed start positions converted to 0-indexed array access.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # extractContent

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/typescript.ts::node
 file: src/core/relationships/scanner-plugins/typescript.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:03.989Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner-plugins/typescript.ts::node
   line_range:
-    start: 127
-    end: 130
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:47dfccc8b65ba9866b48db4bad4da79a911da6645e9c70bd33ec78822e4914b2
+    start: 95
+    end: 95
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:f319db3dbd1c5127b1b78135f97f2e3667f699dceaad91c9caf9fca2e74a3e70
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     node if not an export. This normalizes AST node representation for downstream analysis.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # node

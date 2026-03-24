@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/search.ts::collectEntries
 file: src/cli/commands/search.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:59.904Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 39
     end: 49
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:d0f471ca7e9fe06d7810f0f71cd4b7181e8966a6e682695ce5215e4129923db5
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     and reference) and generating previews by truncating and normalizing document body text.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # collectEntries

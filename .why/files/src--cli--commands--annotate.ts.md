@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/cli/commands/annotate.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:19.406Z"
+updated: "2026-03-24T18:47:56.190Z"
 updated_by_session: inferred
 parent_folder: src/cli/commands/
 sessions: []
@@ -141,6 +141,12 @@ relationships:
     source: static
   - type: depends_on
     target: src/core/types.ts::SessionFrontmatter
+    source: static
+  - type: depends_on
+    target: src/config/types.ts::VerbosityCoverage
+    source: static
+  - type: depends_on
+    target: src/config/types.ts::VerbosityDetail
     source: static
 ---
 

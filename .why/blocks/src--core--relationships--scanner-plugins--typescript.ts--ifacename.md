@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/typescript.ts::ifaceName
 file: src/core/relationships/scanner-plugins/typescript.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:03.910Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner-plugins/typescript.ts::ifaceName
   line_range:
-    start: 158
-    end: 158
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:466c57094f3e2d2590b7d8ee3919e523bfdf31f0f8646722257158f7e46a575d
+    start: 159
+    end: 159
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:fe09b557a59502c46f7ef628f6b2e4028cadda5624065c4f803f9bb39cc8a6ef
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     interface identifier during TypeScript syntax analysis.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # ifaceName

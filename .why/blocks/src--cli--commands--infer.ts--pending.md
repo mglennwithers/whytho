@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::pending
 file: src/cli/commands/infer.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T09:38:22.385Z"
+updated: "2026-03-24T18:47:58.857Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::pending
   line_range:
-    start: 203
-    end: 203
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 216
+    end: 216
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:c3420a0faba8075e1724309ec0355efc64e58676be7229709d46507127d5d0c5
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     in an inference command CLI utility.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # pending

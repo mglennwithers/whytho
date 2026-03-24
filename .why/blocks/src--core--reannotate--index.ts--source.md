@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::source
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:02.841Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/reannotate/index.ts::source
   line_range:
-    start: 296
-    end: 296
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:a4a15c64acfd4058b2440ddc6c80ec44ffc8a9cf5438294ad345fe78f94e3e71
+    start: 112
+    end: 112
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:a2003efdaf61ca38ec1edca9081867f2e0168cddc726272f14be4358c73ed2e7
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     undefined to support lazy loading or conditional population.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # source

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/typescript.ts::TSEstree
 file: src/core/relationships/scanner-plugins/typescript.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:04.080Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner-plugins/typescript.ts::TSEstree
   line_range:
-    start: 6
-    end: 6
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:2beab93aab68195211b32bded0eaf0f48f3f2ec34d88403bc0d2414126a9f2f1
+    start: 7
+    end: 7
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:bf7c6617c42fe46dcd90f702f0cf6e53db5c29c20a1d18eb7aaa3ed2c304f47f
   structural:
     kind: type
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     utilities.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # TSEstree

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/repo.ts::getTrackedFiles
 file: src/core/git/repo.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:24.910Z"
+updated: "2026-03-24T18:48:01.382Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/git/repo.ts::getTrackedFiles
   line_range:
-    start: 44
-    end: 54
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 42
+    end: 52
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:026018948eb2546d2696583efc6929fd6d2e2b9ced65313c654f608d2ddb2844
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     graceful fallback to empty set on errors.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # getTrackedFiles

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/reannotate.ts::registerReannotate
 file: src/cli/commands/reannotate.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:59.499Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/reannotate.ts::registerReannotate
   line_range:
-    start: 14
-    end: 132
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:778d6e9f2a041b50cefb515ce9bdcc720bc16d81ea0e2cbc25bde1a873bf7c77
+    start: 15
+    end: 142
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:87b946f7cd541a2afbf065f093843c949ea9efa6a383c59b365d7debdc9ac328
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     updates, supporting incremental mode, dry-run, staleness checks, and detailed reporting with token tracking.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # registerReannotate

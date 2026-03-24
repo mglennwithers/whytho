@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/core/push/index.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:19.406Z"
+updated: "2026-03-24T18:47:56.190Z"
 updated_by_session: inferred
 parent_folder: src/core/push/
 sessions: []
@@ -57,9 +57,6 @@ relationships:
     target: src/core/fs/layout.ts::sessionsDir
     source: static
   - type: depends_on
-    target: src/core/fs/layout.ts::buildSymbolicRef
-    source: static
-  - type: depends_on
     target: src/core/frontmatter/parse.ts::parseAnnotation
     source: static
   - type: depends_on
@@ -91,6 +88,9 @@ relationships:
     source: static
   - type: depends_on
     target: src/core/types.ts::SessionFrontmatter
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::RelationshipType
     source: static
 ---
 

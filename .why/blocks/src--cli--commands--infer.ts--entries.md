@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::entries
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:21.953Z"
+updated: "2026-03-24T18:47:58.410Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::entries
   line_range:
-    start: 47
-    end: 47
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 59
+    end: 59
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:c28e34d789e544f59914099624df22c1e4a10930abc4f0b26469ed09a0afb4e8
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     `ReturnType` utility types to extract the directory entry list type.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # entries

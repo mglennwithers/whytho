@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/identity/election.ts::candidateHashes
 file: src/core/identity/election.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:25.012Z"
+updated: "2026-03-24T18:48:01.428Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/identity/election.ts::candidateHashes
   line_range:
-    start: 53
-    end: 53
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 48
+    end: 48
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:ed72ea67b197a3757eb94360ccb74cb4f67addc9b851a61d0258c42a09b35fc7
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     function to each candidate's content property.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # candidateHashes

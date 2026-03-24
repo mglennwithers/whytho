@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/python.ts::initCandidate
 file: src/core/relationships/scanner-plugins/python.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:03.387Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,8 +18,8 @@ identity:
   line_range:
     start: 33
     end: 33
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:7ef26c4f930f6a3b3a132c57d66816cb9fb93d8cbb10944f3c35b3b1b72f0255
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:c2087a19710f1ae7b713204640f46f40e1590ee5ad7db9835f3bcfc839574ce9
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     path. This is a standard pattern for locating Python package initialization files.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # initCandidate

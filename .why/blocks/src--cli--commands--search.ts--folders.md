@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/search.ts::folders
 file: src/cli/commands/search.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:59.940Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/search.ts::folders
   line_range:
-    start: 103
-    end: 103
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 109
+    end: 109
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:fc23beb39026ebdbae450699f19735fdfc7146ae9d5c17ee2cb6f4236826b58a
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     explicitly targets folders, otherwise initializes an empty array.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # folders

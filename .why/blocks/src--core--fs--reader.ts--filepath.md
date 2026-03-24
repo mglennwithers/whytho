@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/reader.ts::filePath
 file: src/core/fs/reader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:24.513Z"
+updated: "2026-03-24T18:48:01.098Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 33
     end: 33
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:1f415de5ece296dad8aa6f18530d1f60820cf83b6c0a19633cd2b0d2bed0c84f
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     path separator.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # filePath

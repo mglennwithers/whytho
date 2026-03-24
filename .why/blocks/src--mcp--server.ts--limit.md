@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::limit
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:57:42.150Z"
+updated: "2026-03-24T18:48:05.649Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 543
     end: 543
-    commit: 879d75def2bc95123e8331993d4249411187c49f
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:6f1359b980955de1d9e519b5eb3808f1335b957d2894da93d993438e85960ce8
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     handle undefined cases.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 879d75def2bc95123e8331993d4249411187c49f
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # limit

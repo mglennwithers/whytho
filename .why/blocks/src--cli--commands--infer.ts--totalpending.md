@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::totalPending
 file: src/cli/commands/infer.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T09:38:22.672Z"
+updated: "2026-03-24T18:47:59.199Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::totalPending
   line_range:
-    start: 181
-    end: 185
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 194
+    end: 198
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:a175fb81b69fc8d4e428d327a4f8534cf23d8578fa09df0382123b683960f134
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     boolean flags to control filtering by blocks, files, and folders.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # totalPending

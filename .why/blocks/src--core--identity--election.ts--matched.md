@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/identity/election.ts::matched
 file: src/core/identity/election.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:25.070Z"
+updated: "2026-03-24T18:48:01.472Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/identity/election.ts::matched
   line_range:
-    start: 139
-    end: 139
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 134
+    end: 134
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:e46ffa5eba7197d83b0c66ec00717edd5049002261fe68a1bf94d005dc2f4ffb
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     a matching/election process to obtain the winning candidate.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # matched

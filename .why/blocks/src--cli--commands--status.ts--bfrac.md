@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::bFrac
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T09:38:23.120Z"
+updated: "2026-03-24T18:48:00.196Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::bFrac
   line_range:
-    start: 167
-    end: 167
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 172
+    end: 172
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:a5602d8008b632132e1d0c01a4756d3b3fc9250751a25d022cdcc95fd1a94a04
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     blocks exist.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # bFrac

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::blocksToProcess
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:26.507Z"
+updated: "2026-03-24T18:48:04.146Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/resolution/pipeline.ts::blocksToProcess
   line_range:
-    start: 47
-    end: 47
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 45
+    end: 45
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:31fd254b4f71c3f7252b34f131c31fc1c45d5b89dc12d401abab702f417bb9d5
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     reference and a set of changed file paths as input parameters.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # blocksToProcess

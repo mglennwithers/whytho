@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::changedFiles
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-24T09:38:20.816Z"
+updated: "2026-03-24T18:47:57.283Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::changedFiles
   line_range:
-    start: 45
-    end: 45
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 54
+    end: 54
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:b53800d0d772f63dd6ff6b4b025a3f83f93f24b9ac8d7bdaf30ea5fccd958d97
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     configuration's tracked file criteria.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # changedFiles

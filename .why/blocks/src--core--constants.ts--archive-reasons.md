@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::ARCHIVE_REASONS
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:23.871Z"
+updated: "2026-03-24T18:48:00.853Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/constants.ts::ARCHIVE_REASONS
   line_range:
-    start: 70
-    end: 70
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 76
+    end: 76
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:ef489a8d101fac2c5e5ea96b254a74a91145e7e5baed50d3cfecbb4f0fd4b093
   structural:
     kind: const
@@ -31,7 +31,7 @@ identity:
     application.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # ARCHIVE_REASONS

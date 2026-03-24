@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::coverage
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:21.887Z"
+updated: "2026-03-24T18:47:58.357Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::coverage
   line_range:
-    start: 133
-    end: 133
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:57f7cfbcac0354fb2bcd6a5158292ebc7fc23fab86556c8b7a43b26f840b1f25
+    start: 146
+    end: 146
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:55f73a91cc3782d7f12fe697ebbbcc8c03a63f68b12a119ce4380e9fb9dcf5e5
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     it to a specific VerbosityCoverage type from the config module.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # coverage

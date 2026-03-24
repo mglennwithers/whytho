@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/typescript.ts::cachedEstree
 file: src/core/relationships/scanner-plugins/typescript.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:03.820Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner-plugins/typescript.ts::cachedEstree
   line_range:
-    start: 7
-    end: 7
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 8
+    end: 8
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:42c1e64bf7ee9196fb62fb9c49d11618b90a50a00673e020bed6687b6ba3ec8a
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     indicate no cached value exists yet.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # cachedEstree

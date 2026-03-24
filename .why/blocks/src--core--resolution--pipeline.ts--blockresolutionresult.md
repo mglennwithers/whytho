@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::BlockResolutionResult
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:26.495Z"
+updated: "2026-03-24T18:48:04.136Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/resolution/pipeline.ts::BlockResolutionResult
   line_range:
-    start: 26
-    end: 33
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 25
+    end: 32
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:e498f34d29bd1fb7f059a71c7a36656062c9bbf1f73b331de5106b0b52229ea3
   structural:
     kind: interface
@@ -31,7 +31,7 @@ identity:
     transformations, associated events, and errors.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 relationships:
   - type: depends_on
     target: src/core/types.ts::ResolutionOutcome

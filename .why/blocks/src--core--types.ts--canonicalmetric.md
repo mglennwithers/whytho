@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::CanonicalMetric
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:26.943Z"
+updated: "2026-03-24T18:48:04.552Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/types.ts::CanonicalMetric
   line_range:
-    start: 15
-    end: 15
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 16
+    end: 16
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:0662d7ea77814d5985b9f1dc912d3338fa59f1560a6bb7d326bdcaecd30add32
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     references to predefined metric values throughout the codebase.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 relationships:
   - type: depends_on
     target: src/core/constants.ts::CANONICAL_METRICS

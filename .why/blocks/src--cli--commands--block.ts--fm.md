@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/block.ts::fm
 file: src/cli/commands/block.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:21.263Z"
+updated: "2026-03-24T18:47:57.720Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/block.ts::fm
   line_range:
-    start: 33
-    end: 33
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 37
+    end: 37
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:02b709e9c182c1645fcd2023556005e0184e162103a301c295af2756ecd3b083
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the block command processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 relationships:
   - type: depends_on
     target: src/core/types.ts::BlockFrontmatter

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/diff.ts::blockRef
 file: src/cli/commands/diff.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:21.299Z"
+updated: "2026-03-24T18:47:57.760Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/diff.ts::blockRef
   line_range:
-    start: 49
-    end: 49
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 53
+    end: 53
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:b5129824d101bb72969276fb8703daa68ef72d279444dea53b354ee0b615c7d0
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     within a diff command context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # blockRef

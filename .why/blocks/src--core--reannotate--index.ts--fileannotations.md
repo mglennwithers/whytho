@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::fileAnnotations
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:02.516Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/reannotate/index.ts::fileAnnotations
   line_range:
-    start: 360
-    end: 360
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 373
+    end: 373
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:5709c67118c6b9873d84c4c255db905cee92c8d78de26cf978c97206cc558143
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     content, for later processing or output.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # fileAnnotations

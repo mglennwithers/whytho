@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::limit
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:22.270Z"
+updated: "2026-03-24T18:47:58.726Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::limit
   line_range:
-    start: 146
-    end: 146
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 159
+    end: 159
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:c263dd667cf4a9db77ee1513b56f3e93f50f7a7b8c0e0fe27973f90c788de92f
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     constraint from CLI arguments.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # limit

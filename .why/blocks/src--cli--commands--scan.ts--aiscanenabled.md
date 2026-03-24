@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/scan.ts::aiScanEnabled
 file: src/cli/commands/scan.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:59.739Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/scan.ts::aiScanEnabled
   line_range:
-    start: 60
-    end: 62
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 61
+    end: 63
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:513ac05adee5f4e0769e6dd564fe996a6840fcd1137f7dc5897c36abf22493df
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     true OR config specifies manual AI scanning mode.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # aiScanEnabled

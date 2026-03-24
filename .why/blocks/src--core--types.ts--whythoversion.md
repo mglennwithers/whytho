@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::WhythoVersion
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:27.209Z"
+updated: "2026-03-24T18:48:04.819Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/types.ts::WhythoVersion
   line_range:
-    start: 14
-    end: 14
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 15
+    end: 15
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:a658f7581250575aec73be69696b23ff03903dce8c3d669e25f3d0aa0293fd91
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     that version constant rather than a broader string type.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 relationships:
   - type: depends_on
     target: src/core/constants.ts::WHYTHO_VERSION

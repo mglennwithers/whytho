@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::n
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:25.788Z"
+updated: "2026-03-24T18:48:01.813Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::n
   line_range:
-    start: 50
-    end: 50
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 51
+    end: 51
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:3b8023db016f7347aec8b6ca6585bd55661ff074fb71b27d628e98d52221b942
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     doesn't exist. This appears to be part of tracking occurrence frequencies of TypeScript syntax kinds.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # n

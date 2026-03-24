@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::dFrac
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T09:38:23.204Z"
+updated: "2026-03-24T18:48:00.282Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::dFrac
   line_range:
-    start: 169
-    end: 169
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 174
+    end: 174
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:091d56c4272c35494f47e160d1fc64b3f2fd6a79e709ad304fd5adc879b2eb11
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     division by zero that defaults to 0.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # dFrac

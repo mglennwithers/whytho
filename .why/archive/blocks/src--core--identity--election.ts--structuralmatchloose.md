@@ -39,6 +39,10 @@ relationships:
   - type: depends_on
     target: src/core/parser/types.ts::ParsedBlock
     source: ai
+archived_at: "2026-03-24T18:48:01.526Z"
+archived_reason: deleted
+archived_by_session: unknown
+archived_at_commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # structuralMatchLoose

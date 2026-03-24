@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::mode
 file: src/cli/commands/infer.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T09:38:22.306Z"
+updated: "2026-03-24T18:47:58.762Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::mode
   line_range:
-    start: 172
-    end: 172
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 185
+    end: 185
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:d6a8bdf54c22b8256db198e7e8f2aed80717a810a570fce22aad9aa573d34e89
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     optional chaining to safely access nested configuration properties.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # mode

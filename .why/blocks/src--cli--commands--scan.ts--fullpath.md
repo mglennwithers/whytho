@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/scan.ts::fullPath
 file: src/cli/commands/scan.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:59.809Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/scan.ts::fullPath
   line_range:
-    start: 26
-    end: 26
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 27
+    end: 27
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:a6f8fca0db42dbdce37ce1b810755136be2dda0315c5f5d460359cee99abece1
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     string type.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # fullPath

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::FolderPending
 file: src/cli/commands/infer.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T09:38:22.123Z"
+updated: "2026-03-24T18:47:58.582Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::FolderPending
   line_range:
-    start: 403
-    end: 406
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 418
+    end: 421
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:2a2db62ba980c168280af688e19366d3e5384fe5cc86f61ffc1ad81a09b484e6
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     annotation data, and LLM inference parameters (prompt and token limits).
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # FolderPending

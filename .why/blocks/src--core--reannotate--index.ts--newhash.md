@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::newHash
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:02.659Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/reannotate/index.ts::newHash
   line_range:
-    start: 254
-    end: 254
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 266
+    end: 266
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:5bb6eeecc950285bc85c063d2c6164cb1c3631ccb960893697d42674dcca3c6e
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     purposes in a reannotation workflow.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # newHash

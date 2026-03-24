@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T09:38:19.406Z"
+updated: "2026-03-24T18:47:56.190Z"
 updated_by_session: inferred
 parent_folder: src/cli/commands/
 sessions: []

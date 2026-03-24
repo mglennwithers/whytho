@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/relationship-attribution.ts::blockList
 file: src/ai/prompts/relationship-attribution.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:56.707Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/prompts/relationship-attribution.ts::blockList
   line_range:
-    start: 55
-    end: 55
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 54
+    end: 54
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:29fe8dea04bfe8808d54058ca1124d79a587e3ba92b8792ba50b254aef3d3655
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     entry containing the file path, block name, and block kind, joined by newlines.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # blockList

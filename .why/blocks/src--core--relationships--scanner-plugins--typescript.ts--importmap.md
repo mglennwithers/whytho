@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/typescript.ts::importMap
 file: src/core/relationships/scanner-plugins/typescript.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:03.941Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner-plugins/typescript.ts::importMap
   line_range:
-    start: 91
-    end: 91
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 92
+    end: 92
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:6ca7e735055e64f819c142d4976be0529e8d6bb0c91402973c00ffbb7756f191
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     exported names, enabling resolution of where specific exports originate.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # importMap

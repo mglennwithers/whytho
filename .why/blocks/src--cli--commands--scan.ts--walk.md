@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/scan.ts::walk
 file: src/cli/commands/scan.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:59.870Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/scan.ts::walk
   line_range:
-    start: 18
-    end: 35
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:1d347200084cec4b54d79700f741c740439de7e993cc8aedc20b28b6d87edc77
+    start: 19
+    end: 36
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:65c920b1bb3bf82ad5d517e40b51d7f31c73832e8d0872dfeceda82cbf0989c1
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     version control directories. The function accumulates results in an external `files` array.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # walk

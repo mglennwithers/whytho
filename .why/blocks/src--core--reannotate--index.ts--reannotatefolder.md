@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::reannotateFolder
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:02.725Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/reannotate/index.ts::reannotateFolder
   line_range:
-    start: 343
-    end: 391
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:2f65800cf9b7878d5ac407c89832e72d7f622fb864461d79556ba7a2f9bede81
+    start: 356
+    end: 404
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:46c0895d46230a7f417dfd87454acf818c5e7bda76fdb893997812bf952b0bc5
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     AI service to produce updated content, and persisting the result with a timestamp.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # reannotateFolder

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/search.ts::textSearch
 file: src/cli/commands/search.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:00.086Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 51
     end: 70
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:fcc14fd0ecaa585312f592f563b96e6b9819b14bdb1595ae1c380e7a9154e5f0
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     truncated previews formatted for display.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # textSearch

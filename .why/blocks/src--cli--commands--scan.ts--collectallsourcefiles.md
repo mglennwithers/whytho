@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/scan.ts::collectAllSourceFiles
 file: src/cli/commands/scan.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:59.761Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/scan.ts::collectAllSourceFiles
   line_range:
-    start: 16
-    end: 38
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:57b80235eb8db199539ecdec065b4a50dca487c69ab90579bcb11e256f9cafb5
+    start: 17
+    end: 39
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:0c72148b4f80749fa5ac64bed85d79fca9b3504ee50d4c5242e10303753232e2
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     build/version-control directories, returning relative paths normalized to forward slashes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # collectAllSourceFiles

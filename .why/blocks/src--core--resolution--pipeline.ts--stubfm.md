@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::stubFm
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:26.739Z"
+updated: "2026-03-24T18:48:04.367Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/resolution/pipeline.ts::stubFm
   line_range:
-    start: 142
-    end: 155
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:ef02b78428192d71d607137a68f4df887c2f68d6b1c92e66d63156a77b4d7caf
+    start: 140
+    end: 153
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:1fa9a084eb478a713a4b9527f9a246681fc25ac18caaad35d201a1e4c0862cca
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     timestamps, and session tracking, marking the block as requiring re-annotation after resolution.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # stubFm

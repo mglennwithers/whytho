@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::filePath
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T09:38:23.262Z"
+updated: "2026-03-24T18:48:00.343Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::filePath
   line_range:
-    start: 104
-    end: 104
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 109
+    end: 109
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:72eec605399ce661f715ad92a92e11d81898e37308a683210c0374cab004596b
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     This loop pattern suggests batch processing of multiple files for status evaluation or reporting.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # filePath

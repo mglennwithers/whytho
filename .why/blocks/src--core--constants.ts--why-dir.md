@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::WHY_DIR
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:24.032Z"
+updated: "2026-03-24T18:48:01.002Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 4
     end: 4
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:b52364a5ae72dc10600edc5850f086e4287912f19f916f871056f7d6f79c9ef1
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     application's file system operations or configuration management.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # WHY_DIR

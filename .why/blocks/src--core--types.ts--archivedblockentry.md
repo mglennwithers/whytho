@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::ArchivedBlockEntry
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:26.832Z"
+updated: "2026-03-24T18:48:04.465Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/types.ts::ArchivedBlockEntry
   line_range:
-    start: 212
-    end: 220
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 214
+    end: 222
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:49317f0a06670d8a207d66ffe3ff5e2eb97d1d5e0c919be476e6b4467c45c8c6
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     reasons, session/commit information, and validation hashes for audit and recovery purposes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 relationships:
   - type: depends_on
     target: src/core/constants.ts::ARCHIVE_REASONS

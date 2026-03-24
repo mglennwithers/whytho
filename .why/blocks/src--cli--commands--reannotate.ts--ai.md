@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/reannotate.ts::ai
 file: src/cli/commands/reannotate.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:59.409Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/reannotate.ts::ai
   line_range:
-    start: 60
-    end: 60
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 70
+    end: 70
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:fbdc837d9360ea3b969ab7842d0ce9a2ba221d8eea0fa1ec00aeacc5256e2efd
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     usage tracking on provider operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # ai

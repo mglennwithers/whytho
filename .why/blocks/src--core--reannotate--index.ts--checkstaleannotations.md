@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::checkStaleAnnotations
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:02.449Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/reannotate/index.ts::checkStaleAnnotations
   line_range:
-    start: 96
-    end: 137
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:66545ec9f27cae3b2f76e19be872ced2f84ff2405b3b64550e2c9707887c9731
+    start: 99
+    end: 145
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:910c0ca497ecd3ac534bfb34926f4af3e351970717d6cb8dc841cdcd4e160c1d
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     against current source files and tracking changed files, returning a list of references requiring re-annotation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # checkStaleAnnotations

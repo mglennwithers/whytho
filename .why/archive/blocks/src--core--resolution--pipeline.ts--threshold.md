@@ -31,6 +31,10 @@ identity:
   canonical_metric: symbolic
   confidence: 0.95
   last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+archived_at: "2026-03-24T18:48:04.418Z"
+archived_reason: deleted
+archived_by_session: unknown
+archived_at_commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # threshold

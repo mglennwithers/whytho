@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/rust.ts::name
 file: src/core/relationships/scanner-plugins/rust.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:03.635Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner-plugins/rust.ts::name
   line_range:
-    start: 138
-    end: 138
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:2610ae8907449cdd30998823737a051a3a155429519c37104ce94c1254949a21
+    start: 65
+    end: 65
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:1ef07e71a44e3a42104ce351a31e06618434f3c254f19bc2e4a58225f9595aed
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     be parsing a string pattern where the first capture group represents a name identifier.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # name

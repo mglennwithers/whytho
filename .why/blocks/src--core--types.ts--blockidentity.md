@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::BlockIdentity
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:26.898Z"
+updated: "2026-03-24T18:48:04.517Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/types.ts::BlockIdentity
   line_range:
-    start: 140
-    end: 140
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 142
+    end: 142
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:53becd9b9e490d3d4a4db43aa926e15faba398cdc24d5bbcc813a207421edf29
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     validated BlockIdentity objects.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # BlockIdentity

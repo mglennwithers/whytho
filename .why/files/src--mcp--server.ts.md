@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:57:40.703Z"
+updated: "2026-03-24T18:47:56.190Z"
 updated_by_session: inferred
 parent_folder: src/mcp/
 sessions: []
@@ -141,9 +141,6 @@ relationships:
     source: static
   - type: depends_on
     target: src/core/fs/reader.ts::readIndex
-    source: static
-  - type: depends_on
-    target: src/core/fs/writer.ts::fileExists
     source: static
   - type: depends_on
     target: src/core/relationships/graph.ts::getAllRelated

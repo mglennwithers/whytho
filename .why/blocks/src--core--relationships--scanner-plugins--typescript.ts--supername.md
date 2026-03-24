@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/typescript.ts::superName
 file: src/core/relationships/scanner-plugins/typescript.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:04.045Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner-plugins/typescript.ts::superName
   line_range:
-    start: 141
-    end: 141
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:88ac4b77fb24042cc460cf5f6cfaa7e1d839cbe1ab1e90527f66bf04ed0e3cc4
+    start: 142
+    end: 142
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:23bcfc716b34e4e7b519d5fb61a24979319c8621c6d82ef7a33040902070172e
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     be undefined in the TypeScript AST.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # superName

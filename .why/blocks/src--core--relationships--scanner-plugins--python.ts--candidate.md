@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/python.ts::candidate
 file: src/core/relationships/scanner-plugins/python.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:03.297Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,8 +18,8 @@ identity:
   line_range:
     start: 28
     end: 28
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:cbd15d7cb90a5177b4fc30af0615338ddc6cb10af4094c23d18c453f13092550
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:955817373b72a0eeb97d8fbacd2ce62c8c3631fee6f538e66ba37f6a12ddf72a
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     Python source files during dependency scanning.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # candidate

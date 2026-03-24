@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::filePath
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-24T09:38:20.935Z"
+updated: "2026-03-24T18:47:57.396Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::filePath
   line_range:
-    start: 62
-    end: 62
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 71
+    end: 71
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:e76cad85a5e7eb922ae0a93e8b5877435a5be1252adc8b0718102916f808703b
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     loop that likely performs per-file operations within an annotate command context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # filePath

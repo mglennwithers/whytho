@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/resolve.ts::changedFiles
 file: src/cli/commands/resolve.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:22.934Z"
+updated: "2026-03-24T18:47:59.636Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/resolve.ts::changedFiles
   line_range:
-    start: 39
-    end: 39
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 45
+    end: 45
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:bc5effdb72c6f7a5ada8607b5d15c4536cd4bcf478830b91971032202869af99
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     resolve command's execution logic.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # changedFiles

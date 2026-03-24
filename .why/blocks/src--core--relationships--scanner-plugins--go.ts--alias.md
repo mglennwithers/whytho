@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/go.ts::alias
 file: src/core/relationships/scanner-plugins/go.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:03.009Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner-plugins/go.ts::alias
   line_range:
-    start: 50
-    end: 50
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:6a3a7dd05ed5b327eda698ac8d01fe8fb4003805f5a32daaf8925f641f117233
+    start: 39
+    end: 39
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:32559597115e0c1e64da033386a1a9c3204db607b914e981e45f230a98a8f1f6
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     path segment of the second capture group.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # alias

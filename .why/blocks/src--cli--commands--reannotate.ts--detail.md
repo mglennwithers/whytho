@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/reannotate.ts::detail
 file: src/cli/commands/reannotate.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:59.453Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/reannotate.ts::detail
   line_range:
-    start: 57
-    end: 57
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 67
+    end: 67
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:d6ddbadc382ed6577ab3d5bca13189a9ea085738f373c02cef4b1bbae270370a
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     nullish coalescing operator for fallback logic.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # detail

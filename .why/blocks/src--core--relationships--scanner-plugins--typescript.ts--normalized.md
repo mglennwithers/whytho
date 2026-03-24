@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/typescript.ts::normalized
 file: src/core/relationships/scanner-plugins/typescript.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:03.996Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner-plugins/typescript.ts::normalized
   line_range:
-    start: 37
-    end: 37
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 38
+    end: 38
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:aa32ab9624a70e23803bb73bebe95fa2570527e30ef551939cc6667aa0a8ff13
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     operations, normalizing TypeScript/JavaScript import statements to a canonical form without extension suffixes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # normalized

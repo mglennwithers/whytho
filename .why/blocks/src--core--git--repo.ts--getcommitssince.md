@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/repo.ts::getCommitsSince
 file: src/core/git/repo.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:01.356Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/git/repo.ts::getCommitsSince
   line_range:
-    start: 60
-    end: 68
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 58
+    end: 66
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:7b6a53228ea62840ffb3c8856bf34da8443e2c89b2835d1dc8a178a6565c01bb
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     operation fails.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # getCommitsSince

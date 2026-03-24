@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::withoutScheme
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:57:43.214Z"
+updated: "2026-03-24T18:48:06.692Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::withoutScheme
   line_range:
-    start: 790
-    end: 790
-    commit: 879d75def2bc95123e8331993d4249411187c49f
+    start: 793
+    end: 793
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:378e3d7939d97cf296423ba7e4ba8ed6ed7e07b25d796755c8c016c41f36b9c9
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     portion for further processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 879d75def2bc95123e8331993d4249411187c49f
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # withoutScheme

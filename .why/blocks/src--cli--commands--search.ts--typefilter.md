@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/search.ts::typeFilter
 file: src/cli/commands/search.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:00.096Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/search.ts::typeFilter
   line_range:
-    start: 100
-    end: 100
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:d81e500c4ffe6956692664ce792038538a6528451d2a37e812686875e39e7c0b
+    start: 106
+    end: 106
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:865bf34576ee3927b74ec685069f44e42a2eb5c6621c0da2595d3786f784eec0
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     to an explicitly typed string or undefined.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # typeFilter

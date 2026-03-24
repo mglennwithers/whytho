@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/rust.ts::findRegistryEntry
 file: src/core/relationships/scanner-plugins/rust.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:03.543Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,8 +18,8 @@ identity:
   line_range:
     start: 13
     end: 39
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:eed94c5cf801b7fc2945f887052067456c753db68c8a21c0c59653a3e3a3d0e8
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:461b6219eda89ffa26a1f0f44378cb5a8aaa24e723ec64eeccc5cacd8b12b7d6
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     exact file path, then by heuristic module path component matching against registered file paths.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # findRegistryEntry

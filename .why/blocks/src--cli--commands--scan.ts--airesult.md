@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/scan.ts::aiResult
 file: src/cli/commands/scan.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:59.730Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/scan.ts::aiResult
   line_range:
-    start: 93
-    end: 93
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 94
+    end: 94
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:7ed1cd7134d828ec878f33e84f7c66baf4bc38f692b3aff362f2c08d05c67060
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     processing in a CLI command handler.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # aiResult

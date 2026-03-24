@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/search.ts::registerSearch
 file: src/cli/commands/search.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:00.030Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/search.ts::registerSearch
   line_range:
-    start: 83
-    end: 176
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:14689207e929a65fa9e6f9080900dc905fae0426d7bc64122a2efd962648c1ce
+    start: 89
+    end: 182
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:4d29a999e7a7ea6be505419fd78aba4282334f78b3270b041cc44b6bd06deae8
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     AI-powered matching or substring text search, with optional JSON output and token usage reporting.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # registerSearch

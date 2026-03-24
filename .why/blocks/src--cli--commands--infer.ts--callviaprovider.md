@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::callViaProvider
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:21.762Z"
+updated: "2026-03-24T18:47:58.235Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::callViaProvider
   line_range:
-    start: 510
-    end: 522
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:29cd5cad999bf71153c206efe18f49cfb53602bcadd5467450997eeabadf54f3
+    start: 525
+    end: 537
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:1de717fda96094fbeb62a0b264ffd0e8f33bcf11223ab097279ec4576b3d3eda
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     returning the response body as a string.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 relationships:
   - type: depends_on
     target: src/core/constants.ts::WHYTHO_VERSION

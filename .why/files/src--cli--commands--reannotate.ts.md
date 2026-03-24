@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/cli/commands/reannotate.ts
 created: "2026-03-24T07:41:37.503Z"
-updated: "2026-03-24T07:41:37.503Z"
+updated: "2026-03-24T18:47:56.190Z"
 updated_by_session: static-scan
 parent_folder: src/cli/commands/
 sessions: []
@@ -47,6 +47,9 @@ relationships:
     source: static
   - type: depends_on
     target: src/core/reannotate/index.ts::ReannotateTarget
+    source: static
+  - type: depends_on
+    target: src/config/types.ts::VerbosityDetail
     source: static
 ---
 

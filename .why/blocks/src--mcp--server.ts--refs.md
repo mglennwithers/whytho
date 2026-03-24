@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::refs
 file: src/mcp/server.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:57:42.534Z"
+updated: "2026-03-24T18:48:06.113Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 433
     end: 433
-    commit: 879d75def2bc95123e8331993d4249411187c49f
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:84102fe8eb36e4362e0d5c71c649df707d1ddd54b961c5a1ee400c91509fd8b4
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     `include` fields, establishing a type contract for downstream reference handling.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 879d75def2bc95123e8331993d4249411187c49f
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # refs

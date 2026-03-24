@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::endLine
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:25.643Z"
+updated: "2026-03-24T18:48:01.666Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::endLine
   line_range:
-    start: 63
-    end: 63
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 64
+    end: 64
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:052064f6c10c65f7b668db1be40b9101c226343f8dcc19d986e931d8df71dd57
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     value is likely used for tracking source code positions during parsing or transformation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # endLine

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/relationship-attribution.ts::triples
 file: src/ai/prompts/relationship-attribution.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:56.783Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/prompts/relationship-attribution.ts::triples
   line_range:
-    start: 112
-    end: 112
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 111
+    end: 111
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:6ed339d339232f71d792a23da5d5d22d0a8af5d0277537d61eaa81c35f69bdda
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     relationship attribution analysis and returned as a result.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # triples

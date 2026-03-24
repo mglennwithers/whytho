@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::RelationshipInput
 file: src/core/push/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:02.248Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/push/index.ts::RelationshipInput
   line_range:
-    start: 22
-    end: 28
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 21
+    end: 27
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:fbdd91a97a7e196313458b9e15e523cd3eb2dd8fb1bebed3c7870692a5543dfa
   structural:
     kind: interface
@@ -31,7 +31,7 @@ identity:
     AI-generated relationship types.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # RelationshipInput

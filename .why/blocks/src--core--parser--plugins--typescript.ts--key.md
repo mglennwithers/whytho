@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::key
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:25.752Z"
+updated: "2026-03-24T18:48:01.774Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::key
   line_range:
-    start: 146
-    end: 146
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 147
+    end: 147
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:eec2ceb3f5ba14dad51ed0f42134b620d0e408e26f3220798d03e30ff413d61f
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     subsequent processing in a TypeScript parser plugin.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # key

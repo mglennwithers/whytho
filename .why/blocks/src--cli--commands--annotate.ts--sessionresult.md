@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::sessionResult
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:21.169Z"
+updated: "2026-03-24T18:47:57.618Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::sessionResult
   line_range:
-    start: 210
-    end: 217
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 220
+    end: 227
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:55a94dd224ee78140333936649f5a238e7a30954c1e4f5df2a8d60116ad54860
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     metadata to produce documentation output.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # sessionResult

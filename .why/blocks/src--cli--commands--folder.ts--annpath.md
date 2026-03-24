@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/folder.ts::annPath
 file: src/cli/commands/folder.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:21.440Z"
+updated: "2026-03-24T18:47:57.898Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/folder.ts::annPath
   line_range:
-    start: 18
-    end: 18
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 22
+    end: 22
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:715a92fef8d335adfe1cdb5b3ea7dfc1413d329d69599f2ee52b24192b2c4dac
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     function, storing the result for subsequent use.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 relationships:
   - type: depends_on
     target: src/core/fs/layout.ts::folderAnnotationPath

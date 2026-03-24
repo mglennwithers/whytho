@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/anthropic.ts::totalOutput
 file: src/ai/providers/anthropic.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:57.054Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/anthropic.ts::totalOutput
   line_range:
-    start: 118
-    end: 118
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 45
+    end: 45
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:2e6452d3f9dd151c5eb2ee0ac2b14ba68552c647e854cb678cd14163e1517c4b
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     Anthropic API provider implementation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # totalOutput

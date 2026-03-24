@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/relationship-attribution.ts::countRawTriples
 file: src/ai/prompts/relationship-attribution.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:56.722Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/prompts/relationship-attribution.ts::countRawTriples
   line_range:
-    start: 12
-    end: 33
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 11
+    end: 32
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:1acd87b9b94c9e740b041130833c654fdb8119650d165425d2f6034b8998d465
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     relationship type constraints (depends_on or tests).
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # countRawTriples

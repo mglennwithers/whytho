@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/typescript.ts::getEstree
 file: src/core/relationships/scanner-plugins/typescript.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:03.902Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner-plugins/typescript.ts::getEstree
   line_range:
-    start: 9
-    end: 18
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:d97a649d6bdb8a1cd471c60d64d8ed648e7bb770771599cac748786f70f0595e
+    start: 10
+    end: 19
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:d80b43536c1169f6b4c102bf9faec9c71e04610793e7c666698bc3b2f9600073
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     module is unavailable, with subsequent calls returning the cached result.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # getEstree

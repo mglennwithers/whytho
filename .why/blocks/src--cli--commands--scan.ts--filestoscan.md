@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/scan.ts::filesToScan
 file: src/cli/commands/scan.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:59.802Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/scan.ts::filesToScan
   line_range:
-    start: 73
-    end: 73
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 74
+    end: 74
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:b4c2f3bf399aaf1234da0cb47a9d66b30a7cb1853778f5ab526c6424fa0861b4
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     options.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # filesToScan

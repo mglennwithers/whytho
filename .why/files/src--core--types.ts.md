@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:19.406Z"
+updated: "2026-03-24T18:47:56.190Z"
 updated_by_session: inferred
 parent_folder: src/core/
 sessions: []
@@ -57,10 +57,10 @@ relationships:
     target: src/core/constants.ts::WHYTHO_VERSION
     source: static
   - type: depends_on
-    target: src/core/constants.ts::CANONICAL_METRICS
+    target: src/core/constants.ts::RESOLUTION_OUTCOMES
     source: static
   - type: depends_on
-    target: src/core/constants.ts::RESOLUTION_OUTCOMES
+    target: src/core/constants.ts::CANONICAL_METRICS
     source: static
   - type: depends_on
     target: src/core/constants.ts::RELATIONSHIP_TYPES

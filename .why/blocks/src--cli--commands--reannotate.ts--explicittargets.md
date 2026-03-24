@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/reannotate.ts::explicitTargets
 file: src/cli/commands/reannotate.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:47:59.461Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/reannotate.ts::explicitTargets
   line_range:
-    start: 63
-    end: 63
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 73
+    end: 73
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:597a496b212d9ec7f8a054552ada3f80f2bc1b0d6ba3c859ce7673ff0fa5ea58
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     serving as an accumulator for subsequent population logic.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # explicitTargets

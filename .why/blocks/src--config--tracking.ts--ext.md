@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/tracking.ts::ext
 file: src/config/tracking.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:23.698Z"
+updated: "2026-03-24T18:48:00.735Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 35
     end: 35
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:0839fe29ae562206219105c366de46d51ce26b8317676fe7f693338f0d60ba0c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     Node.js path utilities.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # ext

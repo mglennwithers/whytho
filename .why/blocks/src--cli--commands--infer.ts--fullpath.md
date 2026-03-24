@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::fullPath
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:22.156Z"
+updated: "2026-03-24T18:47:58.619Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::fullPath
   line_range:
-    start: 56
-    end: 56
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 68
+    end: 68
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:fe0601df15bfc87614d1cdaca58f67ab6c7d8ce75b0b84ea8c59983831719042
   structural:
     kind: const
@@ -31,7 +31,7 @@ identity:
     filesystem paths.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # fullPath

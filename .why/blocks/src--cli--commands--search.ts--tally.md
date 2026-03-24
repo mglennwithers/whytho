@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/search.ts::tally
 file: src/cli/commands/search.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-24T18:48:00.078Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/search.ts::tally
   line_range:
-    start: 121
-    end: 121
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 127
+    end: 127
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:66655776ac976e6e361c4453972e7862ddbe4ce3546b234adf48c83517ccef92
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     for tracking token usage metrics.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # tally

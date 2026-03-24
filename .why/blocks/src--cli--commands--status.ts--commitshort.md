@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::commitShort
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T09:38:23.167Z"
+updated: "2026-03-24T18:48:00.237Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::commitShort
   line_range:
-    start: 143
-    end: 145
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 148
+    end: 150
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:0b4f2fb1fbe71234eb00cff18e3a123054fd257943210a1b1eb7f56acd14df0a
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     'unknown' if the value is falsy. This creates a short commit identifier for display purposes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # commitShort

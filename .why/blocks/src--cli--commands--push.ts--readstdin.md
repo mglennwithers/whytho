@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/push.ts::readStdin
 file: src/cli/commands/push.ts
 created: "2026-03-21T04:55:11.549Z"
-updated: "2026-03-24T09:38:22.814Z"
+updated: "2026-03-24T18:47:59.346Z"
 created_by_session: agent-push
 updated_by_session: agent-push
 identity:
@@ -12,8 +12,8 @@ identity:
   line_range:
     start: 8
     end: 16
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:40fd3ac70afd3d0cfb80b77bb3ff916316ff3a091b1e0bc09882451e1479a785
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:9126610116cb1520a73665b78e4edee53b5561b29d2f8e427642fddd2953ad05
   structural:
     kind: function
     parent_scope: module
@@ -25,7 +25,7 @@ identity:
     message. If we blocked on stdin in an interactive terminal with no pipe, the command wo
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # readStdin
