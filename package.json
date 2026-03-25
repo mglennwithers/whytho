@@ -1,6 +1,6 @@
 {
   "name": "whytho",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The open standard for persisting AI reasoning alongside your code",
   "keywords": [
     "ai",
@@ -50,8 +50,12 @@
     "@google/genai": ">=1.0.0"
   },
   "peerDependenciesMeta": {
-    "openai": { "optional": true },
-    "@google/genai": { "optional": true }
+    "openai": {
+      "optional": true
+    },
+    "@google/genai": {
+      "optional": true
+    }
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",
