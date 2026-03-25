@@ -336,7 +336,17 @@ Inferred annotations include:
 - A disclaimer blockquote at the top of the body
 - A "What Cannot Be Determined" section listing what the model couldn't infer from code alone
 
-### 5. Commit
+### 5. Reannotate after modifying code
+
+After changing a block or file that already has annotations, regenerate them so the reasoning reflects the new implementation:
+
+```bash
+git why reannotate --block src/auth/middleware.ts::rotateTokenIfNeeded
+git why reannotate --file src/auth/middleware.ts
+git why reannotate --incremental   # all annotations whose source changed in the last commit
+```
+
+### 6. Commit
 
 Commit normally. The resolution hook runs automatically, updating identity metrics, re-electing canonical metrics, resolving relocations and renames, archiving deleted annotations, and rebuilding the index. Any annotation updates are committed automatically as `[whytho] resolve annotations`.
 
@@ -344,7 +354,7 @@ Commit normally. The resolution hook runs automatically, updating identity metri
 git commit -m "feat: add token rotation to auth middleware"
 ```
 
-### 6. Query
+### 7. Query
 
 ```bash
 git why block src/auth/middleware.ts::rotateTokenIfNeeded
@@ -355,7 +365,7 @@ git why related src/auth/middleware.ts::rotateTokenIfNeeded
 git why history src/auth/middleware.ts::rotateTokenIfNeeded
 ```
 
-### 7. Review
+### 8. Review
 
 During code review, annotations are available alongside the diff:
 
@@ -382,8 +392,13 @@ git why diff main..feature-branch
 | `git why related <ref>` | Show the relationship graph for a block |
 | `git why history <ref>` | Show live and archived versions of a block annotation |
 | `git why diff <range>` | Show a git diff annotated with decision context |
+| `git why reannotate` | Regenerate annotation bodies for stale or modified blocks, files, and folders |
 | `git why scan` | Run static relationship scanner across the repo (or a single file) |
 | `git why search <query>` | Search annotations by text or `--semantic` AI-powered meaning |
+| `git why blame <description>` | Find annotations that explain a described bug or behavior |
+| `git why pr` | Generate a PR description from session annotations on the current branch |
+| `git why verify` | Validate annotation frontmatter schemas and detect orphaned annotations |
+| `git why clean` | Remove orphaned annotations for files, folders, and blocks that no longer exist |
 | `git why mcp` | Start the MCP server (stdio transport) for use with Claude Code and other MCP clients |
 
 ---
