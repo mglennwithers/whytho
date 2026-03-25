@@ -1,8 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20" fill="none">
-  <defs>
-    <style>@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker');</style>
-  </defs>
-  <text x="0.25" y="12" font-size="16" font-weight="bold" fill="currentColor" font-family="'Permanent Marker', 'Comic Sans MS', cursive">w</text>
-  <text x="10.5" y="14" transform="rotate(5)" transform-origin="center" font-size="14" font-weight="bold" fill="currentColor" font-family="'Permanent Marker', 'Comic Sans MS', cursive">h</text>
-  <text x="16.5" y="11" transform="rotate(-5)" transform-origin="center" font-size="14" font-weight="bold" fill="currentColor" font-family="'Permanent Marker', 'Comic Sans MS', cursive">y</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="-10 0 260 200" fill="none">
+  <text x="2.5" y="120" font-size="160" font-weight="bold" fill="currentColor" font-family="Comic Sans MS">w</text>
+  <text x="105" y="140" font-size="140" font-weight="bold" fill="currentColor" font-family="Comic Sans MS" transform="rotate(5)" transform-origin="center">h</text>
+  <text x="165" y="110" font-size="140" font-weight="bold" fill="currentColor" font-family="Comic Sans MS" transform="rotate(-5)" transform-origin="center">y</text>
 </svg>

@@ -27,6 +27,7 @@
       "whytho": [
         {
           "id": "whytho.annotationTree",
+          "icon": "media/whytho-logo.png",
           "name": "Annotations"
         }
       ]

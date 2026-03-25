@@ -450,6 +450,12 @@ You can, but you'd be defeating the purpose. The value of Whytho is that reasoni
 
 ---
 
+## Support
+
+If you find Whytho useful, consider [buying me a coffee](https://ko-fi.com/mglennwithers). ☕
+
+---
+
 ## License
 
 MIT
