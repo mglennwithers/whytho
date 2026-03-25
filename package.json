@@ -26,10 +26,17 @@
   "files": [
     "dist"
   ],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "tsup",
+    "build:vscode": "npm run build -w packages/vscode-whytho",
+    "build:all": "npm run build && npm run build:vscode",
     "dev": "tsup --watch",
     "test": "vitest run",
+    "test:vscode": "npm test -w packages/vscode-whytho",
+    "test:all": "npm test && npm run test:vscode",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
     "lint": "tsc --noEmit && eslint .",
