@@ -1,6 +1,6 @@
 import type { Command } from 'commander'
 import chalk from 'chalk'
-import { findRepoRoot, getHeadCommitSha, getCurrentUser, getRecentGitLog } from '../../core/git/repo.js'
+import { findRepoRoot, getHeadCommitSha, getCurrentUser, getRecentGitLog, getCommitMessage } from '../../core/git/repo.js'
 import { getChangedFiles } from '../../core/git/diff.js'
 import { getWhyRoot, blockAnnotationPath, fileAnnotationPath, folderAnnotationPath, sessionAnnotationPath, buildSymbolicRef, parentFolder } from '../../core/fs/layout.js'
 import { isWhyDirInitialized } from '../../core/fs/init.js'
@@ -50,8 +50,20 @@ export function registerAnnotate(program: Command): void {
         const detail = (options.detail ?? config.verbosity.detail) as VerbosityDetail
 
         const ai = getDefaultProvider(config)
+        // If HEAD is a whytho resolution commit, walk back to find the nearest
+        // real feature commit so that files_touched is populated correctly.
+        // We slide a [fromRef..toRef] window backwards until toRef is a non-whytho commit.
+        let fromRef = 'HEAD~1'
+        let toRef = 'HEAD'
+        for (let depth = 0; depth < 5; depth++) {
+          const msg = await getCommitMessage(repoRoot, toRef)
+          if (!msg.startsWith('[whytho]')) break
+          toRef = fromRef         // slide toRef back to the previous commit
+          fromRef = `${toRef}~1`  // and fromRef one further back
+        }
+
         const commitSha = await getHeadCommitSha(repoRoot)
-        const changedFiles = (await getChangedFiles(repoRoot)).filter((f) => isTrackedFile(f, config))
+        const changedFiles = (await getChangedFiles(repoRoot, fromRef, toRef)).filter((f) => isTrackedFile(f, config))
         const now = new Date().toISOString()
         const dateStr = now.slice(0, 10)
 

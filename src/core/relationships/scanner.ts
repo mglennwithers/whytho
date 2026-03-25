@@ -12,6 +12,8 @@ import { typescriptScannerPlugin } from './scanner-plugins/typescript.js'
 import { pythonScannerPlugin } from './scanner-plugins/python.js'
 import { goScannerPlugin } from './scanner-plugins/go.js'
 import { rustScannerPlugin } from './scanner-plugins/rust.js'
+import { javaScannerPlugin } from './scanner-plugins/java.js'
+import { csharpScannerPlugin } from './scanner-plugins/csharp.js'
 
 /**
  * A file-level edge: the scanner knows the file imports/tests a target,
@@ -63,6 +65,8 @@ const scannerPlugins: RelationshipScanner[] = [
   pythonScannerPlugin,
   goScannerPlugin,
   rustScannerPlugin,
+  javaScannerPlugin,
+  csharpScannerPlugin,
 ]
 
 export function registerScannerPlugin(plugin: RelationshipScanner): void {

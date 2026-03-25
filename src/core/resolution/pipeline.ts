@@ -20,6 +20,8 @@ export interface ResolutionContext {
   sessionId?: string
   config: WhythoConfig
   ai?: AIProvider
+  /** Optional callback for progress reporting (e.g. "Resolving 3/50: src/foo.ts::bar") */
+  onProgress?: (message: string) => void
 }
 
 export interface BlockResolutionResult {
@@ -39,7 +41,7 @@ export interface ResolutionReport {
 }
 
 export async function runResolutionPipeline(ctx: ResolutionContext): Promise<ResolutionReport> {
-  const { whyRoot, repoRoot, commitSha, changedFiles, sessionId, config, ai } = ctx
+  const { whyRoot, repoRoot, commitSha, changedFiles, sessionId, config, ai, onProgress } = ctx
 
   // Get blocks whose files changed
   const blocksToProcess = await getBlocksForChangedFiles(whyRoot, changedFiles)
@@ -57,8 +59,15 @@ export async function runResolutionPipeline(ctx: ResolutionContext): Promise<Res
     previousHashes[ann.frontmatter.symbolic_ref] = ann.frontmatter.identity.content_hash
   }
 
+  const total = blocksToProcess.length
+  let processed = 0
+
   // Process each block
   for (const ann of blocksToProcess) {
+    processed++
+    if (onProgress && total > 10) {
+      onProgress(`Resolving ${processed}/${total}: ${ann.frontmatter.symbolic_ref}`)
+    }
     const fm = ann.frontmatter
     const symbolicRef = fm.symbolic_ref
     const filePath = fm.file

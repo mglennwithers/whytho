@@ -65,6 +65,15 @@ export async function getCommitsSince(repoRoot: string, sha: string): Promise<nu
   }
 }
 
+export async function getCommitMessage(repoRoot: string, ref = 'HEAD'): Promise<string> {
+  const git = simpleGit(repoRoot)
+  try {
+    return (await git.raw(['log', '-1', '--format=%s', ref])).trim()
+  } catch {
+    return ''
+  }
+}
+
 export async function isGitRepo(dir: string): Promise<boolean> {
   try {
     await findRepoRoot(dir)

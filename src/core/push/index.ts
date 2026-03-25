@@ -53,6 +53,51 @@ async function findLatestSession(whyRoot: string): Promise<string | undefined> {
   }
 }
 
+/**
+ * Best-effort update of the latest session's blocks_touched / files_touched.
+ * Silently no-ops if no session exists or the update fails.
+ */
+async function updateSessionTouched(
+  whyRoot: string,
+  type: 'block' | 'file',
+  ref: string,
+  sessionId?: string,
+): Promise<void> {
+  try {
+    const sessId = sessionId ?? await findLatestSession(whyRoot)
+    if (!sessId) return
+    const annPath = sessionAnnotationPath(whyRoot, sessId)
+    if (!(await fileExists(annPath))) return
+    const raw = await fs.readFile(annPath, 'utf8')
+    const { frontmatter, body: existingBody } = parseAnnotation<SessionFrontmatter>(raw)
+    let changed = false
+    if (type === 'block') {
+      const touched = frontmatter.blocks_touched ?? []
+      if (!touched.includes(ref)) {
+        frontmatter.blocks_touched = [...touched, ref]
+        changed = true
+      }
+      // Also track the file
+      const [filePath] = ref.split('::')
+      const filesTouched = frontmatter.files_touched ?? []
+      if (!filesTouched.includes(filePath)) {
+        frontmatter.files_touched = [...filesTouched, filePath]
+        changed = true
+      }
+    } else {
+      const touched = frontmatter.files_touched ?? []
+      if (!touched.includes(ref)) {
+        frontmatter.files_touched = [...touched, ref]
+        changed = true
+      }
+    }
+    if (changed) {
+      frontmatter.updated = new Date().toISOString()
+      await writeFile(annPath, serializeAnnotation(frontmatter, existingBody))
+    }
+  } catch { /* best-effort */ }
+}
+
 export async function pushReasoning(input: PushInput): Promise<PushResult> {
   const { repoRoot, type, ref, body, sessionId } = input
   const whyRoot = getWhyRoot(repoRoot)
@@ -91,7 +136,7 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
     return { action: 'created', path: annPath }
   }
 
-  // ─── block ────────────────────────────────────────────────────────────────
+  // ─── block ─────────────────────────────────────────────────────────────────
   if (type === 'block') {
     const annPath = blockAnnotationPath(whyRoot, ref)
     const commitSha = await getHeadCommitSha(repoRoot).catch(() => 'unknown')
@@ -140,6 +185,7 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
       }
 
       await writeFile(annPath, serializeAnnotation(frontmatter, `${existingBody  }\n\n${body}`))
+      await updateSessionTouched(whyRoot, 'block', ref, sessionId)
       return { action: 'updated', path: annPath }
     }
 
@@ -191,6 +237,7 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
       }))
     }
     await writeFile(annPath, serializeAnnotation(fm, `# ${blockName}\n\n${body}`))
+    await updateSessionTouched(whyRoot, 'block', ref, sessionId)
     return { action: 'created', path: annPath }
   }
 
@@ -224,6 +271,7 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
         if (merged.length > 0) frontmatter.relationships = merged
       }
       await writeFile(annPath, serializeAnnotation(frontmatter, `${existingBody  }\n\n${body}`))
+      await updateSessionTouched(whyRoot, 'file', ref, sessionId)
       return { action: 'updated', path: annPath }
     }
 
@@ -256,6 +304,7 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
       }))
     }
     await writeFile(annPath, serializeAnnotation(fm, body))
+    await updateSessionTouched(whyRoot, 'file', ref, sessionId)
     return { action: 'created', path: annPath }
   }
 

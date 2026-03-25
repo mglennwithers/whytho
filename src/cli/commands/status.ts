@@ -2,10 +2,11 @@ import type { Command } from 'commander'
 import chalk from 'chalk'
 import * as fs from 'fs/promises'
 import * as path from 'path'
-import { findRepoRoot, getCommitsSince } from '../../core/git/repo.js'
+import { findRepoRoot, getCommitsSince, getHeadCommitSha } from '../../core/git/repo.js'
 import { getWhyRoot, parentFolder } from '../../core/fs/layout.js'
 import { isWhyDirInitialized } from '../../core/fs/init.js'
 import { readIndex, readArchiveIndex } from '../../core/fs/reader.js'
+import { writeFile } from '../../core/fs/writer.js'
 import { loadConfig } from '../../config/loader.js'
 import { isTrackedFile, isSkippedDir } from '../../config/tracking.js'
 import { parseFile } from '../../core/parser/registry.js'
@@ -13,13 +14,36 @@ import type { WhythoIndex, WhythoArchiveIndex } from '../../core/types.js'
 
 const LOW_CONFIDENCE_THRESHOLD = 0.7
 const STALE_COMMITS_THRESHOLD = 10
+const COVERAGE_CACHE_FILE = 'coverage-cache.json'
 
-function bar(fraction: number, width = 20): string {
+interface CoverageCache {
+  commit: string
+  sourceBlocks: number
+  sourceFiles: number
+  sourceFolders: number
+}
+
+async function readCoverageCache(whyRoot: string): Promise<CoverageCache | null> {
+  try {
+    const raw = await fs.readFile(path.join(whyRoot, COVERAGE_CACHE_FILE), 'utf8')
+    return JSON.parse(raw) as CoverageCache
+  } catch {
+    return null
+  }
+}
+
+async function writeCoverageCache(whyRoot: string, cache: CoverageCache): Promise<void> {
+  try {
+    await writeFile(path.join(whyRoot, COVERAGE_CACHE_FILE), JSON.stringify(cache, null, 2))
+  } catch { /* best-effort */ }
+}
+
+export function bar(fraction: number, width = 20): string {
   const filled = Math.round(fraction * width)
   return chalk.green('█'.repeat(filled)) + chalk.gray('░'.repeat(width - filled))
 }
 
-function pct(n: number, total: number): string {
+export function pct(n: number, total: number): string {
   if (total === 0) return chalk.gray('n/a')
   return chalk.bold(`${Math.round((n / total) * 100)}%`)
 }
@@ -103,17 +127,27 @@ export function registerStatus(program: Command): void {
         // ── Coverage pass (optional) ─────────────────────────────────────────
         let coverage: { sourceBlocks: number; sourceFiles: number; sourceFolders: number } | null = null
         if (options.coverage) {
-          const config = await loadConfig(repoRoot)
-          const sourceFiles = await collectSourceFiles(repoRoot, repoRoot, config)
-          let sourceBlocks = 0
-          for (const filePath of sourceFiles) {
-            try {
-              const source = await fs.readFile(path.join(repoRoot, filePath), 'utf8')
-              sourceBlocks += parseFile(source, filePath).length
-            } catch { /* unreadable */ }
+          const headSha = await getHeadCommitSha(repoRoot).catch(() => null)
+          const cached = headSha ? await readCoverageCache(whyRoot) : null
+
+          if (cached && headSha && cached.commit === headSha) {
+            coverage = { sourceBlocks: cached.sourceBlocks, sourceFiles: cached.sourceFiles, sourceFolders: cached.sourceFolders }
+          } else {
+            const config = await loadConfig(repoRoot)
+            const sourceFiles = await collectSourceFiles(repoRoot, repoRoot, config)
+            let sourceBlocks = 0
+            for (const filePath of sourceFiles) {
+              try {
+                const source = await fs.readFile(path.join(repoRoot, filePath), 'utf8')
+                sourceBlocks += parseFile(source, filePath).length
+              } catch { /* unreadable */ }
+            }
+            const sourceFolders = new Set(sourceFiles.map((f) => parentFolder(f))).size
+            coverage = { sourceBlocks, sourceFiles: sourceFiles.length, sourceFolders }
+            if (headSha) {
+              await writeCoverageCache(whyRoot, { commit: headSha, ...coverage })
+            }
           }
-          const sourceFolders = new Set(sourceFiles.map((f) => parentFolder(f))).size
-          coverage = { sourceBlocks, sourceFiles: sourceFiles.length, sourceFolders }
         }
 
         // ── JSON output ──────────────────────────────────────────────────────

@@ -71,6 +71,10 @@ export function registerResolve(program: Command): void {
 
         const ai = options.ai !== false ? withTokenCounting(getDefaultProvider(config), tally) : undefined
 
+        if (changedFiles.length > 0) {
+          console.log(chalk.gray(`Resolving ${changedFiles.length} changed file(s)...`))
+        }
+
         const report = await runResolutionPipeline({
           whyRoot,
           repoRoot,
@@ -78,7 +82,11 @@ export function registerResolve(program: Command): void {
           changedFiles,
           config,
           ai,
+          onProgress: (msg) => process.stderr.write(`\r${chalk.gray(msg)}                    `),
         })
+
+        // Clear the progress line before printing the report
+        process.stderr.write('\r\x1b[K')
 
         // Rebuild index and archive index
         await Promise.all([

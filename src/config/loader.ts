@@ -1,6 +1,7 @@
 import * as fs from 'fs/promises'
 import * as path from 'path'
 import { DEFAULT_CONFIG } from './defaults.js'
+import { WhythoConfigSchema } from './types.js'
 import type { WhythoConfig } from './types.js'
 
 function mergeDeep(base: Record<string, unknown>, override: Record<string, unknown>): Record<string, unknown> {
@@ -27,17 +28,30 @@ function mergeDeep(base: Record<string, unknown>, override: Record<string, unkno
   return result
 }
 
+function validateConfig(raw: Record<string, unknown>, source: string): void {
+  const result = WhythoConfigSchema.safeParse(raw)
+  if (!result.success) {
+    const issues = result.error.issues
+      .map((i) => `  ${i.path.join('.')}: ${i.message}`)
+      .join('\n')
+    throw new Error(`Invalid whytho config in ${source}:\n${issues}`)
+  }
+}
+
 export async function loadConfig(repoRoot: string): Promise<WhythoConfig> {
   // Try whytho.config.json first
   const configFile = path.join(repoRoot, 'whytho.config.json')
   try {
     const raw = await fs.readFile(configFile, 'utf8')
     const parsed = JSON.parse(raw) as Record<string, unknown>
+    validateConfig(parsed, 'whytho.config.json')
     return mergeDeep(
       DEFAULT_CONFIG as unknown as Record<string, unknown>,
       parsed,
     ) as unknown as WhythoConfig
-  } catch {
+  } catch (err) {
+    // Re-throw validation errors; ignore missing file / invalid JSON
+    if (err instanceof Error && err.message.startsWith('Invalid whytho config')) throw err
     // Not found or invalid JSON, try package.json#whytho
   }
 
@@ -46,12 +60,14 @@ export async function loadConfig(repoRoot: string): Promise<WhythoConfig> {
     const raw = await fs.readFile(pkgFile, 'utf8')
     const pkg = JSON.parse(raw) as Record<string, unknown>
     if (pkg.whytho && typeof pkg.whytho === 'object') {
+      validateConfig(pkg.whytho as Record<string, unknown>, 'package.json#whytho')
       return mergeDeep(
         DEFAULT_CONFIG as unknown as Record<string, unknown>,
         pkg.whytho as Record<string, unknown>,
       ) as unknown as WhythoConfig
     }
-  } catch {
+  } catch (err) {
+    if (err instanceof Error && err.message.startsWith('Invalid whytho config')) throw err
     // No package.json either
   }
 

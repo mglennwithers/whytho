@@ -366,32 +366,16 @@ async function findLatestSessionId(whyRoot: string): Promise<string | undefined>
   }
 }
 
-// ─── Server Factory ───────────────────────────────────────────────────────────
+// ─── Tool Dispatcher (exported for testing) ───────────────────────────────────
 
-export async function createWhythoServer(): Promise<Server> {
-  const repoRoot = await findRepoRoot()
-  const whyRoot = getWhyRoot(repoRoot)
-
-  const server = new Server(
-    { name: 'whytho', version: WHYTHO_VERSION },
-    { capabilities: { resources: {}, tools: {} } },
-  )
-
-  // ── List Tools ────────────────────────────────────────────────────────────
-
-  // eslint-disable-next-line @typescript-eslint/require-await
-  server.setRequestHandler(ListToolsRequestSchema, async () => ({
-    tools: TOOLS,
-  }))
-
-  // ── Call Tool ─────────────────────────────────────────────────────────────
-
-  server.setRequestHandler(CallToolRequestSchema, async (request) => {
-    const { name, arguments: args } = request.params
-    const a = (args ?? {})
-
-    try {
-      switch (name) {
+export async function dispatchTool(
+  whyRoot: string,
+  repoRoot: string,
+  name: string,
+  a: Record<string, unknown>,
+): Promise<{ content: Array<{ type: 'text'; text: string }> }> {
+  try {
+    switch (name) {
         case 'get_block': {
           const ref = a.symbolic_ref as string
           const include = a.include as string[] | undefined
@@ -750,6 +734,25 @@ export async function createWhythoServer(): Promise<Server> {
     } catch (err) {
       return text(`Error: ${String(err)}`)
     }
+}
+
+// ─── Server Factory ───────────────────────────────────────────────────────────
+
+export async function createWhythoServer(): Promise<Server> {
+  const repoRoot = await findRepoRoot()
+  const whyRoot = getWhyRoot(repoRoot)
+
+  const server = new Server(
+    { name: 'whytho', version: WHYTHO_VERSION },
+    { capabilities: { resources: {}, tools: {} } },
+  )
+
+  // eslint-disable-next-line @typescript-eslint/require-await
+  server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: TOOLS }))
+
+  server.setRequestHandler(CallToolRequestSchema, async (request) => {
+    const { name, arguments: args } = request.params
+    return dispatchTool(whyRoot, repoRoot, name, args ?? {})
   })
 
   // ── List Resources ────────────────────────────────────────────────────────

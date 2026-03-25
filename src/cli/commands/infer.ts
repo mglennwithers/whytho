@@ -19,7 +19,7 @@ import { detectLanguage } from '../../core/parser/detect-language.js'
 import { computeContentHash } from '../../core/identity/content-hash.js'
 import { loadConfig } from '../../config/loader.js'
 import { isTrackedFile, isSkippedDir } from '../../config/tracking.js'
-import { getInferProvider, getAnthropicBatchRunner } from '../../ai/registry.js'
+import { getInferProvider, getAnthropicBatchRunner, getOpenAIBatchRunner, getGeminiBatchRunner } from '../../ai/registry.js'
 import type { BatchRequest } from '../../ai/registry.js'
 import { withTokenCounting, formatTokens } from '../../ai/token-counter.js'
 import type { TokenTally } from '../../ai/token-counter.js'
@@ -179,27 +179,41 @@ export function registerInfer(program: Command): void {
           } catch { /* deleted or unreadable */ }
         }
 
-        // Determine whether to use the Anthropic Batches API for this run
+        // Determine whether to use a batch runner for this run (varies by provider)
         let batchRunner: ((requests: BatchRequest[]) => Promise<BatchRunResult>) | null = null
         if (!options.dryRun) {
-          const mode = config.anthropic?.batchInfer?.mode ?? 'auto'
-          if (mode !== 'never') {
-            const runner = getAnthropicBatchRunner(config)
-            if (runner) {
-              if (mode === 'always') {
+          const aiProvider = config.aiProvider ?? 'anthropic'
+          let runner: ((requests: BatchRequest[]) => Promise<BatchRunResult>) | null = null
+          let mode = 'auto'
+          let threshold = 50
+
+          if (aiProvider === 'anthropic') {
+            mode = config.anthropic?.batchInfer?.mode ?? 'auto'
+            threshold = config.anthropic?.batchInfer?.threshold ?? 50
+            if (mode !== 'never') runner = getAnthropicBatchRunner(config)
+          } else if (aiProvider === 'openai') {
+            mode = config.openai?.batchInfer?.mode ?? 'auto'
+            threshold = config.openai?.batchInfer?.threshold ?? 50
+            if (mode !== 'never') runner = getOpenAIBatchRunner(config)
+          } else if (aiProvider === 'gemini') {
+            mode = config.gemini?.batchInfer?.mode ?? 'auto'
+            threshold = config.gemini?.batchInfer?.threshold ?? 50
+            if (mode !== 'never') runner = getGeminiBatchRunner(config)
+          }
+
+          if (runner) {
+            if (mode === 'always') {
+              batchRunner = runner
+            } else {
+              // auto: count pending items first, then decide
+              const totalPending = await countPendingAnnotations(
+                sourceFiles, parsedFileCache, whyRoot, limit,
+                options.blocks === false, options.files === false, options.folders === false,
+                coverage,
+              )
+              if (totalPending > threshold) {
                 batchRunner = runner
-              } else {
-                // auto: count pending items first, then decide
-                const threshold = config.anthropic?.batchInfer?.threshold ?? 50
-                const totalPending = await countPendingAnnotations(
-                  sourceFiles, parsedFileCache, whyRoot, limit,
-                  options.blocks === false, options.files === false, options.folders === false,
-                  coverage,
-                )
-                if (totalPending > threshold) {
-                  batchRunner = runner
-                  console.log(chalk.gray(`${totalPending} pending annotations (threshold: ${threshold}) — using batch mode`))
-                }
+                console.log(chalk.gray(`${totalPending} pending annotations (threshold: ${threshold}) — using batch mode`))
               }
             }
           }
@@ -248,8 +262,9 @@ export function registerInfer(program: Command): void {
           if (pending.length > 0) {
             let rawResults: Map<string, string>
             if (batchRunner) {
+              const runBatch = batchRunner
               console.log(chalk.cyan(`  Submitting batch: ${pending.length} block annotation(s)...`))
-              const batchResult = await batchRunner(pending.map((p) => ({ id: p.id, prompt: p.prompt, maxTokens: p.maxTokens })))
+              const batchResult = await runBatch(pending.map((p) => ({ id: p.id, prompt: p.prompt, maxTokens: p.maxTokens })))
               rawResults = batchResult.results
               tally.input += batchResult.tokensUsed.input
               tally.output += batchResult.tokensUsed.output
@@ -361,8 +376,9 @@ export function registerInfer(program: Command): void {
           if (pending.length > 0) {
             let rawResults: Map<string, string>
             if (batchRunner) {
+              const runBatch = batchRunner
               console.log(chalk.cyan(`  Submitting batch: ${pending.length} file annotation(s)...`))
-              const batchResult = await batchRunner(pending.map((p) => ({ id: p.id, prompt: p.prompt, maxTokens: p.maxTokens })))
+              const batchResult = await runBatch(pending.map((p) => ({ id: p.id, prompt: p.prompt, maxTokens: p.maxTokens })))
               rawResults = batchResult.results
               tally.input += batchResult.tokensUsed.input
               tally.output += batchResult.tokensUsed.output
@@ -456,8 +472,9 @@ export function registerInfer(program: Command): void {
           if (pending.length > 0) {
             let rawResults: Map<string, string>
             if (batchRunner) {
+              const runBatch = batchRunner
               console.log(chalk.cyan(`  Submitting batch: ${pending.length} folder annotation(s)...`))
-              const batchResult = await batchRunner(pending.map((p) => ({ id: p.id, prompt: p.prompt, maxTokens: p.maxTokens })))
+              const batchResult = await runBatch(pending.map((p) => ({ id: p.id, prompt: p.prompt, maxTokens: p.maxTokens })))
               rawResults = batchResult.results
               tally.input += batchResult.tokensUsed.input
               tally.output += batchResult.tokensUsed.output
