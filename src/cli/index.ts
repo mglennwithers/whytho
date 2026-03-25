@@ -21,7 +21,6 @@ import { registerVerify } from './commands/verify.js'
 import { registerClean } from './commands/clean.js'
 import { registerPr } from './commands/pr.js'
 import { registerExport } from './commands/export.js'
-import { registerConfig } from './commands/config.js'
 
 const program = new Command()
   .name('git why')
@@ -50,6 +49,5 @@ registerVerify(program)
 registerClean(program)
 registerPr(program)
 registerExport(program)
-registerConfig(program)
 
 program.parse(process.argv)

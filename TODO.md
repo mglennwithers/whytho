@@ -13,6 +13,5 @@
 
 - [x] **No integration tests** — All tests are unit tests. Add end-to-end tests covering at least `init → push → resolve → query` to catch wiring regressions.
 - [x] **No progress output for long operations** — `infer` and `resolve` are silent on large repos. Add a simple "Processing N blocks..." counter.
-- [x] **`git why config --show`** — Add a subcommand to print the resolved `whytho.config.json` (with defaults applied) so users can debug their AI provider and model setup.
 - [x] **Java relationship scanner** — Parser plugin exists but no `src/core/relationships/scanner-plugins/java.ts`. Should detect `import` statements and method call relationships.
 - [x] **C# relationship scanner** — Parser plugin exists but no `src/core/relationships/scanner-plugins/csharp.ts`. Should detect `using` directives and method call relationships.
