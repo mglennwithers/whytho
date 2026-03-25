@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: tests/unit/archive.test.ts
 created: "2026-03-25T02:10:24.707Z"
-updated: "2026-03-25T02:10:24.707Z"
+updated: "2026-03-25T08:49:48.965Z"
 updated_by_session: static-scan
 parent_folder: tests/unit/
 sessions: []
@@ -23,6 +23,9 @@ relationships:
     source: static
   - type: tests
     target: src/core/fs/layout.ts::getWhyRoot
+    source: static
+  - type: tests
+    target: src/core/fs/layout.ts::slugFromBlockRef
     source: static
   - type: tests
     target: src/core/types.ts::BlockFrontmatter

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/archive.test.ts::writeBlockAnnotation
 file: tests/unit/archive.test.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-25T08:49:49.626Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -17,9 +17,9 @@ identity:
   symbolic: tests/unit/archive.test.ts::writeBlockAnnotation
   line_range:
     start: 49
-    end: 55
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
-  content_hash: sha256:783ae1df6f00936d344c806669b681a6c811ec27ae6ba84ee0dab659b22c55e6
+    end: 54
+    commit: e071aa6ee65357a06b23bff835e4793202f84151
+  content_hash: sha256:0aa3209d74e9f047fe8aee89a98c9cd229b60d62ca96ff641aea2734f6699632
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     normalized slug derived from a reference identifier.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: e071aa6ee65357a06b23bff835e4793202f84151
 ---
 
 # writeBlockAnnotation

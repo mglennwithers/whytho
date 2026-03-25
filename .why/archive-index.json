@@ -1,6 +1,6 @@
 {
   "whytho_version": "1.0",
-  "generated_at": "2026-03-25T08:43:53.555Z",
+  "generated_at": "2026-03-25T08:49:50.025Z",
   "sessions": {},
   "folders": {},
   "files": {},
@@ -141,6 +141,24 @@
       "archived_at_commit": "b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5",
       "last_known_confidence": 0.95,
       "last_known_content_hash": "sha256:d0cee1872be8a98f8cac2c08ec9ac1b62a23a76bd3b682b2301740b4e00ec478"
+    },
+    "tests/unit/archive.test.ts::slug": {
+      "symbolic_ref": "tests/unit/archive.test.ts::slug",
+      "file": "tests/unit/archive.test.ts",
+      "canonical_metric": "symbolic",
+      "confidence": 0.95,
+      "last_resolved": "aee26b5b57dca571b085e47363b395cb230d7359",
+      "content_hash": "sha256:7e2c078f11afbd1747bf035b068e92226fb8a781fe124cc2b7d6ded425e91ac4",
+      "created_by_session": "inferred",
+      "updated_by_session": "inferred",
+      "relationships_out": [],
+      "relationships_in": [],
+      "archived_at": "2026-03-25T08:49:49.604Z",
+      "archived_reason": "deleted",
+      "archived_by_session": "unknown",
+      "archived_at_commit": "e071aa6ee65357a06b23bff835e4793202f84151",
+      "last_known_confidence": 0.95,
+      "last_known_content_hash": "sha256:7e2c078f11afbd1747bf035b068e92226fb8a781fe124cc2b7d6ded425e91ac4"
     }
   }
 }

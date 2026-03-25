@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/archive.test.ts::describe(archiveBlockAnnotation)
 file: tests/unit/archive.test.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-25T08:49:49.534Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: tests/unit/archive.test.ts::describe(archiveBlockAnnotation)
   line_range:
-    start: 57
-    end: 115
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 56
+    end: 114
+    commit: e071aa6ee65357a06b23bff835e4793202f84151
   content_hash: sha256:b994461c2687e6ed40cb61ca31b312087c76665c0c41e2eb0414d6cf0da669b8
   structural:
     kind: describe
@@ -30,7 +30,7 @@ identity:
     injection into frontmatter, and error handling for missing annotations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: e071aa6ee65357a06b23bff835e4793202f84151
 ---
 
 # describe(archiveBlockAnnotation)

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/archive.test.ts::makeTempRepo
 file: tests/unit/archive.test.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-25T08:49:49.577Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 12
     end: 18
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: e071aa6ee65357a06b23bff835e4793202f84151
   content_hash: sha256:3736b301ba92e7701ede83e6b240b0f8b259a955ea73051b389a2b3b4122dc64
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     subdirectories, returning both the root and a derived "why" root path.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: e071aa6ee65357a06b23bff835e4793202f84151
 ---
 
 # makeTempRepo

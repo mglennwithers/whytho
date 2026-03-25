@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/archive.test.ts::makeBlockFm
 file: tests/unit/archive.test.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-25T08:49:49.569Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 24
     end: 47
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: e071aa6ee65357a06b23bff835e4793202f84151
   content_hash: sha256:fa77fc4a0c53b562816f47a91264e8726725e5a42feaeecfff04662af14c5f94
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     identity tracking, and structural information for a code block referenced by a symbolic identifier.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: e071aa6ee65357a06b23bff835e4793202f84151
 ---
 
 # makeBlockFm

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/archive.test.ts::now
 file: tests/unit/archive.test.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-25T08:49:49.585Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 26
     end: 26
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: e071aa6ee65357a06b23bff835e4793202f84151
   content_hash: sha256:c2b2d0823a4b34d2a215bb8336df11bec41ebee0b0e86f87b9453d5205258ed7
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     reference point for time-based test assertions or test data generation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: e071aa6ee65357a06b23bff835e4793202f84151
 ---
 
 # now

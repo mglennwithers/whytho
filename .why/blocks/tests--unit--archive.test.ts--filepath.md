@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/archive.test.ts::filePath
 file: tests/unit/archive.test.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-25T08:49:49.553Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: tests/unit/archive.test.ts::filePath
   line_range:
-    start: 52
-    end: 52
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
-  content_hash: sha256:967d8e86845803906b07d41f4f6dd6a3de445db756d75d919ccded2795665933
+    start: 51
+    end: 51
+    commit: e071aa6ee65357a06b23bff835e4793202f84151
+  content_hash: sha256:27446c80470ff3feb3e5f5eee5402705ca34d8846816ffa0015656b29e1919bf
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     a filename derived from a slug parameter.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: e071aa6ee65357a06b23bff835e4793202f84151
 ---
 
 # filePath

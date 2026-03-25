@@ -1,7 +1,7 @@
 {
   "whytho_version": "1.0",
-  "generated_at": "2026-03-25T08:43:53.930Z",
-  "generated_at_commit": "ceac4858ea7d62a84db1888682a7f1e1c03c035b",
+  "generated_at": "2026-03-25T08:49:50.425Z",
+  "generated_at_commit": "e071aa6ee65357a06b23bff835e4793202f84151",
   "sessions": {
     "2026-03-21-session-mmzsxrsv": {
       "id": "2026-03-21-session-mmzsxrsv",
@@ -5513,6 +5513,11 @@
         {
           "type": "tests",
           "target": "src/core/fs/layout.ts::getWhyRoot",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "src/core/fs/layout.ts::slugFromBlockRef",
           "pipeline": "static"
         },
         {
@@ -19652,6 +19657,10 @@
         },
         {
           "type": "tests",
+          "source": "tests/unit/archive.test.ts"
+        },
+        {
+          "type": "tests",
           "source": "tests/unit/slugify.test.ts"
         }
       ]
@@ -33315,7 +33324,7 @@
       "file": "tests/unit/archive.test.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "aee26b5b57dca571b085e47363b395cb230d7359",
+      "last_resolved": "e071aa6ee65357a06b23bff835e4793202f84151",
       "content_hash": "sha256:829f236e35ebb913665ac48238bdd2639cba5c09aec25645b5b77b309b7c9de6",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -33327,7 +33336,7 @@
       "file": "tests/unit/archive.test.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "aee26b5b57dca571b085e47363b395cb230d7359",
+      "last_resolved": "e071aa6ee65357a06b23bff835e4793202f84151",
       "content_hash": "sha256:b994461c2687e6ed40cb61ca31b312087c76665c0c41e2eb0414d6cf0da669b8",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -33339,7 +33348,7 @@
       "file": "tests/unit/archive.test.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "aee26b5b57dca571b085e47363b395cb230d7359",
+      "last_resolved": "e071aa6ee65357a06b23bff835e4793202f84151",
       "content_hash": "sha256:f90e02c0ce1aeceac02910d6865e29b35c997858800ca523a6f86e81bec7bfb5",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -33351,8 +33360,8 @@
       "file": "tests/unit/archive.test.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "aee26b5b57dca571b085e47363b395cb230d7359",
-      "content_hash": "sha256:967d8e86845803906b07d41f4f6dd6a3de445db756d75d919ccded2795665933",
+      "last_resolved": "e071aa6ee65357a06b23bff835e4793202f84151",
+      "content_hash": "sha256:27446c80470ff3feb3e5f5eee5402705ca34d8846816ffa0015656b29e1919bf",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
       "relationships_out": [],
@@ -33363,7 +33372,7 @@
       "file": "tests/unit/archive.test.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "aee26b5b57dca571b085e47363b395cb230d7359",
+      "last_resolved": "e071aa6ee65357a06b23bff835e4793202f84151",
       "content_hash": "sha256:3c9b64aab92077f7251e34406fad2a0fc677c53bfedf22b1432c0d3bce6d1c6d",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -33375,7 +33384,7 @@
       "file": "tests/unit/archive.test.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "aee26b5b57dca571b085e47363b395cb230d7359",
+      "last_resolved": "e071aa6ee65357a06b23bff835e4793202f84151",
       "content_hash": "sha256:fa77fc4a0c53b562816f47a91264e8726725e5a42feaeecfff04662af14c5f94",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -33387,7 +33396,7 @@
       "file": "tests/unit/archive.test.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "aee26b5b57dca571b085e47363b395cb230d7359",
+      "last_resolved": "e071aa6ee65357a06b23bff835e4793202f84151",
       "content_hash": "sha256:3736b301ba92e7701ede83e6b240b0f8b259a955ea73051b389a2b3b4122dc64",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -33399,7 +33408,7 @@
       "file": "tests/unit/archive.test.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "aee26b5b57dca571b085e47363b395cb230d7359",
+      "last_resolved": "e071aa6ee65357a06b23bff835e4793202f84151",
       "content_hash": "sha256:c2b2d0823a4b34d2a215bb8336df11bec41ebee0b0e86f87b9453d5205258ed7",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -33411,20 +33420,8 @@
       "file": "tests/unit/archive.test.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "aee26b5b57dca571b085e47363b395cb230d7359",
+      "last_resolved": "e071aa6ee65357a06b23bff835e4793202f84151",
       "content_hash": "sha256:37f32c38ddb97c6343605879b37b64a1869ad2145bf73793b9d3299b015e194a",
-      "created_by_session": "inferred",
-      "updated_by_session": "inferred",
-      "relationships_out": [],
-      "relationships_in": []
-    },
-    "tests/unit/archive.test.ts::slug": {
-      "symbolic_ref": "tests/unit/archive.test.ts::slug",
-      "file": "tests/unit/archive.test.ts",
-      "canonical_metric": "symbolic",
-      "confidence": 0.95,
-      "last_resolved": "aee26b5b57dca571b085e47363b395cb230d7359",
-      "content_hash": "sha256:7e2c078f11afbd1747bf035b068e92226fb8a781fe124cc2b7d6ded425e91ac4",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
       "relationships_out": [],
@@ -33435,7 +33432,7 @@
       "file": "tests/unit/archive.test.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "aee26b5b57dca571b085e47363b395cb230d7359",
+      "last_resolved": "e071aa6ee65357a06b23bff835e4793202f84151",
       "content_hash": "sha256:e481246d2df3357642a60f995603c42b66b743d54e33032f1bcd5d20c0aa4593",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -33447,8 +33444,8 @@
       "file": "tests/unit/archive.test.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "aee26b5b57dca571b085e47363b395cb230d7359",
-      "content_hash": "sha256:783ae1df6f00936d344c806669b681a6c811ec27ae6ba84ee0dab659b22c55e6",
+      "last_resolved": "e071aa6ee65357a06b23bff835e4793202f84151",
+      "content_hash": "sha256:0aa3209d74e9f047fe8aee89a98c9cd229b60d62ca96ff641aea2734f6699632",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
       "relationships_out": [],
@@ -42815,6 +42812,12 @@
       "type": "tests",
       "source": "tests/unit/archive.test.ts",
       "target": "src/core/fs/layout.ts::getWhyRoot",
+      "pipeline": "static"
+    },
+    {
+      "type": "tests",
+      "source": "tests/unit/archive.test.ts",
+      "target": "src/core/fs/layout.ts::slugFromBlockRef",
       "pipeline": "static"
     },
     {

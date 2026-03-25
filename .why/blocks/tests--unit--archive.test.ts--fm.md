@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/archive.test.ts::fm
 file: tests/unit/archive.test.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-25T08:49:49.561Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 50
     end: 50
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: e071aa6ee65357a06b23bff835e4793202f84151
   content_hash: sha256:3c9b64aab92077f7251e34406fad2a0fc677c53bfedf22b1432c0d3bce6d1c6d
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     mock or test instance of some "fm" (likely "front matter") object for unit testing purposes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: e071aa6ee65357a06b23bff835e4793202f84151
 ---
 
 # fm
