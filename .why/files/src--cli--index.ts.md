@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/cli/index.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-25T02:10:24.707Z"
+updated: "2026-03-25T02:14:09.951Z"
 updated_by_session: inferred
 parent_folder: src/cli/
 sessions: []
@@ -82,9 +82,6 @@ relationships:
     source: static
   - type: depends_on
     target: src/cli/commands/export.ts::registerExport
-    source: static
-  - type: depends_on
-    target: src/cli/commands/config.ts::registerConfig
     source: static
 ---
 

@@ -1,7 +1,7 @@
 {
   "whytho_version": "1.0",
-  "generated_at": "2026-03-25T02:10:33.507Z",
-  "generated_at_commit": "b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5",
+  "generated_at": "2026-03-25T02:14:11.012Z",
+  "generated_at_commit": "16aafbe894726fb171a92664053de34ad77f7fe9",
   "sessions": {
     "2026-03-21-session-mmzsxrsv": {
       "id": "2026-03-21-session-mmzsxrsv",
@@ -1655,19 +1655,7 @@
       "path": "src/cli/commands/config.ts",
       "parent_folder": "src/cli/commands/",
       "blocks": [],
-      "sessions": [],
-      "relationships_out": [
-        {
-          "type": "depends_on",
-          "target": "src/core/git/repo.ts::findRepoRoot",
-          "pipeline": "static"
-        },
-        {
-          "type": "depends_on",
-          "target": "src/config/loader.ts::loadConfig",
-          "pipeline": "static"
-        }
-      ]
+      "sessions": []
     },
     "src/cli/commands/diff.ts": {
       "path": "src/cli/commands/diff.ts",
@@ -3112,11 +3100,6 @@
         {
           "type": "depends_on",
           "target": "src/cli/commands/export.ts::registerExport",
-          "pipeline": "static"
-        },
-        {
-          "type": "depends_on",
-          "target": "src/cli/commands/config.ts::registerConfig",
           "pipeline": "static"
         }
       ]
@@ -13418,7 +13401,7 @@
       "file": "src/cli/index.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5",
+      "last_resolved": "16aafbe894726fb171a92664053de34ad77f7fe9",
       "content_hash": "sha256:da72d29af154dee28b5a586a2d129cad39cf5005d1f1670399a4cf3df61fb7d8",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -13682,10 +13665,6 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/blame.ts"
-        },
-        {
-          "type": "depends_on",
-          "source": "src/cli/commands/config.ts"
         },
         {
           "type": "depends_on",
@@ -18511,10 +18490,6 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/clean.ts"
-        },
-        {
-          "type": "depends_on",
-          "source": "src/cli/commands/config.ts"
         },
         {
           "type": "depends_on",
@@ -34501,18 +34476,6 @@
     },
     {
       "type": "depends_on",
-      "source": "src/cli/commands/config.ts",
-      "target": "src/core/git/repo.ts::findRepoRoot",
-      "pipeline": "static"
-    },
-    {
-      "type": "depends_on",
-      "source": "src/cli/commands/config.ts",
-      "target": "src/config/loader.ts::loadConfig",
-      "pipeline": "static"
-    },
-    {
-      "type": "depends_on",
       "source": "src/cli/commands/diff.ts",
       "target": "src/core/git/repo.ts::findRepoRoot",
       "pipeline": "static"
@@ -35817,12 +35780,6 @@
       "type": "depends_on",
       "source": "src/cli/index.ts",
       "target": "src/cli/commands/export.ts::registerExport",
-      "pipeline": "static"
-    },
-    {
-      "type": "depends_on",
-      "source": "src/cli/index.ts",
-      "target": "src/cli/commands/config.ts::registerConfig",
       "pipeline": "static"
     },
     {
