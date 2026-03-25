@@ -5,7 +5,7 @@ import * as path from 'path'
 import { archiveBlockAnnotation } from '../../src/core/archive/archiver.js'
 import { findArchivedBlocks, getBlockHistory } from '../../src/core/archive/query.js'
 import { serializeAnnotation } from '../../src/core/frontmatter/serialize.js'
-import { getWhyRoot } from '../../src/core/fs/layout.js'
+import { getWhyRoot, slugFromBlockRef } from '../../src/core/fs/layout.js'
 import type { BlockFrontmatter } from '../../src/core/types.js'
 import { WHYTHO_VERSION } from '../../src/core/constants.js'
 
@@ -48,8 +48,7 @@ function makeBlockFm(ref: string): BlockFrontmatter {
 
 async function writeBlockAnnotation(whyRoot: string, ref: string, body = '## Purpose\n\nTest block.'): Promise<string> {
   const fm = makeBlockFm(ref)
-  const slug = ref.replace(/\//g, '--').replace('::', '--')
-  const filePath = path.join(whyRoot, 'blocks', `${slug}.md`)
+  const filePath = path.join(whyRoot, 'blocks', `${slugFromBlockRef(ref)}.md`)
   await fs.writeFile(filePath, serializeAnnotation(fm, body))
   return filePath
 }
