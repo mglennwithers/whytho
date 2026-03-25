@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::FILES_DIR
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:00.909Z"
+updated: "2026-03-25T04:07:28.487Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 7
     end: 7
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: 498199f818951a78c685a05e25318822101986a6
   content_hash: sha256:53fa0e46c1f5094c02c2e9ebbc96fbe126480a7402f019429b5febd9ae4746c5
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     organization within the application's file system structure.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: 498199f818951a78c685a05e25318822101986a6
 ---
 
 # FILES_DIR

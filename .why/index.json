@@ -1,7 +1,7 @@
 {
   "whytho_version": "1.0",
-  "generated_at": "2026-03-25T02:18:29.520Z",
-  "generated_at_commit": "fb14410259a333b533276574d5ae3bdfd8bffef8",
+  "generated_at": "2026-03-25T04:07:29.316Z",
+  "generated_at_commit": "498199f818951a78c685a05e25318822101986a6",
   "sessions": {
     "2026-03-21-session-mmzsxrsv": {
       "id": "2026-03-21-session-mmzsxrsv",
@@ -27,8 +27,12 @@
       "id": "2026-03-24-session-mn4f9twt",
       "created": "2026-03-24T09:38:41.453Z",
       "folders_touched": [],
-      "files_touched": [],
-      "blocks_touched": [],
+      "files_touched": [
+        "src/core/constants.ts"
+      ],
+      "blocks_touched": [
+        "src/core/constants.ts::BLOCK_KINDS"
+      ],
       "commits": [
         "f9e36e3b5723a818520bce54f878fa14d0d223b0"
       ]
@@ -644,6 +648,11 @@
         {
           "type": "tests",
           "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceColor",
+          "pipeline": "static"
+        },
+        {
+          "type": "tests",
+          "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceLabel",
           "pipeline": "static"
         },
         {
@@ -1651,12 +1660,6 @@
         }
       ]
     },
-    "src/cli/commands/config.ts": {
-      "path": "src/cli/commands/config.ts",
-      "parent_folder": "src/cli/commands/",
-      "blocks": [],
-      "sessions": []
-    },
     "src/cli/commands/diff.ts": {
       "path": "src/cli/commands/diff.ts",
       "parent_folder": "src/cli/commands/",
@@ -1723,59 +1726,7 @@
       "path": "src/cli/commands/export.ts",
       "parent_folder": "src/cli/commands/",
       "blocks": [],
-      "sessions": [],
-      "relationships_out": [
-        {
-          "type": "depends_on",
-          "target": "src/core/git/repo.ts::findRepoRoot",
-          "pipeline": "static"
-        },
-        {
-          "type": "depends_on",
-          "target": "src/core/fs/layout.ts::getWhyRoot",
-          "pipeline": "static"
-        },
-        {
-          "type": "depends_on",
-          "target": "src/core/fs/layout.ts::indexPath",
-          "pipeline": "static"
-        },
-        {
-          "type": "depends_on",
-          "target": "src/core/fs/init.ts::isWhyDirInitialized",
-          "pipeline": "static"
-        },
-        {
-          "type": "depends_on",
-          "target": "src/core/fs/reader.ts::readAllBlocks",
-          "pipeline": "static"
-        },
-        {
-          "type": "depends_on",
-          "target": "src/core/fs/reader.ts::readAllFiles",
-          "pipeline": "static"
-        },
-        {
-          "type": "depends_on",
-          "target": "src/core/fs/reader.ts::readAllFolders",
-          "pipeline": "static"
-        },
-        {
-          "type": "depends_on",
-          "target": "src/core/fs/reader.ts::readAllSessions",
-          "pipeline": "static"
-        },
-        {
-          "type": "depends_on",
-          "target": "src/core/fs/writer.ts::writeFile",
-          "pipeline": "static"
-        },
-        {
-          "type": "depends_on",
-          "target": "src/core/types.ts::WhythoIndex",
-          "pipeline": "static"
-        }
-      ]
+      "sessions": []
     },
     "src/cli/commands/file.ts": {
       "path": "src/cli/commands/file.ts",
@@ -3095,11 +3046,6 @@
         {
           "type": "depends_on",
           "target": "src/cli/commands/pr.ts::registerPr",
-          "pipeline": "static"
-        },
-        {
-          "type": "depends_on",
-          "target": "src/cli/commands/export.ts::registerExport",
           "pipeline": "static"
         }
       ]
@@ -6486,12 +6432,6 @@
     },
     "tsup.config.ts": {
       "path": "tsup.config.ts",
-      "parent_folder": "/",
-      "blocks": [],
-      "sessions": []
-    },
-    "vitest.config.ts": {
-      "path": "vitest.config.ts",
       "parent_folder": "/",
       "blocks": [],
       "sessions": []
@@ -13401,7 +13341,7 @@
       "file": "src/cli/index.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "16aafbe894726fb171a92664053de34ad77f7fe9",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:da72d29af154dee28b5a586a2d129cad39cf5005d1f1670399a4cf3df61fb7d8",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14417,7 +14357,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:b006ee300bc7931d3ebecd9543d1d888ff3e759c9c268272f6d2e243b0a0e542",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14442,7 +14382,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:7966d5423c3ace49e8449b3d98252df8cfc6ab5e7b0d5429a7edcda9658eaead",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14463,7 +14403,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:0f807c4c8645760cc9d6749210bac721553b5894074d69d0840d8610eddd161b",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14484,7 +14424,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:ef489a8d101fac2c5e5ea96b254a74a91145e7e5baed50d3cfecbb4f0fd4b093",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14513,8 +14453,8 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
-      "content_hash": "sha256:5dacfdb98a1f38e2bb0cb8e8f8a8df35a1f3f727a6293cad6bd7db83d06decdd",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
+      "content_hash": "sha256:06ca206d60b1a2d4c88cdfc9dcfe6f0d4a0774f0cf0aa87965b21c2bde8ae9e1",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
       "relationships_out": [],
@@ -14538,7 +14478,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:d99116b26ce9d9280b889a6bd8bc87b7135387ad3b56c1e72b239ba8ba3174d6",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14559,7 +14499,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:ab6f55dd6d8e775fa7e619da21cc1dfb7d33c65f147fe54d189dce250814eb5f",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14588,7 +14528,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:41113c109c9bf23db7e829a32fbb924efdbc47420204add27dac92f444fae18a",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14617,7 +14557,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:91dad430be85ada573dc1a661633c16702888efe93a05b8240e9797d2bf2059b",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14638,7 +14578,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:9d57f98080c71e05ea86e252dda56b7d52fc34792a98af640dc945fe2cc96380",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14659,7 +14599,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:37636e9d364ddb143e9cf5138141334e9452ac2c015750f5f6a4b72aca6c7af1",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14680,7 +14620,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:1cb463cecf82e6626d0d5d3b6e59ac555f7b0d320797da8658c18038a5a8d04e",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14701,7 +14641,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:4823780b366f4c70b50c441920216fa76432ebe953cc59ecf15e783d81b3e52a",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14722,7 +14662,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:53fa0e46c1f5094c02c2e9ebbc96fbe126480a7402f019429b5febd9ae4746c5",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14743,7 +14683,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:24758bb59698f9270f480ae98b58dafc6b72b57f0dfe90c580b01cf089abdd23",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14764,7 +14704,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:029b950a5cb9bb9f3b603f90885a2e211fe26f12bb10df0d13315d9575c9f797",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14801,7 +14741,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:4aa068ae83638599e4da21a73237955685870011b71ed1cba4f54da637b2da03",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14822,7 +14762,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:7c5ea1f3027c70446201341b8f1d5eac0512f82f63037172663c70a9a292ec2c",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14847,7 +14787,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:6459e63d0c09c8d73cd087f348de06eb1646efbcdd13da359bef645c8d56c745",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14876,7 +14816,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:2eee78f42a70f38efaf057c8fe24b994042ee089a5dbed5e8ba525fec810339f",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14905,7 +14845,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:23b53c789eb788546c8875cf48bb3935c2b0ab1dbdb06bb7d9c3479e60fc1134",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14954,7 +14894,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:3262b3a565ecc6d26b15f8d4f76ed69dbfb1b846c77ba33db38ad412ac8f4a2d",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -14979,7 +14919,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:800b3ac0cd46332fb0f73256041fccd4eee5e21d705bd189c33ad48dc9e2c53a",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -15000,7 +14940,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:6e06a7979dd346816b0aabfbe7e8f26f7f8505948c6dbc786f51272c628e48a0",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -15021,7 +14961,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:298edd5332a79273bae5358b9c57420cb3b1321a40f97f51d123d2bfaaa43b87",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -15042,7 +14982,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:528bbcfb521c7b4e0da2939a8da5b04998e0ac4dd89cd2e04200c75b8b7dbc36",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -15054,7 +14994,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:b52364a5ae72dc10600edc5850f086e4287912f19f916f871056f7d6f79c9ef1",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -15075,7 +15015,7 @@
       "file": "src/core/constants.ts",
       "canonical_metric": "symbolic",
       "confidence": 0.95,
-      "last_resolved": "ee4818cb89955bcb2bbf4736131c0dc193b5a06e",
+      "last_resolved": "498199f818951a78c685a05e25318822101986a6",
       "content_hash": "sha256:0158d848e0712ca06578c15715522b1a0d08c3f8b52bc55251c8e4e3c7e65efc",
       "created_by_session": "inferred",
       "updated_by_session": "inferred",
@@ -15822,10 +15762,6 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/clean.ts"
-        },
-        {
-          "type": "depends_on",
-          "source": "src/cli/commands/export.ts"
         },
         {
           "type": "depends_on",
@@ -16634,10 +16570,6 @@
         },
         {
           "type": "depends_on",
-          "source": "src/cli/commands/export.ts"
-        },
-        {
-          "type": "depends_on",
           "source": "src/cli/commands/file.ts"
         },
         {
@@ -16794,10 +16726,6 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/diff.ts"
-        },
-        {
-          "type": "depends_on",
-          "source": "src/cli/commands/export.ts"
         },
         {
           "type": "depends_on",
@@ -17315,10 +17243,6 @@
         },
         {
           "type": "depends_on",
-          "source": "src/cli/commands/export.ts"
-        },
-        {
-          "type": "depends_on",
           "source": "src/cli/commands/resolve.ts"
         },
         {
@@ -17378,10 +17302,6 @@
         },
         {
           "type": "depends_on",
-          "source": "src/cli/commands/export.ts"
-        },
-        {
-          "type": "depends_on",
           "source": "src/cli/commands/search.ts"
         },
         {
@@ -17430,10 +17350,6 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/blame.ts"
-        },
-        {
-          "type": "depends_on",
-          "source": "src/cli/commands/export.ts"
         },
         {
           "type": "depends_on",
@@ -17489,10 +17405,6 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/blame.ts"
-        },
-        {
-          "type": "depends_on",
-          "source": "src/cli/commands/export.ts"
         },
         {
           "type": "depends_on",
@@ -17896,10 +17808,6 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/annotate.ts"
-        },
-        {
-          "type": "depends_on",
-          "source": "src/cli/commands/export.ts"
         },
         {
           "type": "depends_on",
@@ -18494,10 +18402,6 @@
         {
           "type": "depends_on",
           "source": "src/cli/commands/diff.ts"
-        },
-        {
-          "type": "depends_on",
-          "source": "src/cli/commands/export.ts"
         },
         {
           "type": "depends_on",
@@ -27736,10 +27640,6 @@
         },
         {
           "type": "depends_on",
-          "source": "src/cli/commands/export.ts"
-        },
-        {
-          "type": "depends_on",
           "source": "src/cli/commands/related.ts"
         },
         {
@@ -33637,6 +33537,12 @@
     {
       "type": "tests",
       "source": "packages/vscode-whytho/tests/unit/confidence.test.ts",
+      "target": "packages/vscode-whytho/src/util/confidence.ts::getConfidenceLabel",
+      "pipeline": "static"
+    },
+    {
+      "type": "tests",
+      "source": "packages/vscode-whytho/tests/unit/confidence.test.ts",
       "target": "packages/vscode-whytho/src/util/confidence.ts::loadThresholds",
       "pipeline": "static"
     },
@@ -34520,66 +34426,6 @@
       "type": "depends_on",
       "source": "src/cli/commands/diff.ts",
       "target": "src/core/types.ts::BlockFrontmatter",
-      "pipeline": "static"
-    },
-    {
-      "type": "depends_on",
-      "source": "src/cli/commands/export.ts",
-      "target": "src/core/git/repo.ts::findRepoRoot",
-      "pipeline": "static"
-    },
-    {
-      "type": "depends_on",
-      "source": "src/cli/commands/export.ts",
-      "target": "src/core/fs/layout.ts::getWhyRoot",
-      "pipeline": "static"
-    },
-    {
-      "type": "depends_on",
-      "source": "src/cli/commands/export.ts",
-      "target": "src/core/fs/layout.ts::indexPath",
-      "pipeline": "static"
-    },
-    {
-      "type": "depends_on",
-      "source": "src/cli/commands/export.ts",
-      "target": "src/core/fs/init.ts::isWhyDirInitialized",
-      "pipeline": "static"
-    },
-    {
-      "type": "depends_on",
-      "source": "src/cli/commands/export.ts",
-      "target": "src/core/fs/reader.ts::readAllBlocks",
-      "pipeline": "static"
-    },
-    {
-      "type": "depends_on",
-      "source": "src/cli/commands/export.ts",
-      "target": "src/core/fs/reader.ts::readAllFiles",
-      "pipeline": "static"
-    },
-    {
-      "type": "depends_on",
-      "source": "src/cli/commands/export.ts",
-      "target": "src/core/fs/reader.ts::readAllFolders",
-      "pipeline": "static"
-    },
-    {
-      "type": "depends_on",
-      "source": "src/cli/commands/export.ts",
-      "target": "src/core/fs/reader.ts::readAllSessions",
-      "pipeline": "static"
-    },
-    {
-      "type": "depends_on",
-      "source": "src/cli/commands/export.ts",
-      "target": "src/core/fs/writer.ts::writeFile",
-      "pipeline": "static"
-    },
-    {
-      "type": "depends_on",
-      "source": "src/cli/commands/export.ts",
-      "target": "src/core/types.ts::WhythoIndex",
       "pipeline": "static"
     },
     {
@@ -35774,12 +35620,6 @@
       "type": "depends_on",
       "source": "src/cli/index.ts",
       "target": "src/cli/commands/pr.ts::registerPr",
-      "pipeline": "static"
-    },
-    {
-      "type": "depends_on",
-      "source": "src/cli/index.ts",
-      "target": "src/cli/commands/export.ts::registerExport",
       "pipeline": "static"
     },
     {

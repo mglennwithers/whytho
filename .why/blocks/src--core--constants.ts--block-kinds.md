@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::BLOCK_KINDS
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-25T02:43:17.200Z"
+updated: "2026-03-25T04:07:28.416Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 62
     end: 75
-    commit: e9d83c8bec60934a706999b59c5e4eb6a018ffa7
+    commit: 498199f818951a78c685a05e25318822101986a6
   content_hash: sha256:06ca206d60b1a2d4c88cdfc9dcfe6f0d4a0774f0cf0aa87965b21c2bde8ae9e1
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     declarations, and C# has auto-properties (get/set/init). Using 'method' for constructors
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: 498199f818951a78c685a05e25318822101986a6
 ---
 
 # BLOCK_KINDS

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::SEMANTIC_MATCH_MIN_CONFIDENCE
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:00.983Z"
+updated: "2026-03-25T04:07:28.559Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 18
     end: 18
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: 498199f818951a78c685a05e25318822101986a6
   content_hash: sha256:6e06a7979dd346816b0aabfbe7e8f26f7f8505948c6dbc786f51272c628e48a0
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     similarity-based feature matching or filtering.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: 498199f818951a78c685a05e25318822101986a6
 ---
 
 # SEMANTIC_MATCH_MIN_CONFIDENCE

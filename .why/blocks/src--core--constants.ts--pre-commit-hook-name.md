@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::PRE_COMMIT_HOOK_NAME
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:00.955Z"
+updated: "2026-03-25T04:07:28.531Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 33
     end: 33
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: 498199f818951a78c685a05e25318822101986a6
   content_hash: sha256:2eee78f42a70f38efaf057c8fe24b994042ee089a5dbed5e8ba525fec810339f
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the codebase for pre-commit hook operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: 498199f818951a78c685a05e25318822101986a6
 ---
 
 # PRE_COMMIT_HOOK_NAME
