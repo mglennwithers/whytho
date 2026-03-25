@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::BLOCK_KINDS
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:00.858Z"
+updated: "2026-03-25T02:43:17.200Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -17,17 +17,17 @@ identity:
   symbolic: src/core/constants.ts::BLOCK_KINDS
   line_range:
     start: 62
-    end: 73
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
-  content_hash: sha256:5dacfdb98a1f38e2bb0cb8e8f8a8df35a1f3f727a6293cad6bd7db83d06decdd
+    end: 75
+    commit: e9d83c8bec60934a706999b59c5e4eb6a018ffa7
+  content_hash: sha256:06ca206d60b1a2d4c88cdfc9dcfe6f0d4a0774f0cf0aa87965b21c2bde8ae9e1
   structural:
     kind: const
     parent_scope: module
     name: BLOCK_KINDS
     index_in_parent: 25
   semantic_fingerprint: >-
-    Defines an exhaustive, immutable list of recognized code block/entity kinds covering functions, classes, types, and
-    testing constructs, likely used throughout the application for classification, filtering, or validation purposes.
+    Added 'constructor' and 'property' to support C# and Java parsers, which both have constructors as first-class
+    declarations, and C# has auto-properties (get/set/init). Using 'method' for constructors
   canonical_metric: symbolic
   confidence: 0.95
   last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
@@ -62,3 +62,5 @@ This constant exports a readonly tuple of string literals representing different
 - **[Historical evolution]:** Whether this list grew incrementally based on discovered needs or was designed comprehensively upfront; whether past items were removed.
 
 - **[Validation behavior]:** Whether the application validates that only these kinds are used, or whether the list is merely advisory/preferred.
+
+Added 'constructor' and 'property' to support C# and Java parsers, which both have constructors as first-class declarations, and C# has auto-properties (get/set/init). Using 'method' for constructors would lose semantic precision; using 'variable' for properties was both incorrect and a type error. These two kinds are structurally distinct across OO languages and worth preserving in the annotation index.

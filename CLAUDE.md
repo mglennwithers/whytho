@@ -29,7 +29,7 @@ Skipping this step means planning against incomplete information — design choi
 
 ```bash
 npm run build      # tsup — dual CJS/ESM output + .d.ts
-npm test           # vitest — 126 unit tests
+npm test           # vitest — 310 unit tests
 npm run typecheck  # tsc --noEmit
 ```
 
@@ -143,7 +143,7 @@ src/
   config/           # WhythoConfig loader + defaults
 tests/
   fixtures/         # sample.ts for parser tests
-  unit/             # 126 unit tests
+  unit/             # unit tests
 ```
 
 ## Key files

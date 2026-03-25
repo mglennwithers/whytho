@@ -62,10 +62,12 @@ export const RELATIONSHIP_TYPES = [
 export const BLOCK_KINDS = [
   'function',
   'method',
+  'constructor',
   'class',
   'interface',
   'type',
   'const',
+  'property',
   'config',
   'describe',
   'it',

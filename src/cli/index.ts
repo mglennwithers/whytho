@@ -20,7 +20,6 @@ import { registerBlame } from './commands/blame.js'
 import { registerVerify } from './commands/verify.js'
 import { registerClean } from './commands/clean.js'
 import { registerPr } from './commands/pr.js'
-import { registerExport } from './commands/export.js'
 
 const program = new Command()
   .name('git why')
@@ -48,6 +47,5 @@ registerBlame(program)
 registerVerify(program)
 registerClean(program)
 registerPr(program)
-registerExport(program)
 
 program.parse(process.argv)

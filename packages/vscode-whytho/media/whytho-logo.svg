@@ -2,7 +2,7 @@
   <defs>
     <style>@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker');</style>
   </defs>
-  <text x="0" y="11" font-size="15" font-weight="bold" fill="currentColor" font-family="'Permanent Marker', 'Comic Sans MS', cursive">w</text>
-  <text x="9.5" y="14" transform="rotate(5)" transform-origin="center" font-size="15" font-weight="bold" fill="currentColor" font-family="'Permanent Marker', 'Comic Sans MS', cursive">h</text>
-  <text x="16" y="11" transform="rotate(-5)" transform-origin="center" font-size="15" font-weight="bold" fill="currentColor" font-family="'Permanent Marker', 'Comic Sans MS', cursive">y</text>
+  <text x="0.25" y="12" font-size="16" font-weight="bold" fill="currentColor" font-family="'Permanent Marker', 'Comic Sans MS', cursive">w</text>
+  <text x="10.5" y="14" transform="rotate(5)" transform-origin="center" font-size="14" font-weight="bold" fill="currentColor" font-family="'Permanent Marker', 'Comic Sans MS', cursive">h</text>
+  <text x="16.5" y="11" transform="rotate(-5)" transform-origin="center" font-size="14" font-weight="bold" fill="currentColor" font-family="'Permanent Marker', 'Comic Sans MS', cursive">y</text>
 </svg>

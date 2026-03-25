@@ -82,7 +82,7 @@ const PATTERNS: CSharpPattern[] = [
   },
   // property: [modifiers] Type PropertyName { get/set/init ... }
   {
-    kind: 'variable',
+    kind: 'property',
     pattern: new RegExp(`^\\s*${MODIFIERS}[\\w<>\\[\\]?,\\s]+?\\s+(\\w+)\\s*\\{\\s*(?:get|set|init)`),
     nameGroup: 1,
   },

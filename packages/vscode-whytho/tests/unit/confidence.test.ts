@@ -9,7 +9,7 @@ vi.mock('vscode', () => ({
   },
 }))
 
-import { getConfidenceLevel, getConfidenceColor, loadThresholds } from '../../src/util/confidence.js'
+import { getConfidenceLevel, getConfidenceColor, getConfidenceLabel, loadThresholds } from '../../src/util/confidence.js'
 
 describe('getConfidenceLevel', () => {
   const thresholds = { high: 0.8, medium: 0.5 }
@@ -27,6 +27,20 @@ describe('getConfidenceLevel', () => {
   it('returns low for < 0.5', () => {
     expect(getConfidenceLevel(0.49, thresholds)).toBe('low')
     expect(getConfidenceLevel(0, thresholds)).toBe('low')
+  })
+})
+
+describe('getConfidenceLabel', () => {
+  it('returns pass-filled icon for high', () => {
+    expect(getConfidenceLabel('high')).toBe('$(pass-filled)')
+  })
+
+  it('returns warning icon for medium', () => {
+    expect(getConfidenceLabel('medium')).toBe('$(warning)')
+  })
+
+  it('returns error icon for low', () => {
+    expect(getConfidenceLabel('low')).toBe('$(error)')
   })
 })
 

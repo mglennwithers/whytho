@@ -3,7 +3,7 @@ whytho: "1.0"
 type: session
 id: 2026-03-24-session-mn4f9twt
 created: "2026-03-24T09:38:41.453Z"
-updated: "2026-03-24T18:26:15.035Z"
+updated: "2026-03-25T02:43:17.605Z"
 model: claude-haiku-4-5-20251001
 model_provider: anthropic
 user: Mike
@@ -11,9 +11,11 @@ commits:
   - sha: f9e36e3b5723a818520bce54f878fa14d0d223b0
     message: ""
     timestamp: "2026-03-24T09:38:41.453Z"
-files_touched: []
+files_touched:
+  - src/core/constants.ts
 folders_touched: []
-blocks_touched: []
+blocks_touched:
+  - src/core/constants.ts::BLOCK_KINDS
 ---
 
 ## Objectives
