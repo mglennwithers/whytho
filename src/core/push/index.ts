@@ -163,7 +163,7 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
           frontmatter.identity.content_hash = computeContentHash(parsedBlock.content)
         }
       }
-      if (sessionId) frontmatter.updated_by_session = sessionId
+      frontmatter.updated_by_session = sessionId ?? 'agent-push'
 
       // Merge new relationships (deduplicated by target+type)
       if (input.relationships && input.relationships.length > 0) {
@@ -249,6 +249,7 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
       const raw = await fs.readFile(annPath, 'utf8')
       const { frontmatter, body: existingBody } = parseAnnotation<FileFrontmatter>(raw)
       frontmatter.updated = now
+      frontmatter.updated_by_session = sessionId ?? 'agent-push'
       if (sessionId && !frontmatter.sessions?.includes(sessionId)) {
         frontmatter.sessions = [...(frontmatter.sessions ?? []), sessionId]
       }
