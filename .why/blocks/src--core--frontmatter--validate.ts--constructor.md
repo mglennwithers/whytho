@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/frontmatter/validate.ts::constructor
 file: src/core/frontmatter/validate.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:24.070Z"
+updated: "2026-03-25T04:22:31.899Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 11
     end: 17
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:0de00eebecc19f1a0f32872d002c0922043f0ae4b85c915e7ff628c950ca0a6b
   structural:
     kind: method
@@ -31,7 +31,7 @@ identity:
     storing validation failure details while setting an identifying error name.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # constructor

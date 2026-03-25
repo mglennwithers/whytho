@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/scanner-python.test.ts::m
 file: tests/unit/scanner-python.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.701Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 6
     end: 6
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:5130c2e5a69301ab6070e47ccfdffc27da83b6f815ebf20652e782f2824d5fdd
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     or test fixtures in a Python scanner unit test.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # m

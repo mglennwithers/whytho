@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::fingerprint
 file: src/core/push/index.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-25T02:10:29.377Z"
+updated: "2026-03-25T06:18:22.060Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 146
     end: 146
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: 9836b12bcb7a17ca56ea6bedf436213596319931
   content_hash: sha256:4e461d270a3ab5e3d75daacd8809b372a5b1c0e3f1e8198e42454d4d9a8302a2
   structural:
     kind: const
@@ -31,7 +31,7 @@ identity:
     multi-line content.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: 9836b12bcb7a17ca56ea6bedf436213596319931
 ---
 
 # fingerprint

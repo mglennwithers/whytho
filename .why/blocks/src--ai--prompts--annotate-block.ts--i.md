@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/annotate-block.ts::i
 file: src/ai/prompts/annotate-block.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-24T09:38:20.039Z"
+updated: "2026-03-25T04:22:26.581Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 58
     end: 58
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:888df20915c2195ad1d95eaf456b28b7df3bd7f68d5c3f59265277a968af8d0f
   structural:
     kind: const
@@ -24,7 +24,7 @@ identity:
   semantic_fingerprint: A standard for-loop iterator variable initializing at 0 and iterating through all indices of a `lines` array.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # i

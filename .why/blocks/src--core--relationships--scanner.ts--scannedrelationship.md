@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner.ts::ScannedRelationship
 file: src/core/relationships/scanner.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T02:10:30.100Z"
+updated: "2026-03-25T04:22:37.260Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 41
     end: 41
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:ef95ba1224ad084c12c9635e6182da5d9fb5ef8f8b375da0ec30680d194c9e32
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     edge relationships into a single polymorphic type for relationship scanning operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # ScannedRelationship

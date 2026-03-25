@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::createWhythoServer
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-25T02:10:30.975Z"
+updated: "2026-03-25T04:22:38.450Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 741
     end: 834
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:06ff08ca46800274040d8bc2fb809dcccb5e320cc0ef9fb86d9921edc5a089fd
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     densely-annotated files (e.g. pipeline.ts at 121k chars). Fixed by adding max_blocks parame
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/git/repo.ts::findRepoRoot

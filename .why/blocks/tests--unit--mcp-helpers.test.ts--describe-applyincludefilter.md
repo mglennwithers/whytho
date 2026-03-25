@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/mcp-helpers.test.ts::describe(applyIncludeFilter)
 file: tests/unit/mcp-helpers.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.232Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 90
     end: 138
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:6c6e8f0465112954fd55893a3896307f6225dfded57086697246b75d7b5eabdb
   structural:
     kind: describe
@@ -31,7 +31,7 @@ identity:
     sections.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # describe(applyIncludeFilter)

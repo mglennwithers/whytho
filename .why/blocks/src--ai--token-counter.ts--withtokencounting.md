@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/token-counter.ts::withTokenCounting
 file: src/ai/token-counter.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:27.521Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 9
     end: 29
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:915dbd85c6d6a4147f6af3d7fed22912a80fdc0c19fe69c68a138e10cc50270d
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     from provider responses into a shared tally object, without modifying the provider's core behavior.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # withTokenCounting

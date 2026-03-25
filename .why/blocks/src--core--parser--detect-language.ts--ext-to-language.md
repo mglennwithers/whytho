@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/detect-language.ts::EXT_TO_LANGUAGE
 file: src/core/parser/detect-language.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:25.386Z"
+updated: "2026-03-25T04:22:33.172Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 3
     end: 23
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:576873bcb23d106f53ed214fcfed1a9557e3f517ac862fcd64b6c9d677c7dbc8
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     enabling language detection based on file extension patterns.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # EXT_TO_LANGUAGE

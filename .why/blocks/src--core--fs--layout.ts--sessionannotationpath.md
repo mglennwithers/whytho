@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/layout.ts::sessionAnnotationPath
 file: src/core/fs/layout.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:24.434Z"
+updated: "2026-03-25T04:22:32.251Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 96
     end: 98
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:4341809139fa9fada149bcda490bae3254a2562573d3701a4b778c7b243446ee
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     derived from a session ID.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # sessionAnnotationPath

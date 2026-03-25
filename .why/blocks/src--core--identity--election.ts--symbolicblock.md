@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/identity/election.ts::symbolicBlock
 file: src/core/identity/election.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:01.538Z"
+updated: "2026-03-25T04:22:32.926Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 51
     end: 51
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:8e6c2bb1d1e60853496a6c5907d38c5e33ffb211cd7626fe004ce6e3f535713e
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     symbolic resolution results that feeds into an election/selection process.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # symbolicBlock

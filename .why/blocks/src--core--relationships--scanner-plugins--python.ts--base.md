@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/python.ts::base
 file: src/core/relationships/scanner-plugins/python.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:03.271Z"
+updated: "2026-03-25T04:22:35.912Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 97
     end: 97
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:78b42f7f8af4c2ff69bb4d06b3a388fb6e4641958952dc37a2e5087702563f5b
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     suggests analysis of inheritance hierarchies or type dependency chains.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # base

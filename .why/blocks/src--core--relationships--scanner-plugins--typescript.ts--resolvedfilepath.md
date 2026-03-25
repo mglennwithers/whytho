@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/typescript.ts::resolvedFilePath
 file: src/core/relationships/scanner-plugins/typescript.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:04.014Z"
+updated: "2026-03-25T04:22:36.800Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 99
     end: 99
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:f6b97c092d8cb216c8f7c69861a6d913f691da415b8e98d8920410a0d9e98c45
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     reference into a concrete file system path within a TypeScript scanning context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # resolvedFilePath

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/incremental.ts::changedSet
 file: src/core/resolution/incremental.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:26.427Z"
+updated: "2026-03-25T04:22:37.317Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 14
     end: 14
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:9a1a5f51ee8190ac6e082a12c9a7327f9f4e987d909d6b868535450d30887fc6
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     deduplicated collection for efficient lookup operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # changedSet

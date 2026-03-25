@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/fixtures/sample.ts::TokenService
 file: tests/fixtures/sample.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:28.723Z"
+updated: "2026-03-25T04:22:40.042Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 39
     end: 49
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:a4f0eb5c3ac3a2b4f54253fb3c93a027f9ed75c0a8b8477894e68ce43ceb18f5
   structural:
     kind: class
@@ -30,7 +30,7 @@ identity:
     retrieve operations via a Map data structure.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # TokenService

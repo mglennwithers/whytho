@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/reannotate.test.ts::cleanup
 file: tests/unit/reannotate.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.476Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 19
     end: 21
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:829f236e35ebb913665ac48238bdd2639cba5c09aec25645b5b77b309b7c9de6
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     operations to clean up temporary files or directories created during test execution.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # cleanup

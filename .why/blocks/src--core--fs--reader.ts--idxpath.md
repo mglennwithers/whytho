@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/reader.ts::idxPath
 file: src/core/fs/reader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:01.104Z"
+updated: "2026-03-25T04:22:32.321Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 71
     end: 71
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:ce76d753e8fff9f18ba5d44abdae4405e7eeb1e588cf8597b882e9104d29daf1
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     fixed filename string.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # idxPath

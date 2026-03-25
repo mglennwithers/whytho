@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::bar
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-25T02:10:28.273Z"
+updated: "2026-03-25T04:22:30.819Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 41
     end: 44
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:87ff134c5a2ed64e48ceff95ef63e87e61fa7a43d3302d2cafb756e62624a1e2
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     value, padding the remainder with gray blocks.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # bar

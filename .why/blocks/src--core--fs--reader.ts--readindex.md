@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/reader.ts::readIndex
 file: src/core/fs/reader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:01.177Z"
+updated: "2026-03-25T04:22:32.428Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 70
     end: 78
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:e0e9288c607d26357171f58ce0018c1a3b4c69fb4c1e4582baa39134141c27d2
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     file cannot be accessed or parsed.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # readIndex

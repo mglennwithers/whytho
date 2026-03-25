@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/python.ts::kind
 file: src/core/parser/plugins/python.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:33.513Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 77
     end: 77
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:91c94d4ecdf74de7a8118e0cc94e5f913e439a822d6a1b0354f3af9143056608
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     indented functions in Python source code are treated as methods rather than standalone functions.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # kind

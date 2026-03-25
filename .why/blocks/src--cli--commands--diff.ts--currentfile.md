@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/diff.ts::currentFile
 file: src/cli/commands/diff.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-25T02:10:26.308Z"
+updated: "2026-03-25T04:22:28.184Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 94
     end: 94
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:c9c0a1244e66a54b6da5ae68f0554e6e963c64c0aea40cb6f71cd3f4e68ffe5b
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     diff operation, serving as state that persists across loop iterations or conditional branches.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # currentFile

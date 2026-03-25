@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/go.ts::pkgAlias
 file: src/core/relationships/scanner-plugins/go.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:03.217Z"
+updated: "2026-03-25T04:22:35.842Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 109
     end: 109
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:0a7cfcd27b07bceee1bec9b10b43fdbcd9e9ea81a343b50f600aa4156831b862
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     dependency scanning.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # pkgAlias

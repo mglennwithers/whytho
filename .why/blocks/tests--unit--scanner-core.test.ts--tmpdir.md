@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/scanner-core.test.ts::tmpDir
 file: tests/unit/scanner-core.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.641Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 25
     end: 25
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:951c5dd13478a966e0ff228349d2c3f019bef9cb7aaaf307fa4ba1f9f4fb98dd
   structural:
     kind: const
@@ -28,7 +28,7 @@ identity:
   semantic_fingerprint: Creates a temporary directory with a prefixed name in the system's temp location for test isolation purposes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # tmpDir

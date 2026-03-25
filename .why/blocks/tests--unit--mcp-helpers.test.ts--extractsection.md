@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/mcp-helpers.test.ts::extractSection
 file: tests/unit/mcp-helpers.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.260Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 11
     end: 16
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:f59bbca5c85c45b514cdcd2d9abdf193c0b0a1ee2413e44843905b90b65c6dbc
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     or end of document, with whitespace normalization.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # extractSection

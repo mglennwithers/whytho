@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/rust.ts::currentImplType
 file: src/core/parser/plugins/rust.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:33.637Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 87
     end: 87
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:c4e53c96c5dc11cf79755520be2fdaf96202091d409284decc5767480db6ba85
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     about which implementation context it is processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # currentImplType

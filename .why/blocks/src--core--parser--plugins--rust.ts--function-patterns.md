@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/rust.ts::FUNCTION_PATTERNS
 file: src/core/parser/plugins/rust.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:33.668Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 28
     end: 36
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:03c451fbe75c8c4046c61cdbc1119a04b14583bfed694184b86aeb5a7be3bab9
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     supporting visibility modifiers, async functions, and generic type parameters.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # FUNCTION_PATTERNS

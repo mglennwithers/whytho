@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/python.ts::i
 file: src/core/parser/plugins/python.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:33.491Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/python.ts::i
   line_range:
-    start: 110
-    end: 110
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:c667aef12f87d5df383214438616f4bbd4114a81127ec897e326b66c317b14c7
+    start: 54
+    end: 54
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
+  content_hash: sha256:888df20915c2195ad1d95eaf456b28b7df3bd7f68d5c3f59265277a968af8d0f
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     from lineIdx-1 to 0). This pattern typically searches or processes content in reverse order.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # i

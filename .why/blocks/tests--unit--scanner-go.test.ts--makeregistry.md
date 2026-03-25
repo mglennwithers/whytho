@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/scanner-go.test.ts::makeRegistry
 file: tests/unit/scanner-go.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.682Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 5
     end: 9
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:fa1865845e888b66f99c41bb1dfaed45991f60603fecc4228147782e250615f7
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     (everything before the first `::`), likely for creating a lookup registry of categorized items.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # makeRegistry

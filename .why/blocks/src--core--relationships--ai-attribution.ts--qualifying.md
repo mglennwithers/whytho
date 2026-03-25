@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/ai-attribution.ts::qualifying
 file: src/core/relationships/ai-attribution.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:35.332Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 37
     end: 39
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:9aad92ab7d80b381b9ea76b472a5b02f7e14f76d054d8ae56f6095991ffdcc18
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     their frontmatter metadata.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # qualifying

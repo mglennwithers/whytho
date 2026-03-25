@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/typescript.ts::exportedName
 file: src/core/relationships/scanner-plugins/typescript.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:03.870Z"
+updated: "2026-03-25T04:22:36.635Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 106
     end: 106
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:ff0edf0c86b7b1266232978ab1aa1502e57904e2874615bda4223b7da955daac
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     nullish coalescing to select between two alternatives.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # exportedName

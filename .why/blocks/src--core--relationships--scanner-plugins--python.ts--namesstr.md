@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/python.ts::namesStr
 file: src/core/relationships/scanner-plugins/python.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:03.460Z"
+updated: "2026-03-25T04:22:36.159Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 63
     end: 63
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:c7b095680fbb78ec93d2c5c379d82d1252c7b8e019b14bbe8a951c76ce6ba46b
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     what appears to be a Python dependency scanner.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # namesStr

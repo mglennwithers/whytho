@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/typescript.ts::ASTNode
 file: src/core/relationships/scanner-plugins/typescript.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:03.810Z"
+updated: "2026-03-25T04:22:36.559Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 52
     end: 65
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:460df23e1e6ce6065c81e7685842a7f934ee956132add09a33d75716105a3e2e
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     declarations, class definitions) with an escape hatch for arbitrary additional properties.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # ASTNode

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/annotate-block.ts::parseBlockAnnotationResponse
 file: src/ai/prompts/annotate-block.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-24T09:38:20.061Z"
+updated: "2026-03-25T04:22:26.603Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 50
     end: 74
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:bdf6cfcea0cdd6011c6c26839a49547747b7f83f0614d9f26bafc4aad15e8530
   structural:
     kind: function
@@ -27,7 +27,7 @@ identity:
     `---` delimiter line.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # parseBlockAnnotationResponse

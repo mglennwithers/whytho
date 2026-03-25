@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/generic.ts::match
 file: src/core/parser/plugins/generic.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:25.492Z"
+updated: "2026-03-25T04:22:33.270Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 76
     end: 76
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:e134378cd661a79d0f7a01c7b86f0d3d3585152443c6008ff1c3f90300ce3db0
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     evaluation of match success or capture groups.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # match

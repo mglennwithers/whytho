@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/identity/election.ts::hashMatchIdx
 file: src/core/identity/election.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:01.465Z"
+updated: "2026-03-25T04:22:32.853Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 73
     end: 73
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:91b2de9e620a5d844e5104dfb47e5777506b976a6614163d02577e9c5f09afba
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     validation of that candidate's position in an array.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # hashMatchIdx

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/ai-attribution.test.ts::makeStubProvider
 file: tests/unit/ai-attribution.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.102Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 55
     end: 63
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:ed3de701996e0ef5274c084695137ffd4eecb77447a8c05b818fcc49116816be
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     implementations of semantic fingerprint matching that always returns no match.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # makeStubProvider

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/scanner-go.test.ts::e
 file: tests/unit/scanner-go.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.670Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 7
     end: 7
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:89ca3146759bccec22b5215bfc7c99f657ef627e5f58a123d975d2e64ce14c7a
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     storing a mapping where both the key and the extracted prefix are associated.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # e

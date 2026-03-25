@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/rust.ts::RustBlockPattern
 file: src/core/parser/plugins/rust.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:33.794Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 21
     end: 26
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:1cd2fe5405f6debab30049c344c88a10f5d8af22c01ac46f4ca00a4525b11557
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     pattern, and named group indices for extracting identifiers and parameters.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # RustBlockPattern

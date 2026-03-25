@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/ai-attribution.ts::existing
 file: src/core/relationships/ai-attribution.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:35.300Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 106
     end: 106
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:f76f1e15288bb1451b112636e3dd59acae49f36de2f4fdc9f18444d544a9d47b
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the property is undefined. This pattern suggests defensive programming to enable safe array mutations downstream.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # existing

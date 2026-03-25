@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/graph.ts::out
 file: src/core/relationships/graph.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:26.413Z"
+updated: "2026-03-25T04:22:35.603Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 21
     end: 21
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:8e4d2ee90155cea014ab19cc724d23da063eb7fc168aed6390945eb6b8881c55
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     directional metadata.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # out

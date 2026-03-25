@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner.ts::result
 file: src/core/relationships/scanner.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T02:10:30.076Z"
+updated: "2026-03-25T04:22:37.238Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 116
     end: 121
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:7d1d21786028350eba1d42c6d6d3cf41eafc681f509770b3ba64557e3155e6db
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     found, written, and skipped), suggesting this object accumulates results throughout a scanning operation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # result

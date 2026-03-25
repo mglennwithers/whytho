@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner.ts::registerScannerPlugin
 file: src/core/relationships/scanner.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T02:10:30.014Z"
+updated: "2026-03-25T04:22:37.185Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 72
     end: 74
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:e6b894bd8896ddc9d76ad7757349e62da098e792dfc974c7bd7d5314ccf37357
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     execution system where newly registered plugins take precedence.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # registerScannerPlugin

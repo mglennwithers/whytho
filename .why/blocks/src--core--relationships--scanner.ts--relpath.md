@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner.ts::relPath
 file: src/core/relationships/scanner.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T02:10:30.049Z"
+updated: "2026-03-25T04:22:37.218Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 93
     end: 93
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:f55547d32d48de0057a80024e10340a180f5cce10f0cc884e1c84f3e6c321df6
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     This is the entry point of a loop that likely analyzes relationships for each file.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # relPath

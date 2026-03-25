@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/fixtures/sample.ts::generateToken
 file: tests/fixtures/sample.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:28.662Z"
+updated: "2026-03-25T04:22:39.993Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 16
     end: 22
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:aa963a1487f3f1ef38c1e4012a78ecab6e946d54426edbb9060b20617dd38efa
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     as a test fixture to create consistent token objects for unit testing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # generateToken

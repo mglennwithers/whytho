@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/frontmatter/validate.ts::obj
 file: src/core/frontmatter/validate.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:24.077Z"
+updated: "2026-03-25T04:22:31.906Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 21
     end: 21
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:24388b897a15279bb3f97458d9fe9005d6cac13fff1f83ca5160637feb32f575
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     type-safe property access in subsequent validation logic.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # obj

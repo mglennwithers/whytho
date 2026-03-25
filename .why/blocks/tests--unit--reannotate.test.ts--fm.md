@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/reannotate.test.ts::fm
 file: tests/unit/reannotate.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.512Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: tests/unit/reannotate.test.ts::fm
   line_range:
-    start: 68
-    end: 75
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:a40483801703eb36f8dd3f52872f427853f50d72b9b728e9f22a0f6173a9d314
+    start: 28
+    end: 48
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
+  content_hash: sha256:4cb44379457ab36704de3f372688d81e0073bfc140343dabdbc65766bd840cd5
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     tracking information for use in unit tests.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # fm

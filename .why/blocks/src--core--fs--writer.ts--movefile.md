@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/writer.ts::moveFile
 file: src/core/fs/writer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:01.205Z"
+updated: "2026-03-25T04:22:32.456Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 32
     end: 41
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:23e5576770fab26fe48886bc3822711e3c882257da29cb7a84581a02acfa8064
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     that copies and deletes the file if a rename operation fails (typically due to cross-device boundaries).
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # moveFile

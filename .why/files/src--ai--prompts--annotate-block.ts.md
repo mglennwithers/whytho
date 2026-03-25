@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/ai/prompts/annotate-block.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-24T09:38:19.406Z"
+updated: "2026-03-25T04:22:25.772Z"
 updated_by_session: inferred
 parent_folder: src/ai/prompts/
 sessions: []

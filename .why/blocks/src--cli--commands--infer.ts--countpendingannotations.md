@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::countPendingAnnotations
 file: src/cli/commands/infer.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-25T02:10:26.922Z"
+updated: "2026-03-25T04:22:28.805Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 80
     end: 121
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:62b138b533607777b42ac289813103d5a5af512c1590d2af86aaf08385d653b6
   structural:
     kind: function
@@ -32,7 +32,7 @@ identity:
     designated directory structure.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/fs/layout.ts::blockAnnotationPath

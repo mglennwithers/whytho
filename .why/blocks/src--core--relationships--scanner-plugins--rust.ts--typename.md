@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/rust.ts::typeName
 file: src/core/relationships/scanner-plugins/rust.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:03.760Z"
+updated: "2026-03-25T04:22:36.497Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 114
     end: 114
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:af325f4ea5850113da786e1b6a7d4500ad3f66a0f1f304056a44ce338a5c8f23
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     operation appears to parse structural information from Rust source code text.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # typeName

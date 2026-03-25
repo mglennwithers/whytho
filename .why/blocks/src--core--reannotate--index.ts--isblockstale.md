@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::isBlockStale
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:02.593Z"
+updated: "2026-03-25T04:22:34.958Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 56
     end: 65
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:9249c2506a5aea5b1c0d93bf074b88cfcd5af7b1603f2ff1da4be68c314eb96f
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     re-annotation flag, content hash mismatch, or presence in a changed files list.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # isBlockStale

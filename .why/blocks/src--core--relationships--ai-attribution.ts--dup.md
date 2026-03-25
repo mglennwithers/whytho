@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/ai-attribution.ts::dup
 file: src/core/relationships/ai-attribution.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:35.292Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 109
     end: 109
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:277cc1034599b4f4b44503c1fb9fd10d0afc61f413dcdf42a495f2a36766ce12
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     relationship type of a given triple object.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # dup

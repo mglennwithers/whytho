@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/build.ts::folders
 file: src/core/index-builder/build.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:25.262Z"
+updated: "2026-03-25T04:22:33.056Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 36
     end: 36
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:f804cab4785f63c0f7647174c323c37d42c60b22c995a4589435e7bb4798aeed
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     index-building process.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # folders

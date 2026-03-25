@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::findLatestSessionId
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-25T02:10:31.329Z"
+updated: "2026-03-25T04:22:38.727Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 358
     end: 367
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:94319ca6ad46bf8776fea35da4927233735987fff91fa216ed91ece9ff5065c7
   structural:
     kind: function
@@ -32,7 +32,7 @@ identity:
     "latest session" lookup pattern based on file naming conventions.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/fs/layout.ts::sessionsDir

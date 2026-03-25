@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::sha
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-25T02:10:32.493Z"
+updated: "2026-03-25T04:22:39.684Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 544
     end: 546
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:6a1edba6f15d9211c79dd10625e087e40829a536adbeff45b1e95a056ae42d24
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     property, using conditional type narrowing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # sha

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::repoRoot
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-25T02:10:26.060Z"
+updated: "2026-03-25T04:22:27.977Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 40
     end: 40
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:a3e3be7155d7b789ade4b2b796c5ca38cf1a81273fec3b710ce19b7899d98e9d
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     function, storing the result for subsequent use in the annotate command workflow.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # repoRoot

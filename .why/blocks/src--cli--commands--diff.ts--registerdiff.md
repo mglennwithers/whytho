@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/diff.ts::registerDiff
 file: src/cli/commands/diff.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-25T02:10:26.406Z"
+updated: "2026-03-25T04:22:28.252Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 71
     end: 154
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:f40bcbcfcd71528acd263a555fc34681cd3532c4a6a48f02e8a87ec483233e2d
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     index, colorizing additions/deletions while overlaying documentation context for modified files.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/git/repo.ts::findRepoRoot

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/relationship-attribution.ts::triple
 file: src/ai/prompts/relationship-attribution.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:47:56.776Z"
+updated: "2026-03-25T04:22:26.890Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 120
     end: 120
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:84838e0ca1b8c27851a85e27565970bd954a9f56e08135cf6f4031de0d95737b
   structural:
     kind: const
@@ -28,7 +28,7 @@ identity:
   semantic_fingerprint: Type assertion casting an item object to a structured triple containing block, type, and target string properties.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # triple

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/scan.ts::commitSha
 file: src/cli/commands/scan.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:47:59.767Z"
+updated: "2026-03-25T04:22:30.344Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 108
     end: 108
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:ec1007e703b71d0b3b722c8c92d48ccb009eca658ce8c2a6c39c9eea8d104794
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     root path, storing the result in a const variable for use in the scan command.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # commitSha

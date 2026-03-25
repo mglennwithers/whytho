@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/incremental.ts::getBlocksForChangedFiles
 file: src/core/resolution/incremental.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:26.442Z"
+updated: "2026-03-25T04:22:37.329Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 8
     end: 16
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:2cda71469d1d7595635c3c47c52893a113de60487f26466fbe20500a160877be
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     changed files, with cross-platform path normalization.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/fs/reader.ts::readAllBlocks

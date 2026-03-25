@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/rust.ts::count
 file: src/core/parser/plugins/rust.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:33.629Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/rust.ts::count
   line_range:
-    start: 144
-    end: 144
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:e0f3f08729455200db2e1c742e74f7f28a78aaa6b40791077e1749608463a3f2
+    start: 118
+    end: 118
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
+  content_hash: sha256:771323c22e842b551294d4481a2bddc049189eb36e28a2f5ebd5021ce35a659e
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     been encountered.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # count

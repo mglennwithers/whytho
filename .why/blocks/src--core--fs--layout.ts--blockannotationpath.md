@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/layout.ts::blockAnnotationPath
 file: src/core/fs/layout.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:24.237Z"
+updated: "2026-03-25T04:22:32.062Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 111
     end: 113
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:fa4df15d95da121833a9fd7ce4c85b7b6f00102e662dc1051d99ccbf41ecdc1d
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     symbolic reference identifier.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # blockAnnotationPath

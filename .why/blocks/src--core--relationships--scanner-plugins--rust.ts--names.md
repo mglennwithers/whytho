@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/rust.ts::names
 file: src/core/relationships/scanner-plugins/rust.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:03.644Z"
+updated: "2026-03-25T04:22:36.364Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 63
     end: 63
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:d4b03b4a3e9f2d513c8ebe133dc2660c8722986014bcb53f8d6bc5ca3bfd46ed
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     each, and filters out empty strings to produce a clean array of names.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # names

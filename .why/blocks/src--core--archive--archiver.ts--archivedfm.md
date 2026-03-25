@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/archive/archiver.ts::archivedFm
 file: src/core/archive/archiver.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:00.808Z"
+updated: "2026-03-25T04:22:31.610Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 31
     end: 37
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:dc5b1743cbd9d47315ba188737e72bab8d96f8bf9a98caa3f2113206df1253e5
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     session ID, and commit hash fields that track archival provenance.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/types.ts::BlockFrontmatter

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/token-counter.ts::result
 file: src/ai/token-counter.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:27.507Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/ai/token-counter.ts::result
   line_range:
-    start: 21
-    end: 21
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:1b963324341ce60d2692084e11f37cc5f09fe1540c03cb195eb51f9728107cdc
+    start: 13
+    end: 13
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
+  content_hash: sha256:76aabe8d363d0f7eadd9fc28898a57aa563b61e7951c2f41abc5fcae3175c103
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     subsequent processing or return.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # result

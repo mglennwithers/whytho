@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/push.ts::data
 file: src/cli/commands/push.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:47:59.331Z"
+updated: "2026-03-25T04:22:29.861Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 11
     end: 11
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:1b16200d7a7e87b2f3381c0ff3f1d003a438cd722e97b2c47d7189a6e6ccb559
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     assignment operations within the push command execution flow.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # data

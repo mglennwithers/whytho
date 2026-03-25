@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/scanner-typescript.test.ts::describe(typescriptScannerPlugin)
 file: tests/unit/scanner-typescript.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.741Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 11
     end: 91
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:20ccb762d8d04126acef3adcb7581f120eaf79affeddc39d834dbf72bc6b8c1d
   structural:
     kind: describe
@@ -31,7 +31,7 @@ identity:
     test files and external modules.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # describe(typescriptScannerPlugin)

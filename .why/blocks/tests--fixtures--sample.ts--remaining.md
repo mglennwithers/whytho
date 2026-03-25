@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/fixtures/sample.ts::remaining
 file: tests/fixtures/sample.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:28.685Z"
+updated: "2026-03-25T04:22:40.006Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 28
     end: 28
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:527f6bdfedc1e86570f58ffab67fc978bb494b3ae098ebe7362d656b6edd177b
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     expiration timestamp.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # remaining

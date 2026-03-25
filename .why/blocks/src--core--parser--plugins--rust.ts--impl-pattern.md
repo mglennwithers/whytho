@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/rust.ts::IMPL_PATTERN
 file: src/core/parser/plugins/rust.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:33.685Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 75
     end: 75
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:60527c73ae92f44f9a89befe812e57ccb95b63c3a84841725aa2d77078580f85
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     implementations. This pattern is used to parse and identify Rust implementation declarations during code analysis.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # IMPL_PATTERN

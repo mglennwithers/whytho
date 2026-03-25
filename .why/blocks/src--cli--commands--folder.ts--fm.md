@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/folder.ts::fm
 file: src/cli/commands/folder.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:47:57.905Z"
+updated: "2026-03-25T04:22:28.337Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 36
     end: 36
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:02b709e9c182c1645fcd2023556005e0184e162103a301c295af2756ecd3b083
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     within a folder command context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/types.ts::FolderFrontmatter

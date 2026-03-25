@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/rust.ts::key
 file: src/core/relationships/scanner-plugins/rust.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:03.589Z"
+updated: "2026-03-25T04:22:36.305Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 26
     end: 26
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:067e4cec14c86af6292572d4f037105669c9db5bee592db823371a6c7631b2a4
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     scanner plugin.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # key

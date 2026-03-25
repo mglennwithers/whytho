@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::SPEC_VERSION
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-25T04:07:28.574Z"
+updated: "2026-03-25T04:22:31.855Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 2
     end: 2
-    commit: 498199f818951a78c685a05e25318822101986a6
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:528bbcfb521c7b4e0da2939a8da5b04998e0ac4dd89cd2e04200c75b8b7dbc36
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     source of truth for version tracking across the codebase.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 498199f818951a78c685a05e25318822101986a6
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # SPEC_VERSION

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/parser-python.test.ts::describe(pythonPlugin)
 file: tests/unit/parser-python.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.325Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 26
     end: 120
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:1d8688f6abacb2a3e1f93cd0076e9406782e3b37e63d6c88edda6cf1e07dc179
   structural:
     kind: describe
@@ -31,7 +31,7 @@ identity:
     scope, line numbers).
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # describe(pythonPlugin)

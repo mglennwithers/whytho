@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/events.ts::postEventsToWebhook
 file: src/core/relationships/events.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:02.946Z"
+updated: "2026-03-25T04:22:35.505Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 88
     end: 111
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:e69a7e9975e850d0106eb6363bcd6d7286a050c19464ede01df01e013cc94c11
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     that resolves regardless of success or failure outcome.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/types.ts::HookEvent

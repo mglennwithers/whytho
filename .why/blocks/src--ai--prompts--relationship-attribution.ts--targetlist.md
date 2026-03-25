@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/relationship-attribution.ts::targetList
 file: src/ai/prompts/relationship-attribution.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:47:56.766Z"
+updated: "2026-03-25T04:22:26.881Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 55
     end: 55
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:e16f8f15f039a73b267a4d3f31e6d15ef01249bbcd3807864bb638291ce366ee
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     a leading dash and space.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # targetList

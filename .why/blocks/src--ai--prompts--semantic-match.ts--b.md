@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/semantic-match.ts::b
 file: src/ai/prompts/semantic-match.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-24T18:47:56.789Z"
+updated: "2026-03-25T04:22:26.904Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 6
     end: 6
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:f16e3d8ed77be21284bc09fd80280b48e9beedc7fa2a6001ad55b460adb01c5c
   structural:
     kind: const
@@ -26,7 +26,7 @@ identity:
     reference.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # b

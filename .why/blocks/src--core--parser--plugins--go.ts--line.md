@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/go.ts::line
 file: src/core/parser/plugins/go.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:33.393Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/go.ts::line
   line_range:
-    start: 110
-    end: 110
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 70
+    end: 70
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:9dcd96150f3db42bcd659c82db04644e26b67d48e34c22962419d5a07198b652
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     Go source code line-by-line.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # line

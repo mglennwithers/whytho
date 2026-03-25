@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/diff.ts::repoRoot
 file: src/cli/commands/diff.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-25T02:10:26.423Z"
+updated: "2026-03-25T04:22:28.262Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 78
     end: 78
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:a3e3be7155d7b789ade4b2b796c5ca38cf1a81273fec3b710ce19b7899d98e9d
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     result in a constant for use in diff operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/git/repo.ts::findRepoRoot

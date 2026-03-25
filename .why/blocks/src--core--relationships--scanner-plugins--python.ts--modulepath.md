@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/python.ts::modulePath
 file: src/core/relationships/scanner-plugins/python.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:03.442Z"
+updated: "2026-03-25T04:22:36.131Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 27
     end: 27
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:385dc7257478968b3f9dbf526f963ef9ee2d2fedf33a3e3fff9e0db8558d802e
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     separators to forward slashes, with fallback to directory if no module part exists.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # modulePath

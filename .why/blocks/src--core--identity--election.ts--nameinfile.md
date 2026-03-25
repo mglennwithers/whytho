@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/identity/election.ts::nameInFile
 file: src/core/identity/election.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:01.481Z"
+updated: "2026-03-25T04:22:32.870Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 170
     end: 170
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:56191be9ca934f0e42e803511a0482f4568d0e2eeb6f852851984caae287b251
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     candidate names, returning a boolean result that is conditionally dependent on blockName being truthy.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # nameInFile

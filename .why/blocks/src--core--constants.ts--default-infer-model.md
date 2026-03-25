@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::DEFAULT_INFER_MODEL
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-25T04:07:28.462Z"
+updated: "2026-03-25T04:22:31.748Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 22
     end: 22
-    commit: 498199f818951a78c685a05e25318822101986a6
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:37636e9d364ddb143e9cf5138141334e9452ac2c015750f5f6a4b72aca6c7af1
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     pinpointing Claude Haiku version 4.5 from October 2025.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 498199f818951a78c685a05e25318822101986a6
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # DEFAULT_INFER_MODEL

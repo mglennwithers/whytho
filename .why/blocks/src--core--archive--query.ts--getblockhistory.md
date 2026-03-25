@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/archive/query.ts::getBlockHistory
 file: src/core/archive/query.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:23.831Z"
+updated: "2026-03-25T04:22:31.656Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 15
     end: 20
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:a5b5d6b9c811395427872052fa41c837236b6f33311b581bc62d7eac7f427902
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     lower-level block-finding function, parameterized by a root directory reference and a symbolic ref identifier.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/types.ts::AnnotationFile

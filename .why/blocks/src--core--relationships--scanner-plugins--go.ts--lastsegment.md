@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/go.ts::lastSegment
 file: src/core/relationships/scanner-plugins/go.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:03.177Z"
+updated: "2026-03-25T04:22:35.798Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 58
     end: 60
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:820f3bb6c3772ca3ec1faab1711ae7a16c52aeffbed8a3898099b93312e61f19
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     no segments exist. Used to isolate package or module names from full import paths.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # lastSegment

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/init.ts::dirs
 file: src/core/fs/init.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:01.025Z"
+updated: "2026-03-25T04:22:31.966Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 41
     end: 52
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:856064562814e8be137331b4fe6f186b11c86b759a780e3f1c51f3d34b4773fe
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     including active and archived storage locations for sessions, folders, files, and blocks.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # dirs

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/ai-attribution.ts::rawCount
 file: src/core/relationships/ai-attribution.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:35.347Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 83
     end: 83
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:d4341b264af05f12cce126ab9066e329abb36f1914fac6cd786b90467e997df0
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     in AI attribution logic.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # rawCount

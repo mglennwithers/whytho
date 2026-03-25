@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::PATH_SEPARATOR
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-25T04:07:28.517Z"
+updated: "2026-03-25T04:22:31.796Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 14
     end: 14
-    commit: 498199f818951a78c685a05e25318822101986a6
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:7c5ea1f3027c70446201341b8f1d5eac0512f82f63037172663c70a9a292ec2c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     throughout the codebase. This appears to be a custom path notation system distinct from filesystem paths.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 498199f818951a78c685a05e25318822101986a6
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # PATH_SEPARATOR

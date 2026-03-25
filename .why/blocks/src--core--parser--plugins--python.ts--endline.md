@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/python.ts::endLine
 file: src/core/parser/plugins/python.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:33.469Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 70
     end: 70
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:583ad4ac06f6a0d92663327f019ccff858bf15f10922355e05d4b31bb019b5a0
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     levels within a collection of source lines, starting from a given position.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # endLine

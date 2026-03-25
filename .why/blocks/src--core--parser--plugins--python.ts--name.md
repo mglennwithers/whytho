@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/python.ts::name
 file: src/core/parser/plugins/python.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:33.558Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 62
     end: 62
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:0bb6d9ab260394cf570bc5515be8788a8fa087a0aacfe354d822e82bf4f25551
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     result in a variable for subsequent use.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # name

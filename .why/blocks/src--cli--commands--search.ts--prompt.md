@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/search.ts::prompt
 file: src/cli/commands/search.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:47:59.996Z"
+updated: "2026-03-25T04:22:30.603Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 130
     end: 130
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:0db6787cb111216d58991cce0572564f5087e9675f483adc678a5cc4b1bf01d7
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     for semantic analysis or LLM processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # prompt

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::reannotateBlock
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:02.702Z"
+updated: "2026-03-25T04:22:35.073Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 222
     end: 289
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:e1d118cf8d3f110db7e62aed39ba998690936126d62dfaec8719401f6bdce2e3
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     updating metadata (hashes, timestamps, fingerprints), and persisting the refreshed annotation to disk.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # reannotateBlock

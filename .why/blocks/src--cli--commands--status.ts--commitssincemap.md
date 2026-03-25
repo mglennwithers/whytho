@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::commitsSinceMap
 file: src/cli/commands/status.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T02:10:28.361Z"
+updated: "2026-03-25T04:22:30.898Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 111
     end: 111
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:4fc307b2a1864c58391acfcfde7b57a1f954dc94d9158e726cd1d27053021616
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     organizing commit frequency data by some categorical key.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # commitsSinceMap

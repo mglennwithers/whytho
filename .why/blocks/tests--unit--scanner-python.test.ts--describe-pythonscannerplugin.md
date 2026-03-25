@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/scanner-python.test.ts::describe(pythonScannerPlugin)
 file: tests/unit/scanner-python.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.688Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 11
     end: 54
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:f2fdc53fd5312ee18742a02ff3b004d72f1f42ee7c4fe02f8e9ac1733c897b99
   structural:
     kind: describe
@@ -30,7 +30,7 @@ identity:
     tests) from Python import statements and class definitions, validating correct source and target attribution.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # describe(pythonScannerPlugin)

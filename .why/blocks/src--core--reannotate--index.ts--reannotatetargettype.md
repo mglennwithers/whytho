@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::ReannotateTargetType
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:02.788Z"
+updated: "2026-03-25T04:22:35.156Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 20
     end: 20
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:e50f7639843931d0480406cc21552f0217634a634dceaf3bf82c3bd3586a820d
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     folders. This acts as a discriminator for different granularity levels of code re-annotation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # ReannotateTargetType

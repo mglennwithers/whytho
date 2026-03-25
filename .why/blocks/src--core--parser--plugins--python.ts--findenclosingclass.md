@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/python.ts::findEnclosingClass
 file: src/core/parser/plugins/python.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:33.476Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 109
     end: 115
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:d61417a547e4e67052b2a62010b2448aeb652577ce1f72203ec827c78cd8174b
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     returning the class name if found.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # findEnclosingClass

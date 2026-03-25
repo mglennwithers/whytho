@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/semantic-search.ts::AnnotationEntry
 file: src/ai/prompts/semantic-search.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:26.966Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 1
     end: 5
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:71c08ccd72a32fc1176f46e6d4ef014e7dbbbd1e743c37f7102c8eb10d09e091
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     folders, sessions) used in semantic search operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # AnnotationEntry

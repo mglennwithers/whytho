@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/anthropic.ts::batch
 file: src/ai/providers/anthropic.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T18:47:56.860Z"
+updated: "2026-03-25T04:22:27.035Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 20
     end: 29
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:576d6b1414827f21fc48e40c6bf370ddfdfb10cc924cb7825abb5b16cbe518fb
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     parameters into the provider's expected request structure, then submits them as a batch job.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # batch

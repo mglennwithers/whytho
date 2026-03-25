@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/scanner-core.test.ts::makeTempWhyDir
 file: tests/unit/scanner-core.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.631Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 24
     end: 32
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:aaf577a8695128b853b145fc93e80e04c7f595b9dece382e6d93650bfaddeaf5
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     `files`, `folders`, `sessions`), returning both the temp root and the `.why` directory path for test isolation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # makeTempWhyDir

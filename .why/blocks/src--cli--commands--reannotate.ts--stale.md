@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/reannotate.ts::stale
 file: src/cli/commands/reannotate.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:47:59.525Z"
+updated: "2026-03-25T04:22:30.071Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 53
     end: 53
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:9a3b67ac69429a3e670f1a62c6762a6debb3b9130e2f468dec81f2b03b23b5fb
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     repository, storing the result for subsequent processing in a reannotation workflow.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # stale

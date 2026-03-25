@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/relationship-attribution.ts::parseAttributionResponse
 file: src/ai/prompts/relationship-attribution.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:47:56.744Z"
+updated: "2026-03-25T04:22:26.855Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 92
     end: 133
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:f5da6ca47a793b99d433118bafc96c51fd0ab999d2f2ca7e751cba3f3af18338
   structural:
     kind: function
@@ -32,7 +32,7 @@ identity:
     hallucinations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # parseAttributionResponse

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::commitSha
 file: src/core/push/index.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-25T02:10:29.274Z"
+updated: "2026-03-25T06:18:21.882Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 142
     end: 142
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: 9836b12bcb7a17ca56ea6bedf436213596319931
   content_hash: sha256:eb023176b9a436d09d34d24a8509519fce004e0c2ed620ecd751556cc62d1419
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     operation fails.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: 9836b12bcb7a17ca56ea6bedf436213596319931
 ---
 
 # commitSha

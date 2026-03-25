@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/build.ts::fm
 file: src/core/index-builder/build.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:25.253Z"
+updated: "2026-03-25T04:22:33.048Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 25
     end: 25
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:02b709e9c182c1645fcd2023556005e0184e162103a301c295af2756ecd3b083
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the index-building process.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # fm

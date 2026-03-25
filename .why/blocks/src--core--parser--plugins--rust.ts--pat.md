@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/rust.ts::pat
 file: src/core/parser/plugins/rust.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:33.786Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/rust.ts::pat
   line_range:
-    start: 135
-    end: 135
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:dfcccda2f2e459b4c77469fd09ed83beb2c85c7724b6e34700efdb9d1b461e1d
+    start: 107
+    end: 107
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
+  content_hash: sha256:0518ba17da971a636c12262f751da860c35ac28c0f0c5e3bfb2d43adeab44aa1
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     validation logic against Rust code structures in sequence.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # pat

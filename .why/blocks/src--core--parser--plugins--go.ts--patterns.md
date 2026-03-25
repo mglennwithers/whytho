@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/go.ts::PATTERNS
 file: src/core/parser/plugins/go.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:33.437Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 24
     end: 58
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:20dd88b981d9f3e7124910fec522207ec41a9900ef17d1403e74d516077c1036
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     by extracting their names, parameters, and receiver types using regex patterns.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # PATTERNS

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::registerStatus
 file: src/cli/commands/status.ts
 created: "2026-03-21T11:05:48.446Z"
-updated: "2026-03-25T02:10:28.645Z"
+updated: "2026-03-25T04:22:31.161Z"
 created_by_session: agent-push
 updated_by_session: agent-push
 identity:
@@ -12,7 +12,7 @@ identity:
   line_range:
     start: 81
     end: 261
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:ebf8c07540ac61a52b2d1420e0fb65cc5d760215d0a6a8b1ab42171f2bce8949
   structural:
     kind: function
@@ -25,7 +25,7 @@ identity:
     triggers source file walking + parsing. This mirrors git status's philosophy of being
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/git/repo.ts::findRepoRoot

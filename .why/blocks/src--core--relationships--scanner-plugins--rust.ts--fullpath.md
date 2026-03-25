@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/rust.ts::fullPath
 file: src/core/relationships/scanner-plugins/rust.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:03.553Z"
+updated: "2026-03-25T04:22:36.267Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 76
     end: 76
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:760c8213b3f0f0feefb330dc2218c4e4600c8d87bd41a66a3dcbc1ba2392de45
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     processing in a Rust dependency scanner.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # fullPath

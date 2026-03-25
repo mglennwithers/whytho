@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/token-counter.ts::fmt
 file: src/ai/token-counter.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:27.495Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 32
     end: 32
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:f18b18c3e6518a1b8a7bf46273e634a536375a63509d7d3bc93de0f349c1aa0a
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     counts or similar numeric metrics in a user-friendly manner.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # fmt

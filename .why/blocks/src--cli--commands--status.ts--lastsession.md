@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::lastSession
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-25T02:10:28.561Z"
+updated: "2026-03-25T04:22:31.080Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 124
     end: 125
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:ee0de32c91ce9a8299ab3a9c560e2cd750c172293d819d3a634e4b5b7e22d5b7
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     creation timestamp in descending order, and extracting the first element.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # lastSession

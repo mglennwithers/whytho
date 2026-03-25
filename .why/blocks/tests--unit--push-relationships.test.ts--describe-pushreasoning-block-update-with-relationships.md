@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/push-relationships.test.ts::describe(pushReasoning - block update with relationships)
 file: tests/unit/push-relationships.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.412Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 116
     end: 244
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:26b9ba9652dd664524495521034a1099a256384bf23f844e6a446da92a8e7d19
   structural:
     kind: describe
@@ -30,7 +30,7 @@ identity:
     relationships and body text when updating existing block annotations across multiple calls.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # describe(pushReasoning - block update with relationships)

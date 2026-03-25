@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/go.ts::fileDir
 file: src/core/relationships/scanner-plugins/go.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:03.081Z"
+updated: "2026-03-25T04:22:35.689Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 76
     end: 76
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:f3dae6492d53bdd3d25e17e3ca68dd2fe06928a6a9a1387b649ee8cda59b85ed
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     consistency.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # fileDir

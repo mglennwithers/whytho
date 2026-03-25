@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::fp
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:02.577Z"
+updated: "2026-03-25T04:22:34.937Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 375
     end: 375
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:b38134ab20e49cca0812677b9d7346ec8160f7de1691a4c9c55665b20b30acc4
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     variable `fp` for processing in subsequent block statements.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # fp

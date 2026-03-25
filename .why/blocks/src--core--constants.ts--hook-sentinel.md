@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::HOOK_SENTINEL
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-25T04:07:28.502Z"
+updated: "2026-03-25T04:22:31.782Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 31
     end: 31
-    commit: 498199f818951a78c685a05e25318822101986a6
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:029b950a5cb9bb9f3b603f90885a2e211fe26f12bb10df0d13315d9575c9f797
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     likely for validation, serialization, or versioning purposes in a system called "whytho".
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 498199f818951a78c685a05e25318822101986a6
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # HOOK_SENTINEL

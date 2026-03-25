@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/registry.ts::parseFile
 file: src/core/parser/registry.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-25T02:10:29.208Z"
+updated: "2026-03-25T04:22:34.285Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 25
     end: 28
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:ba02aea753264a08d0c2aef1b6f57be82aa58fee25d8cab649e51ca7e8573b4d
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     parser's parse method with the source code and file path.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/parser/types.ts::ParsedBlock

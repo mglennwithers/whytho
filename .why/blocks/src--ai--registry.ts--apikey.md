@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/registry.ts::apiKey
 file: src/ai/registry.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-25T02:10:25.377Z"
+updated: "2026-03-25T04:22:27.342Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 24
     end: 24
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:8d379507148ea61a6d7f81afbe45b79f6bd8b9a2c116e005773987078a02efc0
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     pattern decouples the key lookup from hardcoded variable names.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # apiKey

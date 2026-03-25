@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/parser-go.test.ts::describe(goPlugin)
 file: tests/unit/parser-go.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.312Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 38
     end: 125
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:068edb8f624a4272b3c0f4eb1d2c37086d6885862f78d0fac842bc55a90ef416
   structural:
     kind: describe
@@ -30,7 +30,7 @@ identity:
     methods) and assigns metadata like scope hierarchy, parameters, and line numbers.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # describe(goPlugin)

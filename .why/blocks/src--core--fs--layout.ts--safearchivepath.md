@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/layout.ts::safeArchivePath
 file: src/core/fs/layout.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:24.416Z"
+updated: "2026-03-25T04:22:32.231Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 122
     end: 134
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:3524b70e63334f2199b23c040a6dd3d37cc1b8d1dbe6d2429a2855e353a539b8
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     original path already exists, useful for archiving or renaming files without overwriting.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # safeArchivePath

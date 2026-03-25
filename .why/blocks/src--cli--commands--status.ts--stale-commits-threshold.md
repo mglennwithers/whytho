@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::STALE_COMMITS_THRESHOLD
 file: src/cli/commands/status.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T02:10:28.772Z"
+updated: "2026-03-25T04:22:31.280Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 16
     end: 16
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:21a2f31d3c7c5dc1bd79be7654201b45facfb85d3428073b42ee28358e0d2f48
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     status command context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # STALE_COMMITS_THRESHOLD

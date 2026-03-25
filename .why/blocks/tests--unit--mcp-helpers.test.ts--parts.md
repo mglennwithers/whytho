@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/mcp-helpers.test.ts::parts
 file: tests/unit/mcp-helpers.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.274Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 22
     end: 22
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:715eb283d0a77b4d95c17d5ab1ef1be167aa2d5363b21f399b4d1d3744307f2e
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     execution, possibly for constructing complex test data or assertions.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # parts

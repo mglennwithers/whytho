@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/repo.ts::getRecentGitLog
 file: src/core/git/repo.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-25T02:10:29.120Z"
+updated: "2026-03-25T04:22:32.709Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 33
     end: 40
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:7c09d356642ff99437250645a667f2719ba15c79058f5da0b731f5090977420b
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     returns an empty string on failure.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # getRecentGitLog

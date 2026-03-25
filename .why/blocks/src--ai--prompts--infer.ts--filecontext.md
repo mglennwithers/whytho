@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/infer.ts::fileContext
 file: src/ai/prompts/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:20.206Z"
+updated: "2026-03-25T04:22:26.739Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 95
     end: 99
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:18ced9b778f8f1e6817d4c68ff66d0dd4d4388514b4be242ec20538f87558171
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     truncation applied to file bodies and fallback to a comma-separated list when primary annotations are unavailable.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # fileContext

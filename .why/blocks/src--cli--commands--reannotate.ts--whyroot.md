@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/reannotate.ts::whyRoot
 file: src/cli/commands/reannotate.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:47:59.558Z"
+updated: "2026-03-25T04:22:30.097Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 40
     end: 40
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:e481246d2df3357642a60f995603c42b66b743d54e33032f1bcd5d20c0aa4593
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     `getWhyRoot`.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # whyRoot

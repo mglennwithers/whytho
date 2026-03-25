@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/layout.ts::dir
 file: src/core/fs/layout.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:24.287Z"
+updated: "2026-03-25T04:22:32.107Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 154
     end: 154
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:d87855b5ae3de4a5d0436ae0a7d0639f8d4dcd0d7f27d7d3ec0abe54d32ed582
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     result.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # dir

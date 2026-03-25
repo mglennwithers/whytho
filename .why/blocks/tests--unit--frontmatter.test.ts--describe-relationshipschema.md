@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/frontmatter.test.ts::describe(RelationshipSchema)
 file: tests/unit/frontmatter.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.195Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 56
     end: 82
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:f49f08b5d37f1f87cb0bece7996c10be209bf7373aff7badcb9ecf5750913d89
   structural:
     kind: describe
@@ -30,7 +30,7 @@ identity:
     absence, while rejecting invalid source values like 'manual'.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # describe(RelationshipSchema)

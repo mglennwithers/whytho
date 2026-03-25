@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::newPath
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-25T02:10:30.369Z"
+updated: "2026-03-25T04:22:37.557Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 186
     end: 186
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:bc1642117be665ed9bd08a97fcab2ec71c0a1208413310392fe854b9f47d28a0
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     storing the result for subsequent use in a resolution pipeline.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # newPath

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/go.ts::i
 file: src/core/parser/plugins/go.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:33.369Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/go.ts::i
   line_range:
-    start: 119
-    end: 119
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:d2f2c4acaf10051abc431935077a779aed930b1572553fedff326ced45020213
+    start: 69
+    end: 69
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
+  content_hash: sha256:888df20915c2195ad1d95eaf456b28b7df3bd7f68d5c3f59265277a968af8d0f
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     until reaching the end of the lines array.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # i

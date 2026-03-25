@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::archivedBlocks
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-25T02:10:28.239Z"
+updated: "2026-03-25T04:22:30.793Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 122
     end: 122
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:28c7e40603fae2b5b063f8d6637a327218a4c8906ec23f66eefbb7cb83682f0a
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     null-coalescing fallback to an empty object.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # archivedBlocks

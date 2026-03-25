@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::sourceBlocks
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-25T02:10:28.727Z"
+updated: "2026-03-25T04:22:31.242Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 138
     end: 138
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:cf304865b20a74ae687edea7e1812b39c4abaa48a75de74673ce50229a76f4c4
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     logic in a CLI command.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # sourceBlocks

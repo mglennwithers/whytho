@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::AnnotationFile
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T18:48:04.431Z"
+updated: "2026-03-25T04:22:37.692Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 235
     end: 239
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:bf11e8316d8a819d38896b964d27a9830e283375267122752d33c30880bdc466
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     designed to support type-safe handling of files with structured headers.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # AnnotationFile

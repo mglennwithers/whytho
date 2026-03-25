@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::fm
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-25T02:10:27.170Z"
+updated: "2026-03-25T04:22:29.042Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 285
     end: 313
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:943b423342482258b3c09a3513548328380f4a1e641a3dd218c7cf0e0baad50d
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     identity, content hashing, and inference confidence metrics for documentation/analysis purposes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # fm

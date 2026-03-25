@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/scan.ts::provider
 file: src/cli/commands/scan.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:47:59.816Z"
+updated: "2026-03-25T04:22:30.405Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 93
     end: 93
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:b7637e6e0f223fac8375241817a332ca0821dafa53ed4bf7f9afac04d7b9d8db
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     metrics tracking capabilities via a tally object.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # provider

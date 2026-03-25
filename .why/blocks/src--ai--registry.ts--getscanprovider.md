@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/registry.ts::getScanProvider
 file: src/ai/registry.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T02:10:25.456Z"
+updated: "2026-03-25T04:22:27.423Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 140
     end: 146
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:f7f26edd2016da4e0462975c5608427e0dfe284d4fe554b40861776c20dd4f7d
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     provider and fallback to a default provider, including environment variable-based API key resolution.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # getScanProvider

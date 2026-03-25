@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/parser-python.test.ts::SAMPLE_SOURCE
 file: tests/unit/parser-python.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.332Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 4
     end: 24
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:159a84c1802b1c4199e3d573c470eb3baeadd04709a343809bf9579d1182c203
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     method variations—designed as test fixture data for a Python parser unit test.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # SAMPLE_SOURCE

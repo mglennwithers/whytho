@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::parsedBlock
 file: src/core/push/index.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-25T02:10:29.470Z"
+updated: "2026-03-25T06:18:22.151Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 149
     end: 149
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: 9836b12bcb7a17ca56ea6bedf436213596319931
   content_hash: sha256:f315a03fc5cab4ca36b7d5fac433ae212976d1b55d420bd4a4d02eb20722eca1
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     initial state. This pattern is typical for iterative processing or conditional assignment of parsed data.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: 9836b12bcb7a17ca56ea6bedf436213596319931
 ---
 
 # parsedBlock

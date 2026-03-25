@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/parser-typescript.test.ts::describe(genericPlugin)
 file: tests/unit/parser-typescript.test.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:28.794Z"
+updated: "2026-03-25T04:22:40.363Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 9
     end: 37
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:231c476e3eb5b279d7a391c68b06e120c18bdb9522d7b10e558b2d16bd0537a9
   structural:
     kind: describe
@@ -30,7 +30,7 @@ identity:
     interface declarations, type aliases, and their metadata (names, line numbers) from source code.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # describe(genericPlugin)

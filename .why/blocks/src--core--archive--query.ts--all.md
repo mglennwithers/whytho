@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/archive/query.ts::all
 file: src/core/archive/query.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:23.817Z"
+updated: "2026-03-25T04:22:31.644Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 8
     end: 8
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:a1e008ed9de6f59701a0fc264f017f60cc281b655466a085ace5c6a0704ca6df
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     in a variable for subsequent use.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # all

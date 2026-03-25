@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/repo.ts::count
 file: src/core/git/repo.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T02:10:29.073Z"
+updated: "2026-03-25T04:22:32.668Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 61
     end: 61
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:aa66a88ec81275d0e567e548c9effd2e280391416f5bad15972c5d742118cdfe
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     later use.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # count

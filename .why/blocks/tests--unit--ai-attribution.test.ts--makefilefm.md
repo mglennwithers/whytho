@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/ai-attribution.test.ts::makeFileFm
 file: tests/unit/ai-attribution.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.091Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 32
     end: 38
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:400827198acb2e2af71b0eaaccc72b51a70aee79c55daf347eb99bb0a7f2d485
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     target paths into dependency relationships for test purposes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # makeFileFm

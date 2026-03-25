@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/annotate-block.ts::buildBlockAnnotationPrompt
 file: src/ai/prompts/annotate-block.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-24T09:38:20.032Z"
+updated: "2026-03-25T04:22:26.574Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 3
     end: 48
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:1435d8581123726ae2c050482c3d848a73576d8924ecfd0e1e85e16e215c692a
   structural:
     kind: function
@@ -28,7 +28,7 @@ identity:
     block metadata, source code, and optional session context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/ai/types.ts::AnnotationRequest

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/loader.ts::result
 file: src/config/loader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-25T02:10:29.035Z"
+updated: "2026-03-25T04:22:31.503Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 8
     end: 8
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:178498632712a5a15a1a2c4a955df32c56b1d830fdaa06ba80080b7d8c6b5aba
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     record, establishing a mutable working copy for subsequent modifications.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/config/defaults.ts::DEFAULT_CONFIG

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/events.ts::resolvedScript
 file: src/core/relationships/events.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:02.970Z"
+updated: "2026-03-25T04:22:35.531Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 76
     end: 76
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:464709b4f54c2db80613b87b9d9a6587bf94f18e52a2b1420b89640f6f4886b0
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     using Node.js path utilities.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # resolvedScript

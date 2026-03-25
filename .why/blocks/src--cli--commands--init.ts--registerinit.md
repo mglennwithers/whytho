@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/init.ts::registerInit
 file: src/cli/commands/init.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:47:59.301Z"
+updated: "2026-03-25T04:22:29.832Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 13
     end: 53
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:06a81bdc401060a648c45f4a18f68dd8c7759b5939f48fc58e2898860f9b13eb
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     idempotency controls via `--force` flag and user-friendly status messaging.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/git/repo.ts::findRepoRoot

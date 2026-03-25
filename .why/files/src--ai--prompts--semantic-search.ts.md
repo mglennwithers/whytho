@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/ai/prompts/semantic-search.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:25.772Z"
 updated_by_session: inferred
 parent_folder: src/ai/prompts/
 sessions: []
@@ -22,6 +22,7 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships: []
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **88%**

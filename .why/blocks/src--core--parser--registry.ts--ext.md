@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/registry.ts::ext
 file: src/core/parser/registry.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-25T02:10:29.194Z"
+updated: "2026-03-25T04:22:34.273Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 18
     end: 18
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:1f3bc08c4fbf5ae5a31a2116246cab0ec80a03461f2023bbd62d32d057656237
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     lookup operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # ext

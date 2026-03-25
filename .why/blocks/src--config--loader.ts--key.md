@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/loader.ts::key
 file: src/config/loader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-25T02:10:28.961Z"
+updated: "2026-03-25T04:22:31.434Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 9
     end: 9
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:f8657e88f66f2747d247b75db1bb62635abf8fa0a1017696b489bc58e60512bc
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     or property-by-property application of overrides.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # key

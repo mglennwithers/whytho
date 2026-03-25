@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/graph.ts::inn
 file: src/core/relationships/graph.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:26.405Z"
+updated: "2026-03-25T04:22:35.595Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 22
     end: 22
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:98dd80a071c2d1752e76656c10527ad0dae691708645531712e4cff7bf144389
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     objects marked with 'in' direction indicator.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # inn

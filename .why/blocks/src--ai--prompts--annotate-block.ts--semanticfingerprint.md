@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/annotate-block.ts::semanticFingerprint
 file: src/ai/prompts/annotate-block.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-24T09:38:20.068Z"
+updated: "2026-03-25T04:22:26.610Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 55
     end: 55
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:1ef05d133ddaf2499d76ef7b7e17323ee2c8aa4a99f8090a211a8693495c1ae1
   structural:
     kind: const
@@ -26,7 +26,7 @@ identity:
     be built up through subsequent operations to represent a content-based identity signature.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # semanticFingerprint

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::findLatestSession
 file: src/core/push/index.ts
 created: "2026-03-21T04:33:48.410Z"
-updated: "2026-03-25T02:10:29.363Z"
+updated: "2026-03-25T06:18:22.043Z"
 created_by_session: agent-push
 updated_by_session: agent-push
 identity:
@@ -12,7 +12,7 @@ identity:
   line_range:
     start: 45
     end: 54
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: 9836b12bcb7a17ca56ea6bedf436213596319931
   content_hash: sha256:f523ef78b67a160f295b759b4d280f75ccc695578fd57a257ef909fa77c04569
   structural:
     kind: function
@@ -25,7 +25,7 @@ identity:
     (YYYY-MM-DD-session-*) so lexicographic sort gives chronological order. This lets agents push to th
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: 9836b12bcb7a17ca56ea6bedf436213596319931
 relationships:
   - type: depends_on
     target: src/core/fs/layout.ts::sessionsDir

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/frontmatter/validate.ts::validateAnnotation
 file: src/core/frontmatter/validate.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:24.093Z"
+updated: "2026-03-25T04:22:31.920Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 20
     end: 43
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:eff97179fc8537d6bb72c4994397930b272cd28f2bf9a87fd69e9e775c6794a6
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     normalizing Zod validation errors into a custom ValidationError format.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/types.ts::SessionFrontmatterSchema

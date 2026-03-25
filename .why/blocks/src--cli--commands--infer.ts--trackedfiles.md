@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::trackedFiles
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-25T02:10:28.014Z"
+updated: "2026-03-25T04:22:29.754Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 166
     end: 166
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:5b3cff04414b8a3bb429ccde6db824b8fdba8a9d8dd56c5cefb9095e824f58d6
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     variable for subsequent processing in a CLI command context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # trackedFiles

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/tracking.ts::BUILT_IN_SKIP_DIRS
 file: src/config/tracking.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:00.729Z"
+updated: "2026-03-25T04:22:31.510Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 6
     end: 9
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:208121c37eacee803e8a4d5812c973f1f97732835d422375f0bd35f22ac451a5
   structural:
     kind: const
@@ -31,7 +31,7 @@ identity:
     lookup during file system scanning.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # BUILT_IN_SKIP_DIRS

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/ai-attribution.test.ts::makeTempRepo
 file: tests/unit/ai-attribution.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.111Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 15
     end: 24
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:5fb233ed7836b1e251adb2736f074e64d42cb4ca4e9d759eeefe9ef2ac33ab94
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     subdirectories for a "whytho" system that tracks blocks, files, folders, and sessions.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # makeTempRepo

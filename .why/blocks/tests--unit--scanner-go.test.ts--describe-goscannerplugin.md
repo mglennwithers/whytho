@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/scanner-go.test.ts::describe(goScannerPlugin)
 file: tests/unit/scanner-go.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.661Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 11
     end: 48
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:75ad15642fc43d3e60f89831b8dacad637625d92dd97922e66f90c376f160d07
   structural:
     kind: describe
@@ -30,7 +30,7 @@ identity:
     registry, and emit appropriate dependency edges with correct source attribution and test classification.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # describe(goScannerPlugin)

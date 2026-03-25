@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/semantic-search.ts::buildSemanticSearchPrompt
 file: src/ai/prompts/semantic-search.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:26.972Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 7
     end: 32
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:fa75193cf58fe4ca92a33a308b07ad028741c0ee3bb9c1fe75a5a347dc7e5fd4
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     results of relevant annotation indices with brief justifications.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # buildSemanticSearchPrompt

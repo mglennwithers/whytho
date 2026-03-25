@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/ai-attribution.test.ts::repoRoot
 file: tests/unit/ai-attribution.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.137Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 16
     end: 16
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:3cbea556eae53ef367687aa99f78ba7cec6c8aae9b3b1c7a1cff14e1950f9f55
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     root, enabling safe test execution without affecting the real filesystem.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # repoRoot

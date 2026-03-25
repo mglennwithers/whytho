@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/go.ts::pat
 file: src/core/parser/plugins/go.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:33.430Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 72
     end: 72
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:00ff43e7b6e42d33db2eeb0711c4070fc9785661c4e20483335f38d2ba4412df
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     pattern-based parsing or tokenization of Go language syntax.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # pat

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/reader.ts::readArchiveIndex
 file: src/core/fs/reader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:01.170Z"
+updated: "2026-03-25T04:22:32.420Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 80
     end: 88
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:5205a2ee9d82f078056bd1e5ed1999363c76cd0e54a47b616929cdd7e09edf6e
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     when the file is missing or unparseable.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # readArchiveIndex

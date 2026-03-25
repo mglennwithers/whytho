@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/relationship-attribution.ts::AttributionTriple
 file: src/ai/prompts/relationship-attribution.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:47:56.698Z"
+updated: "2026-03-25T04:22:26.802Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 34
     end: 38
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:923de1404b645296cf7994e7d1501d251ab79f2ba5ae0e3607991a6df71c500b
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     coverage relationship with typed endpoints for static validation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # AttributionTriple

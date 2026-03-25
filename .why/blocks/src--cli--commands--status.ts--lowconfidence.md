@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::lowConfidence
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-25T02:10:28.590Z"
+updated: "2026-03-25T04:22:31.105Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 105
     end: 105
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:e7ec45c68d71e29a8fdf092ac33e7c980fa8458d743ae9c59223e40f9167ccc2
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     for status reporting purposes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # lowConfidence

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/ai-attribution.test.ts::makeBlockFm
 file: tests/unit/ai-attribution.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.081Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 40
     end: 53
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:4253c1737939df024e492fba10eae53425688126e210bedc7d398af87c295095
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     name components and populating comprehensive metadata fields for testing AI attribution tracking.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # makeBlockFm

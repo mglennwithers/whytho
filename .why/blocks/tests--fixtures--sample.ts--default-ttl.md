@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/fixtures/sample.ts::DEFAULT_TTL
 file: tests/fixtures/sample.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:28.645Z"
+updated: "2026-03-25T04:22:39.986Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 14
     end: 14
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:e376da3056b3ce12f07a8fa6697436fd5e80521e5d23da12046e0c46522f91e7
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     default timeout or cache expiration value in tests.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # DEFAULT_TTL

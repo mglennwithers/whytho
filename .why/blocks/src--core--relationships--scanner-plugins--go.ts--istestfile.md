@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/go.ts::isTestFile
 file: src/core/relationships/scanner-plugins/go.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:03.162Z"
+updated: "2026-03-25T04:22:35.781Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 7
     end: 9
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:bd3d63a00cf6d544a52afae30ff046165f7fecd9015041d80e81aaeda3f2c8b2
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     regex pattern (TEST_FILE_RE).
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # isTestFile

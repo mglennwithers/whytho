@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/block.ts::registerBlock
 file: src/cli/commands/block.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:47:57.731Z"
+updated: "2026-03-25T04:22:28.160Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 13
     end: 54
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:ca92d0d1f47a6737567aa965b83a31c6b96b48c24f088beb9b53b8d027acc1d8
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     human-readable and JSON output formats with metadata about the block's origin and relationships.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/git/repo.ts::findRepoRoot

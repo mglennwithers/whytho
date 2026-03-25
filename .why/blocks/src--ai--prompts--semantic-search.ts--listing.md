@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/semantic-search.ts::listing
 file: src/ai/prompts/semantic-search.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:26.979Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 11
     end: 13
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:d10c2a338f57197a8859b1ef44b71b1453f1d701599c98e99a7641f1b6a4428a
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     containing its type, reference, and preview, then joining them with double newlines for readability.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # listing

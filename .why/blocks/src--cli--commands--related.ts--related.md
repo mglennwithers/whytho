@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/related.ts::related
 file: src/cli/commands/related.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:47:59.596Z"
+updated: "2026-03-25T04:22:30.139Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 28
     end: 28
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:f42432880e2c2e1e9afa27acbb5e0d0ce74338bd3ad9d5fe421e0b855b78e697
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     for subsequent CLI command processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/relationships/graph.ts::getAllRelated

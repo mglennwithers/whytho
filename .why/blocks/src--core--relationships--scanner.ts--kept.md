@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner.ts::kept
 file: src/core/relationships/scanner.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-25T02:10:29.961Z"
+updated: "2026-03-25T04:22:37.144Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 173
     end: 173
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:c55de49b3ef142484c017d3d09a6ff3b511546059e6e973cc9ba1407049fd4af
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     undefined source, discarding all other source types.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # kept

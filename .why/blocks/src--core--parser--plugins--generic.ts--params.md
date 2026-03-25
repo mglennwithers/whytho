@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/generic.ts::params
 file: src/core/parser/plugins/generic.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:25.506Z"
+updated: "2026-03-25T04:22:33.284Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 82
     end: 82
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:52ccf267f399d919449d1fe933d8ce757811f9f70e289e8e7851cda45e8db289
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     define a paramsGroup index.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # params

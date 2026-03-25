@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/history.ts::whyRoot
 file: src/cli/commands/history.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:47:57.979Z"
+updated: "2026-03-25T04:22:28.426Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 21
     end: 21
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:e481246d2df3357642a60f995603c42b66b743d54e33032f1bcd5d20c0aa4593
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     storing the result in a variable for subsequent use in the history command.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/fs/layout.ts::getWhyRoot

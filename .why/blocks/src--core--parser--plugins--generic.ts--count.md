@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/generic.ts::count
 file: src/core/parser/plugins/generic.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:25.428Z"
+updated: "2026-03-25T04:22:33.214Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 87
     end: 87
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:3ad2106b261ae2b196186a5a3de6aee533473184f72d9301b58f43357331ddbb
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     doesn't exist. This is a safe property access pattern that initializes missing entries.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # count

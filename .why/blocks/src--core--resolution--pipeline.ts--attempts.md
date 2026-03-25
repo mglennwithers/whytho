@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::attempts
 file: src/core/resolution/pipeline.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-25T02:10:30.186Z"
+updated: "2026-03-25T04:22:37.387Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 113
     end: 113
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:cf7847af684bfd8ca01f84acefe3d5083417144fc507a60906a6dc3133371ff0
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     many times a resolution process has been attempted.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # attempts

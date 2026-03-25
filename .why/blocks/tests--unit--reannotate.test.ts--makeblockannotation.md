@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/reannotate.test.ts::makeBlockAnnotation
 file: tests/unit/reannotate.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.522Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 27
     end: 50
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:56d71bd80a4aa612d43d4e3ec376755762dd0b5f2d44ec6ecb232d49c81b0138
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     body string, used for unit testing block annotation functionality.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # makeBlockAnnotation

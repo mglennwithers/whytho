@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::Relationship
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T18:48:04.653Z"
+updated: "2026-03-25T04:22:37.940Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 143
     end: 143
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:91547ba8ea8646c5610bbbd13fed5a233cd242398c86c7f38522d69e08db97f2
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     representation that mirrors the schema's validation rules for use throughout the application.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # Relationship

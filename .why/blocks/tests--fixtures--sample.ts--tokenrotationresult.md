@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/fixtures/sample.ts::TokenRotationResult
 file: tests/fixtures/sample.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:28.713Z"
+updated: "2026-03-25T04:22:40.033Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 9
     end: 12
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:4d824f8a609e7c9f28a9e847fc406c6764284ca4ce4dc5f2994abb25d55a6a4b
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     new authentication token.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # TokenRotationResult

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/registry.ts::BatchRunResult
 file: src/ai/registry.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T02:10:25.400Z"
+updated: "2026-03-25T04:22:27.370Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 11
     end: 14
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:a1e8c312d1ad8356d7cde56b628a153e6759b18892902ba16d7d09c680c7e70f
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     cumulative token usage metrics (input and output counts).
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # BatchRunResult

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/annotate-folder.ts::buildFolderAnnotationPrompt
 file: src/ai/prompts/annotate-folder.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-24T09:38:20.081Z"
+updated: "2026-03-25T04:22:26.621Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 3
     end: 20
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:5917ffecee5b2b7d272d16afec0be6c827ae7713bb45d124b8482c8a70cc4a34
   structural:
     kind: function
@@ -27,7 +27,7 @@ identity:
     "Structural Decisions" sections given a folder path and optional session context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/ai/types.ts::AnnotationRequest

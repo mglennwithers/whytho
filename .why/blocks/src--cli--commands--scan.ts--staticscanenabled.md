@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/scan.ts::staticScanEnabled
 file: src/cli/commands/scan.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:47:59.856Z"
+updated: "2026-03-25T04:22:30.449Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 60
     end: 60
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:97c61aa4b6cb565a57a5f154e6a41d26860c0ca98968d75abdc7d2cef9e1c63e
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     property with a default-true behavior via negation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # staticScanEnabled

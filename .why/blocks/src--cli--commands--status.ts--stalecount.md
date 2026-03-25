@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::staleCount
 file: src/cli/commands/status.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T02:10:28.791Z"
+updated: "2026-03-25T04:22:31.292Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 108
     end: 108
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:88738f0663366880935d3d3c9e6686ac94dab47b53d237b14d2c03633eff1879
   structural:
     kind: const
@@ -31,7 +31,7 @@ identity:
     gets reported.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # staleCount

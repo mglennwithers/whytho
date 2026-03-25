@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/archive/archiver.ts::ArchiveOptions
 file: src/core/archive/archiver.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:00.814Z"
+updated: "2026-03-25T04:22:31.617Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 9
     end: 14
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:e4a645f539f91fc84362565e2fff3dc62401d3fec0a3b0be0d603fd3f5b4db35
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     reference, and optional successor entity for the archive action.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # ArchiveOptions

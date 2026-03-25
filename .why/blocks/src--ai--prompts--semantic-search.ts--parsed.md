@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/semantic-search.ts::parsed
 file: src/ai/prompts/semantic-search.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T04:22:26.985Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 44
     end: 44
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:2dc7ef388cd47f17cb11140d48be0ea83a83405c69284959c396ad1513218adf
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     via TypeScript type assertion.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # parsed

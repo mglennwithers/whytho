@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::existing
 file: src/core/push/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T02:10:29.332Z"
+updated: "2026-03-25T06:18:21.940Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 170
     end: 170
-    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+    commit: 9836b12bcb7a17ca56ea6bedf436213596319931
   content_hash: sha256:a86d217121e22e242f6e82ee7a689c78e1f0329e1aa84c87024095bb72cdcaa5
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     property is undefined.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  last_resolved: 9836b12bcb7a17ca56ea6bedf436213596319931
 ---
 
 # existing

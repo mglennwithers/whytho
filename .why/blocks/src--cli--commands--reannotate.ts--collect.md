@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/reannotate.ts::collect
 file: src/cli/commands/reannotate.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:47:59.425Z"
+updated: "2026-03-25T04:22:29.967Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 144
     end: 146
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:79a6496594a12ee264a1035f47523a5431644e596d826301d6cfe1dcf73d8c9a
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     commonly used as a callback for iterative collection operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # collect

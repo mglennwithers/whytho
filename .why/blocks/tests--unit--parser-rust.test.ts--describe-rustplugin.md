@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/parser-rust.test.ts::describe(rustPlugin)
 file: tests/unit/parser-rust.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.340Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 51
     end: 154
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:5b7d83673a42bfa31b7bf3db021d058e458d9c5f1c03f683ff490c2c532084eb
   structural:
     kind: describe
@@ -31,7 +31,7 @@ identity:
     parent scopes, line numbers) to parsed code blocks.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # describe(rustPlugin)

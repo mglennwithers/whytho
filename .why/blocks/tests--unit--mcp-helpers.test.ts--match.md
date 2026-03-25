@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/mcp-helpers.test.ts::match
 file: tests/unit/mcp-helpers.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.267Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: tests/unit/mcp-helpers.test.ts::match
   line_range:
-    start: 26
-    end: 26
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:3ae550840098cec2b7195018e79654f6bc7450924cb1bf5b0d8ffe9277e1c3b4
+    start: 7
+    end: 7
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
+  content_hash: sha256:87b0a5f55937117be1152121a37aed0227ef127aff201c7e8c8cb9633361cccc
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     content between opening and closing `---` markers.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # match

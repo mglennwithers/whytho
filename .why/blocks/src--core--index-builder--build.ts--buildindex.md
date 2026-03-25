@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/build.ts::buildIndex
 file: src/core/index-builder/build.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:38:25.222Z"
+updated: "2026-03-25T04:22:33.002Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 15
     end: 128
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:db65a92e814efa43d00e176a5773d4aed51660ffb5eea828c2cbf88b8c8c8e23
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     resolves bidirectional relationships, and persists the result to disk.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/fs/reader.ts::readAllBlocks

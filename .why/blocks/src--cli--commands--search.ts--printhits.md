@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/search.ts::printHits
 file: src/cli/commands/search.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:47:59.988Z"
+updated: "2026-03-25T04:22:30.594Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 72
     end: 81
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:5994eee5314a59379b7b2fa8fa883cc4f696816b756bfc29a76f8231f158d0ea
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     optional explanatory reasons, and gray preview text, separated by blank lines.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # printHits

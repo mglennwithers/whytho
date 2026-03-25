@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/events.ts::lines
 file: src/core/relationships/events.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:02.939Z"
+updated: "2026-03-25T04:22:35.496Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 114
     end: 114
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:4eca9de2cf833ad9377a7a6c3157b24756ff87f542487597fa7a53e13d56c939
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     individually and a trailing newline appended.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # lines

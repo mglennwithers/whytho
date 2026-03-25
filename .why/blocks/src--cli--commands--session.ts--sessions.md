@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/session.ts::sessions
 file: src/cli/commands/session.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:00.149Z"
+updated: "2026-03-25T04:22:30.775Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 21
     end: 21
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:1860e7aa86bd6b07011396da17ef7c96a338c1f73676e4bd1df957e91a59b480
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     result in a variable for subsequent processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 relationships:
   - type: depends_on
     target: src/core/fs/reader.ts::readAllSessions

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/parser-go.test.ts::SAMPLE_SOURCE
 file: tests/unit/parser-go.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T04:22:40.318Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 4
     end: 36
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:e99a1438b375ee2c34855bcc64afa282ac50966e970e73a6be1b07a87bae15ec
   structural:
     kind: const
@@ -31,7 +31,7 @@ identity:
     function declarations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # SAMPLE_SOURCE

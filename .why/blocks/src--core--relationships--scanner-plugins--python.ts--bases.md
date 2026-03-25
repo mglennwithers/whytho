@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner-plugins/python.ts::bases
 file: src/core/relationships/scanner-plugins/python.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:03.285Z"
+updated: "2026-03-25T04:22:35.928Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 96
     end: 96
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: aee26b5b57dca571b085e47363b395cb230d7359
   content_hash: sha256:59be3f6e0bd268b953128033b1719805d0b9c4152411557d4b54c78a8aa0ec3c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     whitespace from each element.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
 ---
 
 # bases
