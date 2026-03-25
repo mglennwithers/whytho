@@ -1,4 +1,4 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
 import { findRepoRoot, getHeadCommitSha } from '../../core/git/repo.js'
 import { getChangedFiles } from '../../core/git/diff.js'
@@ -10,8 +10,17 @@ import { emitHookEvents } from '../../core/relationships/events.js'
 import { loadConfig } from '../../config/loader.js'
 import { runStaticScan } from '../../core/relationships/scanner.js'
 import { collectAllSourceFiles } from './scan.js'
-import { getDefaultProvider } from '../../ai/registry.js'
+import { getDefaultProvider, getScanProvider } from '../../ai/registry.js'
+import { runAIScan } from '../../core/relationships/ai-attribution.js'
+import { withTokenCounting, formatTokens } from '../../ai/token-counter.js'
+import type { TokenTally } from '../../ai/token-counter.js'
 import { readAllBlocks } from '../../core/fs/reader.js'
+
+interface ResolveOpts {
+  incremental?: boolean
+  commit?: string
+  ai?: boolean
+}
 
 export function registerResolve(program: Command): void {
   program
@@ -20,7 +29,7 @@ export function registerResolve(program: Command): void {
     .option('--incremental', 'Only process files changed in the specified commit')
     .option('--commit <sha>', 'Commit SHA to resolve against (default: HEAD)')
     .option('--no-ai', 'Skip AI-assisted semantic matching')
-    .action(async (options) => {
+    .action(async (options: ResolveOpts) => {
       try {
         const repoRoot = await findRepoRoot()
         const config = await loadConfig(repoRoot)
@@ -47,12 +56,24 @@ export function registerResolve(program: Command): void {
         }
 
         // Run static relationship scanner (gated on config)
-        if (config.relationships?.static_scan !== false) {
+        if (config.relationships?.staticScan !== false) {
           const allSourceFiles = await collectAllSourceFiles(repoRoot)
           await runStaticScan(repoRoot, whyRoot, changedFiles, allSourceFiles)
         }
 
-        const ai = options.ai !== false ? getDefaultProvider(config) : undefined
+        const tally: TokenTally = { input: 0, output: 0 }
+
+        // Run AI attribution scan when on_commit mode is configured
+        if (config.relationships?.aiScan === 'on_commit') {
+          const provider = withTokenCounting(getScanProvider(config), tally)
+          await runAIScan(repoRoot, whyRoot, provider)
+        }
+
+        const ai = options.ai !== false ? withTokenCounting(getDefaultProvider(config), tally) : undefined
+
+        if (changedFiles.length > 0) {
+          console.log(chalk.gray(`Resolving ${changedFiles.length} changed file(s)...`))
+        }
 
         const report = await runResolutionPipeline({
           whyRoot,
@@ -61,7 +82,11 @@ export function registerResolve(program: Command): void {
           changedFiles,
           config,
           ai,
+          onProgress: (msg) => process.stderr.write(`\r${chalk.gray(msg)}                    `),
         })
+
+        // Clear the progress line before printing the report
+        process.stderr.write('\r\x1b[K')
 
         // Rebuild index and archive index
         await Promise.all([
@@ -101,6 +126,10 @@ export function registerResolve(program: Command): void {
           for (const [ref, err] of Object.entries(report.errors)) {
             console.error(`  ${ref}: ${err}`)
           }
+        }
+
+        if (tally.input > 0 || tally.output > 0) {
+          console.log(chalk.gray(`Tokens: ${formatTokens(tally)}`))
         }
       } catch (err) {
         console.error(chalk.red('Error:'), String(err))

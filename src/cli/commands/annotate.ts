@@ -1,7 +1,6 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
-import * as os from 'os'
-import { findRepoRoot, getHeadCommitSha, getCurrentUser, getRecentGitLog } from '../../core/git/repo.js'
+import { findRepoRoot, getHeadCommitSha, getCurrentUser, getRecentGitLog, getCommitMessage } from '../../core/git/repo.js'
 import { getChangedFiles } from '../../core/git/diff.js'
 import { getWhyRoot, blockAnnotationPath, fileAnnotationPath, folderAnnotationPath, sessionAnnotationPath, buildSymbolicRef, parentFolder } from '../../core/fs/layout.js'
 import { isWhyDirInitialized } from '../../core/fs/init.js'
@@ -15,7 +14,16 @@ import { isTrackedFile } from '../../config/tracking.js'
 import { getDefaultProvider } from '../../ai/registry.js'
 import { WHYTHO_VERSION } from '../../core/constants.js'
 import type { BlockFrontmatter, FileFrontmatter, FolderFrontmatter, SessionFrontmatter } from '../../core/types.js'
+import type { VerbosityCoverage, VerbosityDetail } from '../../config/types.js'
 import * as fs from 'fs/promises'
+
+interface AnnotateOpts {
+  sessionId?: string
+  model?: string
+  dryRun?: boolean
+  coverage?: string
+  detail?: string
+}
 
 export function registerAnnotate(program: Command): void {
   program
@@ -26,7 +34,8 @@ export function registerAnnotate(program: Command): void {
     .option('--dry-run', 'Print annotations without writing files')
     .option('--coverage <level>', 'Block coverage: minimal, standard, full')
     .option('--detail <level>', 'Annotation detail: brief, standard, full')
-    .action(async (options) => {
+    .action(async (_options: unknown) => {
+      const options = _options as AnnotateOpts
       try {
         const repoRoot = await findRepoRoot()
         const config = await loadConfig(repoRoot)
@@ -37,12 +46,24 @@ export function registerAnnotate(program: Command): void {
           process.exit(1)
         }
 
-        const coverage = (options.coverage ?? config.verbosity.coverage) as import('../../config/types.js').VerbosityCoverage
-        const detail = (options.detail ?? config.verbosity.detail) as import('../../config/types.js').VerbosityDetail
+        const coverage = (options.coverage ?? config.verbosity.coverage) as VerbosityCoverage
+        const detail = (options.detail ?? config.verbosity.detail) as VerbosityDetail
 
         const ai = getDefaultProvider(config)
+        // If HEAD is a whytho resolution commit, walk back to find the nearest
+        // real feature commit so that files_touched is populated correctly.
+        // We slide a [fromRef..toRef] window backwards until toRef is a non-whytho commit.
+        let fromRef = 'HEAD~1'
+        let toRef = 'HEAD'
+        for (let depth = 0; depth < 5; depth++) {
+          const msg = await getCommitMessage(repoRoot, toRef)
+          if (!msg.startsWith('[whytho]')) break
+          toRef = fromRef         // slide toRef back to the previous commit
+          fromRef = `${toRef}~1`  // and fromRef one further back
+        }
+
         const commitSha = await getHeadCommitSha(repoRoot)
-        const changedFiles = (await getChangedFiles(repoRoot)).filter((f) => isTrackedFile(f, config))
+        const changedFiles = (await getChangedFiles(repoRoot, fromRef, toRef)).filter((f) => isTrackedFile(f, config))
         const now = new Date().toISOString()
         const dateStr = now.slice(0, 10)
 
@@ -164,6 +185,7 @@ export function registerAnnotate(program: Command): void {
               sessions: [sessionId],
               blocks: parsedBlocks.map((b) => buildSymbolicRef(filePath, b.name)),
               language: lang,
+              content_hash: computeContentHash(source),
               generation_settings: { coverage, detail, max_tokens: fileMaxTokens },
             }
             if (!options.dryRun) {

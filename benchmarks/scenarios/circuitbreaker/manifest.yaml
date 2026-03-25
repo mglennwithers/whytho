@@ -1,0 +1,15 @@
+source: circuitbreaker.ts
+annotations:
+  - circuitbreaker-annotations.md
+
+scenarios:
+  - file: dq-1-windowed-threshold.md
+    annotations: circuitbreaker-annotations.md
+  - file: dq-2-exponential-backoff.md
+    annotations: circuitbreaker-annotations.md
+  - file: ts-1-callwithfallback.md
+    annotations: circuitbreaker-annotations.md
+  - file: cs-1-single-probe-rationale.md
+    annotations: circuitbreaker-annotations.md
+  - file: cs-2-failure-count-persistence.md
+    annotations: circuitbreaker-annotations.md

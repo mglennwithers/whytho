@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::ctx
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.894Z"
+updated: "2026-03-24T18:48:01.643Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::ctx
   line_range:
-    start: 285
-    end: 291
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 287
+    end: 293
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:c82268f04acd05bf7df71dfac63831ba4aa2a332cededdb7ecf2f07bc599b526
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     for parsing TypeScript code at the module level.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # ctx

@@ -20,12 +20,36 @@
     "@typescript-eslint/no-floating-promises": "error",
     "@typescript-eslint/no-misused-promises": "error",
     "@typescript-eslint/await-thenable": "error",
-    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-warning-comments": ["warn", { "terms": ["TODO", "FIXME", "HACK", "XXX"] }],
     "eqeqeq": ["error", "always"],
     "prefer-const": "error",
     "no-var": "error",
     "object-shorthand": "error",
     "prefer-template": "error"
   },
-  "ignorePatterns": ["dist/", "dist-test/", "node_modules/", "scripts/"]
+  "ignorePatterns": ["dist/", "dist-test/", "node_modules/", "scripts/", "packages/", "tests/", "*.config.ts", "*.config.mts"],
+  "overrides": [
+    {
+      "files": ["src/cli/**/*.ts"],
+      "rules": {
+        "no-console": "off"
+      }
+    },
+    {
+      "files": ["tests/**/*.ts"],
+      "parserOptions": {
+        "project": "./tests/tsconfig.json"
+      }
+    },
+    {
+      "files": ["benchmarks/**/*.ts"],
+      "parserOptions": {
+        "project": "./benchmarks/tsconfig.json"
+      },
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ]
 }

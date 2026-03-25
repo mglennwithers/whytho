@@ -71,7 +71,7 @@ export async function readIndex(whyRoot: string): Promise<Record<string, unknown
   const idxPath = path.join(whyRoot, 'index.json')
   try {
     const raw = await fs.readFile(idxPath, 'utf8')
-    return JSON.parse(raw)
+    return JSON.parse(raw) as Record<string, unknown>
   } catch {
     return {}
   }
@@ -81,7 +81,7 @@ export async function readArchiveIndex(whyRoot: string): Promise<Record<string, 
   const idxPath = path.join(whyRoot, 'archive-index.json')
   try {
     const raw = await fs.readFile(idxPath, 'utf8')
-    return JSON.parse(raw)
+    return JSON.parse(raw) as Record<string, unknown>
   } catch {
     return {}
   }

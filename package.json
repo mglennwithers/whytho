@@ -26,16 +26,32 @@
   "files": [
     "dist"
   ],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "tsup",
+    "build:vscode": "npm run build -w packages/vscode-whytho",
+    "build:all": "npm run build && npm run build:vscode",
     "dev": "tsup --watch",
     "test": "vitest run",
+    "test:vscode": "npm test -w packages/vscode-whytho",
+    "test:all": "npm test && npm run test:vscode",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
-    "lint": "tsc --noEmit && node scripts/lint.js",
-    "lint:style": "node scripts/lint.js",
+    "lint": "tsc --noEmit && eslint .",
+    "lint:eslint": "eslint .",
     "format": "prettier --write 'src/**/*.ts' 'tests/**/*.ts'",
-    "install-hooks": "node scripts/install-hooks.js"
+    "install-hooks": "node scripts/install-hooks.js",
+    "benchmark": "tsx benchmarks/index.ts"
+  },
+  "peerDependencies": {
+    "openai": ">=4.0.0",
+    "@google/genai": ">=1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "openai": { "optional": true },
+    "@google/genai": { "optional": true }
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",
@@ -57,6 +73,7 @@
     "eslint-config-prettier": "^9.1.0",
     "prettier": "^3.2.0",
     "tsup": "^8.0.0",
+    "tsx": "^4.21.0",
     "typescript": "^5.4.0",
     "vitest": "^1.6.0"
   },

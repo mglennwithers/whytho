@@ -1,24 +1,49 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
 import * as fs from 'fs/promises'
 import * as path from 'path'
-import { findRepoRoot } from '../../core/git/repo.js'
+import { findRepoRoot, getCommitsSince, getHeadCommitSha } from '../../core/git/repo.js'
 import { getWhyRoot, parentFolder } from '../../core/fs/layout.js'
 import { isWhyDirInitialized } from '../../core/fs/init.js'
 import { readIndex, readArchiveIndex } from '../../core/fs/reader.js'
+import { writeFile } from '../../core/fs/writer.js'
 import { loadConfig } from '../../config/loader.js'
 import { isTrackedFile, isSkippedDir } from '../../config/tracking.js'
 import { parseFile } from '../../core/parser/registry.js'
 import type { WhythoIndex, WhythoArchiveIndex } from '../../core/types.js'
 
 const LOW_CONFIDENCE_THRESHOLD = 0.7
+const STALE_COMMITS_THRESHOLD = 10
+const COVERAGE_CACHE_FILE = 'coverage-cache.json'
 
-function bar(fraction: number, width = 20): string {
+interface CoverageCache {
+  commit: string
+  sourceBlocks: number
+  sourceFiles: number
+  sourceFolders: number
+}
+
+async function readCoverageCache(whyRoot: string): Promise<CoverageCache | null> {
+  try {
+    const raw = await fs.readFile(path.join(whyRoot, COVERAGE_CACHE_FILE), 'utf8')
+    return JSON.parse(raw) as CoverageCache
+  } catch {
+    return null
+  }
+}
+
+async function writeCoverageCache(whyRoot: string, cache: CoverageCache): Promise<void> {
+  try {
+    await writeFile(path.join(whyRoot, COVERAGE_CACHE_FILE), JSON.stringify(cache, null, 2))
+  } catch { /* best-effort */ }
+}
+
+export function bar(fraction: number, width = 20): string {
   const filled = Math.round(fraction * width)
   return chalk.green('█'.repeat(filled)) + chalk.gray('░'.repeat(width - filled))
 }
 
-function pct(n: number, total: number): string {
+export function pct(n: number, total: number): string {
   if (total === 0) return chalk.gray('n/a')
   return chalk.bold(`${Math.round((n / total) * 100)}%`)
 }
@@ -48,13 +73,18 @@ async function collectSourceFiles(
   return results
 }
 
+interface StatusOpts {
+  coverage?: boolean
+  json?: boolean
+}
+
 export function registerStatus(program: Command): void {
   program
     .command('status')
     .description('Show annotation coverage and health for this repository')
     .option('--coverage', 'Scan source files to compute annotation coverage percentages')
     .option('--json', 'Output machine-readable JSON')
-    .action(async (options) => {
+    .action(async (options: StatusOpts) => {
       try {
         const repoRoot = await findRepoRoot()
         const whyRoot = getWhyRoot(repoRoot)
@@ -74,6 +104,17 @@ export function registerStatus(program: Command): void {
         const unresolvable = (index.unresolved ?? []).length
         const lowConfidence = blocks.filter((b) => b.confidence < LOW_CONFIDENCE_THRESHOLD).length
 
+        // Stale block detection: count commits since each unique last_resolved SHA
+        let staleCount = 0
+        if (totalBlocks > 0) {
+          const uniqueShas = [...new Set(blocks.map((b) => b.last_resolved).filter(Boolean))]
+          const commitsSinceMap = new Map<string, number>()
+          await Promise.all(uniqueShas.map(async (sha) => {
+            commitsSinceMap.set(sha, await getCommitsSince(repoRoot, sha))
+          }))
+          staleCount = blocks.filter((b) => (commitsSinceMap.get(b.last_resolved) ?? 0) > STALE_COMMITS_THRESHOLD).length
+        }
+
         const totalFiles = Object.keys(index.files ?? {}).length
         const totalFolders = Object.keys(index.folders ?? {}).length
         const totalSessions = Object.keys(index.sessions ?? {}).length
@@ -86,17 +127,27 @@ export function registerStatus(program: Command): void {
         // ── Coverage pass (optional) ─────────────────────────────────────────
         let coverage: { sourceBlocks: number; sourceFiles: number; sourceFolders: number } | null = null
         if (options.coverage) {
-          const config = await loadConfig(repoRoot)
-          const sourceFiles = await collectSourceFiles(repoRoot, repoRoot, config)
-          let sourceBlocks = 0
-          for (const filePath of sourceFiles) {
-            try {
-              const source = await fs.readFile(path.join(repoRoot, filePath), 'utf8')
-              sourceBlocks += parseFile(source, filePath).length
-            } catch { /* unreadable */ }
+          const headSha = await getHeadCommitSha(repoRoot).catch(() => null)
+          const cached = headSha ? await readCoverageCache(whyRoot) : null
+
+          if (cached && headSha && cached.commit === headSha) {
+            coverage = { sourceBlocks: cached.sourceBlocks, sourceFiles: cached.sourceFiles, sourceFolders: cached.sourceFolders }
+          } else {
+            const config = await loadConfig(repoRoot)
+            const sourceFiles = await collectSourceFiles(repoRoot, repoRoot, config)
+            let sourceBlocks = 0
+            for (const filePath of sourceFiles) {
+              try {
+                const source = await fs.readFile(path.join(repoRoot, filePath), 'utf8')
+                sourceBlocks += parseFile(source, filePath).length
+              } catch { /* unreadable */ }
+            }
+            const sourceFolders = new Set(sourceFiles.map((f) => parentFolder(f))).size
+            coverage = { sourceBlocks, sourceFiles: sourceFiles.length, sourceFolders }
+            if (headSha) {
+              await writeCoverageCache(whyRoot, { commit: headSha, ...coverage })
+            }
           }
-          const sourceFolders = new Set(sourceFiles.map((f) => parentFolder(f))).size
-          coverage = { sourceBlocks, sourceFiles: sourceFiles.length, sourceFolders }
         }
 
         // ── JSON output ──────────────────────────────────────────────────────
@@ -112,7 +163,7 @@ export function registerStatus(program: Command): void {
               folders: totalFolders,
               sessions: totalSessions,
             },
-            health: { unresolvable, lowConfidence },
+            health: { unresolvable, lowConfidence, stale: staleCount },
             relationships: totalRelationships,
             archive: { blocks: archivedBlocks },
           }
@@ -163,7 +214,7 @@ export function registerStatus(program: Command): void {
 
         // Health section
         console.log(chalk.bold('Health'))
-        if (unresolvable === 0 && lowConfidence === 0) {
+        if (unresolvable === 0 && lowConfidence === 0 && staleCount === 0) {
           console.log(`  ${chalk.green('✓')} All annotations healthy`)
         } else {
           if (unresolvable > 0) {
@@ -171,6 +222,9 @@ export function registerStatus(program: Command): void {
           }
           if (lowConfidence > 0) {
             console.log(`  ${chalk.yellow('!')} ${chalk.yellow(`${lowConfidence} low-confidence`)} block(s)  ${chalk.gray(`(confidence < ${LOW_CONFIDENCE_THRESHOLD})`)}`)
+          }
+          if (staleCount > 0) {
+            console.log(`  ${chalk.yellow('!')} ${chalk.yellow(`${staleCount} stale`)} block(s)  ${chalk.gray(`(not resolved in ${STALE_COMMITS_THRESHOLD}+ commits)  →  git why resolve`)}`)
           }
         }
         console.log()

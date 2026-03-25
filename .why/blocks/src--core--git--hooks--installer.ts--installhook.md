@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/hooks/installer.ts::installHook
 file: src/core/git/hooks/installer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.170Z"
+updated: "2026-03-24T18:48:01.297Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/git/hooks/installer.ts::installHook
   line_range:
-    start: 42
-    end: 84
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:bb3f4b4bf6f3011a75a6d88266bac8a3ca61f0e5ba3f32ea1b80e50b069e0e40
+    start: 44
+    end: 86
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:4b321a7a29231938e5f3eb3b515466f7dd8e53c8fec67c913e7d2d08a833c10c
   structural:
     kind: function
     parent_scope: module
@@ -32,7 +32,17 @@ identity:
     via a sentinel marker.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/core/constants.ts::POST_COMMIT_HOOK_NAME
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::PRE_COMMIT_HOOK_NAME
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::HOOK_SENTINEL
+    source: ai
 ---
 
 # installHook

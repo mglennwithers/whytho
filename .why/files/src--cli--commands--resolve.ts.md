@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/cli/commands/resolve.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-25T02:10:24.707Z"
 updated_by_session: inferred
 parent_folder: src/cli/commands/
 sessions: []
@@ -27,6 +27,64 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: static
+  - type: depends_on
+    target: src/core/git/repo.ts::getHeadCommitSha
+    source: static
+  - type: depends_on
+    target: src/core/git/diff.ts::getChangedFiles
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::getWhyRoot
+    source: static
+  - type: depends_on
+    target: src/core/fs/init.ts::isWhyDirInitialized
+    source: static
+  - type: depends_on
+    target: src/core/resolution/pipeline.ts::runResolutionPipeline
+    source: static
+  - type: depends_on
+    target: src/core/index-builder/build.ts::buildIndex
+    source: static
+  - type: depends_on
+    target: src/core/index-builder/build.ts::rebuildArchiveIndex
+    source: static
+  - type: depends_on
+    target: src/core/relationships/events.ts::emitHookEvents
+    source: static
+  - type: depends_on
+    target: src/config/loader.ts::loadConfig
+    source: static
+  - type: depends_on
+    target: src/core/relationships/scanner.ts::runStaticScan
+    source: static
+  - type: depends_on
+    target: src/cli/commands/scan.ts::collectAllSourceFiles
+    source: static
+  - type: depends_on
+    target: src/ai/registry.ts::getDefaultProvider
+    source: static
+  - type: depends_on
+    target: src/ai/registry.ts::getScanProvider
+    source: static
+  - type: depends_on
+    target: src/core/relationships/ai-attribution.ts::runAIScan
+    source: static
+  - type: depends_on
+    target: src/ai/token-counter.ts::withTokenCounting
+    source: static
+  - type: depends_on
+    target: src/ai/token-counter.ts::formatTokens
+    source: static
+  - type: depends_on
+    target: src/ai/token-counter.ts::TokenTally
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllBlocks
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **82%**

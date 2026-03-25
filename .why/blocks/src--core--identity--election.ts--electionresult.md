@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/identity/election.ts::ElectionResult
 file: src/core/identity/election.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T02:19:55.615Z"
+updated: "2026-03-24T18:48:01.451Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 15
     end: 21
-    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:9ed7c369866ef451cb70d88900675d655734b5ec8a69af0dd023efe145ad89a1
   structural:
     kind: interface
@@ -30,7 +30,20 @@ identity:
     metadata, confidence scoring, and optional identity mutation data.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/core/types.ts::ResolutionOutcome
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::CanonicalMetric
+    source: ai
+  - type: depends_on
+    target: src/core/parser/types.ts::ParsedBlock
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::BlockIdentity
+    source: ai
 ---
 
 # ElectionResult

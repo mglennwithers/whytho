@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::folder
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.070Z"
+updated: "2026-03-25T02:10:25.881Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::folder
   line_range:
-    start: 72
-    end: 72
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 93
+    end: 93
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:1430cc850b2c343d3714c88abe34c11252ec814184517f319c06a78ecf482841
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     result in a local variable for subsequent use.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # folder

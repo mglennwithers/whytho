@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/loader.ts::baseVal
 file: src/config/loader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.114Z"
+updated: "2026-03-25T02:10:28.944Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/config/loader.ts::baseVal
   line_range:
-    start: 9
-    end: 9
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 10
+    end: 10
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:94d7f950e08b96af7edbe776da1ab810cb379bde09dd02e378e1ecd210052de5
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     configuration loading context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # baseVal

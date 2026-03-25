@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::whyRoot
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-25T02:10:28.921Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::whyRoot
   line_range:
-    start: 60
-    end: 60
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 90
+    end: 90
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:e481246d2df3357642a60f995603c42b66b743d54e33032f1bcd5d20c0aa4593
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     `whyRoot`, likely to determine a root directory relevant to some "why" analysis or feature within the repository.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # whyRoot

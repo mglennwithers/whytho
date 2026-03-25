@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/anthropic.ts::createAnthropicProvider
 file: src/ai/providers/anthropic.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-21T11:35:30.564Z"
+updated: "2026-03-24T18:47:56.935Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -12,10 +12,10 @@ inference_confidence: 0.82
 identity:
   symbolic: src/ai/providers/anthropic.ts::createAnthropicProvider
   line_range:
-    start: 66
-    end: 150
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:52b06ac32de6bda0abe3846c204ca48acce01bc63557ab3814a0c2357131d8cd
+    start: 70
+    end: 172
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:ab67e06094d4b53e9c2e5a29611b18504edc4959ce831ff41e725e4b1e8c4344
   structural:
     kind: function
     parent_scope: module
@@ -28,7 +28,50 @@ identity:
     matching via prompt-based LLM calls.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/ai/types.ts::AIProvider
+    source: ai
+  - type: depends_on
+    target: src/ai/types.ts::AnnotationRequest
+    source: ai
+  - type: depends_on
+    target: src/ai/types.ts::AnnotationResult
+    source: ai
+  - type: depends_on
+    target: src/ai/types.ts::SemanticMatchRequest
+    source: ai
+  - type: depends_on
+    target: src/ai/types.ts::SemanticMatchResult
+    source: ai
+  - type: depends_on
+    target: src/ai/prompts/annotate-block.ts::buildBlockAnnotationPrompt
+    source: ai
+  - type: depends_on
+    target: src/ai/prompts/annotate-block.ts::parseBlockAnnotationResponse
+    source: ai
+  - type: depends_on
+    target: src/ai/prompts/annotate-file.ts::buildFileAnnotationPrompt
+    source: ai
+  - type: depends_on
+    target: src/ai/prompts/annotate-folder.ts::buildFolderAnnotationPrompt
+    source: ai
+  - type: depends_on
+    target: src/ai/prompts/annotate-session.ts::buildSessionAnnotationPrompt
+    source: ai
+  - type: depends_on
+    target: src/ai/prompts/semantic-match.ts::buildSemanticMatchPrompt
+    source: ai
+  - type: depends_on
+    target: src/ai/prompts/semantic-match.ts::parseSemanticMatchResponse
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::WHYTHO_VERSION
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::DEFAULT_AI_MODEL
+    source: ai
 ---
 
 # createAnthropicProvider

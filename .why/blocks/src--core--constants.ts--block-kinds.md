@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::BLOCK_KINDS
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.357Z"
+updated: "2026-03-25T04:07:28.416Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,21 +16,21 @@ generation_settings:
 identity:
   symbolic: src/core/constants.ts::BLOCK_KINDS
   line_range:
-    start: 61
-    end: 72
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:5dacfdb98a1f38e2bb0cb8e8f8a8df35a1f3f727a6293cad6bd7db83d06decdd
+    start: 62
+    end: 75
+    commit: 498199f818951a78c685a05e25318822101986a6
+  content_hash: sha256:06ca206d60b1a2d4c88cdfc9dcfe6f0d4a0774f0cf0aa87965b21c2bde8ae9e1
   structural:
     kind: const
     parent_scope: module
     name: BLOCK_KINDS
     index_in_parent: 25
   semantic_fingerprint: >-
-    Defines an exhaustive, immutable list of recognized code block/entity kinds covering functions, classes, types, and
-    testing constructs, likely used throughout the application for classification, filtering, or validation purposes.
+    Added 'constructor' and 'property' to support C# and Java parsers, which both have constructors as first-class
+    declarations, and C# has auto-properties (get/set/init). Using 'method' for constructors
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 498199f818951a78c685a05e25318822101986a6
 ---
 
 # BLOCK_KINDS
@@ -62,3 +62,5 @@ This constant exports a readonly tuple of string literals representing different
 - **[Historical evolution]:** Whether this list grew incrementally based on discovered needs or was designed comprehensively upfront; whether past items were removed.
 
 - **[Validation behavior]:** Whether the application validates that only these kinds are used, or whether the list is merely advisory/preferred.
+
+Added 'constructor' and 'property' to support C# and Java parsers, which both have constructors as first-class declarations, and C# has auto-properties (get/set/init). Using 'method' for constructors would lose semantic precision; using 'variable' for properties was both incorrect and a type error. These two kinds are structurally distinct across OO languages and worth preserving in the annotation index.

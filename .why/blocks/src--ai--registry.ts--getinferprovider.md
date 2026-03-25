@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/registry.ts::getInferProvider
 file: src/ai/registry.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T11:35:30.717Z"
+updated: "2026-03-25T02:10:25.435Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/ai/registry.ts::getInferProvider
   line_range:
-    start: 34
-    end: 46
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:51c43c16f53d33195a739e9044d17c83d6b0906071871786f454b3108a1824f7
+    start: 132
+    end: 138
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  content_hash: sha256:ab5ff656023c8abe5b0e1845bf61e68bb3c1c1d9b214ba9739dac2d22b307040
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     API key resolution, and falling back to a default provider if Anthropic is unavailable or not configured.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # getInferProvider

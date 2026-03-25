@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/events.ts::emitHookEvents
 file: src/core/relationships/events.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.468Z"
+updated: "2026-03-24T18:48:02.919Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 41
     end: 67
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:daf31dd875e4a8a3d652a8bab02fa7ef6bb4a90cc663a679e9d4d9bc1285226a
   structural:
     kind: function
@@ -31,7 +31,14 @@ identity:
     default), using a fallback mechanism to ensure events are always persisted when no explicit output is configured.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/core/types.ts::HookEvent
+    source: ai
+  - type: depends_on
+    target: src/config/types.ts::WhythoConfig
+    source: ai
 ---
 
 # emitHookEvents

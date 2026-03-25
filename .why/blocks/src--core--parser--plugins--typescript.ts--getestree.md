@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::getEstree
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.981Z"
+updated: "2026-03-24T18:48:01.738Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::getEstree
   line_range:
-    start: 11
-    end: 20
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:d97a649d6bdb8a1cd471c60d64d8ed648e7bb770771599cac748786f70f0595e
+    start: 12
+    end: 21
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:d80b43536c1169f6b4c102bf9faec9c71e04610793e7c666698bc3b2f9600073
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     cached result on subsequent calls.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # getEstree

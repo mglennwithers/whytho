@@ -4,16 +4,16 @@ type: block
 symbolic_ref: src/core/push/index.ts::pushReasoning
 file: src/core/push/index.ts
 created: "2026-03-21T04:23:42.890Z"
-updated: "2026-03-22T09:38:08.161Z"
+updated: "2026-03-25T02:10:29.500Z"
 created_by_session: agent-push
 updated_by_session: agent-push
 identity:
   symbolic: src/core/push/index.ts::pushReasoning
   line_range:
-    start: 57
-    end: 229
-    commit: 1e27f0b292da50781577cdb94eeea6d19c1dd93e
-  content_hash: sha256:113a71b40d9a7e3d3dd204a7cac56a871975f3d99557237cbf68d91eaa28abae
+    start: 101
+    end: 312
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  content_hash: sha256:3a4ce150b4e3ed2a2234e2ff8d7d2d2840d825bd14d4ecba32190bd44920cc47
   structural:
     kind: function
     parent_scope: module
@@ -25,7 +25,53 @@ identity:
     is more accurate than post-hoc AI inference because the reasoning is captured at th
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 1e27f0b292da50781577cdb94eeea6d19c1dd93e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+relationships:
+  - type: depends_on
+    target: src/core/fs/layout.ts::getWhyRoot
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::sessionAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::blockAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::fileAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/writer.ts::fileExists
+    source: ai
+  - type: depends_on
+    target: src/core/frontmatter/parse.ts::parseAnnotation
+    source: ai
+  - type: depends_on
+    target: src/core/frontmatter/serialize.ts::serializeAnnotation
+    source: ai
+  - type: depends_on
+    target: src/core/fs/writer.ts::writeFile
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::WHYTHO_VERSION
+    source: ai
+  - type: depends_on
+    target: src/core/git/repo.ts::getHeadCommitSha
+    source: ai
+  - type: depends_on
+    target: src/core/parser/registry.ts::parseFile
+    source: ai
+  - type: depends_on
+    target: src/core/identity/content-hash.ts::computeContentHash
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::BlockFrontmatter
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::FileFrontmatter
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::SessionFrontmatter
+    source: ai
 ---
 
 # pushReasoning

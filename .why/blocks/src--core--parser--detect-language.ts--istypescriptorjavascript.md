@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/detect-language.ts::isTypeScriptOrJavaScript
 file: src/core/parser/detect-language.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.692Z"
+updated: "2026-03-24T09:38:25.399Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 30
     end: 33
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:93c09fe8f2f464f97a41d85b0ed0650e97ef205f0ab4123f36e720367493d440
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     language detection function and checking the result against two specific language identifiers.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # isTypeScriptOrJavaScript

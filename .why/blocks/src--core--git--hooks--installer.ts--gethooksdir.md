@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/hooks/installer.ts::getHooksDir
 file: src/core/git/hooks/installer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.115Z"
+updated: "2026-03-24T18:48:01.251Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/git/hooks/installer.ts::getHooksDir
   line_range:
-    start: 32
-    end: 40
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 34
+    end: 42
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:8b631f85919e9196cb5f18c9bf0d27e526f8ba21e755ec0244481a27bbe5b73a
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     conventional `.git/hooks` location.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # getHooksDir

@@ -58,12 +58,12 @@ export async function initWhyDir(repoRoot: string): Promise<void> {
   // Write empty index files (don't overwrite if they exist)
   const idxPath = indexPath(whyRoot)
   if (!(await fileExists(idxPath))) {
-    await fs.writeFile(idxPath, JSON.stringify(EMPTY_INDEX, null, 2) + '\n', 'utf8')
+    await fs.writeFile(idxPath, `${JSON.stringify(EMPTY_INDEX, null, 2)  }\n`, 'utf8')
   }
 
   const archIdxPath = archiveIndexPath(whyRoot)
   if (!(await fileExists(archIdxPath))) {
-    await fs.writeFile(archIdxPath, JSON.stringify(EMPTY_ARCHIVE_INDEX, null, 2) + '\n', 'utf8')
+    await fs.writeFile(archIdxPath, `${JSON.stringify(EMPTY_ARCHIVE_INDEX, null, 2)  }\n`, 'utf8')
   }
 }
 

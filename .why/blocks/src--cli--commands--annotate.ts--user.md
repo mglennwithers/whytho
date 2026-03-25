@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::user
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T11:35:31.335Z"
+updated: "2026-03-25T02:10:26.244Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::user
   line_range:
-    start: 51
-    end: 51
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 72
+    end: 72
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:1412ad2af2fc5443c6470a08ba1247b128be5bae74671dfcc0631319894032f3
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     based on privacy configuration settings.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # user

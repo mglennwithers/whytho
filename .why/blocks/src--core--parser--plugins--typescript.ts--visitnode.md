@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::visitNode
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.214Z"
+updated: "2026-03-24T18:48:01.994Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::visitNode
   line_range:
-    start: 58
-    end: 241
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:29f9bd83907f29c2362b72940497c06f895c0c19493689cc6312b56d5651cffd
+    start: 60
+    end: 243
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:b54629f036d87de326b6517ad19b7c51aa34bb68cf1284af18b53133bdc13b71
   structural:
     kind: function
     parent_scope: module
@@ -32,7 +32,14 @@ identity:
     content for documentation or analysis purposes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/core/types.ts::BlockKind
+    source: ai
+  - type: depends_on
+    target: src/core/parser/types.ts::ParsedBlock
+    source: ai
 ---
 
 # visitNode

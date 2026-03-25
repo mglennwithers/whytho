@@ -1,4 +1,4 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
 import * as fs from 'fs/promises'
 import { findRepoRoot } from '../../core/git/repo.js'
@@ -11,7 +11,7 @@ export function registerRelated(program: Command): void {
     .command('related <ref>')
     .description('Show blocks related to a block (by relationship type)')
     .option('--json', 'Output as JSON')
-    .action(async (ref: string, options) => {
+    .action(async (ref: string, options: { json?: boolean }) => {
       try {
         const repoRoot = await findRepoRoot()
         const whyRoot = getWhyRoot(repoRoot)

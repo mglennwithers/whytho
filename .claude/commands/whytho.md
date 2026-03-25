@@ -13,9 +13,13 @@ Load whytho annotation context for the current task.
 3. **Use the MCP tools** (if whytho MCP server is configured):
    - `get_file_context(path)` — file annotation + all block annotations in one call
    - `get_block(symbolic_ref)` — single block reasoning, e.g. `src/auth/middleware.ts::rotateToken`
+   - `get_block(ref, { include: ["Purpose", "Tradeoffs"] })` — request only specific sections
+   - `get_annotations({ refs: [{ type, ref }, ...] })` — fetch multiple annotations in one call (supports `include` filtering per ref)
    - `get_summary()` — overview of coverage and recent sessions
    - `list_sessions(limit)` — recent annotation sessions
    - `search(query)` — find annotations mentioning a topic
+
+   **Section filtering**: All single-get tools (`get_block`, `get_file`, `get_folder`, `get_session`) accept an `include` array to request specific parts: `"frontmatter"`, `"body"`, or any `## Heading` name (e.g. `"Purpose"`, `"Tradeoffs"`, `"Uncertainty"`). Omit for full content.
 
    **Fallback** if MCP is not available: read `.why/files/`, `.why/blocks/`, `.why/sessions/` directly using Bash or Read tools. Slugs use `--` as path separator (e.g. `src/auth/middleware.ts` → `src--auth--middleware.ts.md`).
 

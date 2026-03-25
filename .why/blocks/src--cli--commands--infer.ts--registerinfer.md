@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::registerInfer
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:32.392Z"
+updated: "2026-03-25T02:10:27.700Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::registerInfer
   line_range:
-    start: 109
-    end: 493
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:7ae04993ec8971f6062d700c6492fd0acf7ff4795e5b726199c8c116fdc76ca1
+    start: 123
+    end: 540
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  content_hash: sha256:7b6d0f57d4150d9094f866980c90e8caa3c19e979dbf1c720d2e0a9d0d6de9db
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,83 @@ identity:
     in a repository, with configurable coverage levels and limits.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: ai
+  - type: depends_on
+    target: src/core/git/repo.ts::getHeadCommitSha
+    source: ai
+  - type: depends_on
+    target: src/core/git/repo.ts::getTrackedFiles
+    source: ai
+  - type: depends_on
+    target: src/core/fs/init.ts::isWhyDirInitialized
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::getWhyRoot
+    source: ai
+  - type: depends_on
+    target: src/config/loader.ts::loadConfig
+    source: ai
+  - type: depends_on
+    target: src/ai/registry.ts::getInferProvider
+    source: ai
+  - type: depends_on
+    target: src/core/parser/registry.ts::parseFile
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::blockAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::buildSymbolicRef
+    source: ai
+  - type: depends_on
+    target: src/core/fs/writer.ts::fileExists
+    source: ai
+  - type: depends_on
+    target: src/ai/prompts/infer.ts::buildInferredBlockPrompt
+    source: ai
+  - type: depends_on
+    target: src/core/identity/content-hash.ts::computeContentHash
+    source: ai
+  - type: depends_on
+    target: src/core/frontmatter/serialize.ts::serializeAnnotation
+    source: ai
+  - type: depends_on
+    target: src/core/fs/writer.ts::writeFile
+    source: ai
+  - type: depends_on
+    target: src/ai/prompts/infer.ts::parseInferredResponse
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::WHYTHO_VERSION
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::fileAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/parser/detect-language.ts::detectLanguage
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::parentFolder
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAnnotationFile
+    source: ai
+  - type: depends_on
+    target: src/ai/prompts/infer.ts::buildInferredFilePrompt
+    source: ai
+  - type: depends_on
+    target: src/ai/registry.ts::getAnthropicBatchRunner
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::folderAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/ai/prompts/infer.ts::buildInferredFolderPrompt
+    source: ai
 ---
 
 # registerInfer

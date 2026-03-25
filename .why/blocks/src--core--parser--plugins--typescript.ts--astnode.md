@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::ASTNode
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.836Z"
+updated: "2026-03-24T18:48:01.580Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::ASTNode
   line_range:
-    start: 22
-    end: 38
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:2bacf4756977ec8239e3ae254825a40e68bb78c4b066ada969cca91568eca765
+    start: 23
+    end: 40
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:fb1f8be323fecfb4a9bae3441a0d059583d928764456bceec3fc4634ccec6c94
   structural:
     kind: type
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     various JavaScript/TypeScript language constructs through optional, loosely-typed properties.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # ASTNode

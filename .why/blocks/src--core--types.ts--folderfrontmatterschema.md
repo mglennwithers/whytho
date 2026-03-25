@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::FolderFrontmatterSchema
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-22T09:33:35.296Z"
+updated: "2026-03-24T18:48:04.605Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/types.ts::FolderFrontmatterSchema
   line_range:
-    start: 90
-    end: 100
-    commit: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
+    start: 91
+    end: 101
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:8e26f0e16a15526a5cff65a905f5818d5132f87ec9edf2eb0fab3fc8984c9b73
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     including path, session tracking, file containment, and optional inference metadata.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # FolderFrontmatterSchema

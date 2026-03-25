@@ -143,3 +143,7 @@ export type { PushInput, PushResult, PushType } from './core/push/index.js'
 export type { WhythoConfig } from './config/types.js'
 export { loadConfig } from './config/loader.js'
 export { DEFAULT_CONFIG } from './config/defaults.js'
+
+// ─── Reannotate ──────────────────────────────────────────────────────────────
+export { runReannotation, checkStaleAnnotations } from './core/reannotate/index.js'
+export type { ReannotateOptions, ReannotateResult, ReannotateTarget, ReannotateTargetType } from './core/reannotate/index.js'

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/related.ts::arrow
 file: src/cli/commands/related.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:32.744Z"
+updated: "2026-03-24T18:47:59.565Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 42
     end: 42
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:d10ae3c65c42e50473df5fbd43f0c4c56021343cb8fafc2753aed2a4a9ed955e
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     relationship flow in CLI output.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # arrow

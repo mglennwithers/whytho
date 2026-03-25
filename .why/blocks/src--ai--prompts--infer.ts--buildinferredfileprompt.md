@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/infer.ts::buildInferredFilePrompt
 file: src/ai/prompts/infer.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-21T11:35:30.299Z"
+updated: "2026-03-24T09:38:20.146Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 58
     end: 87
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:b24877cd2728119900c22fb6cef8653da777ec62ca25551ec185c6b70d0b706f
   structural:
     kind: function
@@ -27,7 +27,11 @@ identity:
     conventions, without any source code content or developer context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+relationships:
+  - type: depends_on
+    target: src/ai/types.ts::AnnotationRequest
+    source: ai
 ---
 
 # buildInferredFilePrompt

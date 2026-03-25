@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/annotate-session.ts::buildSessionAnnotationPrompt
 file: src/ai/prompts/annotate-session.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-21T11:35:30.232Z"
+updated: "2026-03-24T09:38:20.087Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 3
     end: 34
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:cd0f857f825822b5e63add4470e9dfd7bdac68eaa3eee48532ba88f742fc1639
   structural:
     kind: function
@@ -27,7 +27,11 @@ identity:
     markdown annotation with Objectives, Decisions, and Uncertainty Log sections.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+relationships:
+  - type: depends_on
+    target: src/ai/types.ts::AnnotationRequest
+    source: ai
 ---
 
 # buildSessionAnnotationPrompt

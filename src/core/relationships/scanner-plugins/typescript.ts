@@ -3,13 +3,14 @@ import type { RelationshipScanner, BlockRegistry, ScannedRelationship } from '..
 import type { RelationshipType } from '../../types.js'
 
 // Lazy-load typescript-estree (same pattern as parser plugin)
-type TSEstree = typeof import('@typescript-eslint/typescript-estree')
+import type * as TSEstreeModule from '@typescript-eslint/typescript-estree'
+type TSEstree = typeof TSEstreeModule
 let cachedEstree: TSEstree | null | undefined = undefined
 
 function getEstree(): TSEstree | null {
   if (cachedEstree !== undefined) return cachedEstree
   try {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
     cachedEstree = require('@typescript-eslint/typescript-estree') as TSEstree
   } catch {
     cachedEstree = null
@@ -38,25 +39,14 @@ function resolveImport(
   const resolved = path.join(dir, normalized).replace(/\\/g, '/')
   for (const ext of ['.ts', '.tsx', '.js', '.jsx']) {
     for (const key of registry.keys()) {
-      if (key.startsWith(resolved + ext + '::')) return resolved + ext
+      if (key.startsWith(`${resolved + ext  }::`)) return resolved + ext
     }
     // Also check index files
     for (const key of registry.keys()) {
-      if (key.startsWith(resolved + '/index' + ext + '::')) return resolved + '/index' + ext
+      if (key.startsWith(`${resolved  }/index${  ext  }::`)) return `${resolved  }/index${  ext}`
     }
   }
   return undefined
-}
-
-/**
- * Returns the first symbolic ref in the registry matching the given file path,
- * or a fallback `filePath::module` ref.
- */
-function defaultSourceBlock(filePath: string, registry: BlockRegistry): string {
-  for (const key of registry.keys()) {
-    if (key.startsWith(filePath + '::')) return key
-  }
-  return `${filePath}::module`
 }
 
 type ASTNode = {
@@ -96,7 +86,6 @@ export const typescriptScannerPlugin: RelationshipScanner = {
     }
 
     const edges: ScannedRelationship[] = []
-    const srcBlock = defaultSourceBlock(filePath, registry)
     const isTest = isTestFile(filePath)
 
     // importMap: localName → { filePath, exportedName }
@@ -110,7 +99,7 @@ export const typescriptScannerPlugin: RelationshipScanner = {
         const resolvedFilePath = resolveImport(importPath, filePath, registry)
         if (!resolvedFilePath) continue
 
-        const specifiers = (node.specifiers ?? []) as ASTNode[]
+        const specifiers = (node.specifiers ?? [])
         for (const spec of specifiers) {
           if (spec.type === 'ImportSpecifier') {
             const localName = spec.local?.name
@@ -122,7 +111,7 @@ export const typescriptScannerPlugin: RelationshipScanner = {
             const target = `${resolvedFilePath}::${exportedName}`
             if (registry.has(target)) {
               const type: RelationshipType = isTest ? 'tests' : 'depends_on'
-              edges.push({ sourceBlock: srcBlock, type, target, source: 'static' })
+              edges.push({ sourceFile: filePath, type, target, source: 'static' })
             }
           } else if (spec.type === 'ImportDefaultSpecifier') {
             const localName = spec.local?.name
@@ -138,7 +127,7 @@ export const typescriptScannerPlugin: RelationshipScanner = {
       // Unwrap export wrapper if present
       const node: ASTNode =
         topNode.type === 'ExportNamedDeclaration' && topNode.declaration
-          ? (topNode.declaration as ASTNode)
+          ? (topNode.declaration)
           : topNode
 
       if (node.type !== 'ClassDeclaration' && node.type !== 'ClassExpression') continue
@@ -148,9 +137,9 @@ export const typescriptScannerPlugin: RelationshipScanner = {
       const classRef = `${filePath}::${className}`
 
       // extends
-      const superNode = node.superClass as ASTNode | null | undefined
+      const superNode = node.superClass
       if (superNode) {
-        const superName = superNode.name as string | undefined
+        const superName = superNode.name
         if (superName) {
           const imported = importMap.get(superName)
           if (imported) {
@@ -163,11 +152,11 @@ export const typescriptScannerPlugin: RelationshipScanner = {
       }
 
       // implements
-      const implementsList = (node.implements ?? []) as ASTNode[]
+      const implementsList = (node.implements ?? [])
       for (const impl of implementsList) {
         // TSClassImplements wraps an Identifier expression
-        const exprNode = (impl.expression ?? impl) as ASTNode
-        const ifaceName = exprNode.name as string | undefined
+        const exprNode = (impl.expression ?? impl)
+        const ifaceName = exprNode.name
         if (!ifaceName) continue
         const imported = importMap.get(ifaceName)
         if (imported) {

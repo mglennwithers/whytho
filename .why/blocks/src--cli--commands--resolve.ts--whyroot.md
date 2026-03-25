@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/resolve.ts::whyRoot
 file: src/cli/commands/resolve.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T10:12:27.728Z"
+updated: "2026-03-25T02:10:28.225Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/resolve.ts::whyRoot
   line_range:
-    start: 27
-    end: 27
-    commit: dbdf3218572cb3980a58c6ef326ecef25f7b14ba
+    start: 36
+    end: 36
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:e481246d2df3357642a60f995603c42b66b743d54e33032f1bcd5d20c0aa4593
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     storing the result in a constant variable.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: dbdf3218572cb3980a58c6ef326ecef25f7b14ba
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # whyRoot

@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/core/push/index.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-25T02:10:24.707Z"
 updated_by_session: inferred
 parent_folder: src/core/push/
 sessions: []
@@ -40,6 +40,58 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships:
+  - type: depends_on
+    target: src/core/fs/layout.ts::getWhyRoot
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::sessionAnnotationPath
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::blockAnnotationPath
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::fileAnnotationPath
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::sessionsDir
+    source: static
+  - type: depends_on
+    target: src/core/frontmatter/parse.ts::parseAnnotation
+    source: static
+  - type: depends_on
+    target: src/core/frontmatter/serialize.ts::serializeAnnotation
+    source: static
+  - type: depends_on
+    target: src/core/fs/writer.ts::writeFile
+    source: static
+  - type: depends_on
+    target: src/core/fs/writer.ts::fileExists
+    source: static
+  - type: depends_on
+    target: src/core/parser/registry.ts::parseFile
+    source: static
+  - type: depends_on
+    target: src/core/identity/content-hash.ts::computeContentHash
+    source: static
+  - type: depends_on
+    target: src/core/git/repo.ts::getHeadCommitSha
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::WHYTHO_VERSION
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::BlockFrontmatter
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::FileFrontmatter
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::SessionFrontmatter
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::RelationshipType
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **78%**

@@ -25,27 +25,16 @@ function resolveRelativeImport(
     dir = path.dirname(dir).replace(/\\/g, '/')
   }
   const modulePath = modulePart ? path.join(dir, modulePart.replace(/\./g, '/')).replace(/\\/g, '/') : dir
-  const candidate = modulePath + '.py'
+  const candidate = `${modulePath  }.py`
   for (const key of registry.keys()) {
-    if (key.startsWith(candidate + '::')) return candidate
+    if (key.startsWith(`${candidate  }::`)) return candidate
   }
   // Also check package __init__.py
-  const initCandidate = modulePath + '/__init__.py'
+  const initCandidate = `${modulePath  }/__init__.py`
   for (const key of registry.keys()) {
-    if (key.startsWith(initCandidate + '::')) return initCandidate
+    if (key.startsWith(`${initCandidate  }::`)) return initCandidate
   }
   return undefined
-}
-
-/**
- * Returns the first symbolic ref in the registry matching the given file path,
- * or a fallback `filePath::module` ref.
- */
-function defaultSourceBlock(filePath: string, registry: BlockRegistry): string {
-  for (const key of registry.keys()) {
-    if (key.startsWith(filePath + '::')) return key
-  }
-  return `${filePath}::module`
 }
 
 // Matches: from .module import Name1, Name2
@@ -60,7 +49,6 @@ export const pythonScannerPlugin: RelationshipScanner = {
 
   scan(filePath: string, fileContent: string, registry: BlockRegistry): ScannedRelationship[] {
     const edges: ScannedRelationship[] = []
-    const srcBlock = defaultSourceBlock(filePath, registry)
     const isTest = isTestFile(filePath)
 
     // importMap: localName → resolvedFilePath
@@ -89,7 +77,7 @@ export const pythonScannerPlugin: RelationshipScanner = {
         const target = `${resolvedFilePath}::${exportedName}`
         if (registry.has(target)) {
           const type: RelationshipType = isTest ? 'tests' : 'depends_on'
-          edges.push({ sourceBlock: srcBlock, type, target, source: 'static' })
+          edges.push({ sourceFile: filePath, type, target, source: 'static' })
         }
       }
     }

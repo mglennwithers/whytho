@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::coverage
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T11:35:30.946Z"
+updated: "2026-03-25T02:10:25.697Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::coverage
   line_range:
-    start: 40
-    end: 40
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:57f7cfbcac0354fb2bcd6a5158292ebc7fc23fab86556c8b7a43b26f840b1f25
+    start: 49
+    end: 49
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  content_hash: sha256:55f73a91cc3782d7f12fe697ebbbcc8c03a63f68b12a119ce4380e9fb9dcf5e5
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     then type-asserts it to a specific VerbosityCoverage type.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # coverage

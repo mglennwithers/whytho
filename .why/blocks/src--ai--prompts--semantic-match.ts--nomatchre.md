@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/semantic-match.ts::noMatchRe
 file: src/ai/prompts/semantic-match.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-21T11:35:30.468Z"
+updated: "2026-03-24T18:47:56.820Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -12,9 +12,9 @@ inference_confidence: 0.82
 identity:
   symbolic: src/ai/prompts/semantic-match.ts::noMatchRe
   line_range:
-    start: 34
-    end: 34
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 33
+    end: 33
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:d524edcb3dfd2aef89576ee01646fe1122d84d57364fde990d10c6f9bd4f8bf3
   structural:
     kind: const
@@ -26,7 +26,7 @@ identity:
     formatted string, case-insensitively.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # noMatchRe

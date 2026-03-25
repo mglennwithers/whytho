@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/types.ts::SemanticMatchResult
 file: src/ai/types.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T11:35:30.804Z"
+updated: "2026-03-24T09:38:20.724Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/ai/types.ts::SemanticMatchResult
   line_range:
-    start: 43
-    end: 46
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:6b8cd2e88ac7ddee0e90e14f27e3a5449d5cd69f3c644247f5585f4ac55197da
+    start: 44
+    end: 48
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  content_hash: sha256:d3c38cbc7535ac9ff6e494f3c7387cf22542c6b74c5529a46cf1da2fc47b0e87
   structural:
     kind: interface
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     with a confidence metric to indicate match quality and location.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # SemanticMatchResult

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/push.ts::result
 file: src/cli/commands/push.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:32.699Z"
+updated: "2026-03-24T18:47:59.389Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/push.ts::result
   line_range:
-    start: 57
-    end: 63
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:1bbf7962a04c5739cae73dc7ca9f2727e3d1e668c9f18fd7bf4e9f295afffe7c
+    start: 86
+    end: 93
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:6de972e193150e09f15b7715e763d4db7773a540febc3649c0a1776a6f8b36ed
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,11 @@ identity:
     storing the result for subsequent processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/core/push/index.ts::pushReasoning
+    source: ai
 ---
 
 # result

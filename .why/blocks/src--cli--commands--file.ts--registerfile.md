@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/file.ts::registerFile
 file: src/cli/commands/file.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.517Z"
+updated: "2026-03-24T18:47:57.866Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/file.ts::registerFile
   line_range:
-    start: 9
-    end: 47
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:8d526044f251cc09851ecdc9c63a2fdaf8d6ac20b93641e3e02120b1dcc75f4f
+    start: 13
+    end: 51
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:6bd64f5efcc0b8d61524d7218db8af320230bf75088eab491e707cb2ad1a9acc
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,26 @@ identity:
     both formatted console display and structured data export.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::getWhyRoot
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::fileAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/writer.ts::fileExists
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAnnotationFile
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::FileFrontmatter
+    source: ai
 ---
 
 # registerFile

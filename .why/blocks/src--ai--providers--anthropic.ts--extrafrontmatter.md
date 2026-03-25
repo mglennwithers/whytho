@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/anthropic.ts::extraFrontmatter
 file: src/ai/providers/anthropic.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-21T11:35:30.574Z"
+updated: "2026-03-24T18:47:56.946Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -12,9 +12,9 @@ inference_confidence: 0.35
 identity:
   symbolic: src/ai/providers/anthropic.ts::extraFrontmatter
   line_range:
-    start: 97
-    end: 97
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 104
+    end: 104
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:25207e3515c2144885a4ce9429f65fa12e8307cd776689f23fdacc5b3627f468
   structural:
     kind: const
@@ -26,7 +26,7 @@ identity:
     additional frontmatter key-value pairs during Anthropic provider processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # extraFrontmatter

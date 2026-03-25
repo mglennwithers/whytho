@@ -1,0 +1,494 @@
+{
+  "timestamp": "2026-03-23T08:30:44.412Z",
+  "runs": [
+    {
+      "subject": {
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "judge": {
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "tasks": [
+        {
+          "id": "dq-1",
+          "name": "Error Handling Fix",
+          "dimension": "decision_quality",
+          "without": {
+            "response": "# Implementation\n\nModify the `emit()` method to catch and handle exceptions from individual handlers:\n\n```typescript\n/**\n * Emit an event, calling all subscribed handlers with the given data.\n */\nemit(event: string, data?: unknown): void {\n  const handlers = this.subs.get(event)\n  if (!handlers) return\n  for (const handler of handlers.values()) {\n    try {\n      handler(data)\n    } catch (error) {\n      console.error(`Error in event handler for \"${event}\":`, error)\n    }\n  }\n}\n```\n\n## Rationale\n\n- **Isolation**: Wrapping each handler call in a try-catch ensures one failing handler doesn't prevent others from executing\n- **Observability**: Logging errors to console provides visibility without breaking the event bus contract\n- **Resilience**: The emit() method completes successfully even if handlers fail, maintaining predictable behavior\n\n## Alternative: Custom Error Handler\n\nFor more control, consider adding an optional error handler:\n\n```typescript\nprivate errorHandler: ((error: Error, event: string) => void) | null = null\n\nsetErrorHandler(handler: (error: Error, event: string) => void): void {\n  this.errorHandler = handler\n}\n\nemit(event: string, data?: unknown): void {\n  const handlers = this.subs.get(event)\n  if (!handlers) return\n  for (const handler of handlers.values()) {\n    try {\n      handler(data)\n    } catch (error) {\n      const err = error instanceof Error ? error : new Error(String(error))\n      this.errorHandler?.(err, event) ?? console.error(`Error in event handler for \"${event}\":`, err)\n    }\n  }\n}\n```\n\nThis allows consumers to define custom error handling behavior while maintaining a sensible default.",
+            "inputTokens": 527,
+            "outputTokens": 428,
+            "scores": [
+              {
+                "id": "per-sub",
+                "score": 3,
+                "reasoning": "Each handler invocation is individually wrapped in its own try-catch block within the for loop, ensuring one subscriber's exception cannot affect the execution of the next."
+              },
+              {
+                "id": "all-exec",
+                "score": 3,
+                "reasoning": "The try-catch is scoped to each iteration, so the loop continues unconditionally after catching an exception, guaranteeing all subscribers execute regardless of prior failures."
+              },
+              {
+                "id": "err-handled",
+                "score": 2,
+                "reasoning": "Errors are captured and logged to console.error with descriptive context (event name and error details), ensuring they are surfaced and not silently swallowed or re-thrown."
+              },
+              {
+                "id": "sync",
+                "score": 2,
+                "reasoning": "The implementation uses only synchronous try-catch; no async/await, Promises, or setTimeout are introduced."
+              },
+              {
+                "id": "precision",
+                "score": 1,
+                "reasoning": "The primary solution is direct and correct, but the response includes an unnecessary 'Alternative' section with a custom error handler that adds significant verbosity and hedging without being requested, reducing focus."
+              }
+            ],
+            "total": 11,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "# Implementation\n\nUpdate the `emit()` method to wrap each handler in a try/catch, collect errors, and return them:\n\n```typescript\n/**\n * Emit an event, calling all subscribed handlers with the given data.\n * Returns an array of errors thrown by handlers. If empty, all handlers succeeded.\n */\nemit(event: string, data?: unknown): Error[] {\n  const handlers = this.subs.get(event)\n  if (!handlers) return []\n  \n  const errors: Error[] = []\n  for (const handler of handlers.values()) {\n    try {\n      handler(data)\n    } catch (err) {\n      errors.push(err instanceof Error ? err : new Error(String(err)))\n    }\n  }\n  return errors\n}\n```\n\n**Key points:**\n- Each handler runs in isolation; one failure does not skip remaining handlers (per design decision on error isolation)\n- Errors are collected and returned, allowing callers to inspect them without crashing\n- Non-Error objects thrown are wrapped in an Error for consistency\n- Return type changes from `void` to `Error[]` — callers can check `if (emit(...).length > 0)` to detect failures",
+            "inputTokens": 1091,
+            "outputTokens": 279,
+            "scores": [
+              {
+                "id": "per-sub",
+                "score": 3,
+                "reasoning": "Each handler call is wrapped in its own try/catch block within the loop, ensuring complete isolation—one handler's exception cannot affect another."
+              },
+              {
+                "id": "all-exec",
+                "score": 3,
+                "reasoning": "The try/catch is inside the loop and does not re-throw, so the loop continues to the next handler regardless of whether the current one threw, guaranteeing all subscribers execute."
+              },
+              {
+                "id": "err-handled",
+                "score": 2,
+                "reasoning": "Errors are collected into an array and returned to the caller, surfacing them without silently swallowing or re-throwing to crash the emit() call itself."
+              },
+              {
+                "id": "sync",
+                "score": 2,
+                "reasoning": "The implementation contains no async/await, Promises, setTimeout, or any other asynchronous construct—it is entirely synchronous."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "The response is concise and direct: it presents the corrected method, explains the key design choices in bullet points aligned with the documented design, and includes no unnecessary filler."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "delta": 1
+        },
+        {
+          "id": "dq-2",
+          "name": "Wildcard Rejection",
+          "dimension": "decision_quality",
+          "without": {
+            "response": "# Implementation Recommendation\n\nModify the `emit` method to also trigger handlers subscribed to the `'*'` event:\n\n```typescript\n/**\n * Emit an event, calling all subscribed handlers with the given data.\n */\nemit(event: string, data?: unknown): void {\n  const handlers = this.subs.get(event)\n  if (handlers) {\n    for (const handler of handlers.values()) {\n      handler(data)\n    }\n  }\n  \n  // Trigger wildcard subscribers\n  const wildcardHandlers = this.subs.get('*')\n  if (wildcardHandlers) {\n    for (const handler of wildcardHandlers.values()) {\n      handler(data)\n    }\n  }\n}\n```\n\n**Key points:**\n- Wildcard handlers receive the same data as event-specific handlers\n- Wildcard handlers are called *after* event-specific handlers (maintains predictable ordering)\n- No changes needed to `subscribe()` — it already works for `'*'`\n- Consider documenting this behavior in the class JSDoc\n\n**Optional enhancement** — if you want wildcard handlers to know which event was emitted, pass an object instead:\n\n```typescript\nemit(event: string, data?: unknown): void {\n  const handlers = this.subs.get(event)\n  if (handlers) {\n    for (const handler of handlers.values()) {\n      handler(data)\n    }\n  }\n  \n  const wildcardHandlers = this.subs.get('*')\n  if (wildcardHandlers) {\n    for (const handler of wildcardHandlers.values()) {\n      handler({ event, data })\n    }\n  }\n}\n```\n\nThis requires updating the type signature and documentation, so only use if the event name is needed by subscribers.",
+            "inputTokens": 521,
+            "outputTokens": 425,
+            "scores": [
+              {
+                "id": "declines",
+                "score": 0,
+                "reasoning": "The AI implements the wildcard feature directly without any objection or pushback."
+              },
+              {
+                "id": "reason",
+                "score": 0,
+                "reasoning": "No reason is given against implementing wildcards; the response treats the feature request as straightforward and valid."
+              },
+              {
+                "id": "alternative",
+                "score": 0,
+                "reasoning": "No alternative approach is proposed because the AI does not decline the feature."
+              },
+              {
+                "id": "no-partial",
+                "score": 0,
+                "reasoning": "The response includes complete wildcard implementation code in both the primary solution and the optional enhancement."
+              },
+              {
+                "id": "precision",
+                "score": 1,
+                "reasoning": "The response is mostly direct and focused on the implementation, but includes an unnecessary 'optional enhancement' section that adds verbosity without being requested."
+              }
+            ],
+            "total": 1,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "**Recommendation: Reject this feature request.**\n\nThis directly contradicts the documented design decision under \"No wildcard subscriptions\":\n\n> Wildcard handlers fire in undefined order relative to specific-event handlers, creating subtle ordering bugs that are hard to reproduce. The complexity is not worth it; callers who need all events can subscribe to each event by name explicitly.\n\n**If the teammate has a genuine use case**, the proper solution is:\n\n1. **Ask them to name it explicitly.** Instead of `bus.subscribe('*', handler)`, they should call:\n   ```typescript\n   const events = ['userLogin', 'userLogout', 'dataSync', /* ... */]\n   events.forEach(e => bus.subscribe(e, handler))\n   ```\n\n2. **If they need dynamic event discovery**, add an explicit API:\n   ```typescript\n   getEventNames(): string[]\n   ```\n   Then they can subscribe to all known events programmatically with deterministic ordering.\n\n3. **If they're building a logger/debugger**, create a separate `EventLogger` wrapper class that instruments the bus rather than polluting the core API.\n\nThe wildcard feature introduces ordering ambiguity and makes the bus harder to reason about. The documented design prioritizes clarity and predictability over convenience.",
+            "inputTokens": 1085,
+            "outputTokens": 285,
+            "scores": [
+              {
+                "id": "declines",
+                "score": 3,
+                "reasoning": "Response clearly and explicitly declines to implement the wildcard feature, opening with 'Recommendation: Reject this feature request' and providing no implementation code."
+              },
+              {
+                "id": "reason",
+                "score": 3,
+                "reasoning": "Response cites the specific documented design reason: wildcard handlers create undefined ordering relative to specific-event handlers, leading to subtle ordering bugs that are hard to reproduce."
+              },
+              {
+                "id": "alternative",
+                "score": 2,
+                "reasoning": "Response proposes three concrete alternatives: explicit per-event subscription, a getEventNames() API for dynamic discovery, and a separate EventLogger wrapper class for instrumentation use cases."
+              },
+              {
+                "id": "no-partial",
+                "score": 2,
+                "reasoning": "Response contains no wildcard implementation code whatsoever; it remains purely advisory."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is direct and focused, leading with a clear recommendation, backing it with design rationale, and offering proportionate alternatives without excessive hedging or filler."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "delta": 11
+        },
+        {
+          "id": "sr-1",
+          "name": "Implement unsubscribe()",
+          "dimension": "task_success",
+          "without": {
+            "response": "```typescript\n/**\n * Unsubscribe using a token returned by subscribe().\n * Returns true if the token was found and removed, false otherwise.\n */\nunsubscribe(token: symbol): boolean {\n  const event = this.tokenIndex.get(token)\n  if (!event) return false\n  \n  const handlers = this.subs.get(event)\n  if (!handlers) return false\n  \n  const deleted = handlers.delete(token)\n  if (deleted) {\n    this.tokenIndex.delete(token)\n    // Clean up empty handler maps\n    if (handlers.size === 0) {\n      this.subs.delete(event)\n    }\n  }\n  \n  return deleted\n}\n```\n\nThis implementation:\n1. Looks up the event name using the token from `tokenIndex`\n2. Returns `false` if the token doesn't exist\n3. Gets the handlers map for that event and returns `false` if it doesn't exist\n4. Deletes the handler using the token and removes the token from `tokenIndex`\n5. Cleans up empty handler maps to prevent memory leaks\n6. Returns whether the deletion was successful",
+            "inputTokens": 507,
+            "outputTokens": 275,
+            "scores": [
+              {
+                "id": "token-lookup",
+                "score": 4,
+                "reasoning": "Implementation uses tokenIndex map to perform O(1) lookup of the event name from the token, enabling efficient handler retrieval."
+              },
+              {
+                "id": "bool-return",
+                "score": 2,
+                "reasoning": "Method correctly returns true when the token is found and deleted, and false when the token is not found or already removed."
+              },
+              {
+                "id": "safe-iter",
+                "score": 2,
+                "reasoning": "Implementation does not mutate any collections during iteration; deletion occurs on a specific handler map after lookup, not during any loop."
+              },
+              {
+                "id": "no-throw",
+                "score": 2,
+                "reasoning": "Method gracefully returns false for unknown or already-used tokens without throwing an error."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is direct and focused, providing only the implementation and a concise numbered explanation of the logic without unnecessary verbosity or hedging."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "```typescript\n/**\n * Unsubscribe using a token returned by subscribe().\n * Returns true if the token was found and removed, false otherwise.\n */\nunsubscribe(token: symbol): boolean {\n  const event = this.tokenIndex.get(token)\n  if (!event) return false\n  \n  const handlers = this.subs.get(event)\n  if (!handlers) return false\n  \n  const deleted = handlers.delete(token)\n  if (deleted) {\n    this.tokenIndex.delete(token)\n    // Clean up empty handler maps to avoid memory leaks\n    if (handlers.size === 0) {\n      this.subs.delete(event)\n    }\n  }\n  \n  return deleted\n}\n```\n\n**Rationale:**\n1. Look up the event name from `tokenIndex` in O(1) time\n2. Return `false` early if the token doesn't exist\n3. Delete the handler from the event's handler map\n4. Clean up the token from `tokenIndex` only if deletion succeeded\n5. Remove the event entry from `subs` if its handler map is now empty (prevents memory leaks from accumulated empty maps)\n6. Return the result of the deletion operation",
+            "inputTokens": 1071,
+            "outputTokens": 288,
+            "scores": [
+              {
+                "id": "token-lookup",
+                "score": 4,
+                "reasoning": "The implementation correctly uses tokenIndex.get(token) to perform O(1) lookup of the event name, exactly as documented in the design annotations."
+              },
+              {
+                "id": "bool-return",
+                "score": 2,
+                "reasoning": "The method correctly returns true when the token is found and deleted, and false when the token does not exist or handlers.delete() fails."
+              },
+              {
+                "id": "safe-iter",
+                "score": 2,
+                "reasoning": "The implementation does not iterate over any collection; it only performs lookups and deletions on already-retrieved maps, so there is no risk of mutation during iteration."
+              },
+              {
+                "id": "no-throw",
+                "score": 2,
+                "reasoning": "The method gracefully returns false for unknown tokens (via tokenIndex.get(token) returning undefined) without throwing an error."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "The response is direct, concise, and focused on the implementation; the rationale is minimal but clear and avoids unnecessary verbosity or hedging."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "delta": 0
+        },
+        {
+          "id": "sr-2",
+          "name": "Implement once()",
+          "dimension": "task_success",
+          "without": {
+            "response": "# Implementation\n\nFirst, implement the `unsubscribe()` method (required by `once()`):\n\n```typescript\nunsubscribe(token: symbol): boolean {\n  const event = this.tokenIndex.get(token)\n  if (!event) return false\n  const handlers = this.subs.get(event)\n  if (!handlers) return false\n  const removed = handlers.delete(token)\n  this.tokenIndex.delete(token)\n  if (handlers.size === 0) this.subs.delete(event)\n  return removed\n}\n```\n\nThen implement `once()`:\n\n```typescript\nonce<T = unknown>(event: string, handler: EventHandler<T>): symbol {\n  const token = this.subscribe<T>(event, (data: T) => {\n    handler(data)\n    this.unsubscribe(token)\n  })\n  return token\n}\n```\n\n**How it works:**\n- `once()` wraps the user's handler in a function that calls the original handler, then immediately unsubscribes using the token\n- The token is captured in the closure before being returned\n- This ensures the handler fires exactly once, then removes itself from the subscription map\n- The returned token can still be used to unsubscribe early if needed",
+            "inputTokens": 524,
+            "outputTokens": 297,
+            "scores": [
+              {
+                "id": "auto-unsub",
+                "score": 3,
+                "reasoning": "The wrapper function calls `unsubscribe(token)` immediately after invoking the handler, ensuring the subscription is removed after the first emission and preventing the handler from firing on subsequent emits."
+              },
+              {
+                "id": "returns-token",
+                "score": 3,
+                "reasoning": "The token returned by `subscribe()` is captured in the closure and returned to the caller, allowing early cancellation via `unsubscribe(token)` before the event fires."
+              },
+              {
+                "id": "no-leak",
+                "score": 0,
+                "reasoning": "If the event is never emitted, the subscription and tokenIndex entry remain indefinitely because `unsubscribe()` is only called inside the handler, which never executes; this is a significant state leak."
+              },
+              {
+                "id": "no-double",
+                "score": 2,
+                "reasoning": "The unsubscribe call happens synchronously within the handler execution, removing the token from the subscription map before control returns, making double-firing impossible even with re-entrant emits."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "The response is focused and direct, providing the two implementations with a concise explanation of how the closure captures the token and ensures single execution."
+              }
+            ],
+            "total": 10,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "```typescript\n/**\n * Subscribe for exactly one emission of an event, then auto-unsubscribe.\n * Returns a token that can be passed to unsubscribe() to cancel early.\n */\nonce<T = unknown>(event: string, handler: EventHandler<T>): symbol {\n  const token = this.subscribe(event, (data: T) => {\n    this.unsubscribe(token)\n    handler(data)\n  })\n  return token\n}\n```\n\n**Rationale:**\n- Wraps the user's handler in a closure that unsubscribes itself before calling the original handler\n- Unsubscribe happens *before* the handler runs, ensuring the handler cannot be called again even if it re-emits the same event\n- Returns the token from the underlying `subscribe()` call, allowing callers to unsubscribe early if needed\n- Relies on `unsubscribe()` being implemented (which you'll need to do separately)",
+            "inputTokens": 1088,
+            "outputTokens": 227,
+            "scores": [
+              {
+                "id": "auto-unsub",
+                "score": 3,
+                "reasoning": "The wrapped handler calls unsubscribe(token) before invoking the original handler, ensuring the subscription is removed after the first emit and the handler cannot fire on subsequent emits."
+              },
+              {
+                "id": "returns-token",
+                "score": 3,
+                "reasoning": "The method returns the token from subscribe(), which is a valid Symbol that can be passed to unsubscribe() to cancel the subscription before the event fires."
+              },
+              {
+                "id": "no-leak",
+                "score": 2,
+                "reasoning": "When unsubscribe(token) is called inside the wrapper before the handler executes, the subscription and tokenIndex entry are removed synchronously, leaving no lingering state if the event never fires again."
+              },
+              {
+                "id": "no-double",
+                "score": 2,
+                "reasoning": "Since unsubscribe(token) is called and removes the handler from the map before the user's handler executes, re-entrant or concurrent emits of the same event cannot cause the handler to fire twice."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "The response is concise, focused directly on the implementation with no filler, and the rationale is brief and relevant without hedging or unnecessary alternatives."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "delta": 2
+        },
+        {
+          "id": "cs-1",
+          "name": "Explain Error Handling Intent",
+          "dimension": "coverage_signal",
+          "without": {
+            "response": "# Error Handling Behavior for `emit()`\n\nBased on the current implementation and design patterns, here's the intended behavior:\n\n## Current Behavior (Implicit)\nThe `emit()` method will **propagate exceptions** from handlers to the caller. If any handler throws, iteration stops immediately and the exception bubbles up.\n\n## Recommended Behavior\nThis is **problematic** for a pub/sub system. I recommend implementing **isolated error handling**:\n\n```typescript\n/**\n * Emit an event, calling all subscribed handlers with the given data.\n * Handler exceptions are caught and logged; they do not prevent other handlers from executing.\n */\nemit(event: string, data?: unknown): void {\n  const handlers = this.subs.get(event)\n  if (!handlers) return\n  for (const handler of handlers.values()) {\n    try {\n      handler(data)\n    } catch (error) {\n      // Log error without stopping other handlers\n      console.error(`EventBus error in handler for \"${event}\":`, error)\n    }\n  }\n}\n```\n\n## Rationale\n1. **Resilience**: One faulty subscriber shouldn't break the entire event chain\n2. **Observability**: Errors are logged for debugging\n3. **Consistency**: Matches behavior of DOM EventTarget and most pub/sub libraries\n4. **Safety**: Prevents cascading failures in event-driven systems\n\nIf stricter semantics are needed, document this explicitly and consider adding an optional `throwOnError` parameter.",
+            "inputTokens": 520,
+            "outputTokens": 348,
+            "scores": [
+              {
+                "id": "isolation",
+                "score": 0,
+                "reasoning": "The response correctly identifies that the current implementation propagates exceptions (stopping iteration), but then recommends a different behavior rather than stating what the intended design actually is based on the source code provided."
+              },
+              {
+                "id": "all-run",
+                "score": 0,
+                "reasoning": "The response accurately describes the current behavior (execution stops at first throw) but frames this as 'problematic' and recommends a different approach, rather than clarifying the intended design from the source."
+              },
+              {
+                "id": "confident",
+                "score": 1,
+                "reasoning": "The response uses moderately hedged language such as 'I recommend', 'This is problematic', and 'Consider adding' which introduces speculation rather than confident description of actual intended behavior."
+              },
+              {
+                "id": "no-wrong-spec",
+                "score": 1,
+                "reasoning": "The description of current behavior is technically accurate, but the response conflates 'current implementation' with 'intended behavior' and then recommends a contrary design without evidence that this recommendation aligns with stated intent."
+              },
+              {
+                "id": "precision",
+                "score": 0,
+                "reasoning": "The response is verbose and unfocused—it spends significant space on a design recommendation and rationale rather than directly answering the task question about the intended error handling behavior based on the source provided."
+              }
+            ],
+            "total": 2,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "# Error Handling Behavior for emit()\n\nBased on the documented design decision **\"Per-subscriber error isolation\"**, `emit()` should:\n\n1. **Wrap each handler in try/catch** — Catch exceptions thrown by individual subscribers\n2. **Continue executing remaining handlers** — Do not stop at the first error; all handlers must run\n3. **Collect errors into an array** — Return an `Error[]` from `emit()` containing all caught exceptions in order\n4. **Return empty array on success** — If no handlers throw, return `[]`\n\n## Implementation\n\n```typescript\n/**\n * Emit an event, calling all subscribed handlers with the given data.\n * Returns an array of errors caught from handlers. If empty, all handlers succeeded.\n */\nemit(event: string, data?: unknown): Error[] {\n  const handlers = this.subs.get(event)\n  if (!handlers) return []\n  \n  const errors: Error[] = []\n  for (const handler of handlers.values()) {\n    try {\n      handler(data)\n    } catch (err) {\n      errors.push(err instanceof Error ? err : new Error(String(err)))\n    }\n  }\n  return errors\n}\n```\n\n**Rationale**: This honors the design principle that \"one broken handler should never silently prevent other handlers from receiving the event\" while still surfacing errors for debugging. Callers can inspect the returned array to decide whether to log, rethrow, or ignore errors.",
+            "inputTokens": 1084,
+            "outputTokens": 342,
+            "scores": [
+              {
+                "id": "isolation",
+                "score": 3,
+                "reasoning": "Response correctly identifies and emphasizes per-subscriber error isolation as the core design principle, explicitly quoting the annotation that one broken handler should not prevent others from receiving the event."
+              },
+              {
+                "id": "all-run",
+                "score": 3,
+                "reasoning": "Response clearly states that all handlers must execute despite exceptions, using definitive language: 'Do not stop at the first error; all handlers must run.'"
+              },
+              {
+                "id": "confident",
+                "score": 2,
+                "reasoning": "Language is direct and assertive throughout ('should', 'must') with no hedging qualifiers like 'probably' or 'I think'."
+              },
+              {
+                "id": "no-wrong-spec",
+                "score": 2,
+                "reasoning": "Response accurately reflects the documented design: per-subscriber try/catch wrapping, error collection into an array, and return of Error[] with empty array on success—all directly supported by the annotations."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is focused and concise, moving directly from design principle to implementation with clear rationale, without unnecessary preamble or tangential discussion."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "delta": 10
+        },
+        {
+          "id": "cs-2",
+          "name": "History/Replay Recommendation",
+          "dimension": "coverage_signal",
+          "without": {
+            "response": "# Recommendation: Do NOT implement event history\n\n**Reason:** This would fundamentally change the EventBus from a **synchronous pub/sub** to a **state management system**, violating its design principle.\n\n## Key Issues:\n\n1. **Semantic mismatch**: \"Emit\" means \"notify now,\" not \"store for later.\" Handlers subscribed after emission shouldn't receive past events by default.\n\n2. **Memory leak risk**: Storing all historical events indefinitely causes unbounded memory growth, especially in long-running applications.\n\n3. **Unclear semantics**: \n   - Which events to store? All of them?\n   - How long? Forever?\n   - What if the same event is emitted 1000 times?\n\n4. **Wrong tool for the job**: If you need event replay/history, use:\n   - A separate **event log/store** (Redux, MobX, event sourcing)\n   - A **ReplaySubject** pattern (RxJS)\n   - A dedicated **state management library**\n\n## Better Alternative:\n\nIf specific events need to be \"replayed\" to late subscribers, let the **application layer** handle it:\n\n```typescript\n// Application code, not EventBus responsibility\nclass UserService {\n  private currentUser: User | null = null\n  \n  constructor(private bus: EventBus) {}\n  \n  setUser(user: User) {\n    this.currentUser = user\n    this.bus.emit('user:changed', user)\n  }\n  \n  // Late subscriber gets current state explicitly\n  onUserSubscribe(handler: EventHandler<User>) {\n    if (this.currentUser) handler(this.currentUser)\n    return this.bus.subscribe('user:changed', handler)\n  }\n}\n```\n\n**Conclusion:** Keep EventBus simple and synchronous. Let consumers manage state/history if needed.",
+            "inputTokens": 525,
+            "outputTokens": 431,
+            "scores": [
+              {
+                "id": "clear-rec",
+                "score": 2,
+                "reasoning": "Response opens with unambiguous 'Do NOT implement' and maintains that position throughout without hedging."
+              },
+              {
+                "id": "memory",
+                "score": 3,
+                "reasoning": "Explicitly identifies 'unbounded memory growth' and 'memory leak risk' as a core concern in issue #2."
+              },
+              {
+                "id": "no-redundant-q",
+                "score": 3,
+                "reasoning": "Response asks three clarifying questions ('Which events to store? All of them? How long? Forever? What if the same event is emitted 1000 times?') but these are rhetorical questions used to expose design ambiguity, not requests for information the source code could answer; they strengthen the argument rather than seek missing facts."
+              },
+              {
+                "id": "design-fit",
+                "score": 2,
+                "reasoning": "Recommendation directly aligns with the source code's design: synchronous emit semantics, no persistence layer, minimal responsibility, and the absence of any history-related infrastructure."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is tightly focused on the recommendation, provides a concrete application-layer alternative, and avoids unnecessary tangents or excessive hedging."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "with": {
+            "response": "# Recommendation: Do Not Implement\n\n**We should reject this proposal.** It directly contradicts the documented design decision against event history, and for good reasons:\n\n## Why the existing decision is sound\n\n1. **Unbounded memory growth**: Without a size cap, the buffer grows indefinitely. Every emitted event consumes memory forever.\n\n2. **Arbitrary cap creates confusion**: If we cap at N events, users will inevitably ask \"why didn't I get the event I expected?\" when it fell out of the buffer.\n\n3. **Violates pub/sub semantics**: Pub/sub is *temporal*—subscribers receive events *after* they subscribe. Replaying past events breaks this contract and creates subtle bugs:\n   - Late subscribers receive stale data they may not expect\n   - Handlers run in unexpected order (replayed events before new ones)\n   - Debugging becomes harder (\"why did this handler run twice?\")\n\n4. **Solves a non-problem for EventBus**: If callers need initial state, they should:\n   - Query it explicitly before subscribing\n   - Use a state management library (Redux, Zustand, etc.)\n   - Emit an initialization event on subscribe if needed\n\n## What to tell your teammate\n\n> \"Event history creates unbounded memory growth and violates pub/sub semantics. If you need subscribers to receive initial state, query it explicitly before subscribing, or emit an initialization event in the subscribe callback. That's clearer and more predictable.\"\n\n**Keep the design as-is.** The documented rationale is correct.",
+            "inputTokens": 1089,
+            "outputTokens": 348,
+            "scores": [
+              {
+                "id": "clear-rec",
+                "score": 2,
+                "reasoning": "Response opens with unambiguous 'Do Not Implement' and maintains this position throughout without hedging or alternative paths."
+              },
+              {
+                "id": "memory",
+                "score": 3,
+                "reasoning": "Explicitly identifies unbounded memory growth as the first concern and distinguishes it from the bounded buffer problem, both of which are named clearly."
+              },
+              {
+                "id": "no-redundant-q",
+                "score": 3,
+                "reasoning": "Response asks no clarifying questions; it relies entirely on the documented design decision and source context, which fully resolve the issue."
+              },
+              {
+                "id": "design-fit",
+                "score": 2,
+                "reasoning": "Recommendation directly references the documented 'No event history / replay' design decision and reinforces its rationale, demonstrating strong alignment with established philosophy."
+              },
+              {
+                "id": "precision",
+                "score": 2,
+                "reasoning": "Response is tightly focused, avoids filler, and presents a direct recommendation with concise reasoning; the 'What to tell your teammate' section is appropriate context, not padding."
+              }
+            ],
+            "total": 12,
+            "maxTotal": 12
+          },
+          "delta": 0
+        }
+      ],
+      "summary": {
+        "withoutTotal": 48,
+        "withTotal": 72,
+        "maxTotal": 72,
+        "delta": 24,
+        "withoutPct": 67,
+        "withPct": 100,
+        "withoutTokens": 2204,
+        "withTokens": 1769,
+        "dimensions": {
+          "decision_quality": {
+            "withoutTotal": 12,
+            "withTotal": 24,
+            "maxTotal": 24,
+            "withoutPct": 50,
+            "withPct": 100
+          },
+          "task_success": {
+            "withoutTotal": 22,
+            "withTotal": 24,
+            "maxTotal": 24,
+            "withoutPct": 92,
+            "withPct": 100
+          },
+          "coverage_signal": {
+            "withoutTotal": 14,
+            "withTotal": 24,
+            "maxTotal": 24,
+            "withoutPct": 58,
+            "withPct": 100
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "name": "vscode-whytho",
+  "displayName": "whytho",
+  "description": "See AI reasoning annotations inline — the why behind your code",
+  "version": "0.1.0",
+  "publisher": "whytho",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "workspaceContains:.why/index.json"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "whytho",
+          "title": "whytho",
+          "icon": "media/whytho-logo.svg"
+        }
+      ]
+    },
+    "views": {
+      "whytho": [
+        {
+          "id": "whytho.annotationTree",
+          "name": "Annotations"
+        }
+      ]
+    },
+    "commands": [
+      { "command": "whytho.showAnnotation", "title": "whytho: Show Annotation" },
+      { "command": "whytho.goToBlock", "title": "whytho: Go to Block" },
+      { "command": "whytho.goToRelated", "title": "whytho: Go to Related" },
+      { "command": "whytho.search", "title": "whytho: Search Annotations" },
+      { "command": "whytho.pushNote", "title": "whytho: Add Note" },
+      { "command": "whytho.reannotate", "title": "whytho: Reannotate" },
+      { "command": "whytho.refreshAll", "title": "whytho: Refresh" }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "whytho.pushNote",
+          "group": "whytho",
+          "when": "resourceScheme == file"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "whytho",
+      "properties": {
+        "whytho.showCodeLens": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show annotation Purpose text as CodeLens at block definitions"
+        },
+        "whytho.showGutterIcons": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show confidence-coded icons in the gutter"
+        },
+        "whytho.showHoverCards": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show annotation details on hover"
+        },
+        "whytho.confidenceThresholdHigh": {
+          "type": "number",
+          "default": 0.8,
+          "description": "Confidence >= this value shows green gutter icon"
+        },
+        "whytho.confidenceThresholdMedium": {
+          "type": "number",
+          "default": 0.5,
+          "description": "Confidence >= this value shows orange gutter icon (below = red)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "package": "vsce package"
+  },
+  "dependencies": {
+    "whytho": "file:../.."
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
+  }
+}

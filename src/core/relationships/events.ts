@@ -111,6 +111,6 @@ async function postEventsToWebhook(events: HookEvent[], webhookUrl: string): Pro
 }
 
 async function appendEventsToFile(events: HookEvent[], filePath: string): Promise<void> {
-  const lines = events.map((e) => JSON.stringify(e)).join('\n') + '\n'
+  const lines = `${events.map((e) => JSON.stringify(e)).join('\n')  }\n`
   await fs.appendFile(filePath, lines, 'utf8')
 }

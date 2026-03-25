@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/reader.ts::ann
 file: src/core/fs/reader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.888Z"
+updated: "2026-03-24T18:48:01.078Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 35
     end: 35
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:034f133fdb580e88b0a500cfa9f7de9e25bb65bcc06f2a484eacea1f5e91e942
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the result in a variable for subsequent use.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # ann

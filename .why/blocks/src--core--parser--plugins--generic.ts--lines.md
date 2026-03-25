@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/generic.ts::lines
 file: src/core/parser/plugins/generic.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.764Z"
+updated: "2026-03-24T09:38:25.484Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 69
     end: 69
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:0c1a72ad6606730b7a3ec03f0a61ce07e1268fd4ac4cadc77358aa7f719612cb
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     text for line-by-line processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # lines

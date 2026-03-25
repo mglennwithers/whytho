@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/resolve.ts::commitSha
 file: src/cli/commands/resolve.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T10:12:27.651Z"
+updated: "2026-03-25T02:10:28.127Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/resolve.ts::commitSha
   line_range:
-    start: 34
-    end: 34
-    commit: dbdf3218572cb3980a58c6ef326ecef25f7b14ba
+    start: 43
+    end: 43
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:9437ffbbe31d1f7efe8b11cb16e5d99e84d771970a299ab133c449d9b34ad1de
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     HEAD commit from the repository.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: dbdf3218572cb3980a58c6ef326ecef25f7b14ba
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # commitSha

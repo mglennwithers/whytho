@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/parser-typescript.test.ts::SAMPLE_PATH
 file: tests/unit/parser-typescript.test.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:37.523Z"
+updated: "2026-03-24T09:38:28.807Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 6
     end: 6
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:6b1635f9761a1f008ad3f88623baa14fed6889c7efcc799fa3cf267cb146a02f
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     file's directory, used for loading sample test data.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # SAMPLE_PATH

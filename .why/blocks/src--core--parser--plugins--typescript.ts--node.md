@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::node
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.084Z"
+updated: "2026-03-24T18:48:01.850Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::node
   line_range:
-    start: 293
-    end: 293
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 295
+    end: 295
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:59fb761f60d867601ff4a20b1f1a26698068be6db21d4e257b887da31279ddfb
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     This pattern safely handles potentially undefined or null AST body structures in TypeScript parsing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # node

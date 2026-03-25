@@ -19,6 +19,9 @@ describe('typescriptScannerPlugin', () => {
     expect(edges).toContainEqual(
       expect.objectContaining({ type: 'depends_on', target: 'src/core/fs/writer.ts::writeFile', source: 'static' }),
     )
+    const depEdge = edges.find(e => e.type === 'depends_on')
+    expect(depEdge).toHaveProperty('sourceFile', 'src/core/push/index.ts')
+    expect(depEdge).not.toHaveProperty('sourceBlock')
   })
 
   it('derives extends from class superclass', () => {
@@ -31,6 +34,9 @@ describe('typescriptScannerPlugin', () => {
     expect(edges).toContainEqual(
       expect.objectContaining({ type: 'extends', target: 'src/base.ts::BaseClass' }),
     )
+    const extendsEdge = edges.find(e => e.type === 'extends')
+    expect(extendsEdge).toHaveProperty('sourceBlock', 'src/child.ts::ChildClass')
+    expect(extendsEdge).not.toHaveProperty('sourceFile')
   })
 
   it('derives implements from interface clause', () => {
@@ -43,6 +49,9 @@ describe('typescriptScannerPlugin', () => {
     expect(edges).toContainEqual(
       expect.objectContaining({ type: 'implements', target: 'src/interfaces.ts::IWriter' }),
     )
+    const implEdge = edges.find(e => e.type === 'implements')
+    expect(implEdge).toHaveProperty('sourceBlock', 'src/impl.ts::ConcreteWriter')
+    expect(implEdge).not.toHaveProperty('sourceFile')
   })
 
   it('tags imports from test files as tests not depends_on', () => {
@@ -55,6 +64,9 @@ describe('typescriptScannerPlugin', () => {
     expect(edges).toContainEqual(
       expect.objectContaining({ type: 'tests', target: 'src/core/push/index.ts::pushReasoning' }),
     )
+    const testsEdge = edges.find(e => e.type === 'tests')
+    expect(testsEdge).toHaveProperty('sourceFile', 'tests/unit/push.test.ts')
+    expect(testsEdge).not.toHaveProperty('sourceBlock')
   })
 
   it('skips external (node_modules) imports', () => {

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::startMcpServer
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:37.239Z"
+updated: "2026-03-25T02:10:32.563Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::startMcpServer
   line_range:
-    start: 609
-    end: 613
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 838
+    end: 842
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:cae04a03438b51f0507fd1507403986a9d615b4962e5421e4534aed926141f44
   structural:
     kind: function
@@ -31,7 +31,11 @@ identity:
     connecting them together.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+relationships:
+  - type: depends_on
+    target: src/core/constants.ts::WHYTHO_VERSION
+    source: ai
 ---
 
 # startMcpServer

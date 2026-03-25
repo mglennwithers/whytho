@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::errors
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T02:19:55.840Z"
+updated: "2026-03-25T02:10:30.277Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 51
     end: 51
-    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:6acfb0c3bde1e3e9a6f65e1f29cd8f2725d90ae1d1f403342a28df4bb37d2e86
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     names) and values are corresponding error descriptions.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # errors

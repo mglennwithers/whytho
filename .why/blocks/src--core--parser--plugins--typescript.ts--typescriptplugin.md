@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::typescriptPlugin
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.171Z"
+updated: "2026-03-24T18:48:01.944Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::typescriptPlugin
   line_range:
-    start: 264
-    end: 303
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 266
+    end: 305
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:1cbf548c803ecbd3268112a2a74606812b4996a7eb282c7ba1425cf53c8012ea
   structural:
     kind: const
@@ -30,7 +30,17 @@ identity:
     files, with graceful fallback to a generic parser on errors or when the specialized parser is unavailable.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/core/parser/types.ts::ParserPlugin
+    source: ai
+  - type: depends_on
+    target: src/core/parser/types.ts::ParsedBlock
+    source: ai
+  - type: depends_on
+    target: src/core/parser/plugins/generic.ts::genericPlugin
+    source: ai
 ---
 
 # typescriptPlugin

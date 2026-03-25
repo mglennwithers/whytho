@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/config/defaults.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-24T09:38:19.406Z"
 updated_by_session: inferred
 parent_folder: src/config/
 sessions: []
@@ -16,6 +16,25 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships:
+  - type: depends_on
+    target: src/core/constants.ts::DEFAULT_AI_PROVIDER
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::DEFAULT_AI_MODEL
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::DEFAULT_INFER_MODEL
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::DEFAULT_CONFIDENCE_THRESHOLD
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::DEFAULT_SUPERSEDED_THRESHOLD
+    source: static
+  - type: depends_on
+    target: src/config/types.ts::WhythoConfig
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **85%**

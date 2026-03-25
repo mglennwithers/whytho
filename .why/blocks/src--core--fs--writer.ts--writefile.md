@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/writer.ts::writeFile
 file: src/core/fs/writer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.038Z"
+updated: "2026-03-24T18:48:01.214Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 8
     end: 13
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:2ff3f32e10a9d358017daadd0f8d28062314dd83072dc351066972b5db427abe
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     ensuring parent directories exist.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # writeFile

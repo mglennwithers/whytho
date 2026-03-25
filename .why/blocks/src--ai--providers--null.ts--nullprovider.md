@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/null.ts::nullProvider
 file: src/ai/providers/null.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T11:35:30.680Z"
+updated: "2026-03-24T18:47:57.072Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -17,9 +17,9 @@ identity:
   symbolic: src/ai/providers/null.ts::nullProvider
   line_range:
     start: 4
-    end: 27
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:62f04c17143346a8f99529bf359d39ac3c188e927ba1fe9e0096eaa3506b9068
+    end: 29
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:ac7df76203e8490f155df1005febc8d1a87b0f317ff5e0d819b28f334bc807d6
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,26 @@ identity:
     null for semantic matching operations. This serves as a fallback when no real AI provider is configured.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/ai/types.ts::AIProvider
+    source: ai
+  - type: depends_on
+    target: src/ai/types.ts::AnnotationRequest
+    source: ai
+  - type: depends_on
+    target: src/ai/types.ts::AnnotationResult
+    source: ai
+  - type: depends_on
+    target: src/ai/types.ts::SemanticMatchRequest
+    source: ai
+  - type: depends_on
+    target: src/ai/types.ts::SemanticMatchResult
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::WHYTHO_VERSION
+    source: ai
 ---
 
 # nullProvider

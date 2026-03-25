@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/slugify.test.ts::describe(slugifyBlockName)
 file: tests/unit/slugify.test.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:37.553Z"
+updated: "2026-03-24T09:38:28.840Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 30
     end: 42
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:cff148a0e288e8b033741b074ec62f3e4c96d0ccd4418d848aa17d2cddc20627
   structural:
     kind: describe
@@ -30,7 +30,11 @@ identity:
     lowercase hyphenated slugs by removing/replacing special characters and normalizing whitespace.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+relationships:
+  - type: tests
+    target: src/core/fs/layout.ts::slugifyBlockName
+    source: ai
 ---
 
 # describe(slugifyBlockName)

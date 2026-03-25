@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/infer.ts::lines
 file: src/ai/prompts/infer.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-21T11:35:30.386Z"
+updated: "2026-03-24T09:38:20.233Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -14,7 +14,7 @@ identity:
   line_range:
     start: 125
     end: 125
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:14b7bafb34347552919af5eed3b96047dbb86c6df28cb2cfb8cc1e30266b14d3
   structural:
     kind: const
@@ -26,7 +26,7 @@ identity:
     multi-line AI/LLM response.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # lines

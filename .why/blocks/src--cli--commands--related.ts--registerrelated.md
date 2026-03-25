@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/related.ts::registerRelated
 file: src/cli/commands/related.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:32.803Z"
+updated: "2026-03-24T18:47:59.587Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,8 +18,8 @@ identity:
   line_range:
     start: 9
     end: 51
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:00be86988b71955a8e20da20b6ff5c5e7a332e1ebb8dbf21550fed0d7fa9064b
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:aa8cc3e2323d83ec731ef3f06b3763294ae749e69a7c08ddb28e6ec581a519c3
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,23 @@ identity:
     supporting both human-readable and JSON output formats.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::getWhyRoot
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::indexPath
+    source: ai
+  - type: depends_on
+    target: src/core/relationships/graph.ts::getAllRelated
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::WhythoIndex
+    source: ai
 ---
 
 # registerRelated

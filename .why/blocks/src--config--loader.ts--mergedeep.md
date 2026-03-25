@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/loader.ts::mergeDeep
 file: src/config/loader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.144Z"
+updated: "2026-03-25T02:10:28.978Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/config/loader.ts::mergeDeep
   line_range:
-    start: 6
-    end: 28
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 7
+    end: 29
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:1f0a859cf126ff969289e2d8f9520c007c71ef790f06067223cc9af0fdc06f22
   structural:
     kind: function
@@ -31,7 +31,11 @@ identity:
     precedence over base values, treating arrays as atomic values rather than merging them element-wise.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+relationships:
+  - type: depends_on
+    target: src/config/defaults.ts::DEFAULT_CONFIG
+    source: ai
 ---
 
 # mergeDeep

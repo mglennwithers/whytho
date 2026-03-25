@@ -1,4 +1,4 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
 import { findRepoRoot } from '../../core/git/repo.js'
 import { isWhyDirInitialized } from '../../core/fs/init.js'
@@ -10,7 +10,7 @@ async function readStdin(): Promise<string> {
   return new Promise((resolve) => {
     let data = ''
     process.stdin.setEncoding('utf8')
-    process.stdin.on('data', (chunk) => { data += chunk })
+    process.stdin.on('data', (chunk) => { data += String(chunk) })
     process.stdin.on('end', () => resolve(data.trim()))
   })
 }
@@ -31,7 +31,14 @@ export function registerPush(program: Command): void {
     .option('--relation-type <type>', 'Relationship type for --relate-to (default: depends_on)', 'depends_on')
     .option('--relation-description <text>', 'Human-readable description for the relationship')
     .option('--bidirectional', 'Mark relationship as bidirectional')
-    .action(async (type: string, ref: string | undefined, options) => {
+    .action(async (type: string, ref: string | undefined, options: {
+      body?: string
+      sessionId?: string
+      relateTo: string[]
+      relationType: string
+      relationDescription?: string
+      bidirectional?: boolean
+    }) => {
       try {
         const validTypes: PushType[] = ['session', 'block', 'file']
         if (!validTypes.includes(type as PushType)) {
@@ -46,7 +53,7 @@ export function registerPush(program: Command): void {
           process.exit(1)
         }
 
-        let body = options.body as string | undefined
+        let body = options.body
         if (!body) {
           body = await readStdin()
         }
@@ -62,13 +69,13 @@ export function registerPush(program: Command): void {
         }
 
         // Build relationships from --relate-to flags
-        const relTargets = (options.relateTo as string[]) ?? []
+        const relTargets = (options.relateTo) ?? []
         const relationships = relTargets.length > 0
           ? relTargets.map((target) => ({
               target,
-              type: options.relationType as string,
-              description: options.relationDescription as string | undefined,
-              bidirectional: options.bidirectional as boolean | undefined,
+              type: options.relationType,
+              description: options.relationDescription,
+              bidirectional: options.bidirectional,
             }))
           : undefined
 
@@ -81,7 +88,7 @@ export function registerPush(program: Command): void {
           type: type as PushType,
           ref,
           body,
-          sessionId: options.sessionId as string | undefined,
+          sessionId: options.sessionId,
           relationships: type === 'block' ? relationships : undefined,
         })
 

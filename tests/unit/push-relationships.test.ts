@@ -344,3 +344,69 @@ describe('pushReasoning - file annotations', () => {
     }
   })
 })
+
+describe('pushReasoning - file annotations with relationships', () => {
+  it('creates file annotation with relationships', async () => {
+    const repoRoot = await makeTempRepo()
+    try {
+      const result = await pushReasoning({
+        repoRoot,
+        type: 'file',
+        ref: 'src/foo.ts',
+        body: 'This file handles authentication.',
+        relationships: [
+          { target: 'src/bar.ts::helperFn', type: 'depends_on', source: 'ai' },
+        ],
+      })
+
+      expect(result.action).toBe('created')
+      const raw = await fs.readFile(result.path, 'utf8')
+      const { frontmatter } = parseAnnotation<import('../../src/core/types.js').FileFrontmatter>(raw)
+      expect(frontmatter.relationships).toHaveLength(1)
+      expect(frontmatter.relationships![0].target).toBe('src/bar.ts::helperFn')
+      expect(frontmatter.relationships![0].source).toBe('ai')
+    } finally {
+      await cleanup(repoRoot)
+    }
+  })
+
+  it('merges relationships on file update, deduplicates by target+type', async () => {
+    const repoRoot = await makeTempRepo()
+    try {
+      await pushReasoning({
+        repoRoot,
+        type: 'file',
+        ref: 'src/foo.ts',
+        body: 'First note.',
+        relationships: [{ target: 'src/bar.ts::helperFn', type: 'depends_on', source: 'ai' }],
+      })
+
+      await pushReasoning({
+        repoRoot,
+        type: 'file',
+        ref: 'src/foo.ts',
+        body: 'Second note.',
+        relationships: [
+          { target: 'src/bar.ts::helperFn', type: 'depends_on', source: 'ai' },  // duplicate
+          { target: 'src/baz.ts::Config', type: 'depends_on', source: 'ai' },    // new
+        ],
+      })
+
+      const result = await pushReasoning({
+        repoRoot,
+        type: 'file',
+        ref: 'src/foo.ts',
+        body: 'Third note.',
+      })
+
+      const raw = await fs.readFile(result.path, 'utf8')
+      const { frontmatter } = parseAnnotation<import('../../src/core/types.js').FileFrontmatter>(raw)
+      expect(frontmatter.relationships).toHaveLength(2)  // deduplicated
+      const targets = frontmatter.relationships!.map(r => r.target)
+      expect(targets).toContain('src/bar.ts::helperFn')
+      expect(targets).toContain('src/baz.ts::Config')
+    } finally {
+      await cleanup(repoRoot)
+    }
+  })
+})

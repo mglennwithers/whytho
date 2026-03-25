@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/frontmatter/validate.ts::validateAnnotation
 file: src/core/frontmatter/validate.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.547Z"
+updated: "2026-03-24T09:38:24.093Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 20
     end: 43
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:eff97179fc8537d6bb72c4994397930b272cd28f2bf9a87fd69e9e775c6794a6
   structural:
     kind: function
@@ -31,7 +31,23 @@ identity:
     normalizing Zod validation errors into a custom ValidationError format.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+relationships:
+  - type: depends_on
+    target: src/core/types.ts::SessionFrontmatterSchema
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::FolderFrontmatterSchema
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::FileFrontmatterSchema
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::BlockFrontmatterSchema
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::AnyFrontmatter
+    source: ai
 ---
 
 # validateAnnotation

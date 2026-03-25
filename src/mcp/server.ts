@@ -26,10 +26,13 @@ import {
   readAllSessions,
   readIndex,
 } from '../core/fs/reader.js'
-import { fileExists } from '../core/fs/writer.js'
 import { getAllRelated } from '../core/relationships/graph.js'
 import { pushReasoning } from '../core/push/index.js'
 import { WHYTHO_VERSION } from '../core/constants.js'
+import { loadConfig } from '../config/loader.js'
+import { getDefaultProvider } from '../ai/registry.js'
+import { buildBlamePrompt, parseBlameResponse } from '../ai/prompts/blame.js'
+import type { BlameEntry } from '../ai/prompts/blame.js'
 import type { WhythoIndex, BlockFrontmatter, FileFrontmatter, FolderFrontmatter, SessionFrontmatter } from '../core/types.js'
 
 // ─── Tool Definitions ─────────────────────────────────────────────────────────
@@ -45,6 +48,11 @@ const TOOLS = [
           type: 'string',
           description: 'Symbolic reference in the form "path/to/file.ts::blockName"',
         },
+        include: {
+          type: 'array',
+          items: { type: 'string' },
+          description: 'Sections to return: "frontmatter", "body", or a heading like "Purpose", "Tradeoffs", "Uncertainty". Omit for full content.',
+        },
       },
       required: ['symbolic_ref'],
     },
@@ -56,6 +64,11 @@ const TOOLS = [
       type: 'object',
       properties: {
         path: { type: 'string', description: 'Relative file path, e.g. "src/auth/middleware.ts"' },
+        include: {
+          type: 'array',
+          items: { type: 'string' },
+          description: 'Sections to return: "frontmatter", "body", or a heading like "Purpose", "Tradeoffs", "Uncertainty". Omit for full content.',
+        },
       },
       required: ['path'],
     },
@@ -67,6 +80,11 @@ const TOOLS = [
       type: 'object',
       properties: {
         path: { type: 'string', description: 'Relative folder path, e.g. "src/auth/" or "/" for root' },
+        include: {
+          type: 'array',
+          items: { type: 'string' },
+          description: 'Sections to return: "frontmatter", "body", or a heading like "Purpose", "Tradeoffs", "Uncertainty". Omit for full content.',
+        },
       },
       required: ['path'],
     },
@@ -78,7 +96,50 @@ const TOOLS = [
       type: 'object',
       properties: {
         id: { type: 'string', description: 'Session ID (e.g. "2026-03-20-session-abc123"). Omit for most recent.' },
+        include: {
+          type: 'array',
+          items: { type: 'string' },
+          description: 'Sections to return: "frontmatter", "body", or a heading like "Purpose", "Objectives", "Decisions", "Uncertainty Log". Omit for full content.',
+        },
       },
+    },
+  },
+  {
+    name: 'get_annotations',
+    description: [
+      'Retrieve multiple annotations in a single call. Each item specifies a type and ref.',
+      'Supports section filtering via include — same values as the single-get tools.',
+      'Use this instead of multiple get_block/get_file calls when you need several annotations at once.',
+    ].join('\n'),
+    inputSchema: {
+      type: 'object',
+      properties: {
+        refs: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              type: {
+                type: 'string',
+                enum: ['block', 'file', 'folder', 'session'],
+                description: 'Annotation type',
+              },
+              ref: {
+                type: 'string',
+                description: 'Identifier: symbolic ref for block, path for file/folder, session ID or "latest" for session',
+              },
+              include: {
+                type: 'array',
+                items: { type: 'string' },
+                description: 'Sections to return: "frontmatter", "body", or a heading name. Omit for full content.',
+              },
+            },
+            required: ['type', 'ref'],
+          },
+          description: 'Array of annotation references to retrieve',
+        },
+      },
+      required: ['refs'],
     },
   },
   {
@@ -170,6 +231,29 @@ const TOOLS = [
       properties: {},
     },
   },
+  {
+    name: 'blame',
+    description: [
+      'Given a natural-language description of a bug or behavior, find annotations whose design reasoning causally explains why that behavior exists.',
+      'Returns matching annotations ranked by causal strength, or a summary explaining why no annotations match.',
+      'Use this when debugging unexpected behavior to check if prior design decisions explain it.',
+    ].join('\n'),
+    inputSchema: {
+      type: 'object',
+      properties: {
+        query: {
+          type: 'string',
+          description: 'Description of the bug, behavior, or observable outcome to investigate',
+        },
+        type: {
+          type: 'string',
+          enum: ['block', 'file', 'folder', 'session'],
+          description: 'Filter by annotation type. Omit to search all.',
+        },
+      },
+      required: ['query'],
+    },
+  },
 ]
 
 // ─── Resource Templates ────────────────────────────────────────────────────────
@@ -225,6 +309,50 @@ function extractPurpose(body: string): string {
   return match ? match[1].trim() : body.trim()
 }
 
+// ─── Helper: extract a named ## section from a markdown body ──────────────────
+
+function extractSection(body: string, heading: string): string | null {
+  const escaped = heading.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const re = new RegExp(`(##\\s+${escaped})\\n+([\\s\\S]*?)(?=\\n##\\s|\\n---\\s*\\n|$)`, 'i')
+  const match = body.match(re)
+  return match ? `${match[1]}\n\n${match[2].trim()}` : null
+}
+
+// ─── Helper: apply include filter to raw annotation content ───────────────────
+
+function applyIncludeFilter(raw: string, include?: string[]): string {
+  if (!include || include.length === 0) return raw
+
+  const body = stripFrontmatter(raw)
+  const parts: string[] = []
+
+  for (const section of include) {
+    if (section === 'frontmatter') {
+      const match = raw.match(/^---\n([\s\S]*?)\n---/)
+      if (match) parts.push(`---\n${match[1]}\n---`)
+    } else if (section === 'body') {
+      parts.push(body)
+    } else {
+      const extracted = extractSection(body, section)
+      if (extracted) parts.push(extracted)
+    }
+  }
+
+  return parts.join('\n\n')
+}
+
+// ─── Helper: resolve annotation path from type + ref ──────────────────────────
+
+function resolveAnnotationPath(whyRoot: string, type: string, ref: string): string {
+  switch (type) {
+    case 'block': return blockAnnotationPath(whyRoot, ref)
+    case 'file': return fileAnnotationPath(whyRoot, ref)
+    case 'folder': return folderAnnotationPath(whyRoot, ref)
+    case 'session': return sessionAnnotationPath(whyRoot, ref)
+    default: throw new Error(`Unknown annotation type: ${type}`)
+  }
+}
+
 // ─── Helper: find latest session ──────────────────────────────────────────────
 
 async function findLatestSessionId(whyRoot: string): Promise<string | undefined> {
@@ -238,62 +366,74 @@ async function findLatestSessionId(whyRoot: string): Promise<string | undefined>
   }
 }
 
-// ─── Server Factory ───────────────────────────────────────────────────────────
+// ─── Tool Dispatcher (exported for testing) ───────────────────────────────────
 
-export async function createWhythoServer(): Promise<Server> {
-  const repoRoot = await findRepoRoot()
-  const whyRoot = getWhyRoot(repoRoot)
-
-  const server = new Server(
-    { name: 'whytho', version: WHYTHO_VERSION },
-    { capabilities: { resources: {}, tools: {} } },
-  )
-
-  // ── List Tools ────────────────────────────────────────────────────────────
-
-  server.setRequestHandler(ListToolsRequestSchema, async () => ({
-    tools: TOOLS,
-  }))
-
-  // ── Call Tool ─────────────────────────────────────────────────────────────
-
-  server.setRequestHandler(CallToolRequestSchema, async (request) => {
-    const { name, arguments: args } = request.params
-    const a = (args ?? {}) as Record<string, unknown>
-
-    try {
-      switch (name) {
+export async function dispatchTool(
+  whyRoot: string,
+  repoRoot: string,
+  name: string,
+  a: Record<string, unknown>,
+): Promise<{ content: Array<{ type: 'text'; text: string }> }> {
+  try {
+    switch (name) {
         case 'get_block': {
           const ref = a.symbolic_ref as string
+          const include = a.include as string[] | undefined
           const annPath = blockAnnotationPath(whyRoot, ref)
           const content = await readRaw(annPath)
           if (!content) return text(`No annotation found for block: ${ref}`)
-          return text(content)
+          return text(applyIncludeFilter(content, include))
         }
 
         case 'get_file': {
           const filePath = a.path as string
+          const include = a.include as string[] | undefined
           const annPath = fileAnnotationPath(whyRoot, filePath)
           const content = await readRaw(annPath)
           if (!content) return text(`No annotation found for file: ${filePath}`)
-          return text(content)
+          return text(applyIncludeFilter(content, include))
         }
 
         case 'get_folder': {
           const folderPath = a.path as string
+          const include = a.include as string[] | undefined
           const annPath = folderAnnotationPath(whyRoot, folderPath)
           const content = await readRaw(annPath)
           if (!content) return text(`No annotation found for folder: ${folderPath}`)
-          return text(content)
+          return text(applyIncludeFilter(content, include))
         }
 
         case 'get_session': {
           const id = (a.id as string | undefined) ?? await findLatestSessionId(whyRoot)
           if (!id) return text('No sessions found. Run: git why annotate')
+          const include = a.include as string[] | undefined
           const annPath = sessionAnnotationPath(whyRoot, id)
           const content = await readRaw(annPath)
           if (!content) return text(`No annotation found for session: ${id}`)
-          return text(content)
+          return text(applyIncludeFilter(content, include))
+        }
+
+        case 'get_annotations': {
+          const refs = a.refs as Array<{ type: string; ref: string; include?: string[] }>
+          if (!refs?.length) return text('No refs provided.')
+
+          const parts: string[] = []
+          for (const item of refs) {
+            let ref = item.ref
+            if (item.type === 'session' && ref === 'latest') {
+              ref = await findLatestSessionId(whyRoot) ?? ''
+              if (!ref) { parts.push(`# [session] latest\n\n_No sessions found._`); continue }
+            }
+            const annPath = resolveAnnotationPath(whyRoot, item.type, ref)
+            const content = await readRaw(annPath)
+            if (!content) {
+              parts.push(`# [${item.type}] ${ref}\n\n_No annotation found._`)
+            } else {
+              const filtered = applyIncludeFilter(content, item.include)
+              parts.push(`# [${item.type}] ${ref}\n\n${filtered}`)
+            }
+          }
+          return text(parts.join('\n\n---\n\n'))
         }
 
         case 'get_file_context': {
@@ -416,6 +556,7 @@ export async function createWhythoServer(): Promise<Server> {
           const typeFilter = a.type as string | undefined
           const results: string[] = []
 
+          // eslint-disable-next-line no-inner-declarations
           async function searchAnnotations<T>(
             reader: () => Promise<Array<{ frontmatter: T; body: string; filePath: string }>>,
             kind: string,
@@ -462,8 +603,8 @@ export async function createWhythoServer(): Promise<Server> {
             )
           }
 
-          if (results.length === 0) return text(`No annotations matching: "${a.query}"`)
-          return text(`# Search results for "${a.query}"\n\n${results.join('\n---\n\n')}`)
+          if (results.length === 0) return text(`No annotations matching: "${query}"`)
+          return text(`# Search results for "${query}"\n\n${results.join('\n---\n\n')}`)
         }
 
         case 'push_note': {
@@ -520,16 +661,103 @@ export async function createWhythoServer(): Promise<Server> {
           return text(lines.join('\n'))
         }
 
+        case 'blame': {
+          const query = a.query as string
+          const typeFilter = a.type as string | undefined
+          const BODY_LENGTH = 500
+
+          const blocks = (!typeFilter || typeFilter === 'block') ? await readAllBlocks(whyRoot) : []
+          const files = (!typeFilter || typeFilter === 'file') ? await readAllFiles(whyRoot) : []
+          const folders = (!typeFilter || typeFilter === 'folder') ? await readAllFolders(whyRoot) : []
+          const sessions = (!typeFilter || typeFilter === 'session') ? await readAllSessions(whyRoot) : []
+
+          const entries: BlameEntry[] = []
+          for (const ann of blocks) {
+            if (ann.body.trim().length > 0) {
+              entries.push({ type: 'block', ref: (ann.frontmatter).symbolic_ref, body: ann.body.slice(0, BODY_LENGTH).trim() })
+            }
+          }
+          for (const ann of files) {
+            if (ann.body.trim().length > 0) {
+              entries.push({ type: 'file', ref: (ann.frontmatter).path, body: ann.body.slice(0, BODY_LENGTH).trim() })
+            }
+          }
+          for (const ann of folders) {
+            if (ann.body.trim().length > 0) {
+              entries.push({ type: 'folder', ref: (ann.frontmatter).path, body: ann.body.slice(0, BODY_LENGTH).trim() })
+            }
+          }
+          for (const ann of sessions) {
+            if (ann.body.trim().length > 0) {
+              entries.push({ type: 'session', ref: (ann.frontmatter).id, body: ann.body.slice(0, BODY_LENGTH).trim() })
+            }
+          }
+
+          if (entries.length === 0) return text('No annotations found to search.')
+
+          const config = await loadConfig(repoRoot)
+          const provider = getDefaultProvider(config)
+          const prompt = buildBlamePrompt(query, entries)
+          const result = await provider.generateAnnotation({
+            type: 'block',
+            context: { customPrompt: prompt },
+          })
+
+          const blameResult = parseBlameResponse(result.body)
+          const hits = blameResult.matches
+            .filter((m) => m.index >= 0 && m.index < entries.length)
+            .map((m) => ({
+              type: entries[m.index].type,
+              ref: entries[m.index].ref,
+              explanation: m.explanation,
+              body: entries[m.index].body,
+            }))
+
+          if (hits.length === 0) {
+            const summary = blameResult.noMatchSummary ?? 'No annotations causally explain the described behavior.'
+            return text(`# No matches for: "${query}"\n\n${summary}`)
+          }
+
+          const parts = [`# ${hits.length} annotation(s) may explain: "${query}"\n`]
+          for (const hit of hits) {
+            parts.push(`## [${hit.type}] ${hit.ref}`)
+            parts.push(`**Why this matches:** ${hit.explanation}\n`)
+            parts.push(hit.body)
+            parts.push('')
+          }
+          return text(parts.join('\n'))
+        }
+
         default:
           return text(`Unknown tool: ${name}`)
       }
     } catch (err) {
       return text(`Error: ${String(err)}`)
     }
+}
+
+// ─── Server Factory ───────────────────────────────────────────────────────────
+
+export async function createWhythoServer(): Promise<Server> {
+  const repoRoot = await findRepoRoot()
+  const whyRoot = getWhyRoot(repoRoot)
+
+  const server = new Server(
+    { name: 'whytho', version: WHYTHO_VERSION },
+    { capabilities: { resources: {}, tools: {} } },
+  )
+
+  // eslint-disable-next-line @typescript-eslint/require-await
+  server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: TOOLS }))
+
+  server.setRequestHandler(CallToolRequestSchema, async (request) => {
+    const { name, arguments: args } = request.params
+    return dispatchTool(whyRoot, repoRoot, name, args ?? {})
   })
 
   // ── List Resources ────────────────────────────────────────────────────────
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   server.setRequestHandler(ListResourcesRequestSchema, async () => ({
     resources: [
       {
@@ -543,6 +771,7 @@ export async function createWhythoServer(): Promise<Server> {
 
   // ── List Resource Templates ────────────────────────────────────────────────
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   server.setRequestHandler(ListResourceTemplatesRequestSchema, async () => ({
     resourceTemplates: RESOURCE_TEMPLATES,
   }))

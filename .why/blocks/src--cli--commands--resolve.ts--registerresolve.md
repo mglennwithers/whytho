@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/resolve.ts::registerResolve
 file: src/cli/commands/resolve.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T10:12:27.698Z"
+updated: "2026-03-25T02:10:28.175Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/resolve.ts::registerResolve
   line_range:
-    start: 16
-    end: 110
-    commit: dbdf3218572cb3980a58c6ef326ecef25f7b14ba
-  content_hash: sha256:b2eabbdef24a0a25a46e649165d11d3070c8e5945b5ffd0914c810b21f5e82cd
+    start: 25
+    end: 139
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  content_hash: sha256:6a33f7a9e13f53482d44d6308baaedf2166ce4be25ee6625ee3e6be3e784601f
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,56 @@ identity:
     resolution modes with optional AI assistance, then reports outcomes and emits hook events.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: dbdf3218572cb3980a58c6ef326ecef25f7b14ba
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: ai
+  - type: depends_on
+    target: src/config/loader.ts::loadConfig
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::getWhyRoot
+    source: ai
+  - type: depends_on
+    target: src/core/fs/init.ts::isWhyDirInitialized
+    source: ai
+  - type: depends_on
+    target: src/core/git/repo.ts::getHeadCommitSha
+    source: ai
+  - type: depends_on
+    target: src/core/git/diff.ts::getChangedFiles
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllBlocks
+    source: ai
+  - type: depends_on
+    target: src/core/relationships/scanner.ts::runStaticScan
+    source: ai
+  - type: depends_on
+    target: src/cli/commands/scan.ts::collectAllSourceFiles
+    source: ai
+  - type: depends_on
+    target: src/ai/registry.ts::getScanProvider
+    source: ai
+  - type: depends_on
+    target: src/core/relationships/ai-attribution.ts::runAIScan
+    source: ai
+  - type: depends_on
+    target: src/ai/registry.ts::getDefaultProvider
+    source: ai
+  - type: depends_on
+    target: src/core/resolution/pipeline.ts::runResolutionPipeline
+    source: ai
+  - type: depends_on
+    target: src/core/index-builder/build.ts::buildIndex
+    source: ai
+  - type: depends_on
+    target: src/core/index-builder/build.ts::rebuildArchiveIndex
+    source: ai
+  - type: depends_on
+    target: src/core/relationships/events.ts::emitHookEvents
+    source: ai
 ---
 
 # registerResolve

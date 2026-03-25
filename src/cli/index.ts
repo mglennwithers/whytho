@@ -13,7 +13,13 @@ import { registerScan } from './commands/scan.js'
 import { registerPush } from './commands/push.js'
 import { registerInfer } from './commands/infer.js'
 import { registerMcp } from './commands/mcp.js'
+import { registerSearch } from './commands/search.js'
 import { registerStatus } from './commands/status.js'
+import { registerReannotate } from './commands/reannotate.js'
+import { registerBlame } from './commands/blame.js'
+import { registerVerify } from './commands/verify.js'
+import { registerClean } from './commands/clean.js'
+import { registerPr } from './commands/pr.js'
 
 const program = new Command()
   .name('git why')
@@ -34,6 +40,12 @@ registerScan(program)
 registerPush(program)
 registerInfer(program)
 registerMcp(program)
+registerSearch(program)
 registerStatus(program)
+registerReannotate(program)
+registerBlame(program)
+registerVerify(program)
+registerClean(program)
+registerPr(program)
 
 program.parse(process.argv)

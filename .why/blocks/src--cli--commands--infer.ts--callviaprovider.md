@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::callViaProvider
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.820Z"
+updated: "2026-03-25T02:10:26.792Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::callViaProvider
   line_range:
-    start: 495
-    end: 507
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:29cd5cad999bf71153c206efe18f49cfb53602bcadd5467450997eeabadf54f3
+    start: 542
+    end: 554
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  content_hash: sha256:1de717fda96094fbeb62a0b264ffd0e8f33bcf11223ab097279ec4576b3d3eda
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,14 @@ identity:
     returning the response body as a string.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+relationships:
+  - type: depends_on
+    target: src/core/constants.ts::WHYTHO_VERSION
+    source: ai
+  - type: depends_on
+    target: src/core/parser/types.ts::ParsedBlock
+    source: ai
 ---
 
 # callViaProvider

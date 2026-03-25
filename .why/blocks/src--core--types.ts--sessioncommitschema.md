@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::SessionCommitSchema
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-22T09:33:35.469Z"
+updated: "2026-03-24T18:48:04.717Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/types.ts::SessionCommitSchema
   line_range:
-    start: 70
-    end: 74
-    commit: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
+    start: 71
+    end: 75
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:dc22b07f4f1d18c5fe8f69529be8112a46e4a72e22a6d4d792fc0608392c1b6b
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     (commit text), and timestamp (temporal data).
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 241f4ad8d5d1f2ecb66e191147fb579e3b80279b
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # SessionCommitSchema

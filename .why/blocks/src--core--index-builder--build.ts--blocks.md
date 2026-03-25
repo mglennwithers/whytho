@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/index-builder/build.ts::blocks
 file: src/core/index-builder/build.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T09:40:39.654Z"
+updated: "2026-03-24T09:38:25.212Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/index-builder/build.ts::blocks
   line_range:
-    start: 58
-    end: 58
-    commit: 2882c015e657357bcf2750548d38f3c58059de46
+    start: 64
+    end: 64
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:0921669ebd46fc4268ff0f597df50ad6bbcd1f0f37c17a2385d4123808d6674b
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     accumulator object for building an index structure during a build process.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 2882c015e657357bcf2750548d38f3c58059de46
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # blocks

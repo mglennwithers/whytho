@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/identity/election.ts::structuralMatchBlock
 file: src/core/identity/election.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T02:19:55.701Z"
+updated: "2026-03-24T18:48:01.516Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/identity/election.ts::structuralMatchBlock
   line_range:
-    start: 101
-    end: 101
-    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+    start: 96
+    end: 96
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:5c0a5f18286df68012d315c2653c38acd2528324066b93beb008565fa5742ea3
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     using a `structuralMatch` comparison function.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # structuralMatchBlock

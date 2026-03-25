@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/reader.ts::readAllSessions
 file: src/core/fs/reader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.977Z"
+updated: "2026-03-24T18:48:01.156Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 58
     end: 62
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:7b1abe2be96c04631857bdc0d30f2b145f216fcb21ef39359b0dc3310b53650f
   structural:
     kind: function
@@ -31,7 +31,11 @@ identity:
     AnnotationFile objects with SessionFrontmatter metadata.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/core/fs/layout.ts::sessionsDir
+    source: ai
 ---
 
 # readAllSessions

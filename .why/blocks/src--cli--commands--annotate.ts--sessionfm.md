@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::sessionFm
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.234Z"
+updated: "2026-03-25T02:10:26.109Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::sessionFm
   line_range:
-    start: 218
-    end: 231
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 240
+    end: 253
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:d65367852d0f662928ad6c9b7258e9739910b61838a73428745046de00d18434
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     about code changes (commits, files, folders, blocks) for documentation or audit purposes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # sessionFm

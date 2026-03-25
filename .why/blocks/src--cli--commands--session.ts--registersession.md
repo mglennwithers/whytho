@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/session.ts::registerSession
 file: src/cli/commands/session.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.054Z"
+updated: "2026-03-24T18:48:00.128Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,8 +18,8 @@ identity:
   line_range:
     start: 9
     end: 62
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:dae8a20de1c7e1afdee61dc7972a6d61e123ac0356a217ddcf39215a0fd0c8ed
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:567d2541b4cdad8174a2d61452fe7742673161471a00d2c6bd25fe461ad392e3
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,29 @@ identity:
     with optional JSON output formatting.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::getWhyRoot
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllSessions
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::sessionAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/writer.ts::fileExists
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAnnotationFile
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::SessionFrontmatter
+    source: ai
 ---
 
 # registerSession

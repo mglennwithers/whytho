@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::FilePending
 file: src/cli/commands/infer.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-25T02:10:27.126Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::FilePending
   line_range:
-    start: 297
-    end: 301
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:5f55d261dc98c9b2ab5b9e25cbef1f25fecee0eb62f790d8bfd5dbcacb27ac70
+    start: 331
+    end: 336
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  content_hash: sha256:3c3a92a06ef178902fcef14579d3d78e35a3f16f05148fd5abb00e73b11a95d3
   structural:
     kind: type
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     code blocks, annotation templates, and LLM parameters for batch processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # FilePending

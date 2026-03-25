@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::dateStr
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T11:35:30.969Z"
+updated: "2026-03-25T02:10:25.730Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::dateStr
   line_range:
-    start: 47
-    end: 47
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 68
+    end: 68
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:31ff5efd959f769ba3b4c4edb1a10528b51b342de5080c696579138d5945820c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     in a variable for later use in annotation operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # dateStr

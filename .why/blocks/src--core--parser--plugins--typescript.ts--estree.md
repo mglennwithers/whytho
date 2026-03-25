@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::estree
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.926Z"
+updated: "2026-03-24T18:48:01.677Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::estree
   line_range:
-    start: 269
-    end: 269
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 271
+    end: 271
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:d510888a38032ba75cf57dacbb40c162bdd37892fb0627fac9ff5ff373aff121
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     TypeScript parser plugin module.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # estree

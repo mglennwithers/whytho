@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::child
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.883Z"
+updated: "2026-03-24T18:48:01.630Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::child
   line_range:
-    start: 247
-    end: 247
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 249
+    end: 249
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:7ebb3f0693081a420da932a9809d05521745cd39b94a12d2382c27729da8b2f7
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     or sequential traversal in TypeScript AST parsing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # child

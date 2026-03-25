@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::parentScope
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.108Z"
+updated: "2026-03-24T18:48:01.880Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::parentScope
   line_range:
-    start: 63
-    end: 63
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 65
+    end: 65
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:1d273936cb4fec79a2fe7f9454368ab6787fc257fbf4b3ca5bfc95d1069f91ce
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     commonly used in parsing to track nested scope hierarchies.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # parentScope

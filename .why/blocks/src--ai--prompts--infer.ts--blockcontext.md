@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/prompts/infer.ts::blockContext
 file: src/ai/prompts/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:30.258Z"
+updated: "2026-03-24T09:38:20.108Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 64
     end: 66
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:e1ea871469b62eb9351b300f6b4a621b4d74f805dae209de0a0199065bc110e7
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     character limit and joining them with visual separators, or returns an empty string if no annotations exist.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # blockContext

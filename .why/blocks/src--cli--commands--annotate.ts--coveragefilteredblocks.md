@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::coverageFilteredBlocks
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:30.958Z"
+updated: "2026-03-25T02:10:25.712Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::coverageFilteredBlocks
   line_range:
-    start: 76
-    end: 78
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 97
+    end: 99
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:d9e0cd1306a3e9cd586452bc6ff609ede6c3f8d4ac77ff802d06dabe9f097936
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     in a minimal set when coverage is 'minimal', otherwise returning all blocks unchanged.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # coverageFilteredBlocks

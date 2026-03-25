@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/types.ts::VerbosityCoverage
 file: src/config/types.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T09:37:09.390Z"
+updated: "2026-03-25T02:10:29.044Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/config/types.ts::VerbosityCoverage
   line_range:
-    start: 1
-    end: 1
-    commit: bdf7b0124b6b46c80318b2f36dcabc45f92599bd
+    start: 3
+    end: 3
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:a2da9944b8a473a56a279b303f983fd84e73b1aa936c1a9087bbecc531dd3441
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     logging or reporting functionality.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: bdf7b0124b6b46c80318b2f36dcabc45f92599bd
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # VerbosityCoverage

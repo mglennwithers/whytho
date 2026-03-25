@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::calleeName
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.873Z"
+updated: "2026-03-24T18:48:01.617Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::calleeName
   line_range:
-    start: 199
-    end: 199
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 201
+    end: 201
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:070abdb6bfa992e689fe171af14eaa9b56d49668ee0f7576bb2f77c4bcd635bd
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     for Identifier nodes with unsafe casting.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # calleeName

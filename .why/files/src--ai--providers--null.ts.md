@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/ai/providers/null.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T07:48:55.962Z"
+updated: "2026-03-24T18:47:56.190Z"
 updated_by_session: inferred
 parent_folder: src/ai/providers/
 sessions: []
@@ -19,6 +19,25 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships:
+  - type: depends_on
+    target: src/ai/types.ts::AIProvider
+    source: static
+  - type: depends_on
+    target: src/ai/types.ts::AnnotationRequest
+    source: static
+  - type: depends_on
+    target: src/ai/types.ts::AnnotationResult
+    source: static
+  - type: depends_on
+    target: src/ai/types.ts::SemanticMatchRequest
+    source: static
+  - type: depends_on
+    target: src/ai/types.ts::SemanticMatchResult
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::WHYTHO_VERSION
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **85%**

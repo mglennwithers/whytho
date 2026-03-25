@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/incremental.ts::rels
 file: src/core/resolution/incremental.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.630Z"
+updated: "2026-03-24T09:38:26.454Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 33
     end: 33
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:52b96dd91f3bcb8e8a69f6989d2d0d34b96d131e47876e2f74ee645bd0a9b495
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     absent or undefined.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
 ---
 
 # rels

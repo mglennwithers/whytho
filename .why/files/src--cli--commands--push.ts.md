@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/cli/commands/push.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-24T18:47:56.190Z"
 updated_by_session: inferred
 parent_folder: src/cli/commands/
 sessions: []
@@ -23,6 +23,22 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: static
+  - type: depends_on
+    target: src/core/fs/init.ts::isWhyDirInitialized
+    source: static
+  - type: depends_on
+    target: src/core/push/index.ts::pushReasoning
+    source: static
+  - type: depends_on
+    target: src/core/push/index.ts::PushType
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::RELATIONSHIP_TYPES
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **78%**

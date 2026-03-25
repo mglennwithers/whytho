@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/push.ts::repoRoot
 file: src/cli/commands/push.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:32.678Z"
+updated: "2026-03-24T18:47:59.382Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/push.ts::repoRoot
   line_range:
-    start: 51
-    end: 51
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 65
+    end: 65
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:a3e3be7155d7b789ade4b2b796c5ca38cf1a81273fec3b710ce19b7899d98e9d
   structural:
     kind: const
@@ -30,7 +30,11 @@ identity:
     result for subsequent use in a push operation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: ai
 ---
 
 # repoRoot

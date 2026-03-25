@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::annPath
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:30.833Z"
+updated: "2026-03-25T02:10:25.556Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::annPath
   line_range:
-    start: 82
-    end: 82
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 103
+    end: 103
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:3d764592491d5dd7588e03bc931ad2a33262de27cf8c20e488a28c489837fb9c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the result in a constant variable for subsequent use.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # annPath

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::commitSha
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.862Z"
+updated: "2026-03-25T02:10:26.844Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::commitSha
   line_range:
-    start: 141
-    end: 141
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 157
+    end: 157
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:eb023176b9a436d09d34d24a8509519fce004e0c2ed620ecd751556cc62d1419
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the operation fails for any reason.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # commitSha

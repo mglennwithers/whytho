@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/cli/commands/infer.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-25T02:10:24.707Z"
 updated_by_session: inferred
 parent_folder: src/cli/commands/
 sessions: []
@@ -84,6 +84,130 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: static
+  - type: depends_on
+    target: src/core/git/repo.ts::getHeadCommitSha
+    source: static
+  - type: depends_on
+    target: src/core/git/repo.ts::getTrackedFiles
+    source: static
+  - type: depends_on
+    target: src/core/fs/init.ts::isWhyDirInitialized
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::getWhyRoot
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::blockAnnotationPath
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::fileAnnotationPath
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::folderAnnotationPath
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::buildSymbolicRef
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::parentFolder
+    source: static
+  - type: depends_on
+    target: src/core/fs/writer.ts::fileExists
+    source: static
+  - type: depends_on
+    target: src/core/fs/writer.ts::writeFile
+    source: static
+  - type: depends_on
+    target: src/core/frontmatter/serialize.ts::serializeAnnotation
+    source: static
+  - type: depends_on
+    target: src/core/parser/registry.ts::parseFile
+    source: static
+  - type: depends_on
+    target: src/core/parser/detect-language.ts::detectLanguage
+    source: static
+  - type: depends_on
+    target: src/core/identity/content-hash.ts::computeContentHash
+    source: static
+  - type: depends_on
+    target: src/config/loader.ts::loadConfig
+    source: static
+  - type: depends_on
+    target: src/config/tracking.ts::isTrackedFile
+    source: static
+  - type: depends_on
+    target: src/config/tracking.ts::isSkippedDir
+    source: static
+  - type: depends_on
+    target: src/ai/registry.ts::getInferProvider
+    source: static
+  - type: depends_on
+    target: src/ai/registry.ts::getAnthropicBatchRunner
+    source: static
+  - type: depends_on
+    target: src/ai/registry.ts::getOpenAIBatchRunner
+    source: static
+  - type: depends_on
+    target: src/ai/registry.ts::getGeminiBatchRunner
+    source: static
+  - type: depends_on
+    target: src/ai/token-counter.ts::withTokenCounting
+    source: static
+  - type: depends_on
+    target: src/ai/token-counter.ts::formatTokens
+    source: static
+  - type: depends_on
+    target: src/ai/token-counter.ts::TokenTally
+    source: static
+  - type: depends_on
+    target: src/core/parser/types.ts::ParsedBlock
+    source: static
+  - type: depends_on
+    target: src/ai/prompts/infer.ts::buildInferredBlockPrompt
+    source: static
+  - type: depends_on
+    target: src/ai/prompts/infer.ts::buildInferredFilePrompt
+    source: static
+  - type: depends_on
+    target: src/ai/prompts/infer.ts::buildInferredFolderPrompt
+    source: static
+  - type: depends_on
+    target: src/ai/prompts/infer.ts::parseInferredResponse
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::WHYTHO_VERSION
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::BlockFrontmatter
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::FileFrontmatter
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::FolderFrontmatter
+    source: static
+  - type: depends_on
+    target: src/config/types.ts::WhythoConfig
+    source: static
+  - type: depends_on
+    target: src/config/types.ts::VerbosityCoverage
+    source: static
+  - type: depends_on
+    target: src/config/types.ts::VerbosityDetail
+    source: static
+  - type: depends_on
+    target: src/ai/types.ts::AIProvider
+    source: static
+  - type: depends_on
+    target: src/ai/registry.ts::BatchRunResult
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAnnotationFile
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **78%**

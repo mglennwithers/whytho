@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::detail
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T11:35:30.983Z"
+updated: "2026-03-25T02:10:25.746Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::detail
   line_range:
-    start: 41
-    end: 41
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:9524450981dd08820e0432685cef731233e4e2d3b313b384b5bb00c476a272bd
+    start: 50
+    end: 50
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  content_hash: sha256:6fed2bf3ab06f97975f6cf4a654269b24acfb1796d0ad6c7375f55e0fb5335ce
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     VerbosityDetail.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # detail

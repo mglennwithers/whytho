@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/identity/election.ts::hashBlock
 file: src/core/identity/election.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T02:19:55.626Z"
+updated: "2026-03-24T18:48:01.458Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/identity/election.ts::hashBlock
   line_range:
-    start: 80
-    end: 80
-    commit: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+    start: 75
+    end: 75
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:a7b6330a522b1c4b952b327374dbb6eab883ba95cfaf0e5c724187e2a83014d4
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     winning candidate in an election process.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68f587a2bb9ea894825135fb2fe3a1217044d15f
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # hashBlock

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/hooks/installer.ts::inWhythoBlock
 file: src/core/git/hooks/installer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.181Z"
+updated: "2026-03-24T18:48:01.303Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/git/hooks/installer.ts::inWhythoBlock
   line_range:
-    start: 106
-    end: 106
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 108
+    end: 108
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:c7ef20debef50ac84815c466f7ce39bf8aac7b59fab53c0ec664c8b80492202c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     used for conditional logic or state management during git hook installation processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # inWhythoBlock

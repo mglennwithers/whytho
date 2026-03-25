@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/identity/line-range.ts::lineRangeFromBlock
 file: src/core/identity/line-range.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.488Z"
+updated: "2026-03-24T09:38:25.166Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 9
     end: 15
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:9a9ea7c8d6c8c2f14737c0ca47ff38608e9671b210bcfc990c0f192bc5921b4c
   structural:
     kind: function
@@ -31,7 +31,11 @@ identity:
     a commit SHA for version tracking purposes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+relationships:
+  - type: depends_on
+    target: src/core/parser/types.ts::ParsedBlock
+    source: ai
 ---
 
 # lineRangeFromBlock

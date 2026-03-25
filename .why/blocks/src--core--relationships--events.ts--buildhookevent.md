@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/events.ts::buildHookEvent
 file: src/core/relationships/events.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.460Z"
+updated: "2026-03-24T18:48:02.911Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 8
     end: 39
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:63aa2f332f58722cc63b56ca8de56dfc215d211a09e2886a1c4d59273881f279
   structural:
     kind: function
@@ -31,7 +31,20 @@ identity:
     metadata about commits, sessions, and resolution outcomes with hash tracking capabilities.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/core/types.ts::HookEvent
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::RelationshipType
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::ResolutionOutcome
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::WHYTHO_VERSION
+    source: ai
 ---
 
 # buildHookEvent

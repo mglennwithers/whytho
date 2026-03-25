@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/layout.ts::archiveIndexPath
 file: src/core/fs/layout.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.656Z"
+updated: "2026-03-24T09:38:24.220Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 47
     end: 49
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:ffde875bb471e4650515350cedf4472db7402cf0b5bd5b8a95fb81af7e4011bf
   structural:
     kind: function
@@ -31,7 +31,11 @@ identity:
     returning the complete path to the archive index file.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+relationships:
+  - type: depends_on
+    target: src/core/constants.ts::ARCHIVE_INDEX_FILE
+    source: ai
 ---
 
 # archiveIndexPath

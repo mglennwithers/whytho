@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/init.ts::hookInstalled
 file: src/cli/commands/init.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:32.588Z"
+updated: "2026-03-24T18:47:59.290Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/init.ts::hookInstalled
   line_range:
-    start: 29
-    end: 29
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 34
+    end: 34
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:b83543c19731a53c546e96559a905cf6b97e333b262494c9f11a0a0a94411704
   structural:
     kind: const
@@ -30,7 +30,11 @@ identity:
     root and hook mode, storing the result in a boolean constant for subsequent conditional logic.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/core/git/hooks/installer.ts::isHookInstalled
+    source: ai
 ---
 
 # hookInstalled

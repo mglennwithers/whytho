@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/constants.ts::RELATIONSHIP_TYPES
 file: src/core/constants.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.455Z"
+updated: "2026-03-25T04:07:28.538Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/constants.ts::RELATIONSHIP_TYPES
   line_range:
-    start: 49
-    end: 59
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:42fba9f700ec86667b856b37c3969a018ef180448e4f146aa0241070f5b4eeac
+    start: 55
+    end: 60
+    commit: 498199f818951a78c685a05e25318822101986a6
+  content_hash: sha256:23b53c789eb788546c8875cf48bb3935c2b0ab1dbdb06bb7d9c3479e60fc1134
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     connections between code entities or documents. The `as const` assertion ensures type-level immutability.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: 498199f818951a78c685a05e25318822101986a6
 ---
 
 # RELATIONSHIP_TYPES

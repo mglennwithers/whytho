@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::ParseContext
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.120Z"
+updated: "2026-03-24T18:48:01.892Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::ParseContext
   line_range:
-    start: 40
-    end: 46
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 42
+    end: 48
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:6cffd6a8d0725f22a632334df59381abe210c40f99717d68b55bdccc22d00a32
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     frequencies, and scope nesting during incremental parsing operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # ParseContext

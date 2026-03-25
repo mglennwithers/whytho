@@ -1,0 +1,17 @@
+source: ratelimiter.ts
+annotations:
+  - ratelimiter-annotations.md
+
+scenarios:
+  - file: dq-1-queue-proposal.md
+    annotations: ratelimiter-annotations.md
+  - file: dq-2-integer-tokens.md
+    annotations: ratelimiter-annotations.md
+  - file: ts-1-retryafterms.md
+    annotations: ratelimiter-annotations.md
+  - file: ts-2-acquire.md
+    annotations: ratelimiter-annotations.md
+  - file: cs-1-lazy-refill.md
+    annotations: ratelimiter-annotations.md
+  - file: cs-2-full-start.md
+    annotations: ratelimiter-annotations.md

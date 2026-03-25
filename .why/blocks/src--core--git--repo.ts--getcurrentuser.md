@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/git/repo.ts::getCurrentUser
 file: src/core/git/repo.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.235Z"
+updated: "2026-03-25T02:10:29.104Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/git/repo.ts::getCurrentUser
   line_range:
-    start: 25
-    end: 33
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 23
+    end: 31
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:042e80afef8f208953d8e8073bb898a5688ab18fe63b1601dc938dcb6e97fbf4
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     result or undefined if absent or an error occurs.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # getCurrentUser

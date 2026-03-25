@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/config/loader.ts::raw
 file: src/config/loader.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.178Z"
+updated: "2026-03-25T02:10:29.027Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/config/loader.ts::raw
   line_range:
-    start: 34
-    end: 34
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 45
+    end: 45
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:0def3208e163473c2a3d524a28e9c744a387623eb8dc0904674cffa71fbb047f
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     subsequent processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # raw

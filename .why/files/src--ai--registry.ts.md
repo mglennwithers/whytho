@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/ai/registry.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T07:48:55.962Z"
+updated: "2026-03-25T02:10:24.707Z"
 updated_by_session: inferred
 parent_folder: src/ai/
 sessions: []
@@ -27,6 +27,37 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships:
+  - type: depends_on
+    target: src/ai/types.ts::AIProvider
+    source: static
+  - type: depends_on
+    target: src/ai/providers/null.ts::nullProvider
+    source: static
+  - type: depends_on
+    target: src/ai/providers/anthropic.ts::createAnthropicProvider
+    source: static
+  - type: depends_on
+    target: src/ai/providers/anthropic.ts::callAnthropicBatch
+    source: static
+  - type: depends_on
+    target: src/ai/providers/openai.ts::createOpenAIProvider
+    source: static
+  - type: depends_on
+    target: src/ai/providers/openai.ts::callOpenAIConcurrentBatch
+    source: static
+  - type: depends_on
+    target: src/ai/providers/gemini.ts::createGeminiProvider
+    source: static
+  - type: depends_on
+    target: src/ai/providers/gemini.ts::callGeminiConcurrentBatch
+    source: static
+  - type: depends_on
+    target: src/ai/providers/anthropic.ts::BatchRequest
+    source: static
+  - type: depends_on
+    target: src/config/types.ts::WhythoConfig
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **85%**

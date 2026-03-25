@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::TSEstree
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.160Z"
+updated: "2026-03-24T18:48:01.930Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::TSEstree
   line_range:
-    start: 7
-    end: 7
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:2beab93aab68195211b32bded0eaf0f48f3f2ec34d88403bc0d2414126a9f2f1
+    start: 8
+    end: 8
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:bf7c6617c42fe46dcd90f702f0cf6e53db5c29c20a1d18eb7aaa3ed2c304f47f
   structural:
     kind: type
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     enabling type-safe access to its exports throughout the codebase.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # TSEstree

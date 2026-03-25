@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/registry.ts::getAnthropicBatchRunner
 file: src/ai/registry.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-25T02:10:25.413Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/ai/registry.ts::getAnthropicBatchRunner
   line_range:
-    start: 9
-    end: 20
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:668bf50178251753df156be70473f3c0d71ff43fb393b77de3a45710eb26c37b
+    start: 17
+    end: 28
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  content_hash: sha256:bf8113a0c95ca25b4912101c9920142cbbf4a5a86ef627179bda07dfbb080c9d
   structural:
     kind: function
     parent_scope: module
@@ -32,7 +32,7 @@ identity:
     function.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # getAnthropicBatchRunner

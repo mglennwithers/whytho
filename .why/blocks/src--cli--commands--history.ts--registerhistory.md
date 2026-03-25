@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/history.ts::registerHistory
 file: src/cli/commands/history.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.618Z"
+updated: "2026-03-24T18:47:57.957Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/history.ts::registerHistory
   line_range:
-    start: 9
-    end: 72
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:cb906e2123c98e4c0f7d11b55bb5008c8922ac8e032ff50284339201ea8d8666
+    start: 13
+    end: 76
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:442737625135b91484d67a3b033b0fbff2fdf855d0846f64bde4b635b952d6f1
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,26 @@ identity:
     currently live versions and archived versions, with output formatting options for JSON or human-readable text.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::getWhyRoot
+    source: ai
+  - type: depends_on
+    target: src/core/archive/query.ts::getBlockHistory
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::blockAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/writer.ts::fileExists
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAnnotationFile
+    source: ai
 ---
 
 # registerHistory

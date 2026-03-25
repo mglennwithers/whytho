@@ -1,0 +1,22 @@
+{
+  "specVersion": "1.0",
+  "aiProvider": "anthropic",
+  "anthropic": {
+    "annotationModel": "claude-haiku-4-5-20251001",
+    "inferModel": "claude-haiku-4-5-20251001",
+    "scanModel": "claude-haiku-4-5-20251001"
+  },
+  "verbosity": {
+    "coverage": "standard",
+    "detail": "standard"
+  },
+  "tracking": {
+    "includeFolders": ["src/", "tests/"],
+    "excludeFolders": [],
+    "includeExtensions": [".ts"]
+  },
+  "relationships": {
+    "staticScan": true,
+    "aiScan": "off"
+  }
+}

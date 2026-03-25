@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::name
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.059Z"
+updated: "2026-03-24T18:48:01.826Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::name
   line_range:
-    start: 67
-    end: 67
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 69
+    end: 69
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:bca701d507aa6185ce8e4998249fa1dfe78bb092be47fd79fc22ae267d738851
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     property that may not exist.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # name

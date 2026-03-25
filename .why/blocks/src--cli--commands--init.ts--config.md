@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/init.ts::config
 file: src/cli/commands/init.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:32.580Z"
+updated: "2026-03-24T18:47:59.285Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/init.ts::config
   line_range:
-    start: 17
-    end: 17
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 22
+    end: 22
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:9333c162d3f78ccbec2727d495e4b834a459c288080881b89b7f0c028aca7328
   structural:
     kind: const
@@ -30,7 +30,11 @@ identity:
     subsequent use in initialization logic.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/config/loader.ts::loadConfig
+    source: ai
 ---
 
 # config

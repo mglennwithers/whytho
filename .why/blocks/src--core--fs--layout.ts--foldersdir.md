@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/layout.ts::foldersDir
 file: src/core/fs/layout.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.766Z"
+updated: "2026-03-24T09:38:24.340Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 26
     end: 28
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:79fede13b894b437e657cad69c05358c11038882769e918adca88aabaea88852
   structural:
     kind: function
@@ -31,7 +31,11 @@ identity:
     serving as a path resolver for a folders directory within a project structure.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+relationships:
+  - type: depends_on
+    target: src/core/constants.ts::FOLDERS_DIR
+    source: ai
 ---
 
 # foldersDir

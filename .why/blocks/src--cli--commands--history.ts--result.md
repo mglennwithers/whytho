@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/history.ts::result
 file: src/cli/commands/history.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.633Z"
+updated: "2026-03-24T18:47:57.973Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/history.ts::result
   line_range:
-    start: 39
-    end: 39
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 43
+    end: 43
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
   content_hash: sha256:3d0dfa2cdffcd4e4aebd1619bd91ae2de61c3b59a421d247a5b9560c00b97736
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     populated later in the function's execution flow.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # result

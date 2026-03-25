@@ -6,7 +6,6 @@ import {
   blockAnnotationPath,
   fileAnnotationPath,
   sessionsDir,
-  buildSymbolicRef,
 } from '../fs/layout.js'
 import { parseAnnotation } from '../frontmatter/parse.js'
 import { serializeAnnotation } from '../frontmatter/serialize.js'
@@ -15,7 +14,7 @@ import { parseFile } from '../parser/registry.js'
 import { computeContentHash } from '../identity/content-hash.js'
 import { getHeadCommitSha } from '../git/repo.js'
 import { WHYTHO_VERSION } from '../constants.js'
-import type { BlockFrontmatter, FileFrontmatter, SessionFrontmatter } from '../types.js'
+import type { BlockFrontmatter, FileFrontmatter, SessionFrontmatter, RelationshipType } from '../types.js'
 
 export type PushType = 'session' | 'block' | 'file'
 
@@ -52,6 +51,51 @@ async function findLatestSession(whyRoot: string): Promise<string | undefined> {
   } catch {
     return undefined
   }
+}
+
+/**
+ * Best-effort update of the latest session's blocks_touched / files_touched.
+ * Silently no-ops if no session exists or the update fails.
+ */
+async function updateSessionTouched(
+  whyRoot: string,
+  type: 'block' | 'file',
+  ref: string,
+  sessionId?: string,
+): Promise<void> {
+  try {
+    const sessId = sessionId ?? await findLatestSession(whyRoot)
+    if (!sessId) return
+    const annPath = sessionAnnotationPath(whyRoot, sessId)
+    if (!(await fileExists(annPath))) return
+    const raw = await fs.readFile(annPath, 'utf8')
+    const { frontmatter, body: existingBody } = parseAnnotation<SessionFrontmatter>(raw)
+    let changed = false
+    if (type === 'block') {
+      const touched = frontmatter.blocks_touched ?? []
+      if (!touched.includes(ref)) {
+        frontmatter.blocks_touched = [...touched, ref]
+        changed = true
+      }
+      // Also track the file
+      const [filePath] = ref.split('::')
+      const filesTouched = frontmatter.files_touched ?? []
+      if (!filesTouched.includes(filePath)) {
+        frontmatter.files_touched = [...filesTouched, filePath]
+        changed = true
+      }
+    } else {
+      const touched = frontmatter.files_touched ?? []
+      if (!touched.includes(ref)) {
+        frontmatter.files_touched = [...touched, ref]
+        changed = true
+      }
+    }
+    if (changed) {
+      frontmatter.updated = new Date().toISOString()
+      await writeFile(annPath, serializeAnnotation(frontmatter, existingBody))
+    }
+  } catch { /* best-effort */ }
 }
 
 export async function pushReasoning(input: PushInput): Promise<PushResult> {
@@ -92,7 +136,7 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
     return { action: 'created', path: annPath }
   }
 
-  // ─── block ────────────────────────────────────────────────────────────────
+  // ─── block ─────────────────────────────────────────────────────────────────
   if (type === 'block') {
     const annPath = blockAnnotationPath(whyRoot, ref)
     const commitSha = await getHeadCommitSha(repoRoot).catch(() => 'unknown')
@@ -129,7 +173,7 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
           const duplicate = merged.find((r) => r.target === rel.target && r.type === rel.type)
           if (!duplicate) {
             merged.push({
-              type: rel.type as import('../types.js').RelationshipType,
+              type: rel.type as RelationshipType,
               target: rel.target,
               description: rel.description,
               bidirectional: rel.bidirectional,
@@ -140,7 +184,8 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
         if (merged.length > 0) frontmatter.relationships = merged
       }
 
-      await writeFile(annPath, serializeAnnotation(frontmatter, existingBody + `\n\n${body}`))
+      await writeFile(annPath, serializeAnnotation(frontmatter, `${existingBody  }\n\n${body}`))
+      await updateSessionTouched(whyRoot, 'block', ref, sessionId)
       return { action: 'updated', path: annPath }
     }
 
@@ -173,7 +218,7 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
         : {
             symbolic: ref,
             line_range: { start: 0, end: 0, commit: commitSha },
-            content_hash: 'sha256:' + '0'.repeat(64),
+            content_hash: `sha256:${  '0'.repeat(64)}`,
             structural: { kind: 'function', parent_scope: 'module', name: blockName, index_in_parent: 0 },
             semantic_fingerprint: fingerprint,
             canonical_metric: 'symbolic',
@@ -184,7 +229,7 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
     // Add initial relationships if provided
     if (input.relationships && input.relationships.length > 0) {
       fm.relationships = input.relationships.map((rel) => ({
-        type: rel.type as import('../types.js').RelationshipType,
+        type: rel.type as RelationshipType,
         target: rel.target,
         description: rel.description,
         bidirectional: rel.bidirectional,
@@ -192,6 +237,7 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
       }))
     }
     await writeFile(annPath, serializeAnnotation(fm, `# ${blockName}\n\n${body}`))
+    await updateSessionTouched(whyRoot, 'block', ref, sessionId)
     return { action: 'created', path: annPath }
   }
 
@@ -206,9 +252,34 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
       if (sessionId && !frontmatter.sessions?.includes(sessionId)) {
         frontmatter.sessions = [...(frontmatter.sessions ?? []), sessionId]
       }
-      await writeFile(annPath, serializeAnnotation(frontmatter, existingBody + `\n\n${body}`))
+      // Merge relationships (deduplicated by target+type — mirrors block branch)
+      if (input.relationships && input.relationships.length > 0) {
+        const existing = frontmatter.relationships ?? []
+        const merged = [...existing]
+        for (const rel of input.relationships) {
+          const duplicate = merged.find((r) => r.target === rel.target && r.type === rel.type)
+          if (!duplicate) {
+            merged.push({
+              type: rel.type as RelationshipType,
+              target: rel.target,
+              description: rel.description,
+              bidirectional: rel.bidirectional,
+              source: rel.source ?? 'ai',
+            })
+          }
+        }
+        if (merged.length > 0) frontmatter.relationships = merged
+      }
+      await writeFile(annPath, serializeAnnotation(frontmatter, `${existingBody  }\n\n${body}`))
+      await updateSessionTouched(whyRoot, 'file', ref, sessionId)
       return { action: 'updated', path: annPath }
     }
+
+    let fileContentHash: string | undefined
+    try {
+      const src = await fs.readFile(path.join(repoRoot, ref), 'utf8')
+      fileContentHash = computeContentHash(src)
+    } catch { /* file may not exist on disk */ }
 
     const fm: FileFrontmatter = {
       whytho: WHYTHO_VERSION,
@@ -220,10 +291,22 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
       parent_folder: ref.includes('/') ? ref.substring(0, ref.lastIndexOf('/') + 1) : '/',
       sessions: sessionId ? [sessionId] : [],
       blocks: [],
+      content_hash: fileContentHash,
+    }
+    // Add initial relationships if provided
+    if (input.relationships && input.relationships.length > 0) {
+      fm.relationships = input.relationships.map((rel) => ({
+        type: rel.type as RelationshipType,
+        target: rel.target,
+        description: rel.description,
+        bidirectional: rel.bidirectional,
+        source: rel.source ?? 'ai',
+      }))
     }
     await writeFile(annPath, serializeAnnotation(fm, body))
+    await updateSessionTouched(whyRoot, 'file', ref, sessionId)
     return { action: 'created', path: annPath }
   }
 
-  throw new Error(`Unknown push type: ${type}`)
+  throw new Error(`Unknown push type: ${String(type)}`)
 }

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::now
 file: src/core/push/index.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-22T09:38:08.123Z"
+updated: "2026-03-25T02:10:29.456Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/push/index.ts::now
   line_range:
-    start: 60
-    end: 60
-    commit: 1e27f0b292da50781577cdb94eeea6d19c1dd93e
+    start: 104
+    end: 104
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:c2b2d0823a4b34d2a215bb8336df11bec41ebee0b0e86f87b9453d5205258ed7
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     records in push notification operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 1e27f0b292da50781577cdb94eeea6d19c1dd93e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # now

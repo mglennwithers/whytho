@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/init.ts::registerInit
 file: src/cli/commands/init.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:32.603Z"
+updated: "2026-03-24T18:47:59.301Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/init.ts::registerInit
   line_range:
-    start: 8
-    end: 48
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:9e66d6c8c9a71dd1c934732f147eb54c6fc1a28bdd6fe08eaf9404d480518ba2
+    start: 13
+    end: 53
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:06a81bdc401060a648c45f4a18f68dd8c7759b5939f48fc58e2898860f9b13eb
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,26 @@ identity:
     idempotency controls via `--force` flag and user-friendly status messaging.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: ai
+  - type: depends_on
+    target: src/config/loader.ts::loadConfig
+    source: ai
+  - type: depends_on
+    target: src/core/fs/init.ts::isWhyDirInitialized
+    source: ai
+  - type: depends_on
+    target: src/core/fs/init.ts::initWhyDir
+    source: ai
+  - type: depends_on
+    target: src/core/git/hooks/installer.ts::isHookInstalled
+    source: ai
+  - type: depends_on
+    target: src/core/git/hooks/installer.ts::installHook
+    source: ai
 ---
 
 # registerInit

@@ -1,7 +1,7 @@
 import * as path from 'path'
 import { readAnnotationFile } from '../fs/reader.js'
 import { writeFile } from '../fs/writer.js'
-import { fileExists, moveFile } from '../fs/writer.js'
+import { fileExists } from '../fs/writer.js'
 import { serializeAnnotation } from '../frontmatter/serialize.js'
 import { archiveDir, blockAnnotationPath, slugFromBlockRef, safeArchivePath } from '../fs/layout.js'
 import type { BlockFrontmatter, ArchiveReason } from '../types.js'

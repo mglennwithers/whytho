@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::unresolvable
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-25T02:10:28.904Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::unresolvable
   line_range:
-    start: 74
-    end: 74
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 104
+    end: 104
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:e421f8ba5c1f2e7ee00cc62c09eaf9fb2518269d2e713dc4c00e907f3263de53
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     safely handle missing or undefined data, storing the result in a numeric variable.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # unresolvable

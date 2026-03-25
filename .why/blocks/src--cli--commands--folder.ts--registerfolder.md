@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/folder.ts::registerFolder
 file: src/cli/commands/folder.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.557Z"
+updated: "2026-03-24T18:47:57.911Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/folder.ts::registerFolder
   line_range:
-    start: 9
-    end: 46
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:142fc518dec9d6a00f0ecad29ff43d415fb18711f4168a5a592bd1eb5e6123e7
+    start: 13
+    end: 50
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:ded1fc198d38646155658ac0aab33d763d38ff09237177f152ab5d12b18d0f65
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,26 @@ identity:
     both formatted console output and JSON serialization.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::getWhyRoot
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::folderAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/writer.ts::fileExists
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAnnotationFile
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::FolderFrontmatter
+    source: ai
 ---
 
 # registerFolder

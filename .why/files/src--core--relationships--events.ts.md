@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/core/relationships/events.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-24T18:47:56.190Z"
 updated_by_session: inferred
 parent_folder: src/core/relationships/
 sessions: []
@@ -30,6 +30,22 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships:
+  - type: depends_on
+    target: src/core/types.ts::HookEvent
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::RelationshipType
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::ResolutionOutcome
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::WHYTHO_VERSION
+    source: static
+  - type: depends_on
+    target: src/config/types.ts::WhythoConfig
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **88%**

@@ -20,13 +20,13 @@ export function isTrackedFile(relPath: string, config: WhythoConfig): boolean {
 
   // includeFolders whitelist — if set, path must match at least one prefix
   if (includeFolders.length > 0) {
-    const included = includeFolders.some((f) => normalized.startsWith(f.endsWith('/') ? f : f + '/'))
+    const included = includeFolders.some((f) => normalized.startsWith(f.endsWith('/') ? f : `${f  }/`))
     if (!included) return false
   }
 
   // excludeFolders blacklist — path must not match any prefix
   for (const f of excludeFolders) {
-    const prefix = f.endsWith('/') ? f : f + '/'
+    const prefix = f.endsWith('/') ? f : `${f  }/`
     if (normalized.startsWith(prefix)) return false
   }
 

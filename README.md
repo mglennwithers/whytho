@@ -93,7 +93,7 @@ A git hook runs resolution on every commit. This guarantees the index is always 
 
 ### Relationships
 
-Block annotations can declare relationships using a controlled vocabulary — `extends`, `overrides`, `depends_on`, `tests`, `configures`, and others. When a relationship target changes, Whytho emits a hook event. Hook consumers decide how to respond: running tests, notifying a human, triggering an agent, or blocking the commit.
+Block annotations can declare relationships using a controlled vocabulary — `extends`, `depends_on`, `implements`, and `tests`. When a relationship target changes, Whytho emits a hook event. Hook consumers decide how to respond: running tests, notifying a human, triggering an agent, or blocking the commit.
 
 ### Archival
 
@@ -107,7 +107,172 @@ Nothing is permanently deleted. When code is removed or thoroughly rewritten, it
 npm install -g whytho
 ```
 
-Requires Node.js 18+. Set your `ANTHROPIC_API_KEY` environment variable to enable AI-powered annotation generation.
+Requires Node.js 18+. Set your `ANTHROPIC_API_KEY` environment variable to enable AI-powered annotation generation. To use OpenAI or Gemini instead, see [AI Provider Configuration](#ai-provider-configuration).
+
+---
+
+## AI Assistant Setup
+
+Whytho works with any AI assistant. The base integration is a context file that tells your assistant to consult `.why/` before modifying code. Claude Code additionally supports an MCP server that exposes all whytho query tools directly in the conversation, and a lifecycle hook that automatically injects annotation context whenever Claude reads a source file.
+
+> **Lifecycle hooks are only available in Claude Code.** Cursor and Copilot do not have an equivalent hook system for injecting context in response to tool events. For those tools, context is injected statically at the start of each conversation.
+
+### Claude Code
+
+**1. Register the MCP server**
+
+Add whytho to your MCP configuration. For a project-level setup, create `.mcp.json` at the repo root:
+
+```json
+{
+  "mcpServers": {
+    "whytho": {
+      "type": "stdio",
+      "command": "git",
+      "args": ["why", "mcp"]
+    }
+  }
+}
+```
+
+This gives Claude Code access to all whytho query tools — `get_file_context`, `get_block`, `search`, `push_note`, and more — directly from the conversation.
+
+**2. Add a CLAUDE.md**
+
+Create a `CLAUDE.md` at the repo root to tell Claude Code to read annotations before exploring or modifying files:
+
+```markdown
+## Whytho annotations
+
+Before exploring or modifying any file, read its whytho annotations first.
+The `.why/` folder contains captured reasoning — design decisions, rejected
+alternatives, tradeoffs, and constraints that aren't visible in the source code.
+
+- Use `mcp__whytho__get_summary()` when starting a new task
+- Use `mcp__whytho__get_file_context("path/to/file.ts")` before modifying a file
+- Use `mcp__whytho__search("query")` to find reasoning on a topic
+- Use `mcp__whytho__push_note({ ref, body })` to record decisions as you work
+```
+
+**3. Install the lifecycle hook** *(optional)*
+
+Claude Code supports PostToolUse hooks — shell scripts that run after a tool is used and can inject additional context into the conversation. The whytho hook automatically appends file and block annotation context whenever Claude reads a source file, so the relevant `.why/` reasoning is always in context without needing to ask for it explicitly.
+
+An example hook script is included at [`.claude/hooks/read-annotations.sh`](.claude/hooks/read-annotations.sh). Register it in `.claude/settings.json`:
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/read-annotations.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+---
+
+### Cursor
+
+**1. Register the MCP server**
+
+Cursor supports MCP. Add whytho to `.cursor/mcp.json` in the project (or `~/.cursor/mcp.json` globally):
+
+```json
+{
+  "mcpServers": {
+    "whytho": {
+      "command": "git",
+      "args": ["why", "mcp"]
+    }
+  }
+}
+```
+
+**2. Add a cursor rule**
+
+Create `.cursor/rules/whytho.mdc` to inject annotation guidance when source files are open:
+
+```markdown
+---
+description: Read whytho annotations before modifying source files
+globs: ["src/**/*"]
+alwaysApply: false
+---
+
+Before modifying any file, read its whytho annotation first using the whytho
+MCP tools:
+- `whytho_get_file_context` with the file path for full context
+- `whytho_search` to find reasoning on a topic
+- `whytho_push_note` to record decisions as you work
+
+Annotations in `.why/` contain design decisions, rejected alternatives, and
+constraints that are not visible in the source code.
+```
+
+The `globs` field scopes the rule to source files so it only activates when a relevant file is open. Unlike Claude Code, Cursor does not support lifecycle hooks — this rule is injected statically rather than in response to a file-read event.
+
+---
+
+### GitHub Copilot
+
+GitHub Copilot does not support MCP servers or lifecycle hooks. Add a static instruction file at `.github/copilot-instructions.md`:
+
+```markdown
+## Whytho annotations
+
+This repo uses whytho to capture AI reasoning alongside source code. Annotations
+live in `.why/` and contain design decisions, rejected alternatives, and constraints
+that are not visible in the code itself.
+
+Before modifying any file, check for its annotation:
+- Run `git why file <path>` in the terminal, e.g. `git why file src/auth/middleware.ts`
+- Run `git why block <ref>` for a specific function, e.g. `git why block src/auth/middleware.ts::rotateToken`
+
+To record a decision as you work:
+  git why push block src/file.ts::functionName --body "your reasoning here"
+```
+
+Because Copilot has no MCP integration or hook system, it cannot query annotations dynamically. Direct it to run `git why` commands in the terminal, or paste the relevant annotation body into the conversation.
+
+---
+
+## AI Provider Configuration
+
+By default, whytho uses Anthropic (Claude). To use a different provider, set `aiProvider` in `.why/config.yml`:
+
+**OpenAI:**
+```yaml
+aiProvider: openai
+openai:
+  annotationModel: gpt-4o
+  inferModel: gpt-4o-mini
+  apiKeyEnv: OPENAI_API_KEY
+```
+
+**Google Gemini:**
+```yaml
+aiProvider: gemini
+gemini:
+  annotationModel: gemini-2.0-flash
+  inferModel: gemini-2.0-flash
+  apiKeyEnv: GEMINI_API_KEY
+```
+
+Install the corresponding SDK alongside whytho:
+
+```bash
+npm install -g openai          # for OpenAI
+npm install -g @google/genai   # for Gemini
+```
 
 ---
 
@@ -217,6 +382,8 @@ git why diff main..feature-branch
 | `git why related <ref>` | Show the relationship graph for a block |
 | `git why history <ref>` | Show live and archived versions of a block annotation |
 | `git why diff <range>` | Show a git diff annotated with decision context |
+| `git why scan` | Run static relationship scanner across the repo (or a single file) |
+| `git why search <query>` | Search annotations by text or `--semantic` AI-powered meaning |
 | `git why mcp` | Start the MCP server (stdio transport) for use with Claude Code and other MCP clients |
 
 ---
@@ -252,7 +419,7 @@ Annotations are small Markdown files. A typical block annotation is 30–80 line
 No. Annotations are generated during AI-assisted coding sessions. Commits made without AI assistance don't produce new annotations, though the resolution hook still runs to detect whether existing annotations need updating.
 
 **Can I use this with any AI assistant?**
-Whytho is model-agnostic. The default implementation uses Claude via the Anthropic API, but any AI assistant that can read and write Markdown with YAML frontmatter can produce Whytho-compliant annotations. The specification defines the format, not the producer.
+Yes. Whytho is model-agnostic — the default uses Claude, but OpenAI and Gemini are also supported out of the box (see [AI Provider Configuration](#ai-provider-configuration)). Any assistant that can read and write Markdown with YAML frontmatter can produce Whytho-compliant annotations. The specification defines the format, not the producer.
 
 **What if resolution gets it wrong?**
 The resolution protocol includes confidence scores on every metric. When confidence drops below a configurable threshold, the annotation is flagged as `UNRESOLVABLE` and frozen for human review rather than silently degrading.

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/fs/layout.ts::filesDir
 file: src/core/fs/layout.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:33.741Z"
+updated: "2026-03-24T09:38:24.314Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 30
     end: 32
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:b6f181d032b167bd5740e3a9d444200006e07300dac53f65bd68d1e0ca0e3459
   structural:
     kind: function
@@ -31,7 +31,11 @@ identity:
     the complete path string.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+relationships:
+  - type: depends_on
+    target: src/core/constants.ts::FILES_DIR
+    source: ai
 ---
 
 # filesDir

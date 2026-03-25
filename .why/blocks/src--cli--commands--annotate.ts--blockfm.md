@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::blockFm
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:30.860Z"
+updated: "2026-03-25T02:10:25.586Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::blockFm
   line_range:
-    start: 108
-    end: 134
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 129
+    end: 155
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:1716406cc13d00ef0437a47220e3e5281534b9943d214930983c46d1519df7bb
   structural:
     kind: const
@@ -31,7 +31,7 @@ identity:
     code blocks across sessions and commits.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # blockFm

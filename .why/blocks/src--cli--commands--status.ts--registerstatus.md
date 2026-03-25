@@ -4,16 +4,16 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::registerStatus
 file: src/cli/commands/status.ts
 created: "2026-03-21T11:05:48.446Z"
-updated: "2026-03-21T11:35:33.095Z"
+updated: "2026-03-25T02:10:28.645Z"
 created_by_session: agent-push
 updated_by_session: agent-push
 identity:
   symbolic: src/cli/commands/status.ts::registerStatus
   line_range:
-    start: 51
-    end: 207
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:2cb59204d17b7696ba2232936414276f01581930df7fa0118881f199b7cf74f3
+    start: 81
+    end: 261
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  content_hash: sha256:ebf8c07540ac61a52b2d1420e0fb65cc5d760215d0a6a8b1ab42171f2bce8949
   structural:
     kind: function
     parent_scope: module
@@ -25,7 +25,35 @@ identity:
     triggers source file walking + parsing. This mirrors git status's philosophy of being
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::getWhyRoot
+    source: ai
+  - type: depends_on
+    target: src/core/fs/init.ts::isWhyDirInitialized
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readIndex
+    source: ai
+  - type: depends_on
+    target: src/core/fs/reader.ts::readArchiveIndex
+    source: ai
+  - type: depends_on
+    target: src/core/git/repo.ts::getCommitsSince
+    source: ai
+  - type: depends_on
+    target: src/config/loader.ts::loadConfig
+    source: ai
+  - type: depends_on
+    target: src/core/parser/registry.ts::parseFile
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::parentFolder
+    source: ai
 ---
 
 # registerStatus

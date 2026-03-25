@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/core/fs/reader.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-24T18:47:56.190Z"
 updated_by_session: inferred
 parent_folder: src/core/fs/
 sessions: []
@@ -35,6 +35,43 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships:
+  - type: depends_on
+    target: src/core/frontmatter/parse.ts::parseAnnotation
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::blocksDir
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::filesDir
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::foldersDir
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::sessionsDir
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::archiveDir
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::AnnotationFile
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::AnyFrontmatter
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::BlockFrontmatter
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::FileFrontmatter
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::FolderFrontmatter
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::SessionFrontmatter
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **88%**

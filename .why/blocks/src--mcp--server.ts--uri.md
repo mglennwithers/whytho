@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::uri
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:37.344Z"
+updated: "2026-03-25T02:10:32.739Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::uri
   line_range:
-    start: 553
-    end: 553
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 782
+    end: 782
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:269de12b6c6b04ece4804ee381f3f26aaa3ea50ba30669805ad1f3ee400e7492
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     retrieves a resource identifier needed for subsequent processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # uri

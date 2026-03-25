@@ -2,24 +2,43 @@ import * as fs from 'fs/promises'
 import * as path from 'path'
 import type { RelationshipType } from '../types.js'
 import { parseFile } from '../parser/registry.js'
-import { blockAnnotationPath } from '../fs/layout.js'
+import { blockAnnotationPath, fileAnnotationPath, parentFolder } from '../fs/layout.js'
 import { parseAnnotation } from '../frontmatter/parse.js'
 import { serializeAnnotation } from '../frontmatter/serialize.js'
 import { writeFile, fileExists } from '../fs/writer.js'
-import type { BlockFrontmatter } from '../types.js'
+import type { BlockFrontmatter, FileFrontmatter } from '../types.js'
+import { WHYTHO_VERSION } from '../constants.js'
 import { typescriptScannerPlugin } from './scanner-plugins/typescript.js'
 import { pythonScannerPlugin } from './scanner-plugins/python.js'
 import { goScannerPlugin } from './scanner-plugins/go.js'
 import { rustScannerPlugin } from './scanner-plugins/rust.js'
+import { javaScannerPlugin } from './scanner-plugins/java.js'
+import { csharpScannerPlugin } from './scanner-plugins/csharp.js'
 
-export interface ScannedRelationship {
-  /** Symbolic ref of the block that owns this relationship (e.g. "src/foo.ts::myFn") */
-  sourceBlock: string
+/**
+ * A file-level edge: the scanner knows the file imports/tests a target,
+ * but not which specific block within the file is responsible.
+ * Used for depends_on and tests edges.
+ */
+export interface FileLevelEdge {
+  sourceFile: string  // repo-relative file path, e.g. "src/foo.ts"
+  type: 'depends_on' | 'tests'
+  target: string      // symbolic ref of the target block
+  source: 'static'
+}
+
+/**
+ * A block-level edge: the scanner can attribute the relationship to a
+ * specific block (used for extends and implements, where the class ref is known).
+ */
+export interface BlockLevelEdge {
+  sourceBlock: string  // symbolic ref, e.g. "src/foo.ts::MyClass"
   type: RelationshipType
-  /** Symbolic ref of the target block. Must exist in the BlockRegistry. */
   target: string
   source: 'static'
 }
+
+export type ScannedRelationship = FileLevelEdge | BlockLevelEdge
 
 /**
  * Maps symbolicRef → repo-relative file path.
@@ -46,6 +65,8 @@ const scannerPlugins: RelationshipScanner[] = [
   pythonScannerPlugin,
   goScannerPlugin,
   rustScannerPlugin,
+  javaScannerPlugin,
+  csharpScannerPlugin,
 ]
 
 export function registerScannerPlugin(plugin: RelationshipScanner): void {
@@ -102,8 +123,9 @@ export async function runStaticScan(
   // Pass 1: build block registry across all files
   const registry = await buildBlockRegistry(repoRoot, allFiles)
 
-  // Pass 2: scan each file and collect edges
-  const edgesByBlock = new Map<string, ScannedRelationship[]>()
+  // Pass 2: scan each file and collect edges into two typed accumulators
+  const edgesByBlock = new Map<string, BlockLevelEdge[]>()  // keyed by sourceBlock
+  const edgesByFile  = new Map<string, FileLevelEdge[]>()   // keyed by sourceFile
 
   for (const relPath of filesToScan) {
     const plugin = getScannerPlugin(relPath)
@@ -125,13 +147,21 @@ export async function runStaticScan(
         result.relationshipsSkipped++
         continue
       }
-      const existing = edgesByBlock.get(edge.sourceBlock) ?? []
-      existing.push(edge)
-      edgesByBlock.set(edge.sourceBlock, existing)
+      if ('sourceFile' in edge) {
+        // FileLevelEdge → accumulate by file path
+        const existing = edgesByFile.get(edge.sourceFile) ?? []
+        existing.push(edge)
+        edgesByFile.set(edge.sourceFile, existing)
+      } else {
+        // BlockLevelEdge → accumulate by block ref
+        const existing = edgesByBlock.get(edge.sourceBlock) ?? []
+        existing.push(edge)
+        edgesByBlock.set(edge.sourceBlock, existing)
+      }
     }
   }
 
-  // Pass 3: write back to block annotations
+  // Pass 3: write back to block annotations (BlockLevelEdge)
   for (const [symbolicRef, newStaticEdges] of edgesByBlock) {
     const annPath = blockAnnotationPath(whyRoot, symbolicRef)
     if (!(await fileExists(annPath))) continue
@@ -152,7 +182,7 @@ export async function runStaticScan(
     await writeFile(annPath, serializeAnnotation(frontmatter, body))
   }
 
-  // Clear stale static edges from blocks in scanned files that produced no new edges
+  // Clear stale static edges from block annotations in scanned files that produced no new block-level edges
   for (const relPath of filesToScan) {
     const blocksForFile = [...registry.entries()]
       .filter(([, fp]) => fp === relPath)
@@ -174,6 +204,48 @@ export async function runStaticScan(
       frontmatter.relationships = existing.filter(
         (r) => r.source === 'ai' || r.source === undefined,
       )
+      await writeFile(annPath, serializeAnnotation(frontmatter, body))
+    }
+  }
+
+  // Pass 2b: write back file-level static edges to file annotations (FileLevelEdge)
+  // Iterates ALL scanned files — handles both "has edges" and "no edges" (stale clearing) in one pass
+  const now = new Date().toISOString()
+  for (const relPath of filesToScan) {
+    const fileEdges = edgesByFile.get(relPath) ?? []
+    const annPath = fileAnnotationPath(whyRoot, relPath)
+    const exists = await fileExists(annPath)
+
+    if (!exists && fileEdges.length === 0) continue  // nothing to do
+
+    if (!exists) {
+      // Create new file annotation with static edges
+      // Note: empty body is intentional — static scanner has no prose body to contribute
+      const fm: FileFrontmatter = {
+        whytho: WHYTHO_VERSION,
+        type: 'file',
+        path: relPath,
+        created: now,
+        updated: now,
+        updated_by_session: 'static-scan',
+        parent_folder: parentFolder(relPath),
+        sessions: [],
+        blocks: [],
+        relationships: fileEdges.map((e) => ({ type: e.type, target: e.target, source: 'static' as const })),
+      }
+      await writeFile(annPath, serializeAnnotation(fm, ''))
+      result.relationshipsWritten += fileEdges.length
+    } else {
+      // Update existing: keep ai edges, replace all static edges (replace-not-merge)
+      const raw = await fs.readFile(annPath, 'utf8')
+      const { frontmatter, body } = parseAnnotation<FileFrontmatter>(raw)
+      frontmatter.updated = now
+      const kept = (frontmatter.relationships ?? []).filter(
+        (r) => r.source === 'ai' || r.source === undefined,
+      )
+      const added = fileEdges.map((e) => ({ type: e.type, target: e.target, source: 'static' as const }))
+      frontmatter.relationships = [...kept, ...added]
+      result.relationshipsWritten += added.length
       await writeFile(annPath, serializeAnnotation(frontmatter, body))
     }
   }

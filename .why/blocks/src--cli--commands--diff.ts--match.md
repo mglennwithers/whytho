@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/diff.ts::match
 file: src/cli/commands/diff.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.459Z"
+updated: "2026-03-25T02:10:26.384Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/diff.ts::match
   line_range:
-    start: 41
-    end: 41
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:ebd8487830c7a01b1b528dc6191681eea770ba88ffaab4bee2e0df772a3ad2dd
+    start: 17
+    end: 17
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  content_hash: sha256:e12bb284f913c3a5416831ff4753a4a2625be5bbbc84020b5e251ccef54679b4
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     `a/` and `b/` markers.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # match

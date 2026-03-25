@@ -47,11 +47,17 @@ export async function buildIndex(whyRoot: string, commitSha: string): Promise<Wh
   const files: Record<string, FileIndexEntry> = {}
   for (const ann of fileAnns) {
     const fm = ann.frontmatter
+    const fileRels = (fm.relationships ?? []).map((r) => ({
+      type: r.type,
+      target: r.target,
+      pipeline: r.source,
+    }))
     files[fm.path] = {
       path: fm.path,
       parent_folder: fm.parent_folder,
       blocks: fm.blocks ?? [],
       sessions: fm.sessions ?? [],
+      relationships_out: fileRels.length > 0 ? fileRels : undefined,
     }
   }
 
@@ -84,6 +90,16 @@ export async function buildIndex(whyRoot: string, commitSha: string): Promise<Wh
 
     if (fm.resolution_status === 'unresolvable') {
       unresolved.push(fm.symbolic_ref)
+    }
+  }
+
+  // Collect file-level edges (depends_on / tests from import scanning) into the
+  // global relationships array. Source is the file path since these edges are not
+  // attributed to a specific block.
+  for (const ann of fileAnns) {
+    const fm = ann.frontmatter
+    for (const rel of (fm.relationships ?? [])) {
+      relationships.push({ type: rel.type, source: fm.path, target: rel.target, pipeline: rel.source })
     }
   }
 

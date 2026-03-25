@@ -4,6 +4,7 @@ import { WHYTHO_VERSION } from '../../core/constants.js'
 export const nullProvider: AIProvider = {
   name: 'null',
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   async generateAnnotation(request: AnnotationRequest): Promise<AnnotationResult> {
     const now = new Date().toISOString()
     const type = request.type
@@ -21,6 +22,7 @@ export const nullProvider: AIProvider = {
     }
   },
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   async matchSemanticFingerprint(_request: SemanticMatchRequest): Promise<SemanticMatchResult> {
     return { matchedIndex: null, confidence: 0 }
   },

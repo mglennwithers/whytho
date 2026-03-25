@@ -1,6 +1,4 @@
 import { simpleGit } from 'simple-git'
-import * as path from 'path'
-import * as fs from 'fs/promises'
 
 export async function findRepoRoot(startDir: string = process.cwd()): Promise<string> {
   const git = simpleGit(startDir)
@@ -50,6 +48,29 @@ export async function getTrackedFiles(repoRoot: string): Promise<Set<string>> {
     )
   } catch {
     return new Set()
+  }
+}
+
+/**
+ * Count commits reachable from HEAD but not from `sha` (i.e. how many commits
+ * have landed since `sha`). Returns Infinity if `sha` is not in history.
+ */
+export async function getCommitsSince(repoRoot: string, sha: string): Promise<number> {
+  const git = simpleGit(repoRoot)
+  try {
+    const count = await git.raw(['rev-list', '--count', `${sha}..HEAD`])
+    return parseInt(count.trim(), 10) || 0
+  } catch {
+    return Infinity
+  }
+}
+
+export async function getCommitMessage(repoRoot: string, ref = 'HEAD'): Promise<string> {
+  const git = simpleGit(repoRoot)
+  try {
+    return (await git.raw(['log', '-1', '--format=%s', ref])).trim()
+  } catch {
+    return ''
   }
 }
 

@@ -19,6 +19,9 @@ describe('goScannerPlugin', () => {
     expect(edges).toContainEqual(
       expect.objectContaining({ type: 'depends_on', target: 'src/utils/utils.go::Helper', source: 'static' }),
     )
+    const edge = edges.find(e => e.type === 'depends_on' || e.type === 'tests')
+    expect(edge).toHaveProperty('sourceFile')
+    expect(edge).not.toHaveProperty('sourceBlock')
   })
 
   it('emits no edges for external (non-registry) imports', () => {

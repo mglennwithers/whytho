@@ -1,15 +1,14 @@
 import * as fs from 'fs/promises'
-import { readAnnotationFile } from '../fs/reader.js'
 import { writeFile, fileExists } from '../fs/writer.js'
 import { serializeAnnotation } from '../frontmatter/serialize.js'
-import { blockAnnotationPath, buildSymbolicRef } from '../fs/layout.js'
+import { blockAnnotationPath } from '../fs/layout.js'
 import { parseFile } from '../parser/registry.js'
 import { electCanonicalMetric } from '../identity/election.js'
 import { computeContentHash } from '../identity/content-hash.js'
 import { archiveBlockAnnotation } from '../archive/archiver.js'
 import { buildHookEvent } from '../relationships/events.js'
 import { getBlocksForChangedFiles } from './incremental.js'
-import type { BlockFrontmatter, HookEvent, ResolutionOutcome, RelationshipEdge } from '../types.js'
+import type { BlockFrontmatter, HookEvent, ResolutionOutcome } from '../types.js'
 import type { AIProvider } from '../../ai/types.js'
 import type { WhythoConfig } from '../../config/types.js'
 
@@ -21,6 +20,8 @@ export interface ResolutionContext {
   sessionId?: string
   config: WhythoConfig
   ai?: AIProvider
+  /** Optional callback for progress reporting (e.g. "Resolving 3/50: src/foo.ts::bar") */
+  onProgress?: (message: string) => void
 }
 
 export interface BlockResolutionResult {
@@ -40,8 +41,7 @@ export interface ResolutionReport {
 }
 
 export async function runResolutionPipeline(ctx: ResolutionContext): Promise<ResolutionReport> {
-  const { whyRoot, repoRoot, commitSha, changedFiles, sessionId, config, ai } = ctx
-  const threshold = config.resolution.confidenceThreshold
+  const { whyRoot, repoRoot, commitSha, changedFiles, sessionId, config, ai, onProgress } = ctx
 
   // Get blocks whose files changed
   const blocksToProcess = await getBlocksForChangedFiles(whyRoot, changedFiles)
@@ -59,8 +59,15 @@ export async function runResolutionPipeline(ctx: ResolutionContext): Promise<Res
     previousHashes[ann.frontmatter.symbolic_ref] = ann.frontmatter.identity.content_hash
   }
 
+  const total = blocksToProcess.length
+  let processed = 0
+
   // Process each block
   for (const ann of blocksToProcess) {
+    processed++
+    if (onProgress && total > 10) {
+      onProgress(`Resolving ${processed}/${total}: ${ann.frontmatter.symbolic_ref}`)
+    }
     const fm = ann.frontmatter
     const symbolicRef = fm.symbolic_ref
     const filePath = fm.file
@@ -146,7 +153,7 @@ export async function runResolutionPipeline(ctx: ResolutionContext): Promise<Res
           identity: {
             ...fm.identity,
             ...updatedIdentity,
-            canonical_metric: canonical_metric,
+            canonical_metric,
             confidence,
             last_resolved: commitSha,
           },
@@ -166,7 +173,7 @@ export async function runResolutionPipeline(ctx: ResolutionContext): Promise<Res
         identity: {
           ...fm.identity,
           ...updatedIdentity,
-          canonical_metric: canonical_metric,
+          canonical_metric,
           confidence,
           last_resolved: commitSha,
         },

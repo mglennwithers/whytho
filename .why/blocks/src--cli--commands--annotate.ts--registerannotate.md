@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::registerAnnotate
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-21T11:35:31.186Z"
+updated: "2026-03-25T02:10:26.043Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::registerAnnotate
   line_range:
-    start: 20
-    end: 248
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:4a948eb96e9273e1596d012f36d7441283498ac287aec8d628b011a6a948add0
+    start: 28
+    end: 270
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  content_hash: sha256:a4e6f21d46777a6bbc37a2124b1f64c6172aa053573a42c6ea90f660ce8c9c85
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,77 @@ identity:
     parsing changed files, calling an AI provider, and writing structured annotation files with frontmatter metadata.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: ai
+  - type: depends_on
+    target: src/config/loader.ts::loadConfig
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::getWhyRoot
+    source: ai
+  - type: depends_on
+    target: src/core/fs/init.ts::isWhyDirInitialized
+    source: ai
+  - type: depends_on
+    target: src/ai/registry.ts::getDefaultProvider
+    source: ai
+  - type: depends_on
+    target: src/core/git/repo.ts::getHeadCommitSha
+    source: ai
+  - type: depends_on
+    target: src/core/git/diff.ts::getChangedFiles
+    source: ai
+  - type: depends_on
+    target: src/config/tracking.ts::isTrackedFile
+    source: ai
+  - type: depends_on
+    target: src/core/git/repo.ts::getCurrentUser
+    source: ai
+  - type: depends_on
+    target: src/core/git/repo.ts::getRecentGitLog
+    source: ai
+  - type: depends_on
+    target: src/core/parser/registry.ts::parseFile
+    source: ai
+  - type: depends_on
+    target: src/core/parser/detect-language.ts::detectLanguage
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::parentFolder
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::buildSymbolicRef
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::blockAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/writer.ts::fileExists
+    source: ai
+  - type: depends_on
+    target: src/core/identity/content-hash.ts::computeContentHash
+    source: ai
+  - type: depends_on
+    target: src/core/constants.ts::WHYTHO_VERSION
+    source: ai
+  - type: depends_on
+    target: src/core/fs/writer.ts::writeFile
+    source: ai
+  - type: depends_on
+    target: src/core/frontmatter/serialize.ts::serializeAnnotation
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::fileAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::folderAnnotationPath
+    source: ai
+  - type: depends_on
+    target: src/core/fs/layout.ts::sessionAnnotationPath
+    source: ai
 ---
 
 # registerAnnotate

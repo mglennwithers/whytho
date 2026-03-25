@@ -1,18 +1,21 @@
-import { Command } from 'commander'
+import type { Command } from 'commander'
 import chalk from 'chalk'
 import { findRepoRoot } from '../../core/git/repo.js'
 import { getWhyRoot } from '../../core/fs/layout.js'
 import { getBlockHistory } from '../../core/archive/query.js'
-import { readAnnotationFile, readAllBlocks } from '../../core/fs/reader.js'
+import { readAnnotationFile } from '../../core/fs/reader.js'
 import { blockAnnotationPath } from '../../core/fs/layout.js'
-import { fileExists } from '../../core/fs/writer.js'
+
+interface HistoryOpts {
+  json?: boolean
+}
 
 export function registerHistory(program: Command): void {
   program
     .command('history <ref>')
     .description('Show history of a block annotation (including archived versions)')
     .option('--json', 'Output as JSON')
-    .action(async (ref: string, options) => {
+    .action(async (ref: string, options: HistoryOpts) => {
       try {
         const repoRoot = await findRepoRoot()
         const whyRoot = getWhyRoot(repoRoot)

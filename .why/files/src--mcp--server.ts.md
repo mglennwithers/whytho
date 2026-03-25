@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-25T02:10:24.707Z"
 updated_by_session: inferred
 parent_folder: src/mcp/
 sessions: []
@@ -102,6 +102,85 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships:
+  - type: depends_on
+    target: src/core/git/repo.ts::findRepoRoot
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::getWhyRoot
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::blockAnnotationPath
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::fileAnnotationPath
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::folderAnnotationPath
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::sessionAnnotationPath
+    source: static
+  - type: depends_on
+    target: src/core/fs/layout.ts::sessionsDir
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAnnotationFile
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllBlocks
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllFiles
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllFolders
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllSessions
+    source: static
+  - type: depends_on
+    target: src/core/fs/reader.ts::readIndex
+    source: static
+  - type: depends_on
+    target: src/core/relationships/graph.ts::getAllRelated
+    source: static
+  - type: depends_on
+    target: src/core/push/index.ts::pushReasoning
+    source: static
+  - type: depends_on
+    target: src/core/constants.ts::WHYTHO_VERSION
+    source: static
+  - type: depends_on
+    target: src/config/loader.ts::loadConfig
+    source: static
+  - type: depends_on
+    target: src/ai/registry.ts::getDefaultProvider
+    source: static
+  - type: depends_on
+    target: src/ai/prompts/blame.ts::buildBlamePrompt
+    source: static
+  - type: depends_on
+    target: src/ai/prompts/blame.ts::parseBlameResponse
+    source: static
+  - type: depends_on
+    target: src/ai/prompts/blame.ts::BlameEntry
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::WhythoIndex
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::BlockFrontmatter
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::FileFrontmatter
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::FolderFrontmatter
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::SessionFrontmatter
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **88%**
@@ -145,3 +224,5 @@ This file (`src/mcp/server.ts`) implements a Model Context Protocol (MCP) server
 - **Complete Tool Schemas** — The full parameter and return type definitions for each tool beyond their names and inferred purposes
 - **Integration Points** — How "whytho" integrates with external systems or git operations beyond directory structure inference
 - **Business Logic for Reasoning** — The criteria and algorithms that determine which blocks/annotations are "related" or "inferred"
+
+Added include filter and get_annotations batch tool. The include filter uses the same section extraction pattern as extractPurpose but generalized to any ## heading. applyIncludeFilter returns raw content unchanged when include is omitted — zero-cost backward compatibility. The batch tool resolves "latest" for session refs inline rather than requiring a separate lookup. Tests duplicate the helper logic rather than exporting it from server.ts because these are private helpers for the MCP layer and exporting would leak implementation.

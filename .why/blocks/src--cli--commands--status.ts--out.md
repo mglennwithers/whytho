@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::out
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-21T21:20:00.358Z"
+updated: "2026-03-25T02:10:28.602Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::out
   line_range:
-    start: 104
-    end: 118
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:0d18e00a70a58f2ab613f8f1135d65c81d77e31c146398a3f977ecc6567f0815
+    start: 155
+    end: 169
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  content_hash: sha256:502a53c1a90238f6400ab8ad8bd1671aa2f2efcc59a3fbf2a091bd5d9e2c8aa0
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     statistics from an index, organizing diverse quantitative data into a structured output format.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # out

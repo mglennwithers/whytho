@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/graph.ts::getRelationshipsFrom
 file: src/core/relationships/graph.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:35.572Z"
+updated: "2026-03-24T09:38:26.390Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 3
     end: 8
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:a2ef1dc7a8b2c2c06b83db10795f9fb19975e9049da1a9d8f4b58c187d273714
   structural:
     kind: function
@@ -31,7 +31,14 @@ identity:
     of outbound relationships in a graph structure.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+relationships:
+  - type: depends_on
+    target: src/core/types.ts::WhythoIndex
+    source: ai
+  - type: depends_on
+    target: src/core/types.ts::RelationshipEdge
+    source: ai
 ---
 
 # getRelationshipsFrom

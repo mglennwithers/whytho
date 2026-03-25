@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/slugify.test.ts::describe(slugFromBlockRef)
 file: tests/unit/slugify.test.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T11:35:37.541Z"
+updated: "2026-03-24T09:38:28.827Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 22
     end: 28
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
   content_hash: sha256:cd981fa080daf9b561c5e754b4ee4c47717232f5b26a6a67960be3e76bca307a
   structural:
     kind: describe
@@ -30,7 +30,11 @@ identity:
     filename format by replacing path separators and special characters with dashes and lowercasing the output.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+relationships:
+  - type: tests
+    target: src/core/fs/layout.ts::slugFromBlockRef
+    source: ai
 ---
 
 # describe(slugFromBlockRef)

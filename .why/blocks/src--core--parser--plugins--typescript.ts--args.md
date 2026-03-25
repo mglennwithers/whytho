@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/parser/plugins/typescript.ts::args
 file: src/core/parser/plugins/typescript.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:34.813Z"
+updated: "2026-03-24T18:48:01.555Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/parser/plugins/typescript.ts::args
   line_range:
-    start: 202
-    end: 202
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
-  content_hash: sha256:92ea1ef7f345717b862c85878661c596a0b049ab0745265e442f52700d856895
+    start: 204
+    end: 204
+    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  content_hash: sha256:9bc69643409f31ba7b7ec874a77fc74b80a53c1abd03e5a671fe20662da6640f
   structural:
     kind: const
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
 ---
 
 # args

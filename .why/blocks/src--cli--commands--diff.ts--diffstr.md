@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/diff.ts::diffStr
 file: src/cli/commands/diff.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-21T11:35:31.426Z"
+updated: "2026-03-25T02:10:26.319Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/diff.ts::diffStr
   line_range:
-    start: 19
-    end: 19
-    commit: 68d77b7d434de7f6057faaf602f56a74907e8770
+    start: 81
+    end: 81
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:552663c22183a69d9bea57124f41a8934f6cfd07bd2fc805d788c14390f64a6e
   structural:
     kind: const
@@ -30,7 +30,11 @@ identity:
     for subsequent use in a CLI diff command context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 68d77b7d434de7f6057faaf602f56a74907e8770
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+relationships:
+  - type: depends_on
+    target: src/core/git/diff.ts::getDiffString
+    source: ai
 ---
 
 # diffStr

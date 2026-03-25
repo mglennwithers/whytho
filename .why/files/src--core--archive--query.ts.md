@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/core/archive/query.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-21T09:55:09.759Z"
+updated: "2026-03-24T09:38:19.406Z"
 updated_by_session: inferred
 parent_folder: src/core/archive/
 sessions: []
@@ -19,6 +19,16 @@ generation_settings:
   coverage: standard
   detail: standard
   max_tokens: 8192
+relationships:
+  - type: depends_on
+    target: src/core/fs/reader.ts::readAllArchivedBlocks
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::AnnotationFile
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::BlockFrontmatter
+    source: static
 ---
 
 > **Inferred annotation** — This reasoning was generated post-hoc from static code analysis. No session context, commit history, or developer intent was available. Confidence: **78%**

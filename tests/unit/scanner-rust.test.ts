@@ -19,6 +19,9 @@ describe('rustScannerPlugin', () => {
     expect(edges).toContainEqual(
       expect.objectContaining({ type: 'implements', target: 'src/traits.rs::Writer' }),
     )
+    const implEdge = edges.find(e => e.type === 'implements')
+    expect(implEdge).toHaveProperty('sourceBlock', 'src/impl.rs::FileWriter')
+    expect(implEdge).not.toHaveProperty('sourceFile')
   })
 
   it('tags tests mod blocks as tests relationships', () => {
@@ -31,5 +34,8 @@ describe('rustScannerPlugin', () => {
     expect(edges).toContainEqual(
       expect.objectContaining({ type: 'tests', target: 'src/lib.rs::my_fn' }),
     )
+    const testsEdge = edges.find(e => e.type === 'tests')
+    expect(testsEdge).toHaveProperty('sourceFile', 'src/lib.rs')
+    expect(testsEdge).not.toHaveProperty('sourceBlock')
   })
 })
