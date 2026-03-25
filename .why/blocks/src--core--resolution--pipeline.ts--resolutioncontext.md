@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::ResolutionContext
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:04.322Z"
+updated: "2026-03-25T02:10:30.440Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -17,9 +17,9 @@ identity:
   symbolic: src/core/resolution/pipeline.ts::ResolutionContext
   line_range:
     start: 15
-    end: 23
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
-  content_hash: sha256:79a35bf0baa3ccd38b601455add753b969b1e00cee7b46a5ad5db23c6a95090c
+    end: 25
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  content_hash: sha256:22748b3779fc8c8d3f7fbb1a68e88b363bc88a5a5c766b1def38a629fe9e5f53
   structural:
     kind: interface
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     resolution operations, serving as the primary data carrier throughout a resolution pipeline.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 relationships:
   - type: depends_on
     target: src/config/types.ts::WhythoConfig

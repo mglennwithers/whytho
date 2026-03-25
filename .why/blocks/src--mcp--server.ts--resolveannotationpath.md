@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::resolveAnnotationPath
 file: src/mcp/server.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T18:48:06.200Z"
+updated: "2026-03-25T02:10:32.182Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 346
     end: 354
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:858836c13ceb102c8f14acec5802ee694672ae411fac2552c46e0db30fa6cf88
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     type-specific handlers based on the input category.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # resolveAnnotationPath

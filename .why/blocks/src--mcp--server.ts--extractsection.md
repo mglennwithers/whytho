@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::extractSection
 file: src/mcp/server.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T18:48:05.271Z"
+updated: "2026-03-25T02:10:31.110Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 314
     end: 319
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:f59bbca5c85c45b514cdcd2d9abdf193c0b0a1ee2413e44843905b90b65c6dbc
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     section delimiter or end of document, returning the formatted section or null if not found.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # extractSection

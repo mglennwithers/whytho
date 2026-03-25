@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/ai/registry.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-24T18:47:56.190Z"
+updated: "2026-03-25T02:10:24.707Z"
 updated_by_session: inferred
 parent_folder: src/ai/
 sessions: []
@@ -44,7 +44,13 @@ relationships:
     target: src/ai/providers/openai.ts::createOpenAIProvider
     source: static
   - type: depends_on
+    target: src/ai/providers/openai.ts::callOpenAIConcurrentBatch
+    source: static
+  - type: depends_on
     target: src/ai/providers/gemini.ts::createGeminiProvider
+    source: static
+  - type: depends_on
+    target: src/ai/providers/gemini.ts::callGeminiConcurrentBatch
     source: static
   - type: depends_on
     target: src/ai/providers/anthropic.ts::BatchRequest

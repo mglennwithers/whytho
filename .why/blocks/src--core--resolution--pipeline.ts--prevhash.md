@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::prevHash
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T18:48:04.283Z"
+updated: "2026-03-25T02:10:30.394Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/resolution/pipeline.ts::prevHash
   line_range:
-    start: 208
-    end: 208
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    start: 217
+    end: 217
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:0ba0033dbb395a7f5052c2e93df462fb4442d7691e0a750e2647331eb51a7dd9
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     cached or historical hash state during a resolution pipeline operation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # prevHash

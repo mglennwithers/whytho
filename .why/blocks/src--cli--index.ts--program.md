@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/index.ts::program
 file: src/cli/index.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T09:57:41.196Z"
+updated: "2026-03-25T02:10:28.935Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/index.ts::program
   line_range:
-    start: 21
-    end: 24
-    commit: 879d75def2bc95123e8331993d4249411187c49f
+    start: 26
+    end: 29
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:da72d29af154dee28b5a586a2d129cad39cf5005d1f1670399a4cf3df61fb7d8
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     versioned at 1.0.0.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 879d75def2bc95123e8331993d4249411187c49f
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 relationships:
   - type: depends_on
     target: src/cli/commands/init.ts::registerInit

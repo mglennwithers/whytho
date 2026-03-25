@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::registerInfer
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:47:58.965Z"
+updated: "2026-03-25T02:10:27.700Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -17,9 +17,9 @@ identity:
   symbolic: src/cli/commands/infer.ts::registerInfer
   line_range:
     start: 123
-    end: 523
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
-  content_hash: sha256:7f6c1b7ab27e0e333cc4d1932857aa4b98dc3a9c213eca33d57af6baeedfca9a
+    end: 540
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  content_hash: sha256:7b6d0f57d4150d9094f866980c90e8caa3c19e979dbf1c720d2e0a9d0d6de9db
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     in a repository, with configurable coverage levels and limits.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 relationships:
   - type: depends_on
     target: src/core/git/repo.ts::findRepoRoot

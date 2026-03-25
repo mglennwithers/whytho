@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::currHash
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T18:48:04.172Z"
+updated: "2026-03-25T02:10:30.247Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/resolution/pipeline.ts::currHash
   line_range:
-    start: 209
-    end: 209
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    start: 218
+    end: 218
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:c04f7533d2be2646c38ccc80f0dc0ca1591702321f9833464e0352787f8aeef0
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     part of a resolution or caching mechanism.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # currHash

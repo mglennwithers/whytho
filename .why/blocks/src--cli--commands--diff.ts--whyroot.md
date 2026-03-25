@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/diff.ts::whyRoot
 file: src/cli/commands/diff.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:47:57.841Z"
+updated: "2026-03-25T02:10:26.434Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/diff.ts::whyRoot
   line_range:
-    start: 21
-    end: 21
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    start: 79
+    end: 79
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:e481246d2df3357642a60f995603c42b66b743d54e33032f1bcd5d20c0aa4593
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     from a given repository root path.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 relationships:
   - type: depends_on
     target: src/core/fs/layout.ts::getWhyRoot

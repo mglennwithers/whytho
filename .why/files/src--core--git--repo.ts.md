@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/core/git/repo.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T18:47:56.190Z"
+updated: "2026-03-25T02:10:24.707Z"
 updated_by_session: inferred
 parent_folder: src/core/git/
 sessions: []

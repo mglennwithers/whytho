@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::blocks
 file: src/cli/commands/infer.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T18:47:58.195Z"
+updated: "2026-03-25T02:10:26.738Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 99
     end: 101
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:1fa32e43423509d6beb6bcbebaf295e8c2da85ae5c9c2b10aad4d51fbb51db94
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     minimal kinds when coverage is set to 'minimal'.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # blocks

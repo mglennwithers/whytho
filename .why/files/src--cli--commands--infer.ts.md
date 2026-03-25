@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/cli/commands/infer.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T18:47:56.190Z"
+updated: "2026-03-25T02:10:24.707Z"
 updated_by_session: inferred
 parent_folder: src/cli/commands/
 sessions: []
@@ -147,6 +147,12 @@ relationships:
     source: static
   - type: depends_on
     target: src/ai/registry.ts::getAnthropicBatchRunner
+    source: static
+  - type: depends_on
+    target: src/ai/registry.ts::getOpenAIBatchRunner
+    source: static
+  - type: depends_on
+    target: src/ai/registry.ts::getGeminiBatchRunner
     source: static
   - type: depends_on
     target: src/ai/token-counter.ts::withTokenCounting

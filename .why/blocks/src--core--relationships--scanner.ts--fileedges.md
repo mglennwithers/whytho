@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner.ts::fileEdges
 file: src/core/relationships/scanner.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T02:10:29.891Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner.ts::fileEdges
   line_range:
-    start: 211
-    end: 211
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 215
+    end: 215
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:a1fe89855ea58929206dc5336537ba7a511376b49a9a564138cd5f5042e73a9e
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     no edges exist for that path.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # fileEdges

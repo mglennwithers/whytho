@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::parsedBlocks
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-24T18:47:57.524Z"
+updated: "2026-03-25T02:10:26.025Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::parsedBlocks
   line_range:
-    start: 79
-    end: 79
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    start: 91
+    end: 91
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:d3b23f90bfa2bf639b3194edc7a61ce9e1034c709e82b3d627ba236682bd1cb8
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     into a processed block-based representation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # parsedBlocks

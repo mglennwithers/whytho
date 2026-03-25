@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::index
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T18:48:05.588Z"
+updated: "2026-03-25T02:10:31.502Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::index
   line_range:
-    start: 489
-    end: 489
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    start: 473
+    end: 473
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:8c90da50e1daae87494ac4cb9bafcb65c697840f34379a85a7cc77ac4e5f4b76
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     operation likely represents initialization or loading of a configuration/data index at startup.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # index

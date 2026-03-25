@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::currentHashes
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:04.163Z"
+updated: "2026-03-25T02:10:30.236Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/resolution/pipeline.ts::currentHashes
   line_range:
-    start: 53
-    end: 53
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    start: 55
+    end: 55
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:cbbdbfff2bb9a0bf54cd6aa0a864cc65e3b5414fec11503bb7ec0e8a8a88c80f
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     pipeline process. This dictionary-like structure suggests caching or state management of computed hash values.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # currentHashes

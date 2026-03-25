@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner.ts::registry
 file: src/core/relationships/scanner.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T02:10:30.027Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner.ts::registry
   line_range:
-    start: 120
-    end: 120
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:3e4938d4d2ed08cc02c93a096847aa2aee9ac0eee93d03b2964ea72b228e4e4d
+    start: 92
+    end: 92
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  content_hash: sha256:0cb7274db5b89804f388a1d4fce70ade856c7135f9249e908ac113c0962a0b8b
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     relationship tracking across the codebase.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # registry

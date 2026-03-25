@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::annPath
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:47:58.060Z"
+updated: "2026-03-25T02:10:26.536Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::annPath
   line_range:
-    start: 230
-    end: 230
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    start: 244
+    end: 244
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:63ec3868b2ba5453b55341b01ce2db5968cf6b13b3cfdaa71b535574c76a9da2
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     folder-specific annotation path logic.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 resolution_status: unresolvable
 ---
 

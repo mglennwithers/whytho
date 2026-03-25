@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::parsed
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T18:48:05.831Z"
+updated: "2026-03-25T02:10:31.789Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::parsed
   line_range:
-    start: 482
-    end: 482
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    start: 466
+    end: 466
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:ba7b6759aefb7a28c128007ecde2a8fde812e4233f0b18690baa89cb4751d237
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     variable for subsequent processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # parsed

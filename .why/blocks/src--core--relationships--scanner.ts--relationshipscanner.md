@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner.ts::RelationshipScanner
 file: src/core/relationships/scanner.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T02:10:30.038Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner.ts::RelationshipScanner
   line_range:
-    start: 47
-    end: 50
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 49
+    end: 52
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:6acfd36b06d4653a8aef8eff4ff0cda977d54911ba6ed71e0a1c53cf2d342545
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     across multiple file types, using a registry for context-aware relationship extraction.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # RelationshipScanner

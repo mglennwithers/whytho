@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner.ts::edgesByFile
 file: src/core/relationships/scanner.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T02:10:29.813Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner.ts::edgesByFile
   line_range:
-    start: 124
-    end: 124
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 128
+    end: 128
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:20b6fcddc029963b398a5d9e33df085e6c0b84573cadfd5a3bde01d7b896cd3c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     for relationship data discovered during code scanning.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # edgesByFile

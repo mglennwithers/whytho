@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::verbosity
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:47:59.245Z"
+updated: "2026-03-25T02:10:28.036Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 148
     end: 153
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:fb3edf34ecb21b8f38e1f19a36755afed16cfae00420598b66184e6faf8dd080
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     file, folder levels), each with configurable token limits and context character limits.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # verbosity

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner.ts::source
 file: src/core/relationships/scanner.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T02:10:30.140Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner.ts::source
   line_range:
-    start: 130
-    end: 130
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
-  content_hash: sha256:6d3179851580f9c2c8814e61007ec25e2f018fcaa15345536605ad4f60592218
+    start: 95
+    end: 95
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  content_hash: sha256:2d113f81f29e406be08faa896be5aa2ff13d5ad78356201b66a8a2fab6c54ad9
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     used to process or analyze relationship definitions.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # source

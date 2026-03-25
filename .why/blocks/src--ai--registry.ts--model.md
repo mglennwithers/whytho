@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/registry.ts::model
 file: src/ai/registry.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T18:47:57.158Z"
+updated: "2026-03-25T02:10:25.480Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 26
     end: 26
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:76b506a0d476f43f2acf454a7a99905e02cc2cb7efb0d2289085bc5d02efd485
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     model selection with a sensible default.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # model

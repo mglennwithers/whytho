@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::totalFiles
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T18:48:00.651Z"
+updated: "2026-03-25T02:10:28.824Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::totalFiles
   line_range:
-    start: 94
-    end: 94
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    start: 118
+    end: 118
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:d867792f425a039a9bfe27f3cd01e40e664d70b5e7adb356b8e2326bd90caf4e
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     an empty object to prevent errors when files are undefined.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # totalFiles

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/resolution/pipeline.ts::ann
 file: src/core/resolution/pipeline.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:48:04.118Z"
+updated: "2026-03-25T02:10:30.175Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/resolution/pipeline.ts::ann
   line_range:
-    start: 56
-    end: 56
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    start: 58
+    end: 58
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:fbcc05d83064aa701db0b3417c64427b633cec5ad11f3634f64aadaa13e423a0
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     This appears to be a sequential iteration pattern common in pipeline or batch processing contexts.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # ann

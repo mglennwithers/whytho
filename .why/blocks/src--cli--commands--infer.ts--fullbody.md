@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/infer.ts::fullBody
 file: src/cli/commands/infer.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:47:58.600Z"
+updated: "2026-03-25T02:10:27.238Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/infer.ts::fullBody
   line_range:
-    start: 299
-    end: 299
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    start: 314
+    end: 314
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:5365e5529f2e291b4d36aa67b0bc540978b0d976fde4618e37148ae100d011de
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     disclaimer, and inferred body content.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # fullBody

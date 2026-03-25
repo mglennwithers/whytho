@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::repoRoot
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T18:48:00.524Z"
+updated: "2026-03-25T02:10:28.672Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::repoRoot
   line_range:
-    start: 65
-    end: 65
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    start: 89
+    end: 89
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:a3e3be7155d7b789ade4b2b796c5ca38cf1a81273fec3b710ce19b7899d98e9d
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     in a variable for subsequent operations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # repoRoot

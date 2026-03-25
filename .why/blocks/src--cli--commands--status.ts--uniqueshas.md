@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::uniqueShas
 file: src/cli/commands/status.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T18:48:00.699Z"
+updated: "2026-03-25T02:10:28.889Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::uniqueShas
   line_range:
-    start: 86
-    end: 86
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    start: 110
+    end: 110
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:86e783c0692ab3593e0c1bacba62ae3d57890a2177f29fb4bac9115d0ecc5b00
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     falsy values, and deduplicating the results using a Set.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # uniqueShas

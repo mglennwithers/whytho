@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::sessionPath
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:47:57.605Z"
+updated: "2026-03-25T02:10:26.144Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::sessionPath
   line_range:
-    start: 217
-    end: 217
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    start: 229
+    end: 229
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:9e7923e090371a59e5cd75df0d0e7000059a5bb5dab7be99f95c4fa593ad2fad
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     and a path-building utility function.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # sessionPath

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::folderFm
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:47:57.448Z"
+updated: "2026-03-25T02:10:25.913Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::folderFm
   line_range:
-    start: 198
-    end: 208
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    start: 210
+    end: 220
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:dd1e0bfc7a5676cd6ce6f7cba56c60fb83f24a602c948f575efd8cfa60225668
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     generation parameters for documentation annotation purposes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # folderFm

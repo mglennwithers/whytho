@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/diff.ts::index
 file: src/cli/commands/diff.ts
 created: "2026-03-21T08:50:18.530Z"
-updated: "2026-03-24T18:47:57.786Z"
+updated: "2026-03-25T02:10:26.347Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/diff.ts::index
   line_range:
-    start: 30
-    end: 30
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    start: 87
+    end: 87
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:63f05f39c9e92c365b985842addf81151362da613f05d9246c3d77ec2f2f3b95
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     initialized to null pending assignment within a diff command execution flow.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 relationships:
   - type: depends_on
     target: src/core/types.ts::WhythoIndex

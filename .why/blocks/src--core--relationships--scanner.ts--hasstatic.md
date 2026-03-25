@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner.ts::hasStatic
 file: src/core/relationships/scanner.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T09:42:32.162Z"
+updated: "2026-03-25T02:10:29.948Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner.ts::hasStatic
   line_range:
-    start: 197
-    end: 197
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 201
+    end: 201
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:1beebaf820876b135d75f6ddd065fd5c63f924a2cba5412bbc07d929da350da9
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     result that likely indicates the presence of statically-defined relationships.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # hasStatic

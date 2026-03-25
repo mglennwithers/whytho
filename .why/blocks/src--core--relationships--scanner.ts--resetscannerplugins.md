@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner.ts::resetScannerPlugins
 file: src/core/relationships/scanner.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T02:10:30.065Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner.ts::resetScannerPlugins
   line_range:
-    start: 73
-    end: 75
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 77
+    end: 79
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:ff87a9e643d960a6769d62aa8f9f041dcf0005312d4b9d525ce36e67a7d73d82
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     utility function for lifecycle management or testing purposes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # resetScannerPlugins

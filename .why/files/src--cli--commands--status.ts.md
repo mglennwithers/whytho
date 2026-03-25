@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T18:47:56.190Z"
+updated: "2026-03-25T02:10:24.707Z"
 updated_by_session: inferred
 parent_folder: src/cli/commands/
 sessions: []
@@ -66,6 +66,9 @@ relationships:
     target: src/core/git/repo.ts::getCommitsSince
     source: static
   - type: depends_on
+    target: src/core/git/repo.ts::getHeadCommitSha
+    source: static
+  - type: depends_on
     target: src/core/fs/layout.ts::getWhyRoot
     source: static
   - type: depends_on
@@ -79,6 +82,9 @@ relationships:
     source: static
   - type: depends_on
     target: src/core/fs/reader.ts::readArchiveIndex
+    source: static
+  - type: depends_on
+    target: src/core/fs/writer.ts::writeFile
     source: static
   - type: depends_on
     target: src/config/loader.ts::loadConfig

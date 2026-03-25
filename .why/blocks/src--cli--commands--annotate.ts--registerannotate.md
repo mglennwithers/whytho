@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::registerAnnotate
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-24T18:47:57.534Z"
+updated: "2026-03-25T02:10:26.043Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -17,9 +17,9 @@ identity:
   symbolic: src/cli/commands/annotate.ts::registerAnnotate
   line_range:
     start: 28
-    end: 258
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
-  content_hash: sha256:8a8bcc6144468460c52e68206c77063aee585df50d1533b31e7218130323adf8
+    end: 270
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
+  content_hash: sha256:a4e6f21d46777a6bbc37a2124b1f64c6172aa053573a42c6ea90f660ce8c9c85
   structural:
     kind: function
     parent_scope: module
@@ -31,7 +31,7 @@ identity:
     parsing changed files, calling an AI provider, and writing structured annotation files with frontmatter metadata.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 relationships:
   - type: depends_on
     target: src/core/git/repo.ts::findRepoRoot

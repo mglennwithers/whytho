@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/annotate.ts::touchedFolders
 file: src/cli/commands/annotate.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-24T18:47:57.675Z"
+updated: "2026-03-25T02:10:26.227Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/annotate.ts::touchedFolders
   line_range:
-    start: 68
-    end: 68
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    start: 80
+    end: 80
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:7124852e43ba57c8ca30186bcdfd361301b1442aad307619c70d5992d44d7d2c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     annotate command execution.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # touchedFolders

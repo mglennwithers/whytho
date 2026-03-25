@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/config/loader.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:19.406Z"
+updated: "2026-03-25T02:10:24.707Z"
 updated_by_session: inferred
 parent_folder: src/config/
 sessions: []
@@ -30,6 +30,9 @@ generation_settings:
 relationships:
   - type: depends_on
     target: src/config/defaults.ts::DEFAULT_CONFIG
+    source: static
+  - type: depends_on
+    target: src/config/types.ts::WhythoConfigSchema
     source: static
   - type: depends_on
     target: src/config/types.ts::WhythoConfig

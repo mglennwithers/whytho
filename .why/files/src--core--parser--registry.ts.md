@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/core/parser/registry.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-24T09:38:19.406Z"
+updated: "2026-03-25T02:10:24.707Z"
 updated_by_session: inferred
 parent_folder: src/core/parser/
 sessions: []
@@ -40,6 +40,12 @@ relationships:
     source: static
   - type: depends_on
     target: src/core/parser/plugins/rust.ts::rustPlugin
+    source: static
+  - type: depends_on
+    target: src/core/parser/plugins/java.ts::javaPlugin
+    source: static
+  - type: depends_on
+    target: src/core/parser/plugins/csharp.ts::csharpPlugin
     source: static
   - type: depends_on
     target: src/core/parser/plugins/generic.ts::genericPlugin

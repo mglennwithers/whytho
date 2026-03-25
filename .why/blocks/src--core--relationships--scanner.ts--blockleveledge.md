@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner.ts::BlockLevelEdge
 file: src/core/relationships/scanner.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T02:10:29.678Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner.ts::BlockLevelEdge
   line_range:
-    start: 32
-    end: 37
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 34
+    end: 39
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:6b239745c173e7feb5c5d0deaf322becd58b20df61b9ca6402dead9641d2fa75
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     relationship type, and target reference with static origin metadata.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # BlockLevelEdge

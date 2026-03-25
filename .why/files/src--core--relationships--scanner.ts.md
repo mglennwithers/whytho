@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/core/relationships/scanner.ts
 created: "2026-03-22T13:19:02.206Z"
-updated: "2026-03-23T10:27:35.659Z"
+updated: "2026-03-25T02:10:24.707Z"
 updated_by_session: static-scan
 parent_folder: src/core/relationships/
 sessions: []
@@ -56,6 +56,12 @@ relationships:
     source: static
   - type: depends_on
     target: src/core/relationships/scanner-plugins/rust.ts::rustScannerPlugin
+    source: static
+  - type: depends_on
+    target: src/core/relationships/scanner-plugins/java.ts::javaScannerPlugin
+    source: static
+  - type: depends_on
+    target: src/core/relationships/scanner-plugins/csharp.ts::csharpScannerPlugin
     source: static
 ---
 

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/relationships/scanner.ts::BlockRegistry
 file: src/core/relationships/scanner.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-24T09:39:00.804Z"
+updated: "2026-03-25T02:10:29.691Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/relationships/scanner.ts::BlockRegistry
   line_range:
-    start: 45
-    end: 45
-    commit: f9e36e3b5723a818520bce54f878fa14d0d223b0
+    start: 47
+    end: 47
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:e3b43fc135b2624f9e89ec1f8906f55a0208fb7d9bfaa0698f9c3524c18483eb
   structural:
     kind: type
@@ -30,7 +30,7 @@ identity:
     track relationships between block identifiers and their associated names or references within a scanning system.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: f9e36e3b5723a818520bce54f878fa14d0d223b0
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # BlockRegistry

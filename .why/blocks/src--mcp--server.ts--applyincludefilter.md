@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::applyIncludeFilter
 file: src/mcp/server.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-24T18:48:04.984Z"
+updated: "2026-03-25T02:10:30.703Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 323
     end: 342
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:6cfdf1ca4c1d991ec3205a7b5a898edaa12c24a8e160415710852932a4007fcd
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     inclusion list, reassembling them with paragraph separation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # applyIncludeFilter

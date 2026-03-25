@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/cli/commands/status.ts::relPath
 file: src/cli/commands/status.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-24T18:48:00.512Z"
+updated: "2026-03-25T02:10:28.660Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/cli/commands/status.ts::relPath
   line_range:
-    start: 42
-    end: 42
-    commit: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+    start: 66
+    end: 66
+    commit: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
   content_hash: sha256:54f985516d218f20c0658bf2466a40e16bb1a99f85152d455c5b092380eb0147
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     for cross-platform consistency.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: ee4818cb89955bcb2bbf4736131c0dc193b5a06e
+  last_resolved: b2680fb920d3fe4f4cb917cf90c384e40c9c3dd5
 ---
 
 # relPath
