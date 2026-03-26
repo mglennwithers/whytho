@@ -116,14 +116,12 @@
     "typecheck": "tsc --noEmit",
     "package": "vsce package"
   },
-  "dependencies": {
-    "whytho": "file:../.."
-  },
   "devDependencies": {
     "@types/vscode": "^1.85.0",
     "@vscode/vsce": "^3.7.1",
     "tsup": "^8.0.0",
     "typescript": "^5.4.0",
-    "vitest": "^1.6.0"
+    "vitest": "^1.6.0",
+    "whytho": "file:../.."
   }
 }
