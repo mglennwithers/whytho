@@ -113,7 +113,7 @@ Requires Node.js 18+. Set your `ANTHROPIC_API_KEY` environment variable to enabl
 
 ## AI Assistant Setup
 
-Whytho works with any AI assistant. The base integration is a context file that tells your assistant to consult `.why/` before modifying code. Claude Code additionally supports an MCP server that exposes all whytho query tools directly in the conversation, and a lifecycle hook that automatically injects annotation context whenever Claude reads a source file.
+Whytho works with any AI assistant. The base integration is a context file that tells your assistant to consult `.why/` before modifying code. Claude Code additionally supports an MCP server that exposes all whytho query tools directly in the conversation, and lifecycle hooks that automatically inject annotation context when Claude reads a file and nudge Claude to capture reasoning immediately after an edit.
 
 > **Lifecycle hooks are only available in Claude Code.** Cursor and Copilot do not have an equivalent hook system for injecting context in response to tool events. For those tools, context is injected statically at the start of each conversation.
 
@@ -149,7 +149,7 @@ This includes the full set of instructions: how to read annotations before plann
 
 **3. Install the lifecycle hook** *(optional)*
 
-Claude Code supports PostToolUse hooks — shell scripts that run after a tool is used and can inject additional context into the conversation. The whytho hook automatically appends file and block annotation context whenever Claude reads a source file, so the relevant `.why/` reasoning is always in context without needing to ask for it explicitly.
+Claude Code supports PostToolUse hooks — shell scripts that run after a tool is used and can inject additional context into the conversation. Whytho ships two: one that injects annotation context whenever Claude reads a source file, and one that nudges Claude to push its reasoning immediately after an edit while the decision context is still fresh.
 
 Two example hook scripts are included. Register them in `.claude/settings.json`:
 

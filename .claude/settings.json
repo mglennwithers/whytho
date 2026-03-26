@@ -1,10 +1,4 @@
 {
-  "permissions": {
-    "allow": [
-      "Bash(grep -A3 '\"\"repository\"\"' package.json)",
-      "Read(//c/Users/mglen/Documents/**)"
-    ]
-  },
   "hooks": {
     "PostToolUse": [
       {
@@ -13,6 +7,24 @@
           {
             "type": "command",
             "command": "bash .claude/hooks/read-annotations.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/push-reminder.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/push-reminder.sh"
           }
         ]
       }
