@@ -44,6 +44,11 @@ async function executeTask(
     id: task.id,
     name: task.name,
     dimension: task.dimension,
+    annotationCorrectness: task.annotationCorrectness,
+    annotationRelevance: task.annotationRelevance,
+    annotationBlindness: task.annotationBlindness,
+    calibrated: task.calibrated,
+    calibrationNote: task.calibrationNote,
     without: {
       response: woResp.text,
       inputTokens: woResp.inputTokens,

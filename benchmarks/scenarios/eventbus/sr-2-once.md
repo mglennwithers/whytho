@@ -2,6 +2,12 @@
 id: sr-2
 name: Implement once()
 dimension: task_success
+language: typescript
+annotation_correctness: 1
+annotation_relevance: 0
+annotation_blindness: 0
+calibrated: false
+calibration_note: "R=0: annotation describes token-based unsubscription mechanics but not the pre-handler unsubscribe ordering that is the critical insight. Mixed model results: haiku +6, Sonnet near ceiling (12→11)."
 ---
 
 Tests whether the model gets the critical ordering detail right: unsubscribe

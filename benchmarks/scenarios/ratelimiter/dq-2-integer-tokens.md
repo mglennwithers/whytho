@@ -2,6 +2,12 @@
 id: rl-dq-2
 name: Integer Token Proposal
 dimension: decision_quality
+language: typescript
+annotation_correctness: 1
+annotation_relevance: 1
+annotation_blindness: 0
+calibrated: true
+calibration_note: "Without scores 77-85%; annotation provides the lastRefillTime-advances-regardless mechanism that explains zero-throughput at low refill rates — a subtle mechanism models miss without it."
 ---
 
 Tests whether the model correctly rejects a proposal to round tokens to

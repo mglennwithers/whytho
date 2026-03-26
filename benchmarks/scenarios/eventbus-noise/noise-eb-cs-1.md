@@ -1,20 +1,19 @@
 ---
-id: cs-1
-name: Explain Error Handling Intent
+id: noise-eb-cs-1
+name: Error Handling Intent (noise annotations)
 dimension: coverage_signal
 language: typescript
 annotation_correctness: 1
-annotation_relevance: 1
+annotation_relevance: -1
 annotation_blindness: 0
 calibrated: false
-calibration_note: "Near-ceiling without annotations (83%); both models already identify isolation as the intent. Consider a harder variant asking about subtler design choices."
+calibration_note: "Control for cs-1 (Explain Error Handling Intent). Receives circuitbreaker annotations (entirely irrelevant). This task already showed ceiling effects in the original suite (83% without annotations), so discrimination between relevant and irrelevant may be limited. Included primarily to expand the irrelevant-annotation sample across multiple dimensions."
 ---
 
-Tests whether the model can read design annotations and accurately describe
-*intended* behaviour rather than inferring it from the current (deliberately
-incomplete) source. Without annotations, the model observes that emit() has
-no error handling and recommends a design — instead of reporting what the
-design already says.
+Control variant of cs-1 (Explain Error Handling Intent). The "with annotations"
+condition receives CircuitBreaker design decisions entirely unrelated to the
+EventBus codebase. Tests whether irrelevant annotation presence affects model
+behaviour on a near-ceiling task.
 
 ## Prompt
 

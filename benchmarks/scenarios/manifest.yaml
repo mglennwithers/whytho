@@ -1,5 +1,21 @@
 suites:
+  # Core suites — correct, relevant, task-aware annotations (C=1, R=1, B=0)
   - eventbus
   - circuitbreaker
   - ratelimiter
+
+  # Noise suites — correct but entirely irrelevant annotations (C=1, R=-1, B=0)
   - circuitbreaker-noise
+  - eventbus-noise
+
+  # Robustness suites — incorrect annotations (C=-1, R=1, B=0)
+  - circuitbreaker-incorrect
+
+  # Conflict suite — annotation opposes task framing (C=1, R=1, B=0, authority conflict)
+  - circuitbreaker-conflict
+
+  # Stale annotation suite — annotation describes superseded behaviour (C=-1, R=1, B=0)
+  - ratelimiter-stale
+
+  # Multi-language suite — Python (C=1, R=1, B=0)
+  - python-lrucache

@@ -1,0 +1,5 @@
+source: ../circuitbreaker/circuitbreaker.ts
+
+scenarios:
+  - file: conf-cb-dq-1.md
+    annotations: ../circuitbreaker/circuitbreaker-annotations.md

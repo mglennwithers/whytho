@@ -2,6 +2,12 @@
 id: rl-cs-1
 name: Lazy Refill Rationale
 dimension: coverage_signal
+language: typescript
+annotation_correctness: 1
+annotation_relevance: 1
+annotation_blindness: 0
+calibrated: false
+calibration_note: "Near-ceiling without annotations for haiku (91%); Sonnet already maxes without annotations. Clock-injection and teardown arguments are partially inferrable from the clock parameter in the constructor."
 ---
 
 Tests whether the model can explain why refill is lazy rather than timer-based.

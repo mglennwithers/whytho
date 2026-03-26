@@ -2,6 +2,12 @@
 id: cb-dq-1
 name: Windowed Threshold Proposal
 dimension: decision_quality
+language: typescript
+annotation_correctness: 1
+annotation_relevance: 1
+annotation_blindness: 0
+calibrated: true
+calibration_note: "Without scores 54-58%; annotation enables the low-volume over-tripping argument that models do not generate independently."
 ---
 
 Tests whether the model pushes back on a proposal to replace consecutive failure

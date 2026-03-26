@@ -1,0 +1,7 @@
+source: ../eventbus/eventbus.ts
+
+scenarios:
+  - file: noise-eb-dq-1.md
+    annotations: ../circuitbreaker/circuitbreaker-annotations.md
+  - file: noise-eb-cs-1.md
+    annotations: ../circuitbreaker/circuitbreaker-annotations.md

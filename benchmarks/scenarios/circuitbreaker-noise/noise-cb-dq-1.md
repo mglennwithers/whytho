@@ -2,6 +2,12 @@
 id: noise-cb-dq-1
 name: Windowed Threshold Proposal (noise annotations)
 dimension: decision_quality
+language: typescript
+annotation_correctness: 1
+annotation_relevance: -1
+annotation_blindness: 0
+calibrated: true
+calibration_note: "Control for cb-dq-1. Without ~50%; irrelevant ratelimiter annotations show +1 (haiku) to +4 (Sonnet) ambient lift. Measures annotation-presence effect independent of content relevance."
 ---
 
 Control variant of cb-dq-1. The "with annotations" condition receives

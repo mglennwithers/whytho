@@ -2,6 +2,12 @@
 id: noise-cb-cs-1
 name: Single Probe Rationale (noise annotations)
 dimension: coverage_signal
+language: typescript
+annotation_correctness: 1
+annotation_relevance: -1
+annotation_blindness: 0
+calibrated: true
+calibration_note: "Control for cb-cs-1. Irrelevant ratelimiter annotations; haiku +2, Sonnet 0. Partial ambient lift signal; correct annotations gave +5 (haiku), so gap between relevant and irrelevant is meaningful."
 ---
 
 Control variant of cb-cs-1. The "with annotations" condition receives

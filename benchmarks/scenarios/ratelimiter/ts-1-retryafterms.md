@@ -2,6 +2,12 @@
 id: rl-ts-1
 name: Implement retryAfterMs
 dimension: task_success
+language: typescript
+annotation_correctness: 1
+annotation_relevance: 1
+annotation_blindness: 0
+calibrated: false
+calibration_note: "Ceiling effect: both models implement the deficit formula correctly without annotation context. Consider a harder edge-case variant (e.g., cost larger than maxTokens)."
 ---
 
 Tests whether the model correctly uses the token deficit rather than the full

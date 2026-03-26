@@ -2,6 +2,12 @@
 id: rl-cs-2
 name: Full Bucket at Start
 dimension: coverage_signal
+language: typescript
+annotation_correctness: 1
+annotation_relevance: 1
+annotation_blindness: 0
+calibrated: true
+calibration_note: "Without scores 67-75%; annotation provides 'no-debt' semantics and startup-burst use case reasoning that models do not independently articulate at full depth."
 ---
 
 Tests whether the model can explain why the limiter initialises to maxTokens.

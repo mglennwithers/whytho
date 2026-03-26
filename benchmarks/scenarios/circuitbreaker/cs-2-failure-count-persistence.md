@@ -2,6 +2,12 @@
 id: cb-cs-2
 name: Failure Count Persistence
 dimension: coverage_signal
+language: typescript
+annotation_correctness: 1
+annotation_relevance: 1
+annotation_blindness: 0
+calibrated: false
+calibration_note: "Ceiling effect: both models score 100% without annotations. The invariant is visible in code; models trace it correctly through inspection alone. Not discriminating."
 ---
 
 Tests whether the model can explain a non-obvious invariant: failureCount is

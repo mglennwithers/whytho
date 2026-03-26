@@ -2,6 +2,12 @@
 id: cb-cs-1
 name: Single Probe Rationale
 dimension: coverage_signal
+language: typescript
+annotation_correctness: 1
+annotation_relevance: 1
+annotation_blindness: 0
+calibrated: true
+calibration_note: "Without scores 45-75% depending on model; annotation provides thundering-herd and real-request probe reasoning that models produce only vaguely without it."
 ---
 
 Tests whether the model accurately explains the single-probe HALF_OPEN design

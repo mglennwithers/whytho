@@ -2,6 +2,12 @@
 id: cb-ts-1
 name: Implement callWithFallback
 dimension: task_success
+language: typescript
+annotation_correctness: 1
+annotation_relevance: 1
+annotation_blindness: 0
+calibrated: false
+calibration_note: "Floor effect for haiku: scores 4/10 with and without annotations (+0). Sonnet shows modest +2. Haiku appears unable to apply the call-outcome-only annotation to this implementation task."
 ---
 
 Tests whether the model correctly implements callWithFallback() without silently

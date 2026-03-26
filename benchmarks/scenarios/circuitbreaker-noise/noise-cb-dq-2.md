@@ -2,6 +2,12 @@
 id: noise-cb-dq-2
 name: Exponential Backoff Proposal (noise annotations)
 dimension: decision_quality
+language: typescript
+annotation_correctness: 1
+annotation_relevance: -1
+annotation_blindness: 0
+calibrated: true
+calibration_note: "Control for cb-dq-2. Irrelevant ratelimiter annotations; haiku shows +7 ambient lift, Sonnet shows 0. Divergent model behaviour: smaller models appear to benefit more from annotation presence regardless of relevance."
 ---
 
 Control variant of cb-dq-2. The "with annotations" condition receives

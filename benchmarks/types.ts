@@ -1,5 +1,5 @@
 import type { ModelSpec } from './config.ts'
-import type { Dimension } from './tasks.ts'
+import type { Dimension, AnnotationCorrectness, AnnotationRelevance, AnnotationBlindness } from './tasks.ts'
 
 export interface CriterionScore {
   id: string
@@ -22,6 +22,11 @@ export interface TaskResult {
   id: string
   name: string
   dimension: Dimension
+  annotationCorrectness: AnnotationCorrectness
+  annotationRelevance: AnnotationRelevance
+  annotationBlindness: AnnotationBlindness
+  calibrated: boolean
+  calibrationNote: string
   without: ConditionResult
   with: ConditionResult
   /** Positive means annotations helped. */

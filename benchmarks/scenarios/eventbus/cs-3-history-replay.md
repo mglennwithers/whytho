@@ -2,6 +2,12 @@
 id: cs-3
 name: Evaluate History Replay Proposal
 dimension: coverage_signal
+language: typescript
+annotation_correctness: 1
+annotation_relevance: 1
+annotation_blindness: 0
+calibrated: false
+calibration_note: "Ceiling effect: haiku scores 100% without annotations (history replay trade-offs generalise from RxJS/Redis knowledge). Low discriminating power for current-generation models."
 ---
 
 Tests whether the model accurately cites the documented reasons against event

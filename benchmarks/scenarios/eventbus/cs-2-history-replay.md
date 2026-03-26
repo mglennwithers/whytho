@@ -2,6 +2,12 @@
 id: cs-2
 name: Evaluate Async Dispatch Proposal
 dimension: coverage_signal
+language: typescript
+annotation_correctness: 1
+annotation_relevance: 1
+annotation_blindness: 0
+calibrated: false
+calibration_note: "Ceiling effect: both models score 90%+ without annotations. Async dispatch trade-offs are general knowledge; annotation provides precision but not the deciding insight."
 ---
 
 Tests whether the model accurately cites the documented reasons against async

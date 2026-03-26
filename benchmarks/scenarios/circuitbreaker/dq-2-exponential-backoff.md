@@ -2,6 +2,12 @@
 id: cb-dq-2
 name: Exponential Backoff Proposal
 dimension: decision_quality
+language: typescript
+annotation_correctness: 1
+annotation_relevance: 1
+annotation_blindness: 0
+calibrated: true
+calibration_note: "Without scores ~10% as models implement backoff without pushback. Annotation enables correct refusal. Highest single-task delta in the suite (+7 to +11)."
 ---
 
 Tests whether the model declines a proposal to add exponential backoff to the

@@ -1,0 +1,7 @@
+source: ../circuitbreaker/circuitbreaker.ts
+
+scenarios:
+  - file: inc-cb-dq-1.md
+    annotations: circuitbreaker-incorrect-annotations.md
+  - file: inc-cb-dq-2.md
+    annotations: circuitbreaker-incorrect-annotations.md

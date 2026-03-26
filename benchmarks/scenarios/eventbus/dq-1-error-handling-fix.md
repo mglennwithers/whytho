@@ -2,6 +2,12 @@
 id: dq-1
 name: Error Handling Fix
 dimension: decision_quality
+language: typescript
+annotation_correctness: 1
+annotation_relevance: 1
+annotation_blindness: 0
+calibrated: true
+calibration_note: "Without scores 75-83%; annotation provides the Error[] return-type design decision directly, driving the discriminating criterion."
 ---
 
 Tests whether the model correctly fixes subscriber exception propagation,

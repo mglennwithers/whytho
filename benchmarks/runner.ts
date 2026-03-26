@@ -9,7 +9,7 @@ export interface SubjectResult {
 }
 
 function buildPrompt(task: Task, annotations: string | null): string {
-  let prompt = `You are a software engineer. Here is the source code:\n\n\`\`\`typescript\n${task.source}\n\`\`\``
+  let prompt = `You are a software engineer. Here is the source code:\n\n\`\`\`${task.language}\n${task.source}\n\`\`\``
 
   if (annotations) {
     prompt += `\n\nThe following design decisions are documented for this library:\n\n${annotations}`

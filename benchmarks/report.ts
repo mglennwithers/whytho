@@ -80,6 +80,14 @@ function printRun(run: RunResult): void {
 function printTaskDetail(t: TaskResult): void {
   console.log()
   console.log(`  ┌─ ${t.name} (${t.dimension}) `)
+  const meta = [
+    `C=${t.annotationCorrectness}`,
+    `R=${t.annotationRelevance}`,
+    `B=${t.annotationBlindness}`,
+    t.calibrated ? 'calibrated' : 'uncalibrated',
+  ].join('  ')
+  console.log(`  │  [metadata]  ${meta}`)
+  if (t.calibrationNote) console.log(`  │  [calibration]  ${t.calibrationNote}`)
   for (const criterion of t.without.scores) {
     const wi = t.with.scores.find((s) => s.id === criterion.id)
     const woScore = criterion.score
@@ -89,11 +97,36 @@ function printTaskDetail(t: TaskResult): void {
   console.log('  └─')
 }
 
+// ── Annotation matrix summary ─────────────────────────────────────────────────
+
+function printMatrixSummary(run: RunResult): void {
+  console.log()
+  console.log('  Annotation matrix coverage:')
+  console.log(`  ${'C'.padEnd(5)}${'R'.padEnd(5)}${'B'.padEnd(5)}${'Tasks'.padEnd(8)}${'Avg Δ'.padEnd(8)}Tasks`)
+  console.log(`  ${'─'.repeat(60)}`)
+
+  type Key = string
+  const groups = new Map<Key, TaskResult[]>()
+  for (const t of run.tasks) {
+    const key = `${t.annotationCorrectness}|${t.annotationRelevance}|${t.annotationBlindness}`
+    if (!groups.has(key)) groups.set(key, [])
+    groups.get(key)!.push(t)
+  }
+
+  for (const [key, tasks] of [...groups.entries()].sort()) {
+    const [c, r, b] = key.split('|')
+    const avgDelta = (tasks.reduce((s, t) => s + t.delta, 0) / tasks.length).toFixed(1)
+    const names = tasks.map((t) => t.name).join(', ')
+    console.log(`  ${c.padEnd(5)}${r.padEnd(5)}${b.padEnd(5)}${String(tasks.length).padEnd(8)}${avgDelta.padEnd(8)}${names}`)
+  }
+}
+
 // ── Main export ───────────────────────────────────────────────────────────────
 
 export function saveAndPrint(report: BenchmarkReport, verbose = false): void {
   for (const run of report.runs) {
     printRun(run)
+    printMatrixSummary(run)
     if (verbose) {
       for (const task of run.tasks) printTaskDetail(task)
     }

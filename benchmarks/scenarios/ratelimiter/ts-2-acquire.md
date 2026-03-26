@@ -2,6 +2,12 @@
 id: rl-ts-2
 name: Implement acquire
 dimension: task_success
+language: typescript
+annotation_correctness: 1
+annotation_relevance: 1
+annotation_blindness: 0
+calibrated: true
+calibration_note: "Without scores 75-83%; polling-vs-computed-sleep is the distinguishing criterion. Models default to polling loops without annotation context explaining lazy-refill precision."
 ---
 
 Tests whether the model uses a single computed sleep rather than a polling

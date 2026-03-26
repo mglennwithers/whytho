@@ -1,0 +1,7 @@
+source: lrucache.py
+
+scenarios:
+  - file: py-dq-1.md
+    annotations: lrucache-annotations.md
+  - file: py-dq-2.md
+    annotations: lrucache-annotations.md

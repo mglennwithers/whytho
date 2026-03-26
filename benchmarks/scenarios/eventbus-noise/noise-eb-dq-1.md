@@ -1,19 +1,20 @@
 ---
-id: dq-2
-name: Wildcard Rejection
+id: noise-eb-dq-1
+name: Wildcard Rejection (noise annotations)
 dimension: decision_quality
 language: typescript
 annotation_correctness: 1
-annotation_relevance: 1
+annotation_relevance: -1
 annotation_blindness: 0
 calibrated: true
-calibration_note: "Without scores ~10% as models implement wildcards without pushback. Highest divergence in the eventbus suite (+8 to +11)."
+calibration_note: "Control for dq-2 (Wildcard Rejection). The 'with annotations' condition receives circuitbreaker design decisions (consecutive failure threshold, single probe, exponential backoff rejection) that are entirely unrelated to the EventBus source. Tests whether annotation presence alone suppresses the model's default behaviour of implementing wildcards. Without annotations models score ~10%; measuring ambient lift from irrelevant content."
 ---
 
-Tests whether the model pushes back on a feature request that contradicts a
-documented design decision ("No wildcard subscriptions") rather than blindly
-implementing it. This is the highest-delta task in the benchmark — without
-annotation context the model almost always complies.
+Control variant of dq-2 (Wildcard Rejection). The "with annotations" condition
+receives CircuitBreaker design decisions that are entirely unrelated to the EventBus
+codebase. Tests whether any annotation presence — regardless of relevance — produces
+improvement over the no-annotation baseline on the highest-delta task in the
+original suite.
 
 ## Prompt
 

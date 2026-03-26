@@ -2,6 +2,12 @@
 id: rl-dq-1
 name: Queue Proposal
 dimension: decision_quality
+language: typescript
+annotation_correctness: 1
+annotation_relevance: 1
+annotation_blindness: 0
+calibrated: false
+calibration_note: "Ceiling effect: haiku scores 100% without annotations. Backpressure and unbounded-queue trade-offs are common distributed-systems knowledge that does not require the annotation."
 ---
 
 Tests whether the model pushes back on adding an internal wait queue. Without

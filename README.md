@@ -20,6 +20,77 @@ The reasoning becomes part of the repo. It gets versioned, diffed, searched, and
 
 ---
 
+## Benchmark Findings
+
+We measured whether annotation context improves AI agent decision quality on realistic
+coding tasks. Across 20 tasks spanning three TypeScript codebases (EventBus, CircuitBreaker,
+RateLimiter), two models were run at temperature 0 — once without annotations and once with —
+then graded by an independent judge model against a rubric.
+
+| Subject model | Without annotations | With annotations | Δ | Token change |
+|---|---|---|---|---|
+| claude-haiku-4-5 | 63% | 89% | **+26pp** | −1% |
+| claude-sonnet-4-6 | 67% | 85% | **+18pp** | **−9%** |
+
+The biggest gains are in **decision quality** — tasks that require knowing *why* design
+decisions were made, not just *what* the code does. Haiku improved +41pp on decision-quality
+tasks; Sonnet +31pp.
+
+**Unexpected finding — irrelevant annotation lift**: A control suite provided completely
+unrelated annotations (RateLimiter design notes for CircuitBreaker tasks). Smaller models
+still showed +1 to +7 point improvement even though no annotation content was relevant to
+the task. Our hypothesis: documented reasoning signals that the codebase has design intent
+worth respecting, prompting more careful reasoning regardless of content. This is a
+robustness finding — annotations improve decisions even when imperfect.
+
+**Token reduction (Sonnet)**: With annotation context, Sonnet produced ~9% fewer output
+tokens — more focused responses, less exploratory hedging. This compounds over many tasks:
+fewer tokens means lower API cost and faster responses in annotation-aware agents.
+
+Full results with per-task breakdowns are in [`benchmarks/RESULTS.md`](benchmarks/RESULTS.md).
+The benchmark suite is in [`benchmarks/`](benchmarks/) and is runnable:
+
+```bash
+ANTHROPIC_API_KEY=sk-... npm run benchmark
+```
+
+> **Limitations**: 20 tasks, 2 models, 1 author — small sample, potential bias. All
+> annotations were written knowing what tasks would be asked (B=0), which is the
+> best case. Real-world annotations are inferred or written without knowing future tasks;
+> those results are the next priority. See [`benchmarks/MATRIX_GUIDE.md`](benchmarks/MATRIX_GUIDE.md)
+> for a full interpretation guide. Independent reproduction is encouraged.
+
+---
+
+## Quickstart
+
+**Produce a visible result in under 2 minutes — no API key needed for this path.**
+
+```bash
+# 1. Install
+npm install -g whytho
+
+# 2. Initialize in any git repo
+cd your-project
+git why init
+
+# 3. Push one annotation directly (no AI inference — direct write)
+git why push block src/app.ts::main \
+  --body "Entry point. Starts the HTTP server and registers middleware.
+Decided against lazy initialization here — eagerly loading middleware
+at startup surfaces config errors immediately rather than on first request."
+
+# 4. Read it back
+git why block src/app.ts::main
+```
+
+You've just persisted AI reasoning alongside your code. The annotation is a Markdown file
+in `.why/blocks/` — human-readable, version-controlled, searchable.
+
+To generate annotations with AI inference: set `ANTHROPIC_API_KEY` and run `git why infer src/`.
+
+---
+
 ## The Problems
 
 ### AI reasoning evaporates

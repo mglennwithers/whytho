@@ -1,0 +1,7 @@
+# Note: no shared source — stale-rl-dq-1.md embeds its own ## Codebase section
+# The annotations used are the original ratelimiter annotations, which describe
+# the old maxTokens initialisation. This is the stale claim being tested.
+
+scenarios:
+  - file: stale-rl-dq-1.md
+    annotations: ../ratelimiter/ratelimiter-annotations.md

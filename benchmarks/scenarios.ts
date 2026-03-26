@@ -73,11 +73,30 @@ interface TopManifest {
   suites: string[]
 }
 
+interface ScenarioFrontmatter {
+  id: string
+  name: string
+  dimension: string
+  language?: string
+  annotation_correctness?: number
+  annotation_relevance?: number
+  annotation_blindness?: number
+  calibrated?: boolean
+  calibration_note?: string
+}
+
+function validateIntField(value: unknown, name: string, allowed: number[]): number {
+  if (value === undefined || value === null) return allowed[allowed.length - 1]
+  const n = Number(value)
+  if (!allowed.includes(n)) throw new Error(`${name} must be one of [${allowed.join(', ')}], got ${String(value)}`)
+  return n
+}
+
 function parseScenario(suiteDir: string, entry: SuiteManifestEntry, suiteSource?: string): Task {
   const raw = readFileSync(join(suiteDir, entry.file), 'utf8')
   const { data, content } = matter(raw)
 
-  const fm = data as { id: string; name: string; dimension: string }
+  const fm = data as ScenarioFrontmatter
   if (!VALID_DIMENSIONS.has(fm.dimension as Dimension)) {
     throw new Error(`Invalid dimension "${fm.dimension}" in ${entry.file}`)
   }
@@ -105,14 +124,24 @@ function parseScenario(suiteDir: string, entry: SuiteManifestEntry, suiteSource?
     .filter(Boolean)
     .map(parseCriterion)
 
+  const annotationCorrectness = validateIntField(fm.annotation_correctness, 'annotation_correctness', [-1, 0, 1]) as -1 | 0 | 1
+  const annotationRelevance = validateIntField(fm.annotation_relevance, 'annotation_relevance', [-1, 0, 1]) as -1 | 0 | 1
+  const annotationBlindness = validateIntField(fm.annotation_blindness, 'annotation_blindness', [0, 1]) as 0 | 1
+
   return {
     id: fm.id,
     name: fm.name,
     dimension: fm.dimension as Dimension,
+    language: fm.language ?? 'typescript',
     source,
     annotations,
     prompt,
     criteria: [...criteria, PRECISION],
+    annotationCorrectness,
+    annotationRelevance,
+    annotationBlindness,
+    calibrated: fm.calibrated ?? false,
+    calibrationNote: fm.calibration_note ?? '',
   }
 }
 
