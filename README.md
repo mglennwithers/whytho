@@ -139,26 +139,19 @@ This gives Claude Code access to all whytho query tools — `get_file_context`, 
 
 **2. Add a CLAUDE.md**
 
-Create a `CLAUDE.md` at the repo root to tell Claude Code to read annotations before exploring or modifying files:
+Create a `CLAUDE.md` at the repo root and include the whytho agent instructions with a single line:
 
 ```markdown
-## Whytho annotations
-
-Before exploring or modifying any file, read its whytho annotations first.
-The `.why/` folder contains captured reasoning — design decisions, rejected
-alternatives, tradeoffs, and constraints that aren't visible in the source code.
-
-- Use `mcp__whytho__get_summary()` when starting a new task
-- Use `mcp__whytho__get_file_context("path/to/file.ts")` before modifying a file
-- Use `mcp__whytho__search("query")` to find reasoning on a topic
-- Use `mcp__whytho__push_note({ ref, body })` to record decisions as you work
+@node_modules/whytho/AGENT_INSTRUCTIONS.md
 ```
+
+This includes the full set of instructions: how to read annotations before planning, how to push reasoning as you work, when to push, and how to reannotate after modifying code. [`AGENT_INSTRUCTIONS.md`](AGENT_INSTRUCTIONS.md) is a standalone file — you can review or customize it before including it.
 
 **3. Install the lifecycle hook** *(optional)*
 
 Claude Code supports PostToolUse hooks — shell scripts that run after a tool is used and can inject additional context into the conversation. The whytho hook automatically appends file and block annotation context whenever Claude reads a source file, so the relevant `.why/` reasoning is always in context without needing to ask for it explicitly.
 
-An example hook script is included at [`.claude/hooks/read-annotations.sh`](.claude/hooks/read-annotations.sh). Register it in `.claude/settings.json`:
+Two example hook scripts are included. Register them in `.claude/settings.json`:
 
 ```json
 {
@@ -166,17 +159,23 @@ An example hook script is included at [`.claude/hooks/read-annotations.sh`](.cla
     "PostToolUse": [
       {
         "matcher": "Read",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash .claude/hooks/read-annotations.sh"
-          }
-        ]
+        "hooks": [{ "type": "command", "command": "bash .claude/hooks/read-annotations.sh" }]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [{ "type": "command", "command": "bash .claude/hooks/push-reminder.sh" }]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [{ "type": "command", "command": "bash .claude/hooks/push-reminder.sh" }]
       }
     ]
   }
 }
 ```
+
+- [`.claude/hooks/read-annotations.sh`](.claude/hooks/read-annotations.sh) — injects annotation context after Claude reads a source file
+- [`.claude/hooks/push-reminder.sh`](.claude/hooks/push-reminder.sh) — nudges Claude to push reasoning immediately after editing a source file, while the decision context is still fresh
 
 ---
 
@@ -199,7 +198,7 @@ Cursor supports MCP. Add whytho to `.cursor/mcp.json` in the project (or `~/.cur
 
 **2. Add a cursor rule**
 
-Create `.cursor/rules/whytho.mdc` to inject annotation guidance when source files are open:
+Create `.cursor/rules/whytho.mdc` and paste the contents of [`AGENT_INSTRUCTIONS.md`](AGENT_INSTRUCTIONS.md) with a Cursor frontmatter header:
 
 ```markdown
 ---
@@ -208,14 +207,7 @@ globs: ["src/**/*"]
 alwaysApply: false
 ---
 
-Before modifying any file, read its whytho annotation first using the whytho
-MCP tools:
-- `whytho_get_file_context` with the file path for full context
-- `whytho_search` to find reasoning on a topic
-- `whytho_push_note` to record decisions as you work
-
-Annotations in `.why/` contain design decisions, rejected alternatives, and
-constraints that are not visible in the source code.
+(paste contents of node_modules/whytho/AGENT_INSTRUCTIONS.md here)
 ```
 
 The `globs` field scopes the rule to source files so it only activates when a relevant file is open. Unlike Claude Code, Cursor does not support lifecycle hooks — this rule is injected statically rather than in response to a file-read event.
@@ -224,22 +216,7 @@ The `globs` field scopes the rule to source files so it only activates when a re
 
 ### GitHub Copilot
 
-GitHub Copilot does not support MCP servers or lifecycle hooks. Add a static instruction file at `.github/copilot-instructions.md`:
-
-```markdown
-## Whytho annotations
-
-This repo uses whytho to capture AI reasoning alongside source code. Annotations
-live in `.why/` and contain design decisions, rejected alternatives, and constraints
-that are not visible in the code itself.
-
-Before modifying any file, check for its annotation:
-- Run `git why file <path>` in the terminal, e.g. `git why file src/auth/middleware.ts`
-- Run `git why block <ref>` for a specific function, e.g. `git why block src/auth/middleware.ts::rotateToken`
-
-To record a decision as you work:
-  git why push block src/file.ts::functionName --body "your reasoning here"
-```
+GitHub Copilot does not support MCP servers or lifecycle hooks. Add a static instruction file at `.github/copilot-instructions.md` and paste the contents of [`AGENT_INSTRUCTIONS.md`](AGENT_INSTRUCTIONS.md) into it. The CLI-based instructions in that file work without MCP — Copilot can run `git why` commands in the terminal to read and write annotations.
 
 Because Copilot has no MCP integration or hook system, it cannot query annotations dynamically. Direct it to run `git why` commands in the terminal, or paste the relevant annotation body into the conversation.
 
