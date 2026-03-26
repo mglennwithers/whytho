@@ -5,10 +5,17 @@
   "version": "0.1.0",
   "publisher": "whytho",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mglennwithers/whytho",
+    "directory": "packages/vscode-whytho"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": ["Other"],
+  "categories": [
+    "Other"
+  ],
   "activationEvents": [
     "workspaceContains:.why/index.json"
   ],
@@ -33,13 +40,34 @@
       ]
     },
     "commands": [
-      { "command": "whytho.showAnnotation", "title": "whytho: Show Annotation" },
-      { "command": "whytho.goToBlock", "title": "whytho: Go to Block" },
-      { "command": "whytho.goToRelated", "title": "whytho: Go to Related" },
-      { "command": "whytho.search", "title": "whytho: Search Annotations" },
-      { "command": "whytho.pushNote", "title": "whytho: Add Note" },
-      { "command": "whytho.reannotate", "title": "whytho: Reannotate" },
-      { "command": "whytho.refreshAll", "title": "whytho: Refresh" }
+      {
+        "command": "whytho.showAnnotation",
+        "title": "whytho: Show Annotation"
+      },
+      {
+        "command": "whytho.goToBlock",
+        "title": "whytho: Go to Block"
+      },
+      {
+        "command": "whytho.goToRelated",
+        "title": "whytho: Go to Related"
+      },
+      {
+        "command": "whytho.search",
+        "title": "whytho: Search Annotations"
+      },
+      {
+        "command": "whytho.pushNote",
+        "title": "whytho: Add Note"
+      },
+      {
+        "command": "whytho.reannotate",
+        "title": "whytho: Reannotate"
+      },
+      {
+        "command": "whytho.refreshAll",
+        "title": "whytho: Refresh"
+      }
     ],
     "menus": {
       "editor/context": [
@@ -93,6 +121,7 @@
   },
   "devDependencies": {
     "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.7.1",
     "tsup": "^8.0.0",
     "typescript": "^5.4.0",
     "vitest": "^1.6.0"
