@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::isFileStale
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T04:22:34.972Z"
+updated: "2026-03-27T22:45:43.705Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 72
     end: 80
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:e1c6f8d92c568fa3e21a2406db1e7b13fca98c422950338446ee9977a12dab35
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     true only if changedFiles is provided and contains the file's path.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # isFileStale

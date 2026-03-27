@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::blockAnnotations
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T04:22:34.755Z"
+updated: "2026-03-27T22:45:43.485Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/reannotate/index.ts::blockAnnotations
   line_range:
-    start: 320
-    end: 320
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 346
+    end: 346
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:13151e2357bcbef15a5020a9dcdd6afc09223d7bf7b7af150ad7dd95025091b7
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     processing or storing code block annotations during a reannotation workflow.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # blockAnnotations

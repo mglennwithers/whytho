@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/gemini.ts::callGemini
 file: src/ai/providers/gemini.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.311Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/gemini.ts::callGemini
   line_range:
-    start: 82
-    end: 94
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 83
+    end: 95
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:91d73f8356751a4c16d8a7450c57b0e89319ef99342a03733948c91c70892efc
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     normalized text content along with token usage metrics (input/output counts).
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # callGemini

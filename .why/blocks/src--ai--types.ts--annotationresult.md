@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/types.ts::AnnotationResult
 file: src/ai/types.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-25T04:22:27.547Z"
+updated: "2026-03-27T22:45:42.890Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/types.ts::AnnotationResult
   line_range:
-    start: 30
-    end: 34
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 33
+    end: 37
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:9e81bde03c70a1f46a2a8b53a0e88e76bccfa93eac3cae0d6f6acf0323ed7b86
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     frontmatter from unstructured content body.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # AnnotationResult

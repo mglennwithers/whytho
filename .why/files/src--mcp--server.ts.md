@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-25T04:22:25.772Z"
+updated: "2026-03-27T22:45:41.283Z"
 updated_by_session: inferred
 parent_folder: src/mcp/
 sessions: []
@@ -150,6 +150,12 @@ relationships:
     source: static
   - type: depends_on
     target: src/core/constants.ts::WHYTHO_VERSION
+    source: static
+  - type: depends_on
+    target: src/core/frontmatter/parse.ts::parseAnnotation
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::BlockFrontmatter
     source: static
   - type: depends_on
     target: src/config/loader.ts::loadConfig

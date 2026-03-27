@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::BlockIdentitySchema
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-25T04:22:37.790Z"
+updated: "2026-03-27T22:45:44.104Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 33
     end: 46
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:a6b9b45d7b6217ef84318207a657e1fffdb5cadd02545cd62b50c9e995ea0b6c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     tracking, content hashing, structural position, semantic fingerprints, quality metrics, and resolution timestamps.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 relationships:
   - type: depends_on
     target: src/core/constants.ts::CANONICAL_METRICS

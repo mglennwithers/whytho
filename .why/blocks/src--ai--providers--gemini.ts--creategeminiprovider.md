@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/gemini.ts::createGeminiProvider
 file: src/ai/providers/gemini.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.373Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/gemini.ts::createGeminiProvider
   line_range:
-    start: 69
-    end: 170
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
-  content_hash: sha256:e97f44be7fc03e4c62c6b4140731a26b0ffedc2b5e0d0e2ec39a9dda524062e3
+    start: 70
+    end: 180
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
+  content_hash: sha256:f180be23c84d82de99e797b537fb962f63b98387ed45182089eaae5debe5695c
   structural:
     kind: function
     parent_scope: module
@@ -32,7 +32,7 @@ identity:
     AIProvider interface.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # createGeminiProvider

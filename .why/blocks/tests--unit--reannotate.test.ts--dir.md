@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/reannotate.test.ts::dir
 file: tests/unit/reannotate.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-25T04:22:40.497Z"
+updated: "2026-03-27T22:45:46.813Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: tests/unit/reannotate.test.ts::dir
   line_range:
-    start: 11
-    end: 11
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 16
+    end: 16
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:88b83b5bfd9c5c6940db990cb3e804bc0528fe92d6ef4e7567c118c05dedb6cb
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     in test cleanup or isolation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # dir

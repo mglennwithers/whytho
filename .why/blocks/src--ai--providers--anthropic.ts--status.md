@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/anthropic.ts::status
 file: src/ai/providers/anthropic.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-25T04:22:27.250Z"
+updated: "2026-03-27T22:45:42.260Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 32
     end: 32
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:e75bea310629133e1dd0e03046dd609a16fad75140f55956c3af6e9f43059eed
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the result in a status variable for subsequent processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # status

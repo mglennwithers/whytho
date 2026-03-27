@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/gemini.ts::maxTokens
 file: src/ai/providers/gemini.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.474Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/gemini.ts::maxTokens
   line_range:
-    start: 104
-    end: 104
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 105
+    end: 105
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:251937481e43056a0066bf2e6e804bf65906a7db4ae59f950b794facd570d8ab
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     downstream use in token limit handling.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # maxTokens

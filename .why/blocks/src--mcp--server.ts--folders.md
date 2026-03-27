@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::folders
 file: src/mcp/server.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:45.270Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::folders
   line_range:
-    start: 671
-    end: 671
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 690
+    end: 690
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:fc23beb39026ebdbae450699f19735fdfc7146ae9d5c17ee2cb6f4236826b58a
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     specifically requests folders; otherwise returns an empty array.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # folders

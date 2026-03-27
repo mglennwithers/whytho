@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/reannotate.test.ts::describe(checkStaleAnnotations)
 file: tests/unit/reannotate.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-25T04:22:40.485Z"
+updated: "2026-03-27T22:45:46.799Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: tests/unit/reannotate.test.ts::describe(checkStaleAnnotations)
   line_range:
-    start: 79
-    end: 280
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 322
+    end: 523
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:50cdbf04f7ca5024e756a37bfef35817387ff9df1d60e9695aa934c9dd270789
   structural:
     kind: describe
@@ -30,7 +30,7 @@ identity:
     files, and folders using content hashing, status flags, and file change tracking.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # describe(checkStaleAnnotations)

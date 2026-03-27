@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: packages/vscode-whytho/src/views/detail-panel.ts
 created: "2026-03-24T09:37:32.299Z"
-updated: "2026-03-24T09:37:32.299Z"
+updated: "2026-03-27T22:45:41.283Z"
 updated_by_session: static-scan
 parent_folder: packages/vscode-whytho/src/views/
 sessions: []

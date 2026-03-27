@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/openai.ts::callOpenAIConcurrentBatch
 file: src/ai/providers/openai.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.630Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 5
     end: 44
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:eea5e49390788dcfd935a9ac604a066080156cf0ef0c7d7481d548724e75ce00
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     metrics, and returns results mapped by request ID with graceful failure handling.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # callOpenAIConcurrentBatch

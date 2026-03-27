@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/ai/providers/openai.ts
 created: "2026-03-24T18:47:56.190Z"
-updated: "2026-03-25T02:10:24.707Z"
+updated: "2026-03-27T22:45:41.283Z"
 updated_by_session: static-scan
 parent_folder: src/ai/providers/
 sessions: []
@@ -25,6 +25,12 @@ relationships:
     target: src/ai/types.ts::SemanticMatchResult
     source: static
   - type: depends_on
+    target: src/ai/types.ts::AssessPushNotesRequest
+    source: static
+  - type: depends_on
+    target: src/ai/types.ts::AssessPushNotesResult
+    source: static
+  - type: depends_on
     target: src/ai/prompts/annotate-block.ts::buildBlockAnnotationPrompt
     source: static
   - type: depends_on
@@ -44,6 +50,12 @@ relationships:
     source: static
   - type: depends_on
     target: src/ai/prompts/semantic-match.ts::parseSemanticMatchResponse
+    source: static
+  - type: depends_on
+    target: src/ai/prompts/assess-push-notes.ts::buildAssessPushNotesPrompt
+    source: static
+  - type: depends_on
+    target: src/ai/prompts/assess-push-notes.ts::parseAssessPushNotesResponse
     source: static
   - type: depends_on
     target: src/core/constants.ts::WHYTHO_VERSION

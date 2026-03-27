@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::touched
 file: src/core/push/index.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T06:18:22.346Z"
+updated: "2026-03-27T22:45:43.320Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 75
     end: 75
-    commit: 9836b12bcb7a17ca56ea6bedf436213596319931
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:560da371293b2039cf54152473c28cac78d0784f432164d3ab702f7b00f0a874
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the touched variable is always an array.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 9836b12bcb7a17ca56ea6bedf436213596319931
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # touched

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::SessionIndexEntry
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-25T04:22:38.036Z"
+updated: "2026-03-27T22:45:44.366Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/types.ts::SessionIndexEntry
   line_range:
-    start: 158
-    end: 165
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 167
+    end: 174
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:8f1ecf07d2010fc34ed92ddf887839e39b110ddaad38b14da917f86b005c96cc
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     were modified along with associated git commits and creation timestamp.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # SessionIndexEntry

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/openai.ts::parsed
 file: src/ai/providers/openai.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.807Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/openai.ts::parsed
   line_range:
-    start: 127
-    end: 127
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 128
+    end: 128
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:64004d5c5d05875480ce35d7bd10c69b2fe0717a54f0f4f498455f4cec776c53
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     storing the result for downstream processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # parsed

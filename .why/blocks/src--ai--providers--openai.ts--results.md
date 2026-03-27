@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/openai.ts::results
 file: src/ai/providers/openai.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.837Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 18
     end: 18
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:fc1d4f1d7d458a552db7090b79c940a6fe424d3671f081bb30802cb39c3032dc
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     key-value pairs in the OpenAI provider module.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # results

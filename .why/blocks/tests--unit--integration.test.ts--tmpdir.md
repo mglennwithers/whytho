@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/integration.test.ts::tmpDir
 file: tests/unit/integration.test.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:46.681Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 33
     end: 33
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:cd0a51b70906918024b1193c5a83a6e0968484d13f54ca4a5e3fd1475ba977d1
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     initialized elsewhere in the test suite setup.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # tmpDir

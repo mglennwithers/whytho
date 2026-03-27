@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::folderCount
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-25T04:22:38.770Z"
+updated: "2026-03-27T22:45:45.233Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::folderCount
   line_range:
-    start: 626
-    end: 626
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 645
+    end: 645
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:fc1a6303f75787393168323cb8f2d21581b9ec9b7ceac295027774ddf868af5d
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     coalescing fallback to an empty object.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # folderCount

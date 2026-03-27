@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::whyRoot
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-25T04:22:39.948Z"
+updated: "2026-03-27T22:45:46.582Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::whyRoot
   line_range:
-    start: 743
-    end: 743
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 762
+    end: 762
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:e481246d2df3357642a60f995603c42b66b743d54e33032f1bcd5d20c0aa4593
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     result in a constant for later use.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # whyRoot

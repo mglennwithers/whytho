@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/integration.test.ts::describe(push → query)
 file: tests/unit/integration.test.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:46.649Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -17,9 +17,9 @@ identity:
   symbolic: tests/unit/integration.test.ts::describe(push → query)
   line_range:
     start: 85
-    end: 167
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
-  content_hash: sha256:50f1121190c0cdd4e81de96c87554f9a926e59d28d3fbb1812bd155ef5046ff5
+    end: 168
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
+  content_hash: sha256:c538c85221d38adb501c903ec06a9d0a80b3d81edb8b762159a521661ccecde1
   structural:
     kind: describe
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     persisted to disk, then read back to validate correctness and metadata tracking.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # describe(push → query)

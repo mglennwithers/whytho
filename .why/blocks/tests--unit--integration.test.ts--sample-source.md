@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/integration.test.ts::SAMPLE_SOURCE
 file: tests/unit/integration.test.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:46.669Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 24
     end: 31
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:664d3547a678251ae31cff25461006ec00095cf35bdb9a2a62beffa722e111f0
   structural:
     kind: const
@@ -31,7 +31,7 @@ identity:
     transformation logic.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # SAMPLE_SOURCE

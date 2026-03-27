@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/openai.ts::text
 file: src/ai/providers/openai.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.847Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 33
     end: 33
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:7ad7ed2204875de957442d472361a1fbce70ced61c92eb2c4472698b54d2c805
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     and providing an empty string as a fallback.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # text

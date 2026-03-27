@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/reannotate.test.ts::makeFileAnnotation
 file: tests/unit/reannotate.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-25T04:22:40.543Z"
+updated: "2026-03-27T22:45:46.868Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: tests/unit/reannotate.test.ts::makeFileAnnotation
   line_range:
-    start: 52
-    end: 65
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 57
+    end: 70
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:026bc2f9d6c1400bc4795ed98299ffddc148c474c788f3ec4facb9a39b5c15e8
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     paired with a markdown body, using a fixed timestamp and deriving the parent folder path from the input file path.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # makeFileAnnotation

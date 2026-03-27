@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::blameResult
 file: src/mcp/server.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:44.585Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::blameResult
   line_range:
-    start: 706
-    end: 706
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 725
+    end: 725
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:aef7873473b38be4eaa56c46c04f8a096732cc1cc1ac0d99099feae9949c311d
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     variable for subsequent processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # blameResult

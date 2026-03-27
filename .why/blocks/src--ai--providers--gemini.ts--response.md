@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/gemini.ts::response
 file: src/ai/providers/gemini.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.536Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/gemini.ts::response
   line_range:
-    start: 84
-    end: 88
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
-  content_hash: sha256:dfadcb01c44504260d3373d078fe3e89b1088ae055dfb60b9c9b9f2111de2501
+    start: 27
+    end: 31
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
+  content_hash: sha256:e2a478cef5777dbeb0b003a2b9ed3f3afb104701c1925922496f2908d68ac970
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     limits applied to the response generation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # response

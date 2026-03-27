@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::s
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-25T04:22:39.524Z"
+updated: "2026-03-27T22:45:46.127Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::s
   line_range:
-    start: 536
-    end: 536
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 555
+    end: 555
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:3062f52a1dbd20dba07293e4365d4b787a232900a92ae45606b007f3904c6904
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     control flow that organizes or filters items before processing them.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # s

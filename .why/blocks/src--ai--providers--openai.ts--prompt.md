@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/openai.ts::prompt
 file: src/ai/providers/openai.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.817Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/openai.ts::prompt
   line_range:
-    start: 170
-    end: 170
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
-  content_hash: sha256:2af400a8c2f45f33961bb8b08e5e7d612a54ed97cfc191d898734fb5b112c6af
+    start: 126
+    end: 126
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
+  content_hash: sha256:7c3ace824a44989e572152557f5cf883d1308b784130ceee5eb683ede5a35958
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     request object, likely for use in AI model queries.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # prompt

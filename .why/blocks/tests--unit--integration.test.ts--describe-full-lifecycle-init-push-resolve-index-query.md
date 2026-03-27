@@ -4,7 +4,7 @@ type: block
 symbolic_ref: "tests/unit/integration.test.ts::describe(full lifecycle: init → push → resolve → index → query)"
 file: tests/unit/integration.test.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:46.626Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: "tests/unit/integration.test.ts::describe(full lifecycle: init → push → resolve → index → query)"
   line_range:
-    start: 265
-    end: 299
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 266
+    end: 300
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:3e85647fedc015ebd15bf269757cca77d95d2c3f46b09b9a3d945e414ca7a158
   structural:
     kind: describe
@@ -30,7 +30,7 @@ identity:
     annotating code entities, resolving those annotations, indexing them, and querying the results.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # describe(full lifecycle: init → push → resolve → index → query)

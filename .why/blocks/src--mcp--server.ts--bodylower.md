@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::bodyLower
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-25T04:22:38.403Z"
+updated: "2026-03-27T22:45:44.770Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::bodyLower
   line_range:
-    start: 567
-    end: 567
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 586
+    end: 586
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:8d966e18b18e6e562e32b839d44ff934fa5d8d3208d4be0f3d259f8a680180ba
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     downstream in the code.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # bodyLower

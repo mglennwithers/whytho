@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::parsed
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T04:22:35.044Z"
+updated: "2026-03-27T22:45:43.778Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 113
     end: 113
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:2fde3a108b747246be6af79ddc3e2e843abee46d60b1eee42b1604e037c762f2
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     downstream processing in a reannotation workflow.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # parsed

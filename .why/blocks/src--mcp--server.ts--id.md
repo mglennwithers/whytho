@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::id
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-25T04:22:38.814Z"
+updated: "2026-03-27T22:45:45.340Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::id
   line_range:
-    start: 407
-    end: 407
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 425
+    end: 425
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:7ef851f05a6aa6a42fa00faff107314b09000a5b3075cda12adfafea02e6242c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     directory, with nullish coalescing as the fallback mechanism.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # id

@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/core/reannotate/index.ts
 created: "2026-03-24T07:41:37.503Z"
-updated: "2026-03-25T04:22:25.772Z"
+updated: "2026-03-27T22:45:41.283Z"
 updated_by_session: static-scan
 parent_folder: src/core/reannotate/
 sessions: []
@@ -65,6 +65,9 @@ relationships:
     source: static
   - type: depends_on
     target: src/core/types.ts::AnnotationFile
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::PushNote
     source: static
   - type: depends_on
     target: src/ai/types.ts::AIProvider

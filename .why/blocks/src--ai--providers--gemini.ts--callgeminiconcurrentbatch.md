@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/gemini.ts::callGeminiConcurrentBatch
 file: src/ai/providers/gemini.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.321Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 5
     end: 42
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:c839b5370ea9e742f2f7152a5983139262b43f6b2eb08ea87444f04b3ab2723c
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     handling individual request failures gracefully while reporting progress.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # callGeminiConcurrentBatch

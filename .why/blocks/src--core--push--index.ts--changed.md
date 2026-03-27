@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::changed
 file: src/core/push/index.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T06:18:21.866Z"
+updated: "2026-03-27T22:45:42.938Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 73
     end: 73
-    commit: 9836b12bcb7a17ca56ea6bedf436213596319931
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:dd065765b6fe07ea5f741d5c917a8159c9e3949536ad2e66858f8fb865ad3a65
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     push operation, enabling conditional logic for side effects or return values.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 9836b12bcb7a17ca56ea6bedf436213596319931
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # changed

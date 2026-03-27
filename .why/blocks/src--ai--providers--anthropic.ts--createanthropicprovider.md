@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/anthropic.ts::createAnthropicProvider
 file: src/ai/providers/anthropic.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-25T04:22:27.122Z"
+updated: "2026-03-27T22:45:42.140Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -12,10 +12,10 @@ inference_confidence: 0.82
 identity:
   symbolic: src/ai/providers/anthropic.ts::createAnthropicProvider
   line_range:
-    start: 70
-    end: 172
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
-  content_hash: sha256:ab67e06094d4b53e9c2e5a29611b18504edc4959ce831ff41e725e4b1e8c4344
+    start: 71
+    end: 182
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
+  content_hash: sha256:4f9be4507557f624fae06bdb12e8f8c46a79248dc0126dfb37c80a56da0a7394
   structural:
     kind: function
     parent_scope: module
@@ -28,7 +28,7 @@ identity:
     matching via prompt-based LLM calls.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 relationships:
   - type: depends_on
     target: src/ai/types.ts::AIProvider

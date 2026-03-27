@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::updateSessionTouched
 file: src/core/push/index.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T06:18:22.361Z"
+updated: "2026-03-27T22:45:43.337Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 60
     end: 99
-    commit: 9836b12bcb7a17ca56ea6bedf436213596319931
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:b8208e7d168544bfb8f86726481a450726f041bab0a2fd762a05124741890afd
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     touched-items list with timestamps, and silently tolerating failures.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 9836b12bcb7a17ca56ea6bedf436213596319931
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # updateSessionTouched

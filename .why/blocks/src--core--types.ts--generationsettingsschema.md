@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/types.ts::GenerationSettingsSchema
 file: src/core/types.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-25T04:22:37.917Z"
+updated: "2026-03-27T22:45:44.248Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 56
     end: 60
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:1be501f91fec7ce6a3da87036f67e82c077ef5a149925cc84607676f85cb7b12
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     level, detail level, and token constraints.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # GenerationSettingsSchema

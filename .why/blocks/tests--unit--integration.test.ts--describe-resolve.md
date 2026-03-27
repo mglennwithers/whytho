@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/integration.test.ts::describe(resolve)
 file: tests/unit/integration.test.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:46.659Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: tests/unit/integration.test.ts::describe(resolve)
   line_range:
-    start: 197
-    end: 261
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 198
+    end: 262
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:e9feeece2c730cdb029f31160560c711e4b4d6407c9ec1bd0997459580961ad8
   structural:
     kind: describe
@@ -30,7 +30,7 @@ identity:
     repository changes, handles deletion scenarios, and respects file change filters.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # describe(resolve)

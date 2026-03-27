@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/openai.ts::body
 file: src/ai/providers/openai.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.610Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/openai.ts::body
   line_range:
-    start: 106
-    end: 106
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 107
+    end: 107
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:16618a54d83e489bf7ef1949a1a08e3dbcc846d9b7ce9c49bcb00c2588797edf
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     operations, possibly for HTTP request payload construction or response buffering in an OpenAI provider integration.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # body

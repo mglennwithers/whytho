@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/openai.ts::totalInput
 file: src/ai/providers/openai.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.860Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/openai.ts::totalInput
   line_range:
-    start: 120
-    end: 120
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 19
+    end: 19
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:c26cc86022f9a23cb706ac6465bdcbce7e781ba6400a68a009f96b7e0b6ddd6b
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     costs, or counts) in an OpenAI provider context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # totalInput

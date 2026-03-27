@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/core/push/index.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-25T06:18:21.180Z"
+updated: "2026-03-27T22:45:41.283Z"
 updated_by_session: inferred
 parent_folder: src/core/push/
 sessions: []
@@ -91,6 +91,9 @@ relationships:
     source: static
   - type: depends_on
     target: src/core/types.ts::RelationshipType
+    source: static
+  - type: depends_on
+    target: src/core/types.ts::PushNote
     source: static
 ---
 

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/push-relationships.test.ts::cleanup
 file: tests/unit/push-relationships.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-25T04:22:40.391Z"
+updated: "2026-03-27T22:45:46.691Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 28
     end: 30
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:829f236e35ebb913665ac48238bdd2639cba5c09aec25645b5b77b309b7c9de6
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     operations to clean temporary or fixture directories.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # cleanup

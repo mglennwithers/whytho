@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/openai.ts::createOpenAIProvider
 file: src/ai/providers/openai.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.685Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/openai.ts::createOpenAIProvider
   line_range:
-    start: 73
-    end: 175
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
-  content_hash: sha256:f05428eb9c140027dd74fe3c5d9a4b580c37a655440bebd8c378fa20b17cf96f
+    start: 74
+    end: 185
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
+  content_hash: sha256:02712dcaacf4674a29ff0328cc233a311ccfd671387462ec1067dff70679154d
   structural:
     kind: function
     parent_scope: module
@@ -32,7 +32,7 @@ identity:
     frontmatter and body content.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # createOpenAIProvider

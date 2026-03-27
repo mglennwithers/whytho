@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::fileAnnPath
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T04:22:34.895Z"
+updated: "2026-03-27T22:45:43.629Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/reannotate/index.ts::fileAnnPath
   line_range:
-    start: 376
-    end: 376
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 402
+    end: 402
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:3941b9e15846fd95ce1b198efa984a012bc59d6c150b1f332be127b06bfcda01
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     storing the result for subsequent use in the reannotation process.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # fileAnnPath

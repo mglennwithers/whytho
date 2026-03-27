@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/reannotate.test.ts::makeTempRepo
 file: tests/unit/reannotate.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-25T04:22:40.562Z"
+updated: "2026-03-27T22:45:46.895Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: tests/unit/reannotate.test.ts::makeTempRepo
   line_range:
-    start: 10
-    end: 17
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 15
+    end: 22
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:c683dab796b611e053e380021504532b93054422d0d9fa1437557b98cce543ec
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     folder, returning the root path for test isolation purposes.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # makeTempRepo

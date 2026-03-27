@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::blockRef
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T04:22:34.786Z"
+updated: "2026-03-27T22:45:43.514Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/reannotate/index.ts::blockRef
   line_range:
-    start: 322
-    end: 322
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 348
+    end: 348
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:1337be36358bcf496553193f545adaa2e77949c64ef09043acfac4f51e9602cc
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     establishing a unique identifier for the block within the reannotation system.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # blockRef

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::purposeOnly
 file: src/mcp/server.ts
 created: "2026-03-21T21:20:00.358Z"
-updated: "2026-03-25T04:22:39.176Z"
+updated: "2026-03-27T22:45:45.778Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::purposeOnly
   line_range:
-    start: 442
-    end: 442
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 461
+    end: 461
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:e0d7b10c6324b901d129a22efff2617fd7a9dd1d55c7ec709601343221dccb87
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     This pattern suggests extracting and normalizing a configuration flag.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # purposeOnly

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::updatedFm
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T04:22:35.252Z"
+updated: "2026-03-27T22:45:43.993Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/core/reannotate/index.ts::updatedFm
   line_range:
-    start: 271
-    end: 281
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
-  content_hash: sha256:9d964cd55e2837d522106755c78b1176a8a8d02447259e523e054ea4acda8352
+    start: 296
+    end: 307
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
+  content_hash: sha256:7936b3b409b68bfd9bdf164e9655a55fe7feebcfdf60aac3b5471eae905f0bde
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     to the current ISO date-time string.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # updatedFm

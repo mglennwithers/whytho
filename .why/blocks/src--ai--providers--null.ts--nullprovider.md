@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/null.ts::nullProvider
 file: src/ai/providers/null.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-25T04:22:27.317Z"
+updated: "2026-03-27T22:45:42.592Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -17,9 +17,9 @@ identity:
   symbolic: src/ai/providers/null.ts::nullProvider
   line_range:
     start: 4
-    end: 29
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
-  content_hash: sha256:ac7df76203e8490f155df1005febc8d1a87b0f317ff5e0d819b28f334bc807d6
+    end: 37
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
+  content_hash: sha256:99fe0225105cc7f97fb7dd27c58b103f8e6cfcfe0dbbe2978d76791db76db41b
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     null for semantic matching operations. This serves as a fallback when no real AI provider is configured.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 relationships:
   - type: depends_on
     target: src/ai/types.ts::AIProvider

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::blocks
 file: src/mcp/server.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:44.709Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::blocks
   line_range:
-    start: 669
-    end: 669
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 688
+    end: 688
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:b7a340d71355e193b409a017f4991e2fa24695327c692cbfe0aa2ea0717ffc5c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     applied or when the filter explicitly requests blocks, otherwise returning an empty array.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # blocks

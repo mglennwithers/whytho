@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::semanticFingerprint
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T04:22:35.197Z"
+updated: "2026-03-27T22:45:43.933Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 267
     end: 269
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:c813066503e337093c907377cbb62330f8dd36e7a4f2bb2532611ba351d6ea44
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     using the nullish coalescing operator to select the first available option.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # semanticFingerprint

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/openai.ts::message
 file: src/ai/providers/openai.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.737Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/openai.ts::message
   line_range:
-    start: 88
-    end: 92
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 89
+    end: 93
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:789e1ccdeaa72c679e4fdd3caee270189c07494a8b49ef8520a0a677cbe74bdd
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     response.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # message

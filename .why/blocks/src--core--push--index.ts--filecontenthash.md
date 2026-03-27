@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::fileContentHash
 file: src/core/push/index.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T06:18:21.967Z"
+updated: "2026-03-27T22:45:43.010Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/core/push/index.ts::fileContentHash
   line_range:
-    start: 279
-    end: 279
-    commit: 9836b12bcb7a17ca56ea6bedf436213596319931
+    start: 290
+    end: 290
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:a93de486499377e99561607e083960cb34409d1c0869bf14c1a01eee01e34c1a
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     derived hash of file contents within a push operation context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 9836b12bcb7a17ca56ea6bedf436213596319931
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # fileContentHash

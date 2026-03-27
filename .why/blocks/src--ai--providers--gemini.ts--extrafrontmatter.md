@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/gemini.ts::extraFrontmatter
 file: src/ai/providers/gemini.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.389Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/gemini.ts::extraFrontmatter
   line_range:
-    start: 102
-    end: 102
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 103
+    end: 103
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:25207e3515c2144885a4ce9429f65fa12e8307cd776689f23fdacc5b3627f468
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     a document's frontmatter during Gemini AI provider processing.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # extraFrontmatter

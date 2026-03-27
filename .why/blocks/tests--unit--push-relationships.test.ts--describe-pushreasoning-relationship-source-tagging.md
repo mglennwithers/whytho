@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/push-relationships.test.ts::describe(pushReasoning - relationship source tagging)
 file: tests/unit/push-relationships.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-25T04:22:40.444Z"
+updated: "2026-03-27T22:45:46.751Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: tests/unit/push-relationships.test.ts::describe(pushReasoning - relationship source tagging)
   line_range:
-    start: 246
-    end: 299
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 247
+    end: 300
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:4ba662f3f6ccd2f1d73e2deb3af7e81a17af32b781c6b7b45a810b9717379b43
   structural:
     kind: describe
@@ -30,7 +30,7 @@ identity:
     while respecting explicitly provided source values like 'static'.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # describe(pushReasoning - relationship source tagging)

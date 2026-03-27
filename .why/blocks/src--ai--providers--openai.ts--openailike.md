@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/openai.ts::OpenAILike
 file: src/ai/providers/openai.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.783Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/openai.ts::OpenAILike
   line_range:
-    start: 53
-    end: 66
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 54
+    end: 67
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:d425e1117071c350572f7f645284b407c11c664fdfcd950c609ff5748aff6540
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     (model, max_tokens, messages) and optional token usage metrics in the response.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # OpenAILike

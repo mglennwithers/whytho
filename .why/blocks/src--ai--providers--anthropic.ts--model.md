@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/anthropic.ts::model
 file: src/ai/providers/anthropic.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-25T04:22:27.178Z"
+updated: "2026-03-27T22:45:42.196Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -12,9 +12,9 @@ inference_confidence: 0.85
 identity:
   symbolic: src/ai/providers/anthropic.ts::model
   line_range:
-    start: 71
-    end: 71
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 72
+    end: 72
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:80dd0a80de32cf7ddfbab91f0c02d3ba8e7d699645a09ea89d2d94c29d5dc21b
   structural:
     kind: const
@@ -26,7 +26,7 @@ identity:
     specifically within an Anthropic provider context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # model

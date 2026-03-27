@@ -4,16 +4,16 @@ type: block
 symbolic_ref: src/core/push/index.ts::pushReasoning
 file: src/core/push/index.ts
 created: "2026-03-21T04:23:42.890Z"
-updated: "2026-03-25T06:18:22.186Z"
+updated: "2026-03-27T22:45:43.182Z"
 created_by_session: agent-push
 updated_by_session: agent-push
 identity:
   symbolic: src/core/push/index.ts::pushReasoning
   line_range:
     start: 101
-    end: 313
-    commit: 9836b12bcb7a17ca56ea6bedf436213596319931
-  content_hash: sha256:45d068bfaa4ff85127ddf0bd560d2574dca298a3d0e27178c5c24abdf76ad3c6
+    end: 324
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
+  content_hash: sha256:2dc0cde186805dddd7718b0e7d79d53ed590dc203495a34b17975dc2e360196b
   structural:
     kind: function
     parent_scope: module
@@ -25,7 +25,7 @@ identity:
     is more accurate than post-hoc AI inference because the reasoning is captured at th
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 9836b12bcb7a17ca56ea6bedf436213596319931
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 relationships:
   - type: depends_on
     target: src/core/fs/layout.ts::getWhyRoot

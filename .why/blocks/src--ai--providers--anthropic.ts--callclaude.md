@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/anthropic.ts::callClaude
 file: src/ai/providers/anthropic.ts
 created: "2026-03-21T05:21:52.955Z"
-updated: "2026-03-25T04:22:27.089Z"
+updated: "2026-03-27T22:45:42.108Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -12,9 +12,9 @@ inference_confidence: 0.92
 identity:
   symbolic: src/ai/providers/anthropic.ts::callClaude
   line_range:
-    start: 83
-    end: 96
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 84
+    end: 97
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:9c4462bf4e7ca0e9aa9909b35f88cb9a7be3c52cf54fcb9b88d9e7ff5db001fc
   structural:
     kind: function
@@ -27,7 +27,7 @@ identity:
     block from the response, and returns the text (or empty string if non-text).
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # callClaude

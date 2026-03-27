@@ -4,15 +4,15 @@ type: block
 symbolic_ref: src/mcp/server.ts::extractPurpose
 file: src/mcp/server.ts
 created: "2026-03-21T11:28:48.932Z"
-updated: "2026-03-25T04:22:38.534Z"
+updated: "2026-03-27T22:45:44.986Z"
 created_by_session: agent-push
 updated_by_session: agent-push
 identity:
   symbolic: src/mcp/server.ts::extractPurpose
   line_range:
-    start: 307
-    end: 310
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 325
+    end: 328
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:015c121e3e959c24ca93fa5745c6def2317c38822c8a852292e9a2b52ff39caf
   structural:
     kind: function
@@ -25,7 +25,7 @@ identity:
     to give agents a lightweight 'what does this file do?' answer without loading block d
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 relationships:
   - type: depends_on
     target: src/core/types.ts::FileFrontmatter

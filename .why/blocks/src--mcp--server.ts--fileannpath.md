@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::fileAnnPath
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-25T04:22:38.579Z"
+updated: "2026-03-27T22:45:45.034Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::fileAnnPath
   line_range:
-    start: 446
-    end: 446
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 465
+    end: 465
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:82e862d8f673d52ccc77bde127b5a1dd443326ea42e81b6b271dfe633ec81bf4
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     subsequent use in processing file annotations.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # fileAnnPath

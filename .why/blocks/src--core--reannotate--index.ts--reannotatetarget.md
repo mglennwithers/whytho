@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::ReannotateTarget
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T04:22:35.144Z"
+updated: "2026-03-27T22:45:43.876Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 22
     end: 26
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:04823f9460281fd240d7f28b2740452815db61495fe34aec43514553a28e7f4e
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     either a symbolic reference (for blocks) or a file system path (for files/folders).
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # ReannotateTarget

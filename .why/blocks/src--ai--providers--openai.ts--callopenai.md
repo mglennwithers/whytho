@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/openai.ts::callOpenAI
 file: src/ai/providers/openai.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.620Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/openai.ts::callOpenAI
   line_range:
-    start: 86
-    end: 99
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 87
+    end: 100
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:4afa1e3d85c13df436caced42538a3fd7393fe4f60e9ada8d54b10723d401ca8
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     along with token usage metrics (input and output token counts).
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # callOpenAI

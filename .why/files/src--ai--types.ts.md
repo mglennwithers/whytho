@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/ai/types.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-25T04:22:25.772Z"
+updated: "2026-03-27T22:45:41.283Z"
 updated_by_session: inferred
 parent_folder: src/ai/
 sessions: []
@@ -30,6 +30,9 @@ relationships:
     source: static
   - type: depends_on
     target: src/config/types.ts::VerbosityDetail
+    source: static
+  - type: depends_on
+    target: src/ai/prompts/assess-push-notes.ts::PushNoteAssessment
     source: static
 ---
 

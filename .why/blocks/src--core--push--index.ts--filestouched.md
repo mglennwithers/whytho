@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/push/index.ts::filesTouched
 file: src/core/push/index.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T06:18:22.022Z"
+updated: "2026-03-27T22:45:43.038Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 82
     end: 82
-    commit: 9836b12bcb7a17ca56ea6bedf436213596319931
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:57852bbde9488640534029ba3f034f28d322b1fbf69df3322b8881e6dde316e5
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     undefined.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: 9836b12bcb7a17ca56ea6bedf436213596319931
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # filesTouched

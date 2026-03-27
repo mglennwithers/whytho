@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::BODY_LENGTH
 file: src/mcp/server.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:44.729Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::BODY_LENGTH
   line_range:
-    start: 667
-    end: 667
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 686
+    end: 686
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:989d642b17451923b54603aeeca61abbf4cff76ad1feaaa4c8824a337f2af1ec
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     in an MCP server implementation.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # BODY_LENGTH

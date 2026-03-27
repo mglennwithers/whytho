@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/types.ts::SemanticMatchRequest
 file: src/ai/types.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-25T04:22:27.562Z"
+updated: "2026-03-27T22:45:42.906Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/types.ts::SemanticMatchRequest
   line_range:
-    start: 36
-    end: 42
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 39
+    end: 45
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:3b59c962887bbab26d09aced8c85526d09f6db983988228059624fb79c69b1db
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     similar code blocks across sources during AI analysis.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 relationships:
   - type: depends_on
     target: src/core/parser/types.ts::ParsedBlock

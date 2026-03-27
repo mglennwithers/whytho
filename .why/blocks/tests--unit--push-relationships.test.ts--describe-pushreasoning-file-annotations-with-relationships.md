@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/push-relationships.test.ts::describe(pushReasoning - file annotations with relationships)
 file: tests/unit/push-relationships.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-25T04:22:40.422Z"
+updated: "2026-03-27T22:45:46.724Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: tests/unit/push-relationships.test.ts::describe(pushReasoning - file annotations with relationships)
   line_range:
-    start: 348
-    end: 412
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 349
+    end: 413
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:5a887dde2b3249f0e34c14c960f590181cec730771cbf78e4d601976ee53ffb6
   structural:
     kind: describe
@@ -30,7 +30,7 @@ identity:
     metadata, including deduplication logic when relationships are merged across multiple updates.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # describe(pushReasoning - file annotations with relationships)

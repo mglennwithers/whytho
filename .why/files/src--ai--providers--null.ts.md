@@ -3,7 +3,7 @@ whytho: "1.0"
 type: file
 path: src/ai/providers/null.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-25T04:22:25.772Z"
+updated: "2026-03-27T22:45:41.283Z"
 updated_by_session: inferred
 parent_folder: src/ai/providers/
 sessions: []
@@ -34,6 +34,12 @@ relationships:
     source: static
   - type: depends_on
     target: src/ai/types.ts::SemanticMatchResult
+    source: static
+  - type: depends_on
+    target: src/ai/types.ts::AssessPushNotesRequest
+    source: static
+  - type: depends_on
+    target: src/ai/types.ts::AssessPushNotesResult
     source: static
   - type: depends_on
     target: src/core/constants.ts::WHYTHO_VERSION

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/openai.ts::client
 file: src/ai/providers/openai.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.653Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/openai.ts::client
   line_range:
-    start: 75
-    end: 75
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
-  content_hash: sha256:cdfa34b364c33de7d5b0b9b38e567e02711cb5ad3433906a00ca41a101afe14a
+    start: 14
+    end: 16
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
+  content_hash: sha256:957c16d52788054f255dc06882eab6a5fe47df138f2824f1cc7ba1622016ca1d
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     populated on first use or during setup.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # client

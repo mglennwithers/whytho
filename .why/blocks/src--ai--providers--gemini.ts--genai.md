@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/gemini.ts::genAI
 file: src/ai/providers/gemini.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.427Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/gemini.ts::genAI
   line_range:
-    start: 83
-    end: 83
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 84
+    end: 84
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:3d467cd2f4564e7af5ea85575b5c55a5961aa6ae5c8dad0500cc94709e4f0e0a
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     the current scope.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # genAI

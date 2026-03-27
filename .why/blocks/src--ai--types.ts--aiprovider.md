@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/types.ts::AIProvider
 file: src/ai/types.ts
 created: "2026-03-21T07:48:55.962Z"
-updated: "2026-03-25T04:22:27.527Z"
+updated: "2026-03-27T22:45:42.877Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/ai/types.ts::AIProvider
   line_range:
-    start: 50
-    end: 54
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
-  content_hash: sha256:6ce7eda6d6d68fa75fcd3889491fa7eae8a5c069ccfe6d0b77b64eaa65055ee1
+    start: 63
+    end: 68
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
+  content_hash: sha256:09dcc921daf434552d9b232077ea6f2ad6e88f0e6b1676aa7848db9a80b39566
   structural:
     kind: interface
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     matching semantic fingerprints, suggesting a plugin or strategy pattern for swappable AI backends.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # AIProvider

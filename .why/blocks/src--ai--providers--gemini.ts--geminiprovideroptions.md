@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/gemini.ts::GeminiProviderOptions
 file: src/ai/providers/gemini.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.404Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/gemini.ts::GeminiProviderOptions
   line_range:
-    start: 64
-    end: 67
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 65
+    end: 68
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:78f52b102294935b711d1a7721c2ce4da70423e8e9fda032a62bc0384c82fb25
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     authentication credentials.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # GeminiProviderOptions

@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/reannotate.test.ts::makeFolderAnnotation
 file: tests/unit/reannotate.test.ts
 created: "2026-03-24T09:42:32.162Z"
-updated: "2026-03-25T04:22:40.553Z"
+updated: "2026-03-27T22:45:46.880Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: tests/unit/reannotate.test.ts::makeFolderAnnotation
   line_range:
-    start: 67
-    end: 77
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 72
+    end: 82
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:354e8b09a3eeaefd87a44c167bb3285626f930b84453723f53a9f617ddff9d4c
   structural:
     kind: function
@@ -31,7 +31,7 @@ identity:
     purpose section, used for testing annotation creation logic.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # makeFolderAnnotation

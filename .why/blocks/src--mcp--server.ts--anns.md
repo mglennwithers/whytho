@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/mcp/server.ts::anns
 file: src/mcp/server.ts
 created: "2026-03-21T09:55:09.759Z"
-updated: "2026-03-25T04:22:38.184Z"
+updated: "2026-03-27T22:45:44.520Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,9 +16,9 @@ generation_settings:
 identity:
   symbolic: src/mcp/server.ts::anns
   line_range:
-    start: 565
-    end: 565
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    start: 584
+    end: 584
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:12433b06c39676b7b5ec728d433c754bcc5513ec599c3b1200af5184e392ccc0
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     representing annotations or annotated data in an MCP server context.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # anns

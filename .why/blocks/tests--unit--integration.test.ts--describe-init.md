@@ -4,7 +4,7 @@ type: block
 symbolic_ref: tests/unit/integration.test.ts::describe(init)
 file: tests/unit/integration.test.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:46.636Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 47
     end: 81
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:e06f08f3f2780c05cf6dc5c78e2fd7c1dfc43bee1fc17762153cb8fc30fbc55a
   structural:
     kind: describe
@@ -30,7 +30,7 @@ identity:
     created correctly on first run and that subsequent initializations are idempotent (non-destructive).
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # describe(init)

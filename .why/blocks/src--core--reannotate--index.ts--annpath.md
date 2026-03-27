@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::annPath
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T04:22:34.713Z"
+updated: "2026-03-27T22:45:43.442Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 229
     end: 229
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:3d764592491d5dd7588e03bc931ad2a33262de27cf8c20e488a28c489837fb9c
   structural:
     kind: const
@@ -30,7 +30,7 @@ identity:
     storing the result for subsequent use in reannotation logic.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # annPath

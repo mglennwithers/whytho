@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/ai/providers/gemini.ts::client
 file: src/ai/providers/gemini.ts
 created: "2026-03-25T04:22:48.260Z"
-updated: "2026-03-25T04:22:48.260Z"
+updated: "2026-03-27T22:45:42.346Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -16,10 +16,10 @@ generation_settings:
 identity:
   symbolic: src/ai/providers/gemini.ts::client
   line_range:
-    start: 71
-    end: 71
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
-  content_hash: sha256:4a4d495a5c57193a7444e1919788314121fe03de99377d95ba17d20e862bc14d
+    start: 14
+    end: 16
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
+  content_hash: sha256:e3c69a1724adb832609ee2e9091915983acf53c98c1d5720774116a603d67fb3
   structural:
     kind: const
     parent_scope: module
@@ -30,7 +30,7 @@ identity:
     object, allowing lazy initialization and reuse across function calls.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # client

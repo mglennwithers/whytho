@@ -4,7 +4,7 @@ type: block
 symbolic_ref: src/core/reannotate/index.ts::ReannotateOptions
 file: src/core/reannotate/index.ts
 created: "2026-03-24T09:39:00.804Z"
-updated: "2026-03-25T04:22:35.115Z"
+updated: "2026-03-27T22:45:43.848Z"
 created_by_session: inferred
 updated_by_session: inferred
 inferred: true
@@ -18,7 +18,7 @@ identity:
   line_range:
     start: 28
     end: 41
-    commit: aee26b5b57dca571b085e47363b395cb230d7359
+    commit: a2d9d3f36ccf3c4e492aade0c19aa469967db649
   content_hash: sha256:29cb92b214ff2e2cabcaa1988cb96b0441c626aad2a907505cff6c868784b352
   structural:
     kind: interface
@@ -30,7 +30,7 @@ identity:
     and optional filtering/mode parameters to control how annotations are discovered and applied to source code.
   canonical_metric: symbolic
   confidence: 0.95
-  last_resolved: aee26b5b57dca571b085e47363b395cb230d7359
+  last_resolved: a2d9d3f36ccf3c4e492aade0c19aa469967db649
 ---
 
 # ReannotateOptions
