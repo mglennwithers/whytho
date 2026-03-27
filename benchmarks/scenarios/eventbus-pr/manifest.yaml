@@ -1,0 +1,5 @@
+source: ../eventbus/eventbus.ts
+
+scenarios:
+  - file: eb-pr-dq-2.md
+    annotations: ../eventbus/eventbus-annotations.md

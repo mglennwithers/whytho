@@ -3,15 +3,13 @@ annotations:
   - ratelimiter-annotations.md
 
 scenarios:
-  - file: dq-1-queue-proposal.md
-    annotations: ratelimiter-annotations.md
   - file: dq-2-integer-tokens.md
     annotations: ratelimiter-annotations.md
-  - file: ts-1-retryafterms.md
+  - file: ts-1b-retryafterms-edgecase.md
     annotations: ratelimiter-annotations.md
   - file: ts-2-acquire.md
     annotations: ratelimiter-annotations.md
-  - file: cs-1-lazy-refill.md
+  - file: cs-1b-lazy-refill-comparison.md
     annotations: ratelimiter-annotations.md
   - file: cs-2-full-start.md
     annotations: ratelimiter-annotations.md

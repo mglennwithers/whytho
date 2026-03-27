@@ -1,0 +1,5 @@
+source: ../eventbus/eventbus.ts
+
+scenarios:
+  - file: eb-inf-dq-2.md
+    annotations: eventbus-inferred-annotations.md

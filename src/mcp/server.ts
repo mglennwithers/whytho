@@ -29,6 +29,8 @@ import {
 import { getAllRelated } from '../core/relationships/graph.js'
 import { pushReasoning } from '../core/push/index.js'
 import { WHYTHO_VERSION } from '../core/constants.js'
+import { parseAnnotation } from '../core/frontmatter/parse.js'
+import type { BlockFrontmatter } from '../core/types.js'
 import { loadConfig } from '../config/loader.js'
 import { getDefaultProvider } from '../ai/registry.js'
 import { buildBlamePrompt, parseBlameResponse } from '../ai/prompts/blame.js'
@@ -302,6 +304,22 @@ function stripFrontmatter(content: string): string {
   return match ? match[1].trim() : content
 }
 
+// ─── Helper: append active push notes to block annotation content ─────────────
+
+function enrichBlockContent(raw: string): string {
+  try {
+    const { frontmatter } = parseAnnotation<BlockFrontmatter>(raw)
+    const activeNotes = frontmatter.push_notes?.filter((n) => n.status === 'active') ?? []
+    if (activeNotes.length === 0) return raw
+    const notesSection = activeNotes
+      .map((n, i) => `### Note ${i + 1} · _${n.timestamp}_\n\n${n.body}`)
+      .join('\n\n')
+    return `${raw}\n\n## Developer Notes\n\n${notesSection}`
+  } catch {
+    return raw
+  }
+}
+
 // ─── Helper: extract only the ## Purpose section from an annotation body ──────
 
 function extractPurpose(body: string): string {
@@ -382,7 +400,7 @@ export async function dispatchTool(
           const annPath = blockAnnotationPath(whyRoot, ref)
           const content = await readRaw(annPath)
           if (!content) return text(`No annotation found for block: ${ref}`)
-          return text(applyIncludeFilter(content, include))
+          return text(applyIncludeFilter(enrichBlockContent(content), include))
         }
 
         case 'get_file': {
@@ -429,7 +447,8 @@ export async function dispatchTool(
             if (!content) {
               parts.push(`# [${item.type}] ${ref}\n\n_No annotation found._`)
             } else {
-              const filtered = applyIncludeFilter(content, item.include)
+              const enriched = item.type === 'block' ? enrichBlockContent(content) : content
+              const filtered = applyIncludeFilter(enriched, item.include)
               parts.push(`# [${item.type}] ${ref}\n\n${filtered}`)
             }
           }
@@ -484,7 +503,7 @@ export async function dispatchTool(
             if (blockContent) {
               const blockName = ref.split('::')[1] ?? ref
               parts.push(`\n---\n\n## Block: ${blockName}\n`)
-              parts.push(stripFrontmatter(blockContent))
+              parts.push(stripFrontmatter(enrichBlockContent(blockContent)))
             }
           }
 

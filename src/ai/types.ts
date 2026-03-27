@@ -1,6 +1,9 @@
 import type { AnnotationType } from '../core/types.js'
 import type { ParsedBlock } from '../core/parser/types.js'
 import type { VerbosityDetail } from '../config/types.js'
+import type { PushNoteAssessment } from './prompts/assess-push-notes.js'
+
+export type { PushNoteAssessment }
 
 export interface AnnotationVerbosity {
   detail: VerbosityDetail
@@ -47,8 +50,19 @@ export interface SemanticMatchResult {
   tokensUsed?: { input: number; output: number }
 }
 
+export interface AssessPushNotesRequest {
+  inferredBody: string
+  pushNotes: Array<{ index: number; body: string }>
+}
+
+export interface AssessPushNotesResult {
+  assessments: PushNoteAssessment[]
+  tokensUsed?: { input: number; output: number }
+}
+
 export interface AIProvider {
   name: string
   generateAnnotation(request: AnnotationRequest): Promise<AnnotationResult>
   matchSemanticFingerprint(request: SemanticMatchRequest): Promise<SemanticMatchResult>
+  assessPushNotes(request: AssessPushNotesRequest): Promise<AssessPushNotesResult>
 }

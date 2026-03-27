@@ -1,4 +1,4 @@
-import type { AIProvider, AnnotationRequest, AnnotationResult, SemanticMatchRequest, SemanticMatchResult } from '../types.js'
+import type { AIProvider, AnnotationRequest, AnnotationResult, SemanticMatchRequest, SemanticMatchResult, AssessPushNotesRequest, AssessPushNotesResult } from '../types.js'
 import type { BatchRequest } from '../registry.js'
 
 /** Run requests concurrently with a max-concurrency limit. */
@@ -47,6 +47,7 @@ import { buildFileAnnotationPrompt } from '../prompts/annotate-file.js'
 import { buildFolderAnnotationPrompt } from '../prompts/annotate-folder.js'
 import { buildSessionAnnotationPrompt } from '../prompts/annotate-session.js'
 import { buildSemanticMatchPrompt, parseSemanticMatchResponse } from '../prompts/semantic-match.js'
+import { buildAssessPushNotesPrompt, parseAssessPushNotesResponse } from '../prompts/assess-push-notes.js'
 import { WHYTHO_VERSION, DEFAULT_OPENAI_MODEL } from '../../core/constants.js'
 
 // Minimal interface for the parts of the OpenAI client we use
@@ -170,6 +171,15 @@ export function createOpenAIProvider(options: OpenAIProviderOptions = {}): AIPro
       const prompt = buildSemanticMatchPrompt(request)
       const { text, input, output } = await callOpenAI(prompt)
       return { ...parseSemanticMatchResponse(text), tokensUsed: { input, output } }
+    },
+
+    async assessPushNotes(request: AssessPushNotesRequest): Promise<AssessPushNotesResult> {
+      const prompt = buildAssessPushNotesPrompt(request.inferredBody, request.pushNotes)
+      const { text, input, output } = await callOpenAI(prompt, 512)
+      return {
+        assessments: parseAssessPushNotesResponse(text, request.pushNotes.length),
+        tokensUsed: { input, output },
+      }
     },
   }
 }

@@ -14,7 +14,7 @@ import { parseFile } from '../parser/registry.js'
 import { computeContentHash } from '../identity/content-hash.js'
 import { getHeadCommitSha } from '../git/repo.js'
 import { WHYTHO_VERSION } from '../constants.js'
-import type { BlockFrontmatter, FileFrontmatter, SessionFrontmatter, RelationshipType } from '../types.js'
+import type { BlockFrontmatter, FileFrontmatter, SessionFrontmatter, RelationshipType, PushNote } from '../types.js'
 
 export type PushType = 'session' | 'block' | 'file'
 
@@ -184,7 +184,16 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
         if (merged.length > 0) frontmatter.relationships = merged
       }
 
-      await writeFile(annPath, serializeAnnotation(frontmatter, `${existingBody  }\n\n${body}`))
+      // Store push note in push_notes array instead of appending to body
+      const newNote: PushNote = {
+        session: sessionId ?? 'agent-push',
+        timestamp: now,
+        body,
+        status: 'active',
+      }
+      frontmatter.push_notes = [...(frontmatter.push_notes ?? []), newNote]
+
+      await writeFile(annPath, serializeAnnotation(frontmatter, existingBody))
       await updateSessionTouched(whyRoot, 'block', ref, sessionId)
       return { action: 'updated', path: annPath }
     }
@@ -236,6 +245,8 @@ export async function pushReasoning(input: PushInput): Promise<PushResult> {
         source: rel.source ?? 'ai',
       }))
     }
+    // Store push note in push_notes; body also serves as initial annotation until reannotation
+    fm.push_notes = [{ session: sessionId ?? 'agent-push', timestamp: now, body, status: 'active' }]
     await writeFile(annPath, serializeAnnotation(fm, `# ${blockName}\n\n${body}`))
     await updateSessionTouched(whyRoot, 'block', ref, sessionId)
     return { action: 'created', path: annPath }

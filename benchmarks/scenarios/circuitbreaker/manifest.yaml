@@ -11,5 +11,5 @@ scenarios:
     annotations: circuitbreaker-annotations.md
   - file: cs-1-single-probe-rationale.md
     annotations: circuitbreaker-annotations.md
-  - file: cs-2-failure-count-persistence.md
+  - file: cs-2b-halfopen-concurrent.md
     annotations: circuitbreaker-annotations.md

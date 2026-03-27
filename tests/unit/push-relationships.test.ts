@@ -210,10 +210,11 @@ describe('pushReasoning - block update with relationships', () => {
         'src--foo.ts--myfunction.md',
       )
       const raw = await fs.readFile(annPath, 'utf8')
-      const { body } = parseAnnotation<BlockFrontmatter>(raw)
+      const { frontmatter } = parseAnnotation<BlockFrontmatter>(raw)
+      const notes = frontmatter.push_notes ?? []
 
-      expect(body).toContain('First note.')
-      expect(body).toContain('Second note.')
+      expect(notes.some((n) => n.body === 'First note.')).toBe(true)
+      expect(notes.some((n) => n.body === 'Second note.')).toBe(true)
     } finally {
       await cleanup(repoRoot)
     }

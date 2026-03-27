@@ -1,0 +1,7 @@
+source: ../circuitbreaker/circuitbreaker.ts
+
+scenarios:
+  - file: blind-cb-dq-1.md
+    annotations: circuitbreaker-blind-annotations.md
+  - file: blind-cb-dq-2.md
+    annotations: circuitbreaker-blind-annotations.md

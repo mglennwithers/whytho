@@ -19,3 +19,21 @@ suites:
 
   # Multi-language suite — Python (C=1, R=1, B=0)
   - python-lrucache
+
+  # Blind annotation suites — inferred from code, no rejected-alternatives (C=1, R=1, B=1)
+  - circuitbreaker-blind
+  - eventbus-blind
+
+  # Partial annotation suite — correct but missing directly relevant section (C=0, R=1, B=0)
+  - ratelimiter-partial
+
+  # Tool-inferred annotation suites — actual git why reannotate output (C=1, R=1, B=1)
+  # Run benchmarks/generate-inferred.ts for each source file before using these suites.
+  - circuitbreaker-inferred
+  - ratelimiter-inferred
+  - eventbus-inferred
+
+  # PR review suites — model reviews a diff implementing a rejected design decision (C=1, R=1, B=0)
+  - circuitbreaker-pr
+  - ratelimiter-pr
+  - eventbus-pr

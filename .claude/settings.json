@@ -1,4 +1,11 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(tsx benchmarks/generate-inferred.ts --source benchmarks/scenarios/circuitbreaker/circuitbreaker.ts --output benchmarks/scenarios/circuitbreaker-inferred/circuitbreaker-inferred-annotations.md)",
+      "Bash(ls -t benchmarks/results/*.json)",
+      "Bash(grep -r \"push_notes\\\\|BlockFrontmatter\\\\|annotation.*schema\" /c/Users/mglen/Documents/whytho/benchmarks/*.md)"
+    ]
+  },
   "hooks": {
     "PostToolUse": [
       {

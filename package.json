@@ -1,6 +1,6 @@
 {
   "name": "whytho",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "The open standard for persisting AI reasoning alongside your code",
   "keywords": [
     "ai",
@@ -47,7 +47,8 @@
     "lint:eslint": "eslint .",
     "format": "prettier --write 'src/**/*.ts' 'tests/**/*.ts'",
     "install-hooks": "node scripts/install-hooks.js",
-    "benchmark": "tsx benchmarks/index.ts"
+    "benchmark": "tsx benchmarks/index.ts",
+    "benchmark:generate-inferred": "tsx benchmarks/generate-inferred.ts --source benchmarks/scenarios/circuitbreaker/circuitbreaker.ts --output benchmarks/scenarios/circuitbreaker-inferred/circuitbreaker-inferred-annotations.md && tsx benchmarks/generate-inferred.ts --source benchmarks/scenarios/ratelimiter/ratelimiter.ts --output benchmarks/scenarios/ratelimiter-inferred/ratelimiter-inferred-annotations.md && tsx benchmarks/generate-inferred.ts --source benchmarks/scenarios/eventbus/eventbus.ts --output benchmarks/scenarios/eventbus-inferred/eventbus-inferred-annotations.md"
   },
   "peerDependencies": {
     "openai": ">=4.0.0",

@@ -110,8 +110,9 @@ describe('push → query', () => {
 
     const whyRoot = getWhyRoot(tmpDir)
     const ann = await readAnnotationFile<BlockFrontmatter>(blockAnnotationPath(whyRoot, 'src/math.ts::add'))
-    expect(ann.body).toContain('First note.')
-    expect(ann.body).toContain('Second note.')
+    const notes = ann.frontmatter.push_notes ?? []
+    expect(notes.some((n) => n.body === 'First note.')).toBe(true)
+    expect(notes.some((n) => n.body === 'Second note.')).toBe(true)
   })
 
   it('creates a file annotation and can read it back', async () => {

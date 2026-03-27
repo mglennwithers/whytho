@@ -1,0 +1,7 @@
+source: ../circuitbreaker/circuitbreaker.ts
+
+scenarios:
+  - file: cb-pr-dq-1.md
+    annotations: ../circuitbreaker/circuitbreaker-annotations.md
+  - file: cb-pr-dq-2.md
+    annotations: ../circuitbreaker/circuitbreaker-annotations.md

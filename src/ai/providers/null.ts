@@ -1,4 +1,4 @@
-import type { AIProvider, AnnotationRequest, AnnotationResult, SemanticMatchRequest, SemanticMatchResult } from '../types.js'
+import type { AIProvider, AnnotationRequest, AnnotationResult, SemanticMatchRequest, SemanticMatchResult, AssessPushNotesRequest, AssessPushNotesResult } from '../types.js'
 import { WHYTHO_VERSION } from '../../core/constants.js'
 
 export const nullProvider: AIProvider = {
@@ -25,5 +25,13 @@ export const nullProvider: AIProvider = {
   // eslint-disable-next-line @typescript-eslint/require-await
   async matchSemanticFingerprint(_request: SemanticMatchRequest): Promise<SemanticMatchResult> {
     return { matchedIndex: null, confidence: 0 }
+  },
+
+  // eslint-disable-next-line @typescript-eslint/require-await
+  async assessPushNotes(request: AssessPushNotesRequest): Promise<AssessPushNotesResult> {
+    // Null provider keeps all notes as complementary (safe default)
+    return {
+      assessments: request.pushNotes.map((n) => ({ index: n.index, verdict: 'complementary' as const })),
+    }
   },
 }

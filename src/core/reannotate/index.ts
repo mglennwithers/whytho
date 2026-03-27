@@ -13,7 +13,7 @@ import {
 import { parseFile } from '../parser/registry.js'
 import { computeContentHash } from '../identity/content-hash.js'
 import { detectLanguage } from '../parser/detect-language.js'
-import type { BlockFrontmatter, FileFrontmatter, FolderFrontmatter, AnnotationFile } from '../types.js'
+import type { BlockFrontmatter, FileFrontmatter, FolderFrontmatter, AnnotationFile, PushNote } from '../types.js'
 import type { AIProvider, AnnotationVerbosity } from '../../ai/types.js'
 import type { WhythoConfig } from '../../config/types.js'
 
@@ -268,6 +268,31 @@ async function reannotateBlock(
     (aiResult.frontmatter['_semantic_fingerprint'] as string) ??
     ann.frontmatter.identity.semantic_fingerprint
 
+  // Merge push notes: assess active notes against fresh inferred body
+  const existingNotes: PushNote[] = ann.frontmatter.push_notes ?? []
+  const activeNotes = existingNotes.filter((n) => n.status === 'active')
+  const mergedNotes: PushNote[] = existingNotes.filter((n) => n.status !== 'active')
+
+  if (activeNotes.length > 0) {
+    const assessInput = activeNotes.map((n, i) => ({ index: i, body: n.body }))
+    const assessResult = await ai.assessPushNotes({
+      inferredBody: aiResult.body,
+      pushNotes: assessInput,
+    })
+
+    for (const assessment of assessResult.assessments) {
+      const note = activeNotes[assessment.index]
+      if (!note) continue
+      if (assessment.verdict === 'redundant') {
+        mergedNotes.push({ ...note, status: 'discarded_redundant' })
+      } else if (assessment.verdict === 'conflict') {
+        mergedNotes.push({ ...note, status: 'archived_conflict' })
+      } else {
+        mergedNotes.push({ ...note, status: 'active' })
+      }
+    }
+  }
+
   const updatedFm: BlockFrontmatter = {
     ...ann.frontmatter,
     updated: new Date().toISOString(),
@@ -278,6 +303,7 @@ async function reannotateBlock(
       line_range: { start: block.startLine, end: block.endLine, commit: commitSha },
       semantic_fingerprint: semanticFingerprint,
     },
+    push_notes: mergedNotes.length > 0 ? mergedNotes : undefined,
   }
 
   const newBody = `# ${blockName}\n\n${aiResult.body}`

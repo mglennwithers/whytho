@@ -1,0 +1,7 @@
+source: ../circuitbreaker/circuitbreaker.ts
+
+scenarios:
+  - file: cb-inf-dq-1.md
+    annotations: circuitbreaker-inferred-annotations.md
+  - file: cb-inf-dq-2.md
+    annotations: circuitbreaker-inferred-annotations.md

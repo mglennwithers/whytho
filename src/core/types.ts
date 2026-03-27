@@ -115,6 +115,13 @@ export const FileFrontmatterSchema = BaseAnnotationSchema.extend({
   relationships: z.array(RelationshipSchema).optional(),
 })
 
+export const PushNoteSchema = z.object({
+  session: z.string(),
+  timestamp: z.string(),
+  body: z.string(),
+  status: z.enum(['active', 'archived_conflict', 'discarded_redundant']),
+})
+
 export const BlockFrontmatterSchema = BaseAnnotationSchema.extend({
   type: z.literal('block'),
   symbolic_ref: z.string(),
@@ -134,6 +141,7 @@ export const BlockFrontmatterSchema = BaseAnnotationSchema.extend({
   inferred: z.boolean().optional(),
   inference_confidence: z.number().min(0).max(1).optional(),
   generation_settings: GenerationSettingsSchema.optional(),
+  push_notes: z.array(PushNoteSchema).optional(),
 })
 
 // ─── TypeScript Types ─────────────────────────────────────────────────────────
@@ -145,6 +153,7 @@ export type SessionCommit = z.infer<typeof SessionCommitSchema>
 export type SessionFrontmatter = z.infer<typeof SessionFrontmatterSchema>
 export type FolderFrontmatter = z.infer<typeof FolderFrontmatterSchema>
 export type FileFrontmatter = z.infer<typeof FileFrontmatterSchema>
+export type PushNote = z.infer<typeof PushNoteSchema>
 export type BlockFrontmatter = z.infer<typeof BlockFrontmatterSchema>
 
 export type AnyFrontmatter =

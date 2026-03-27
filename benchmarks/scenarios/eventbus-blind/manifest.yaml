@@ -1,0 +1,5 @@
+source: ../eventbus/eventbus.ts
+
+scenarios:
+  - file: blind-eb-dq-2.md
+    annotations: eventbus-blind-annotations.md

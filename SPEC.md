@@ -572,6 +572,22 @@ relationships:
 | `relationships` | array | Relationship annotations. See Section 12. |
 | `derived_from` | string | Symbolic reference of the block this was derived from (after split). |
 | `parents` | array | Symbolic references of blocks that were merged to create this one. |
+| `push_notes` | array | Developer-authored reasoning notes attached to this block. See Push Note Object below. |
+
+#### Push Note Object
+
+Each entry in `push_notes` is an object with the following fields:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `session` | string | Session ID (or `"agent-push"`) that created this note. |
+| `timestamp` | string | ISO 8601 timestamp when the note was pushed. |
+| `body` | string | The reasoning text authored by the developer or agent. |
+| `status` | string | One of: `"active"` (visible to consumers), `"discarded_redundant"` (content already captured by inferred body), `"archived_conflict"` (contradicts the inferred body; preserved for audit). |
+
+Only notes with `status: "active"` are included in rendered annotation output. Notes with other statuses are retained in the file for historical reference.
+
+Push notes are assessed and reclassified each time the block annotation is regenerated. See Section 10 for the merge algorithm.
 
 ### 8.3 Identity Object Schema
 
@@ -817,6 +833,23 @@ Actions:
 - `index.json` updated. `archive-index.json` updated.
 
 Implementations SHOULD flag `SUPERSEDED` only when confidence in identity continuity drops below a configurable threshold (default: 0.3). Above this threshold, the outcome SHOULD be `RESOLVED` with updated metrics.
+
+### 10.4 Push Note Merge on Reannotation
+
+When an implementation regenerates a block annotation body (reannotation), it MUST run a merge algorithm to reconcile existing developer-authored push notes with the new inferred body. The algorithm is:
+
+1. Separate `push_notes` into **active** (`status: "active"`) and **inactive** (all other statuses).
+2. Inactive notes pass through to the output unchanged.
+3. For each active note, assess it against the new inferred body using one of:
+   - An AI classification call that classifies the note as COMPLEMENTARY, REDUNDANT, or CONFLICT relative to the inferred body.
+   - If no AI is available, treat all notes as COMPLEMENTARY (safe default).
+4. Apply verdicts:
+   - **COMPLEMENTARY** — The note adds information not captured by the inferred body. Retain with `status: "active"`.
+   - **REDUNDANT** — The note's content is already captured in the inferred body. Set `status: "discarded_redundant"`.
+   - **CONFLICT** — The note contradicts a factual claim in the inferred body. Set `status: "archived_conflict"`.
+5. Write the new inferred body and the merged `push_notes` array to the annotation file.
+
+When rendering annotation output to consumers (agents, tools, UIs), implementations MUST include only notes with `status: "active"`. Inactive notes remain in the file for audit purposes.
 
 #### UNRESOLVABLE
 

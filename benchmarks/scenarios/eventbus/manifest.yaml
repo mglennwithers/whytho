@@ -13,5 +13,3 @@ scenarios:
     annotations: eventbus-annotations.md
   - file: cs-2-history-replay.md
     annotations: eventbus-annotations.md
-  - file: cs-3-history-replay.md
-    annotations: eventbus-annotations.md

@@ -1,6 +1,6 @@
 import * as vscode from 'vscode'
 import type { AnnotationService } from '../core/annotation-service.js'
-import type { BlockFrontmatter, AnnotationFile } from 'whytho'
+import type { BlockFrontmatter, AnnotationFile, PushNote } from 'whytho'
 import { parseSymbolicRef } from 'whytho'
 import { extractSection } from '../util/markdown.js'
 import { getConfidenceLevel, getConfidenceColor, loadThresholds } from '../util/confidence.js'
@@ -72,6 +72,11 @@ export class AnnotationPanel implements vscode.Disposable {
       .filter(Boolean)
       .join('\n')
 
+    const activeNotes = (fm.push_notes ?? []).filter((n) => n.status === 'active')
+    const notesHtml = activeNotes.length > 0
+      ? buildPushNotesHtml(activeNotes)
+      : ''
+
     const relHtml = related.length > 0
       ? buildRelationshipsHtml(related)
       : ''
@@ -123,6 +128,7 @@ export class AnnotationPanel implements vscode.Disposable {
     border-radius: 3px;
     font-size: 0.9em;
   }
+  .note-meta { font-size: 0.8em; opacity: 0.6; margin-bottom: 4px; }
   .nav-link {
     color: var(--vscode-textLink-foreground);
     cursor: pointer;
@@ -145,6 +151,7 @@ export class AnnotationPanel implements vscode.Disposable {
     </div>
   </div>
   ${sectionHtml}
+  ${notesHtml}
   ${relHtml}
   <script>
     const vscode = acquireVsCodeApi();
@@ -187,6 +194,13 @@ const TYPE_LABELS: Record<string, string> = {
 type RelatedEntry = {
   direction: 'out' | 'in'
   edge: { type: string; source: string; target: string }
+}
+
+function buildPushNotesHtml(notes: PushNote[]): string {
+  const items = notes
+    .map((n) => `<li><div class="note-meta">${escapeHtml(n.session)} &bull; ${escapeHtml(n.timestamp.slice(0, 10))}</div><div class="section-body">${escapeHtml(n.body)}</div></li>`)
+    .join('\n')
+  return `<details open><summary><strong>Developer Notes</strong> (${notes.length})</summary><ul>${items}</ul></details>`
 }
 
 function buildRelationshipsHtml(related: RelatedEntry[]): string {

@@ -26,6 +26,7 @@ export type {
   ArchivedBlockEntry,
   AnnotationFile,
   HookEvent,
+  PushNote,
 } from './core/types.js'
 
 // ─── Zod Schemas ─────────────────────────────────────────────────────────────
@@ -36,6 +37,7 @@ export {
   SessionFrontmatterSchema,
   BlockIdentitySchema,
   RelationshipSchema,
+  PushNoteSchema,
 } from './core/types.js'
 
 // ─── Constants ────────────────────────────────────────────────────────────────

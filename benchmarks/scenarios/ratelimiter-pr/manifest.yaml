@@ -1,0 +1,5 @@
+source: ../ratelimiter/ratelimiter.ts
+
+scenarios:
+  - file: rl-pr-dq-2.md
+    annotations: ../ratelimiter/ratelimiter-annotations.md

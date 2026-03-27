@@ -60,6 +60,8 @@ ANTHROPIC_API_KEY=sk-... npm run benchmark
 > those results are the next priority. See [`benchmarks/MATRIX_GUIDE.md`](benchmarks/MATRIX_GUIDE.md)
 > for a full interpretation guide. Independent reproduction is encouraged.
 
+> **Work in progress**: The benchmark suite is actively expanding. New scenario types (blind inferred annotations, partial annotations, PR review tasks) have been added but not yet fully calibrated or reported here. Treat the numbers above as a lower bound on what a well-annotated codebase can achieve.
+
 ---
 
 ## Quickstart
@@ -393,6 +395,8 @@ git why reannotate --block src/auth/middleware.ts::rotateTokenIfNeeded
 git why reannotate --file src/auth/middleware.ts
 git why reannotate --incremental   # all annotations whose source changed in the last commit
 ```
+
+Developer push notes (`git why push`) survive reannotation via a merge algorithm: each active note is assessed against the freshly generated body and classified as **complementary** (kept), **redundant** (discarded — already captured), or **conflict** (archived — contradicts the new body). Only complementary notes remain active and visible to future readers.
 
 ### 6. Commit
 
